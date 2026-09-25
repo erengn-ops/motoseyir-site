@@ -109,7 +109,7 @@
   <div class="wrap">
     <div class="eyebrow">Motoseyir · The rider’s sat nav</div>
     <h1>Privacy Policy and Support</h1>
-    <p class="updated">Last updated: 24 September 2026 · iOS and Android</p>
+    <p class="updated">Last updated: 25 September 2026 · iOS and Android</p>
     <p class="lead">This is the same text you can read inside the app under Settings → Privacy Policy. The fuller Turkish version is at <a href="../">motoseyir-app.com/gizlilik/</a>.</p>
 
     <section class="summary">
@@ -136,7 +136,8 @@
 
     <section>
       <h2>Search queries</h2>
-      <p>When you search for a place, the text you type and your approximate location are sent, for suggestions and results, to the Google Places service in Turkey and Greece and to Apple Maps on iPhone in other countries (Google Places everywhere on Android). If Google cannot serve the request (its daily usage limit is reached or the service does not respond), search on iPhone temporarily uses Apple Maps. On iPhone, Discover, which suggests places worth a stop nearby, also comes from Apple Maps. These queries are not linked to your identity.</p>
+      <p>When you search for a place, the text you type and your approximate location are sent, for suggestions and results, to Motoseyir servers depending on the region. When our servers cannot find the place (usually when you search for a business), and in other regions, the search is made through Apple Maps on iPhone and Google Places on Android. These queries are not linked to your identity.</p>
+      <p>A place's card (photos, rating, opening hours) comes from Apple Maps on the Start screen on iPhone, and from Google Places on Android and on the tour screen in My Tours. On the tour screen, Discover, which suggests places worth a stop around your route, also comes from Google Places; under Google's terms, that screen's map is therefore a Google map on iPhone as well (if the Google map cannot be opened, the map and Discover come from Apple Maps). On Android, when you open the card of a business found by our servers, the business's name and location are sent to Google.</p>
     </section>
 
     <section>
@@ -169,6 +170,7 @@
     <section>
       <h2>Our servers</h2>
       <p>The routing service calculates routes: the start, destination and via-point coordinates are sent, the route is calculated, the result is returned, and no record is kept. When it opens, the app also gets its settings from our server; this request carries only the hashed device ID and is not stored.</p>
+      <p>The search service looks up places: the text you type and your approximate location are processed only to produce the results, and no record is kept. The hashed device ID is used only in a one-minute counter to limit excessive requests; the server keeps only an hourly total of query types (place, address, business).</p>
       <p>The counter service manages trial and campaign entitlements: only the device identity hash is sent. No request log is kept; to prevent abuse there is only a one-hour counter, and what it holds is not your IP itself but an irreversible hash of it. The hash salt changes every time the service restarts, so no persistent identity is formed.</p>
       <p>The group riding service (only if you turn it on): your group memberships and, WHILE A RIDE IS RUNNING, your last location are held here. No history is kept — only the last point is stored and overwritten. When the ride ends the location is deleted; if the app cannot send the delete request, the server deletes it itself after three minutes. Location is only sent WHILE a ride recording or navigation is running — also with the screen off.</p>
       <p>People in the group see your route's name, how much of it you have completed, your current speed and heading, your last location and how many seconds ago it was updated. The nickname you enter when joining is held on the server — it is the only way other members can tell who is where. That name is YOUR choice, is visible only to people in the same group, and is deleted when the group is deleted.</p>
@@ -188,8 +190,8 @@
 
     <section>
       <h2>Third-party services</h2>
-      <p>Google Maps Platform (Places API, Maps SDK, Routes API) — place search in Turkey and Greece (everywhere on Android), the map on Android, and routing only as a fallback (if our servers and Stadia Maps do not respond).</p>
-      <p>Apple Maps (MapKit) — the map on iPhone; place search outside Turkey and Greece and Discover on iPhone. The search text and approximate location go to Apple and are processed under Apple's privacy terms. <a href="https://www.apple.com/legal/privacy/">apple.com/legal/privacy</a></p>
+      <p>Google Maps Platform (Places API, Maps SDK, Routes API) — on Android: the map, place search, place cards and Discover; on iPhone: the map of the tour screen in My Tours, and Discover and place cards there; routing only as a fallback (if our servers and Stadia Maps do not respond).</p>
+      <p>Apple Maps (MapKit) — on iPhone: the map (except on the tour screen), place search and place cards on the Start screen; if the Google map cannot be opened on the tour screen, the map and Discover there as well. The search text and approximate location go to Apple and are processed under Apple's privacy terms. <a href="https://www.apple.com/legal/privacy/">apple.com/legal/privacy</a></p>
       <p>Stadia Maps (USA) — route calculation depending on the region; only the start, destination and via-point coordinates are sent. <a href="https://stadiamaps.com/privacy/privacy-policy/">stadiamaps.com/privacy</a></p>
       <p>MET Norway (Yr.no) — weather forecast; only coordinates are sent.</p>
       <p>Google Maps Platform (Elevation API) — for the elevation profile, the coordinates of up to 400 points picked from a track are sent. In three cases: when you import a GPX file without elevation, when you open a trail without elevation, and when you open one of your ride recordings (that recording's track). Nothing but coordinates is sent.</p>
