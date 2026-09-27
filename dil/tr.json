@@ -28,14 +28,14 @@
   "og_baslik": "Motoseyir — Motosiklete Göre En Kısa Yolu Bulan Navigasyon",
   "og_aciklama": "En kısa rota, köy yolları, çok duraklı turlar, grup sürüşü, interkom ve efsane rotalar — tek uygulamada.",
   "jsonld_aciklama": "Motosiklet sürücüleri için mesafe odaklı navigasyon uygulaması: en kısa rota, köy yolları, çok duraklı turlar, grup sürüşü, interkom ve efsane rotalar.",
-  "jsonld_ucretsiz": "Günde 3 rota hesaplama ve 1 kayıtlı tur; kurulumda 7 gün tüm özellikler açık.",
-  "jsonld_pro": "Sınırsız rota, çok duraklıda en uygun sıralama, sınırsız tur ve parkur, köy yolları/sahil modları, Keşfet, grup kurma ve interkom.",
+  "jsonld_ucretsiz": "Sınırsız rota hesaplama ve 1 kayıtlı tur; kurulumda 7 gün tüm özellikler açık.",
+  "jsonld_pro": "Çok duraklıda en uygun sıralama, sınırsız tur ve parkur, köy yolları/sahil modları, Keşfet, grup kurma, interkom ve AI CoRider.",
 
   "hero_alt": "Kıyı boyunca uzanan virajlı bir dağ yolunda, gün batımı ışığında ilerleyen bir motosikletli",
   "hero_eyebrow": "Motoseyir · Motorcunun navigasyonu",
   "hero_h1": "Kilometreyi hesaba katan tek navigasyon.",
   "hero_lead": "Motoseyir rotayı süreye göre değil mesafeye göre hesaplıyor. Aynı iki nokta için birkaç alternatifi karşılaştırır, en kısasını önerir. Çok duraklı bir turda durakların sırasını da o kuruyor.",
-  "hero_micro": "Kurulumda 7 gün her şey açık. Sonrasında günde 3 rota ücretsiz.",
+  "hero_micro": "Kurulumda 7 gün her şey açık. Sonrasında da rota sınırsız ve ücretsiz.",
 
   "neden_eyebrow": "Neden farklı",
   "neden_soz": "Başka navigasyonlar <span class=\"vurgu\">en hızlı</span> yolu bulur.<br>Motoseyir <span class=\"vurgu\">en kısa</span> olanı bulur.",
@@ -46,7 +46,7 @@
 
   "f1_etiket": "Rota",
   "f1_h3": "En kısa rota",
-  "f1_p": "Aynı iki nokta için birkaç alternatif rota hesaplıyor, en kısa mesafeli olanı öneriyor — süresi biraz daha uzun olsa bile. Ücretsiz kademede günde 3 rota hesaplayabilirsin, abonelikte sınır kalkıyor.",
+  "f1_p": "Aynı iki nokta için birkaç alternatif rota hesaplıyor, en kısa mesafeli olanı öneriyor — süresi biraz daha uzun olsa bile. Ücretsiz kademede de rota sayısı sınırsız.",
   "f1_alt": "En kısa mesafe rotası ve alternatiflerin karşılaştırıldığı ekran",
 
   "f2_etiket": "Tur modları",
@@ -109,16 +109,16 @@
 
   "fiyat_eyebrow": "Fiyatlandırma",
   "fiyat_h2": "Ücretsiz başla, istersen Pro’ya geç",
-  "fiyat_lead": "Hesap açmana gerek yok. Kurulumda 7 gün her şey açık; sonrasında ücretsiz kademe günde 3 rota ve 1 kayıtlı turla devam eder.",
+  "fiyat_lead": "Hesap açmana gerek yok. Kurulumda 7 gün her şey açık; sonrasında ücretsiz kademe sınırsız rota ve 1 kayıtlı turla devam eder.",
   "plan_ucretsiz_ad": "Ücretsiz",
   "plan_ucretsiz_notu": "Kurulumla birlikte, süresiz.",
-  "pu1": "Günde 3 rota hesaplama",
+  "pu1": "Sınırsız rota hesaplama",
   "pu2": "1 kayıtlı tur",
   "pu3": "Adım adım navigasyon ve sesli yönlendirme",
   "pu4": "Rota üzerinde yağış uyarısı",
   "pu5": "Gruba davetle ya da kodla katılma",
   "plan_pro_notu": "Güncel fiyatlar bölgene göre değişir; App Store’daki abonelik ekranında görürsün.",
-  "pp1": "Sınırsız rota",
+  "pp1": "AI CoRider, ayda 15 dk",
   "pp2": "Çok duraklıda en uygun sıralama",
   "pp3": "Sınırsız tur ve parkur",
   "pp4": "Köy yolları, sahil ve enduro modları",
@@ -301,9 +301,9 @@
 
   "k_abonelik": "Abonelik",
   "abo1": "Kurulumdan sonra yedi gün her şey açık → deneme bitince ücretsiz kademeye düşersin.",
-  "abo2": "Ücretsiz kademe → günde 3 rota hesabı ve 1 kayıtlı tur.",
-  "abo3": "Motoseyir Pro → sınırsız rota, en kısa sıra, sınırsız tur ve parkur, tur modları, Keşfet ve grup kurma.",
-  "abo4": "Kurye Pro → yalnız rota tarafı: sınırsız rota ve en kısa sıra.",
+  "abo2": "Ücretsiz kademe → sınırsız rota ve 1 kayıtlı tur.",
+  "abo3": "Motoseyir Pro → en kısa sıra, sınırsız tur ve parkur, tur modları, Keşfet, grup kurma ve AI CoRider.",
+  "abo4": "Kurye Pro → yalnız rota tarafı: çok duraklı rotada en kısa sıra ve ayda 5 dk AI CoRider.",
   "abo5": "Ayarlar → Satın alımları geri yükle: yeni telefonda aboneliğini geri alırsın.",
 
   "ny_dip": "Burada olmayan bir şey mi soracaksın? Uygulama içinde Ayarlar → “Bir sorun mu var, bir fikrin mi?” bölümünden yazabilirsin; yanıt yine oradan gelir."
