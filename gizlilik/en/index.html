@@ -109,7 +109,7 @@
   <div class="wrap">
     <div class="eyebrow">Motoseyir · The rider’s sat nav</div>
     <h1>Privacy Policy and Support</h1>
-    <p class="updated">Last updated: 25 September 2026 · iOS and Android</p>
+    <p class="updated">Last updated: 28 September 2026 · iOS and Android</p>
     <p class="lead">This is the same text you can read inside the app under Settings → Privacy Policy. The fuller Turkish version is at <a href="../">motoseyir-app.com/gizlilik/</a>.</p>
 
     <section class="summary">
@@ -130,14 +130,14 @@
       <p>The app accesses your location to determine your starting point and to follow you along the route during navigation.</p>
       <p>IF YOU START A RIDE RECORDING, location collection continues while the screen is off: the recording runs as a foreground service shown by a persistent notification, collecting a point roughly every 2 seconds and writing it TO YOUR DEVICE. This is so the middle of your ride is not lost when the phone goes into your pocket. When you stop the recording, collection stops too; the collected track is not sent to us. If you have turned on group riding, only your last location goes to the group riding service while recording (see Our servers).</p>
       <p>Otherwise (when only planning a route or with navigation open) location is used only while the app is in the foreground; the one exception is group riding: while navigation is running, your last location also goes to the group with the screen off.</p>
-      <p>Your location is processed on your device. For route calculation, the start, destination and via-point coordinates are sent to Motoseyir servers, to Stadia Maps (USA) depending on the region, and to Google Maps Platform if these do not respond; for rain warnings along the route, your location is sent to the MET Norway weather service. We do not store these requests — the request is served and it ends.</p>
+      <p>Your location is processed on your device. For route calculation, the start, destination and via-point coordinates are sent to Motoseyir servers or, depending on the region, to Stadia Maps (USA), and on Android to Google Maps Platform if these do not respond; for rain warnings along the route, your location is sent to the MET Norway weather service. We do not store these requests — the request is served and it ends.</p>
       <p>You can revoke the permission at any time (iOS: Settings → Motoseyir → Location. Android: Settings → Apps → Motoseyir → Permissions). In that case you choose the starting point manually.</p>
     </section>
 
     <section>
       <h2>Search queries</h2>
       <p>When you search for a place, the text you type and your approximate location are sent, for suggestions and results, to Motoseyir servers depending on the region. When our servers cannot find the place (usually when you search for a business), and in other regions, the search is made through Apple Maps on iPhone and Google Places on Android. These queries are not linked to your identity.</p>
-      <p>A place's card (photos, rating, opening hours) comes from Apple Maps on the Start screen on iPhone, and from Google Places on Android and on the tour screen in My Tours. On the tour screen, Discover, which suggests places worth a stop around your route, also comes from Google Places; under Google's terms, that screen's map is therefore a Google map on iPhone as well (if the Google map cannot be opened, the map and Discover come from Apple Maps). On Android, when you open the card of a business found by our servers, the business's name and location are sent to Google.</p>
+      <p>A place's card (photos, rating, opening hours) and Discover on the tour screen, which suggests places worth a stop around your route, come from Apple Maps on iPhone and from Google Places on Android. On Android, when you open the card of a business found by our servers, the business's name and location are sent to Google.</p>
     </section>
 
     <section>
@@ -190,11 +190,10 @@
 
     <section>
       <h2>Third-party services</h2>
-      <p>Google Maps Platform (Places API, Maps SDK, Routes API) — on Android: the map, place search, place cards and Discover; on iPhone: the map of the tour screen in My Tours, and Discover and place cards there; routing only as a fallback (if our servers and Stadia Maps do not respond).</p>
-      <p>Apple Maps (MapKit) — on iPhone: the map (except on the tour screen), place search and place cards on the Start screen; if the Google map cannot be opened on the tour screen, the map and Discover there as well. The search text and approximate location go to Apple and are processed under Apple's privacy terms. <a href="https://www.apple.com/legal/privacy/">apple.com/legal/privacy</a></p>
-      <p>Stadia Maps (USA) — route calculation depending on the region; only the start, destination and via-point coordinates are sent. <a href="https://stadiamaps.com/privacy/privacy-policy/">stadiamaps.com/privacy</a></p>
+      <p>Google Maps Platform (Places API, Maps SDK, Routes API, Elevation API) — on Android only: the map, place search, place cards and Discover; routing and the elevation profile as a fallback (if our servers and Stadia Maps do not respond). Google Maps Platform is not used on iPhone.</p>
+      <p>Apple Maps (MapKit) — on iPhone: the map, place search, place cards and Discover. The search text and approximate location go to Apple and are processed under Apple's privacy terms. <a href="https://www.apple.com/legal/privacy/">apple.com/legal/privacy</a></p>
+      <p>Stadia Maps (USA) — route calculation depending on the region, and the elevation profile. For routes, only the start, destination and via-point coordinates are sent; for the elevation profile, the coordinates of up to 400 points picked from a track: when you import a GPX file without elevation, when you open a trail without elevation, and when you open one of your ride recordings (that recording's track). Nothing but coordinates is sent. <a href="https://stadiamaps.com/privacy/privacy-policy/">stadiamaps.com/privacy</a></p>
       <p>MET Norway (Yr.no) — weather forecast; only coordinates are sent.</p>
-      <p>Google Maps Platform (Elevation API) — for the elevation profile, the coordinates of up to 400 points picked from a track are sent. In three cases: when you import a GPX file without elevation, when you open a trail without elevation, and when you open one of your ride recordings (that recording's track). Nothing but coordinates is sent.</p>
       <p>Apple/Google reverse geocoding — the stop coordinates are sent so that the stops of an imported track can be given names.</p>
       <p>Cloud AI voice service (third-party provider) — voice conversation with AI CoRider; only if you turn it on, your voice and the reply pass through this service, subject to the provider's own terms. The provider's name is available on request.</p>
       <p>Sentry — crash and error reports (see above).</p>

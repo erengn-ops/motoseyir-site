@@ -91,7 +91,7 @@
   <div class="wrap">
     <div class="eyebrow">Motoseyir · Motorcunun navigasyonu</div>
     <h1>Gizlilik Politikası ve Destek</h1>
-    <p class="updated">Son güncelleme: 25 Eylül 2026 · iOS ve Android için geçerlidir</p>
+    <p class="updated">Son güncelleme: 28 Eylül 2026 · iOS ve Android için geçerlidir</p>
 
     <section class="summary">
       <h2>Kısaca</h2>
@@ -114,7 +114,7 @@
       <p>
         Uygulama, başlangıç noktanızı belirlemek ve navigasyon sırasında sizi rotada takip etmek için
         konumunuza erişir. Rota hesaplaması için başlangıç, varış ve ara nokta koordinatları Motoseyir
-        sunucularına, bölgeye göre Stadia Maps'e (ABD), bunlar yanıt vermezse Google Maps Platform'a;
+        sunucularına ya da bölgeye göre Stadia Maps'e (ABD), Android'de bunlar yanıt vermezse Google Maps Platform'a;
         yol üzerindeki yağış uyarısı için konumunuz MET Norway hava servisine gönderilir. Bu istekleri
         biz saklamayız — istek karşılanır ve biter.
       </p>
@@ -235,11 +235,9 @@
         kimliğinizle ilişkilendirilmez.
       </p>
       <p>
-        Bir yerin kartı (fotoğraflar, puan, çalışma saatleri) iPhone'da Başla ekranında Apple Haritalar'dan;
-        Android'de ve Turlarım'daki tur ekranında Google Places'tan gelir. Tur ekranında rotanın çevresindeki uğrak
-        yerlerini öneren Keşfet de Google Places'tan gelir; Google'ın koşulları gereği bu ekranın haritası iPhone'da
-        da Google haritasıdır (Google haritası açılamazsa harita ve Keşfet Apple Haritalar'dan gelir). Android'de
-        sunucularımızın bulduğu bir işletmenin kartını açtığınızda işletmenin adı ve konumu Google'a gönderilir.
+        Bir yerin kartı (fotoğraflar, puan, çalışma saatleri) ve tur ekranında rotanın çevresindeki uğrak yerlerini
+        öneren Keşfet iPhone'da Apple Haritalar'dan, Android'de Google Places'tan gelir. Android'de sunucularımızın
+        bulduğu bir işletmenin kartını açtığınızda işletmenin adı ve konumu Google'a gönderilir.
       </p>
 
       <h3>Cihaz kimliği özeti</h3>
@@ -297,15 +295,15 @@
             <tr><th>Veri</th><th>Nereye gider</th><th>Amaç</th><th>Saklanıyor mu</th></tr>
           </thead>
           <tbody>
-            <tr><td>Konum</td><td>Motoseyir sunucuları, Stadia Maps (bölgeye göre), Google Maps Platform (yedek)</td><td>Rota hesaplama, navigasyon</td><td>Hayır</td></tr>
+            <tr><td>Konum</td><td>Motoseyir sunucuları, Stadia Maps (bölgeye göre), Google Maps Platform (yalnız Android'de yedek)</td><td>Rota hesaplama, navigasyon</td><td>Hayır</td></tr>
             <tr><td>Konum</td><td>MET Norway</td><td>Yol üzerinde yağış uyarısı</td><td>Hayır</td></tr>
-            <tr><td>İz koordinatları (en çok 400 nokta)</td><td>Google Maps Platform (Elevation API)</td><td>Yükseklik profili</td><td>Bizde tutulmaz</td></tr>
+            <tr><td>İz koordinatları (en çok 400 nokta)</td><td>Stadia Maps; Android'de yedek Google Maps Platform (Elevation API)</td><td>Yükseklik profili</td><td>Bizde tutulmaz</td></tr>
             <tr><td>Anlık konum (grup sürüşü)</td><td>Takip servisimiz</td><td>Gruptakilerin birbirini görmesi</td><td>Navigasyon ya da sürüş kaydı boyunca; bitince silinir</td></tr>
             <tr><td>Takma ad, avatar (grup sürüşü)</td><td>Takip servisimiz</td><td>Haritada kimin kim olduğu</td><td>Gruptan ayrılana kadar</td></tr>
             <tr><td>Grup rotası: ad, başlangıç, duraklar, çizgi, dönüş talimatları</td><td>Takip servisimiz</td><td>Gruptakilerin aynı rotayı açması</td><td>Sürüş bitince silinir; en geç 12 saat</td></tr>
             <tr><td>Son bilinen konum (&ldquo;Yakınımda&rdquo; sıralaması)</td><td>Topluluk servisimiz</td><td>Paylaşımları yakınlığa göre sıralama</td><td>Hayır</td></tr>
             <tr><td>Arama metni ve yaklaşık konum</td><td>Motoseyir sunucuları (bölgeye göre); Apple Haritalar (iPhone); Google Places (Android)</td><td>Yer önerileri</td><td>Hayır</td></tr>
-            <tr><td>Konum ve seçilen yer</td><td>Google Places (Android; iPhone'da tur ekranı); Apple Haritalar (iPhone, Başla ekranı)</td><td>Keşfet ve yer kartı</td><td>Hayır</td></tr>
+            <tr><td>Konum ve seçilen yer</td><td>Apple Haritalar (iPhone); Google Places (Android)</td><td>Keşfet ve yer kartı</td><td>Hayır</td></tr>
             <tr><td>Ses (sesli arama)</td><td>Cihazın konuşma tanıma servisi</td><td>Söyleneni metne çevirme</td><td>Hayır</td></tr>
             <tr><td>Ses (interkom, yalnız siz açarsanız)</td><td>İnterkom medya sunucumuz (LiveKit)</td><td>Grup sürüşünde sesli sohbet</td><td>Hayır — yalnızca odadakilere aktarılır</td></tr>
             <tr><td>Ses ve rota özeti (AI CoRider, yalnız siz açarsanız)</td><td>Bulut tabanlı yapay zekâ ses servisi (üçüncü taraf)</td><td>Sesli yanıt üretme</td><td>Bizde tutulmaz</td></tr>
@@ -337,11 +335,10 @@
     <section>
       <h2>Üçüncü taraf hizmetler</h2>
       <ul>
-        <li><strong>Google Maps Platform</strong> (Places API, Maps SDK, Routes API) — Android'de harita, yer arama, yer kartı ve Keşfet; iPhone'da Turlarım'daki tur ekranının haritası, orada Keşfet ve yer kartı; yalnız yedek olarak rota (sunucularımız ve Stadia Maps yanıt vermezse). <a href="https://policies.google.com/privacy">policies.google.com/privacy</a></li>
-        <li><strong>Apple Haritalar</strong> (MapKit) — iPhone'da harita (tur ekranı dışında), yer arama ve Başla ekranında yer kartı; tur ekranında Google haritası açılamazsa orada da harita ve Keşfet. Arama metni ve yaklaşık konum Apple'a gider; işlenmesi Apple'ın gizlilik koşullarına tabidir. <a href="https://www.apple.com/legal/privacy/">apple.com/legal/privacy</a></li>
-        <li><strong>Stadia Maps</strong> (ABD) — bölgeye göre rota hesaplama; yalnız başlangıç, varış ve ara nokta koordinatları gönderilir. <a href="https://stadiamaps.com/privacy/privacy-policy/">stadiamaps.com/privacy</a></li>
+        <li><strong>Google Maps Platform</strong> (Places API, Maps SDK, Routes API, Elevation API) — yalnız Android'de: harita, yer arama, yer kartı ve Keşfet; yedek olarak rota ve yükseklik profili (sunucularımız ve Stadia Maps yanıt vermezse). iPhone'da Google Maps Platform kullanılmaz. <a href="https://policies.google.com/privacy">policies.google.com/privacy</a></li>
+        <li><strong>Apple Haritalar</strong> (MapKit) — iPhone'da harita, yer arama, yer kartı ve Keşfet. Arama metni ve yaklaşık konum Apple'a gider; işlenmesi Apple'ın gizlilik koşullarına tabidir. <a href="https://www.apple.com/legal/privacy/">apple.com/legal/privacy</a></li>
+        <li><strong>Stadia Maps</strong> (ABD) — bölgeye göre rota hesaplama ve yükseklik profili. Rota için yalnız başlangıç, varış ve ara nokta koordinatları; yükseklik profili için bir izden seçilen en çok 400 noktanın koordinatları gönderilir: yüksekliği olmayan bir GPX dosyasını içe aktardığınızda, yüksekliği olmayan bir parkuru açtığınızda ve bir sürüş kaydınızı açtığınızda. Koordinat dışında bir şey gönderilmez. <a href="https://stadiamaps.com/privacy/privacy-policy/">stadiamaps.com/privacy</a></li>
         <li><strong>MET Norway (Yr.no)</strong> — hava durumu tahmini; yalnızca koordinat gönderilir. <a href="https://www.met.no/en/About-us/privacy">met.no gizlilik</a></li>
-        <li><strong>Google Maps Platform (Elevation API)</strong> — yükseklik profili için bir izden seçilen en çok 400 noktanın koordinatları gönderilir: yüksekliği olmayan bir GPX dosyasını içe aktardığınızda, yüksekliği olmayan bir parkuru açtığınızda ve bir sürüş kaydınızı açtığınızda. Koordinat dışında bir şey gönderilmez. <a href="https://policies.google.com/privacy">policies.google.com/privacy</a></li>
         <li><strong>Bulut tabanlı yapay zekâ ses servisi (üçüncü taraf sağlayıcı)</strong> — AI CoRider ile sesli sohbet; yalnız siz açarsanız sesiniz ve yanıt bu servisten geçer, işlenmesi sağlayıcının kendi koşullarına tabidir. Sağlayıcının adı istek üzerine verilir.</li>
         <li><strong>Sentry</strong> — çökme raporları. <a href="https://sentry.io/privacy/">sentry.io/privacy</a></li>
         <li><strong>Apple App Store</strong> ve <strong>Google Play</strong> — abonelik satın alımları. Ödeme bilgilerinize erişimimiz yoktur.</li>
