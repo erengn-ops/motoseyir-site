@@ -4,6 +4,22 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Motoseyir — Gizlilik ve Destek</title>
+<link rel="alternate" hreflang="tr" href="https://motoseyir-app.com/gizlilik/">
+<link rel="alternate" hreflang="en" href="https://motoseyir-app.com/gizlilik/en/">
+<link rel="alternate" hreflang="x-default" href="https://motoseyir-app.com/gizlilik/en/">
+<script>
+  // 4 Eki 2026: App Store açıklamasındaki ve mağazadaki gizlilik bağlantısı bu adrese geliyor; ABD reklamından gelen
+  // kullanıcı Türkçe metin görmesin. Tarayıcı dillerinin hiçbiri Türkçe değilse İngilizce sayfaya geçer.
+  // ?dil=tr ile (İngilizce sayfadaki "Türkçe" bağlantısı) Türkçe kalır. JS'siz okuyucu Türkçe görür.
+  (function () {
+    try {
+      if (/[?&]dil=tr\b/.test(location.search)) return;
+      var d = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ""]);
+      for (var i = 0; i < d.length; i++) if (/^tr\b/i.test(d[i])) return;
+      location.replace("/gizlilik/en/" + location.hash);
+    } catch (e) {}
+  })();
+</script>
 <style>body{margin:0;font:16px ui-sans-serif,-apple-system,sans-serif}</style>
 </head>
 <body>
@@ -89,7 +105,7 @@
 
 <div class="page">
   <div class="wrap">
-    <div class="eyebrow">Motoseyir · Motorcunun navigasyonu</div>
+    <div class="eyebrow">Motoseyir · Motorcunun navigasyonu · <a href="/gizlilik/en/" lang="en">English</a></div>
     <h1>Gizlilik Politikası ve Destek</h1>
     <p class="updated">Son güncelleme: 28 Eylül 2026 · iOS ve Android için geçerlidir</p>
 
