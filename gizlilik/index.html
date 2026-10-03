@@ -107,7 +107,7 @@
   <div class="wrap">
     <div class="eyebrow">Motoseyir · Motorcunun navigasyonu · <a href="/gizlilik/en/" lang="en">English</a></div>
     <h1>Gizlilik Politikası ve Destek</h1>
-    <p class="updated">Son güncelleme: 28 Eylül 2026 · iOS ve Android için geçerlidir</p>
+    <p class="updated">Son güncelleme: 4 Ekim 2026 · iOS ve Android için geçerlidir</p>
 
     <section class="summary">
       <h2>Kısaca</h2>
@@ -139,6 +139,20 @@
         alınmaya devam eder; bunu durum çubuğundaki konum işaretinden görürsünüz. Kaydedilen iz yalnızca
         cihazınızda saklanır ve "Bitir" deyince kayıt durur. Siz başlatmadan arka planda konum toplanmaz.
         Grup sürüşündeyseniz kayıt ya da navigasyon sürerken son konumunuz — ekran kapalıyken de — takip servisimize gider (aşağıda).
+      </p>
+      <p>
+        Rota planlarken konum yalnızca uygulama öndeyken kullanılır. <strong>Navigasyon sürerken</strong> iPhone'da
+        konum, ekran kapalıyken ya da araç ekranında başka bir uygulama açıkken de alınır; yönlendirme ve sesli anons
+        kesilmesin diye. Bu konum cihazınızda kalır, navigasyon bitince alma durur.
+      </p>
+      <p>
+        <strong>Yağış radarı</strong> yalnız ABD'de ve Almanya'da çalışır. Radarı haritada açarsanız baktığınız
+        bölgenin radar görüntüleri ABD'de NOAA'dan, Almanya'da DWD'den (iki ülkenin resmî hava servisleri) alınır;
+        bu isteklerde haritanın o bölgesinin koordinatları gider. Navigasyonda radar açıkken önünüzdeki yolda yağış
+        olup olmadığını görmek için rotanızdan seçilen birkaç noktanın koordinatları da aynı servislere gönderilir.
+        AI CoRider'a önünüzde yağmur olup olmadığını sorarsanız aynı sorgu <strong>radar haritada kapalıyken de</strong>
+        yapılır (navigasyon açık değilse bulunduğunuz yer için). Bu servislere koordinattan başka bir şey gönderilmez
+        ve istekleri biz saklamayız.
       </p>
       <p>
         İzni istediğiniz zaman kapatabilirsiniz (iOS: Ayarlar → Motoseyir → Konum.
@@ -175,6 +189,23 @@
         <strong>400 metreden yakın</strong> kısmı gönderilmez — evinizin ya da park yerinizin konumu
         gruba düşmez. Gönderen başına en çok üç kayıt durur ve kaydı istediğiniz an gruptan
         kaldırabilirsiniz.
+      </p>
+      <p>
+        <strong>Grup uyarısı:</strong> grupta &ldquo;Geride kaldım&rdquo;, &ldquo;Mola&rdquo;, &ldquo;Tehlike&rdquo;
+        ya da &ldquo;Benzin&rdquo; gönderirseniz uyarı yalnız gruba katılmış kişilere <strong>10 dakika</strong>
+        görünür, sonra silinir. Gönderdiğiniz andaki konumunuz uyarıya yalnız konumunuzu o grupta gösteriyorsanız eklenir.
+      </p>
+
+      <h3>Sürüşümü paylaş</h3>
+      <p>
+        Navigasyon ya da sürüş kaydı sırasında bir bağlantı paylaşırsanız (yalnız siz açarsanız),
+        <strong>bağlantıya sahip olan herkes</strong> (gönderdiğiniz kişi onu başkasına iletirse o da)
+        <strong>uygulama olmadan</strong> bir web sayfasında son konumunuzu, gittiğiniz yönü ve konumun ne zaman
+        alındığını, navigasyondaysanız varış noktanızın adını, kalan yolu ve tahmini varış saatini görür; sayfanın
+        haritası OpenStreetMap'ten gelir. Bağlantı varınca, navigasyonu ya da sürüş kaydını bitirince ya da paylaşımı
+        durdurduğunuzda kapanır; <strong>en geç 24 saatte</strong>, telefonunuzdan üç saat konum gelmezse de kapanır.
+        Konumunuz yine <strong>yalnız sürüş sürerken</strong> tutulur; sunucuda bağlantının kendisi değil geri
+        çevrilemez bir özeti durur.
       </p>
 
       <h3>AI CoRider</h3>
@@ -255,6 +286,13 @@
         öneren Keşfet iPhone'da Apple Haritalar'dan, Android'de Google Places'tan gelir. Android'de sunucularımızın
         bulduğu bir işletmenin kartını açtığınızda işletmenin adı ve konumu Google'a gönderilir.
       </p>
+      <p>
+        <strong>Yakıt menzili:</strong> Ayarlar'da depo menzilini girdiyseniz uygulama benzinlikleri kendiliğinden
+        arar: navigasyonda rotanızın önündeki benzinlikleri; navigasyon ya da sürüş kaydı sırasında iki dakikadan uzun
+        durduğunuzda da depoyu doldurup doldurmadığınızı anlamak için durduğunuz yerin yakınındakileri. Bu aramalarda
+        yalnız arama noktasının koordinatları ve aranan tür (benzinlik) gider: iPhone'da Motoseyir sunucularına ya da
+        Apple Haritalar'a, Android'de yalnız Motoseyir sunucularına. Depo menzili boşken bu aramalar yapılmaz.
+      </p>
 
       <h3>Cihaz kimliği özeti</h3>
       <p>
@@ -319,12 +357,16 @@
             <tr><th>Veri</th><th>Nereye gider</th><th>Amaç</th><th>Saklanıyor mu</th></tr>
           </thead>
           <tbody>
-            <tr><td>Konum</td><td>Motoseyir sunucuları, Stadia Maps (bölgeye göre), Google Maps Platform (yalnız Android'de yedek)</td><td>Rota hesaplama, navigasyon</td><td>Hayır</td></tr>
+            <tr><td>Konum</td><td>Motoseyir sunucuları, Stadia Maps (bölgeye göre), Google Maps Platform (yalnız Android'de yedek)</td><td>Rota hesaplama, navigasyon, hız sınırı</td><td>Hayır</td></tr>
             <tr><td>Konum</td><td>MET Norway</td><td>Yol üzerinde yağış uyarısı</td><td>Hayır</td></tr>
+            <tr><td>Harita bölgesi ve rota noktalarının koordinatları (yalnız ABD ve Almanya)</td><td>NOAA, DWD</td><td>Yağış radarı; navigasyonda ve AI CoRider'ın sorusunda yolda yağış</td><td>Hayır</td></tr>
+            <tr><td>Arama noktasının konumu (depo menzilini girdiyseniz)</td><td>Motoseyir sunucuları; iPhone'da Apple Haritalar</td><td>Rotadaki benzinlikler, dolumun anlaşılması</td><td>Hayır</td></tr>
             <tr><td>İz koordinatları (en çok 400 nokta)</td><td>Stadia Maps; Android'de yedek Google Maps Platform (Elevation API)</td><td>Yükseklik profili</td><td>Bizde tutulmaz</td></tr>
             <tr><td>Anlık konum (grup sürüşü)</td><td>Takip servisimiz</td><td>Gruptakilerin birbirini görmesi</td><td>Navigasyon ya da sürüş kaydı boyunca; bitince silinir</td></tr>
             <tr><td>Takma ad, avatar (grup sürüşü)</td><td>Takip servisimiz</td><td>Haritada kimin kim olduğu</td><td>Gruptan ayrılana kadar</td></tr>
             <tr><td>Grup rotası: ad, başlangıç, duraklar, çizgi, dönüş talimatları</td><td>Takip servisimiz</td><td>Gruptakilerin aynı rotayı açması</td><td>Sürüş bitince silinir; en geç 12 saat</td></tr>
+            <tr><td>Grup uyarısı; konumunuzu grupta gösteriyorsanız o anki konum</td><td>Takip servisimiz</td><td>Gruba hızlı haber</td><td>10 dakika</td></tr>
+            <tr><td>Son konum, yön, varış noktasının adı, kalan yol ve varış saati (Sürüşümü paylaş, yalnız siz açarsanız)</td><td>Takip servisimiz; bağlantıya sahip olanların tarayıcısı</td><td>Uygulamasız canlı izleme</td><td>Yalnız son nokta, sürüş sürerken; bağlantı en geç 24 saatte kapanır</td></tr>
             <tr><td>Son bilinen konum (&ldquo;Yakınımda&rdquo; sıralaması)</td><td>Topluluk servisimiz</td><td>Paylaşımları yakınlığa göre sıralama</td><td>Hayır</td></tr>
             <tr><td>Arama metni ve yaklaşık konum</td><td>Motoseyir sunucuları (bölgeye göre); Apple Haritalar (iPhone); Google Places (Android)</td><td>Yer önerileri</td><td>Hayır</td></tr>
             <tr><td>Konum ve seçilen yer</td><td>Apple Haritalar (iPhone); Google Places (Android)</td><td>Keşfet ve yer kartı</td><td>Hayır</td></tr>
@@ -349,7 +391,7 @@
         <li><strong>Rota servisi</strong> — rota hesaplar. Gönderilen: başlangıç, varış ve ara nokta koordinatları. Hesap yapılır, sonuç döner, kayıt tutulmaz. Uygulama açılışta ayarlarını da sunucumuzdan alır; bu istekte yalnız cihaz kimliği özeti gider ve kaydedilmez.</li>
         <li><strong>Arama servisi</strong> — yer arar. Gönderilen: yazdığınız metin ve yaklaşık konumunuz. Yalnız sonucu üretmek için işlenir, kayıt tutulmaz. Cihaz kimliği özeti yalnız aşırı istekleri sınırlamak için bir dakikalık bir sayaçta kullanılır; sunucuda yalnız sorgu türlerinin (yer, adres, işletme) saatlik toplamı kalır.</li>
         <li><strong>Sayaç servisi</strong> — deneme, kampanya ve davet haklarını yönetir. Gönderilen: cihaz kimliği özeti ve davet kodu.</li>
-        <li><strong>Takip servisi</strong> — grup sürüşünü yürütür. Gönderilen: cihaz kimliği özeti, grup kodu, takma ad, avatar ve navigasyon ya da sürüş kaydı sırasında anlık konum. Konum yalnızca son değer olarak tutulur, geçmiş biriktirilmez, sürüş bitince silinir. Grupta başlattığınız rota da burada durur; sürüş bitince, en geç 12 saat sonra silinir.</li>
+        <li><strong>Takip servisi</strong> — grup sürüşünü yürütür. Gönderilen: cihaz kimliği özeti, grup kodu, takma ad, avatar ve navigasyon ya da sürüş kaydı sırasında anlık konum. Konum yalnızca son değer olarak tutulur, geçmiş biriktirilmez, sürüş bitince silinir. Grupta başlattığınız rota da burada durur; sürüş bitince, en geç 12 saat sonra silinir. Grup uyarıları (10 dakika) ve &ldquo;Sürüşümü paylaş&rdquo; bağlantıları da bu servisten geçer (yukarıda).</li>
         <li><strong>Topluluk servisi</strong> — yalnız siz katılırsanız çalışır. Yukarıdaki &ldquo;Topluluk&rdquo; bölümünde tek tek yazılı olanlar burada tutulur ve <strong>herkese açıktır</strong>; &ldquo;yalnız arkadaşlarım görsün&rdquo; diye bir ayar yoktur. &ldquo;Yakınımda&rdquo; sıralaması için gönderilen konum yalnızca sıralamada kullanılır, kaydedilmez.</li>
         <li><strong>İnterkom servisi</strong> — yalnız siz açarsanız çalışır. Grup sürüşünde sesli sohbet için takip servisi size grubun ses odasına kısa ömürlü bir giriş bileti verir; ses kendi medya sunucumuz (LiveKit) üzerinden yalnız o anda odadaki üyelere aktarılır, <strong>kaydedilmez ve saklanmaz</strong>. Odaya yalnız gruba katılmış kişiler girebilir; oda navigasyon bitince kapanır.</li>
         <li><strong>AI CoRider servisi</strong> — yalnız siz açarsanız çalışır. Oturumu açmak için size kısa ömürlü bir bilet verir ve bağlantı pazarlığını sizin adınıza yapar; yapay zekâ servisinin erişim anahtarı yalnız sunucumuzda durur, telefona hiç gitmez. Sunucuda tutulan tek şey, gün başına oturum hakkınızı sayabilmek için cihaz kimliği özetiniz ve oturumun açıldığı andır — en çok yedi gün sonra silinir. Sesiniz ve konuşmanın metni sunucumuza hiç gelmez. AI CoRider deneme dakikalarını kullanırsanız buna ek olarak, denemenin aynı ağdan çok sayıda yeni cihazla kötüye kullanılmasını önlemek için IP adresinizin geri çevrilemez bir özeti 24 saat tutulur; özetin tuzu servis her yeniden başladığında değişir.</li>
@@ -362,9 +404,10 @@
       <ul>
         <li><strong>Google Maps Platform</strong> (Places API, Maps SDK, Routes API, Elevation API) — yalnız Android'de: harita, yer arama, yer kartı ve Keşfet; yedek olarak rota ve yükseklik profili (sunucularımız ve Stadia Maps yanıt vermezse). iPhone'da Google Maps Platform kullanılmaz. <a href="https://policies.google.com/privacy">policies.google.com/privacy</a></li>
         <li><strong>Apple Haritalar</strong> (MapKit) — iPhone'da harita, yer arama, yer kartı ve Keşfet. Arama metni ve yaklaşık konum Apple'a gider; işlenmesi Apple'ın gizlilik koşullarına tabidir. <a href="https://www.apple.com/legal/privacy/">apple.com/legal/privacy</a></li>
-        <li><strong>Stadia Maps</strong> (ABD) — bölgeye göre rota hesaplama ve yükseklik profili. Rota için yalnız başlangıç, varış ve ara nokta koordinatları; yükseklik profili için bir izden seçilen en çok 400 noktanın koordinatları gönderilir: yüksekliği olmayan bir GPX dosyasını içe aktardığınızda, yüksekliği olmayan bir parkuru açtığınızda ve bir sürüş kaydınızı açtığınızda. Koordinat dışında bir şey gönderilmez. <a href="https://stadiamaps.com/privacy/privacy-policy/">stadiamaps.com/privacy</a></li>
+        <li><strong>Stadia Maps</strong> (ABD) — bölgeye göre rota hesaplama, navigasyonda hız sınırı ve yükseklik profili. Rota için yalnız başlangıç, varış ve ara nokta koordinatları; hız sınırı için navigasyon başlarken ve rota yeniden hesaplandığında rota çizgisi boyunca düzenli aralıklarla seçilen noktaların koordinatları; yükseklik profili için bir izden seçilen en çok 400 noktanın koordinatları gönderilir: yüksekliği olmayan bir rota dosyasını (GPX, KML, GeoJSON ya da ITN) içe aktardığınızda, yüksekliği olmayan bir parkuru açtığınızda ve bir sürüş kaydınızı açtığınızda. Koordinat dışında bir şey gönderilmez. <a href="https://stadiamaps.com/privacy/privacy-policy/">stadiamaps.com/privacy</a></li>
         <li><strong>Foursquare</strong> (ABD) — yalnız AI CoRider'ın yer aramasında, kafe ve restoran gibi yerlerin puanı için: aramanın yapıldığı noktanın koordinatları, aranan tür ya da yer adı ve uygulamanın dili sunucumuz üzerinden gönderilir; cihaz kimliğiniz ve IP adresiniz Foursquare'e gitmez. Aramalar saklanmaz; kötüye kullanımı önlemek için yalnız o günün arama sayısı tutulur (cihaz kimliği özeti ve IP'nin geri çevrilemez özetiyle) ve gün bitince silinir. <a href="https://foursquare.com/legal/privacy/">foursquare.com/legal/privacy</a></li>
         <li><strong>MET Norway (Yr.no)</strong> — hava durumu tahmini; yalnızca koordinat gönderilir. <a href="https://www.met.no/en/About-us/privacy">met.no gizlilik</a></li>
+        <li><strong>NOAA</strong> (ABD Ulusal Okyanus ve Atmosfer Dairesi) ve <strong>DWD</strong> (Almanya'nın ulusal hava servisi) — yağış radarı, yalnız ABD'de ve Almanya'da: radar haritada açıkken baktığınız bölgenin koordinatları; navigasyonda radar açıkken ve AI CoRider'a yağmuru sorduğunuzda rotanızdan seçilen noktaların ya da bulunduğunuz yerin koordinatları gönderilir. Koordinat dışında bir şey gönderilmez. <a href="https://www.noaa.gov/protecting-your-privacy">noaa.gov gizlilik</a> · <a href="https://www.dwd.de/EN/service/dataprotection/dataprotection_node.html">dwd.de veri koruma</a></li>
         <li><strong>Bulut tabanlı yapay zekâ ses servisi (üçüncü taraf sağlayıcı)</strong> — AI CoRider ile sesli sohbet; yalnız siz açarsanız sesiniz ve yanıt bu servisten geçer, işlenmesi sağlayıcının kendi koşullarına tabidir. Sağlayıcının adı istek üzerine verilir.</li>
         <li><strong>Sentry</strong> — çökme raporları. <a href="https://sentry.io/privacy/">sentry.io/privacy</a></li>
         <li><strong>Apple App Store</strong> ve <strong>Google Play</strong> — abonelik satın alımları. Ödeme bilgilerinize erişimimiz yoktur.</li>
