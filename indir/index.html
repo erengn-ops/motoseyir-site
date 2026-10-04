@@ -37,8 +37,40 @@
     var link = "https://apps.apple.com/tr/app/apple-store/id6792549131?pt=128439797&ct=" + ct + "&mt=8";
     document.getElementById("indir").href = link;
     var ua = navigator.userAgent || "";
+    var SAYFA = "indir";
+    // ÖLÇÜM (4 Eki 2026): ABD Meta reklamı ~30 tıklamada 0 indirme gösterdi, aynı kodlu TR sayfası %40 çeviriyor. Meta yalnız
+    // sayfanın açıldığını, App Store Connect sayfa görüntülemesini bir gün geç görüyor. Bu olaylar arayı kapatıyor:
+    //   yuklendi → yonlendi → gizlendi  = App Store uygulaması açıldı (Instagram arka plana düştü)
+    //   yonlendi → pagehide             = tarayıcı apps.apple.com WEB sayfasına gitti (ikinci dokunuş gerekir)
+    //   yonlendi → 3sn/10sn-gorunur     = Instagram mağaza kartını sayfanın üstünde açtı YA DA hiçbir şey olmadı (TR ile kıyasla)
+    // Anonim: çerez yok, oturum sayfa açılışı başına rastgele, IP saklanmıyor (server/olcum.py, moto-rota deposu).
+    // Ölçüm hata verse bile aşağıdaki App Store yönlendirmesi her durumda çalışmalı.
+    var olay = function () {};
+    try {
+      var bot = /facebookexternalhit|Facebot/i.test(ua);
+      var t0 = Date.now(), oturum = (Math.random().toString(36) + "00000000").slice(2, 10);
+      var surum = ua.match(/OS (\d+)_(\d+)/), ios = surum ? surum[1] + "." + surum[2] : "";
+      var tar = /Instagram/.test(ua) ? "instagram" : /FBAN|FBAV|FBIOS/.test(ua) ? "facebook"
+              : (/Safari/.test(ua) && !/CriOS|FxiOS|EdgiOS/.test(ua)) ? "safari" : "diger";
+      var tz = ""; try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ""; } catch (e) {}
+      olay = function (adim) {
+        if (bot || !navigator.sendBeacon) return;
+        try {
+          navigator.sendBeacon("https://rota.motoseyir-app.com/olcum/olay", JSON.stringify({
+            s: SAYFA, ct: ct, adim: adim, t: Date.now() - t0, o: oturum, tz: tz, ios: ios, tar: tar,
+            dil: (navigator.language || "").slice(0, 12)
+          }));
+        } catch (e) {}
+      };
+      olay("yuklendi");
+      document.addEventListener("visibilitychange", function () { olay(document.visibilityState === "hidden" ? "gizlendi" : "dondu"); });
+      window.addEventListener("pagehide", function () { olay("pagehide"); });
+      document.getElementById("indir").addEventListener("click", function () { olay("dugme"); });
+      setTimeout(function () { olay(document.visibilityState === "visible" ? "3sn-gorunur" : "3sn-gizli"); }, 3000);
+      setTimeout(function () { if (document.visibilityState === "visible") olay("10sn-gorunur"); }, 10000);
+    } catch (e) {}
     if (/iPhone|iPad|iPod/.test(ua) && !/facebookexternalhit|Facebot/i.test(ua)) {
-      setTimeout(function () { location.replace(link); }, 600);
+      setTimeout(function () { olay("yonlendi"); location.replace(link); }, 600);
     }
   })();
 </script>
