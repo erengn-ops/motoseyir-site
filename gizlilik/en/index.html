@@ -109,14 +109,14 @@
   <div class="wrap">
     <div class="eyebrow">Motoseyir · The rider’s sat nav · <a href="/gizlilik/?dil=tr" lang="tr">Türkçe</a></div>
     <h1>Privacy Policy and Support</h1>
-    <p class="updated">Last updated: 4 October 2026 · iOS and Android</p>
+    <p class="updated">Last updated: 5 October 2026 · iOS and Android</p>
     <p class="lead">This is the same text you can read inside the app under Settings → Privacy Policy. The fuller Turkish version is at <a href="../?dil=tr">motoseyir-app.com/gizlilik/</a>.</p>
 
     <section class="summary">
       <h2>In short</h2>
       <ul>
         <li>You do not need to create an account. We do not ask for your name, email address, phone number or date of birth.</li>
-        <li>To calculate routes, your location and search queries are sent to map services.</li>
+        <li>To calculate routes, your location and search queries are sent to map services; when you start a tour from a track you imported or recorded, that track's points go only to Motoseyir servers.</li>
         <li>An anonymous identity hash of your device is sent to our server: to prevent abuse of trial and campaign entitlements and, if you have turned on group riding, to link your membership to your device. It cannot be reversed and does not identify you.</li>
         <li>Your tours, ride recordings, diary notes and photos stay only on your device — unless you share them in Community.</li>
         <li>If you start a ride recording, location is also collected while the screen is off and the track is written to your device.</li>
@@ -150,6 +150,11 @@
     </section>
 
     <section>
+      <h2>Ad measurement</h2>
+      <p>If you installed the app after tapping an ad, Apple's SKAdNetwork system tells the ad network that the install took place — without sharing your identity, with a delay and in aggregate. This notice is sent by iOS, not by the app; Motoseyir sends no data about you to ad networks, and there is no ad-tracking SDK in the app.</p>
+    </section>
+
+    <section>
       <h2>Microphone and speech recognition</h2>
       <p>When you use voice search, what you say is passed to the operating system's speech recognition service solely to turn the place you are looking for into text. Depending on your device, that service may perform the conversion on the device or send it to Apple/Google servers; the operating system decides. The audio is not sent TO US, is not stored by us, and it only runs when you press the microphone button.</p>
       <p>When you use the group-ride intercom (only if you turn it on), your microphone stays open for the whole navigation and your voice is sent over the internet only to the members connected to the same group at that moment. Audio is NOT recorded or stored by us; our media server only relays it. The intercom stops when navigation ends; you can mute the microphone at any time with the switch on the group card or by tapping the intercom pill while riding.</p>
@@ -161,6 +166,7 @@
       <h2>What stays on the device</h2>
       <p>The tours, stops and route drafts you save, your tour diary (notes and photos), your preferences, usage counters and subscription tier are kept only on your device and are not transmitted to us.</p>
       <p>If you delete the app, this data is deleted too. Your photos are accessed only when you choose one to add to your journal or Community profile; your gallery is never scanned.</p>
+      <p>So that the free trial and the welcome offer can be given only once per device, the app stores the moment it first connected to our server and the moment the welcome offer started in the iOS Keychain. This information never leaves your phone and remains even if you delete the app.</p>
     </section>
 
     <section>
@@ -176,8 +182,9 @@
 
     <section>
       <h2>Our servers</h2>
-      <p>The routing service calculates routes: the start, destination and via-point coordinates are sent, the route is calculated, the result is returned, and no record is kept. When it opens, the app also gets its settings from our server; this request carries only the hashed device ID and is not stored.</p>
+      <p>The routing service calculates routes: the start, destination and via-point coordinates are sent, the route is calculated, the result is returned, and no record is kept. When it opens, the app also gets its settings from our server; this request carries only the hashed device ID and is not stored. When you start a tour that has a track — from a route file you imported (GPX, KML or GeoJSON), from one of your ride recordings or from a trail shared with you — the coordinates of points picked from the track are also sent, to tell whether the track follows roads and to give directions along it (at most 600 points for an imported file, up to about 1,500 for other tracks); these are not stored either.</p>
       <p>The search service looks up places: the text you type and your approximate location are processed only to produce the results, and no record is kept. The hashed device ID is used only in a one-minute counter to limit excessive requests; the server keeps only an hourly total of query types (place, address, business).</p>
+      <p>Offline maps: when you download a tour's map, the tour's route line is sent to Motoseyir servers; the server prepares a map of the area within about 5 km of the route and gives you a download link that is valid for two hours. The route line is not stored; the prepared map file is kept without knowing whose it is and is reused when the same route is requested. The map file is held at Cloudflare (USA) and downloads to your phone from there; Cloudflare sees your IP address during the download. To prevent abuse, the number of new maps prepared that day is counted using non-reversible hashes of your device ID and your IP address; this count is kept only in memory and is deleted when the day ends. The downloaded map stays only on your phone and is not included in iCloud backups. Map data © OpenStreetMap contributors.</p>
       <p>The counter service manages trial and campaign entitlements: only the device identity hash is sent. No request log is kept; to prevent abuse there is only a one-hour counter, and what it holds is not your IP itself but an irreversible hash of it. The hash salt changes every time the service restarts, so no persistent identity is formed.</p>
       <p>The group riding service (only if you turn it on): your group memberships and, WHILE A RIDE IS RUNNING, your last location are held here. No history is kept — only the last point is stored and overwritten. When the ride ends the location is deleted; if the app cannot send the delete request, the server deletes it itself after three minutes. Location is only sent WHILE a ride recording or navigation is running — also with the screen off.</p>
       <p>People in the group see your route's name, how much of it you have completed, your current speed and heading, your last location and how many seconds ago it was updated. The nickname you enter when joining is held on the server — it is the only way other members can tell who is where. That name is YOUR choice, is visible only to people in the same group, and is deleted when the group is deleted.</p>
@@ -206,6 +213,7 @@
       <p>Apple Maps (MapKit) — on iPhone: the map, place search, place cards and Discover. The search text and approximate location go to Apple and are processed under Apple's privacy terms. <a href="https://www.apple.com/legal/privacy/">apple.com/legal/privacy</a></p>
       <p>Stadia Maps (USA) — route calculation depending on the region, speed limits during navigation, and the elevation profile. For routes, only the start, destination and via-point coordinates are sent; for speed limits, when navigation starts and whenever the route is recalculated, the coordinates of points picked at regular intervals along the route line; for the elevation profile, the coordinates of up to 400 points picked from a track: when you import a route file without elevation (GPX, KML, GeoJSON or ITN), when you open a trail without elevation, and when you open one of your ride recordings (that recording's track). Nothing but coordinates is sent. <a href="https://stadiamaps.com/privacy/privacy-policy/">stadiamaps.com/privacy</a></p>
       <p>Foursquare (USA) — only for AI CoRider's place search, to get ratings for places such as cafés and restaurants: the coordinates of the point being searched, the type or name searched for and the app language are sent via our server; your device ID and IP address never reach Foursquare. Searches are not stored; to prevent abuse only the day's search count is kept (with a hash of your device ID and a non-reversible hash of your IP), and it is deleted when the day ends. <a href="https://foursquare.com/legal/privacy/">foursquare.com/legal/privacy</a></p>
+      <p>Cloudflare (USA) — hosting of offline map files: when you download a tour's map, the file comes to your phone from Cloudflare; Cloudflare sees your IP address during the download. <a href="https://www.cloudflare.com/privacypolicy/">cloudflare.com/privacypolicy</a></p>
       <p>MET Norway (Yr.no) — weather forecast; only coordinates are sent.</p>
       <p>NOAA (the US National Oceanic and Atmospheric Administration) and DWD (Deutscher Wetterdienst, Germany's national weather service) — rain radar, in the US and Germany only: with the radar on, the coordinates of the map area you are looking at; during navigation with the radar on, and when you ask AI CoRider about rain, the coordinates of points picked from your route or of where you are. Nothing but coordinates is sent. <a href="https://www.noaa.gov/protecting-your-privacy">noaa.gov privacy</a> · <a href="https://www.dwd.de/EN/service/dataprotection/dataprotection_node.html">dwd.de data protection</a></p>
       <p>Apple/Google reverse geocoding — the stop coordinates are sent so that the stops of an imported track can be given names.</p>

@@ -107,13 +107,13 @@
   <div class="wrap">
     <div class="eyebrow">Motoseyir · Motorcunun navigasyonu · <a href="/gizlilik/en/" lang="en">English</a></div>
     <h1>Gizlilik Politikası ve Destek</h1>
-    <p class="updated">Son güncelleme: 4 Ekim 2026 · iOS ve Android için geçerlidir</p>
+    <p class="updated">Son güncelleme: 5 Ekim 2026 · iOS ve Android için geçerlidir</p>
 
     <section class="summary">
       <h2>Kısaca</h2>
       <ul>
         <li><strong>Hesap oluşturmanız gerekmez.</strong> E-posta, telefon veya doğum tarihi istemiyoruz.</li>
-        <li>Rota hesaplamak için konumunuz ve arama sorgularınız harita servislerine iletilir; kaydedilmez.</li>
+        <li>Rota hesaplamak için konumunuz ve arama sorgularınız harita servislerine iletilir; kaydedilmez. İçe aktardığınız ya da kaydettiğiniz bir izle tur başlattığınızda o izin noktaları yalnız Motoseyir sunucularına gider.</li>
         <li><strong>Sürüş kaydı</strong> açıkken konumunuz ekran kapalıyken de alınır ve iz cihazınızda tutulur.</li>
         <li><strong>Grup sürüşüne</strong> katılırsanız, seçtiğiniz takma ad ve anlık konumunuz sürüş kaydı ya da navigasyon sürerken (ekran kapalıyken de) grubunuzdakilerle paylaşılmak üzere sunucumuzda tutulur; sürüş bitince silinir. Grupta başlattığınız rota da gruptakiler açabilsin diye sürüş bitene kadar (en geç 12 saat) sunucuda durur.</li>
         <li><strong>Topluluğa</strong> katılırsanız seçtiğiniz kullanıcı adı ve simge, paylaştığınız turlar, beğenileriniz ve yorumlarınız sunucumuzda tutulur ve <strong>uygulamayı kullanan herkese görünür</strong>. Katılmak isteğe bağlıdır.</li>
@@ -337,6 +337,14 @@
         <li>Reklam, profilleme veya analiz için kullanılmaz.</li>
       </ul>
 
+      <h3>Reklam ölçümü</h3>
+      <p>
+        Uygulamayı bir reklama dokunarak kurduysanız, Apple'ın SKAdNetwork sistemi reklam ağına kurulumun
+        gerçekleştiğini <strong>kimliğiniz paylaşılmadan</strong>, gecikmeli ve toplu olarak bildirir. Bu bildirimi
+        uygulama değil iOS gönderir; Motoseyir reklam ağlarına sizinle ilgili hiçbir veri göndermez ve uygulamada
+        reklam takip SDK'sı yoktur.
+      </p>
+
       <h3>Çökme raporları</h3>
       <p>
         Uygulama beklenmedik biçimde kapanırsa hatanın teknik ayrıntısı (hata yığını, cihaz modeli, işletim
@@ -376,6 +384,11 @@
         Uygulamayı silerseniz bu veriler de silinir. Fotoğraflarınıza yalnızca siz günlüğe ya da topluluk
         profilinize eklemek üzere seçtiğinizde erişilir; galeriniz taranmaz.
       </p>
+      <p>
+        Ücretsiz denemenin ve hoş geldin teklifinin bir cihazda bir kez verilebilmesi için uygulama, sunucuya ilk
+        bağlandığı anı ve hoş geldin teklifinin başladığı anı <strong>iOS Anahtar Zinciri</strong>'nde saklar. Bu bilgiler
+        telefonunuzdan çıkmaz ve <strong>uygulamayı silseniz de durur</strong>.
+      </p>
     </section>
 
     <section>
@@ -391,6 +404,8 @@
             <tr><td>Harita bölgesi ve rota noktalarının koordinatları (yalnız ABD ve Almanya)</td><td>NOAA, DWD</td><td>Yağış radarı; navigasyonda ve AI CoRider'ın sorusunda yolda yağış</td><td>Hayır</td></tr>
             <tr><td>Arama noktasının konumu (depo menzilini girdiyseniz)</td><td>Motoseyir sunucuları; iPhone'da Apple Haritalar</td><td>Rotadaki benzinlikler, dolumun anlaşılması</td><td>Hayır</td></tr>
             <tr><td>İz koordinatları (en çok 400 nokta)</td><td>Stadia Maps; Android'de yedek Google Maps Platform (Elevation API)</td><td>Yükseklik profili</td><td>Bizde tutulmaz</td></tr>
+            <tr><td>İz koordinatları (izi olan bir turu başlattığınızda; içe aktarılan dosyada en çok 600, öteki izlerde yaklaşık 1.500'e kadar nokta)</td><td>Motoseyir sunucuları</td><td>İzin yollara oturup oturmadığı, iz boyunca yönlendirme</td><td>Hayır</td></tr>
+            <tr><td>Turun rota çizgisi (yalnız çevrimdışı harita indirirseniz)</td><td>Harita servisimiz; hazırlanan dosya telefona Cloudflare'den iner (indirmede IP adresinizi görür)</td><td>Rotanın ~5 km çevresinin çevrimdışı haritası</td><td>Rota çizgisi hayır; harita dosyası kime ait olduğu bilinmeden, yeniden kullanılmak üzere</td></tr>
             <tr><td>Anlık konum (grup sürüşü)</td><td>Takip servisimiz</td><td>Gruptakilerin birbirini görmesi</td><td>Navigasyon ya da sürüş kaydı boyunca; bitince silinir</td></tr>
             <tr><td>Takma ad, avatar (grup sürüşü)</td><td>Takip servisimiz</td><td>Haritada kimin kim olduğu</td><td>Gruptan ayrılana kadar</td></tr>
             <tr><td>Grup rotası: ad, başlangıç, duraklar, çizgi, dönüş talimatları</td><td>Takip servisimiz</td><td>Gruptakilerin aynı rotayı açması</td><td>Sürüş bitince silinir; en geç 12 saat</td></tr>
@@ -408,7 +423,9 @@
             <tr><td>Sürüş kaydı izi (yalnız gruba gönderirseniz)</td><td>Takip servisimiz</td><td>Gruptakilerin kaydı görmesi</td><td>14 gün</td></tr>
             <tr><td>Destek mesajları (yalnız siz yazarsanız)</td><td>Destek servisimiz</td><td>Sorununuza yanıt</td><td>En çok 1 yıl</td></tr>
             <tr><td>Cihaz kimliği özeti</td><td>Sayaç ve takip servisimiz</td><td>Deneme hakkının korunması, grup üyeliği</td><td>Evet — yalnızca özet</td></tr>
+            <tr><td>Kurulumun bir reklamdan geldiği (yalnız reklama dokunarak kurduysanız)</td><td>Reklam ağı — bildirimi iOS gönderir (SKAdNetwork), kimliksiz, gecikmeli ve toplu</td><td>Reklam ölçümü</td><td>Bizde tutulmaz</td></tr>
             <tr><td>Çökme raporu</td><td>Sentry</td><td>Hata düzeltme</td><td>90 gün</td></tr>
+            <tr><td>Sunucuya ilk bağlanma anı, hoş geldin teklifinin başladığı an (iPhone)</td><td>Sadece cihaz (iOS Anahtar Zinciri)</td><td>Deneme ve hoş geldin teklifinin cihaz başına bir kez verilmesi</td><td>Cihazda; uygulama silinse de kalır</td></tr>
             <tr><td>Turlar, sürüşler, günlük, fotoğraflar</td><td>Sadece cihaz</td><td>Uygulama işlevselliği</td><td>Cihazda</td></tr>
           </tbody>
         </table>
@@ -417,10 +434,11 @@
 
     <section>
       <h2>Sunucularımız</h2>
-      <p>Yedi hizmetimiz var; hepsi aynı makinede çalışır ve HTTPS kullanır:</p>
+      <p>Sekiz hizmetimiz var; hepsi aynı makinede çalışır ve HTTPS kullanır:</p>
       <ul>
-        <li><strong>Rota servisi</strong> — rota hesaplar. Gönderilen: başlangıç, varış ve ara nokta koordinatları. Hesap yapılır, sonuç döner, kayıt tutulmaz. Uygulama açılışta ayarlarını da sunucumuzdan alır; bu istekte yalnız cihaz kimliği özeti gider ve kaydedilmez.</li>
+        <li><strong>Rota servisi</strong> — rota hesaplar. Gönderilen: başlangıç, varış ve ara nokta koordinatları. Hesap yapılır, sonuç döner, kayıt tutulmaz. Uygulama açılışta ayarlarını da sunucumuzdan alır; bu istekte yalnız cihaz kimliği özeti gider ve kaydedilmez. İzi olan bir turu — içe aktardığınız bir rota dosyasından (GPX, KML ya da GeoJSON), bir sürüş kaydınızdan ya da size paylaşılan bir parkurdan — başlattığınızda, izin yollara oturup oturmadığını anlamak ve iz boyunca yönlendirme verebilmek için izden seçilen noktaların koordinatları da gönderilir (içe aktarılan bir dosyada en çok 600, öteki izlerde yaklaşık 1.500'e kadar nokta); bunlar da saklanmaz.</li>
         <li><strong>Arama servisi</strong> — yer arar. Gönderilen: yazdığınız metin ve yaklaşık konumunuz. Yalnız sonucu üretmek için işlenir, kayıt tutulmaz. Cihaz kimliği özeti yalnız aşırı istekleri sınırlamak için bir dakikalık bir sayaçta kullanılır; sunucuda yalnız sorgu türlerinin (yer, adres, işletme) saatlik toplamı kalır.</li>
+        <li><strong>Çevrimdışı harita servisi</strong> — yalnız siz bir turun haritasını indirirseniz çalışır. Bir turun haritasını indirdiğinizde turun rota çizgisi Motoseyir sunucularına gönderilir; sunucu rotanın yaklaşık <strong>5 km</strong> çevresinin haritasını hazırlar ve <strong>iki saat</strong> geçerli bir indirme bağlantısı verir. Rota çizgisi <strong>saklanmaz</strong>; hazırlanan harita dosyası kime ait olduğu bilinmeden saklanır ve aynı rota istendiğinde yeniden kullanılır. Harita dosyası Cloudflare'de (ABD) durur ve telefonunuza oradan iner; Cloudflare indirme sırasında IP adresinizi görür. Kötüye kullanımı önlemek için cihaz kimliğinizin ve IP adresinizin geri çevrilemeyen özetiyle o gün kaç yeni harita hazırlatıldığı sayılır; bu sayı yalnız bellekte tutulur ve gün bitince silinir. İndirilen harita yalnız telefonunuzda durur ve iCloud yedeğine girmez. Harita verisi © OpenStreetMap katkıcılarına aittir.</li>
         <li><strong>Sayaç servisi</strong> — deneme, kampanya ve davet haklarını yönetir. Gönderilen: cihaz kimliği özeti ve davet kodu.</li>
         <li><strong>Takip servisi</strong> — grup sürüşünü yürütür. Gönderilen: cihaz kimliği özeti, grup kodu, takma ad, avatar ve navigasyon ya da sürüş kaydı sırasında anlık konum. Konum yalnızca son değer olarak tutulur, geçmiş biriktirilmez, sürüş bitince silinir. Grupta başlattığınız rota da burada durur; sürüş bitince, en geç 12 saat sonra silinir. Grup uyarıları (10 dakika) ve &ldquo;Sürüşümü paylaş&rdquo; bağlantıları da bu servisten geçer (yukarıda).</li>
         <li><strong>Topluluk servisi</strong> — yalnız siz katılırsanız çalışır. Yukarıdaki &ldquo;Topluluk&rdquo; bölümünde tek tek yazılı olanlar burada tutulur ve <strong>herkese açıktır</strong>; &ldquo;yalnız arkadaşlarım görsün&rdquo; diye bir ayar yoktur. &ldquo;Yakınımda&rdquo; sıralaması için gönderilen konum yalnızca sıralamada kullanılır, kaydedilmez.</li>
@@ -437,6 +455,7 @@
         <li><strong>Apple Haritalar</strong> (MapKit) — iPhone'da harita, yer arama, yer kartı ve Keşfet. Arama metni ve yaklaşık konum Apple'a gider; işlenmesi Apple'ın gizlilik koşullarına tabidir. <a href="https://www.apple.com/legal/privacy/">apple.com/legal/privacy</a></li>
         <li><strong>Stadia Maps</strong> (ABD) — bölgeye göre rota hesaplama, navigasyonda hız sınırı ve yükseklik profili. Rota için yalnız başlangıç, varış ve ara nokta koordinatları; hız sınırı için navigasyon başlarken ve rota yeniden hesaplandığında rota çizgisi boyunca düzenli aralıklarla seçilen noktaların koordinatları; yükseklik profili için bir izden seçilen en çok 400 noktanın koordinatları gönderilir: yüksekliği olmayan bir rota dosyasını (GPX, KML, GeoJSON ya da ITN) içe aktardığınızda, yüksekliği olmayan bir parkuru açtığınızda ve bir sürüş kaydınızı açtığınızda. Koordinat dışında bir şey gönderilmez. <a href="https://stadiamaps.com/privacy/privacy-policy/">stadiamaps.com/privacy</a></li>
         <li><strong>Foursquare</strong> (ABD) — yalnız AI CoRider'ın yer aramasında, kafe ve restoran gibi yerlerin puanı için: aramanın yapıldığı noktanın koordinatları, aranan tür ya da yer adı ve uygulamanın dili sunucumuz üzerinden gönderilir; cihaz kimliğiniz ve IP adresiniz Foursquare'e gitmez. Aramalar saklanmaz; kötüye kullanımı önlemek için yalnız o günün arama sayısı tutulur (cihaz kimliği özeti ve IP'nin geri çevrilemez özetiyle) ve gün bitince silinir. <a href="https://foursquare.com/legal/privacy/">foursquare.com/legal/privacy</a></li>
+        <li><strong>Cloudflare</strong> (ABD) — çevrimdışı harita dosyalarının barındırılması: bir turun haritasını indirdiğinizde dosya telefonunuza Cloudflare'den iner; Cloudflare indirme sırasında IP adresinizi görür. <a href="https://www.cloudflare.com/privacypolicy/">cloudflare.com/privacypolicy</a></li>
         <li><strong>MET Norway (Yr.no)</strong> — hava durumu tahmini; yalnızca koordinat gönderilir. <a href="https://www.met.no/en/About-us/privacy">met.no gizlilik</a></li>
         <li><strong>NOAA</strong> (ABD Ulusal Okyanus ve Atmosfer Dairesi) ve <strong>DWD</strong> (Almanya'nın ulusal hava servisi) — yağış radarı, yalnız ABD'de ve Almanya'da: radar haritada açıkken baktığınız bölgenin koordinatları; navigasyonda radar açıkken ve AI CoRider'a yağmuru sorduğunuzda rotanızdan seçilen noktaların ya da bulunduğunuz yerin koordinatları gönderilir. Koordinat dışında bir şey gönderilmez. <a href="https://www.noaa.gov/protecting-your-privacy">noaa.gov gizlilik</a> · <a href="https://www.dwd.de/EN/service/dataprotection/dataprotection_node.html">dwd.de veri koruma</a></li>
         <li><strong>Bulut tabanlı yapay zekâ ses servisi (üçüncü taraf sağlayıcı)</strong> — AI CoRider ile sesli sohbet; yalnız siz açarsanız sesiniz ve yanıt bu servisten geçer, işlenmesi sağlayıcının kendi koşullarına tabidir. Sağlayıcının adı istek üzerine verilir.</li>
