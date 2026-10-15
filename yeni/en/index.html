@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Motoseyir — The motorcycle sat nav for people who love corners</title>
+<meta name="description" content="Motoseyir is a motorcycle navigation app that plans by distance, not minutes. Back roads, coast and enduro modes, a tour generator, 1,600+ mountain passes, group rides and CarPlay.">
+<meta name="robots" content="noindex">
+<!-- TASLAK: yeni anasayfa. Yayına alırken noindex satırını sil, canonical/hreflang ekle. -->
+<!--
+  Arka plan videosu (m/hero*.mp4, hero.webm, hero-dikey.mp4): yapay zekâ ile üretildi, gerçek çekim DEĞİL.
+  Higgsfield Wan 3.0, 14 Eki 2026, 30 sn 1080p, başlangıç karesi mağaza setinin Akdeniz panoraması
+  (kendisi de yapay zekâ görseli). Döngü için son 1 sn ilk 1 sn'ye çapraz geçişli (29 sn), sessiz.
+  Ham dosya: motoseyir-social/02-kaynak/higgsfield/wan3-hero-30sn-ham.mp4
+-->
+<link rel="canonical" href="https://motoseyir-app.com/yeni/en/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Motoseyir — The motorcycle sat nav for people who love corners">
+<meta property="og:description" content="Motoseyir is a motorcycle navigation app that plans by distance, not minutes. Back roads, coast and enduro modes, a tour generator, 1,600+ mountain passes, group rides and CarPlay.">
+<meta property="og:image" content="https://motoseyir-app.com/img/og-kapak.jpg">
+<meta name="apple-itunes-app" content="app-id=6792549131">
+<meta name="theme-color" content="#0B1315">
+<link rel="icon" href="/img/favicon.png">
+<link rel="preload" as="image" href="/yeni/m/hero-dikey-poster.jpg" media="(max-width:700px)" fetchpriority="high">
+<link rel="preload" as="image" href="/yeni/m/hero-poster.jpg" media="(min-width:701px)" fetchpriority="high">
+<link rel="preload" as="font" type="font/woff" href="/yeni/m/font/SofiaSansExtraCondensed.woff" crossorigin>
+<link rel="preload" as="font" type="font/woff" href="/yeni/m/font/Manrope.woff" crossorigin>
+<style>
+@font-face{font-family:"Sofia Sans Extra Condensed";src:url(/yeni/m/font/SofiaSansExtraCondensed.woff) format("woff");font-weight:1 1000;font-display:swap}
+@font-face{font-family:"Manrope";src:url(/yeni/m/font/Manrope.woff) format("woff");font-weight:200 800;font-display:swap}
+@font-face{font-family:"Instrument Serif";src:url(/yeni/m/font/InstrumentSerif-Italic.woff) format("woff");font-style:italic;font-weight:400;font-display:swap}
+
+:root{
+  --asfalt:#0B1315; --asfalt-2:#111C1F; --asfalt-3:#18272B;
+  --krem:#F4EFE6; --krem-2:rgba(244,239,230,.72); --krem-3:rgba(244,239,230,.46);
+  --rota:#FF7A1A; --rota-2:#FFB36B; --petrol:#2FB3B0; --petrol-koyu:#0E6E73;
+  --cizgi:rgba(244,239,230,.14);
+  --display:"Sofia Sans Extra Condensed","Arial Narrow",Impact,sans-serif;
+  --serif:"Instrument Serif",Georgia,serif;
+  --sans:"Manrope",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  --gutter:16px; --pad-sol:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--asfalt);color:var(--krem);font:400 1rem/1.62 var(--sans);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+.skip{position:absolute;left:-999px;top:8px;background:var(--rota);color:#000;padding:8px 14px;z-index:99}
+.skip:focus{left:8px}
+:focus-visible{outline:2px solid var(--rota-2);outline-offset:3px}
+
+/* ---------- Üst çubuk ---------- */
+.ust{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .3s,backdrop-filter .3s}
+.ust.dolu{background:rgba(11,19,21,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--cizgi)}
+.ust-ic{display:flex;align-items:center;gap:20px;max-width:1320px;margin:0 auto;padding:12px var(--gutter);padding-top:calc(12px + env(safe-area-inset-top))}
+.logo{font:800 1.45rem/1 var(--display);letter-spacing:.09em;text-decoration:none;text-transform:uppercase}
+.logo em{font-style:normal;color:var(--rota)}
+.menu{display:none;list-style:none;gap:26px;margin-left:auto}
+.menu a{font:600 .82rem/1 var(--sans);letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--krem-2)}
+.menu a:hover{color:var(--krem)}
+.dil{margin-left:auto;font:700 .78rem/1 var(--sans);letter-spacing:.08em;display:flex;gap:10px}
+.dil a{text-decoration:none;color:var(--krem-3)} .dil a[aria-current]{color:var(--krem)}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--rota);color:#140A02;font:800 .92rem/1 var(--sans);letter-spacing:.01em;text-decoration:none;padding:15px 22px;border-radius:999px;transition:transform .2s,background .2s}
+.btn:hover{background:var(--rota-2);transform:translateY(-1px)}
+.btn svg{width:18px;height:18px;fill:currentColor}
+.btn-kucuk{padding:10px 16px;font-size:.8rem}
+.btn-hayalet{background:transparent;color:var(--krem);box-shadow:inset 0 0 0 1.5px var(--cizgi)} .btn-hayalet:hover{background:rgba(244,239,230,.08)}
+@media(min-width:900px){.menu{display:flex}.dil{margin-left:0}.ust-ic{padding-inline:36px}}
+
+/* ---------- Kahraman ---------- */
+.kahraman{position:relative;min-height:100svh;display:flex;align-items:flex-end;isolation:isolate;overflow:hidden}
+.kahraman-arka,.kahraman-arka video,.kahraman-arka img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.kahraman-arka video{opacity:0;transition:opacity 1.2s}.kahraman-arka video.oynuyor{opacity:1}
+.kahraman::after{content:"";position:absolute;inset:0;z-index:1;background:
+  linear-gradient(180deg,rgba(11,19,21,.62) 0,rgba(11,19,21,0) 22%),
+  linear-gradient(0deg,var(--asfalt) 0,rgba(11,19,21,.82) 24%,rgba(11,19,21,0) 62%),
+  linear-gradient(90deg,rgba(11,19,21,.55) 0,rgba(11,19,21,0) 60%)}
+.kahraman-ic{position:relative;z-index:2;width:100%;max-width:1320px;margin:0 auto;padding:0 var(--gutter) 64px;padding-left:var(--pad-sol)}
+.ust-yazi{font:700 .74rem/1.4 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--rota-2);margin-bottom:18px;display:flex;align-items:center;gap:12px}
+.ust-yazi::before{content:"";width:34px;height:2px;background:var(--rota)}
+h1{font:800 clamp(3.6rem,15.5vw,10.6rem)/.84 var(--display);text-transform:uppercase;letter-spacing:-.005em;max-width:11ch}
+h1 i{font:italic 400 .86em/1 var(--serif);text-transform:none;color:var(--rota-2);letter-spacing:0;display:block;margin-top:.04em}
+.giris{max-width:36rem;margin:26px 0 30px;font-size:1.06rem;color:var(--krem-2)}
+.cta-satir{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px}
+.mikro{font-size:.84rem;color:var(--krem-3);max-width:24rem}
+.kaydir{position:absolute;right:var(--gutter);bottom:26px;z-index:2;display:none;font:700 .7rem/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--krem-3);writing-mode:vertical-rl}
+@media(min-width:900px){.kahraman-ic{padding:0 36px 72px}.kaydir{display:block;right:36px}}
+
+/* ---------- Rota çizgisi (sayfa boyunca tek iplik) ---------- */
+.ana{position:relative}
+.rota-hatti{position:absolute;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.rota-hatti svg{position:absolute;left:0;top:0;width:100%;height:100%}
+.rota-hatti path{fill:none;vector-effect:non-scaling-stroke;stroke-linecap:round}
+.rh-yol{stroke:rgba(244,239,230,.1);stroke-width:2;stroke-dasharray:2 10}
+.rh-cizgi{stroke:var(--rota);stroke-width:3.5;filter:drop-shadow(0 0 10px rgba(255,122,26,.55))}
+.bolum{position:relative;z-index:2}
+
+/* ---------- Genel bölüm ---------- */
+.kap{max-width:1320px;margin:0 auto;padding:0 var(--gutter) 0 40px}
+.bolum{padding:84px 0}
+.km{font:700 .72rem/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--rota-2);display:flex;gap:12px;align-items:center;margin-bottom:20px}
+.km b{font:800 1.5rem/1 var(--display);letter-spacing:.06em;color:var(--krem);padding:6px 10px;background:var(--rota);color:#140A02;border-radius:3px}
+h2{font:800 clamp(2.5rem,9.6vw,6rem)/.9 var(--display);text-transform:uppercase;letter-spacing:0}
+h2 i{font:italic 400 .9em/1 var(--serif);text-transform:none;color:var(--rota-2)}
+.metin{max-width:31rem;margin-top:22px;color:var(--krem-2);font-size:1.04rem}
+.etiket{display:inline-block;font:800 .66rem/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:#140A02;background:var(--petrol);padding:4px 7px;border-radius:3px;vertical-align:.18em;margin-left:6px}
+.bolum-ik{display:grid;gap:44px;align-items:center}
+@media(min-width:900px){
+  .kap{padding:0 36px 0 72px}
+  .bolum{padding:130px 0}
+  .bolum-ik{grid-template-columns:1fr 1fr;gap:80px}
+  .bolum.ters .bolum-ik>.tel-alan{order:2}.bolum.st .bolum-ik>.tel-alan{order:-1}
+}
+
+/* ---------- Telefon çerçevesi ---------- */
+.tel-alan{display:flex;justify-content:center;position:relative}
+.tel{position:relative;width:min(70vw,290px);aspect-ratio:1320/2868;border-radius:13% / 6%;background:#050808;padding:3.2%;box-shadow:0 0 0 1.5px #2a3a3d,0 40px 80px -20px rgba(0,0,0,.8),0 0 120px -30px rgba(255,122,26,.25)}
+.tel::before{content:"";position:absolute;top:2.6%;left:50%;width:27%;height:2.4%;transform:translateX(-50%);background:#000;border-radius:99px;z-index:2}
+.tel img,.tel video{width:100%;height:100%;object-fit:cover;border-radius:10.5% / 4.8%;background:#111}
+.tel.egik-1{transform:rotate(-3deg)} .tel.egik-2{transform:rotate(2.5deg)}
+.cift{display:flex;justify-content:center;align-items:flex-start;gap:0}
+.cift .tel{width:min(38vw,250px)}.cift.dikey .tel{width:min(60vw,260px)}
+.cift.dikey{flex-direction:column;align-items:center}.arac{width:min(80vw,440px);margin-top:-70px;margin-left:min(12vw,120px);padding:8px;background:#050808;border-radius:18px;box-shadow:0 0 0 1.5px #2a3a3d,0 30px 60px -20px rgba(0,0,0,.8);position:relative}.arac img{width:100%;height:auto;border-radius:11px}
+@media(min-width:900px){.tel{width:310px}.cift .tel,.cift.dikey .tel{width:270px}.arac{margin-left:150px}}
+
+/* kahraman → telefon: ilk telefon videonun üstüne biner */
+#rota{padding-top:56px}
+
+/* ---------- Şerit / sayılar ---------- */
+.serit{position:relative;z-index:2;border-block:1px solid var(--cizgi);background:rgba(11,19,21,.7);backdrop-filter:blur(6px)}
+.serit-ic{max-width:1320px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;padding-left:24px}
+.sayi{padding:22px 16px 22px 0;border-bottom:1px solid var(--cizgi)}
+.sayi:nth-child(odd){border-right:1px solid var(--cizgi);padding-right:12px}.sayi:nth-child(even){padding-left:16px}
+.sayi:nth-last-child(-n+2){border-bottom:0}
+.sayi b{display:block;font:800 clamp(2rem,9vw,3.4rem)/.95 var(--display);letter-spacing:.01em;text-transform:uppercase}
+.sayi span{display:block;margin-top:6px;font-size:.84rem;color:var(--krem-2);line-height:1.35}
+@media(min-width:900px){.serit-ic{grid-template-columns:repeat(4,1fr);padding:0 36px 0 72px}.sayi,.sayi:nth-child(odd),.sayi:nth-child(even){border:0;border-right:1px solid var(--cizgi);padding:28px 24px}.sayi:first-child{padding-left:0}.sayi:last-child{border-right:0}}
+
+/* ---------- Geçit pinleri ---------- */
+.pinler{list-style:none;margin-top:30px;display:grid;gap:0;max-width:30rem;border-top:1px solid var(--cizgi)}
+.pinler li{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:baseline;padding:13px 0;border-bottom:1px solid var(--cizgi)}
+.pinler .m{font:800 1.5rem/1 var(--display);color:var(--rota-2);letter-spacing:.02em;min-width:5.2ch}
+.pinler .ad{font-weight:600}
+.pinler .ay{font-size:.8rem;color:var(--krem-3);text-align:right}
+
+/* ---------- Madde listesi ---------- */
+.liste{list-style:none;margin-top:30px;max-width:34rem;counter-reset:m}
+.liste li{counter-increment:m;display:grid;grid-template-columns:2.6rem 1fr;gap:4px 8px;padding:16px 0;border-top:1px solid var(--cizgi)}
+.liste li::before{content:counter(m,decimal-leading-zero);font:800 1.15rem/1.3 var(--display);color:var(--rota);letter-spacing:.06em}
+.liste strong{font-weight:700;display:block}
+.liste span{grid-column:2;color:var(--krem-2);font-size:.95rem}
+
+/* ---------- Dönen motor ---------- */
+.motor{position:relative;display:grid;place-items:center;aspect-ratio:1/1;max-width:440px;margin-inline:auto;width:100%;touch-action:pan-y;cursor:ew-resize}
+.motor::before{content:"";position:absolute;inset:6%;border-radius:50%;background:radial-gradient(circle at 50% 55%,var(--petrol-koyu) 0,rgba(14,110,115,.18) 60%,transparent 72%);}
+.motor::after{content:"";position:absolute;inset:3%;border-radius:50%;border:1.5px dashed rgba(255,122,26,.5)}
+.motor img{position:relative;z-index:1;width:88%;filter:drop-shadow(0 24px 24px rgba(0,0,0,.5))}
+.motor-not{text-align:center;font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--krem-3);margin-top:10px}
+
+/* ---------- Fiyat ---------- */
+.fiyat{display:grid;gap:0;margin-top:44px;border-top:1.5px solid var(--krem)}
+.plan{padding:28px 0 34px;border-bottom:1px solid var(--cizgi)}
+.plan h3{font:800 2.5rem/1 var(--display);text-transform:uppercase;letter-spacing:.02em}
+.plan h3 i{font:italic 400 1em var(--serif);text-transform:none;color:var(--rota-2)}
+.plan p{margin-top:12px;color:var(--krem-2);max-width:30rem}
+.plan.pro{background:linear-gradient(90deg,rgba(255,122,26,.08),transparent);box-shadow:inset 3px 0 0 var(--rota);padding-left:20px}
+@media(min-width:900px){.fiyat{grid-template-columns:1fr 1fr;gap:0}.plan{padding:36px 40px 44px 0;border-bottom:0}.plan.pro{padding-left:40px;padding-right:0}}
+.fiyat-not{margin-top:22px;font-size:.84rem;color:var(--krem-3)}
+
+/* ---------- Tanıtım videosu ---------- */
+.tani-kutu{position:relative;width:min(72vw,300px);aspect-ratio:9/16;border-radius:34px;overflow:hidden;background:#000;box-shadow:0 0 0 1.5px #2a3a3d,0 40px 80px -20px rgba(0,0,0,.8)}
+.tani-kutu button{all:unset;position:absolute;inset:0;cursor:pointer;display:grid;place-items:center}
+.tani-kutu img,.tani-kutu video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.oynat{position:relative;z-index:1;width:76px;height:76px;border-radius:50%;background:var(--rota);display:grid;place-items:center;box-shadow:0 0 0 10px rgba(255,122,26,.25);transition:transform .2s}
+.tani-kutu button:hover .oynat{transform:scale(1.07)}
+.oynat::after{content:"";margin-left:5px;border-left:20px solid #140A02;border-block:12px solid transparent}
+
+/* ---------- Kapanış ---------- */
+.kapanis{position:relative;z-index:2;padding:110px 0 90px;text-align:left;border-top:1px solid var(--cizgi);background:linear-gradient(180deg,var(--asfalt),#0e1a1c)}
+.kapanis h2{font-size:clamp(3rem,13vw,9rem);max-width:12ch}
+.kapanis .cta-satir{margin-top:34px}
+footer{position:relative;z-index:2;background:#070D0E;border-top:1px solid var(--cizgi);padding:34px 0 calc(34px + env(safe-area-inset-bottom));font-size:.88rem;color:var(--krem-3)}
+.alt-ic{max-width:1320px;margin:0 auto;padding:0 var(--gutter) 0 40px;display:grid;gap:22px}
+.alt-ic ul{list-style:none;display:flex;flex-wrap:wrap;gap:10px 22px}.alt-ic a{text-decoration:none;color:var(--krem-2)}.alt-ic a:hover{color:var(--rota-2)}
+@media(min-width:900px){.alt-ic{padding:0 36px 0 72px;grid-template-columns:1fr auto;align-items:end}}
+
+/* ---------- Hareket ---------- */
+[data-r]{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+[data-r].gor{opacity:1;transform:none}
+.tel.egik-1[data-r].gor{transform:rotate(-3deg)}.tel.egik-2[data-r].gor{transform:rotate(2.5deg)}
+.tel[data-r]{transform:translateY(60px)}
+.tel.egik-1[data-r]{transform:translateY(60px) rotate(-3deg)}.tel.egik-2[data-r]{transform:translateY(60px) rotate(2.5deg)}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  [data-r]{opacity:1;transform:none;transition:none}
+  .tel.egik-1[data-r]{transform:rotate(-3deg)}.tel.egik-2[data-r]{transform:rotate(2.5deg)}
+  .kahraman-arka video{display:none}
+  .rh-cizgi{stroke-dasharray:none!important;stroke-dashoffset:0!important}
+}
+/* Sol kenar: telefonda çizgi dar şeritte kalır */
+@media(max-width:899px){.rota-hatti{width:30px;right:auto}}
+</style>
+</head>
+<body id="ust">
+<a class="skip" href="#icerik">Skip to content</a>
+
+<header class="ust" id="ustbar">
+  <div class="ust-ic">
+    <a class="logo" href="#ust" aria-label="Motoseyir">MOTO<em>SEYİR</em></a>
+    <nav aria-label="Main menu"><ul class="menu">
+      <li><a href="#rota">Route</a></li><li><a href="#gecit">Mountain passes</a></li><li><a href="#fiyat">Pricing</a></li><li><a href="/en/nasil-yapilir.html">How-to</a></li>
+    </ul></nav>
+    <div class="dil" aria-label="Language"><a href="/yeni/" hreflang="tr">TR</a><a href="/yeni/en/" aria-current="page">EN</a></div>
+    <a class="btn btn-kucuk" href="https://apps.apple.com/app/id6792549131?pt=128439797&amp;ct=site-yeni-en&amp;mt=8">Get the app</a>
+  </div>
+</header>
+
+<main id="icerik">
+<section class="kahraman" aria-label="Intro">
+  <div class="kahraman-arka">
+    <picture>
+      <source media="(max-width:700px)" srcset="/yeni/m/hero-dikey-poster.jpg">
+      <img src="/yeni/m/hero-poster.jpg" alt="A motorcyclist riding a twisty mountain road along the coast in the light of sunset" fetchpriority="high" width="1920" height="1080">
+    </picture>
+    <video id="hv" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+  </div>
+  <div class="kahraman-ic">
+    <p class="ust-yazi">Motoseyir · The rider’s sat nav</p>
+    <h1>Made for riders <i>who love corners.</i></h1>
+    <p class="giris">Motoseyir plans by distance, not by minutes. Back roads, coast or enduro: tell it a direction and ask for a tour, or pick a mountain pass and go.</p>
+    <div class="cta-satir">
+      <a class="btn" href="https://apps.apple.com/app/id6792549131?pt=128439797&amp;ct=site-yeni-en&amp;mt=8"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.6c0-2.4 2-3.5 2-3.6-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.15-2.8.85-3.5.85s-1.8-.8-3-.8c-1.5 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.700 2.400 2.900 2.300 1.200 0 1.600-.7 3-.7s1.800.7 3 .7 2-1.100 2.800-2.300c.9-1.300 1.200-2.500 1.300-2.600-.1 0-2.500-1-2.500-3.600zM14.200 5.500c.6-.8 1.100-1.800.9-2.900-.9 0-2 .6-2.700 1.400-.6.700-1.100 1.800-1 2.800 1 .1 2.100-.5 2.800-1.300z"/></svg>Download on the App Store</a>
+      <p class="mikro">Routing and navigation are free and unlimited in Türkiye, Europe and the USA; no account needed.</p>
+    </div>
+  </div>
+  <span class="kaydir" aria-hidden="true">Ride on</span>
+</section>
+
+<div class="serit" aria-label="Motoseyir in numbers"><div class="serit-ic">
+  <div class="sayi"><b>1.600+</b><span>mountain passes, with photos, altitude and closure months</span></div>
+  <div class="sayi"><b>TR · EU · US</b><span>legendary roads from Turkey, Europe and the USA, ready to ride</span></div>
+  <div class="sayi"><b>CarPlay</b><span>your route on the car display, full screen</span></div>
+  <div class="sayi"><b>Group + Intercom</b><span>same route, talking as you ride</span></div>
+</div></div>
+
+<div class="ana">
+  <div class="rota-hatti" aria-hidden="true">
+    <svg id="rh" viewBox="0 0 100 1000" preserveAspectRatio="none" focusable="false">
+      <path class="rh-yol" d="M 50 0 C 50 45.5 53 45.5 53 90.9 C 53 136.4 47 136.4 47 181.8 C 47 227.3 53 227.3 53 272.7 C 53 318.2 47 318.2 47 363.6 C 47 409.1 53 409.1 53 454.5 C 53 500.0 47 500.0 47 545.5 C 47 590.9 53 590.9 53 636.4 C 53 681.8 47 681.8 47 727.3 C 47 772.7 53 772.7 53 818.2 C 53 863.6 47 863.6 47 909.1 C 47 954.5 50 954.5 50 1000.0"/>
+      <path class="rh-cizgi" id="rhc" d="M 50 0 C 50 45.5 53 45.5 53 90.9 C 53 136.4 47 136.4 47 181.8 C 47 227.3 53 227.3 53 272.7 C 53 318.2 47 318.2 47 363.6 C 47 409.1 53 409.1 53 454.5 C 53 500.0 47 500.0 47 545.5 C 47 590.9 53 590.9 53 636.4 C 53 681.8 47 681.8 47 727.3 C 47 772.7 53 772.7 53 818.2 C 53 863.6 47 863.6 47 909.1 C 47 954.5 50 954.5 50 1000.0"/>
+    </svg>
+  </div>
+
+  <!-- KM 01 -->
+  <section class="bolum" id="rota">
+    <div class="kap"><div class="bolum-ik">
+      <div class="tel-alan"><div class="tel egik-1" data-r><img src="/yeni/m/ekran-nav-en.webp" alt="Motoseyir navigation screen: next turn, distance left and speed" width="540" height="1173" loading="lazy"></div></div>
+      <div data-r>
+        <p class="km"><b>KM 01</b>Route</p>
+        <h2>Kilometres first, <i>then the fun.</i></h2>
+        <p class="metin">Between the same two points it compares several options and suggests the shortest. On a multi-stop tour it works out the order of the stops, too. The rest is up to you:</p>
+        <ul class="liste"><li><strong>Shortest route</strong><span>The default; distance comes first.</span></li><li><strong>Back roads and Coast <span class="etiket">Pro</span></strong><span>Leave the main road for the twisty ones.</span></li><li><strong>Enduro</strong><span>Looks for gravel and dirt roads.</span></li></ul>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- KM 02 -->
+  <section class="bolum ters" id="tur">
+    <div class="kap"><div class="bolum-ik">
+      <div class="tel-alan"><div class="tel egik-2" data-r><img src="/yeni/m/ekran-tur-en.webp" alt="Tour generator screen: direction and duration dial" width="540" height="1173" loading="lazy"></div></div>
+      <div data-r>
+        <p class="km"><b>KM 02</b>Tour generator</p>
+        <h2>Pick a direction and a time, <i>get a tour.</i></h2>
+        <p class="metin">Turn the dial to the direction you want to ride and choose how many hours you have. Motoseyir builds a tour that way; see it on the map and start if you like it.</p>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- KM 03 -->
+  <section class="bolum" id="gecit">
+    <div class="kap"><div class="bolum-ik">
+      <div class="tel-alan"><div class="tel egik-1" data-r><img src="/yeni/m/ekran-gecit-en.webp" alt="Mountain passes screen: a map of Alpine passes and a list with altitudes" width="540" height="1173" loading="lazy"></div></div>
+      <div data-r>
+        <p class="km"><b>KM 03</b>Mountain passes</p>
+        <h2>1,600+ passes, <i>on one map.</i></h2>
+        <p class="metin">Every pass has a photo, its altitude and the months it is closed. Add the ones you like to your tour and go.</p>
+        <ul class="pinler" aria-label="Example passes">
+          <li><span class="m">2.764 m</span><span class="ad">Col de l’Iseran</span><span class="ay">Closed Nov–May</span></li>
+          <li><span class="m">2.758 m</span><span class="ad">Passo dello Stelvio</span><span class="ay">Closed Nov–Apr</span></li>
+          <li><span class="m">2.744 m</span><span class="ad">Col Agnel</span><span class="ay">Closed Oct–Jun</span></li>
+        </ul>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- KM 04 -->
+  <section class="bolum ters" id="corider">
+    <div class="kap"><div class="bolum-ik">
+      <div class="tel-alan"><div class="tel egik-2" data-r><img src="/yeni/m/ekran-corider-en.webp" alt="AI CoRider screen: planner and chat options" width="540" height="1173" loading="lazy"></div></div>
+      <div data-r>
+        <p class="km"><b>KM 04</b>AI CoRider</p>
+        <h2>A riding partner <i>inside your helmet.</i><span class="etiket">Pro</span></h2>
+        <p class="metin">You talk, your hands stay on the bars. No reaching for the phone to ask something on the road or plan the next stop.</p>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- KM 05 -->
+  <section class="bolum" id="birlikte">
+    <div class="kap"><div class="bolum-ik">
+      <div class="tel-alan cift dikey">
+        <div class="tel egik-1" data-r><img src="/yeni/m/ekran-grup-en.webp" alt="Group ride screen: route on the map and next turn" width="540" height="1173" loading="lazy"></div>
+        <div class="arac" data-r><img src="/yeni/m/ekran-carplay-en.webp" alt="Motoseyir navigation on a CarPlay display" width="900" height="540" loading="lazy"></div>
+      </div>
+      <div data-r>
+        <p class="km"><b>KM 05</b>Together</p>
+        <h2>Ride as a group, <i>talk as you ride.</i></h2>
+        <p class="metin">Take the same route as your friends and see everyone on the map.</p>
+        <ul class="liste"><li><strong>Group ride <span class="etiket">Pro</span></strong><span>Meeting point, live location, one route.</span></li><li><strong>Intercom <span class="etiket">Pro</span></strong><span>Talk to the group while you ride.</span></li><li><strong>CarPlay</strong><span>Your route on the car display; the phone stays in your pocket.</span></li></ul>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- KM 06 -->
+  <section class="bolum ters" id="kesfet">
+    <div class="kap"><div class="bolum-ik">
+      <div class="tel-alan"><div class="tel egik-1" data-r><img src="/yeni/m/ekran-kesfet-en.webp" alt="Discover screen: stops along the route and a list" width="540" height="1173" loading="lazy"></div></div>
+      <div data-r>
+        <p class="km"><b>KM 06</b>Discover</p>
+        <h2>Discover <i>along the way.</i><span class="etiket">Pro</span></h2>
+        <p class="metin">See the village and beach roads, campsites and places to eat along your route; add what you like.</p>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- KM 07 -->
+  <section class="bolum st" id="surus-sonrasi">
+    <div class="kap"><div class="bolum-ik">
+      <div data-r>
+        <p class="km"><b>KM 07</b>After the ride</p>
+        <h2>Keep the road <i>you rode.</i></h2>
+        <p class="metin">Record your ride, then watch it again. Turn it into a trip-map video and share it.</p>
+        <ul class="liste"><li><strong>Ride recording and 3D replay</strong><span>Watch the road you took on the map again.</span></li><li><strong>Trip-map video</strong><span>Turn your tour into a short video.</span></li><li><strong>Rain alerts</strong><span>If rain is expected at your stops, you see it on the route.</span></li><li><strong>GPX import</strong><span>Bring a route you already have into the app.</span></li></ul>
+      </div>
+      <div class="tel-alan cift">
+        <div data-r style="align-self:center">
+          <div class="motor" id="motor" role="img" aria-label="The motorcycle that represents you on the map; drag left or right to rotate it"><img id="motorimg" src="/yeni/m/bike/090.webp" alt="" width="760" height="699" loading="lazy"></div>
+          <p class="motor-not">Drag to rotate</p>
+        </div>
+        <div class="tel egik-2" data-r><video id="gv" src="" muted loop playsinline preload="none" poster="/yeni/m/gezi-en.jpg" aria-label="A trip-map video sample: an Istanbul to Athens route"></video></div>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- KM 08: efsane yollar en sonda -->
+  <section class="bolum ters" id="efsane">
+    <div class="kap"><div class="bolum-ik">
+      <div class="tel-alan"><div class="tel egik-2" data-r><img src="/yeni/m/ekran-efsane-en.webp" alt="Legendary roads screen: a list of ready-made routes and a map" width="540" height="1173" loading="lazy"></div></div>
+      <div data-r>
+        <p class="km"><b>KM 08</b>Legendary roads</p>
+        <h2>From Turkey to America, <i>legendary roads.</i></h2>
+        <p class="metin">Famous roads from Turkey, Europe and the USA come as ready-made routes: Tail of the Dragon, Beartooth Highway, Big Sur and more. Pick one and go.</p>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- Tanı -->
+  <section class="bolum" id="tani">
+    <div class="kap"><div class="bolum-ik">
+      <div data-r>
+        <p class="km"><b>KM 09</b>Get to know Motoseyir</p>
+        <h2>What’s inside <i>Motoseyir.</i></h2>
+        <p class="metin">A look at what the app can do, in two minutes.</p>
+      </div>
+      <div class="tel-alan"><div class="tani-kutu" id="tani-kutu" data-r>
+        <button type="button" id="tani-btn" aria-label="Play the intro video"><img src="/yeni/m/tani-en.jpg" alt="" loading="lazy" width="1080" height="1920"><span class="oynat"></span></button>
+      </div></div>
+    </div></div>
+  </section>
+
+  <!-- Fiyat -->
+  <section class="bolum" id="fiyat">
+    <div class="kap">
+      <div data-r>
+        <p class="km"><b>KM 10</b>Pricing</p>
+        <h2>Free to ride, <i>Pro when you want more.</i></h2>
+        <div class="fiyat">
+          <div class="plan"><h3>Free</h3><p>Unlimited routing and navigation in Türkiye, Europe and the USA, plus 1 saved tour. No account needed.</p></div>
+          <div class="plan pro"><h3>Motoseyir <i>Pro</i></h3><p>3-month and yearly plans start with a 7-day free trial outside Türkiye, for new subscribers; cancel anytime in your store account. Best order for multiple stops, unlimited tours and trails, Back roads and Coast modes, Discover, group creation, intercom and AI CoRider.</p></div>
+        </div>
+        <p class="fiyat-not">Current prices vary by region; you see yours on the subscription screen in the App Store.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<section class="kapanis">
+  <div class="kap" data-r>
+    <h2>The road <i>is ready.</i></h2>
+    <div class="cta-satir">
+      <a class="btn" href="https://apps.apple.com/app/id6792549131?pt=128439797&amp;ct=site-yeni-en&amp;mt=8">Download on the App Store</a>
+      <a class="btn btn-hayalet" href="/en/nasil-yapilir.html">How-to</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="alt-ic">
+    <div>
+      <p><a class="logo" href="#ust" style="font-size:1.1rem">MOTO<em>SEYİR</em></a></p>
+      <p style="margin-top:10px">© 2026 Motoseyir</p>
+    </div>
+    <ul>
+      <li><a href="/en/ozellikler.html">All features</a></li><li><a href="/en/nasil-yapilir.html">How-to</a></li><li><a href="/gizlilik/en/">Privacy</a></li><li><a href="https://www.instagram.com/motoseyir.app.en/">Instagram</a></li><li><a href="https://apps.apple.com/app/id6792549131?pt=128439797&amp;ct=site-yeni-en&amp;mt=8">App Store</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var kok="/yeni/", dil="en";
+  var azalt=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var ust=document.getElementById("ustbar");
+  function ustDurum(){ust.classList.toggle("dolu",scrollY>40)}
+  addEventListener("scroll",ustDurum,{passive:true});ustDurum();
+
+  /* Arka plan videosu: ekrana göre dosya seçer; hareket azaltma açıksa poster kalır */
+  var hv=document.getElementById("hv");
+  if(!azalt&&hv){
+    var dikey=matchMedia("(max-width:700px)").matches;
+    if(!dikey&&hv.canPlayType("video/webm; codecs=vp9"))hv.src=kok+"m/hero.webm";
+    else hv.src=kok+(dikey?"m/hero-dikey.mp4":"m/hero.mp4");
+    hv.addEventListener("playing",function(){hv.classList.add("oynuyor")});
+    var p=hv.play();if(p&&p.catch)p.catch(function(){});
+    /* hero görünmezken dursun */
+    new IntersectionObserver(function(e){e[0].isIntersecting?hv.play().catch(function(){}):hv.pause()}).observe(hv);
+  }
+
+  /* Beliriş */
+  var rs=document.querySelectorAll("[data-r]");
+  if("IntersectionObserver" in window&&!azalt){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("gor");io.unobserve(e.target)}})},{rootMargin:"0px 0px -8% 0px",threshold:.08});
+    rs.forEach(function(r){io.observe(r)});
+  } else rs.forEach(function(r){r.classList.add("gor")});
+
+  /* Rota çizgisi: kaydırdıkça çizilir */
+  var rc=document.getElementById("rhc"),ana=document.querySelector(".ana");
+  if(rc&&!azalt){
+    var L=rc.getTotalLength();rc.style.strokeDasharray=L;rc.style.strokeDashoffset=L;
+    var bek=false;
+    function ciz(){bek=false;var r=ana.getBoundingClientRect(),h=r.height,gor=innerHeight*.62-r.top;
+      var o=Math.max(0,Math.min(1,gor/h));rc.style.strokeDashoffset=L*(1-o)}
+    function iste(){if(!bek){bek=true;requestAnimationFrame(ciz)}}
+    addEventListener("scroll",iste,{passive:true});addEventListener("resize",iste);ciz();
+  }
+
+  /* Dönen motor: kaydırınca ve sürükleyince */
+  var m=document.getElementById("motor"),mi=document.getElementById("motorimg");
+  if(m&&mi){
+    var kare=[];for(var a=0;a<300;a+=15){kare.push(kok+"m/bike/"+("00"+a).slice(-3)+".webp")}
+    var yuk=false,cur=6;
+    function onyukle(){if(yuk)return;yuk=true;kare.forEach(function(s){var i=new Image();i.src=s})}
+    new IntersectionObserver(function(e){if(e[0].isIntersecting)onyukle()},{rootMargin:"600px"}).observe(m);
+    function goster(i){i=((i%kare.length)+kare.length)%kare.length;if(i!==cur){cur=i;mi.src=kare[i]}}
+    var surukle=false,x0=0,c0=0;
+    if(!azalt)addEventListener("scroll",function(){if(surukle)return;var r=m.getBoundingClientRect();var o=(innerHeight-r.top)/(innerHeight+r.height);if(o>0&&o<1)goster(Math.round(o*kare.length*1.5)+6)},{passive:true});
+    m.addEventListener("pointerdown",function(e){surukle=true;x0=e.clientX;c0=cur;m.setPointerCapture(e.pointerId);onyukle()});
+    m.addEventListener("pointermove",function(e){if(surukle)goster(c0+Math.round((e.clientX-x0)/14))});
+    m.addEventListener("pointerup",function(){surukle=false});m.addEventListener("pointercancel",function(){surukle=false});
+  }
+
+  /* Gezi haritası klibi: görününce yüklenir */
+  var gv=document.getElementById("gv");
+  if(gv&&!azalt){new IntersectionObserver(function(e){if(e[0].isIntersecting){if(!gv.src||gv.src===location.href)gv.src=kok+"m/gezi-"+dil+".mp4";gv.play().catch(function(){})}else gv.pause()},{threshold:.2}).observe(gv)}
+
+  /* "Motoseyir'i tanı" videosu: tıklayınca yüklenir */
+  var tb=document.getElementById("tani-btn");
+  if(tb)tb.addEventListener("click",function(){
+    var v=document.createElement("video");v.controls=true;v.autoplay=true;v.playsInline=true;v.src="https://motorota-rota.erengn.workers.dev/pro-video/motoseyir-whats-inside-"+dil+".mp4";
+    v.setAttribute("aria-label",tb.getAttribute("aria-label"));
+    document.getElementById("tani-kutu").replaceChildren(v);v.play().catch(function(){});
+  });
+})();
+</script>
+</body>
+</html>
