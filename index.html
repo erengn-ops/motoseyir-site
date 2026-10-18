@@ -39,9 +39,11 @@
 
 <!--
   Arka plan videosu (m/sahne*.mp4): yapay zekâ ile üretildi, gerçek çekim DEĞİL. Higgsfield Wan 3.0, 18 Eki 2026,
-  başlangıç karesiz tek çekimler, yalnız gerçek hızda olanlar (drone ile geçit virajları, gidondan orman yolu iki bölüm,
-  yandan kıyı yolu; ağır çekim kalan yol kenarı ve arkadan kıyı sahneleri sahibin isteğiyle çıkarıldı), 0,5 sn çapraz
-  geçişle 24 sn döngü, sessiz. Ham dosyalar: motoseyir-social/02-kaynak/higgsfield/site-sahneler/
+  başlangıç karesiz tek çekimler; cardoride.com benzeri sinema bandı için yeniden kurgulandı: üç kaynak çekimden
+  (drone ile geçit virajları, gidondan orman yolu, yandan kıyı yolu) yalnız gerçek hızda ve takılmasız aralıklar,
+  9 sert kesme (her çekim ~2,2–2,4 sn), 20,9 sn döngü, sessiz, renk işlemesiz. Ağır çekim kalan çekimler (tek çekim,
+  yol kenarı) kullanılmadı. Yatay 1920×1080 + 1280×720; dikey 608×1080 + 406×720 (sürücüyü kadrajda tutan 9:16 kırpma).
+  Ham dosyalar: motoseyir-social/02-kaynak/higgsfield/site-sahneler/
   Bu sayfa sablon/anasayfa.html + dil/anasayfa.<kod>.json'dan üretilir (python3 uret.py); stil m/a.css, hareket m/a.js.
 -->
 <script>document.documentElement.className+=" js"</script>
@@ -127,15 +129,20 @@
     <video id="hv" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
   </div>
   <div class="k-ic">
-    <p class="ust-yazi">Motoseyir · Motorcunun navigasyonu</p>
-    <h1>Virajı seven <i>motorcu için.</i></h1>
-    <p class="giris">Motoseyir rotayı süreye göre değil, mesafeye göre hesaplar. Köy yolu mu, sahil mi, enduro mu, sen seç. İstersen yönünü söyle, turunu o üretsin; istersen bir dağ geçidi seçip yola çık.</p>
-    <div class="cta-satir">
-      <a class="btn" href="https://apps.apple.com/tr/app/id6792549131?pt=128439797&amp;ct=site-tr&amp;mt=8"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.6c0-2.4 2-3.5 2-3.6-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.15-2.8.85-3.5.85s-1.8-.8-3-.8c-1.5 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.700 2.400 2.900 2.300 1.200 0 1.600-.7 3-.7s1.800.7 3 .7 2-1.100 2.800-2.300c.9-1.300 1.200-2.500 1.300-2.600-.1 0-2.500-1-2.500-3.600zM14.200 5.500c.6-.8 1.100-1.800.9-2.900-.9 0-2 .6-2.700 1.400-.6.700-1.100 1.800-1 2.800 1 .1 2.100-.5 2.800-1.300z"/></svg>App Store’da İndir</a>
-      <p class="mikro">Türkiye, Avrupa ve ABD’de rota ve navigasyon ücretsiz ve sınırsız; hesap gerekmez.</p>
+    <div class="k-metin">
+      <p class="ust-yazi">Motoseyir · Motorcunun navigasyonu</p>
+      <h1>Virajı seven <i>motorcu için.</i></h1>
+      <p class="giris">Motoseyir rotayı süreye göre değil, mesafeye göre hesaplar. Köy yolu mu, sahil mi, enduro mu, sen seç. İstersen yönünü söyle, turunu o üretsin; istersen bir dağ geçidi seçip yola çık.</p>
+      <div class="cta-satir">
+        <a class="btn" href="https://apps.apple.com/tr/app/id6792549131?pt=128439797&amp;ct=site-tr&amp;mt=8"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.6c0-2.4 2-3.5 2-3.6-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.15-2.8.85-3.5.85s-1.8-.8-3-.8c-1.5 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.700 2.400 2.900 2.300 1.200 0 1.600-.7 3-.7s1.800.7 3 .7 2-1.100 2.800-2.300c.9-1.300 1.200-2.500 1.300-2.600-.1 0-2.500-1-2.500-3.600zM14.200 5.500c.6-.8 1.100-1.800.9-2.900-.9 0-2 .6-2.700 1.400-.6.700-1.100 1.800-1 2.800 1 .1 2.100-.5 2.800-1.300z"/></svg>App Store’da İndir</a>
+        <p class="mikro">Türkiye, Avrupa ve ABD’de rota ve navigasyon ücretsiz ve sınırsız; hesap gerekmez.</p>
+      </div>
+    </div>
+    <div class="k-tel">
+      <div class="kt kt-arka"><img src="/m/ekran-tur-tr.webp" alt="" width="540" height="1174" decoding="async"></div>
+      <div class="kt kt-on"><img src="/m/ekran-nav-tr.webp" alt="Motoseyir’de navigasyon ekranı: sıradaki dönüş, kalan mesafe ve hız" width="540" height="1174" decoding="async"></div>
     </div>
   </div>
-  <span class="kaydir" aria-hidden="true">Yola çık</span>
 </section>
 
 <div class="serit" aria-label="Rakamlarla Motoseyir"><div class="serit-ic">

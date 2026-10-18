@@ -52,30 +52,49 @@ a{color:inherit}
 .dil-sec li span{color:var(--rota-2)}
 @media(min-width:900px){.dil-ad{display:inline}.dil-kod{display:none}}
 
-/* ---------- Kahraman ---------- */
-.kahraman{position:relative;min-height:100svh;display:flex;align-items:flex-end;isolation:isolate;overflow:hidden;background:var(--asfalt)}
-.k-arka{position:absolute;inset:0;transform-origin:50% 40%;will-change:transform}
+/* ---------- Kahraman: sinema bandı ----------
+   Üstte menü, altında arka planda sessiz video akan bir BANT (tam ekran değil): masaüstünde ekranın ~%85'i
+   (620–900 px), telefonda yazı önde + tek telefon göz ucuyla. Düz koyu örtü; sayfayla birlikte kayıp gider. */
+.kahraman{--band:clamp(620px,85svh,900px);--kh:clamp(430px,calc(var(--band) - 175px),640px);
+  position:relative;isolation:isolate;overflow:hidden;background:var(--asfalt);min-height:clamp(560px,72svh,720px);
+  display:flex;align-items:center;padding:calc(70px + env(safe-area-inset-top)) 0 0}
+.k-arka{position:absolute;inset:0}
 .k-arka img,.k-arka video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .k-arka video{opacity:0;transition:opacity 1.4s}
 .k-arka video.oynuyor{opacity:1}
-.kahraman::after{content:"";position:absolute;inset:0;z-index:1;background:
-  linear-gradient(180deg,rgba(11,19,21,.6) 0,rgba(11,19,21,0) 24%),
-  linear-gradient(0deg,var(--asfalt) 0,rgba(11,19,21,.8) 24%,rgba(11,19,21,0) 64%),
-  linear-gradient(90deg,rgba(11,19,21,.55) 0,rgba(11,19,21,0) 62%)}
-.k-ic{position:relative;z-index:2;width:100%;max-width:1320px;margin:0 auto;padding:0 var(--gutter) 64px;will-change:transform,opacity}
+.kahraman::after{content:"";position:absolute;inset:0;z-index:1;background:rgba(11,19,21,.6)}
+.k-ic{position:relative;z-index:2;width:100%;max-width:1320px;margin:0 auto;padding:0 var(--gutter);display:grid;gap:26px;align-items:center}
+.k-ic>*{min-width:0}
 .ust-yazi{font:700 .74rem/1.4 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--rota-2);margin-bottom:18px;display:flex;align-items:center;gap:12px}
 .ust-yazi::before{content:"";width:34px;height:2px;background:var(--rota)}
 h1{font:800 clamp(3.6rem,15.5vw,8.8rem)/.84 var(--display);text-transform:uppercase;letter-spacing:-.005em;white-space:nowrap}
+.kahraman h1{font-size:clamp(3.4rem,15vw,7.2rem)}
 /* yazı tipleri gelene kadar (en çok 0,9 sn) kahraman metni ve logo gizli: yedek yazı tipiyle çizip sonra kaydırmak yerleşim kaymasına yol açar */
 .js:not(.hazir) .k-ic>*,.js:not(.hazir) .ust-ic{visibility:hidden}
 h1 i{font:italic 400 .8em/1 var(--serif);text-transform:none;color:var(--rota-2);letter-spacing:0;display:block;margin-top:.04em}
-.giris{max-width:36rem;margin:26px 0 30px;font-size:1.06rem;color:var(--krem-2)}
+.giris{max-width:36rem;margin:20px 0 24px;font-size:1rem;color:var(--krem);opacity:.88}
 .cta-satir{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px}
-.mikro{font-size:.84rem;color:var(--krem-3);max-width:24rem}
-.kaydir{position:absolute;right:var(--gutter);bottom:26px;z-index:2;display:none;font:700 .7rem/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--krem-3);writing-mode:vertical-rl}
-.kaydir::after{content:"";display:block;width:1.5px;height:46px;margin:12px auto 0;background:linear-gradient(var(--rota),transparent);animation:kay 2.2s ease-in-out infinite}
-@keyframes kay{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
-@media(min-width:900px){.k-ic{padding:0 36px 72px}.kaydir{display:block;right:36px}}
+.mikro{font-size:.84rem;color:var(--krem-2);max-width:24rem}
+
+/* iki telefon: öndeki hafif sola yatık, arkadaki sağa; mobilde yalnız öndeki, alt kenardan göz ucuyla */
+.k-tel{position:relative;height:clamp(150px,38vw,230px);width:min(100%,380px);margin:0 auto;overflow:hidden}
+.kt{position:absolute;aspect-ratio:1320/2868;border-radius:13%/6%;background:#050808;padding:3.2%;box-shadow:0 0 0 1.5px #2a3a3d,0 40px 80px -20px rgba(0,0,0,.8)}
+.kt::before{content:"";position:absolute;top:2.6%;left:50%;width:27%;height:2.4%;transform:translateX(-50%);background:#000;border-radius:99px;z-index:2}
+.kt img{width:100%;height:100%;object-fit:cover;border-radius:10.5%/4.8%;background:#111}
+.kt-on{--r:-3deg;left:50%;top:0;width:min(62vw,250px);margin-left:calc(min(62vw,250px) / -2);transform:rotate(var(--r));transform-origin:50% 0}
+.kt-arka{display:none}
+.js .kt{opacity:0;transform:translate3d(0,46px,0) rotate(var(--r));transition:opacity .9s var(--ease),transform 1.1s var(--ease)}
+.js.hazir .kt{opacity:1;transform:rotate(var(--r))}
+.js.hazir .kt-on{transition-delay:.35s}.js.hazir .kt-arka{transition-delay:.5s}
+@media(min-width:900px){
+  .giris{font-size:1.06rem;margin:24px 0 28px}
+  .kahraman{align-items:center;padding-bottom:56px;min-height:var(--band)}
+  .k-ic{padding:0 36px;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:48px}
+  .kahraman h1{font-size:clamp(4rem,7.6vw,7.4rem)}
+  .k-tel{overflow:visible;height:var(--kh);width:calc(var(--kh)*.78);max-width:100%;margin:0 0 0 auto}
+  .kt-on{width:calc(var(--kh)*.46);left:0;margin-left:0;top:auto;bottom:0;transform-origin:50% 100%}
+  .kt-arka{display:block;--r:5deg;width:calc(var(--kh)*.41);right:0;top:0;transform-origin:50% 0}
+}
 
 /* kelime kelime beliriş (JS bölümü .k>.w sarar; JS yoksa metin olduğu gibi) */
 .k{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;margin-bottom:-.08em}
@@ -246,8 +265,8 @@ footer{position:relative;z-index:2;background:#070D0E;border-top:1px solid var(-
 @media(prefers-reduced-motion:reduce){
   .js [data-r],.js .kahraman [data-i],.k .w{opacity:1!important;transform:none!important;transition:none!important}
   .js .tel,.js .arac{opacity:1}
+  .js .kt{opacity:1!important;transform:rotate(var(--r))!important;transition:none!important}
   .k-arka video{display:none}
-  .kaydir::after{animation:none}
   .km b.var{animation:none}
   .pinler .cubuk i{transform:scaleX(var(--o));transition:none}
   .pilot{display:none}

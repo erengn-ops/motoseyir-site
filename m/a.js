@@ -47,7 +47,7 @@
 
   /* ---------- kahraman videosu: yükleme bittikten sonra, ağ elverirse ---------- */
   function idle(f) { if (W.requestIdleCallback) W.requestIdleCallback(f, { timeout: 400 }); else setTimeout(f, 200); }
-  var hv = $("#hv"), kahraman = $(".kahraman");
+  var hv = $("#hv"), kahraman = $(".kahraman");  /* bant normal kayar: eğik/yakınlaştırma yok */
   function videoBaslat() {
     if (azalt || !hv) return;
     var c = navigator.connection || {};
@@ -188,13 +188,6 @@
     ust.classList.toggle("dolu", y > 40);
     if (azalt) { if (motorKap) aci(90 + ofset); return; }
 
-    /* kahraman: video yavaşça iner ve büyür, yazı yukarı çıkıp solar */
-    if (y < vh * 1.2) {
-      var p = sinir(y / vh);
-      $(".k-arka").style.transform = "translate3d(0," + (p * vh * .16).toFixed(1) + "px,0) scale(" + (1 + p * .07).toFixed(4) + ")";
-      var ki = $(".k-ic"); ki.style.transform = "translate3d(0," + (-p * 70).toFixed(1) + "px,0)"; ki.style.opacity = (1 - p * 1.35 < 0 ? 0 : 1 - p * 1.35).toFixed(3);
-    }
-
     /* rota çizgisi: ucu görünüm penceresinin %64'ünde */
     if (yol) {
       var hedef = y + vh * .64 - anaTop, uc = hedef < 0 ? 0 : hedef > H ? H : hedef;
@@ -237,7 +230,7 @@
   function olc() { vh = W.innerHeight; vw = W.innerWidth; kur(); iste(); }
   var tz; W.addEventListener("resize", function () { clearTimeout(tz); tz = setTimeout(olc, 150); });
   W.addEventListener("load", function () { setTimeout(olc, 50); });
-  if (W.ResizeObserver && ana) { var son = 0; new ResizeObserver(function () { var h = ana.getBoundingClientRect().height; if (Math.abs(h - son) > 4) { son = h; clearTimeout(tz); tz = setTimeout(olc, 120); } }).observe(ana); }
+  if (W.ResizeObserver && ana) { var son = 0; var ro = new ResizeObserver(function () { var r = ana.getBoundingClientRect(), h = r.height + r.top + W.pageYOffset; if (Math.abs(h - son) > 4) { son = h; clearTimeout(tz); tz = setTimeout(olc, 120); } }); ro.observe(ana); if (kahraman) ro.observe(kahraman); }
   if (azalt) { teller.forEach(function (o) { o.t.classList.add("ok"); o.t.style.transform = o.egik ? "rotate(" + o.egik + "deg)" : ""; }); }
   kur();
   if (azalt && yol) { klip.style.transform = "none"; ic.style.transform = "none"; dugumler.forEach(function (d) { d.dolgu.style.opacity = 1; }); }
