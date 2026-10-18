@@ -57,7 +57,7 @@
       /* HD (18 Eki): kaynağın kendi çözünürlüğü, 1664×936 / dikey 700×1244. Geniş ve keskin ekranda HD; 3g'de hafif sürüm. */
       var yavas = /3g$/.test(c.effectiveType || "");
       var genis = (screen.width || 0) * (W.devicePixelRatio || 1) >= 1700;
-      hv.src = dikey ? (yavas ? "/m/hero-dikey.mp4" : "/m/hero-dikey-hd.mp4") : (genis && !yavas ? "/m/hero-hd.mp4" : "/m/hero.mp4");
+      hv.src = dikey ? (yavas ? "/m/sahne-dikey.mp4" : "/m/sahne-dikey-hd.mp4") : (genis && !yavas ? "/m/sahne-hd.mp4" : "/m/sahne.mp4");
       hv.addEventListener("playing", function () { hv.classList.add("oynuyor"); }, { once: true });
       var p = hv.play(); if (p && p.catch) p.catch(function () {});
       new IntersectionObserver(function (e) { if (e[0].isIntersecting) { hv.play().catch(function () {}); } else hv.pause(); }).observe(hv);

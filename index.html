@@ -38,15 +38,15 @@
 <link rel="icon" href="/img/favicon.png">
 
 <!--
-  Arka plan videosu (m/hero.mp4, m/hero-dikey.mp4): yapay zekâ ile üretildi, gerçek çekim DEĞİL.
-  Higgsfield Wan 3.0, 14 Eki 2026, 30 sn 1080p; başlangıç karesi mağaza setinin Akdeniz panoraması
-  (o da yapay zekâ görseli). Döngü için son 1 sn ilk 1 sn'ye çapraz geçişli (29 sn), sessiz.
-  Ham dosya: motoseyir-social/02-kaynak/higgsfield/wan3-hero-30sn-ham.mp4
+  Arka plan videosu (m/sahne*.mp4): yapay zekâ ile üretildi, gerçek çekim DEĞİL. Higgsfield Wan 3.0, 18 Eki 2026,
+  başlangıç karesiz beş ayrı tek çekim (drone ile geçit virajları, gidondan orman yolu, yandan kıyı yolu, yol kenarından
+  geçiş, arkadan kıyı yolu), her birinden 5–7 sn, 0,5 sn çapraz geçişle 27 sn döngü, sessiz.
+  Ham dosyalar: motoseyir-social/02-kaynak/higgsfield/site-sahneler/
   Bu sayfa sablon/anasayfa.html + dil/anasayfa.<kod>.json'dan üretilir (python3 uret.py); stil m/a.css, hareket m/a.js.
 -->
 <script>document.documentElement.className+=" js"</script>
-<link rel="preload" as="image" type="image/webp" href="/m/hero-dikey-poster.webp" media="(max-width:700px)" fetchpriority="high">
-<link rel="preload" as="image" type="image/webp" href="/m/hero-poster.webp" media="(min-width:701px)" fetchpriority="high">
+<link rel="preload" as="image" type="image/webp" href="/m/sahne-dikey-poster.webp" media="(max-width:700px)" fetchpriority="high">
+<link rel="preload" as="image" type="image/webp" href="/m/sahne-poster.webp" media="(min-width:701px)" fetchpriority="high">
 <link rel="preload" as="font" type="font/woff" href="/m/font/SofiaSansExtraCondensed.woff" crossorigin>
 <link rel="preload" as="font" type="font/woff" href="/m/font/Manrope.woff" crossorigin>
 <link rel="preload" as="font" type="font/woff" href="/m/font/InstrumentSerif-Italic.woff" crossorigin>
@@ -121,8 +121,8 @@
 <section class="kahraman" aria-label="Giriş">
   <div class="k-arka">
     <picture>
-      <source media="(max-width:700px)" srcset="/m/hero-dikey-poster.webp" type="image/webp">
-      <img src="/m/hero-poster.webp" alt="Kıyı boyunca uzanan virajlı bir dağ yolunda, gün batımı ışığında ilerleyen bir motosikletli" fetchpriority="high" width="1600" height="900">
+      <source media="(max-width:700px)" srcset="/m/sahne-dikey-poster.webp" type="image/webp">
+      <img src="/m/sahne-poster.webp" alt="Kıyı boyunca uzanan virajlı bir dağ yolunda, gün batımı ışığında ilerleyen bir motosikletli" fetchpriority="high" width="1600" height="900">
     </picture>
     <video id="hv" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
   </div>
