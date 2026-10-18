@@ -146,6 +146,23 @@ h2{font:800 clamp(1.9rem,5.6vw,3rem)/1.1 var(--sans);letter-spacing:-.025em;text
 .pinler .ay{grid-column:2;font-size:.86rem;color:var(--yazi-3)}
 
 /* ---------- Madde listesi ---------- */
+/* Geçit verisi (18 Eki 2026): sayılar uygulamadaki data/gecitler'den sayıldı */
+.veri{margin-top:72px;padding-top:48px;border-top:1px solid var(--cizgi)}
+.veri-say{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 24px;margin:0 0 56px}
+.veri-say dt{font:800 clamp(2rem,6vw,2.75rem)/1 var(--sans);letter-spacing:-.02em;font-variant-numeric:tabular-nums;color:var(--vurgu)}
+.veri-say dd{margin:8px 0 0;color:var(--yazi-2);font-size:.95rem;line-height:1.45}
+.veri-ik{display:grid;gap:48px}
+.veri h3{font:800 1.05rem/1.3 var(--sans);margin:0 0 14px}
+.veri .pinler{margin-top:0}
+.veri .pinler+h3{margin-top:44px}
+.veri .liste{margin-top:0}
+.bolgeler{list-style:none;border-top:1px solid var(--cizgi)}
+.bolgeler li{display:grid;grid-template-columns:1fr auto;gap:8px 12px;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--cizgi)}
+.bolgeler li::after{content:"";grid-column:1/-1;height:6px;border-radius:3px;background:linear-gradient(var(--vurgu),var(--vurgu)) 0 0/max(var(--o),6px) 100% no-repeat,var(--vurgu-acik)}
+.bolgeler .ad{font-weight:600}
+.bolgeler .n{font-weight:800;font-variant-numeric:tabular-nums}
+.veri-atif{margin-top:40px;font-size:.82rem;line-height:1.5;color:var(--yazi-3)}
+@media(min-width:900px){.veri-say{grid-template-columns:repeat(4,minmax(0,1fr))}.veri-ik{grid-template-columns:1fr 1fr;gap:96px}}
 .liste{list-style:none;margin-top:28px;max-width:34rem}
 .liste li{padding:15px 0;border-top:1px solid var(--cizgi)}
 .liste li:last-child{border-bottom:1px solid var(--cizgi)}
