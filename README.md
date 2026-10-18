@@ -29,7 +29,7 @@ eski `sablon/index.html` ile üretilmeye devam eder (`uret.py` içindeki
 | --- | --- |
 | `sablon/anasayfa.html` | yeni anasayfa şablonu |
 | `dil/anasayfa.tr.json`, `dil/anasayfa.en.json` | yeni anasayfanın metinleri (ortak anahtarlar `dil/<kod>.json`'dan gelir) |
-| `m/a.css`, `m/a.js` | paylaşılan stil ve hareket (bağımlılık yok, tek scroll dinleyicisi) |
+| `m/a.css`, `m/a.js` | paylaşılan stil ve hareket (bağımlılık yok; renkler uygulamanın kendi paleti, tek yazı ailesi Manrope) |
 | `m/` | video, poster, ekran görüntüleri, motosiklet kareleri, yazı tipleri (OFL metinleriyle) |
 
 Arka plan videosu yapay zekâ ile üretildi (Higgsfield Wan 3.0); gerçek çekim değildir.

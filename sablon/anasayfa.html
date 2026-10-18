@@ -20,7 +20,7 @@
 
 <!-- Apple akıllı afiş: iOS Safari'de sayfanın üstünde "App Store'da aç" şeridi. -->
 <meta name="apple-itunes-app" content="app-id={{uygulama_id}}">
-<meta name="theme-color" content="#0B1315">
+<meta name="theme-color" content="#101414">
 <link rel="icon" href="/img/favicon.png">
 
 <!--
@@ -35,9 +35,7 @@
 <script>document.documentElement.className+=" js"</script>
 <link rel="preload" as="image" type="image/webp" href="/m/sahne-dikey-poster.webp" media="(max-width:700px)" fetchpriority="high">
 <link rel="preload" as="image" type="image/webp" href="/m/sahne-poster.webp" media="(min-width:701px)" fetchpriority="high">
-<link rel="preload" as="font" type="font/woff" href="/m/font/SofiaSansExtraCondensed.woff" crossorigin>
 <link rel="preload" as="font" type="font/woff" href="/m/font/Manrope.woff" crossorigin>
-<link rel="preload" as="font" type="font/woff" href="/m/font/InstrumentSerif-Italic.woff" crossorigin>
 <link rel="stylesheet" href="/m/a.css">
 <script defer src="/m/a.js"></script>
 
@@ -76,7 +74,7 @@
 
 <header class="ust" id="ustbar">
   <div class="ust-ic">
-    <a class="logo" href="#top" aria-label="Motoseyir">MOTO<em>SEYİR</em></a>
+    <a class="logo" href="#top" aria-label="Motoseyir"><img src="/img/favicon.png" alt="" width="28" height="28">MOTO<em>SEYİR</em></a>
     <nav aria-label="{{nav_etiket}}"><ul class="menu">
       <li><a href="#rota">{{m_rota}}</a></li><li><a href="#gecit">{{m_gecit}}</a></li><li><a href="#fiyat">{{m_fiyat}}</a></li><li><a href="{{nasil_url}}">{{nav_nasil}}</a></li>
     </ul></nav>
@@ -114,26 +112,19 @@
 </section>
 
 <div class="serit" aria-label="{{serit_etiket}}"><div class="serit-ic">
-  <div class="sayi"><b><span data-n="1600" data-ek="+">{{s1_b}}</span></b><span>{{s1_t}}</span></div>
+  <div class="sayi"><b>{{s1_b}}</b><span>{{s1_t}}</span></div>
   <div class="sayi"><b>TR · EU · US</b><span>{{s2_t}}</span></div>
   <div class="sayi"><b>CarPlay</b><span>{{s3_t}}</span></div>
   <div class="sayi"><b>{{s4_b}}</b><span>{{s4_t}}</span></div>
 </div></div>
 
 <div class="ana" id="ozellikler">
-  <div class="rh" aria-hidden="true">
-    <div class="rh-yol"><svg focusable="false"></svg></div>
-    <div class="rh-klip"><svg focusable="false"></svg></div>
-    <div class="pilot"><i></i></div>
-  </div>
-
-  <!-- KM 01 -->
-  <section class="bolum" id="rota" data-km>
+  <section class="bolum" id="rota">
     <div class="kap"><div class="bolum-ik">
-      <div class="tel-alan"><div class="tel" data-egik="-3" data-yon="-1"><img src="/m/ekran-nav-{{dil_kodu}}.webp" alt="{{k1_alt}}" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r class="tel-alan"><div class="tel"><img src="/m/ekran-nav-{{dil_kodu}}.webp" alt="{{k1_alt}}" width="540" height="1174" loading="lazy"></div></div>
       <div data-r>
-        <p class="km"><b>KM 01</b>{{k1_ad}}</p>
-        <h2 data-bol>{{k1_h2}}</h2>
+        <p class="km">{{k1_ad}}</p>
+        <h2>{{k1_h2}}</h2>
         <p class="metin">{{k1_p}}</p>
         <ul class="liste">
           <li><strong>{{k1_a_t}}</strong><span class="a">{{k1_a_d}}</span></li>
@@ -144,57 +135,53 @@
     </div></div>
   </section>
 
-  <!-- KM 02 -->
-  <section class="bolum ters" id="tur" data-km>
+  <section class="bolum ters" id="tur">
     <div class="kap"><div class="bolum-ik">
-      <div class="tel-alan"><div class="tel" data-egik="2.5" data-yon="1"><img src="/m/ekran-tur-{{dil_kodu}}.webp" alt="{{k2_alt}}" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r class="tel-alan"><div class="tel"><img src="/m/ekran-tur-{{dil_kodu}}.webp" alt="{{k2_alt}}" width="540" height="1174" loading="lazy"></div></div>
       <div data-r>
-        <p class="km"><b>KM 02</b>{{k2_ad}}</p>
-        <h2 data-bol>{{k2_h2}} <span class="etiket">Pro</span></h2>
+        <p class="km">{{k2_ad}}</p>
+        <h2>{{k2_h2}} <span class="etiket">Pro</span></h2>
         <p class="metin">{{k2_p}}</p>
       </div>
     </div></div>
   </section>
 
-  <!-- KM 03 -->
-  <section class="bolum" id="gecit" data-km>
+  <section class="bolum" id="gecit">
     <div class="kap"><div class="bolum-ik">
-      <div class="tel-alan"><div class="tel" data-egik="-3" data-yon="-1"><img src="/m/ekran-gecit-{{dil_kodu}}.webp" alt="{{k3_alt}}" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r class="tel-alan"><div class="tel"><img src="/m/ekran-gecit-{{dil_kodu}}.webp" alt="{{k3_alt}}" width="540" height="1174" loading="lazy"></div></div>
       <div data-r>
-        <p class="km"><b>KM 03</b>{{k3_ad}}</p>
-        <h2 data-bol>{{k3_h2}}</h2>
+        <p class="km">{{k3_ad}}</p>
+        <h2>{{k3_h2}}</h2>
         <p class="metin">{{k3_p}}</p>
         <ul class="pinler" aria-label="{{k3_etiket}}">
-          <li style="--o:.92"><span class="m"><span data-n="2764">{{k3_m1}}</span> m</span><span class="ad">Col de l’Iseran</span><span class="ay">{{k3_ay1}}</span><span class="cubuk"><i></i></span></li>
-          <li style="--o:.919"><span class="m"><span data-n="2758">{{k3_m2}}</span> m</span><span class="ad">Passo dello Stelvio</span><span class="ay">{{k3_ay2}}</span><span class="cubuk"><i></i></span></li>
-          <li style="--o:.915"><span class="m"><span data-n="2744">{{k3_m3}}</span> m</span><span class="ad">Col Agnel</span><span class="ay">{{k3_ay3}}</span><span class="cubuk"><i></i></span></li>
+          <li><span class="m">{{k3_m1}} m</span><span class="ad">Col de l’Iseran</span><span class="ay">{{k3_ay1}}</span></li>
+          <li><span class="m">{{k3_m2}} m</span><span class="ad">Passo dello Stelvio</span><span class="ay">{{k3_ay2}}</span></li>
+          <li><span class="m">{{k3_m3}} m</span><span class="ad">Col Agnel</span><span class="ay">{{k3_ay3}}</span></li>
         </ul>
       </div>
     </div></div>
   </section>
 
-  <!-- KM 04 -->
-  <section class="bolum ters" id="corider" data-km>
+  <section class="bolum ters" id="corider">
     <div class="kap"><div class="bolum-ik">
-      <div class="tel-alan"><div class="tel" data-egik="2.5" data-yon="1"><img src="/m/ekran-corider-{{dil_kodu}}.webp" alt="{{k4_alt}}" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r class="tel-alan"><div class="tel"><img src="/m/ekran-corider-{{dil_kodu}}.webp" alt="{{k4_alt}}" width="540" height="1174" loading="lazy"></div></div>
       <div data-r>
-        <p class="km"><b>KM 04</b>AI CoRider</p>
-        <h2 data-bol>{{k4_h2}} <span class="etiket">Pro</span></h2>
+        <p class="km">AI CoRider</p>
+        <h2>{{k4_h2}} <span class="etiket">Pro</span></h2>
         <p class="metin">{{k4_p}}</p>
       </div>
     </div></div>
   </section>
 
-  <!-- KM 05 -->
-  <section class="bolum" id="birlikte" data-km>
+  <section class="bolum" id="birlikte">
     <div class="kap"><div class="bolum-ik">
-      <div class="tel-alan cift dikey">
-        <div class="tel" data-egik="-3" data-yon="-1"><img src="/m/ekran-grup-{{dil_kodu}}.webp" alt="{{k5_alt1}}" width="540" height="1174" loading="lazy"></div>
-        <div class="arac" data-egik="0" data-yon="1"><img src="/m/ekran-carplay-{{dil_kodu}}.webp" alt="{{k5_alt2}}" width="900" height="540" loading="lazy"></div>
+      <div data-r class="tel-alan cift dikey">
+        <div class="tel"><img src="/m/ekran-grup-{{dil_kodu}}.webp" alt="{{k5_alt1}}" width="540" height="1174" loading="lazy"></div>
+        <div class="arac"><img src="/m/ekran-carplay-{{dil_kodu}}.webp" alt="{{k5_alt2}}" width="900" height="540" loading="lazy"></div>
       </div>
       <div data-r>
-        <p class="km"><b>KM 05</b>{{k5_ad}}</p>
-        <h2 data-bol>{{k5_h2}}</h2>
+        <p class="km">{{k5_ad}}</p>
+        <h2>{{k5_h2}}</h2>
         <p class="metin">{{k5_p}}</p>
         <ul class="liste">
           <li><strong>{{k5_a_t}} <span class="etiket">Pro</span></strong><span class="a">{{k5_a_d}}</span></li>
@@ -205,24 +192,22 @@
     </div></div>
   </section>
 
-  <!-- KM 06 -->
-  <section class="bolum ters" id="kesfet" data-km>
+  <section class="bolum ters" id="kesfet">
     <div class="kap"><div class="bolum-ik">
-      <div class="tel-alan"><div class="tel" data-egik="2.5" data-yon="1"><img src="/m/ekran-kesfet-{{dil_kodu}}.webp" alt="{{k6_alt}}" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r class="tel-alan"><div class="tel"><img src="/m/ekran-kesfet-{{dil_kodu}}.webp" alt="{{k6_alt}}" width="540" height="1174" loading="lazy"></div></div>
       <div data-r>
-        <p class="km"><b>KM 06</b>{{k6_ad}}</p>
-        <h2 data-bol>{{k6_h2}} <span class="etiket">Pro</span></h2>
+        <p class="km">{{k6_ad}}</p>
+        <h2>{{k6_h2}} <span class="etiket">Pro</span></h2>
         <p class="metin">{{k6_p}}</p>
       </div>
     </div></div>
   </section>
 
-  <!-- KM 07 -->
-  <section class="bolum st" id="surus-sonrasi" data-km>
+  <section class="bolum st" id="surus-sonrasi">
     <div class="kap"><div class="bolum-ik">
       <div data-r>
-        <p class="km"><b>KM 07</b>{{k7_ad}}</p>
-        <h2 data-bol>{{k7_h2}}</h2>
+        <p class="km">{{k7_ad}}</p>
+        <h2>{{k7_h2}}</h2>
         <p class="metin">{{k7_p}}</p>
         <ul class="liste">
           <li><strong>{{k7_a_t}}</strong><span class="a">{{k7_a_d}}</span></li>
@@ -231,58 +216,54 @@
           <li><strong>{{k7_d_t}}</strong><span class="a">{{k7_d_d}}</span></li>
         </ul>
       </div>
-      <div class="tel-alan"><div class="tel" data-egik="-2.5" data-yon="-1"><video data-src="/m/gezi-{{dil_kodu}}.mp4" muted loop playsinline preload="none" data-poster="/m/gezi-{{dil_kodu}}.jpg" aria-label="{{k7_alt}}"></video></div></div>
+      <div data-r class="tel-alan"><div class="tel"><video data-src="/m/gezi-{{dil_kodu}}.mp4" muted loop playsinline preload="none" data-poster="/m/gezi-{{dil_kodu}}.jpg" aria-label="{{k7_alt}}"></video></div></div>
     </div></div>
   </section>
 
-<!-- Haritada sen: kaydırdıkça dönen motosiklet -->
-<section class="sahne" id="sahne" data-km aria-label="{{k8_ad}}">
-  <div class="sahne-ic">
-    <div class="kap"><div class="motor-kap">
+<!-- Haritada sen: sürükleyerek dönen motosiklet -->
+<section class="bolum" id="sahne" aria-label="{{k8_ad}}">
+    <div class="kap"><div class="bolum-ik">
       <div data-r>
-        <p class="km"><b>KM 08</b>{{k8_ad}}</p>
-        <h2 data-bol>{{k8_h2}}</h2>
+        <p class="km">{{k8_ad}}</p>
+        <h2>{{k8_h2}}</h2>
         <p class="metin">{{k8_p}}</p>
       </div>
-      <div>
-        <div class="motor" id="motor" role="img" aria-label="{{k8_alt}}"><span class="halka"></span><img id="motorimg" src="/m/bike/090.webp" alt="" width="760" height="699" loading="lazy" decoding="async"></div>
+      <div data-r>
+        <div class="motor" id="motor" role="img" aria-label="{{k8_alt}}"><img id="motorimg" src="/m/bike/090.webp" alt="" width="760" height="699" loading="lazy" decoding="async"></div>
         <p class="motor-not">{{k8_not}}</p>
       </div>
     </div></div>
-  </div>
-</section>
+  </section>
 
-  <!-- KM 09: efsane yollar her listede en sonda -->
-  <section class="bolum ters" id="efsane" data-km>
+  <section class="bolum ters" id="efsane">
     <div class="kap"><div class="bolum-ik">
-      <div class="tel-alan"><div class="tel" data-egik="2.5" data-yon="1"><img src="/m/ekran-efsane-{{dil_kodu}}.webp" alt="{{k9_alt}}" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r class="tel-alan"><div class="tel"><img src="/m/ekran-efsane-{{dil_kodu}}.webp" alt="{{k9_alt}}" width="540" height="1174" loading="lazy"></div></div>
       <div data-r>
-        <p class="km"><b>KM 09</b>{{k9_ad}}</p>
-        <h2 data-bol>{{k9_h2}}</h2>
+        <p class="km">{{k9_ad}}</p>
+        <h2>{{k9_h2}}</h2>
         <p class="metin">{{k9_p}}</p>
       </div>
     </div></div>
   </section>
 
-  <!-- KM 10 -->
-  <section class="bolum" id="tani" data-km>
+  <section class="bolum" id="tani">
     <div class="kap"><div class="bolum-ik">
       <div data-r>
-        <p class="km"><b>KM 10</b>{{k10_ad}}</p>
-        <h2 data-bol>{{k10_h2}}</h2>
+        <p class="km">{{k10_ad}}</p>
+        <h2>{{k10_h2}}</h2>
         <p class="metin">{{k10_p}}</p>
       </div>
-      <div class="tel-alan"><div class="tani-kutu" id="tani-kutu" data-r>
+      <div data-r class="tel-alan"><div class="tani-kutu" id="tani-kutu">
         <button type="button" id="tani-btn" aria-label="{{k10_btn}}"><img src="/m/tani-{{dil_kodu}}.jpg" alt="" loading="lazy" width="1080" height="1920"><span class="oynat"></span></button>
       </div></div>
     </div></div>
   </section>
 
   <!-- Fiyat -->
-  <section class="bolum" id="fiyat" data-km>
+  <section class="bolum" id="fiyat">
     <div class="kap" data-r>
-      <p class="km"><b>KM 11</b>{{fiyat_ad}}</p>
-      <h2 data-bol>{{fiyat_h2}}</h2>
+      <p class="km">{{fiyat_ad}}</p>
+      <h2>{{fiyat_h2}}</h2>
       <div class="fiyat">
         <div class="plan"><h3>{{plan_ucretsiz_ad}}</h3><p>{{plan_u_p}}</p></div>
         <div class="plan pro"><h3>Motoseyir <i>Pro</i></h3><p>{{plan_p_p}}</p>
@@ -296,7 +277,7 @@
 
 <section class="varis">
   <div class="kap" data-r>
-    <h2 data-bol>{{varis_h2}}</h2>
+    <h2>{{varis_h2}}</h2>
     <div class="cta-satir">
       <a class="btn" href="{{store}}">{{btn_store}}</a>
       <a class="btn btn-hayalet" href="{{nasil_url}}">{{varis_nasil}}</a>
@@ -339,7 +320,7 @@
 <footer>
   <div class="alt-ic">
     <div>
-      <p><a class="logo" href="#top" style="font-size:1.1rem">MOTO<em>SEYİR</em></a></p>
+      <p><a class="logo" href="#top" aria-label="Motoseyir"><img src="/img/favicon.png" alt="" width="28" height="28">MOTO<em>SEYİR</em></a></p>
       <p style="margin-top:10px">© {{yil}} Motoseyir. {{footer_haklar}}</p>
     </div>
     <ul>

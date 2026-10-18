@@ -34,7 +34,7 @@
 
 <!-- Apple akıllı afiş: iOS Safari'de sayfanın üstünde "App Store'da aç" şeridi. -->
 <meta name="apple-itunes-app" content="app-id=6792549131">
-<meta name="theme-color" content="#0B1315">
+<meta name="theme-color" content="#101414">
 <link rel="icon" href="/img/favicon.png">
 
 <!--
@@ -49,9 +49,7 @@
 <script>document.documentElement.className+=" js"</script>
 <link rel="preload" as="image" type="image/webp" href="/m/sahne-dikey-poster.webp" media="(max-width:700px)" fetchpriority="high">
 <link rel="preload" as="image" type="image/webp" href="/m/sahne-poster.webp" media="(min-width:701px)" fetchpriority="high">
-<link rel="preload" as="font" type="font/woff" href="/m/font/SofiaSansExtraCondensed.woff" crossorigin>
 <link rel="preload" as="font" type="font/woff" href="/m/font/Manrope.woff" crossorigin>
-<link rel="preload" as="font" type="font/woff" href="/m/font/InstrumentSerif-Italic.woff" crossorigin>
 <link rel="stylesheet" href="/m/a.css">
 <script defer src="/m/a.js"></script>
 
@@ -90,7 +88,7 @@
 
 <header class="ust" id="ustbar">
   <div class="ust-ic">
-    <a class="logo" href="#top" aria-label="Motoseyir">MOTO<em>SEYİR</em></a>
+    <a class="logo" href="#top" aria-label="Motoseyir"><img src="/img/favicon.png" alt="" width="28" height="28">MOTO<em>SEYİR</em></a>
     <nav aria-label="Main navigation"><ul class="menu">
       <li><a href="#rota">Routing</a></li><li><a href="#gecit">Mountain passes</a></li><li><a href="#fiyat">Pricing</a></li><li><a href="/en/nasil-yapilir.html">How it works</a></li>
     </ul></nav>
@@ -146,26 +144,19 @@
 </section>
 
 <div class="serit" aria-label="Motoseyir in numbers"><div class="serit-ic">
-  <div class="sayi"><b><span data-n="1600" data-ek="+">1,600+</span></b><span>mountain passes, with photos, altitudes and closed months</span></div>
+  <div class="sayi"><b>1,600+</b><span>mountain passes, with photos, altitudes and closed months</span></div>
   <div class="sayi"><b>TR · EU · US</b><span>legendary roads of Türkiye, Europe and the USA, ready as routes</span></div>
   <div class="sayi"><b>CarPlay</b><span>your route on the car screen, full screen</span></div>
   <div class="sayi"><b>Group + Intercom</b><span>same route, talking as you ride</span></div>
 </div></div>
 
 <div class="ana" id="ozellikler">
-  <div class="rh" aria-hidden="true">
-    <div class="rh-yol"><svg focusable="false"></svg></div>
-    <div class="rh-klip"><svg focusable="false"></svg></div>
-    <div class="pilot"><i></i></div>
-  </div>
-
-  <!-- KM 01 -->
-  <section class="bolum" id="rota" data-km>
+  <section class="bolum" id="rota">
     <div class="kap"><div class="bolum-ik">
-      <div class="tel-alan"><div class="tel" data-egik="-3" data-yon="-1"><img src="/m/ekran-nav-en.webp" alt="Navigation screen in Motoseyir: next turn, distance left and speed" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r class="tel-alan"><div class="tel"><img src="/m/ekran-nav-en.webp" alt="Navigation screen in Motoseyir: next turn, distance left and speed" width="540" height="1174" loading="lazy"></div></div>
       <div data-r>
-        <p class="km"><b>KM 01</b>Routing</p>
-        <h2 data-bol>Kilometres first, <i>fun second.</i></h2>
+        <p class="km">Routing</p>
+        <h2>Kilometres first, <i>fun second.</i></h2>
         <p class="metin">It compares the alternatives between the same two points and suggests the shortest. On a multi-stop tour it works out the order of the stops, too. The rest is up to you.</p>
         <ul class="liste">
           <li><strong>Shortest route</strong><span class="a">The default; it goes by kilometres.</span></li>
@@ -176,57 +167,53 @@
     </div></div>
   </section>
 
-  <!-- KM 02 -->
-  <section class="bolum ters" id="tur" data-km>
+  <section class="bolum ters" id="tur">
     <div class="kap"><div class="bolum-ik">
-      <div class="tel-alan"><div class="tel" data-egik="2.5" data-yon="1"><img src="/m/ekran-tur-en.webp" alt="Tour generator screen: direction and duration dial" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r class="tel-alan"><div class="tel"><img src="/m/ekran-tur-en.webp" alt="Tour generator screen: direction and duration dial" width="540" height="1174" loading="lazy"></div></div>
       <div data-r>
-        <p class="km"><b>KM 02</b>Tour generator</p>
-        <h2 data-bol>Pick a direction and a time, <i>the tour is ready.</i> <span class="etiket">Pro</span></h2>
+        <p class="km">Tour generator</p>
+        <h2>Pick a direction and a time, <i>the tour is ready.</i> <span class="etiket">Pro</span></h2>
         <p class="metin">Turn the dial to the way you want to go and choose how many hours you have. Motoseyir draws a tour in that direction; you see it on the map and start if you like it.</p>
       </div>
     </div></div>
   </section>
 
-  <!-- KM 03 -->
-  <section class="bolum" id="gecit" data-km>
+  <section class="bolum" id="gecit">
     <div class="kap"><div class="bolum-ik">
-      <div class="tel-alan"><div class="tel" data-egik="-3" data-yon="-1"><img src="/m/ekran-gecit-en.webp" alt="Mountain passes screen: a map of Alpine passes with an altitude list" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r class="tel-alan"><div class="tel"><img src="/m/ekran-gecit-en.webp" alt="Mountain passes screen: a map of Alpine passes with an altitude list" width="540" height="1174" loading="lazy"></div></div>
       <div data-r>
-        <p class="km"><b>KM 03</b>Mountain passes</p>
-        <h2 data-bol>1,600+ passes, <i>on one map.</i></h2>
+        <p class="km">Mountain passes</p>
+        <h2>1,600+ passes, <i>on one map.</i></h2>
         <p class="metin">Every pass has a photo, an altitude and the months it is closed. Add the ones you like to your tour and go.</p>
         <ul class="pinler" aria-label="Example passes">
-          <li style="--o:.92"><span class="m"><span data-n="2764">2,764</span> m</span><span class="ad">Col de l’Iseran</span><span class="ay">Closed November–May</span><span class="cubuk"><i></i></span></li>
-          <li style="--o:.919"><span class="m"><span data-n="2758">2,758</span> m</span><span class="ad">Passo dello Stelvio</span><span class="ay">Closed November–April</span><span class="cubuk"><i></i></span></li>
-          <li style="--o:.915"><span class="m"><span data-n="2744">2,744</span> m</span><span class="ad">Col Agnel</span><span class="ay">Closed October–June</span><span class="cubuk"><i></i></span></li>
+          <li><span class="m">2,764 m</span><span class="ad">Col de l’Iseran</span><span class="ay">Closed November–May</span></li>
+          <li><span class="m">2,758 m</span><span class="ad">Passo dello Stelvio</span><span class="ay">Closed November–April</span></li>
+          <li><span class="m">2,744 m</span><span class="ad">Col Agnel</span><span class="ay">Closed October–June</span></li>
         </ul>
       </div>
     </div></div>
   </section>
 
-  <!-- KM 04 -->
-  <section class="bolum ters" id="corider" data-km>
+  <section class="bolum ters" id="corider">
     <div class="kap"><div class="bolum-ik">
-      <div class="tel-alan"><div class="tel" data-egik="2.5" data-yon="1"><img src="/m/ekran-corider-en.webp" alt="AI CoRider screen: planner and chat options" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r class="tel-alan"><div class="tel"><img src="/m/ekran-corider-en.webp" alt="AI CoRider screen: planner and chat options" width="540" height="1174" loading="lazy"></div></div>
       <div data-r>
-        <p class="km"><b>KM 04</b>AI CoRider</p>
-        <h2 data-bol>A riding partner <i>inside your helmet.</i> <span class="etiket">Pro</span></h2>
+        <p class="km">AI CoRider</p>
+        <h2>A riding partner <i>inside your helmet.</i> <span class="etiket">Pro</span></h2>
         <p class="metin">You talk, your hands stay on the bars. No reaching for the phone to ask something, add a stop or plan a break.</p>
       </div>
     </div></div>
   </section>
 
-  <!-- KM 05 -->
-  <section class="bolum" id="birlikte" data-km>
+  <section class="bolum" id="birlikte">
     <div class="kap"><div class="bolum-ik">
-      <div class="tel-alan cift dikey">
-        <div class="tel" data-egik="-3" data-yon="-1"><img src="/m/ekran-grup-en.webp" alt="Group ride screen: the route on the map and the next turn" width="540" height="1174" loading="lazy"></div>
-        <div class="arac" data-egik="0" data-yon="1"><img src="/m/ekran-carplay-en.webp" alt="Motoseyir navigation on a CarPlay screen" width="900" height="540" loading="lazy"></div>
+      <div data-r class="tel-alan cift dikey">
+        <div class="tel"><img src="/m/ekran-grup-en.webp" alt="Group ride screen: the route on the map and the next turn" width="540" height="1174" loading="lazy"></div>
+        <div class="arac"><img src="/m/ekran-carplay-en.webp" alt="Motoseyir navigation on a CarPlay screen" width="900" height="540" loading="lazy"></div>
       </div>
       <div data-r>
-        <p class="km"><b>KM 05</b>Together</p>
-        <h2 data-bol>Ride as a group, <i>talking as you go.</i></h2>
+        <p class="km">Together</p>
+        <h2>Ride as a group, <i>talking as you go.</i></h2>
         <p class="metin">Take the same route as your friends and see everyone on the map. Joining a group by invite or code is free.</p>
         <ul class="liste">
           <li><strong>Group creation <span class="etiket">Pro</span></strong><span class="a">Meeting point, live location, one route.</span></li>
@@ -237,24 +224,22 @@
     </div></div>
   </section>
 
-  <!-- KM 06 -->
-  <section class="bolum ters" id="kesfet" data-km>
+  <section class="bolum ters" id="kesfet">
     <div class="kap"><div class="bolum-ik">
-      <div class="tel-alan"><div class="tel" data-egik="2.5" data-yon="1"><img src="/m/ekran-kesfet-en.webp" alt="Discover screen: stops along the route and their list" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r class="tel-alan"><div class="tel"><img src="/m/ekran-kesfet-en.webp" alt="Discover screen: stops along the route and their list" width="540" height="1174" loading="lazy"></div></div>
       <div data-r>
-        <p class="km"><b>KM 06</b>Discover</p>
-        <h2 data-bol>Discover things <i>along the way.</i> <span class="etiket">Pro</span></h2>
+        <p class="km">Discover</p>
+        <h2>Discover things <i>along the way.</i> <span class="etiket">Pro</span></h2>
         <p class="metin">See the back roads, beach roads, campsites and places to eat along your route, and add the ones you like.</p>
       </div>
     </div></div>
   </section>
 
-  <!-- KM 07 -->
-  <section class="bolum st" id="surus-sonrasi" data-km>
+  <section class="bolum st" id="surus-sonrasi">
     <div class="kap"><div class="bolum-ik">
       <div data-r>
-        <p class="km"><b>KM 07</b>After the ride</p>
-        <h2 data-bol>The road you rode <i>stays with you.</i></h2>
+        <p class="km">After the ride</p>
+        <h2>The road you rode <i>stays with you.</i></h2>
         <p class="metin">Record the ride, watch it again later, and turn it into a trip map video to share.</p>
         <ul class="liste">
           <li><strong>Ride recording and 3D replay</strong><span class="a">Watch the way you rode again on the map.</span></li>
@@ -263,58 +248,54 @@
           <li><strong>GPX import</strong><span class="a">Bring the route you already have into the app.</span></li>
         </ul>
       </div>
-      <div class="tel-alan"><div class="tel" data-egik="-2.5" data-yon="-1"><video data-src="/m/gezi-en.mp4" muted loop playsinline preload="none" data-poster="/m/gezi-en.jpg" aria-label="A sample from a trip map video: the Istanbul–Athens route"></video></div></div>
+      <div data-r class="tel-alan"><div class="tel"><video data-src="/m/gezi-en.mp4" muted loop playsinline preload="none" data-poster="/m/gezi-en.jpg" aria-label="A sample from a trip map video: the Istanbul–Athens route"></video></div></div>
     </div></div>
   </section>
 
-<!-- Haritada sen: kaydırdıkça dönen motosiklet -->
-<section class="sahne" id="sahne" data-km aria-label="You on the map">
-  <div class="sahne-ic">
-    <div class="kap"><div class="motor-kap">
+<!-- Haritada sen: sürükleyerek dönen motosiklet -->
+<section class="bolum" id="sahne" aria-label="You on the map">
+    <div class="kap"><div class="bolum-ik">
       <div data-r>
-        <p class="km"><b>KM 08</b>You on the map</p>
-        <h2 data-bol>You’re on the map <i>too.</i></h2>
+        <p class="km">You on the map</p>
+        <h2>You’re on the map <i>too.</i></h2>
         <p class="metin">While you ride, a marker stands for you on the map. You pick it from the grid in Settings: bike, chopper, maxi scooter, touring, arrow or helmet.</p>
       </div>
-      <div>
-        <div class="motor" id="motor" role="img" aria-label="The motorcycle that stands for you on the map; drag left or right to turn it"><span class="halka"></span><img id="motorimg" src="/m/bike/090.webp" alt="" width="760" height="699" loading="lazy" decoding="async"></div>
-        <p class="motor-not">Scroll or drag</p>
+      <div data-r>
+        <div class="motor" id="motor" role="img" aria-label="The motorcycle that stands for you on the map; drag left or right to turn it"><img id="motorimg" src="/m/bike/090.webp" alt="" width="760" height="699" loading="lazy" decoding="async"></div>
+        <p class="motor-not">Drag to turn</p>
       </div>
     </div></div>
-  </div>
-</section>
+  </section>
 
-  <!-- KM 09: efsane yollar her listede en sonda -->
-  <section class="bolum ters" id="efsane" data-km>
+  <section class="bolum ters" id="efsane">
     <div class="kap"><div class="bolum-ik">
-      <div class="tel-alan"><div class="tel" data-egik="2.5" data-yon="1"><img src="/m/ekran-efsane-en.webp" alt="Legendary roads screen: a list of ready-made routes and their map" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r class="tel-alan"><div class="tel"><img src="/m/ekran-efsane-en.webp" alt="Legendary roads screen: a list of ready-made routes and their map" width="540" height="1174" loading="lazy"></div></div>
       <div data-r>
-        <p class="km"><b>KM 09</b>Legendary roads</p>
-        <h2 data-bol>Legendary roads, <i>from Türkiye to America.</i></h2>
+        <p class="km">Legendary roads</p>
+        <h2>Legendary roads, <i>from Türkiye to America.</i></h2>
         <p class="metin">The famous roads of Türkiye, Europe and the USA come as ready-made routes: Tail of the Dragon, Beartooth Highway, Big Sur and more. Pick one and go.</p>
       </div>
     </div></div>
   </section>
 
-  <!-- KM 10 -->
-  <section class="bolum" id="tani" data-km>
+  <section class="bolum" id="tani">
     <div class="kap"><div class="bolum-ik">
       <div data-r>
-        <p class="km"><b>KM 10</b>Get to know it</p>
-        <h2 data-bol>Get to <i>know it.</i></h2>
+        <p class="km">Get to know it</p>
+        <h2>Get to <i>know it.</i></h2>
         <p class="metin">What’s inside the app, in two minutes.</p>
       </div>
-      <div class="tel-alan"><div class="tani-kutu" id="tani-kutu" data-r>
+      <div data-r class="tel-alan"><div class="tani-kutu" id="tani-kutu">
         <button type="button" id="tani-btn" aria-label="Play the intro video"><img src="/m/tani-en.jpg" alt="" loading="lazy" width="1080" height="1920"><span class="oynat"></span></button>
       </div></div>
     </div></div>
   </section>
 
   <!-- Fiyat -->
-  <section class="bolum" id="fiyat" data-km>
+  <section class="bolum" id="fiyat">
     <div class="kap" data-r>
-      <p class="km"><b>KM 11</b>Pricing</p>
-      <h2 data-bol>Free to ride, <i>Pro when you want more.</i></h2>
+      <p class="km">Pricing</p>
+      <h2>Free to ride, <i>Pro when you want more.</i></h2>
       <div class="fiyat">
         <div class="plan"><h3>Free</h3><p>Route planning and turn-by-turn navigation are unlimited in Türkiye, Europe and the USA. No account needed; the free tier keeps 1 saved tour.</p></div>
         <div class="plan pro"><h3>Motoseyir <i>Pro</i></h3><p>The 3-month and yearly plans start with a 7-day free trial outside Türkiye, for new subscribers. Pro unlocks:</p>
@@ -328,7 +309,7 @@
 
 <section class="varis">
   <div class="kap" data-r>
-    <h2 data-bol>The road is <i>ready.</i></h2>
+    <h2>The road is <i>ready.</i></h2>
     <div class="cta-satir">
       <a class="btn" href="https://apps.apple.com/app/id6792549131?pt=128439797&amp;ct=site-en&amp;mt=8">Download on the App Store</a>
       <a class="btn btn-hayalet" href="/en/nasil-yapilir.html">How it works</a>
@@ -371,7 +352,7 @@
 <footer>
   <div class="alt-ic">
     <div>
-      <p><a class="logo" href="#top" style="font-size:1.1rem">MOTO<em>SEYİR</em></a></p>
+      <p><a class="logo" href="#top" aria-label="Motoseyir"><img src="/img/favicon.png" alt="" width="28" height="28">MOTO<em>SEYİR</em></a></p>
       <p style="margin-top:10px">© 2026 Motoseyir. All rights reserved.</p>
     </div>
     <ul>

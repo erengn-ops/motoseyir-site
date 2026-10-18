@@ -34,7 +34,7 @@
 
 <!-- Apple akıllı afiş: iOS Safari'de sayfanın üstünde "App Store'da aç" şeridi. -->
 <meta name="apple-itunes-app" content="app-id=6792549131">
-<meta name="theme-color" content="#0B1315">
+<meta name="theme-color" content="#101414">
 <link rel="icon" href="/img/favicon.png">
 
 <!--
@@ -49,9 +49,7 @@
 <script>document.documentElement.className+=" js"</script>
 <link rel="preload" as="image" type="image/webp" href="/m/sahne-dikey-poster.webp" media="(max-width:700px)" fetchpriority="high">
 <link rel="preload" as="image" type="image/webp" href="/m/sahne-poster.webp" media="(min-width:701px)" fetchpriority="high">
-<link rel="preload" as="font" type="font/woff" href="/m/font/SofiaSansExtraCondensed.woff" crossorigin>
 <link rel="preload" as="font" type="font/woff" href="/m/font/Manrope.woff" crossorigin>
-<link rel="preload" as="font" type="font/woff" href="/m/font/InstrumentSerif-Italic.woff" crossorigin>
 <link rel="stylesheet" href="/m/a.css">
 <script defer src="/m/a.js"></script>
 
@@ -90,7 +88,7 @@
 
 <header class="ust" id="ustbar">
   <div class="ust-ic">
-    <a class="logo" href="#top" aria-label="Motoseyir">MOTO<em>SEYİR</em></a>
+    <a class="logo" href="#top" aria-label="Motoseyir"><img src="/img/favicon.png" alt="" width="28" height="28">MOTO<em>SEYİR</em></a>
     <nav aria-label="Ana gezinme"><ul class="menu">
       <li><a href="#rota">Rota</a></li><li><a href="#gecit">Dağ geçitleri</a></li><li><a href="#fiyat">Fiyat</a></li><li><a href="/nasil-yapilir.html">Nasıl Yapılır</a></li>
     </ul></nav>
@@ -146,26 +144,19 @@
 </section>
 
 <div class="serit" aria-label="Rakamlarla Motoseyir"><div class="serit-ic">
-  <div class="sayi"><b><span data-n="1600" data-ek="+">1.600+</span></b><span>dağ geçidi; fotoğraf, rakım ve kapalı aylarıyla</span></div>
+  <div class="sayi"><b>1.600+</b><span>dağ geçidi; fotoğraf, rakım ve kapalı aylarıyla</span></div>
   <div class="sayi"><b>TR · EU · US</b><span>Türkiye, Avrupa ve ABD’nin efsane yolları hazır rota olarak</span></div>
   <div class="sayi"><b>CarPlay</b><span>rotan araç ekranında, tam ekran</span></div>
   <div class="sayi"><b>Grup + İnterkom</b><span>aynı rotada, konuşarak</span></div>
 </div></div>
 
 <div class="ana" id="ozellikler">
-  <div class="rh" aria-hidden="true">
-    <div class="rh-yol"><svg focusable="false"></svg></div>
-    <div class="rh-klip"><svg focusable="false"></svg></div>
-    <div class="pilot"><i></i></div>
-  </div>
-
-  <!-- KM 01 -->
-  <section class="bolum" id="rota" data-km>
+  <section class="bolum" id="rota">
     <div class="kap"><div class="bolum-ik">
-      <div class="tel-alan"><div class="tel" data-egik="-3" data-yon="-1"><img src="/m/ekran-nav-tr.webp" alt="Motoseyir’de navigasyon ekranı: sıradaki dönüş, kalan mesafe ve hız" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r class="tel-alan"><div class="tel"><img src="/m/ekran-nav-tr.webp" alt="Motoseyir’de navigasyon ekranı: sıradaki dönüş, kalan mesafe ve hız" width="540" height="1174" loading="lazy"></div></div>
       <div data-r>
-        <p class="km"><b>KM 01</b>Rota</p>
-        <h2 data-bol>Önce kilometre, <i>sonra keyif.</i></h2>
+        <p class="km">Rota</p>
+        <h2>Önce kilometre, <i>sonra keyif.</i></h2>
         <p class="metin">Aynı iki nokta arasındaki alternatifleri karşılaştırır, en kısasını önerir. Çok duraklı bir turda durakların sırasını da o kurar. Gerisini sen seçersin.</p>
         <ul class="liste">
           <li><strong>En kısa rota</strong><span class="a">Varsayılan; kilometreyi esas alır.</span></li>
@@ -176,57 +167,53 @@
     </div></div>
   </section>
 
-  <!-- KM 02 -->
-  <section class="bolum ters" id="tur" data-km>
+  <section class="bolum ters" id="tur">
     <div class="kap"><div class="bolum-ik">
-      <div class="tel-alan"><div class="tel" data-egik="2.5" data-yon="1"><img src="/m/ekran-tur-tr.webp" alt="Tur üret ekranı: yön ve süre kadranı" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r class="tel-alan"><div class="tel"><img src="/m/ekran-tur-tr.webp" alt="Tur üret ekranı: yön ve süre kadranı" width="540" height="1174" loading="lazy"></div></div>
       <div data-r>
-        <p class="km"><b>KM 02</b>Tur üret</p>
-        <h2 data-bol>Yönü ve süreyi söyle, <i>tur hazır.</i> <span class="etiket">Pro</span></h2>
+        <p class="km">Tur üret</p>
+        <h2>Yönü ve süreyi söyle, <i>tur hazır.</i> <span class="etiket">Pro</span></h2>
         <p class="metin">Kadranı gitmek istediğin yöne çevir, kaç saat süreceğini seç. Motoseyir o yöne giden bir tur çizer; haritada görürsün, beğenirsen başlarsın.</p>
       </div>
     </div></div>
   </section>
 
-  <!-- KM 03 -->
-  <section class="bolum" id="gecit" data-km>
+  <section class="bolum" id="gecit">
     <div class="kap"><div class="bolum-ik">
-      <div class="tel-alan"><div class="tel" data-egik="-3" data-yon="-1"><img src="/m/ekran-gecit-tr.webp" alt="Dağ geçitleri ekranı: Alpler’deki geçitlerin haritası ve rakım listesi" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r class="tel-alan"><div class="tel"><img src="/m/ekran-gecit-tr.webp" alt="Dağ geçitleri ekranı: Alpler’deki geçitlerin haritası ve rakım listesi" width="540" height="1174" loading="lazy"></div></div>
       <div data-r>
-        <p class="km"><b>KM 03</b>Dağ geçitleri</p>
-        <h2 data-bol>1.600’ü aşkın geçit, <i>tek haritada.</i></h2>
+        <p class="km">Dağ geçitleri</p>
+        <h2>1.600’ü aşkın geçit, <i>tek haritada.</i></h2>
         <p class="metin">Her geçidin fotoğrafı, rakımı ve hangi aylarda kapalı olduğu var. Beğendiğini turuna ekle, yola çık.</p>
         <ul class="pinler" aria-label="Örnek geçitler">
-          <li style="--o:.92"><span class="m"><span data-n="2764">2.764</span> m</span><span class="ad">Col de l’Iseran</span><span class="ay">Kasım–Mayıs kapalı</span><span class="cubuk"><i></i></span></li>
-          <li style="--o:.919"><span class="m"><span data-n="2758">2.758</span> m</span><span class="ad">Passo dello Stelvio</span><span class="ay">Kasım–Nisan kapalı</span><span class="cubuk"><i></i></span></li>
-          <li style="--o:.915"><span class="m"><span data-n="2744">2.744</span> m</span><span class="ad">Col Agnel</span><span class="ay">Ekim–Haziran kapalı</span><span class="cubuk"><i></i></span></li>
+          <li><span class="m">2.764 m</span><span class="ad">Col de l’Iseran</span><span class="ay">Kasım–Mayıs kapalı</span></li>
+          <li><span class="m">2.758 m</span><span class="ad">Passo dello Stelvio</span><span class="ay">Kasım–Nisan kapalı</span></li>
+          <li><span class="m">2.744 m</span><span class="ad">Col Agnel</span><span class="ay">Ekim–Haziran kapalı</span></li>
         </ul>
       </div>
     </div></div>
   </section>
 
-  <!-- KM 04 -->
-  <section class="bolum ters" id="corider" data-km>
+  <section class="bolum ters" id="corider">
     <div class="kap"><div class="bolum-ik">
-      <div class="tel-alan"><div class="tel" data-egik="2.5" data-yon="1"><img src="/m/ekran-corider-tr.webp" alt="AI CoRider ekranı: planlayıcı ve sohbet seçenekleri" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r class="tel-alan"><div class="tel"><img src="/m/ekran-corider-tr.webp" alt="AI CoRider ekranı: planlayıcı ve sohbet seçenekleri" width="540" height="1174" loading="lazy"></div></div>
       <div data-r>
-        <p class="km"><b>KM 04</b>AI CoRider</p>
-        <h2 data-bol>Kaskının içinde <i>bir yol arkadaşı.</i> <span class="etiket">Pro</span></h2>
+        <p class="km">AI CoRider</p>
+        <h2>Kaskının içinde <i>bir yol arkadaşı.</i> <span class="etiket">Pro</span></h2>
         <p class="metin">Sesli konuşursun, eller gidonda kalır. Bir şey sormak, durak eklemek ya da molayı planlamak için telefona uzanman gerekmez.</p>
       </div>
     </div></div>
   </section>
 
-  <!-- KM 05 -->
-  <section class="bolum" id="birlikte" data-km>
+  <section class="bolum" id="birlikte">
     <div class="kap"><div class="bolum-ik">
-      <div class="tel-alan cift dikey">
-        <div class="tel" data-egik="-3" data-yon="-1"><img src="/m/ekran-grup-tr.webp" alt="Grup sürüşü ekranı: haritada rota ve sıradaki dönüş" width="540" height="1174" loading="lazy"></div>
-        <div class="arac" data-egik="0" data-yon="1"><img src="/m/ekran-carplay-tr.webp" alt="CarPlay ekranında Motoseyir navigasyonu" width="900" height="540" loading="lazy"></div>
+      <div data-r class="tel-alan cift dikey">
+        <div class="tel"><img src="/m/ekran-grup-tr.webp" alt="Grup sürüşü ekranı: haritada rota ve sıradaki dönüş" width="540" height="1174" loading="lazy"></div>
+        <div class="arac"><img src="/m/ekran-carplay-tr.webp" alt="CarPlay ekranında Motoseyir navigasyonu" width="900" height="540" loading="lazy"></div>
       </div>
       <div data-r>
-        <p class="km"><b>KM 05</b>Birlikte</p>
-        <h2 data-bol>Grupla sür, <i>konuşa konuşa.</i></h2>
+        <p class="km">Birlikte</p>
+        <h2>Grupla sür, <i>konuşa konuşa.</i></h2>
         <p class="metin">Arkadaşlarınla aynı rotaya çık, herkesi haritada gör. Davetle ya da kodla bir gruba katılmak ücretsiz.</p>
         <ul class="liste">
           <li><strong>Grup kurma <span class="etiket">Pro</span></strong><span class="a">Toplanma noktası, canlı konum, aynı rota.</span></li>
@@ -237,24 +224,22 @@
     </div></div>
   </section>
 
-  <!-- KM 06 -->
-  <section class="bolum ters" id="kesfet" data-km>
+  <section class="bolum ters" id="kesfet">
     <div class="kap"><div class="bolum-ik">
-      <div class="tel-alan"><div class="tel" data-egik="2.5" data-yon="1"><img src="/m/ekran-kesfet-tr.webp" alt="Keşfet ekranı: rota üstündeki duraklar ve listesi" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r class="tel-alan"><div class="tel"><img src="/m/ekran-kesfet-tr.webp" alt="Keşfet ekranı: rota üstündeki duraklar ve listesi" width="540" height="1174" loading="lazy"></div></div>
       <div data-r>
-        <p class="km"><b>KM 06</b>Keşfet</p>
-        <h2 data-bol>Yol üstünde <i>keşfet.</i> <span class="etiket">Pro</span></h2>
+        <p class="km">Keşfet</p>
+        <h2>Yol üstünde <i>keşfet.</i> <span class="etiket">Pro</span></h2>
         <p class="metin">Rotanın üstündeki köy ve plaj yollarını, kamp alanlarını, yeme–içme duraklarını gör; beğendiğini rotaya ekle.</p>
       </div>
     </div></div>
   </section>
 
-  <!-- KM 07 -->
-  <section class="bolum st" id="surus-sonrasi" data-km>
+  <section class="bolum st" id="surus-sonrasi">
     <div class="kap"><div class="bolum-ik">
       <div data-r>
-        <p class="km"><b>KM 07</b>Sürüşten sonra</p>
-        <h2 data-bol>Yaptığın yol <i>kalsın.</i></h2>
+        <p class="km">Sürüşten sonra</p>
+        <h2>Yaptığın yol <i>kalsın.</i></h2>
         <p class="metin">Sürüşü kaydet, sonra yeniden izle. Gezi haritası videosuna çevirip paylaş.</p>
         <ul class="liste">
           <li><strong>Sürüş kaydı ve 3B tekrar</strong><span class="a">Gittiğin yolu haritada yeniden izle.</span></li>
@@ -263,58 +248,54 @@
           <li><strong>GPX içe aktarma</strong><span class="a">Elindeki rotayı uygulamaya al.</span></li>
         </ul>
       </div>
-      <div class="tel-alan"><div class="tel" data-egik="-2.5" data-yon="-1"><video data-src="/m/gezi-tr.mp4" muted loop playsinline preload="none" data-poster="/m/gezi-tr.jpg" aria-label="Bir gezi haritası videosundan örnek: İstanbul–Atina rotası"></video></div></div>
+      <div data-r class="tel-alan"><div class="tel"><video data-src="/m/gezi-tr.mp4" muted loop playsinline preload="none" data-poster="/m/gezi-tr.jpg" aria-label="Bir gezi haritası videosundan örnek: İstanbul–Atina rotası"></video></div></div>
     </div></div>
   </section>
 
-<!-- Haritada sen: kaydırdıkça dönen motosiklet -->
-<section class="sahne" id="sahne" data-km aria-label="Haritada sen">
-  <div class="sahne-ic">
-    <div class="kap"><div class="motor-kap">
+<!-- Haritada sen: sürükleyerek dönen motosiklet -->
+<section class="bolum" id="sahne" aria-label="Haritada sen">
+    <div class="kap"><div class="bolum-ik">
       <div data-r>
-        <p class="km"><b>KM 08</b>Haritada sen</p>
-        <h2 data-bol>Haritada <i>sen de varsın.</i></h2>
+        <p class="km">Haritada sen</p>
+        <h2>Haritada <i>sen de varsın.</i></h2>
         <p class="metin">Sürerken haritada seni bir işaretçi temsil eder. Ayarlar’daki ızgaradan birini seçersin: motosiklet, chopper, maksi scooter, touring, ok ya da kask.</p>
       </div>
-      <div>
-        <div class="motor" id="motor" role="img" aria-label="Haritada seni temsil eden motosiklet; sağa sola sürükleyerek döndürebilirsin"><span class="halka"></span><img id="motorimg" src="/m/bike/090.webp" alt="" width="760" height="699" loading="lazy" decoding="async"></div>
-        <p class="motor-not">Kaydır ya da sürükle</p>
+      <div data-r>
+        <div class="motor" id="motor" role="img" aria-label="Haritada seni temsil eden motosiklet; sağa sola sürükleyerek döndürebilirsin"><img id="motorimg" src="/m/bike/090.webp" alt="" width="760" height="699" loading="lazy" decoding="async"></div>
+        <p class="motor-not">Sürükleyerek döndür</p>
       </div>
     </div></div>
-  </div>
-</section>
+  </section>
 
-  <!-- KM 09: efsane yollar her listede en sonda -->
-  <section class="bolum ters" id="efsane" data-km>
+  <section class="bolum ters" id="efsane">
     <div class="kap"><div class="bolum-ik">
-      <div class="tel-alan"><div class="tel" data-egik="2.5" data-yon="1"><img src="/m/ekran-efsane-tr.webp" alt="Efsane yollar ekranı: hazır rotaların listesi ve haritası" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r class="tel-alan"><div class="tel"><img src="/m/ekran-efsane-tr.webp" alt="Efsane yollar ekranı: hazır rotaların listesi ve haritası" width="540" height="1174" loading="lazy"></div></div>
       <div data-r>
-        <p class="km"><b>KM 09</b>Efsane yollar</p>
-        <h2 data-bol>Türkiye’den Amerika’ya <i>efsane yollar.</i></h2>
+        <p class="km">Efsane yollar</p>
+        <h2>Türkiye’den Amerika’ya <i>efsane yollar.</i></h2>
         <p class="metin">Türkiye, Avrupa ve ABD’nin ünlü yolları hazır rota olarak içinde: Tail of the Dragon, Beartooth Highway, Big Sur ve daha fazlası. Seç, yola çık.</p>
       </div>
     </div></div>
   </section>
 
-  <!-- KM 10 -->
-  <section class="bolum" id="tani" data-km>
+  <section class="bolum" id="tani">
     <div class="kap"><div class="bolum-ik">
       <div data-r>
-        <p class="km"><b>KM 10</b>Motoseyir’i tanı</p>
-        <h2 data-bol>Motoseyir’i <i>tanı.</i></h2>
+        <p class="km">Motoseyir’i tanı</p>
+        <h2>Motoseyir’i <i>tanı.</i></h2>
         <p class="metin">Uygulamanın içinde neler var, iki dakikada.</p>
       </div>
-      <div class="tel-alan"><div class="tani-kutu" id="tani-kutu" data-r>
+      <div data-r class="tel-alan"><div class="tani-kutu" id="tani-kutu">
         <button type="button" id="tani-btn" aria-label="Tanıtım videosunu oynat"><img src="/m/tani-tr.jpg" alt="" loading="lazy" width="1080" height="1920"><span class="oynat"></span></button>
       </div></div>
     </div></div>
   </section>
 
   <!-- Fiyat -->
-  <section class="bolum" id="fiyat" data-km>
+  <section class="bolum" id="fiyat">
     <div class="kap" data-r>
-      <p class="km"><b>KM 11</b>Fiyat</p>
-      <h2 data-bol>Ücretsiz başla, <i>istersen Pro.</i></h2>
+      <p class="km">Fiyat</p>
+      <h2>Ücretsiz başla, <i>istersen Pro.</i></h2>
       <div class="fiyat">
         <div class="plan"><h3>Ücretsiz</h3><p>Türkiye, Avrupa ve ABD’de rota hesaplama ve adım adım navigasyon sınırsız. Hesap açman gerekmez; ücretsiz kademede 1 kayıtlı tur tutabilirsin.</p></div>
         <div class="plan pro"><h3>Motoseyir <i>Pro</i></h3><p>3 aylık ve yıllık planlar, yeni abonelere Türkiye dışında 7 gün ücretsiz denemeyle başlar. Pro şunları açar:</p>
@@ -328,7 +309,7 @@
 
 <section class="varis">
   <div class="kap" data-r>
-    <h2 data-bol>Yol <i>hazır.</i></h2>
+    <h2>Yol <i>hazır.</i></h2>
     <div class="cta-satir">
       <a class="btn" href="https://apps.apple.com/tr/app/id6792549131?pt=128439797&amp;ct=site-tr&amp;mt=8">App Store’da İndir</a>
       <a class="btn btn-hayalet" href="/nasil-yapilir.html">Nasıl yapılır</a>
@@ -371,7 +352,7 @@
 <footer>
   <div class="alt-ic">
     <div>
-      <p><a class="logo" href="#top" style="font-size:1.1rem">MOTO<em>SEYİR</em></a></p>
+      <p><a class="logo" href="#top" aria-label="Motoseyir"><img src="/img/favicon.png" alt="" width="28" height="28">MOTO<em>SEYİR</em></a></p>
       <p style="margin-top:10px">© 2026 Motoseyir. Tüm hakları saklıdır.</p>
     </div>
     <ul>
