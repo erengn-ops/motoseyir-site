@@ -71,8 +71,13 @@ DILLER = [
 
 # Hareketli anasayfa (14 Eki 2026): yalnız TR ve EN anasayfası yeni tasarımda —
 # `sablon/anasayfa.html` + `dil/anasayfa.<kod>.json`; stil/hareket `m/a.css`, `m/a.js`.
-# Öteki 12 dilin anasayfası eski şablonla (`sablon/index.html`) üretilmeye devam eder.
-HAREKETLI_ANASAYFA = ("tr", "en")
+# 18 Eki 2026: `dil/anasayfa.<kod>.json`u olan her dil yeni tasarıma geçer; olmayan eski şablonla
+# (`sablon/index.html`) üretilmeye devam eder.
+HAREKETLI_ANASAYFA = tuple(sorted(y.stem.split(".")[1] for y in (Path(__file__).resolve().parent / "dil").glob("anasayfa.*.json")))
+
+# Yeni anasayfanın /m/ altındaki dile bağlı görselleri (ekran-*-<kod>.webp, gezi-<kod>.mp4, tani-<kod>.jpg):
+# o dilin dosyası yoksa İngilizcesi kullanılır.
+M_DILLI = re.compile(r'(/m/[a-z0-9-]+-)([a-z]{2})(\.(?:webp|jpg|png|mp4))')
 
 VARSAYILAN = "tr"  # köke yazılan dil
 X_DEFAULT = "en"
@@ -329,6 +334,9 @@ def main() -> None:
             degerler = {**metin_d, **ortak}
             html = doldur(sablon_metni, degerler, f"{kod}/{dosya}")
             html = gorselleri_yerelle(html, kod)
+            if sablon_metni is hareketli:
+                html = M_DILLI.sub(lambda m: m.group(0) if m.group(2) != kod or (KOK / m.group(0).lstrip("/")).exists()
+                                   else f"{m.group(1)}en{m.group(3)}", html)
             (dizin / dosya).write_text(html, encoding="utf-8")
             yazilan += 1
 

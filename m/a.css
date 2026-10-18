@@ -163,6 +163,15 @@ h2{font:800 clamp(1.9rem,5.6vw,3rem)/1.1 var(--sans);letter-spacing:-.025em;text
 .bolgeler .n{font-weight:800;font-variant-numeric:tabular-nums}
 .veri-atif{margin-top:40px;font-size:.82rem;line-height:1.5;color:var(--yazi-3)}
 @media(min-width:900px){.veri-say{grid-template-columns:repeat(4,minmax(0,1fr))}.veri-ik{grid-template-columns:1fr 1fr;gap:96px}}
+/* Bölüm ayrıntıları (18 Eki 2026): her özelliğin altında sayılar + madde ızgarası */
+.ayrinti{margin-top:56px;padding-top:40px;border-top:1px solid var(--cizgi)}
+.ayrinti .veri-say{margin-bottom:36px}
+.izgara{list-style:none;display:grid;gap:0 40px}
+.izgara li{padding:18px 0;border-top:1px solid var(--cizgi)}
+.izgara h3{font:700 1rem/1.35 var(--sans);margin:0 0 6px}
+.izgara p{margin:0;color:var(--yazi-2);font-size:.95rem;line-height:1.55}
+@media(min-width:700px){.izgara{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:900px){.veri-say.uc{grid-template-columns:repeat(3,minmax(0,1fr))}.izgara{grid-template-columns:repeat(3,minmax(0,1fr))}}
 .liste{list-style:none;margin-top:28px;max-width:34rem}
 .liste li{padding:15px 0;border-top:1px solid var(--cizgi)}
 .liste li:last-child{border-bottom:1px solid var(--cizgi)}
