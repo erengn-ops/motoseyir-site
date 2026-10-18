@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Motorcycle Navigation and Route Planner — Motoseyir</title>
-<meta name="description" content="Distance-first navigation for motorcyclists: shortest route, back roads, multi-stop tours, group riding, intercom and legendary routes. Motoseyir, on the App Store.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Motoseyir — The motorcyclist’s sat nav for twisty roads</title>
+<meta name="description" content="Motoseyir is a motorcycle sat nav that plans by distance, not by minutes. Back roads, coast and enduro modes, a tour generator, 1,600+ mountain passes, group rides and CarPlay.">
 <link rel="canonical" href="https://motoseyir-app.com/en/">
 <link rel="alternate" hreflang="tr" href="https://motoseyir-app.com/">
 <link rel="alternate" hreflang="en" href="https://motoseyir-app.com/en/">
@@ -26,20 +26,32 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Motoseyir">
 <meta property="og:locale" content="en_GB">
-<meta property="og:title" content="Motoseyir — The Sat Nav That Counts Kilometres, Not Minutes">
-<meta property="og:description" content="Shortest route, back roads, multi-stop tours, group riding, intercom and legendary routes — in one app.">
+<meta property="og:title" content="Motoseyir — The motorcyclist’s sat nav for twisty roads">
+<meta property="og:description" content="Distance-first routing, back roads, a tour generator, 1,600+ mountain passes, group rides, intercom and CarPlay — in one app.">
 <meta property="og:url" content="https://motoseyir-app.com/en/">
 <meta property="og:image" content="https://motoseyir-app.com/img/og-kapak.jpg">
 <meta name="twitter:card" content="summary_large_image">
 
 <!-- Apple akıllı afiş: iOS Safari'de sayfanın üstünde "App Store'da aç" şeridi. -->
 <meta name="apple-itunes-app" content="app-id=6792549131">
+<meta name="theme-color" content="#0B1315">
+<link rel="icon" href="/img/favicon.png">
 
-<meta name="theme-color" content="#0E6E73" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0E1315" media="(prefers-color-scheme: dark)">
-<link rel="icon" href="../img/favicon.png">
-
-<link rel="stylesheet" href="../style.css">
+<!--
+  Arka plan videosu (m/hero.mp4, m/hero-dikey.mp4): yapay zekâ ile üretildi, gerçek çekim DEĞİL.
+  Higgsfield Wan 3.0, 14 Eki 2026, 30 sn 1080p; başlangıç karesi mağaza setinin Akdeniz panoraması
+  (o da yapay zekâ görseli). Döngü için son 1 sn ilk 1 sn'ye çapraz geçişli (29 sn), sessiz.
+  Ham dosya: motoseyir-social/02-kaynak/higgsfield/wan3-hero-30sn-ham.mp4
+  Bu sayfa sablon/anasayfa.html + dil/anasayfa.<kod>.json'dan üretilir (python3 uret.py); stil m/a.css, hareket m/a.js.
+-->
+<script>document.documentElement.className+=" js"</script>
+<link rel="preload" as="image" type="image/webp" href="/m/hero-dikey-poster.webp" media="(max-width:700px)" fetchpriority="high">
+<link rel="preload" as="image" type="image/webp" href="/m/hero-poster.webp" media="(min-width:701px)" fetchpriority="high">
+<link rel="preload" as="font" type="font/woff" href="/m/font/SofiaSansExtraCondensed.woff" crossorigin>
+<link rel="preload" as="font" type="font/woff" href="/m/font/Manrope.woff" crossorigin>
+<link rel="preload" as="font" type="font/woff" href="/m/font/InstrumentSerif-Italic.woff" crossorigin>
+<link rel="stylesheet" href="/m/a.css">
+<script defer src="/m/a.js"></script>
 
 <script type="application/ld+json">
 {
@@ -51,20 +63,20 @@
   "inLanguage": "en",
   "url": "https://motoseyir-app.com/en/",
   "image": "https://motoseyir-app.com/img/og-kapak.jpg",
-  "description": "Distance-first navigation app for motorcyclists: shortest route, back roads, multi-stop tours, group riding, intercom and legendary routes.",
+  "description": "Distance-first navigation app for motorcyclists: shortest route, back roads, tour generator, mountain passes, group riding, intercom, CarPlay and legendary routes.",
   "offers": [
     {
       "@type": "Offer",
-      "name": "7-day free trial",
+      "name": "Free",
       "price": "0",
       "priceCurrency": "EUR",
-      "description": "7-day free trial of every Pro feature on the 3-month and yearly plans, for new subscribers where available."
+      "description": "Unlimited routing and navigation in Türkiye, Europe and the USA, 1 saved tour; Pro’s 3-month and yearly plans include a 7-day free trial outside Türkiye, for new subscribers."
     },
     {
       "@type": "Offer",
       "name": "Motoseyir Pro",
       "category": "subscription",
-      "description": "Best order for multiple stops, unlimited tours and trails, Back roads and Coast modes, Discover, group creation, intercom and AI CoRider."
+      "description": "AI CoRider, CarPlay, group creation and intercom, Discover, tour generator, unlimited tours and trails, Back roads and Coast modes and best order for multiple stops."
     }
   ],
   "downloadUrl": "https://apps.apple.com/app/id6792549131?pt=128439797&amp;ct=site-en&amp;mt=8"
@@ -72,22 +84,15 @@
 </script>
 </head>
 <body id="top">
-<a class="skip-link" href="#icerik">Skip to content</a>
+<a class="skip" href="#icerik">Skip to content</a>
 
-<header class="site-header">
-  <div class="wrap header-inner">
-    <a class="logo" href="#top">MOTO<em>SEYİR</em></a>
-    <nav aria-label="Main navigation">
-      <ul class="nav">
-        <li><a href="#ozellikler">Features</a></li>
-        <li><a href="nasil-yapilir.html">How it works</a></li>
-        <li><a href="#fiyat">Pricing</a></li>
-        <li><a href="#gizlilik">Privacy</a></li>
-        <li><a href="#yenilikler">What’s new</a></li>
-        <li><a href="#iletisim">Contact</a></li>
-      </ul>
-    </nav>
-    <div class="header-cta">
+<header class="ust" id="ustbar">
+  <div class="ust-ic">
+    <a class="logo" href="#top" aria-label="Motoseyir">MOTO<em>SEYİR</em></a>
+    <nav aria-label="Main navigation"><ul class="menu">
+      <li><a href="#rota">Routing</a></li><li><a href="#gecit">Mountain passes</a></li><li><a href="#fiyat">Pricing</a></li><li><a href="/en/nasil-yapilir.html">How it works</a></li>
+    </ul></nav>
+    <div class="ust-sag">
       <details class="dil-sec">
   <summary aria-label="Choose language"><span class="dil-kod">EN</span><span class="dil-ad">English</span></summary>
   <ul>
@@ -107,343 +112,263 @@
     <li><a href="/el/" lang="el" hreflang="el">Ελληνικά</a></li>
   </ul>
 </details>
-      <a class="btn btn-ghost btn-sm" href="https://apps.apple.com/app/id6792549131?pt=128439797&amp;ct=site-en&amp;mt=8">Download</a>
+      <a class="btn btn-kucuk" href="https://apps.apple.com/app/id6792549131?pt=128439797&amp;ct=site-en&amp;mt=8">Download</a>
     </div>
   </div>
 </header>
 
 <main id="icerik">
-
-  <!-- HERO -->
-  <section class="hero foto-arka">
-    <img class="foto-arka-img" src="../img/hero-sahil-yolu.jpg" alt="A motorcyclist riding a twisty mountain road along the coast in the light of sunset" fetchpriority="high">
-    <div class="foto-arka-golge" aria-hidden="true"></div>
-    <div class="wrap">
-      <div class="hero-icerik">
-        <span class="eyebrow">Motoseyir · The rider’s sat nav</span>
-        <h1>The only sat nav that counts the kilometres.</h1>
-        <p class="lead">Motoseyir works out the route by distance, not by minutes. It compares several alternatives between the same two points and suggests the shortest one. On a multi-stop tour it works out the order of the stops, too.</p>
-        <div class="hero-cta">
-          <a class="btn btn-light" href="https://apps.apple.com/app/id6792549131?pt=128439797&amp;ct=site-en&amp;mt=8">Download on the App Store</a>
-          <a class="btn btn-ghost" style="border-color:rgba(243,241,236,.35); color:var(--asfalt-metin);" href="#ozellikler">See the features</a>
-        </div>
-        <p class="hero-microcopy">Start with a 7-day free trial on the 3-month or yearly plan.</p>
-      </div>
+<section class="kahraman" aria-label="Introduction">
+  <div class="k-arka">
+    <picture>
+      <source media="(max-width:700px)" srcset="/m/hero-dikey-poster.webp" type="image/webp">
+      <img src="/m/hero-poster.webp" alt="A motorcyclist riding a twisty mountain road along the coast in the light of sunset" fetchpriority="high" width="1600" height="900">
+    </picture>
+    <video id="hv" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+  </div>
+  <div class="k-ic">
+    <p class="ust-yazi">Motoseyir · The rider’s sat nav</p>
+    <h1>For riders who <i>love a corner.</i></h1>
+    <p class="giris">Motoseyir plans by distance, not by minutes. Back roads, coast or enduro, you choose. Or tell it which way you want to ride and let it build the tour; or pick a mountain pass and go.</p>
+    <div class="cta-satir">
+      <a class="btn" href="https://apps.apple.com/app/id6792549131?pt=128439797&amp;ct=site-en&amp;mt=8"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.6c0-2.4 2-3.5 2-3.6-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.15-2.8.85-3.5.85s-1.8-.8-3-.8c-1.5 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.700 2.400 2.900 2.300 1.200 0 1.600-.7 3-.7s1.800.7 3 .7 2-1.100 2.800-2.300c.9-1.300 1.200-2.500 1.300-2.600-.1 0-2.500-1-2.500-3.600zM14.200 5.500c.6-.8 1.100-1.800.9-2.900-.9 0-2 .6-2.700 1.400-.6.700-1.100 1.800-1 2.800 1 .1 2.100-.5 2.800-1.300z"/></svg>Download on the App Store</a>
+      <p class="mikro">Routing and navigation are free and unlimited in Türkiye, Europe and the USA; no account needed.</p>
     </div>
-  </section>
+  </div>
+  <span class="kaydir" aria-hidden="true">Hit the road</span>
+</section>
 
-  <div class="rota-ayrac koyu" aria-hidden="true">
-    <svg viewBox="0 0 1200 34" preserveAspectRatio="none"><path class="cizgi" d="M0,17 C150,2 300,32 450,17 C600,2 750,32 900,17 C1050,2 1150,17 1200,17"/><circle class="nokta" cx="300" cy="20" r="4"/><circle class="nokta" cx="750" cy="14" r="4"/></svg>
+<div class="serit" aria-label="Motoseyir in numbers"><div class="serit-ic">
+  <div class="sayi"><b><span data-n="1600" data-ek="+">1,600+</span></b><span>mountain passes, with photos, altitudes and closed months</span></div>
+  <div class="sayi"><b>TR · EU · US</b><span>legendary roads of Türkiye, Europe and the USA, ready as routes</span></div>
+  <div class="sayi"><b>CarPlay</b><span>your route on the car screen, full screen</span></div>
+  <div class="sayi"><b>Group + Intercom</b><span>same route, talking as you ride</span></div>
+</div></div>
+
+<div class="ana" id="ozellikler">
+  <div class="rh" aria-hidden="true">
+    <div class="rh-yol"><svg focusable="false"></svg></div>
+    <div class="rh-klip"><svg focusable="false"></svg></div>
+    <div class="pilot"><i></i></div>
   </div>
 
-  <!-- NEDEN FARKLI -->
-  <section class="neden foto-arka">
-    <img class="foto-arka-img" src="../img/kask-yansima.jpg" alt="" loading="lazy">
-    <div class="foto-arka-golge" aria-hidden="true"></div>
-    <div class="wrap">
-      <span class="eyebrow">Why it’s different</span>
-      <p class="soz">Other sat navs find the <span class="vurgu">fastest</span> road.<br>Motoseyir finds the <span class="vurgu">shortest</span> one.</p>
-      <p class="soz-alt">A route calculated for a car always makes the same mistake on a bike: it shaves off minutes and adds kilometres. You filter through traffic, so that difference is real for you — more fuel, more tyre wear. Motoseyir compares the alternatives and suggests the shortest one, even if it takes a few minutes longer.</p>
-    </div>
+  <!-- KM 01 -->
+  <section class="bolum" id="rota" data-km>
+    <div class="kap"><div class="bolum-ik">
+      <div class="tel-alan"><div class="tel" data-egik="-3" data-yon="-1"><img src="/m/ekran-nav-en.webp" alt="Navigation screen in Motoseyir: next turn, distance left and speed" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r>
+        <p class="km"><b>KM 01</b>Routing</p>
+        <h2 data-bol>Kilometres first, <i>fun second.</i></h2>
+        <p class="metin">It compares the alternatives between the same two points and suggests the shortest. On a multi-stop tour it works out the order of the stops, too. The rest is up to you.</p>
+        <ul class="liste">
+          <li><strong>Shortest route</strong><span class="a">The default; it goes by kilometres.</span></li>
+          <li><strong>Back roads and Coast <span class="etiket">Pro</span></strong><span class="a">Leaves the main road for the twisty ones.</span></li>
+          <li><strong>Enduro</strong><span class="a">Looks for gravel and unpaved roads.</span></li>
+        </ul>
+      </div>
+    </div></div>
   </section>
 
-  <div class="rota-ayrac koyu" aria-hidden="true">
-    <svg viewBox="0 0 1200 34" preserveAspectRatio="none"><path class="cizgi" d="M0,17 C150,32 300,2 450,17 C600,32 750,2 900,17 C1050,32 1150,17 1200,17"/><circle class="nokta" cx="450" cy="17" r="4"/><circle class="nokta" cx="1050" cy="17" r="4"/></svg>
+  <!-- KM 02 -->
+  <section class="bolum ters" id="tur" data-km>
+    <div class="kap"><div class="bolum-ik">
+      <div class="tel-alan"><div class="tel" data-egik="2.5" data-yon="1"><img src="/m/ekran-tur-en.webp" alt="Tour generator screen: direction and duration dial" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r>
+        <p class="km"><b>KM 02</b>Tour generator</p>
+        <h2 data-bol>Pick a direction and a time, <i>the tour is ready.</i> <span class="etiket">Pro</span></h2>
+        <p class="metin">Turn the dial to the way you want to go and choose how many hours you have. Motoseyir draws a tour in that direction; you see it on the map and start if you like it.</p>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- KM 03 -->
+  <section class="bolum" id="gecit" data-km>
+    <div class="kap"><div class="bolum-ik">
+      <div class="tel-alan"><div class="tel" data-egik="-3" data-yon="-1"><img src="/m/ekran-gecit-en.webp" alt="Mountain passes screen: a map of Alpine passes with an altitude list" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r>
+        <p class="km"><b>KM 03</b>Mountain passes</p>
+        <h2 data-bol>1,600+ passes, <i>on one map.</i></h2>
+        <p class="metin">Every pass has a photo, an altitude and the months it is closed. Add the ones you like to your tour and go.</p>
+        <ul class="pinler" aria-label="Example passes">
+          <li style="--o:.92"><span class="m"><span data-n="2764">2,764</span> m</span><span class="ad">Col de l’Iseran</span><span class="ay">Closed November–May</span><span class="cubuk"><i></i></span></li>
+          <li style="--o:.919"><span class="m"><span data-n="2758">2,758</span> m</span><span class="ad">Passo dello Stelvio</span><span class="ay">Closed November–April</span><span class="cubuk"><i></i></span></li>
+          <li style="--o:.915"><span class="m"><span data-n="2744">2,744</span> m</span><span class="ad">Col Agnel</span><span class="ay">Closed October–June</span><span class="cubuk"><i></i></span></li>
+        </ul>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- KM 04 -->
+  <section class="bolum ters" id="corider" data-km>
+    <div class="kap"><div class="bolum-ik">
+      <div class="tel-alan"><div class="tel" data-egik="2.5" data-yon="1"><img src="/m/ekran-corider-en.webp" alt="AI CoRider screen: planner and chat options" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r>
+        <p class="km"><b>KM 04</b>AI CoRider</p>
+        <h2 data-bol>A riding partner <i>inside your helmet.</i> <span class="etiket">Pro</span></h2>
+        <p class="metin">You talk, your hands stay on the bars. No reaching for the phone to ask something, add a stop or plan a break.</p>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- KM 05 -->
+  <section class="bolum" id="birlikte" data-km>
+    <div class="kap"><div class="bolum-ik">
+      <div class="tel-alan cift dikey">
+        <div class="tel" data-egik="-3" data-yon="-1"><img src="/m/ekran-grup-en.webp" alt="Group ride screen: the route on the map and the next turn" width="540" height="1174" loading="lazy"></div>
+        <div class="arac" data-egik="0" data-yon="1"><img src="/m/ekran-carplay-en.webp" alt="Motoseyir navigation on a CarPlay screen" width="900" height="540" loading="lazy"></div>
+      </div>
+      <div data-r>
+        <p class="km"><b>KM 05</b>Together</p>
+        <h2 data-bol>Ride as a group, <i>talking as you go.</i></h2>
+        <p class="metin">Take the same route as your friends and see everyone on the map. Joining a group by invite or code is free.</p>
+        <ul class="liste">
+          <li><strong>Group creation <span class="etiket">Pro</span></strong><span class="a">Meeting point, live location, one route.</span></li>
+          <li><strong>Intercom <span class="etiket">Pro</span></strong><span class="a">Talk to the group while you ride; no extra hardware.</span></li>
+          <li><strong>CarPlay <span class="etiket">Pro</span></strong><span class="a">Your route on the car screen; the phone stays in your pocket.</span></li>
+        </ul>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- KM 06 -->
+  <section class="bolum ters" id="kesfet" data-km>
+    <div class="kap"><div class="bolum-ik">
+      <div class="tel-alan"><div class="tel" data-egik="2.5" data-yon="1"><img src="/m/ekran-kesfet-en.webp" alt="Discover screen: stops along the route and their list" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r>
+        <p class="km"><b>KM 06</b>Discover</p>
+        <h2 data-bol>Discover things <i>along the way.</i> <span class="etiket">Pro</span></h2>
+        <p class="metin">See the back roads, beach roads, campsites and places to eat along your route, and add the ones you like.</p>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- KM 07 -->
+  <section class="bolum st" id="surus-sonrasi" data-km>
+    <div class="kap"><div class="bolum-ik">
+      <div data-r>
+        <p class="km"><b>KM 07</b>After the ride</p>
+        <h2 data-bol>The road you rode <i>stays with you.</i></h2>
+        <p class="metin">Record the ride, watch it again later, and turn it into a trip map video to share.</p>
+        <ul class="liste">
+          <li><strong>Ride recording and 3D replay</strong><span class="a">Watch the way you rode again on the map.</span></li>
+          <li><strong>Trip map video</strong><span class="a">Turn your tour into a short video.</span></li>
+          <li><strong>Rain warning</strong><span class="a">If rain is forecast at your stops, you see it on the route.</span></li>
+          <li><strong>GPX import</strong><span class="a">Bring the route you already have into the app.</span></li>
+        </ul>
+      </div>
+      <div class="tel-alan"><div class="tel" data-egik="-2.5" data-yon="-1"><video data-src="/m/gezi-en.mp4" muted loop playsinline preload="none" data-poster="/m/gezi-en.jpg" aria-label="A sample from a trip map video: the Istanbul–Athens route"></video></div></div>
+    </div></div>
+  </section>
+
+<!-- Haritada sen: kaydırdıkça dönen motosiklet -->
+<section class="sahne" id="sahne" data-km aria-label="You on the map">
+  <div class="sahne-ic">
+    <div class="kap"><div class="motor-kap">
+      <div data-r>
+        <p class="km"><b>KM 08</b>You on the map</p>
+        <h2 data-bol>You’re on the map <i>too.</i></h2>
+        <p class="metin">While you ride, a marker stands for you on the map. You pick it from the grid in Settings: bike, chopper, maxi scooter, touring, arrow or helmet.</p>
+      </div>
+      <div>
+        <div class="motor" id="motor" role="img" aria-label="The motorcycle that stands for you on the map; drag left or right to turn it"><span class="halka"></span><img id="motorimg" src="/m/bike/090.webp" alt="" width="760" height="699" loading="lazy" decoding="async"></div>
+        <p class="motor-not">Scroll or drag</p>
+      </div>
+    </div></div>
   </div>
+</section>
 
-  <!-- ÖZELLİKLER -->
-  <section class="section" id="ozellikler">
-    <div class="wrap">
-      <span class="eyebrow">Features</span>
-      <h2>One app for everything a rider does</h2>
-      <p class="section-lead">Route, tour, ride and riding together — four headings, one app. The screens below are from the app itself.</p>
-
-      <!-- 1. En kısa rota -->
-      <div class="ozellik-satir">
-        <div class="ozellik-metin">
-          <span class="ozellik-etiket">Route</span>
-          <h3>Shortest route</h3>
-          <p>It calculates several alternative routes between the same two points and suggests the one with the shortest distance — even if it takes a little longer.</p>
-        </div>
-        <div class="ozellik-gorsel">
-          <img src="../img/en/en-kisa-rota.jpg" width="414" height="900" alt="Screen comparing the shortest-distance route with the alternatives" loading="lazy">
-        </div>
+  <!-- KM 09: efsane yollar her listede en sonda -->
+  <section class="bolum ters" id="efsane" data-km>
+    <div class="kap"><div class="bolum-ik">
+      <div class="tel-alan"><div class="tel" data-egik="2.5" data-yon="1"><img src="/m/ekran-efsane-en.webp" alt="Legendary roads screen: a list of ready-made routes and their map" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r>
+        <p class="km"><b>KM 09</b>Legendary roads</p>
+        <h2 data-bol>Legendary roads, <i>from Türkiye to America.</i></h2>
+        <p class="metin">The famous roads of Türkiye, Europe and the USA come as ready-made routes: Tail of the Dragon, Beartooth Highway, Big Sur and more. Pick one and go.</p>
       </div>
-
-      <!-- 2. Köy yolları / sahil -->
-      <div class="ozellik-satir ters">
-        <div class="ozellik-metin">
-          <span class="ozellik-etiket">Tour modes</span>
-          <h3>Back roads and Coast mode</h3>
-          <p>In Back roads mode the route comes from our own server, which also uses the lanes a standard map skips. Ayder to Hemşin comes out at 24.1 km that way; general maps show 49.9 km for the same two points. Coast mode uses the same server to keep the route along the shoreline.</p>
-        </div>
-        <div class="ozellik-gorsel">
-          <img src="../img/koy-yollari.jpg" width="414" height="900" alt="A route drawn in Back roads mode, full of bends and scenery" loading="lazy">
-        </div>
-      </div>
-
-      <!-- 3. Çok duraklı sıralama (kanıt çifti) -->
-      <div class="ozellik-satir">
-        <div class="ozellik-metin">
-          <span class="ozellik-etiket">Multiple stops · Pro</span>
-          <h3>Best order for your stops</h3>
-          <p>You enter the delivery points in any order and “Best order” rearranges them for the shortest total distance. The example below is from a real ride: the same four stops, 57.1 km in your own order, 46.9 km in the order the app found.</p>
-        </div>
-        <div class="ozellik-gorsel ikili">
-          <figure>
-            <img src="../img/cok-duraklar-kendi-sira.jpg" width="413" height="900" alt="Four stops in the rider’s own order, 57.1 km in total" loading="lazy">
-            <figcaption>Your order — <span class="km-eski">57.1 km</span></figcaption>
-          </figure>
-          <figure>
-            <img src="../img/cok-duraklar-en-uygun.jpg" width="413" height="900" alt="The same four stops in the order Motoseyir found, 46.9 km in total" loading="lazy">
-            <figcaption>Motoseyir’s order — <span class="km-yeni">46.9 km</span></figcaption>
-          </figure>
-        </div>
-      </div>
-
-      <!-- 4. Efsane rotalar -->
-      <div class="ozellik-satir ters">
-        <div class="ozellik-metin">
-          <span class="ozellik-etiket">Legendary routes</span>
-          <h3>Legendary routes, ready to ride</h3>
-          <p>Alpine passes like the Stelvio and the Sellaronda are ready and waiting, along with Turkish classics such as Şile–Ağva and the Lycian D400 and seven American ones, Tail of the Dragon and Big Sur included. Open one from the list and it goes straight into your tours with its stops and its route.</p>
-        </div>
-        <div class="ozellik-gorsel">
-          <img src="../img/en/efsane-rotalar.jpg" width="413" height="900" alt="The list of ready-made legendary routes" loading="lazy">
-        </div>
-      </div>
-
-      <!-- 5. Grup sürüşü + sürüşe çağır + interkom (1.1.0) -->
-      <div class="ozellik-satir">
-        <div class="ozellik-metin">
-          <span class="ozellik-etiket">Riding together</span>
-          <h3>Group ride, Invite to ride and intercom</h3>
-          <p>When one person creates a group a single code is generated, everyone joins with that code, and you all see each other on the route. In My Ride Group, “Invite to ride” next to a friend sends your route and a voice link in one tap; they answer with “Ride the same route” or “Riding behind you”.</p>
-          <p>The intercom also starts without a route. Each friend’s volume is set separately and Bluetooth helmets connect directly. Nothing is recorded — the audio goes only to whoever is in the room at that moment, and the room closes when the ride ends.</p>
-        </div>
-        <div class="ozellik-gorsel">
-          <img src="../img/en/grup-surusu.jpg" width="414" height="900" alt="Friends’ live positions on the route during a group ride" loading="lazy">
-        </div>
-      </div>
-
-      <!-- 6. Tur günlüğü -->
-      <div class="ozellik-satir ters">
-        <div class="ozellik-metin">
-          <span class="ozellik-etiket">My Tours</span>
-          <h3>Tour journal</h3>
-          <p>At every stop you take a photo and leave a short note, and both stay under that stop. The photos also show up as cards on the tour map; tap one to open it full screen. The journal stays on your phone; if you choose to share it in Community, at most three photos go with it.</p>
-        </div>
-        <div class="ozellik-gorsel">
-          <img src="../img/tur-gunlugu.jpg" width="413" height="900" alt="Tour journal: adding a photo and a note to a stop" loading="lazy">
-        </div>
-      </div>
-
-      <!-- 7. Hava durumu -->
-      <div class="ozellik-satir">
-        <div class="ozellik-metin">
-          <span class="ozellik-etiket">Weather</span>
-          <h3>Rain warning along the route</h3>
-          <p>If rain is expected on your route, it warns you in advance for the time you will actually get there. If the weather is dry, nothing appears on screen.</p>
-        </div>
-        <div class="ozellik-gorsel">
-          <img src="../img/hava-durumu.jpg" width="414" height="900" alt="Weather warning along the route in the tour plan" loading="lazy">
-        </div>
-      </div>
-
-      <!-- 8. Sürüş kaydı + parkur -->
-      <div class="ozellik-satir ters">
-        <div class="ozellik-metin">
-          <span class="ozellik-etiket">My Rides</span>
-          <h3>Ride recording and trails</h3>
-          <p>Ride recording keeps running with the screen off, and the track is coloured by speed. You can send a finished ride to your group: the track, distance and time stay there for 14 days. For a trail you brought in as GPX it works out the distance, total climb and steepest gradient; as you slide your finger along the profile, the point on the map moves with it.</p>
-        </div>
-        <div class="ozellik-gorsel">
-          <img src="../img/parkur-istatistik.jpg" width="414" height="900" alt="Trail elevation profile with distance, climb and difficulty figures" loading="lazy">
-        </div>
-      </div>
-
-      <!-- 9. Keşfet -->
-      <div class="ozellik-satir">
-        <div class="ozellik-metin">
-          <span class="ozellik-etiket">Discover</span>
-          <h3>Discover</h3>
-          <p>It lists the coves, campsites and places to eat around your route. You look at the rating and how far it is from your route, then add the one you like as a stop.</p>
-        </div>
-        <div class="ozellik-gorsel">
-          <img src="../img/kesfet.jpg" width="414" height="900" alt="The Discover screen: suggestions around your route" loading="lazy">
-        </div>
-      </div>
-
-      <h3 style="margin-top:3rem; font-size:1.1rem;">Also in the app</h3>
-      <ul class="diger-liste" style="margin-top:1.25rem;">
-        <li>
-          <h3>Fuel cost</h3>
-          <p>You see the estimated fuel cost of the route before you set off. It calculates in litres per 100 km where that is the local unit, and in miles per gallon in the US.</p>
-        </li>
-        <li>
-          <h3>Voice guidance</h3>
-          <p>Turn instructions are spoken by your phone’s voice in the app’s language; with the app in Turkish they come from a recorded human voice-over instead. Distances follow your region — “In 500 feet, turn right” in the US.</p>
-        </li>
-        <li>
-          <h3>Community feed</h3>
-          <p>The tours you share appear in the feed with your username and icon, and others can like and comment on them. Posts are reviewed before they go live. Around 400 metres near your start and finish are trimmed before anything is shared.</p>
-        </li>
-        <li>
-          <h3>Landscape mode</h3>
-          <p>Turn the phone sideways and the map, cards and buttons switch to a new layout: in navigation the turn and arrival cards sit on the left and the map on the right; My Tours shows two columns.</p>
-        </li>
-        <li>
-          <h3>Rider markers</h3>
-          <p>You pick your marker from the grid in Settings: bike, chopper, maxi scooter, touring, arrow or helmet. The three added in the latest update show the rider as well.</p>
-        </li>
-      </ul>
-
-      <!-- AI CoRider mağaza sürümünde YOK: tek satır "Yakında", ayrıntı yok. -->
-      <p class="kucuk" style="margin-top:1.75rem;"><strong>Coming soon: AI CoRider</strong> — a riding companion you can talk to inside your helmet. Not in the App Store version yet; it arrives in Pro in a later update.</p>
-
-      <p style="margin-top:2.5rem; display:flex; gap:1rem; flex-wrap:wrap;">
-        <a class="btn btn-ghost" href="ozellikler.html">See every feature in detail →</a>
-        <a class="btn btn-ghost" href="nasil-yapilir.html">First time opening the app? Start here →</a>
-      </p>
-    </div>
+    </div></div>
   </section>
 
-  <!-- ÜCRETSİZ / PRO -->
-  <section class="section section-2" id="fiyat">
-    <div class="wrap">
-      <span class="eyebrow">Pricing</span>
-      <h2>Try every Pro feature free for 7 days</h2>
-      <p class="section-lead">No account needed. Motoseyir works with a Pro subscription; the 3-month and yearly plans start with a 7-day free trial for new subscribers, and you can cancel anytime in your store account.</p>
-      <div class="plan-grid">
-        <div class="plan">
-          <h3>7-day free trial</h3>
-          <p class="fiyat-notu">On the 3-month and yearly plans, for new subscribers where available.</p>
-          <ul>
-            <li>Every Pro feature for 7 days</li>
-            <li>AI CoRider: 5 minutes to try</li>
-            <li>Turn-by-turn navigation with voice guidance</li>
-            <li>Rain warning along the route</li>
-            <li>Joining a group by invite or code</li>
-          </ul>
-        </div>
-        <div class="plan on-cikan">
-          <h3>Motoseyir Pro</h3>
-          <p class="fiyat-notu">Current prices vary by region; you see yours on the subscription screen in the App Store.</p>
-          <ul>
-            <li>AI CoRider, 15 minutes a month</li>
-            <li>Best order for multiple stops</li>
-            <li>Unlimited tours and trails</li>
-            <li>Back roads, Coast and Enduro modes</li>
-            <li>Discover suggestions along the route</li>
-            <li>Creating groups, and the intercom</li>
-          </ul>
-        </div>
+  <!-- KM 10 -->
+  <section class="bolum" id="tani" data-km>
+    <div class="kap"><div class="bolum-ik">
+      <div data-r>
+        <p class="km"><b>KM 10</b>Get to know it</p>
+        <h2 data-bol>Get to <i>know it.</i></h2>
+        <p class="metin">What’s inside the app, in two minutes.</p>
       </div>
-    </div>
+      <div class="tel-alan"><div class="tani-kutu" id="tani-kutu" data-r>
+        <button type="button" id="tani-btn" aria-label="Play the intro video"><img src="/m/tani-en.jpg" alt="" loading="lazy" width="1080" height="1920"><span class="oynat"></span></button>
+      </div></div>
+    </div></div>
   </section>
 
-  <div class="rota-ayrac" aria-hidden="true">
-    <svg viewBox="0 0 1200 34" preserveAspectRatio="none"><path class="cizgi" d="M0,17 C150,2 300,32 450,17 C600,2 750,32 900,17 C1050,2 1150,17 1200,17"/><circle class="nokta" cx="300" cy="20" r="4"/><circle class="nokta" cx="900" cy="20" r="4"/></svg>
+  <!-- Fiyat -->
+  <section class="bolum" id="fiyat" data-km>
+    <div class="kap" data-r>
+      <p class="km"><b>KM 11</b>Pricing</p>
+      <h2 data-bol>Free to ride, <i>Pro when you want more.</i></h2>
+      <div class="fiyat">
+        <div class="plan"><h3>Free</h3><p>Route planning and turn-by-turn navigation are unlimited in Türkiye, Europe and the USA. No account needed; the free tier keeps 1 saved tour.</p></div>
+        <div class="plan pro"><h3>Motoseyir <i>Pro</i></h3><p>The 3-month and yearly plans start with a 7-day free trial outside Türkiye, for new subscribers. Pro unlocks:</p>
+          <ul><li>AI CoRider</li><li>Apple CarPlay</li><li>Group creation and intercom</li><li>Discover and the tour generator</li><li>Unlimited tours and trails</li><li>Back roads and Coast modes, best order for multiple stops</li></ul>
+        </div>
+      </div>
+      <p class="fiyat-not">Current prices vary by region; you see them on the subscription screen in the App Store. Cancel anytime in your App Store account.</p>
+    </div>
+  </section>
+</div>
+
+<section class="varis">
+  <div class="kap" data-r>
+    <h2 data-bol>The road is <i>ready.</i></h2>
+    <div class="cta-satir">
+      <a class="btn" href="https://apps.apple.com/app/id6792549131?pt=128439797&amp;ct=site-en&amp;mt=8">Download on the App Store</a>
+      <a class="btn btn-hayalet" href="/en/nasil-yapilir.html">How it works</a>
+    </div>
   </div>
+</section>
 
-  <!-- GİZLİLİK — kaynak: uygulama içi gizlilik politikasının "Kısaca" bölümü -->
-  <section class="section" id="gizlilik">
-    <div class="wrap">
-      <span class="eyebrow">Your data</span>
+<section class="ayr" aria-label="Privacy, release notes and contact">
+  <div class="kap">
+    <div id="gizlilik">
+      <p class="km">Privacy</p>
       <h2>No account, no unnecessary data</h2>
-      <p class="section-lead">You do not have to give a name, an email address or a phone number to use Motoseyir. What follows is a short summary of the privacy policy; the full policy is inside the app in English, under Settings → Privacy Policy.</p>
-      <ul class="gizlilik-liste">
-        <li>You do not need to create an account — we do not ask for your name, email address, phone number or date of birth.</li>
-        <li>To calculate your route, your location and search queries are passed to map services only; none of them store anything.</li>
-        <li>Your tours, ride recordings, journal notes and photos stay only on your device — unless you share them in Community.</li>
-        <li>An irreversible, anonymous identity hash of your device is sent to our server to stop trial and campaign entitlements being abused; that hash does not identify you.</li>
-        <li>If you turn on group riding, your last location is shared only while the ride is running and is deleted when it ends. Intercom audio is never recorded, only passed to whoever is in the room at that moment.</li>
-        <li>No ads; no data is shared with any advertising network.</li>
-      </ul>
-      <p><a href="/gizlilik/en/">Read the privacy summary in English →</a></p>
+      <p class="metin">You do not have to give a name, an email address or a phone number to use Motoseyir. What follows is a short summary of the privacy policy; the full policy is inside the app in English, under Settings → Privacy Policy.</p>
+      <ul class="d"><li>You do not need to create an account — we do not ask for your name, email address, phone number or date of birth.</li><li>To calculate your route, your location and search queries are passed to map services only; none of them store anything.</li><li>Your tours, ride recordings, journal notes and photos stay only on your device — unless you share them in Community.</li><li>An irreversible, anonymous identity hash of your device is sent to our server to stop trial and campaign entitlements being abused; that hash does not identify you.</li><li>If you turn on group riding, your last location is shared only while the ride is running and is deleted when it ends. Intercom audio is never recorded, only passed to whoever is in the room at that moment.</li><li>No ads; no data is shared with any advertising network.</li></ul>
+      <a class="ok" href="/gizlilik/en/">Read the privacy summary in English →</a>
     </div>
-  </section>
-
-  <!-- YENİLİKLER -->
-  <section class="section section-2" id="yenilikler">
-    <div class="wrap">
-      <span class="eyebrow">Release notes</span>
+    <div id="yenilikler">
+      <p class="km">Release notes</p>
       <h2>What changed</h2>
-      <p class="section-lead">Every major update is here, newest first.</p>
-
-      <!-- YENİ SÜRÜM ÇIKINCA: metinler dil/<kod>.json içindeki y110_* ve y107_*
-           anahtarlarında; yeni sürüm için şablona yeni bir <article> eklenir. -->
-      <article class="surum">
-        <div class="surum-baslik">
-          <span class="surum-no">1.1.0</span>
-          <span class="surum-tarih">September 2026</span>
-        </div>
-        <ul>
-          <li>Landscape mode: turn the phone sideways and the map, cards and buttons switch to a new layout. In navigation the turn and arrival cards sit on the left, the map on the right; My Tours shows two columns.</li>
-          <li>Group intercom: in My Ride Group, “Invite to ride” next to a person sends your route and a voice link in one tap. The intercom also starts without a route, each friend’s volume is set separately, and Bluetooth helmets now connect directly.</li>
-          <li>Ride recording to the group: send a finished ride to your group. Track, distance and time stay in the group for 14 days; the area around your start and end stays hidden.</li>
-          <li>Three new rider markers — chopper, maxi scooter, touring — and a new Help page inside the app: Settings → How it works.</li>
-          <li>Community posts are reviewed before they go live; you can enlarge the map on a card, and diary photos appear as cards on the map.</li>
-          <li>Turn announcements re-recorded, more natural. The MOTOSEYIR7 code in Settings unlocks five days of Pro, once on this device.</li>
-        </ul>
-      </article>
-
-      <article class="surum">
-        <div class="surum-baslik">
-          <span class="surum-no">1.0.7</span>
-          <span class="surum-tarih">September 2026</span>
-        </div>
-        <ul>
-          <li>Joining a group by invite or code is now free; creating one stays in Pro. An invite link opens the app directly.</li>
-          <li>The tour journal now shoots with its own camera, and you can send the cover photo straight to your Instagram story.</li>
-          <li>Units come from where you are: miles, mph and feet in the US, miles and yards in the UK, kilometres everywhere else — and voice guidance speaks in the same unit.</li>
-          <li>Seven legendary American routes added: Tail of the Dragon, Cherohala Skyway, Blue Ridge Parkway, Beartooth Highway, Angeles Crest, Big Sur, Million Dollar Highway.</li>
-        </ul>
-      </article>
+      <p class="metin">Every major update is here, newest first.</p>
+      <article class="surum"><header><b>1.1.0</b><time>September 2026</time></header>
+        <ul class="d"><li>Landscape mode: turn the phone sideways and the map, cards and buttons switch to a new layout. In navigation the turn and arrival cards sit on the left, the map on the right; My Tours shows two columns.</li><li>Group intercom: in My Ride Group, “Invite to ride” next to a person sends your route and a voice link in one tap. The intercom also starts without a route, each friend’s volume is set separately, and Bluetooth helmets now connect directly.</li><li>Ride recording to the group: send a finished ride to your group. Track, distance and time stay in the group for 14 days; the area around your start and end stays hidden.</li><li>Three new rider markers — chopper, maxi scooter, touring — and a new Help page inside the app: Settings → How it works.</li><li>Community posts are reviewed before they go live; you can enlarge the map on a card, and diary photos appear as cards on the map.</li><li>Turn announcements re-recorded, more natural. The MOTOSEYIR7 code in Settings unlocks five days of Pro, once on this device.</li></ul></article>
+      <article class="surum"><header><b>1.0.7</b><time>September 2026</time></header>
+        <ul class="d"><li>Joining a group by invite or code is now free; creating one stays in Pro. An invite link opens the app directly.</li><li>The tour journal now shoots with its own camera, and you can send the cover photo straight to your Instagram story.</li><li>Units come from where you are: miles, mph and feet in the US, miles and yards in the UK, kilometres everywhere else — and voice guidance speaks in the same unit.</li><li>Seven legendary American routes added: Tail of the Dragon, Cherohala Skyway, Blue Ridge Parkway, Beartooth Highway, Angeles Crest, Big Sur, Million Dollar Highway.</li></ul></article>
     </div>
-  </section>
-
-  <!-- İLETİŞİM -->
-  <section class="section" id="iletisim">
-    <div class="wrap">
-      <span class="eyebrow">Contact</span>
+    <div id="iletisim">
+      <p class="km">Contact</p>
       <h2>Something wrong, or an idea?</h2>
-      <div class="iletisim-grid">
-        <div class="iletisim-kart">
-          <h3>In-app support</h3>
-          <p>Write to us straight from Settings → “Something wrong, or an idea?”; the replies come back in the same place.</p>
-        </div>
-        <div class="iletisim-kart">
-          <h3>Instagram</h3>
-          <p>Follow for new routes, ride photos and announcements.</p>
-          <a class="btn btn-ghost btn-sm" href="https://www.instagram.com/motoseyir.app/">@motoseyir.app</a>
-        </div>
+      <div class="kartlar">
+        <div class="kart"><h3>In-app support</h3><p>Write to us straight from Settings → “Something wrong, or an idea?”; the replies come back in the same place.</p></div>
+        <div class="kart"><h3>Instagram</h3><p>Follow for new routes, ride photos and announcements.</p><a class="btn btn-hayalet btn-kucuk" href="https://www.instagram.com/motoseyir.app/">@motoseyir.app</a></div>
       </div>
     </div>
-  </section>
-
+  </div>
+</section>
 </main>
 
-<footer class="site-footer">
-  <div class="wrap">
-    <div class="footer-ust">
-      <div>
-        <a class="logo" href="#top" style="font-size:1.05rem;">MOTO<em>SEYİR</em></a>
-      </div>
-      <ul class="footer-links">
-        <li><a href="#ozellikler">Features</a></li>
-        <li><a href="ozellikler.html">All features</a></li>
-        <li><a href="nasil-yapilir.html">How it works</a></li>
-        <li><a href="/gizlilik/en/">Privacy</a></li>
-        <li><a href="#yenilikler">What’s new</a></li>
-        <li><a href="#iletisim">Contact</a></li>
-        <li><a href="https://www.instagram.com/motoseyir.app/">Instagram</a></li>
-        <li><a href="https://apps.apple.com/app/id6792549131?pt=128439797&amp;ct=site-en&amp;mt=8">App Store</a></li>
-      </ul>
+<footer>
+  <div class="alt-ic">
+    <div>
+      <p><a class="logo" href="#top" style="font-size:1.1rem">MOTO<em>SEYİR</em></a></p>
+      <p style="margin-top:10px">© 2026 Motoseyir. All rights reserved.</p>
     </div>
-    <p>© 2026 Motoseyir. All rights reserved.</p>
-    <div class="dil-altbilgi">
-      <span class="dil-altbilgi-baslik">Languages</span>
+    <ul>
+      <li><a href="/en/ozellikler.html">All features</a></li><li><a href="/en/nasil-yapilir.html">How it works</a></li><li><a href="/gizlilik/en/">Privacy</a></li><li><a href="#yenilikler">What’s new</a></li><li><a href="#iletisim">Contact</a></li><li><a href="https://www.instagram.com/motoseyir.app/">Instagram</a></li><li><a href="https://apps.apple.com/app/id6792549131?pt=128439797&amp;ct=site-en&amp;mt=8">App Store</a></li>
+    </ul>
+    <div class="dil-altbilgi"><span>Languages</span>
       <ul class="dil-liste">
   <li><a href="/" lang="tr" hreflang="tr">Türkçe</a></li>
   <li><strong lang="en">English</strong></li>
@@ -463,6 +388,5 @@
     </div>
   </div>
 </footer>
-
 </body>
 </html>

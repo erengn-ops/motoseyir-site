@@ -35,7 +35,7 @@ ALAN = "https://motoseyir-app.com"
 UYGULAMA_ID = "6792549131"
 SAGLAYICI = "128439797"  # App Store Connect kampanya sağlayıcı kimliği (pt)
 YIL = "2026"
-GUNCELLEME = "2026-09-21"  # sitemap lastmod
+GUNCELLEME = "2026-10-18"  # sitemap lastmod
 
 # Şablon adı -> (çıktı dosya adı, sitemap changefreq, sitemap priority)
 SAYFALAR = {
@@ -68,6 +68,11 @@ DILLER = [
     {"kod": "hr", "ad": "Hrvatski", "lang": "hr", "og": "hr_HR", "vitrin": "hr"},
     {"kod": "el", "ad": "Ελληνικά", "lang": "el", "og": "el_GR", "vitrin": "gr"},
 ]
+
+# Hareketli anasayfa (14 Eki 2026): yalnız TR ve EN anasayfası yeni tasarımda —
+# `sablon/anasayfa.html` + `dil/anasayfa.<kod>.json`; stil/hareket `m/a.css`, `m/a.js`.
+# Öteki 12 dilin anasayfası eski şablonla (`sablon/index.html`) üretilmeye devam eder.
+HAREKETLI_ANASAYFA = ("tr", "en")
 
 VARSAYILAN = "tr"  # köke yazılan dil
 X_DEFAULT = "en"
@@ -287,6 +292,8 @@ def main() -> None:
             raise SystemExit(f"HATA: şablon yok: {yol}")
         sablonlar[ad] = yol.read_text(encoding="utf-8")
 
+    hareketli = (SABLON / "anasayfa.html").read_text(encoding="utf-8")
+
     yazilan = 0
     for d in DILLER:
         kod = d["kod"]
@@ -313,8 +320,14 @@ def main() -> None:
                 "uygulama_id": UYGULAMA_ID,
                 "yil": YIL,
             }
-            degerler = {**metin, **ortak}
-            html = doldur(sablonlar[sablon_adi], degerler, f"{kod}/{dosya}")
+            sablon_metni = sablonlar[sablon_adi]
+            if dosya == "index.html" and kod in HAREKETLI_ANASAYFA:
+                sablon_metni = hareketli
+                metin_d = {**metin, **json.loads((DIL / f"anasayfa.{kod}.json").read_text(encoding="utf-8"))}
+            else:
+                metin_d = metin
+            degerler = {**metin_d, **ortak}
+            html = doldur(sablon_metni, degerler, f"{kod}/{dosya}")
             html = gorselleri_yerelle(html, kod)
             (dizin / dosya).write_text(html, encoding="utf-8")
             yazilan += 1
