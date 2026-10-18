@@ -2,9 +2,9 @@
 <html lang="el">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Πλοήγηση για μοτοσικλέτα και σχεδιασμός διαδρομής — Motoseyir</title>
-<meta name="description" content="Πλοήγηση για μοτοσικλετιστές που μετρά χιλιόμετρα: συντομότερη διαδρομή, επαρχιακοί δρόμοι, εκδρομές με πολλές στάσεις, ομαδική βόλτα, ενδοεπικοινωνία και θρυλικές διαδρομές. Το Motoseyir στο App Store.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Motoseyir — πλοήγηση για δρόμους με στροφές</title>
+<meta name="description" content="Το Motoseyir σχεδιάζει με βάση την απόσταση, όχι τα λεπτά. Επαρχιακοί δρόμοι, ακτή και enduro, γεννήτρια εκδρομών, 1.600+ περάσματα, ομαδική βόλτα και CarPlay.">
 <link rel="canonical" href="https://motoseyir-app.com/el/">
 <link rel="alternate" hreflang="tr" href="https://motoseyir-app.com/">
 <link rel="alternate" hreflang="en" href="https://motoseyir-app.com/en/">
@@ -26,20 +26,32 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Motoseyir">
 <meta property="og:locale" content="el_GR">
-<meta property="og:title" content="Motoseyir — η πλοήγηση που μετρά χιλιόμετρα, όχι λεπτά">
-<meta property="og:description" content="Συντομότερη διαδρομή, επαρχιακοί δρόμοι, εκδρομές με πολλές στάσεις, ομαδική βόλτα, ενδοεπικοινωνία και θρυλικές διαδρομές — σε μία εφαρμογή.">
+<meta property="og:title" content="Motoseyir — πλοήγηση για δρόμους με στροφές">
+<meta property="og:description" content="Διαδρομές με βάση την απόσταση, επαρχιακοί δρόμοι, γεννήτρια εκδρομών, 1.600+ περάσματα, ομαδική βόλτα, ενδοεπικοινωνία και CarPlay — σε μία εφαρμογή.">
 <meta property="og:url" content="https://motoseyir-app.com/el/">
 <meta property="og:image" content="https://motoseyir-app.com/img/og-kapak.jpg">
 <meta name="twitter:card" content="summary_large_image">
 
 <!-- Apple akıllı afiş: iOS Safari'de sayfanın üstünde "App Store'da aç" şeridi. -->
 <meta name="apple-itunes-app" content="app-id=6792549131">
+<meta name="theme-color" content="#101414">
+<link rel="icon" href="/img/favicon.png">
 
-<meta name="theme-color" content="#0E6E73" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0E1315" media="(prefers-color-scheme: dark)">
-<link rel="icon" href="../img/favicon.png">
-
-<link rel="stylesheet" href="../style.css">
+<!--
+  Arka plan videosu (m/sahne*.mp4): yapay zekâ ile üretildi, gerçek çekim DEĞİL. Higgsfield Wan 3.0, 18 Eki 2026,
+  başlangıç karesiz tek çekimler; cardoride.com benzeri sinema bandı için yeniden kurgulandı: üç kaynak çekimden
+  (drone ile geçit virajları, gidondan orman yolu, yandan kıyı yolu) yalnız gerçek hızda ve takılmasız aralıklar,
+  9 sert kesme (her çekim ~2,2–2,4 sn), 20,9 sn döngü, sessiz, renk işlemesiz. Ağır çekim kalan çekimler (tek çekim,
+  yol kenarı) kullanılmadı. Yatay 1920×1080 + 1280×720; dikey 608×1080 + 406×720 (sürücüyü kadrajda tutan 9:16 kırpma).
+  Ham dosyalar: motoseyir-social/02-kaynak/higgsfield/site-sahneler/
+  Bu sayfa sablon/anasayfa.html + dil/anasayfa.<kod>.json'dan üretilir (python3 uret.py); stil m/a.css, hareket m/a.js.
+-->
+<script>document.documentElement.className+=" js"</script>
+<link rel="preload" as="image" type="image/webp" href="/m/sahne-dikey-poster.webp" media="(max-width:700px)" fetchpriority="high">
+<link rel="preload" as="image" type="image/webp" href="/m/sahne-poster.webp" media="(min-width:701px)" fetchpriority="high">
+<link rel="preload" as="font" type="font/woff" href="/m/font/Manrope.woff" crossorigin>
+<link rel="stylesheet" href="/m/a.css">
+<script defer src="/m/a.js"></script>
 
 <script type="application/ld+json">
 {
@@ -51,20 +63,20 @@
   "inLanguage": "el",
   "url": "https://motoseyir-app.com/el/",
   "image": "https://motoseyir-app.com/img/og-kapak.jpg",
-  "description": "Εφαρμογή πλοήγησης για μοτοσικλετιστές που υπολογίζει με βάση την απόσταση: συντομότερη διαδρομή, επαρχιακοί δρόμοι, εκδρομές με πολλές στάσεις, ομαδική βόλτα, ενδοεπικοινωνία και θρυλικές διαδρομές.",
+  "description": "Πλοήγηση με βάση την απόσταση για μοτοσικλετιστές: συντομότερη διαδρομή, επαρχιακοί δρόμοι, γεννήτρια εκδρομών, ομαδική βόλτα, ενδοεπικοινωνία και CarPlay.",
   "offers": [
     {
       "@type": "Offer",
-      "name": "Δωρεάν δοκιμή 7 ημερών",
+      "name": "Δωρεάν",
       "price": "0",
       "priceCurrency": "EUR",
-      "description": "Δωρεάν δοκιμή 7 ημερών όλων των λειτουργιών Pro στη συνδρομή 3 μηνών και στην ετήσια, για νέους συνδρομητές, όπου διατίθεται."
+      "description": "Απεριόριστος σχεδιασμός διαδρομής και πλοήγηση σε Τουρκία, Ευρώπη και ΗΠΑ, 1 αποθηκευμένη εκδρομή· οι συνδρομές Pro 3 μηνών και οι ετήσιες ξεκινούν με δωρεάν δοκιμή 7 ημερών εκτός Τουρκίας, για νέους συνδρομητές."
     },
     {
       "@type": "Offer",
       "name": "Motoseyir Pro",
       "category": "subscription",
-      "description": "Καλύτερη σειρά για πολλές στάσεις, απεριόριστες εκδρομές και ίχνη, λειτουργία επαρχιακών δρόμων και ακτής, Discover, δημιουργία ομάδων, ενδοεπικοινωνία και AI CoRider."
+      "description": "AI CoRider, CarPlay, δημιουργία ομάδας και ενδοεπικοινωνία, Discover, γεννήτρια εκδρομών, απεριόριστες εκδρομές και ίχνη, λειτουργίες Επαρχιακοί δρόμοι και Ακτή, καλύτερη σειρά για πολλές στάσεις."
     }
   ],
   "downloadUrl": "https://apps.apple.com/gr/app/id6792549131?pt=128439797&amp;ct=site-el&amp;mt=8"
@@ -72,22 +84,15 @@
 </script>
 </head>
 <body id="top">
-<a class="skip-link" href="#icerik">Μετάβαση στο περιεχόμενο</a>
+<a class="skip" href="#icerik">Μετάβαση στο περιεχόμενο</a>
 
-<header class="site-header">
-  <div class="wrap header-inner">
-    <a class="logo" href="#top">MOTO<em>SEYİR</em></a>
-    <nav aria-label="Κύρια πλοήγηση">
-      <ul class="nav">
-        <li><a href="#ozellikler">Λειτουργίες</a></li>
-        <li><a href="nasil-yapilir.html">Πώς λειτουργεί</a></li>
-        <li><a href="#fiyat">Τιμές</a></li>
-        <li><a href="#gizlilik">Απόρρητο</a></li>
-        <li><a href="#yenilikler">Τι νέο υπάρχει</a></li>
-        <li><a href="#iletisim">Επικοινωνία</a></li>
-      </ul>
-    </nav>
-    <div class="header-cta">
+<header class="ust" id="ustbar">
+  <div class="ust-ic">
+    <a class="logo" href="#top" aria-label="Motoseyir"><img src="/img/favicon.png" alt="" width="28" height="28">MOTO<em>SEYİR</em></a>
+    <nav aria-label="Κύρια πλοήγηση"><ul class="menu">
+      <li><a href="#rota">Διαδρομή</a></li><li><a href="#gecit">Περάσματα</a></li><li><a href="#fiyat">Τιμές</a></li><li><a href="/el/nasil-yapilir.html">Πώς λειτουργεί</a></li>
+    </ul></nav>
+    <div class="ust-sag">
       <details class="dil-sec">
   <summary aria-label="Επιλογή γλώσσας"><span class="dil-kod">EL</span><span class="dil-ad">Ελληνικά</span></summary>
   <ul>
@@ -107,343 +112,410 @@
     <li><span aria-current="true">Ελληνικά</span></li>
   </ul>
 </details>
-      <a class="btn btn-ghost btn-sm" href="https://apps.apple.com/gr/app/id6792549131?pt=128439797&amp;ct=site-el&amp;mt=8">Κατέβασμα</a>
+      <a class="btn btn-kucuk" href="https://apps.apple.com/gr/app/id6792549131?pt=128439797&amp;ct=site-el&amp;mt=8">Κατέβασμα</a>
     </div>
   </div>
 </header>
 
 <main id="icerik">
-
-  <!-- HERO -->
-  <section class="hero foto-arka">
-    <img class="foto-arka-img" src="../img/hero-sahil-yolu.jpg" alt="Μοτοσικλετιστής σε στριφογυριστό ορεινό δρόμο δίπλα στην ακτή, στο φως του ηλιοβασιλέματος" fetchpriority="high">
-    <div class="foto-arka-golge" aria-hidden="true"></div>
-    <div class="wrap">
-      <div class="hero-icerik">
-        <span class="eyebrow">Motoseyir · Η πλοήγηση του μοτοσικλετιστή</span>
-        <h1>Η μόνη πλοήγηση που βάζει τα χιλιόμετρα στον λογαριασμό.</h1>
-        <p class="lead">Το Motoseyir υπολογίζει τη διαδρομή με βάση την απόσταση, όχι τα λεπτά. Ανάμεσα στα ίδια δύο σημεία συγκρίνει αρκετές εναλλακτικές και προτείνει τη συντομότερη. Σε εκδρομή με πολλές στάσεις βάζει και τη σειρά των στάσεων.</p>
-        <div class="hero-cta">
-          <a class="btn btn-light" href="https://apps.apple.com/gr/app/id6792549131?pt=128439797&amp;ct=site-el&amp;mt=8">Κατέβασμα από το App Store</a>
-          <a class="btn btn-ghost" style="border-color:rgba(243,241,236,.35); color:var(--asfalt-metin);" href="#ozellikler">Δες τις λειτουργίες</a>
-        </div>
-        <p class="hero-microcopy">Ξεκίνα με δωρεάν δοκιμή 7 ημερών στη συνδρομή 3 μηνών ή στην ετήσια.<br>Η εφαρμογή είναι στα αγγλικά, γερμανικά, γαλλικά, ιταλικά και τουρκικά.</p>
+<section class="kahraman" aria-label="Εισαγωγή">
+  <div class="k-arka">
+    <picture>
+      <source media="(max-width:700px)" srcset="/m/sahne-dikey-poster.webp" type="image/webp">
+      <img src="/m/sahne-poster.webp" alt="Μοτοσικλετιστής σε ορεινό δρόμο με στροφές δίπλα στην ακτή, στο φως του ηλιοβασιλέματος" fetchpriority="high" width="1600" height="900">
+    </picture>
+    <video id="hv" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+  </div>
+  <div class="k-ic">
+    <div class="k-metin">
+      <p class="ust-yazi">Motoseyir · Η πλοήγηση του μοτοσικλετιστή</p>
+      <h1>Για όσους <i>αγαπούν τη στροφή.</i></h1>
+      <p class="giris">Το Motoseyir σχεδιάζει με βάση την απόσταση, όχι τα λεπτά. Επαρχιακοί δρόμοι, ακτή ή enduro, διαλέγεις εσύ. Ή πες του προς τα πού θέλεις να πας και άφησέ το να φτιάξει την εκδρομή· ή διάλεξε ένα πέρασμα και φύγε.</p>
+      <div class="cta-satir">
+        <a class="btn" href="https://apps.apple.com/gr/app/id6792549131?pt=128439797&amp;ct=site-el&amp;mt=8"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.6c0-2.4 2-3.5 2-3.6-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.15-2.8.85-3.5.85s-1.8-.8-3-.8c-1.5 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.700 2.400 2.900 2.300 1.200 0 1.600-.7 3-.7s1.800.7 3 .7 2-1.100 2.800-2.300c.9-1.300 1.200-2.500 1.300-2.600-.1 0-2.500-1-2.500-3.600zM14.200 5.500c.6-.8 1.100-1.800.9-2.900-.9 0-2 .6-2.700 1.400-.6.700-1.100 1.800-1 2.800 1 .1 2.100-.5 2.800-1.300z"/></svg>Κατέβασμα από το App Store</a>
+        <p class="mikro">Ο σχεδιασμός διαδρομής και η πλοήγηση είναι δωρεάν και απεριόριστα σε Τουρκία, Ευρώπη και ΗΠΑ· δεν χρειάζεται λογαριασμός.</p>
       </div>
     </div>
-  </section>
-
-  <div class="rota-ayrac koyu" aria-hidden="true">
-    <svg viewBox="0 0 1200 34" preserveAspectRatio="none"><path class="cizgi" d="M0,17 C150,2 300,32 450,17 C600,2 750,32 900,17 C1050,2 1150,17 1200,17"/><circle class="nokta" cx="300" cy="20" r="4"/><circle class="nokta" cx="750" cy="14" r="4"/></svg>
-  </div>
-
-  <!-- NEDEN FARKLI -->
-  <section class="neden foto-arka">
-    <img class="foto-arka-img" src="../img/kask-yansima.jpg" alt="" loading="lazy">
-    <div class="foto-arka-golge" aria-hidden="true"></div>
-    <div class="wrap">
-      <span class="eyebrow">Γιατί είναι διαφορετική</span>
-      <p class="soz">Οι άλλες πλοηγήσεις βρίσκουν τον <span class="vurgu">γρηγορότερο</span> δρόμο.<br>Το Motoseyir βρίσκει τον <span class="vurgu">συντομότερο</span>.</p>
-      <p class="soz-alt">Μια διαδρομή υπολογισμένη για αυτοκίνητο κάνει πάντα το ίδιο λάθος στη μοτοσικλέτα: κερδίζει λεπτά και προσθέτει χιλιόμετρα. Εσύ περνάς μέσα από την κίνηση, άρα αυτή η διαφορά για σένα είναι πραγματική — περισσότερη βενζίνη, περισσότερη φθορά στα ελαστικά. Το Motoseyir συγκρίνει τις εναλλακτικές και προτείνει τη συντομότερη, ακόμη κι αν κρατήσει λίγα λεπτά περισσότερο.</p>
+    <div class="k-tel">
+      <div class="kt kt-arka"><img src="/m/ekran-tur-en.webp" alt="" width="540" height="1174" decoding="async"></div>
+      <div class="kt kt-on"><img src="/m/ekran-nav-en.webp" alt="Οθόνη πλοήγησης στο Motoseyir: επόμενη στροφή, υπολειπόμενη απόσταση και ταχύτητα" width="540" height="1174" decoding="async"></div>
     </div>
-  </section>
-
-  <div class="rota-ayrac koyu" aria-hidden="true">
-    <svg viewBox="0 0 1200 34" preserveAspectRatio="none"><path class="cizgi" d="M0,17 C150,32 300,2 450,17 C600,32 750,2 900,17 C1050,32 1150,17 1200,17"/><circle class="nokta" cx="450" cy="17" r="4"/><circle class="nokta" cx="1050" cy="17" r="4"/></svg>
   </div>
+</section>
 
-  <!-- ÖZELLİKLER -->
-  <section class="section" id="ozellikler">
-    <div class="wrap">
-      <span class="eyebrow">Λειτουργίες</span>
-      <h2>Μία εφαρμογή για όλα όσα κάνει ένας μοτοσικλετιστής</h2>
-      <p class="section-lead">Διαδρομή, εκδρομή, βόλτα και κοινή οδήγηση — τέσσερα κεφάλαια, μία εφαρμογή. Οι εικόνες παρακάτω είναι από την ίδια την εφαρμογή.</p>
+<div class="serit" aria-label="Το Motoseyir σε αριθμούς"><div class="serit-ic">
+  <div class="sayi"><b>1.600+</b><span>ορεινά περάσματα σε 36 χώρες</span></div>
+  <div class="sayi"><b>TR · EU · US</b><span>θρυλικοί δρόμοι της Τουρκίας, της Ευρώπης και των ΗΠΑ, έτοιμοι ως διαδρομές</span></div>
+  <div class="sayi"><b>CarPlay</b><span>η διαδρομή σου στην οθόνη του αυτοκινήτου, σε πλήρη οθόνη</span></div>
+  <div class="sayi"><b>Ομάδα + Ενδοεπικοινωνία</b><span>ίδια διαδρομή, κουβέντα εν κινήσει</span></div>
+</div></div>
 
-      <!-- 1. En kısa rota -->
-      <div class="ozellik-satir">
-        <div class="ozellik-metin">
-          <span class="ozellik-etiket">Διαδρομή</span>
-          <h3>Συντομότερη διαδρομή</h3>
-          <p>Ανάμεσα στα ίδια δύο σημεία υπολογίζει αρκετές εναλλακτικές και προτείνει αυτή με τη μικρότερη απόσταση — ακόμη κι αν κρατήσει λίγο περισσότερο.</p>
-        </div>
-        <div class="ozellik-gorsel">
-          <img src="../img/en-kisa-rota.jpg" width="414" height="900" alt="Οθόνη που συγκρίνει τη συντομότερη διαδρομή με τις εναλλακτικές" loading="lazy">
-        </div>
+<div class="ana" id="ozellikler">
+  <section class="bolum" id="rota">
+    <div class="kap"><div class="bolum-ik">
+      <div data-r class="tel-alan"><div class="tel"><img src="/m/ekran-nav-en.webp" alt="Οθόνη πλοήγησης στο Motoseyir: επόμενη στροφή, υπολειπόμενη απόσταση και ταχύτητα" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r>
+        <p class="km">Διαδρομή</p>
+        <h2>Πρώτα τα χιλιόμετρα, <i>μετά η διασκέδαση.</i></h2>
+        <p class="metin">Συγκρίνει τις εναλλακτικές ανάμεσα στα ίδια δύο σημεία και προτείνει τη συντομότερη. Σε εκδρομή με πολλές στάσεις υπολογίζει και τη σειρά των στάσεων. Τα υπόλοιπα είναι δικά σου.</p>
+        <ul class="liste">
+          <li><strong>Συντομότερη διαδρομή</strong><span class="a">Η προεπιλογή· πάει με βάση τα χιλιόμετρα.</span></li>
+          <li><strong>Επαρχιακοί δρόμοι και Ακτή <span class="etiket">Pro</span></strong><span class="a">Αφήνει τον κεντρικό δρόμο για αυτούς με τις στροφές.</span></li>
+          <li><strong>Enduro</strong><span class="a">Ψάχνει χαλίκι και χωματόδρομους.</span></li>
+        </ul>
       </div>
-
-      <!-- 2. Köy yolları / sahil -->
-      <div class="ozellik-satir ters">
-        <div class="ozellik-metin">
-          <span class="ozellik-etiket">Λειτουργίες εκδρομής</span>
-          <h3>Επαρχιακοί δρόμοι και λειτουργία ακτής</h3>
-          <p>Στη λειτουργία επαρχιακών δρόμων η διαδρομή υπολογίζεται στον δικό μας διακομιστή, που χρησιμοποιεί και τους μικρούς δρόμους που ο κλασικός χάρτης προσπερνά. Από το Ayder στο Hemşin βγαίνουν έτσι 24,1 χλμ.· οι γενικοί χάρτες δείχνουν 49,9 χλμ. για τα ίδια δύο σημεία. Η λειτουργία ακτής κρατά τη διαδρομή δίπλα στη θάλασσα με τον ίδιο διακομιστή.</p>
-        </div>
-        <div class="ozellik-gorsel">
-          <img src="../img/koy-yollari.jpg" width="414" height="900" alt="Διαδρομή σχεδιασμένη σε λειτουργία επαρχιακών δρόμων, γεμάτη στροφές και θέα" loading="lazy">
-        </div>
-      </div>
-
-      <!-- 3. Çok duraklı sıralama (kanıt çifti) -->
-      <div class="ozellik-satir">
-        <div class="ozellik-metin">
-          <span class="ozellik-etiket">Πολλές στάσεις · Pro</span>
-          <h3>Η καλύτερη σειρά των στάσεων</h3>
-          <p>Βάζεις τα σημεία παράδοσης με όποια σειρά θέλεις και το «Best order» τα ξαναβάζει με βάση τη μικρότερη συνολική απόσταση. Το παρακάτω παράδειγμα είναι από αληθινή βόλτα: οι ίδιες τέσσερις στάσεις, 57,1 χλμ. με τη σειρά σου και 46,9 χλμ. με τη σειρά που βρήκε η εφαρμογή.</p>
-        </div>
-        <div class="ozellik-gorsel ikili">
-          <figure>
-            <img src="../img/cok-duraklar-kendi-sira.jpg" width="413" height="900" alt="Τέσσερις στάσεις με τη σειρά του αναβάτη, σύνολο 57,1 χλμ." loading="lazy">
-            <figcaption>Η σειρά σου — <span class="km-eski">57,1 χλμ.</span></figcaption>
-          </figure>
-          <figure>
-            <img src="../img/cok-duraklar-en-uygun.jpg" width="413" height="900" alt="Οι ίδιες τέσσερις στάσεις με τη σειρά που βρήκε το Motoseyir, σύνολο 46,9 χλμ." loading="lazy">
-            <figcaption>Η σειρά του Motoseyir — <span class="km-yeni">46,9 χλμ.</span></figcaption>
-          </figure>
-        </div>
-      </div>
-
-      <!-- 4. Efsane rotalar -->
-      <div class="ozellik-satir ters">
-        <div class="ozellik-metin">
-          <span class="ozellik-etiket">Θρυλικές διαδρομές</span>
-          <h3>Θρυλικές διαδρομές, έτοιμες για οδήγηση</h3>
-          <p>Αλπικά περάσματα όπως το Stelvio και το Sellaronda είναι έτοιμα, μαζί με τουρκικούς κλασικούς όπως το Şile–Ağva και η λυκιακή D400, και επτά αμερικανικούς, με τα Tail of the Dragon και Big Sur. Ανοίγεις έναν από τη λίστα και μπαίνει κατευθείαν στις εκδρομές σου, με τις στάσεις και τη χάραξή του.</p>
-        </div>
-        <div class="ozellik-gorsel">
-          <img src="../img/efsane-rotalar.jpg" width="413" height="900" alt="Η λίστα με τις έτοιμες θρυλικές διαδρομές" loading="lazy">
-        </div>
-      </div>
-
-      <!-- 5. Grup sürüşü + sürüşe çağır + interkom (1.1.0) -->
-      <div class="ozellik-satir">
-        <div class="ozellik-metin">
-          <span class="ozellik-etiket">Κοινή οδήγηση</span>
-          <h3>Ομαδική βόλτα, πρόσκληση και ενδοεπικοινωνία</h3>
-          <p>Όταν κάποιος φτιάχνει ομάδα, βγαίνει ένας μοναδικός κωδικός· όλοι μπαίνουν με αυτόν και βλέπουν ο ένας τον άλλον στη διαδρομή. Στο «My Ride Group», το «Invite to ride» δίπλα σε έναν φίλο στέλνει τη διαδρομή σου και μια φωνητική σύνδεση με ένα άγγιγμα· εκείνος απαντά με «Ride the same route» ή «Riding behind you».</p>
-          <p>Η ενδοεπικοινωνία ξεκινά και χωρίς διαδρομή. Την ένταση κάθε φίλου τη ρυθμίζεις ξεχωριστά και τα κράνη Bluetooth συνδέονται απευθείας. Τίποτα δεν καταγράφεται: ο ήχος πηγαίνει μόνο σε όσους βρίσκονται εκείνη τη στιγμή στο δωμάτιο, και το δωμάτιο κλείνει στο τέλος της βόλτας.</p>
-        </div>
-        <div class="ozellik-gorsel">
-          <img src="../img/grup-surusu.jpg" width="414" height="900" alt="Η ζωντανή θέση των φίλων στη διαδρομή σε ομαδική βόλτα" loading="lazy">
-        </div>
-      </div>
-
-      <!-- 6. Tur günlüğü -->
-      <div class="ozellik-satir ters">
-        <div class="ozellik-metin">
-          <span class="ozellik-etiket">Εκδρομές</span>
-          <h3>Ημερολόγιο εκδρομής</h3>
-          <p>Σε κάθε στάση βγάζεις μια φωτογραφία και αφήνεις μια σύντομη σημείωση, και τα δύο μένουν κάτω από εκείνη τη στάση. Οι φωτογραφίες εμφανίζονται και ως κάρτες στον χάρτη της εκδρομής· τις αγγίζεις και ανοίγουν σε πλήρη οθόνη. Το ημερολόγιο μένει στο τηλέφωνό σου· αν επιλέξεις να το μοιραστείς στο Community, πηγαίνουν το πολύ τρεις φωτογραφίες.</p>
-        </div>
-        <div class="ozellik-gorsel">
-          <img src="../img/tur-gunlugu.jpg" width="413" height="900" alt="Ημερολόγιο εκδρομής: προσθήκη φωτογραφίας και σημείωσης σε μια στάση" loading="lazy">
-        </div>
-      </div>
-
-      <!-- 7. Hava durumu -->
-      <div class="ozellik-satir">
-        <div class="ozellik-metin">
-          <span class="ozellik-etiket">Καιρός</span>
-          <h3>Προειδοποίηση για βροχή στη διαδρομή</h3>
-          <p>Αν αναμένεται βροχή στη διαδρομή σου, η εφαρμογή προειδοποιεί από πριν — για την ώρα που θα βρίσκεσαι πραγματικά εκεί. Αν ο καιρός είναι στεγνός, δεν εμφανίζεται τίποτα.</p>
-        </div>
-        <div class="ozellik-gorsel">
-          <img src="../img/hava-durumu.jpg" width="414" height="900" alt="Προειδοποίηση καιρού στη διαδρομή, στο σχέδιο της εκδρομής" loading="lazy">
-        </div>
-      </div>
-
-      <!-- 8. Sürüş kaydı + parkur -->
-      <div class="ozellik-satir ters">
-        <div class="ozellik-metin">
-          <span class="ozellik-etiket">Οι βόλτες μου</span>
-          <h3>Καταγραφή βόλτας και ίχνη</h3>
-          <p>Η καταγραφή συνεχίζει και με την οθόνη κλειστή, και το ίχνος χρωματίζεται με βάση την ταχύτητα. Μια βόλτα που τελείωσε μπορείς να τη στείλεις στην ομάδα σου: το ίχνος, η απόσταση και ο χρόνος μένουν εκεί 14 ημέρες. Για ένα ίχνος που έφερες από GPX υπολογίζει την απόσταση, τη συνολική ανάβαση και την πιο απότομη ανηφόρα· καθώς σέρνεις το δάχτυλο στο προφίλ, το σημείο μετακινείται στον χάρτη.</p>
-        </div>
-        <div class="ozellik-gorsel">
-          <img src="../img/parkur-istatistik.jpg" width="414" height="900" alt="Υψομετρικό προφίλ ίχνους με απόσταση, ανάβαση και δυσκολία" loading="lazy">
-        </div>
-      </div>
-
-      <!-- 9. Keşfet -->
-      <div class="ozellik-satir">
-        <div class="ozellik-metin">
-          <span class="ozellik-etiket">Discover</span>
-          <h3>Discover: σημεία πάνω στη διαδρομή</h3>
-          <p>Η εφαρμογή απαριθμεί κολπίσκους, κάμπινγκ και μέρη για φαγητό γύρω από τη διαδρομή σου. Βλέπεις τη βαθμολογία και την απόσταση από τη χάραξη και ό,τι σου αρέσει το προσθέτεις ως στάση.</p>
-        </div>
-        <div class="ozellik-gorsel">
-          <img src="../img/kesfet.jpg" width="414" height="900" alt="Η οθόνη Discover: προτάσεις γύρω από τη διαδρομή" loading="lazy">
-        </div>
-      </div>
-
-      <h3 style="margin-top:3rem; font-size:1.1rem;">Επίσης στην εφαρμογή</h3>
-      <ul class="diger-liste" style="margin-top:1.25rem;">
-        <li>
-          <h3>Κόστος καυσίμου</h3>
-          <p>Βλέπεις το εκτιμώμενο κόστος καυσίμου πριν ξεκινήσεις. Ο υπολογισμός γίνεται σε λίτρα ανά 100 χλμ., και στις ΗΠΑ σε μίλια ανά γαλόνι (mpg).</p>
-        </li>
-        <li>
-          <h3>Φωνητική καθοδήγηση</h3>
-          <p>Τις οδηγίες στροφής τις λέει η φωνή του τηλεφώνου σου, στη γλώσσα της εφαρμογής· με την εφαρμογή στα τουρκικά έρχονται από ηχογραφημένη ανθρώπινη φωνή. Η απόσταση ακολουθεί την περιοχή σου — στις ΗΠΑ «σε 500 πόδια στρίψε δεξιά».</p>
-        </li>
-        <li>
-          <h3>Ροή Community</h3>
-          <p>Οι εκδρομές που μοιράζεσαι εμφανίζονται στη ροή με το όνομα χρήστη και το εικονίδιό σου, και οι άλλοι μπορούν να βάλουν like και να σχολιάσουν. Οι δημοσιεύσεις περνούν από έλεγχο πριν βγουν. Περίπου 400 μέτρα κοντά στην αφετηρία και στον τερματισμό σου κόβονται πριν από κάθε κοινοποίηση.</p>
-        </li>
-        <li>
-          <h3>Οριζόντια χρήση</h3>
-          <p>Γύρισε το τηλέφωνο και ο χάρτης, οι κάρτες και τα κουμπιά περνούν σε νέα διάταξη: στην πλοήγηση η κάρτα στροφής και η κάρτα άφιξης αριστερά, ο χάρτης δεξιά· η λίστα εκδρομών περνά σε δύο στήλες.</p>
-        </li>
-        <li>
-          <h3>Εικονίδια αναβάτη</h3>
-          <p>Το εικονίδιο στον χάρτη το διαλέγεις από το πλέγμα στις ρυθμίσεις: μοτοσικλέτα, chopper, maxi scooter, touring, βέλος ή κράνος. Στα τρία που μπήκαν στην τελευταία ενημέρωση φαίνεται και ο αναβάτης.</p>
-        </li>
+    </div>
+    <div class="ayrinti" data-r aria-label="Η πλοήγηση αναλυτικά">
+      <dl class="veri-say">
+        <div><dt>Απεριόριστη</dt><dd>δωρεάν πλοήγηση σε Τουρκία, Ευρώπη και ΗΠΑ</dd></div>
+        <div><dt>26</dt><dd>στάσεις σε μία εκδρομή</dd></div>
+        <div><dt>2</dt><dd>εναλλακτικές διαδρομές, με τη συντομότερη σημειωμένη</dd></div>
+        <div><dt>726</dt><dd>κάμερες ταχύτητας στην Τουρκία</dd></div>
+      </dl>
+      <ul class="izgara">
+        <li><h3>Καθοδήγηση λωρίδων</h3><p>Πριν από μια διασταύρωση δείχνει σε ποια λωρίδα να είσαι, στο τηλέφωνο και στο CarPlay, και το λέει και φωναχτά.</p></li>
+        <li><h3>Όρια ταχύτητας</h3><p>Όπου το όριο είναι γνωστό, η πινακίδα ταχύτητας μένει στην οθόνη.</p></li>
+        <li><h3>Κάμερες ταχύτητας</h3><p>Ξέρει και τις 726 κάμερες της Τουρκίας από το OpenStreetMap και σε προειδοποιεί μία φορά για την καθεμία, 500 μ. ή 20 δευτερόλεπτα πριν.</p></li>
+        <li><h3>Φωνητική καθοδήγηση</h3><p>Χρησιμοποιεί την καλύτερη φωνή του τηλεφώνου σου στη γλώσσα σου. Πέρασε σε σύντομες οδηγίες αν προτιμάς να ακούς λιγότερα.</p></li>
+        <li><h3>«No toll roads»</h3><p>Με ένα άγγιγμα τα διόδια βγαίνουν από τη διαδρομή.</p></li>
+        <li><h3>Στην οθόνη κλειδώματος</h3><p>Η επόμενη στροφή εμφανίζεται στην οθόνη κλειδώματος και στο Dynamic Island, οπότε δεν χρειάζεται να ξεκλειδώσεις το τηλέφωνο.</p></li>
       </ul>
-
-      <!-- AI CoRider mağaza sürümünde YOK: tek satır "Yakında", ayrıntı yok. -->
-      <p class="kucuk" style="margin-top:1.75rem;"><strong>Σύντομα: AI CoRider</strong> — ένας συνοδηγός με τον οποίο μιλάς μέσα στο κράνος. Δεν υπάρχει ακόμη στην έκδοση του App Store· έρχεται στο Pro σε επόμενη ενημέρωση.</p>
-
-      <p style="margin-top:2.5rem; display:flex; gap:1rem; flex-wrap:wrap;">
-        <a class="btn btn-ghost" href="ozellikler.html">Δες όλες τις λειτουργίες αναλυτικά →</a>
-        <a class="btn btn-ghost" href="nasil-yapilir.html">Ανοίγεις την εφαρμογή πρώτη φορά; Ξεκίνα εδώ →</a>
-      </p>
+    </div>
     </div>
   </section>
 
-  <!-- ÜCRETSİZ / PRO -->
-  <section class="section section-2" id="fiyat">
-    <div class="wrap">
-      <span class="eyebrow">Τιμές</span>
-      <h2>Δοκίμασε δωρεάν για 7 ημέρες όλες τις λειτουργίες Pro</h2>
-      <p class="section-lead">Δεν χρειάζεται λογαριασμός. Το Motoseyir λειτουργεί με συνδρομή Pro· η συνδρομή 3 μηνών και η ετήσια ξεκινούν με δωρεάν δοκιμή 7 ημερών για νέους συνδρομητές, και μπορείς να ακυρώσεις όποτε θέλεις από τον λογαριασμό σου στο κατάστημα.</p>
-      <div class="plan-grid">
-        <div class="plan">
-          <h3>Δωρεάν δοκιμή 7 ημερών</h3>
-          <p class="fiyat-notu">Στη συνδρομή 3 μηνών και στην ετήσια, για νέους συνδρομητές, όπου διατίθεται.</p>
-          <ul>
-            <li>Όλες οι λειτουργίες Pro για 7 ημέρες</li>
-            <li>AI CoRider: 5 λεπτά για δοκιμή</li>
-            <li>Πλοήγηση βήμα προς βήμα με φωνητική καθοδήγηση</li>
-            <li>Προειδοποίηση για βροχή στη διαδρομή</li>
-            <li>Είσοδος σε ομάδα με πρόσκληση ή κωδικό</li>
+  <section class="bolum ters" id="tur">
+    <div class="kap"><div class="bolum-ik">
+      <div data-r class="tel-alan"><div class="tel"><img src="/m/ekran-tur-en.webp" alt="Οθόνη γεννήτριας εκδρομών: καντράν κατεύθυνσης και διάρκειας" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r>
+        <p class="km">Γεννήτρια εκδρομών</p>
+        <h2>Διάλεξε κατεύθυνση και χρόνο, <i>η εκδρομή είναι έτοιμη.</i> <span class="etiket">Pro</span></h2>
+        <p class="metin">Γύρνα το καντράν προς τα εκεί που θέλεις να πας και διάλεξε πόσες ώρες έχεις. Το Motoseyir σχεδιάζει μια εκδρομή προς αυτή την κατεύθυνση· τη βλέπεις στον χάρτη και ξεκινάς, αν σου αρέσει.</p>
+      </div>
+    </div>
+    <div class="ayrinti" data-r aria-label="Η γεννήτρια εκδρομών αναλυτικά">
+      <dl class="veri-say uc">
+        <div><dt>30–300 χλμ.</dt><dd>μήκος εκδρομής, ή διάλεξέ το σε ώρες</dd></div>
+        <div><dt>3</dt><dd>επίπεδα στροφών: «Relaxed», «Twisty», «Very twisty»</dd></div>
+        <div><dt>9</dt><dd>επιλογές με το «Another one»</dd></div>
+      </dl>
+      <ul class="izgara">
+        <li><h3>Κατεύθυνση</h3><p>Γύρνα το καντράν ή διάλεξε «Any direction». Η εκδρομή σε φέρνει πίσω εκεί από όπου ξεκίνησες.</p></li>
+        <li><h3>Ώρες ή χιλιόμετρα</h3><p>Πες πόσο χρόνο έχεις, με βήματα μισής ώρας, και το Motoseyir τον κάνει απόσταση.</p></li>
+        <li><h3>Τι να αποφύγεις</h3><p>Με τα «No motorways», «No tolls» και «No dirt» αφήνεις έξω αυτοκινητόδρομους, διόδια και χωματόδρομους, το καθένα ξεχωριστά.</p></li>
+        <li><h3>Τρεις εκδρομές τη φορά</h3><p>Παίρνεις τις τρεις καλύτερες επιλογές. Δεν σου αρέσουν; Πάτα «Another one» και βρίσκει νέες, από άλλους δρόμους.</p></li>
+        <li><h3>Περάσματα στη διαδρομή</h3><p>Κάθε εκδρομή απαριθμεί τα ορεινά περάσματα από τα οποία περνά.</p></li>
+        <li><h3>Δωρεάν δοκιμή</h3><p>Ο καθένας μπορεί να δημιουργήσει μια εκδρομή και να τη δει στον χάρτη. Η αποθήκευση εκδρομών με στροφές ή χωρίς αυτοκινητόδρομο ανήκει στο Pro.</p></li>
+      </ul>
+    </div>
+    </div>
+  </section>
+
+  <section class="bolum" id="gecit">
+    <div class="kap"><div class="bolum-ik">
+      <div data-r class="tel-alan"><div class="tel"><img src="/m/ekran-gecit-en.webp" alt="Οθόνη «Mountain passes»: χάρτης με αλπικά περάσματα και λίστα υψομέτρων" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r>
+        <p class="km">Περάσματα</p>
+        <h2>1.600+ περάσματα, <i>σε έναν χάρτη.</i></h2>
+        <p class="metin">Κάθε πέρασμα έχει το υψόμετρο και την ακριβή θέση του, και τα περισσότερα φωτογραφίες. Στα περάσματα που κλείνουν τον χειμώνα φαίνεται σε ποιους μήνες είναι κλειστά, και οι χωματόδρομοι σημειώνονται ως χωματόδρομοι. Πρόσθεσε στην εκδρομή σου όσα σου αρέσουν και φύγε.</p>
+        <ul class="pinler" aria-label="Παραδείγματα περασμάτων">
+          <li><span class="m">2.764 m</span><span class="ad">Col de l’Iseran</span><span class="ay">Κλειστό Νοέμβριο–Μάιο</span></li>
+          <li><span class="m">2.758 m</span><span class="ad">Passo dello Stelvio</span><span class="ay">Κλειστό Νοέμβριο–Απρίλιο</span></li>
+          <li><span class="m">2.744 m</span><span class="ad">Col Agnel</span><span class="ay">Κλειστό Οκτώβριο–Ιούνιο</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="veri" data-r aria-label="Δεδομένα περασμάτων">
+      <dl class="veri-say">
+        <div><dt>1.638</dt><dd>περάσματα σε 36 χώρες</dd></div>
+        <div><dt>317</dt><dd>περάσματα πάνω από 2.000 μ.</dd></div>
+        <div><dt>1.045</dt><dd>περάσματα με φωτογραφίες</dd></div>
+        <div><dt>98</dt><dd>περάσματα με γνωστό χειμερινό κλείσιμο</dd></div>
+      </dl>
+      <div class="veri-ik">
+        <div>
+          <h3>Ανά περιοχή</h3>
+          <ul class="bolgeler">
+            <li style="--o:100%"><span class="ad">Άλπεις και Δολομίτες</span><span class="n">535</span></li>
+            <li style="--o:76%"><span class="ad">Υπόλοιπη Ευρώπη</span><span class="n">407</span></li>
+            <li style="--o:56%"><span class="ad">Ηνωμένες Πολιτείες</span><span class="n">298</span></li>
+            <li style="--o:21%"><span class="ad">Τουρκία</span><span class="n">115</span></li>
+            <li style="--o:18%"><span class="ad">Πυρηναία</span><span class="n">94</span></li>
+            <li style="--o:11%"><span class="ad">Καρπάθια</span><span class="n">60</span></li>
+            <li style="--o:10%"><span class="ad">Κεντρική Ασία</span><span class="n">55</span></li>
+            <li style="--o:8%"><span class="ad">Βαλκάνια</span><span class="n">45</span></li>
+            <li style="--o:4%"><span class="ad">Καύκασος</span><span class="n">23</span></li>
+            <li style="--o:1%"><span class="ad">Σκανδιναβία</span><span class="n">6</span></li>
           </ul>
         </div>
-        <div class="plan on-cikan">
-          <h3>Motoseyir Pro</h3>
-          <p class="fiyat-notu">Οι τρέχουσες τιμές αλλάζουν ανά περιοχή· τις βλέπεις στην οθόνη συνδρομής στο App Store.</p>
-          <ul>
-            <li>AI CoRider, 15 λεπτά τον μήνα</li>
-            <li>Καλύτερη σειρά για πολλές στάσεις</li>
-            <li>Απεριόριστες εκδρομές και ίχνη</li>
-            <li>Λειτουργίες επαρχιακών δρόμων, ακτής και enduro</li>
-            <li>Προτάσεις Discover πάνω στη διαδρομή</li>
-            <li>Δημιουργία ομάδων και ενδοεπικοινωνία</li>
+        <div>
+          <h3>Τα πέντε υψηλότερα στις ΗΠΑ, όλα στο Κολοράντο</h3>
+          <ol class="pinler yuksekler">
+            <li><span class="m">3.696 m</span><span class="ad">Cottonwood Pass</span></li>
+            <li><span class="m">3.689 m</span><span class="ad">Independence Pass</span></li>
+            <li><span class="m">3.662 m</span><span class="ad">Cumberland Pass</span></li>
+            <li><span class="m">3.655 m</span><span class="ad">Loveland Pass</span></li>
+            <li><span class="m">3.635 m</span><span class="ad">Hagerman Pass</span></li>
+          </ol>
+          <h3>Από πού έρχονται τα δεδομένα</h3>
+          <ul class="liste veri-not">
+            <li><strong>Θέση</strong><span class="a">Το σημείο του OpenStreetMap που σημαδεύει το πέρασμα. Βρίσκεται πάνω στον δρόμο, στην κορυφή, και όχι στις πρόχειρες συντεταγμένες μιας εγκυκλοπαίδειας.</span></li>
+            <li><strong>Υψόμετρο</strong><span class="a">Από την καταχώριση του περάσματος στη Wikipedia ή στο Wikidata, ή από το OpenStreetMap όταν δεν υπάρχει. Είναι το ψηλότερο σημείο του δρόμου.</span></li>
+            <li><strong>Χειμερινά κλεισίματα</strong><span class="a">Από την ετικέτα εποχικού κλεισίματος του δρόμου στο OpenStreetMap. Αν η εκδρομή σου περνά από πέρασμα που μπορεί να είναι κλειστό εκείνον τον μήνα, η εφαρμογή σε ειδοποιεί.</span></li>
+            <li><strong>Σήματα</strong><span class="a">Τα περάσματα που περνάς σημειώνονται αυτόματα από το ιστορικό των βόλτων σου. Δεν χρειάζεται ίντερνετ.</span></li>
           </ul>
         </div>
       </div>
+      <p class="veri-atif">Δεδομένα θέσης και κλεισίματος © συντελεστές του OpenStreetMap (ODbL). Φωτογραφίες από το Wikimedia Commons· κάθε μία δείχνει στην εφαρμογή τον δημιουργό και την άδειά της.</p>
+    </div></div>
+  </section>
+
+  <section class="bolum ters" id="corider">
+    <div class="kap"><div class="bolum-ik">
+      <div data-r class="tel-alan"><div class="tel"><img src="/m/ekran-corider-en.webp" alt="Οθόνη AI CoRider: σχεδιασμός και επιλογές συνομιλίας" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r>
+        <p class="km">AI CoRider</p>
+        <h2>Ένας συνοδηγός <i>μέσα στο κράνος σου.</i> <span class="etiket">Pro</span></h2>
+        <p class="metin">Μιλάς εσύ, τα χέρια μένουν στο τιμόνι. Δεν χρειάζεται να πιάσεις το τηλέφωνο για να ρωτήσεις κάτι, να προσθέσεις μια στάση ή να προγραμματίσεις ένα διάλειμμα.</p>
+      </div>
+    </div>
+    <div class="ayrinti" data-r aria-label="Το AI CoRider αναλυτικά">
+      <dl class="veri-say uc">
+        <div><dt>4</dt><dd>φωνές για να διαλέξεις</dd></div>
+        <div><dt>Bluetooth</dt><dd>δουλεύει μέσω της ενδοεπικοινωνίας του κράνους σου</dd></div>
+        <div><dt>30·60·180</dt><dd>λεπτά σε πρόσθετα πακέτα που δεν λήγουν</dd></div>
+      </dl>
+      <ul class="izgara">
+        <li><h3>Αλλάζει τη διαδρομή με φωνή</h3><p>Προσθέτει, αφαιρεί και προσπερνά στάσεις. Αλλάζει τον προορισμό και βάζει τις στάσεις σε σειρά.</p></li>
+        <li><h3>Βρίσκει ό,τι έχεις μπροστά</h3><p>Ψάχνει καύσιμα, φαγητό ή διαμονή παρακάτω στον δρόμο και αναφέρει πρώτα τα πιο υψηλά βαθμολογημένα.</p></li>
+        <li><h3>Καιρός και αυτονομία</h3><p>Ρώτα τι καιρό θα κάνει ή πόσο μακριά σε πάει το ρεζερβουάρ.</p></li>
+        <li><h3>Κρατά την ομάδα σε επαφή</h3><p>Σου λέει πού είναι ο καθένας και στέλνει μήνυμα στην ομάδα για λογαριασμό σου.</p></li>
+        <li><h3>Τρέχει τη βόλτα</h3><p>Ξεκινά ή τερματίζει την πλοήγηση, ενεργοποιεί την καταγραφή βόλτας και σε πάει σπίτι.</p></li>
+        <li><h3>Χρόνος ομιλίας</h3><p>Το Pro περιλαμβάνει χρόνο ομιλίας που ανανεώνεται κάθε 30 ημέρες. Αν χρειάζεσαι περισσότερο, πρόσθεσε ένα πακέτο που δεν λήγει.</p></li>
+      </ul>
+    </div>
     </div>
   </section>
 
-  <div class="rota-ayrac" aria-hidden="true">
-    <svg viewBox="0 0 1200 34" preserveAspectRatio="none"><path class="cizgi" d="M0,17 C150,2 300,32 450,17 C600,2 750,32 900,17 C1050,2 1150,17 1200,17"/><circle class="nokta" cx="300" cy="20" r="4"/><circle class="nokta" cx="900" cy="20" r="4"/></svg>
-  </div>
+  <section class="bolum" id="birlikte">
+    <div class="kap"><div class="bolum-ik">
+      <div data-r class="tel-alan cift dikey">
+        <div class="tel"><img src="/m/ekran-grup-en.webp" alt="Οθόνη ομαδικής βόλτας: η διαδρομή στον χάρτη και η επόμενη στροφή" width="540" height="1174" loading="lazy"></div>
+        <div class="arac"><img src="/m/ekran-carplay-en.webp" alt="Πλοήγηση Motoseyir σε οθόνη CarPlay" width="900" height="540" loading="lazy"></div>
+      </div>
+      <div data-r>
+        <p class="km">Μαζί</p>
+        <h2>Πηγαίνετε ομάδα, <i>μιλώντας εν κινήσει.</i></h2>
+        <p class="metin">Ακολούθησε την ίδια διαδρομή με τους φίλους σου και δες όλους στον χάρτη. Η είσοδος σε ομάδα με πρόσκληση ή κωδικό είναι δωρεάν.</p>
+        <ul class="liste">
+          <li><strong>Δημιουργία ομάδας <span class="etiket">Pro</span></strong><span class="a">Σημείο συνάντησης, ζωντανή θέση, μία διαδρομή.</span></li>
+          <li><strong>Ενδοεπικοινωνία <span class="etiket">Pro</span></strong><span class="a">Μίλα με την ομάδα την ώρα που οδηγείς· χωρίς επιπλέον εξοπλισμό.</span></li>
+          <li><strong>CarPlay <span class="etiket">Pro</span></strong><span class="a">Η διαδρομή σου στην οθόνη του αυτοκινήτου· το τηλέφωνο μένει στην τσέπη.</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ayrinti" data-r aria-label="Ομάδα, ενδοεπικοινωνία και CarPlay αναλυτικά">
+      <dl class="veri-say uc">
+        <div><dt>12</dt><dd>αναβάτες σε μία ομάδα</dd></div>
+        <div><dt>Δωρεάν</dt><dd>η είσοδος με κωδικό ή πρόσκληση</dd></div>
+        <div><dt>7</dt><dd>κατηγορίες αναζήτησης στη διαδρομή στο CarPlay</dd></div>
+      </dl>
+      <ul class="izgara">
+        <li><h3>Εύκολη είσοδος</h3><p>Πληκτρολόγησε τον κωδικό των 8 χαρακτήρων ή πάτα τον σύνδεσμο. Η δημιουργία ομάδας ανήκει στο Pro.</p></li>
+        <li><h3>Θέση μόνο όσο οδηγείς</h3><p>Η θέση σου μοιράζεται μόνο όσο τρέχει η πλοήγηση και η κοινοποίηση σταματά μόλις την τερματίσεις.</p></li>
+        <li><h3>Ανοιχτό μικρόφωνο</h3><p>Στην ενδοεπικοινωνία δεν υπάρχει push-to-talk: απλώς μιλάς. Κόψε τον ήχο σε όποιον θέλεις. Τίποτα δεν καταγράφεται.</p></li>
+        <li><h3>Το CoRider στην ομάδα</h3><p>Κάλεσε το CoRider στο δωμάτιο της ομάδας και το ακούν όλοι.</p></li>
+        <li><h3>Πλοήγηση στο CarPlay</h3><p>Χάρτης, στροφές και λωρίδες στην οθόνη του αυτοκινήτου. Από εκεί προσπερνάς μια στάση, καταγράφεις τη βόλτα ή απαντάς σε κλήση ενδοεπικοινωνίας.</p></li>
+        <li><h3>Ταμπλό</h3><p>Στο Ταμπλό του CarPlay η επόμενη στροφή βρίσκεται δίπλα στις άλλες εφαρμογές σου.</p></li>
+      </ul>
+    </div>
+    </div>
+  </section>
 
-  <!-- GİZLİLİK — kaynak: uygulama içi gizlilik politikasının "Kısaca" bölümü -->
-  <section class="section" id="gizlilik">
-    <div class="wrap">
-      <span class="eyebrow">Τα δεδομένα σου</span>
+  <section class="bolum ters" id="kesfet">
+    <div class="kap"><div class="bolum-ik">
+      <div data-r class="tel-alan"><div class="tel"><img src="/m/ekran-kesfet-en.webp" alt="Οθόνη Discover: στάσεις κατά μήκος της διαδρομής και η λίστα τους" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r>
+        <p class="km">Discover</p>
+        <h2>Ανακάλυψε ό,τι βρίσκεται <i>στον δρόμο σου.</i> <span class="etiket">Pro</span></h2>
+        <p class="metin">Δες επαρχιακούς δρόμους, παραλιακούς δρόμους, κάμπινγκ και μέρη για φαγητό κατά μήκος της διαδρομής σου και πρόσθεσε όσα σου αρέσουν.</p>
+      </div>
+    </div>
+    <div class="ayrinti" data-r aria-label="Το Discover αναλυτικά">
+      <dl class="veri-say uc">
+        <div><dt>9.668</dt><dd>κολπίσκοι και παραλίες στην Τουρκία</dd></div>
+        <div><dt>20.106</dt><dd>σημεία για κάμπινγκ και φύση στην Τουρκία</dd></div>
+        <div><dt>6</dt><dd>κατηγορίες</dd></div>
+      </dl>
+      <ul class="izgara">
+        <li><h3>Κατηγορίες</h3><p>«All», «Bay & beach», «Camping & nature», «Food & drink», «Fuel» και «Passes».</p></li>
+        <li><h3>Στη διαδρομή</h3><p>Δείχνει πόσο μπροστά είναι ένα μέρος, πόσο απέχει από τη διαδρομή και σε ποια πλευρά του δρόμου βρίσκεται.</p></li>
+        <li><h3>«Explore this area»</h3><p>Μετακίνησε τον χάρτη οπουδήποτε και ψάξε γύρω από εκείνο το σημείο.</p></li>
+        <li><h3>«Camping & nature»</h3><p>Κάμπινγκ, χώροι για τροχόσπιτα, εθνικά πάρκα, καταρράκτες, σπήλαια, λίμνες, χώροι για πικνίκ και μονοπάτια πεζοπορίας.</p></li>
+        <li><h3>Φωτογραφίες</h3><p>Από το Wikimedia Commons. Στο iPhone, το άγγιγμα σε ένα μέρος ανοίγει και την κάρτα μέρους της Apple.</p></li>
+        <li><h3>Τα πιο γνωστά πρώτα</h3><p>Τα περάσματα και οι θρυλικοί δρόμοι ταξινομούνται ανάλογα με το πόσο γνωστά είναι.</p></li>
+      </ul>
+    </div>
+    </div>
+  </section>
+
+  <section class="bolum st" id="surus-sonrasi">
+    <div class="kap"><div class="bolum-ik">
+      <div data-r>
+        <p class="km">Μετά τη βόλτα</p>
+        <h2>Ο δρόμος που έκανες <i>μένει μαζί σου.</i></h2>
+        <p class="metin">Κατάγραψε τη βόλτα, δες την ξανά αργότερα και κάνε την βίντεο χάρτη εκδρομής για να το μοιραστείς.</p>
+        <ul class="liste">
+          <li><strong>Καταγραφή βόλτας και αναπαραγωγή 3D</strong><span class="a">Δες ξανά στον χάρτη πώς πήγες.</span></li>
+          <li><strong>Βίντεο χάρτη εκδρομής</strong><span class="a">Κάνε την εκδρομή σου σύντομο βίντεο.</span></li>
+          <li><strong>Προειδοποίηση για βροχή</strong><span class="a">Αν προβλέπεται βροχή στις στάσεις σου, τη βλέπεις στη διαδρομή.</span></li>
+          <li><strong>Εισαγωγή GPX</strong><span class="a">Φέρε στην εφαρμογή τη διαδρομή που ήδη έχεις.</span></li>
+        </ul>
+      </div>
+      <div data-r class="tel-alan"><div class="tel"><video data-src="/m/gezi-en.mp4" muted loop playsinline preload="none" data-poster="/m/gezi-en.jpg" aria-label="Δείγμα από βίντεο χάρτη εκδρομής: η διαδρομή Κωνσταντινούπολη–Αθήνα"></video></div></div>
+    </div>
+    <div class="ayrinti" data-r aria-label="Μετά τη βόλτα αναλυτικά">
+      <dl class="veri-say">
+        <div><dt>200</dt><dd>βόλτες αποθηκευμένες στο τηλέφωνό σου</dd></div>
+        <div><dt>22</dt><dd>σήματα, 11 ειδών</dd></div>
+        <div><dt>60×</dt><dd>μέγιστη ταχύτητα για την αναπαραγωγή 3D</dd></div>
+        <div><dt>1080×1920</dt><dd>κάθετο βίντεο, 15, 30 ή 60 δευτερόλεπτα</dd></div>
+      </dl>
+      <ul class="izgara">
+        <li><h3>Ανάλυση βόλτας</h3><p>Χρόνος κίνησης και πραγματικές στάσεις, κλειστές στροφές ανά 100 χλμ., συνολική ανάβαση, τμήματα των 10 χλμ. Όλα υπολογίζονται στο τηλέφωνό σου.</p></li>
+        <li><h3>Καινούργιοι δρόμοι</h3><p>Δες τι μέρος της βόλτας ήταν σε δρόμους που δεν είχες ξαναπεράσει.</p></li>
+        <li><h3>Θέα από ελικόπτερο</h3><p>Ξαναπαίξε τη βόλτα στον τρισδιάστατο δορυφορικό χάρτη της Apple με ταχύτητα 1, 5, 20 ή 60 φορές.</p></li>
+        <li><h3>Σήματα</h3><p>Πρώτη βόλτα, συνολική απόσταση, 500 χλμ. σε μία βόλτα, βόλτες την αυγή και τη νύχτα, εβδομαδιαίες σειρές, ανάβαση, ύψος Έβερεστ, συλλογή περασμάτων, τρεις χώρες.</p></li>
+        <li><h3>GPX</h3><p>Εξήγαγε τις βόλτες ως αρχεία GPX με χρονοσήμανση και φέρε μια διαδρομή GPX που ήδη έχεις.</p></li>
+        <li><h3>Κοινοποίηση</h3><p>Στείλε το βίντεο στο Instagram Story σου ή πάρε έναν σύνδεσμο κοινοποίησης για τη βόλτα.</p></li>
+      </ul>
+    </div>
+    </div>
+  </section>
+
+<!-- Haritada sen: sürükleyerek dönen motosiklet -->
+<section class="bolum" id="sahne" aria-label="Εσύ στον χάρτη">
+    <div class="kap"><div class="bolum-ik">
+      <div data-r>
+        <p class="km">Εσύ στον χάρτη</p>
+        <h2>Είσαι κι εσύ <i>στον χάρτη.</i></h2>
+        <p class="metin">Όσο οδηγείς, ένας δείκτης σε αντιπροσωπεύει στον χάρτη. Τον διαλέγεις από το πλέγμα στις «Settings»: μηχανή, τσόπερ, μάξι σκούτερ, τουρινγκ, βέλος ή κράνος.</p>
+      </div>
+      <div data-r>
+        <div class="motor" id="motor" role="img" aria-label="Η μοτοσικλέτα που σε αντιπροσωπεύει στον χάρτη· σύρε αριστερά ή δεξιά για να την περιστρέψεις"><img id="motorimg" src="/m/bike/090.webp" alt="" width="760" height="699" loading="lazy" decoding="async"></div>
+        <p class="motor-not">Σύρε για περιστροφή</p>
+      </div>
+    </div></div>
+  </section>
+
+  <section class="bolum ters" id="efsane">
+    <div class="kap"><div class="bolum-ik">
+      <div data-r class="tel-alan"><div class="tel"><img src="/m/ekran-efsane-en.webp" alt="Οθόνη Θρυλικοί δρόμοι: λίστα με έτοιμες διαδρομές και ο χάρτης τους" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r>
+        <p class="km">Θρυλικοί δρόμοι</p>
+        <h2>Θρυλικοί δρόμοι, <i>από την Τουρκία ως την Αμερική.</i></h2>
+        <p class="metin">Οι διάσημοι δρόμοι της Τουρκίας, της Ευρώπης και των ΗΠΑ έρχονται ως έτοιμες διαδρομές: Tail of the Dragon, Beartooth Highway, Big Sur και άλλοι. Διάλεξε έναν και φύγε.</p>
+      </div>
+    </div>
+    <div class="ayrinti" data-r aria-label="Οι θρυλικοί δρόμοι αναλυτικά">
+      <dl class="veri-say uc">
+        <div><dt>17</dt><dd>θρυλικοί δρόμοι στην Ευρώπη</dd></div>
+        <div><dt>26</dt><dd>θρυλικοί δρόμοι στις ΗΠΑ</dd></div>
+        <div><dt>11</dt><dd>έτοιμες εκδρομές στην Τουρκία</dd></div>
+      </dl>
+      <ul class="izgara">
+        <li><h3>Ευρώπη</h3><p>Stelvio, Grossglockner, Transfăgărășan, Trollstigen, Atlantic Road, Galibier και άλλοι.</p></li>
+        <li><h3>Ηνωμένες Πολιτείες</h3><p>Tail of the Dragon, Beartooth, Going-to-the-Sun Road, Big Sur, Million Dollar Highway και άλλοι.</p></li>
+        <li><h3>Τουρκία</h3><p>Şile–Ağva, η λυκιακή ακτή στη D400, Assos και το Όρος Ίδη, η χερσόνησος Datça, το οροπέδιο Ayder και άλλα.</p></li>
+        <li><h3>Τα στοιχεία κάθε δρόμου</h3><p>Οι ευρωπαϊκοί και αμερικανικοί δρόμοι έρχονται με πηγές, ύψος κορυφής και αριθμό στροφών και φουρκετών.</p></li>
+        <li><h3>Σημειώσεις εποχής</h3><p>Σε ποιους μήνες είναι ανοιχτός και αν κλείνει τον χειμώνα, για να ελέγξεις πριν φύγεις.</p></li>
+        <li><h3>Ένα άγγιγμα ως τη διαδρομή</h3><p>Διάλεξε έναν δρόμο και η διαδρομή είναι έτοιμη για οδήγηση.</p></li>
+      </ul>
+    </div>
+    </div>
+  </section>
+
+  <section class="bolum" id="tani">
+    <div class="kap"><div class="bolum-ik">
+      <div data-r>
+        <p class="km">Γνώρισέ την</p>
+        <h2>Γνώρισε <i>την εφαρμογή.</i></h2>
+        <p class="metin">Τι έχει μέσα η εφαρμογή, σε δύο λεπτά.</p>
+      </div>
+      <div data-r class="tel-alan"><div class="tani-kutu" id="tani-kutu">
+        <button type="button" id="tani-btn" aria-label="Αναπαραγωγή βίντεο γνωριμίας"><img src="/m/tani-en.jpg" alt="" loading="lazy" width="1080" height="1920"><span class="oynat"></span></button>
+      </div></div>
+    </div></div>
+  </section>
+
+  <!-- Fiyat -->
+  <section class="bolum" id="fiyat">
+    <div class="kap" data-r>
+      <p class="km">Τιμές</p>
+      <h2>Δωρεάν για βόλτες, <i>Pro όταν θέλεις περισσότερα.</i></h2>
+      <div class="fiyat">
+        <div class="plan"><h3>Δωρεάν</h3><p>Ο σχεδιασμός διαδρομής και η πλοήγηση βήμα προς βήμα είναι απεριόριστα σε Τουρκία, Ευρώπη και ΗΠΑ. Δεν χρειάζεται λογαριασμός· η δωρεάν βαθμίδα κρατά 1 αποθηκευμένη εκδρομή.</p></div>
+        <div class="plan pro"><h3>Motoseyir <i>Pro</i></h3><p>Οι συνδρομές 3 μηνών και οι ετήσιες ξεκινούν με δωρεάν δοκιμή 7 ημερών εκτός Τουρκίας, για νέους συνδρομητές. Το Pro ξεκλειδώνει:</p>
+          <ul><li>AI CoRider</li><li>Apple CarPlay</li><li>Δημιουργία ομάδας και ενδοεπικοινωνία</li><li>Discover και η γεννήτρια εκδρομών</li><li>Απεριόριστες εκδρομές και ίχνη</li><li>Λειτουργίες Επαρχιακοί δρόμοι και Ακτή, καλύτερη σειρά για πολλές στάσεις</li></ul>
+        </div>
+      </div>
+      <p class="fiyat-not">Οι τρέχουσες τιμές αλλάζουν ανά περιοχή· τις βλέπεις στην οθόνη συνδρομής στο App Store. Μπορείς να ακυρώσεις όποτε θέλεις από τον λογαριασμό σου στο App Store.</p>
+    </div>
+  </section>
+</div>
+
+<section class="varis">
+  <div class="kap" data-r>
+    <h2>Ο δρόμος είναι <i>έτοιμος.</i></h2>
+    <div class="cta-satir">
+      <a class="btn" href="https://apps.apple.com/gr/app/id6792549131?pt=128439797&amp;ct=site-el&amp;mt=8">Κατέβασμα από το App Store</a>
+      <a class="btn btn-hayalet" href="/el/nasil-yapilir.html">Πώς λειτουργεί</a>
+    </div>
+  </div>
+</section>
+
+<section class="ayr" aria-label="Απόρρητο, σημειώσεις έκδοσης και επικοινωνία">
+  <div class="kap">
+    <div id="gizlilik">
+      <p class="km">Απόρρητο</p>
       <h2>Χωρίς λογαριασμό, χωρίς περιττά δεδομένα</h2>
-      <p class="section-lead">Για να χρησιμοποιήσεις το Motoseyir δεν χρειάζεται να δώσεις όνομα, e-mail ή τηλέφωνο. Παρακάτω μια σύντομη σύνοψη της πολιτικής απορρήτου· το πλήρες κείμενο είναι στα αγγλικά μέσα στην εφαρμογή, στο Settings → Privacy Policy.</p>
-      <ul class="gizlilik-liste">
-        <li>Δεν χρειάζεται να δημιουργήσεις λογαριασμό — δεν ζητάμε όνομα, e-mail, τηλέφωνο ή ημερομηνία γέννησης.</li>
-        <li>Για τον υπολογισμό της διαδρομής, η θέση σου και οι αναζητήσεις σου πηγαίνουν μόνο σε υπηρεσίες χαρτών· καμία δεν τις αποθηκεύει.</li>
-        <li>Οι εκδρομές σου, οι καταγραφές των βολτών, οι σημειώσεις του ημερολογίου και οι φωτογραφίες σου μένουν μόνο στη συσκευή σου — εφόσον δεν τις μοιραστείς στο Community.</li>
-        <li>Για να μην γίνεται κατάχρηση της δοκιμαστικής περιόδου και των καμπανιών, στον διακομιστή μας φτάνει μια μη αναστρέψιμη, ανώνυμη σύνοψη ταυτότητας της συσκευής σου· αυτή η σύνοψη δεν σε ταυτοποιεί.</li>
-        <li>Αν ενεργοποιήσεις την ομαδική βόλτα, η τελευταία θέση σου μοιράζεται μόνο όσο διαρκεί η βόλτα και σβήνεται στο τέλος. Ο ήχος της ενδοεπικοινωνίας δεν καταγράφεται ποτέ· πηγαίνει μόνο σε όσους βρίσκονται εκείνη τη στιγμή στο δωμάτιο.</li>
-        <li>Καμία διαφήμιση· κανένα δεδομένο δεν μοιράζεται με δίκτυα διαφήμισης.</li>
-      </ul>
-      <p><a href="/gizlilik/">Διάβασε ολόκληρη την πολιτική απορρήτου (στα τουρκικά) →</a></p>
+      <p class="metin">Για να χρησιμοποιήσεις το Motoseyir δεν χρειάζεται να δώσεις όνομα, e-mail ή τηλέφωνο. Παρακάτω μια σύντομη σύνοψη της πολιτικής απορρήτου· το πλήρες κείμενο είναι στα αγγλικά μέσα στην εφαρμογή, στο Settings → Privacy Policy.</p>
+      <ul class="d"><li>Δεν χρειάζεται να δημιουργήσεις λογαριασμό — δεν ζητάμε όνομα, e-mail, τηλέφωνο ή ημερομηνία γέννησης.</li><li>Για τον υπολογισμό της διαδρομής, η θέση σου και οι αναζητήσεις σου πηγαίνουν μόνο σε υπηρεσίες χαρτών· καμία δεν τις αποθηκεύει.</li><li>Οι εκδρομές σου, οι καταγραφές των βολτών, οι σημειώσεις του ημερολογίου και οι φωτογραφίες σου μένουν μόνο στη συσκευή σου — εφόσον δεν τις μοιραστείς στο Community.</li><li>Για να μην γίνεται κατάχρηση της δοκιμαστικής περιόδου και των καμπανιών, στον διακομιστή μας φτάνει μια μη αναστρέψιμη, ανώνυμη σύνοψη ταυτότητας της συσκευής σου· αυτή η σύνοψη δεν σε ταυτοποιεί.</li><li>Αν ενεργοποιήσεις την ομαδική βόλτα, η τελευταία θέση σου μοιράζεται μόνο όσο διαρκεί η βόλτα και σβήνεται στο τέλος. Ο ήχος της ενδοεπικοινωνίας δεν καταγράφεται ποτέ· πηγαίνει μόνο σε όσους βρίσκονται εκείνη τη στιγμή στο δωμάτιο.</li><li>Καμία διαφήμιση· κανένα δεδομένο δεν μοιράζεται με δίκτυα διαφήμισης.</li></ul>
+      <a class="ok" href="/gizlilik/">Διάβασε ολόκληρη την πολιτική απορρήτου (στα τουρκικά) →</a>
     </div>
-  </section>
-
-  <!-- YENİLİKLER -->
-  <section class="section section-2" id="yenilikler">
-    <div class="wrap">
-      <span class="eyebrow">Σημειώσεις έκδοσης</span>
+    <div id="yenilikler">
+      <p class="km">Σημειώσεις έκδοσης</p>
       <h2>Τι άλλαξε</h2>
-      <p class="section-lead">Κάθε μεγάλη ενημέρωση είναι εδώ, η πιο πρόσφατη πρώτη.</p>
-
-      <!-- YENİ SÜRÜM ÇIKINCA: metinler dil/<kod>.json içindeki y110_* ve y107_*
-           anahtarlarında; yeni sürüm için şablona yeni bir <article> eklenir. -->
-      <article class="surum">
-        <div class="surum-baslik">
-          <span class="surum-no">1.1.0</span>
-          <span class="surum-tarih">Σεπτέμβριος 2026</span>
-        </div>
-        <ul>
-          <li>Οριζόντια χρήση: γύρισε το τηλέφωνο και ο χάρτης, οι κάρτες και τα κουμπιά περνούν σε νέα διάταξη. Στην πλοήγηση η κάρτα στροφής και η κάρτα άφιξης είναι αριστερά, ο χάρτης δεξιά· η λίστα εκδρομών δείχνει δύο στήλες.</li>
-          <li>Ομαδική ενδοεπικοινωνία: στο «My Ride Group», το «Invite to ride» δίπλα σε ένα άτομο στέλνει τη διαδρομή και τη φωνητική σύνδεση με ένα άγγιγμα. Η ενδοεπικοινωνία ξεκινά και χωρίς διαδρομή, η ένταση κάθε φίλου ρυθμίζεται ξεχωριστά και τα κράνη Bluetooth συνδέονται τώρα απευθείας.</li>
-          <li>Καταγραφή βόλτας στην ομάδα: στείλε στην ομάδα σου μια βόλτα που τελείωσε. Το ίχνος, η απόσταση και ο χρόνος μένουν στην ομάδα 14 ημέρες· η περιοχή γύρω από την αφετηρία και τον τερματισμό μένει κρυφή.</li>
-          <li>Τρία νέα εικονίδια αναβάτη — chopper, maxi scooter, touring — και μια νέα σελίδα βοήθειας μέσα στην εφαρμογή: Settings → How it works.</li>
-          <li>Οι δημοσιεύσεις στο Community περνούν από έλεγχο πριν βγουν· στην κάρτα μπορείς να μεγαλώσεις τον χάρτη, και οι φωτογραφίες του ημερολογίου εμφανίζονται ως κάρτες στον χάρτη.</li>
-          <li>Οι αναγγελίες στροφών ηχογραφήθηκαν ξανά και ακούγονται πιο φυσικές.</li>
-        </ul>
-      </article>
-
-      <article class="surum">
-        <div class="surum-baslik">
-          <span class="surum-no">1.0.7</span>
-          <span class="surum-tarih">Σεπτέμβριος 2026</span>
-        </div>
-        <ul>
-          <li>Η είσοδος σε ομάδα με πρόσκληση ή κωδικό είναι πλέον δωρεάν· η δημιουργία ομάδας μένει στο Pro. Ο σύνδεσμος πρόσκλησης ανοίγει κατευθείαν την εφαρμογή.</li>
-          <li>Το ημερολόγιο εκδρομής φωτογραφίζει τώρα με τη δική του κάμερα, και τη φωτογραφία εξωφύλλου τη στέλνεις απευθείας στο Instagram story σου.</li>
-          <li>Η μονάδα μέτρησης έρχεται από το πού βρίσκεσαι: μίλια, mph και πόδια στις ΗΠΑ, μίλια και γιάρδες στο Ηνωμένο Βασίλειο, χιλιόμετρα οπουδήποτε αλλού — και η φωνητική καθοδήγηση μιλά στην ίδια μονάδα.</li>
-          <li>Προστέθηκαν επτά θρυλικές αμερικανικές διαδρομές: Tail of the Dragon, Cherohala Skyway, Blue Ridge Parkway, Beartooth Highway, Angeles Crest, Big Sur και Million Dollar Highway.</li>
-        </ul>
-      </article>
+      <p class="metin">Οι πρόσφατες ενημερώσεις, η πιο νέα πρώτη.</p>
+      <article class="surum"><header><b>1.1.8</b><time>Οκτώβριος 2026</time></header>
+        <ul class="d"><li>Διορθώθηκε ένα κράσαρισμα κατά την εναλλαγή από το Blog στο Feed στο Community.</li><li>Η εγγραφή βίντεο της αναπαραγωγής 3D της βόλτας ξεκινά πιο αξιόπιστα.</li><li>Το «Ready» δεν εμφανίζεται πια πριν φορτώσει ο χάρτης και η κάμερα δεν πηδά όταν τελειώνεις ένα ζουμ με τα δάχτυλα.</li></ul></article>
+      <article class="surum"><header><b>1.1.7</b><time>Οκτώβριος 2026</time></header>
+        <ul class="d"><li>Χάρτης εκδρομής: δες μια μεγάλη εκδρομή ή βόλτα ως βίντεο σε καθαρό χάρτη. Καθώς η διαδρομή σχεδιάζεται μόνη της, εμφανίζονται ένα ένα τα μέρη που πέρασες και οι φωτογραφίες σου.</li><li>Νέες συντομεύσεις στην οθόνη Έναρξης: σπίτι και δουλειά, καταγραφή βόλτας, ένας κύκλος μίας ώρας από εδώ, ένας θρυλικός δρόμος κοντά.</li><li>298 ορεινά περάσματα και έξι νέοι θρυλικοί δρόμοι στις ΗΠΑ, ενώ η λειτουργία Ακτή δουλεύει πλέον σε όλη την Ευρώπη.</li><li>Το «Get to know Motoseyir» στις «Settings» είναι μια σύντομη ξενάγηση σε βίντεο στην εφαρμογή, καρτέλα καρτέλα.</li></ul></article>
+      <article class="surum"><header><b>1.1.6</b><time>Οκτώβριος 2026</time></header>
+        <ul class="d"><li>Δες το σε 3D: ξαναπαίξε μια καταγεγραμμένη βόλτα σαν να την ακολουθείς από ελικόπτερο· οι φωτογραφίες σου εμφανίζονται εκεί που τις τράβηξες.</li><li>Μοιράσου ως βίντεο: φτιάξε κάθετο βίντεο 15, 30 ή 60 δευτερολέπτων, έτοιμο για Instagram. Δεν χρειάζεται Pro.</li><li>Ανάλυση βόλτας: χρόνος κίνησης, πραγματικές στάσεις, κλειστές στροφές, συνολική ανάβαση και πόσο από τον δρόμο ήταν καινούργιο για σένα.</li><li>Στο «Generate a tour» το «Another one» φέρνει τρεις νέους κύκλους από άλλους δρόμους, και μπορείς να αποφύγεις αυτοκινητόδρομους, διόδια και χωματόδρομους.</li></ul></article>
     </div>
-  </section>
-
-  <!-- İLETİŞİM -->
-  <section class="section" id="iletisim">
-    <div class="wrap">
-      <span class="eyebrow">Επικοινωνία</span>
+    <div id="iletisim">
+      <p class="km">Επικοινωνία</p>
       <h2>Κάτι δεν δουλεύει ή έχεις μια ιδέα;</h2>
-      <div class="iletisim-grid">
-        <div class="iletisim-kart">
-          <h3>Υποστήριξη μέσα στην εφαρμογή</h3>
-          <p>Γράψε μας απευθείας από το Settings → «Something wrong, or an idea?»· οι απαντήσεις έρχονται στο ίδιο σημείο.</p>
-        </div>
-        <div class="iletisim-kart">
-          <h3>Instagram</h3>
-          <p>Ακολούθησέ μας για νέες διαδρομές, φωτογραφίες από βόλτες και ανακοινώσεις.</p>
-          <a class="btn btn-ghost btn-sm" href="https://www.instagram.com/motoseyir.app/">@motoseyir.app</a>
-        </div>
+      <div class="kartlar">
+        <div class="kart"><h3>Υποστήριξη μέσα στην εφαρμογή</h3><p>Γράψε μας απευθείας από το Settings → «Something wrong, or an idea?»· οι απαντήσεις έρχονται στο ίδιο σημείο.</p></div>
+        <div class="kart"><h3>Instagram</h3><p>Ακολούθησέ μας για νέες διαδρομές, φωτογραφίες από βόλτες και ανακοινώσεις.</p><a class="btn btn-hayalet btn-kucuk" href="https://www.instagram.com/motoseyir.app.en/">@motoseyir.app.en</a></div>
       </div>
     </div>
-  </section>
-
+  </div>
+</section>
 </main>
 
-<footer class="site-footer">
-  <div class="wrap">
-    <div class="footer-ust">
-      <div>
-        <a class="logo" href="#top" style="font-size:1.05rem;">MOTO<em>SEYİR</em></a>
-      </div>
-      <ul class="footer-links">
-        <li><a href="#ozellikler">Λειτουργίες</a></li>
-        <li><a href="ozellikler.html">Όλες οι λειτουργίες</a></li>
-        <li><a href="nasil-yapilir.html">Πώς λειτουργεί</a></li>
-        <li><a href="/gizlilik/">Απόρρητο (TR)</a></li>
-        <li><a href="#yenilikler">Τι νέο υπάρχει</a></li>
-        <li><a href="#iletisim">Επικοινωνία</a></li>
-        <li><a href="https://www.instagram.com/motoseyir.app/">Instagram</a></li>
-        <li><a href="https://apps.apple.com/gr/app/id6792549131?pt=128439797&amp;ct=site-el&amp;mt=8">App Store</a></li>
-      </ul>
+<footer>
+  <div class="alt-ic">
+    <div>
+      <p><a class="logo" href="#top" aria-label="Motoseyir"><img src="/img/favicon.png" alt="" width="28" height="28">MOTO<em>SEYİR</em></a></p>
+      <p style="margin-top:10px">© 2026 Motoseyir. Όλα τα δικαιώματα διατηρούνται.</p>
     </div>
-    <p>© 2026 Motoseyir. Όλα τα δικαιώματα διατηρούνται.</p>
-    <div class="dil-altbilgi">
-      <span class="dil-altbilgi-baslik">Γλώσσες</span>
+    <ul>
+      <li><a href="/el/ozellikler.html">Όλες οι λειτουργίες</a></li><li><a href="/el/nasil-yapilir.html">Πώς λειτουργεί</a></li><li><a href="/gizlilik/">Απόρρητο</a></li><li><a href="#yenilikler">Τι νέο υπάρχει</a></li><li><a href="#iletisim">Επικοινωνία</a></li><li><a href="https://www.instagram.com/motoseyir.app.en/">Instagram</a></li><li><a href="https://apps.apple.com/gr/app/id6792549131?pt=128439797&amp;ct=site-el&amp;mt=8">App Store</a></li>
+    </ul>
+    <div class="dil-altbilgi"><span>Γλώσσες</span>
       <ul class="dil-liste">
   <li><a href="/" lang="tr" hreflang="tr">Türkçe</a></li>
   <li><a href="/en/" lang="en" hreflang="en">English</a></li>
@@ -463,6 +535,5 @@
     </div>
   </div>
 </footer>
-
 </body>
 </html>

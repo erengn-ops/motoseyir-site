@@ -2,9 +2,9 @@
 <html lang="hu">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Motoros navigáció és útvonaltervező — Motoseyir</title>
-<meta name="description" content="Kilométerben számoló navigáció motorosoknak: legrövidebb útvonal, mellékutak, több megállós túrák, csoportos menet, intercom és legendás útvonalak. A Motoseyir az App Store-ban.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Motoseyir — navigáció motorosoknak, kanyargós utakra</title>
+<meta name="description" content="A Motoseyir kilométer szerint tervez, nem perc szerint. Mellékutak, tengerparti és enduro mód, túragenerátor, 1 600+ hágó, csoportos menet és CarPlay.">
 <link rel="canonical" href="https://motoseyir-app.com/hu/">
 <link rel="alternate" hreflang="tr" href="https://motoseyir-app.com/">
 <link rel="alternate" hreflang="en" href="https://motoseyir-app.com/en/">
@@ -26,20 +26,32 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Motoseyir">
 <meta property="og:locale" content="hu_HU">
-<meta property="og:title" content="Motoseyir — a navigáció, amely kilométert számol, nem percet">
-<meta property="og:description" content="Legrövidebb útvonal, mellékutak, több megállós túrák, csoportos menet, intercom és legendás útvonalak — egy appban.">
+<meta property="og:title" content="Motoseyir — navigáció motorosoknak, kanyargós utakra">
+<meta property="og:description" content="Távolság szerint tervez: mellékutak, túragenerátor, 1 600+ hágó, csoportos menet, intercom és CarPlay — egy appban.">
 <meta property="og:url" content="https://motoseyir-app.com/hu/">
 <meta property="og:image" content="https://motoseyir-app.com/img/og-kapak.jpg">
 <meta name="twitter:card" content="summary_large_image">
 
 <!-- Apple akıllı afiş: iOS Safari'de sayfanın üstünde "App Store'da aç" şeridi. -->
 <meta name="apple-itunes-app" content="app-id=6792549131">
+<meta name="theme-color" content="#101414">
+<link rel="icon" href="/img/favicon.png">
 
-<meta name="theme-color" content="#0E6E73" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0E1315" media="(prefers-color-scheme: dark)">
-<link rel="icon" href="../img/favicon.png">
-
-<link rel="stylesheet" href="../style.css">
+<!--
+  Arka plan videosu (m/sahne*.mp4): yapay zekâ ile üretildi, gerçek çekim DEĞİL. Higgsfield Wan 3.0, 18 Eki 2026,
+  başlangıç karesiz tek çekimler; cardoride.com benzeri sinema bandı için yeniden kurgulandı: üç kaynak çekimden
+  (drone ile geçit virajları, gidondan orman yolu, yandan kıyı yolu) yalnız gerçek hızda ve takılmasız aralıklar,
+  9 sert kesme (her çekim ~2,2–2,4 sn), 20,9 sn döngü, sessiz, renk işlemesiz. Ağır çekim kalan çekimler (tek çekim,
+  yol kenarı) kullanılmadı. Yatay 1920×1080 + 1280×720; dikey 608×1080 + 406×720 (sürücüyü kadrajda tutan 9:16 kırpma).
+  Ham dosyalar: motoseyir-social/02-kaynak/higgsfield/site-sahneler/
+  Bu sayfa sablon/anasayfa.html + dil/anasayfa.<kod>.json'dan üretilir (python3 uret.py); stil m/a.css, hareket m/a.js.
+-->
+<script>document.documentElement.className+=" js"</script>
+<link rel="preload" as="image" type="image/webp" href="/m/sahne-dikey-poster.webp" media="(max-width:700px)" fetchpriority="high">
+<link rel="preload" as="image" type="image/webp" href="/m/sahne-poster.webp" media="(min-width:701px)" fetchpriority="high">
+<link rel="preload" as="font" type="font/woff" href="/m/font/Manrope.woff" crossorigin>
+<link rel="stylesheet" href="/m/a.css">
+<script defer src="/m/a.js"></script>
 
 <script type="application/ld+json">
 {
@@ -51,20 +63,20 @@
   "inLanguage": "hu",
   "url": "https://motoseyir-app.com/hu/",
   "image": "https://motoseyir-app.com/img/og-kapak.jpg",
-  "description": "Távolság alapján számoló navigációs app motorosoknak: legrövidebb útvonal, mellékutak, több megállós túrák, csoportos menet, intercom és legendás útvonalak.",
+  "description": "Távolság alapú navigációs app motorosoknak: legrövidebb útvonal, mellékutak, túragenerátor, hágók, csoportos menet, intercom, CarPlay és legendás utak.",
   "offers": [
     {
       "@type": "Offer",
-      "name": "7 nap ingyen",
+      "name": "Ingyenes",
       "price": "0",
       "priceCurrency": "EUR",
-      "description": "7 napos ingyenes próba az összes Pro funkcióval a háromhavi és az éves csomagnál, új előfizetőknek, ahol elérhető."
+      "description": "Korlátlan útvonaltervezés és navigáció Törökországban, Európában és az USA-ban, 1 mentett túra; a Pro háromhavi és éves csomagja Törökországon kívül 7 napos ingyenes próbával indul, új előfizetőknek."
     },
     {
       "@type": "Offer",
       "name": "Motoseyir Pro",
       "category": "subscription",
-      "description": "Legjobb sorrend több megállóhoz, korlátlan túra és nyomvonal, mellékutas és tengerparti mód, Discover, csoport létrehozása, intercom és AI CoRider."
+      "description": "AI CoRider, CarPlay, csoport létrehozása és intercom, Discover, túragenerátor, korlátlan túra és nyomvonal, Mellékutak és Tengerpart mód, a megállók legjobb sorrendje."
     }
   ],
   "downloadUrl": "https://apps.apple.com/hu/app/id6792549131?pt=128439797&amp;ct=site-hu&amp;mt=8"
@@ -72,22 +84,15 @@
 </script>
 </head>
 <body id="top">
-<a class="skip-link" href="#icerik">Ugrás a tartalomra</a>
+<a class="skip" href="#icerik">Ugrás a tartalomra</a>
 
-<header class="site-header">
-  <div class="wrap header-inner">
-    <a class="logo" href="#top">MOTO<em>SEYİR</em></a>
-    <nav aria-label="Fő navigáció">
-      <ul class="nav">
-        <li><a href="#ozellikler">Funkciók</a></li>
-        <li><a href="nasil-yapilir.html">Hogyan működik</a></li>
-        <li><a href="#fiyat">Árak</a></li>
-        <li><a href="#gizlilik">Adatvédelem</a></li>
-        <li><a href="#yenilikler">Újdonságok</a></li>
-        <li><a href="#iletisim">Kapcsolat</a></li>
-      </ul>
-    </nav>
-    <div class="header-cta">
+<header class="ust" id="ustbar">
+  <div class="ust-ic">
+    <a class="logo" href="#top" aria-label="Motoseyir"><img src="/img/favicon.png" alt="" width="28" height="28">MOTO<em>SEYİR</em></a>
+    <nav aria-label="Fő navigáció"><ul class="menu">
+      <li><a href="#rota">Útvonal</a></li><li><a href="#gecit">Hágók</a></li><li><a href="#fiyat">Árak</a></li><li><a href="/hu/nasil-yapilir.html">Hogyan működik</a></li>
+    </ul></nav>
+    <div class="ust-sag">
       <details class="dil-sec">
   <summary aria-label="Nyelv választása"><span class="dil-kod">HU</span><span class="dil-ad">Magyar</span></summary>
   <ul>
@@ -107,343 +112,410 @@
     <li><a href="/el/" lang="el" hreflang="el">Ελληνικά</a></li>
   </ul>
 </details>
-      <a class="btn btn-ghost btn-sm" href="https://apps.apple.com/hu/app/id6792549131?pt=128439797&amp;ct=site-hu&amp;mt=8">Letöltés</a>
+      <a class="btn btn-kucuk" href="https://apps.apple.com/hu/app/id6792549131?pt=128439797&amp;ct=site-hu&amp;mt=8">Letöltés</a>
     </div>
   </div>
 </header>
 
 <main id="icerik">
-
-  <!-- HERO -->
-  <section class="hero foto-arka">
-    <img class="foto-arka-img" src="../img/hero-sahil-yolu.jpg" alt="Motoros egy kanyargós hegyi úton a tengerpart mentén, naplemente fényében" fetchpriority="high">
-    <div class="foto-arka-golge" aria-hidden="true"></div>
-    <div class="wrap">
-      <div class="hero-icerik">
-        <span class="eyebrow">Motoseyir · A motoros navigációja</span>
-        <h1>Az egyetlen navigáció, amely a kilométert is beszámítja.</h1>
-        <p class="lead">A Motoseyir távolság szerint számolja az útvonalat, nem perc szerint. Ugyanazon két pont között több változatot hasonlít össze, és a legrövidebbet ajánlja. Több megállós túrán a megállók sorrendjét is ő rakja ki.</p>
-        <div class="hero-cta">
-          <a class="btn btn-light" href="https://apps.apple.com/hu/app/id6792549131?pt=128439797&amp;ct=site-hu&amp;mt=8">Letöltés az App Store-ból</a>
-          <a class="btn btn-ghost" style="border-color:rgba(243,241,236,.35); color:var(--asfalt-metin);" href="#ozellikler">Funkciók megtekintése</a>
-        </div>
-        <p class="hero-microcopy">Kezdd 7 napos ingyenes próbával a háromhavi vagy az éves csomaggal.<br>Az app felülete angol, német, francia, olasz és török nyelven van.</p>
+<section class="kahraman" aria-label="Bemutatkozás">
+  <div class="k-arka">
+    <picture>
+      <source media="(max-width:700px)" srcset="/m/sahne-dikey-poster.webp" type="image/webp">
+      <img src="/m/sahne-poster.webp" alt="Motoros egy kanyargós hegyi úton a tengerparton, naplementében" fetchpriority="high" width="1600" height="900">
+    </picture>
+    <video id="hv" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+  </div>
+  <div class="k-ic">
+    <div class="k-metin">
+      <p class="ust-yazi">Motoseyir · A motoros navigációja</p>
+      <h1>Azoknak, akik <i>imádják a kanyart.</i></h1>
+      <p class="giris">A Motoseyir távolság szerint tervez, nem perc szerint. Mellékutak, tengerpart vagy enduro: te döntesz. Vagy mondd meg, merre mennél, és építsen egy túrát; vagy válassz egy hágót, és indulj.</p>
+      <div class="cta-satir">
+        <a class="btn" href="https://apps.apple.com/hu/app/id6792549131?pt=128439797&amp;ct=site-hu&amp;mt=8"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.6c0-2.4 2-3.5 2-3.6-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.15-2.8.85-3.5.85s-1.8-.8-3-.8c-1.5 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.700 2.400 2.900 2.300 1.200 0 1.600-.7 3-.7s1.800.7 3 .7 2-1.100 2.800-2.300c.9-1.300 1.200-2.500 1.300-2.600-.1 0-2.500-1-2.500-3.600zM14.200 5.500c.6-.8 1.100-1.800.9-2.900-.9 0-2 .6-2.700 1.400-.6.700-1.100 1.800-1 2.800 1 .1 2.100-.5 2.800-1.300z"/></svg>Letöltés az App Store-ból</a>
+        <p class="mikro">Az útvonaltervezés és a navigáció ingyenes és korlátlan Törökországban, Európában és az USA-ban; nem kell hozzá fiók.</p>
       </div>
     </div>
-  </section>
-
-  <div class="rota-ayrac koyu" aria-hidden="true">
-    <svg viewBox="0 0 1200 34" preserveAspectRatio="none"><path class="cizgi" d="M0,17 C150,2 300,32 450,17 C600,2 750,32 900,17 C1050,2 1150,17 1200,17"/><circle class="nokta" cx="300" cy="20" r="4"/><circle class="nokta" cx="750" cy="14" r="4"/></svg>
-  </div>
-
-  <!-- NEDEN FARKLI -->
-  <section class="neden foto-arka">
-    <img class="foto-arka-img" src="../img/kask-yansima.jpg" alt="" loading="lazy">
-    <div class="foto-arka-golge" aria-hidden="true"></div>
-    <div class="wrap">
-      <span class="eyebrow">Miért más</span>
-      <p class="soz">A többi navigáció a <span class="vurgu">leggyorsabb</span> utat keresi.<br>A Motoseyir a <span class="vurgu">legrövidebbet</span>.</p>
-      <p class="soz-alt">Az autóra számolt útvonal motoron mindig ugyanazt a hibát követi el: perceket nyer, kilométert veszít. Te átjutsz a forgalmon, szóval ez a különbség neked valódi — több benzin, több gumikopás. A Motoseyir összeveti a változatokat, és a legrövidebbet ajánlja, még ha pár perccel hosszabb is.</p>
+    <div class="k-tel">
+      <div class="kt kt-arka"><img src="/m/ekran-tur-en.webp" alt="" width="540" height="1174" decoding="async"></div>
+      <div class="kt kt-on"><img src="/m/ekran-nav-en.webp" alt="Navigációs képernyő a Motoseyirben: a következő kanyar, a hátralévő távolság és a sebesség" width="540" height="1174" decoding="async"></div>
     </div>
-  </section>
-
-  <div class="rota-ayrac koyu" aria-hidden="true">
-    <svg viewBox="0 0 1200 34" preserveAspectRatio="none"><path class="cizgi" d="M0,17 C150,32 300,2 450,17 C600,32 750,2 900,17 C1050,32 1150,17 1200,17"/><circle class="nokta" cx="450" cy="17" r="4"/><circle class="nokta" cx="1050" cy="17" r="4"/></svg>
   </div>
+</section>
 
-  <!-- ÖZELLİKLER -->
-  <section class="section" id="ozellikler">
-    <div class="wrap">
-      <span class="eyebrow">Funkciók</span>
-      <h2>Egy app mindenre, amit egy motoros csinál</h2>
-      <p class="section-lead">Útvonal, túra, menet és közös motorozás — négy rész, egy app. Az alábbi képek magából az appból vannak.</p>
+<div class="serit" aria-label="A Motoseyir számokban"><div class="serit-ic">
+  <div class="sayi"><b>1 600+</b><span>hágó 36 országban</span></div>
+  <div class="sayi"><b>TR · EU · US</b><span>legendás út Törökországban, Európában és az USA-ban, útvonalként kész</span></div>
+  <div class="sayi"><b>CarPlay</b><span>az útvonalad az autó kijelzőjén, teljes képernyőn</span></div>
+  <div class="sayi"><b>Csoport + Intercom</b><span>ugyanaz az útvonal, motorozás közben beszélgetve</span></div>
+</div></div>
 
-      <!-- 1. En kısa rota -->
-      <div class="ozellik-satir">
-        <div class="ozellik-metin">
-          <span class="ozellik-etiket">Útvonal</span>
-          <h3>Legrövidebb útvonal</h3>
-          <p>Ugyanazon két pont között több változatot számol ki, és a legrövidebb távolságút ajánlja — még ha kicsit hosszabb ideig tart is.</p>
-        </div>
-        <div class="ozellik-gorsel">
-          <img src="../img/en-kisa-rota.jpg" width="414" height="900" alt="Képernyő, amely a legrövidebb útvonalat hasonlítja a változatokhoz" loading="lazy">
-        </div>
+<div class="ana" id="ozellikler">
+  <section class="bolum" id="rota">
+    <div class="kap"><div class="bolum-ik">
+      <div data-r class="tel-alan"><div class="tel"><img src="/m/ekran-nav-en.webp" alt="Navigációs képernyő a Motoseyirben: a következő kanyar, a hátralévő távolság és a sebesség" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r>
+        <p class="km">Útvonaltervezés</p>
+        <h2>Először a kilométerek, <i>aztán a móka.</i></h2>
+        <p class="metin">Ugyanazon két pont között összehasonlítja a változatokat, és a legrövidebbet ajánlja. Több megállós túrán a megállók sorrendjét is kiszámolja. A többi rád van bízva.</p>
+        <ul class="liste">
+          <li><strong>Legrövidebb útvonal</strong><span class="a">Az alapértelmezett; kilométer szerint számol.</span></li>
+          <li><strong>Mellékutak és Tengerpart <span class="etiket">Pro</span></strong><span class="a">Lekanyarodik a főútról a kanyargósak felé.</span></li>
+          <li><strong>Enduro</strong><span class="a">Kavicsos és burkolatlan utakat keres.</span></li>
+        </ul>
       </div>
-
-      <!-- 2. Köy yolları / sahil -->
-      <div class="ozellik-satir ters">
-        <div class="ozellik-metin">
-          <span class="ozellik-etiket">Túramódok</span>
-          <h3>Mellékutak és tengerparti mód</h3>
-          <p>Mellékutas módban az útvonal a saját szerverünkön készül, amely a hagyományos térkép által kihagyott kis utakat is használja. Ayderből Hemşinbe így 24,1 km jön ki; az általános térképek ugyanazon két pont között 49,9 km-t mutatnak. A tengerparti mód ugyanazzal a szerverrel tartja az útvonalat a partvonal mellett.</p>
-        </div>
-        <div class="ozellik-gorsel">
-          <img src="../img/koy-yollari.jpg" width="414" height="900" alt="Mellékutas módban megrajzolt útvonal, tele kanyarral és látvánnyal" loading="lazy">
-        </div>
-      </div>
-
-      <!-- 3. Çok duraklı sıralama (kanıt çifti) -->
-      <div class="ozellik-satir">
-        <div class="ozellik-metin">
-          <span class="ozellik-etiket">Több megálló · Pro</span>
-          <h3>A megállók legjobb sorrendje</h3>
-          <p>A szállítási pontokat bármilyen sorrendben beírod, a „Best order” pedig a legrövidebb össztávolság szerint rakja újra. Az alábbi példa egy valódi menetből van: ugyanaz a négy megálló, a te sorrendedben 57,1 km, az app által megtalált sorrendben 46,9 km.</p>
-        </div>
-        <div class="ozellik-gorsel ikili">
-          <figure>
-            <img src="../img/cok-duraklar-kendi-sira.jpg" width="413" height="900" alt="Négy megálló a motoros saját sorrendjében, összesen 57,1 km" loading="lazy">
-            <figcaption>A te sorrended — <span class="km-eski">57,1 km</span></figcaption>
-          </figure>
-          <figure>
-            <img src="../img/cok-duraklar-en-uygun.jpg" width="413" height="900" alt="Ugyanaz a négy megálló a Motoseyir által megtalált sorrendben, összesen 46,9 km" loading="lazy">
-            <figcaption>A Motoseyir sorrendje — <span class="km-yeni">46,9 km</span></figcaption>
-          </figure>
-        </div>
-      </div>
-
-      <!-- 4. Efsane rotalar -->
-      <div class="ozellik-satir ters">
-        <div class="ozellik-metin">
-          <span class="ozellik-etiket">Legendás útvonalak</span>
-          <h3>Legendás útvonalak, indulásra készen</h3>
-          <p>Alpesi hágók, mint a Stelvio és a Sellaronda, készen állnak, mellettük török klasszikusok, mint a Şile–Ağva és a líkiai D400, és hét amerikai, köztük a Tail of the Dragon és a Big Sur. Ha kinyitsz egyet a listából, a megállóival és a nyomvonalával együtt egyenesen a túráid közé kerül.</p>
-        </div>
-        <div class="ozellik-gorsel">
-          <img src="../img/efsane-rotalar.jpg" width="413" height="900" alt="A kész legendás útvonalak listája" loading="lazy">
-        </div>
-      </div>
-
-      <!-- 5. Grup sürüşü + sürüşe çağır + interkom (1.1.0) -->
-      <div class="ozellik-satir">
-        <div class="ozellik-metin">
-          <span class="ozellik-etiket">Közös motorozás</span>
-          <h3>Csoportos menet, meghívás és intercom</h3>
-          <p>Amikor valaki csoportot hoz létre, egyetlen kód keletkezik; mindenki azzal csatlakozik, és látjátok egymást az útvonalon. A „My Ride Group”-ban egy barát mellett az „Invite to ride” egy koppintással elküldi az útvonalat és a hangkapcsolatot; ő pedig a „Ride the same route” vagy a „Riding behind you” lehetőséget választja.</p>
-          <p>Az intercom útvonal nélkül is elindul. Minden barát hangerejét külön állítod, a Bluetooth-os bukósisakok pedig közvetlenül kapcsolódnak. Semmi nem kerül rögzítésre: a hang csak azokhoz megy, akik éppen a szobában vannak, és a szoba a menet végén bezár.</p>
-        </div>
-        <div class="ozellik-gorsel">
-          <img src="../img/grup-surusu.jpg" width="414" height="900" alt="A barátok élő helyzete az útvonalon csoportos menet közben" loading="lazy">
-        </div>
-      </div>
-
-      <!-- 6. Tur günlüğü -->
-      <div class="ozellik-satir ters">
-        <div class="ozellik-metin">
-          <span class="ozellik-etiket">Túrák</span>
-          <h3>Túranapló</h3>
-          <p>Minden megállónál készítesz egy fotót és hagysz egy rövid jegyzetet — mindkettő az adott megálló alatt marad. A fotók a túra térképén kártyaként is megjelennek; koppints rájuk, és teljes képernyőn nyílnak. A napló a telefonodon marad; ha a Communityben megosztod, legfeljebb három fotó megy vele.</p>
-        </div>
-        <div class="ozellik-gorsel">
-          <img src="../img/tur-gunlugu.jpg" width="413" height="900" alt="Túranapló: fotó és jegyzet hozzáadása egy megállóhoz" loading="lazy">
-        </div>
-      </div>
-
-      <!-- 7. Hava durumu -->
-      <div class="ozellik-satir">
-        <div class="ozellik-metin">
-          <span class="ozellik-etiket">Időjárás</span>
-          <h3>Esőfigyelmeztetés az útvonalon</h3>
-          <p>Ha esőt várnak az útvonalon, az app előre figyelmeztet — arra az időpontra, amikor tényleg ott leszel. Ha száraz az idő, semmi nem jelenik meg.</p>
-        </div>
-        <div class="ozellik-gorsel">
-          <img src="../img/hava-durumu.jpg" width="414" height="900" alt="Időjárás-figyelmeztetés az útvonalon a túraterven" loading="lazy">
-        </div>
-      </div>
-
-      <!-- 8. Sürüş kaydı + parkur -->
-      <div class="ozellik-satir ters">
-        <div class="ozellik-metin">
-          <span class="ozellik-etiket">Menetek</span>
-          <h3>Menetrögzítés és nyomvonalak</h3>
-          <p>A rögzítés kikapcsolt kijelzővel is fut, a nyomvonal pedig sebesség szerint színeződik. Egy befejezett menetet elküldhetsz a csoportodnak: a nyomvonal, a távolság és az idő 14 napig ott marad. GPX-ből behozott nyomvonalnál kiszámolja a távolságot, a teljes szintemelkedést és a legmeredekebb szakaszt; ahogy az ujjaddal végigmész a profilon, a pont a térképen is elmozdul.</p>
-        </div>
-        <div class="ozellik-gorsel">
-          <img src="../img/parkur-istatistik.jpg" width="414" height="900" alt="Nyomvonal magassági profilja távolsággal, emelkedéssel és nehézséggel" loading="lazy">
-        </div>
-      </div>
-
-      <!-- 9. Keşfet -->
-      <div class="ozellik-satir">
-        <div class="ozellik-metin">
-          <span class="ozellik-etiket">Discover</span>
-          <h3>Discover: helyek az útvonal mentén</h3>
-          <p>Felsorolja az öblöket, kempingeket és étkezőhelyeket az útvonalad körül. Megnézed az értékelést és az útvonaltól való távolságot, és amelyik tetszik, azt megállóként hozzáadod.</p>
-        </div>
-        <div class="ozellik-gorsel">
-          <img src="../img/kesfet.jpg" width="414" height="900" alt="A Discover képernyő: javaslatok az útvonal körül" loading="lazy">
-        </div>
-      </div>
-
-      <h3 style="margin-top:3rem; font-size:1.1rem;">Az appban még</h3>
-      <ul class="diger-liste" style="margin-top:1.25rem;">
-        <li>
-          <h3>Üzemanyagköltség</h3>
-          <p>Az útvonal becsült üzemanyagköltségét indulás előtt látod. A számítás liter/100 km-ben történik, az USA-ban pedig mérföld per gallonban (mpg).</p>
-        </li>
-        <li>
-          <h3>Hangos útmutatás</h3>
-          <p>A kanyarodási utasításokat a telefonod hangja mondja, az app nyelvén; ha az app törökön van, helyette felvett emberi hang szólal meg. A távolság a régiódat követi — az USA-ban „500 láb után fordulj jobbra”.</p>
-        </li>
-        <li>
-          <h3>Community-folyam</h3>
-          <p>A megosztott túrák a felhasználóneveddel és ikonoddal jelennek meg a folyamban, mások pedig kedvelhetik és kommentálhatják. A bejegyzések megjelenés előtt átmennek egy ellenőrzésen. Az indulásod és a célod körül körülbelül 400 méter levágásra kerül, mielőtt bármi megosztódna.</p>
-        </li>
-        <li>
-          <h3>Fekvő tájolás</h3>
-          <p>Fordítsd oldalra a telefont, és a térkép, a kártyák és a gombok új elrendezésre váltanak: navigációban a kanyar- és a megérkezéskártya balra, a térkép jobbra kerül; a túralista két hasábra vált.</p>
-        </li>
-        <li>
-          <h3>Motorosjelölők</h3>
-          <p>A térképen látható jelölőt a beállításokban lévő rácsból választod: motor, chopper, maxi scooter, touring, nyíl vagy bukósisak. A legutóbbi frissítéssel jött hármon a vezető is látszik.</p>
-        </li>
+    </div>
+    <div class="ayrinti" data-r aria-label="Navigáció részletesen">
+      <dl class="veri-say">
+        <div><dt>Korlátlan</dt><dd>ingyenes navigáció Törökországban, Európában és az USA-ban</dd></div>
+        <div><dt>26</dt><dd>megálló egyetlen túrán</dd></div>
+        <div><dt>2</dt><dd>alternatív útvonal, a legrövidebb megjelölve</dd></div>
+        <div><dt>726</dt><dd>traffipax Törökországban</dd></div>
+      </dl>
+      <ul class="izgara">
+        <li><h3>Sávvezetés</h3><p>Kereszteződés előtt megmutatja, melyik sávban kell lenned, a telefonon és CarPlayen is, és hangosan is elmondja.</p></li>
+        <li><h3>Sebességkorlátozás</h3><p>Ahol ismert a korlát, a sebességtábla végig a képernyőn marad.</p></li>
+        <li><h3>Traffipaxok</h3><p>Az OpenStreetMapből ismeri mind a 726 törökországi kamerát, és kameránként egyszer figyelmeztet, 500 méterrel vagy 20 másodperccel előtte.</p></li>
+        <li><h3>Hangos útmutatás</h3><p>A telefonod legjobb hangját használja a te nyelveden. Válts rövid utasításokra, ha kevesebbet szeretnél hallani.</p></li>
+        <li><h3>„No toll roads”</h3><p>Egy koppintással kikerülnek az útvonalból a fizetős utak.</p></li>
+        <li><h3>A zárolt képernyőn</h3><p>A következő kanyar megjelenik a zárolt képernyőn és a Dynamic Islanden, így nem kell feloldanod a telefont.</p></li>
       </ul>
-
-      <!-- AI CoRider mağaza sürümünde YOK: tek satır "Yakında", ayrıntı yok. -->
-      <p class="kucuk" style="margin-top:1.75rem;"><strong>Hamarosan: AI CoRider</strong> — útitárs, akivel a bukósisakban beszélgetsz. Az App Store-verzióban még nincs benne; a Pro csomagban érkezik egy későbbi frissítéssel.</p>
-
-      <p style="margin-top:2.5rem; display:flex; gap:1rem; flex-wrap:wrap;">
-        <a class="btn btn-ghost" href="ozellikler.html">Minden funkció részletesen →</a>
-        <a class="btn btn-ghost" href="nasil-yapilir.html">Most nyitod meg először az appot? Kezdd itt →</a>
-      </p>
+    </div>
     </div>
   </section>
 
-  <!-- ÜCRETSİZ / PRO -->
-  <section class="section section-2" id="fiyat">
-    <div class="wrap">
-      <span class="eyebrow">Árak</span>
-      <h2>Próbáld ki ingyen 7 napig az összes Pro funkciót</h2>
-      <p class="section-lead">Nem kell fiók. A Motoseyir Pro-előfizetéssel használható; a háromhavi és az éves csomag az új előfizetőknek 7 napos ingyenes próbával indul, és bármikor lemondhatod az áruházi fiókodban.</p>
-      <div class="plan-grid">
-        <div class="plan">
-          <h3>7 nap ingyen</h3>
-          <p class="fiyat-notu">A háromhavi és az éves csomagnál, új előfizetőknek, ahol elérhető.</p>
-          <ul>
-            <li>Minden Pro funkció 7 napig</li>
-            <li>AI CoRider: 5 perc kipróbálásra</li>
-            <li>Lépésenkénti navigáció hangos útmutatással</li>
-            <li>Esőfigyelmeztetés az útvonalon</li>
-            <li>Csatlakozás csoporthoz meghívóval vagy kóddal</li>
+  <section class="bolum ters" id="tur">
+    <div class="kap"><div class="bolum-ik">
+      <div data-r class="tel-alan"><div class="tel"><img src="/m/ekran-tur-en.webp" alt="A túragenerátor képernyője: irány- és időtartam-tárcsa" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r>
+        <p class="km">Túragenerátor</p>
+        <h2>Válassz irányt és időt, <i>kész a túra.</i> <span class="etiket">Pro</span></h2>
+        <p class="metin">Fordítsd a tárcsát arra, amerre menni szeretnél, és add meg, hány órád van. A Motoseyir arra rajzol egy túrát; a térképen látod, és ha tetszik, indulhatsz.</p>
+      </div>
+    </div>
+    <div class="ayrinti" data-r aria-label="Túragenerátor részletesen">
+      <dl class="veri-say uc">
+        <div><dt>30–300 km</dt><dd>a túra hossza, vagy válaszd órában</dd></div>
+        <div><dt>3</dt><dd>kanyarszint: „Relaxed”, „Twisty”, „Very twisty”</dd></div>
+        <div><dt>9</dt><dd>lehetőség az „Another one” gombbal</dd></div>
+      </dl>
+      <ul class="izgara">
+        <li><h3>Irány</h3><p>Fordítsd a tárcsát, vagy válaszd az „Any direction” lehetőséget. A túra oda ér vissza, ahonnan indultál.</p></li>
+        <li><h3>Óra vagy kilométer</h3><p>Mondd meg, mennyi időd van, félórás lépésekben, a Motoseyir pedig távolsággá váltja.</p></li>
+        <li><h3>Amit kerülnél</h3><p>A „No motorways”, „No tolls” és „No dirt” kapcsolóval kihagyhatod az autópályákat, az útdíjas és a földutakat, mindegyiket külön.</p></li>
+        <li><h3>Egyszerre három túra</h3><p>A három legjobb változatot kapod. Nem tetszenek? Koppints az „Another one” gombra: újakat keres más utakon.</p></li>
+        <li><h3>Hágók az úton</h3><p>Minden túra felsorolja, mely hágókon visz át.</p></li>
+        <li><h3>Ingyen kipróbálható</h3><p>Bárki generálhat túrát, és megnézheti a térképen. A kanyargós vagy autópálya-mentes túrák mentése a Pro része.</p></li>
+      </ul>
+    </div>
+    </div>
+  </section>
+
+  <section class="bolum" id="gecit">
+    <div class="kap"><div class="bolum-ik">
+      <div data-r class="tel-alan"><div class="tel"><img src="/m/ekran-gecit-en.webp" alt="A „Mountain passes” képernyője: alpesi hágók térképe magassági listával" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r>
+        <p class="km">Hágók</p>
+        <h2>1 600+ hágó, <i>egyetlen térképen.</i></h2>
+        <p class="metin">Minden hágónál ott a magasság és a pontos hely, a legtöbbnél fotó is. A télen lezáruló hágóknál látod, mely hónapokban zárva vannak, a földutakat pedig földútként jelöli. Add hozzá a kedvenceidet a túrádhoz, és indulj.</p>
+        <ul class="pinler" aria-label="Példa hágók">
+          <li><span class="m">2 764 m</span><span class="ad">Col de l’Iseran</span><span class="ay">Zárva novembertől májusig</span></li>
+          <li><span class="m">2 758 m</span><span class="ad">Passo dello Stelvio</span><span class="ay">Zárva novembertől áprilisig</span></li>
+          <li><span class="m">2 744 m</span><span class="ad">Col Agnel</span><span class="ay">Zárva októbertől júniusig</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="veri" data-r aria-label="Hágóadatok">
+      <dl class="veri-say">
+        <div><dt>1 638</dt><dd>hágó 36 országban</dd></div>
+        <div><dt>317</dt><dd>hágó 2 000 m felett</dd></div>
+        <div><dt>1 045</dt><dd>hágó fotóval</dd></div>
+        <div><dt>98</dt><dd>hágó ismert téli lezárással</dd></div>
+      </dl>
+      <div class="veri-ik">
+        <div>
+          <h3>Régiók szerint</h3>
+          <ul class="bolgeler">
+            <li style="--o:100%"><span class="ad">Alpok és Dolomitok</span><span class="n">535</span></li>
+            <li style="--o:76%"><span class="ad">Európa többi része</span><span class="n">407</span></li>
+            <li style="--o:56%"><span class="ad">Egyesült Államok</span><span class="n">298</span></li>
+            <li style="--o:21%"><span class="ad">Törökország</span><span class="n">115</span></li>
+            <li style="--o:18%"><span class="ad">Pireneusok</span><span class="n">94</span></li>
+            <li style="--o:11%"><span class="ad">Kárpátok</span><span class="n">60</span></li>
+            <li style="--o:10%"><span class="ad">Közép-Ázsia</span><span class="n">55</span></li>
+            <li style="--o:8%"><span class="ad">Balkán</span><span class="n">45</span></li>
+            <li style="--o:4%"><span class="ad">Kaukázus</span><span class="n">23</span></li>
+            <li style="--o:1%"><span class="ad">Skandinávia</span><span class="n">6</span></li>
           </ul>
         </div>
-        <div class="plan on-cikan">
-          <h3>Motoseyir Pro</h3>
-          <p class="fiyat-notu">Az aktuális árak régiónként változnak; az App Store előfizetési képernyőjén látod a sajátodat.</p>
-          <ul>
-            <li>AI CoRider, havi 15 perc</li>
-            <li>Legjobb sorrend több megállóhoz</li>
-            <li>Korlátlan túra és nyomvonal</li>
-            <li>Mellékutas, tengerparti és enduro mód</li>
-            <li>Discover-javaslatok az útvonal mentén</li>
-            <li>Csoport létrehozása és intercom</li>
+        <div>
+          <h3>Az USA öt legmagasabb hágója, mind Coloradóban</h3>
+          <ol class="pinler yuksekler">
+            <li><span class="m">3 696 m</span><span class="ad">Cottonwood Pass</span></li>
+            <li><span class="m">3 689 m</span><span class="ad">Independence Pass</span></li>
+            <li><span class="m">3 662 m</span><span class="ad">Cumberland Pass</span></li>
+            <li><span class="m">3 655 m</span><span class="ad">Loveland Pass</span></li>
+            <li><span class="m">3 635 m</span><span class="ad">Hagerman Pass</span></li>
+          </ol>
+          <h3>Honnan jönnek az adatok</h3>
+          <ul class="liste veri-not">
+            <li><strong>Hely</strong><span class="a">A hágót jelölő OpenStreetMap-pont. A csúcson, az úton van, nem egy lexikon hozzávetőleges koordinátáján.</span></li>
+            <li><strong>Magasság</strong><span class="a">A hágó Wikipedia- vagy Wikidata-adatlapjáról, ennek híján az OpenStreetMapből. Az út legmagasabb pontja.</span></li>
+            <li><strong>Téli lezárás</strong><span class="a">Az OpenStreetMapben az út szezonális lezárási címkéjéből. Ha a túrád olyan hágón visz át, amely az adott hónapban zárva lehet, az app szól.</span></li>
+            <li><strong>Jelvények</strong><span class="a">A hágókat, amelyeken átmentél, a menetnaplóból automatikusan kipipálja. Internet nem kell hozzá.</span></li>
           </ul>
         </div>
       </div>
+      <p class="veri-atif">A hely- és lezárási adatok © OpenStreetMap-közreműködők (ODbL). A fotók a Wikimedia Commonsról származnak; mindegyiknél az appban látszik a szerző és a licenc.</p>
+    </div></div>
+  </section>
+
+  <section class="bolum ters" id="corider">
+    <div class="kap"><div class="bolum-ik">
+      <div data-r class="tel-alan"><div class="tel"><img src="/m/ekran-corider-en.webp" alt="Az AI CoRider képernyője: tervező és csevegési lehetőségek" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r>
+        <p class="km">AI CoRider</p>
+        <h2>Útitárs <i>a bukósisakodban.</i> <span class="etiket">Pro</span></h2>
+        <p class="metin">Te beszélsz, a kezed a kormányon marad. Nem kell a telefonért nyúlnod, ha kérdeznél valamit, megállót adnál hozzá vagy pihenőt terveznél.</p>
+      </div>
+    </div>
+    <div class="ayrinti" data-r aria-label="AI CoRider részletesen">
+      <dl class="veri-say uc">
+        <div><dt>4</dt><dd>hang közül választhatsz</dd></div>
+        <div><dt>Bluetooth</dt><dd>a bukósisakod intercomján keresztül is működik</dd></div>
+        <div><dt>30·60·180</dt><dd>perces kiegészítő csomag, amely nem jár le</dd></div>
+      </dl>
+      <ul class="izgara">
+        <li><h3>Útvonalmódosítás hanggal</h3><p>Megállót ad hozzá, töröl és kihagy. Módosítja az úticélt, és sorba rakja a megállókat.</p></li>
+        <li><h3>Megtalálja, ami előtted van</h3><p>Üzemanyagot, ételt vagy szállást keres az út mentén, és a legjobbra értékeltet említi elsőként.</p></li>
+        <li><h3>Időjárás és hatótáv</h3><p>Kérdezd meg, milyen lesz az idő, vagy meddig visz el a tank.</p></li>
+        <li><h3>Összetartja a csoportot</h3><p>Megmondja, hol van mindenki, és üzenetet küld helyetted a csoportnak.</p></li>
+        <li><h3>Viszi a menetet</h3><p>Elindítja vagy leállítja a navigációt, bekapcsolja a menetrögzítést, és hazavisz.</p></li>
+        <li><h3>Beszédidő</h3><p>A Pro 30 naponta megújuló beszédidőt tartalmaz. Ha több kell, vegyél egy csomagot, amely nem jár le.</p></li>
+      </ul>
+    </div>
     </div>
   </section>
 
-  <div class="rota-ayrac" aria-hidden="true">
-    <svg viewBox="0 0 1200 34" preserveAspectRatio="none"><path class="cizgi" d="M0,17 C150,2 300,32 450,17 C600,2 750,32 900,17 C1050,2 1150,17 1200,17"/><circle class="nokta" cx="300" cy="20" r="4"/><circle class="nokta" cx="900" cy="20" r="4"/></svg>
-  </div>
+  <section class="bolum" id="birlikte">
+    <div class="kap"><div class="bolum-ik">
+      <div data-r class="tel-alan cift dikey">
+        <div class="tel"><img src="/m/ekran-grup-en.webp" alt="A csoportos menet képernyője: az útvonal a térképen és a következő kanyar" width="540" height="1174" loading="lazy"></div>
+        <div class="arac"><img src="/m/ekran-carplay-en.webp" alt="A Motoseyir navigáció egy CarPlay képernyőn" width="900" height="540" loading="lazy"></div>
+      </div>
+      <div data-r>
+        <p class="km">Együtt</p>
+        <h2>Motorozzatok csoportban, <i>menet közben beszélgetve.</i></h2>
+        <p class="metin">Menj ugyanazon az útvonalon a barátaiddal, és lásd mindenkit a térképen. A csoporthoz meghívóval vagy kóddal csatlakozni ingyenes.</p>
+        <ul class="liste">
+          <li><strong>Csoport létrehozása <span class="etiket">Pro</span></strong><span class="a">Találkozási pont, élő helyzet, egy útvonal.</span></li>
+          <li><strong>Intercom <span class="etiket">Pro</span></strong><span class="a">Beszélj a csoporttal motorozás közben; nem kell hozzá külön eszköz.</span></li>
+          <li><strong>CarPlay <span class="etiket">Pro</span></strong><span class="a">Az útvonalad az autó kijelzőjén; a telefon marad a zsebedben.</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ayrinti" data-r aria-label="Csoport, intercom és CarPlay részletesen">
+      <dl class="veri-say uc">
+        <div><dt>12</dt><dd>motoros egy csoportban</dd></div>
+        <div><dt>Ingyenes</dt><dd>a csatlakozás kóddal vagy meghívóval</dd></div>
+        <div><dt>7</dt><dd>kategória az útvonal menti kereséshez CarPlayen</dd></div>
+      </dl>
+      <ul class="izgara">
+        <li><h3>Könnyű csatlakozni</h3><p>Írd be a 8 karakteres kódot, vagy koppints a linkre. A csoport létrehozása a Pro része.</p></li>
+        <li><h3>Helyzet csak motorozás közben</h3><p>A helyzeted csak addig látszik, amíg fut a navigáció, a megosztás pedig leáll, amint befejezed.</p></li>
+        <li><h3>Nyitott mikrofon</h3><p>Az intercomon nincs nyomógomb: csak beszélj. Bárkit lenémíthatsz. Semmi nem kerül rögzítésre.</p></li>
+        <li><h3>CoRider a csoportban</h3><p>Hívd meg a CoRidert a csoport szobájába, és mindenki hallja.</p></li>
+        <li><h3>Navigáció CarPlayen</h3><p>Térkép, kanyarok és sávok az autó kijelzőjén. Onnan kihagyhatsz egy megállót, rögzítheted a menetet, vagy fogadhatsz egy intercomhívást.</p></li>
+        <li><h3>Irányítópult</h3><p>A CarPlay Irányítópultján a következő kanyar a többi appod mellett jelenik meg.</p></li>
+      </ul>
+    </div>
+    </div>
+  </section>
 
-  <!-- GİZLİLİK — kaynak: uygulama içi gizlilik politikasının "Kısaca" bölümü -->
-  <section class="section" id="gizlilik">
-    <div class="wrap">
-      <span class="eyebrow">Az adataid</span>
+  <section class="bolum ters" id="kesfet">
+    <div class="kap"><div class="bolum-ik">
+      <div data-r class="tel-alan"><div class="tel"><img src="/m/ekran-kesfet-en.webp" alt="A Discover képernyője: az útvonal menti helyek és a listájuk" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r>
+        <p class="km">Discover</p>
+        <h2>Fedezd fel, <i>ami útba esik.</i> <span class="etiket">Pro</span></h2>
+        <p class="metin">Nézd meg az útvonalad mentén a mellékutakat, a tengerparti utakat, a kempingeket és az étkezőhelyeket, és add hozzá, ami tetszik.</p>
+      </div>
+    </div>
+    <div class="ayrinti" data-r aria-label="A Discover részletesen">
+      <dl class="veri-say uc">
+        <div><dt>9 668</dt><dd>öböl és strand Törökországban</dd></div>
+        <div><dt>20 106</dt><dd>kemping- és természeti hely Törökországban</dd></div>
+        <div><dt>6</dt><dd>kategória</dd></div>
+      </dl>
+      <ul class="izgara">
+        <li><h3>Kategóriák</h3><p>„All”, „Bay & beach”, „Camping & nature”, „Food & drink”, „Fuel” és „Passes”.</p></li>
+        <li><h3>Az útvonal mentén</h3><p>Megmutatja, milyen messze van a hely, mennyire tér el az útvonaltól, és az út melyik oldalán áll.</p></li>
+        <li><h3>„Explore this area”</h3><p>Told a térképet bárhová, és keress a hely körül.</p></li>
+        <li><h3>„Camping & nature”</h3><p>Kempingek, lakóautó-parkolók, nemzeti parkok, vízesések, barlangok, tavak, piknikezőhelyek és túraútvonalak.</p></li>
+        <li><h3>Fotók</h3><p>A Wikimedia Commonsról. iPhone-on egy helyre koppintva az Apple helykártyája is megnyílik.</p></li>
+        <li><h3>A legismertebbek elöl</h3><p>A hágók és a legendás utak ismertség szerint vannak rangsorolva.</p></li>
+      </ul>
+    </div>
+    </div>
+  </section>
+
+  <section class="bolum st" id="surus-sonrasi">
+    <div class="kap"><div class="bolum-ik">
+      <div data-r>
+        <p class="km">Motorozás után</p>
+        <h2>Az út, amelyen végigmentél, <i>megmarad.</i></h2>
+        <p class="metin">Rögzítsd a menetet, nézd meg később újra, és készíts belőle túratérkép-videót, amit megoszthatsz.</p>
+        <ul class="liste">
+          <li><strong>Menetrögzítés és 3D-s visszajátszás</strong><span class="a">Nézd meg újra a térképen, hogyan mentél végig.</span></li>
+          <li><strong>Túratérkép-videó</strong><span class="a">Készíts a túrádból rövid videót.</span></li>
+          <li><strong>Esőfigyelmeztetés</strong><span class="a">Ha esőt jósolnak a megállóidnál, látod az útvonalon.</span></li>
+          <li><strong>GPX-import</strong><span class="a">Hozd be az appba az útvonalat, amelyed már megvan.</span></li>
+        </ul>
+      </div>
+      <div data-r class="tel-alan"><div class="tel"><video data-src="/m/gezi-en.mp4" muted loop playsinline preload="none" data-poster="/m/gezi-en.jpg" aria-label="Részlet egy túratérkép-videóból: az Isztambul–Athén útvonal"></video></div></div>
+    </div>
+    <div class="ayrinti" data-r aria-label="Motorozás utáni funkciók részletesen">
+      <dl class="veri-say">
+        <div><dt>200</dt><dd>menet tárolva a telefonodon</dd></div>
+        <div><dt>22</dt><dd>jelvény, 11 féle</dd></div>
+        <div><dt>60×</dt><dd>maximális sebesség a 3D-s visszajátszásban</dd></div>
+        <div><dt>1080×1920</dt><dd>álló videó, 15, 30 vagy 60 másodperc</dd></div>
+      </dl>
+      <ul class="izgara">
+        <li><h3>Menetelemzés</h3><p>Mozgásidő és valódi megállások, éles kanyarok 100 km-enként, összes emelkedés, 10 km-es szakaszok. Mindet a telefonod számolja ki.</p></li>
+        <li><h3>Új utak</h3><p>Nézd meg, a menet hány százaléka vezetett olyan úton, amelyen még sosem jártál.</p></li>
+        <li><h3>Helikopteres nézet</h3><p>Játszd vissza a menetet az Apple 3D-s műholdtérképén 1, 5, 20 vagy 60-szoros sebességgel.</p></li>
+        <li><h3>Jelvények</h3><p>Első menet, összes megtett táv, 500 km egy menetben, napfelkelte- és éjszakai menetek, heti sorozatok, emelkedés, Everest-magasság, hágógyűjtés, három ország.</p></li>
+        <li><h3>GPX</h3><p>Exportáld a meneteket időbélyeges GPX-fájlként, és hozd be a már meglévő GPX-útvonalat.</p></li>
+        <li><h3>Megosztás</h3><p>Küldd el a videót az Instagram Storydba, vagy kérj megosztási linket a menethez.</p></li>
+      </ul>
+    </div>
+    </div>
+  </section>
+
+<!-- Haritada sen: sürükleyerek dönen motosiklet -->
+<section class="bolum" id="sahne" aria-label="Te a térképen">
+    <div class="kap"><div class="bolum-ik">
+      <div data-r>
+        <p class="km">Te a térképen</p>
+        <h2>Te is <i>rajta vagy a térképen.</i></h2>
+        <p class="metin">Motorozás közben egy jelölő mutatja, hol vagy a térképen. A „Settings” képernyőn a rácsból választod ki: motor, chopper, maxiskuter, túramotor, nyíl vagy bukósisak.</p>
+      </div>
+      <div data-r>
+        <div class="motor" id="motor" role="img" aria-label="A motor, amely téged jelöl a térképen; húzd balra vagy jobbra, hogy elforgasd"><img id="motorimg" src="/m/bike/090.webp" alt="" width="760" height="699" loading="lazy" decoding="async"></div>
+        <p class="motor-not">Húzd az elforgatáshoz</p>
+      </div>
+    </div></div>
+  </section>
+
+  <section class="bolum ters" id="efsane">
+    <div class="kap"><div class="bolum-ik">
+      <div data-r class="tel-alan"><div class="tel"><img src="/m/ekran-efsane-en.webp" alt="A legendás utak képernyője: kész útvonalak listája és térképük" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r>
+        <p class="km">Legendás utak</p>
+        <h2>Legendás utak, <i>Törökországtól Amerikáig.</i></h2>
+        <p class="metin">Törökország, Európa és az USA híres útjai kész útvonalként várnak: Tail of the Dragon, Beartooth Highway, Big Sur és még sok más. Válassz egyet, és indulj.</p>
+      </div>
+    </div>
+    <div class="ayrinti" data-r aria-label="Legendás utak részletesen">
+      <dl class="veri-say uc">
+        <div><dt>17</dt><dd>legendás út Európában</dd></div>
+        <div><dt>26</dt><dd>legendás út az USA-ban</dd></div>
+        <div><dt>11</dt><dd>kész túra Törökországban</dd></div>
+      </dl>
+      <ul class="izgara">
+        <li><h3>Európa</h3><p>Stelvio, Grossglockner, Transfăgărășan, Trollstigen, az Atlantic Road, a Galibier és még sok más.</p></li>
+        <li><h3>Egyesült Államok</h3><p>Tail of the Dragon, Beartooth, Going-to-the-Sun Road, Big Sur, a Million Dollar Highway és még sok más.</p></li>
+        <li><h3>Törökország</h3><p>Şile–Ağva, a líkiai part a D400-on, Assos és az Ida-hegy, a Datça-félsziget, az Ayder-fennsík és még sok más.</p></li>
+        <li><h3>Minden út adatai</h3><p>Az európai és amerikai utakhoz forrás, csúcsmagasság, valamint a kanyarok és hajtűkanyarok száma tartozik.</p></li>
+        <li><h3>Szezonjegyzetek</h3><p>Mely hónapokban van nyitva, és télen zár-e, hogy indulás előtt ellenőrizhesd.</p></li>
+        <li><h3>Egy koppintás az útvonalig</h3><p>Válassz egy utat, és az útvonal indulásra kész.</p></li>
+      </ul>
+    </div>
+    </div>
+  </section>
+
+  <section class="bolum" id="tani">
+    <div class="kap"><div class="bolum-ik">
+      <div data-r>
+        <p class="km">Ismerd meg</p>
+        <h2>Ismerd meg <i>az appot.</i></h2>
+        <p class="metin">Mi van az appban, két percben.</p>
+      </div>
+      <div data-r class="tel-alan"><div class="tani-kutu" id="tani-kutu">
+        <button type="button" id="tani-btn" aria-label="Bemutatkozó videó lejátszása"><img src="/m/tani-en.jpg" alt="" loading="lazy" width="1080" height="1920"><span class="oynat"></span></button>
+      </div></div>
+    </div></div>
+  </section>
+
+  <!-- Fiyat -->
+  <section class="bolum" id="fiyat">
+    <div class="kap" data-r>
+      <p class="km">Árak</p>
+      <h2>Ingyen motorozhatsz, <i>többért ott a Pro.</i></h2>
+      <div class="fiyat">
+        <div class="plan"><h3>Ingyenes</h3><p>Az útvonaltervezés és a lépésenkénti navigáció korlátlan Törökországban, Európában és az USA-ban. Nem kell fiók; az ingyenes szint 1 mentett túrát tárol.</p></div>
+        <div class="plan pro"><h3>Motoseyir <i>Pro</i></h3><p>A háromhavi és az éves csomag Törökországon kívül 7 napos ingyenes próbával indul, új előfizetőknek. A Pro ezeket nyitja meg:</p>
+          <ul><li>AI CoRider</li><li>Apple CarPlay</li><li>Csoport létrehozása és intercom</li><li>Discover és a túragenerátor</li><li>Korlátlan túra és nyomvonal</li><li>Mellékutak és Tengerpart mód, a megállók legjobb sorrendje</li></ul>
+        </div>
+      </div>
+      <p class="fiyat-not">Az aktuális árak régiónként változnak; az App Store előfizetési képernyőjén látod őket. Bármikor lemondhatod az App Store-fiókodban.</p>
+    </div>
+  </section>
+</div>
+
+<section class="varis">
+  <div class="kap" data-r>
+    <h2>Az út <i>készen áll.</i></h2>
+    <div class="cta-satir">
+      <a class="btn" href="https://apps.apple.com/hu/app/id6792549131?pt=128439797&amp;ct=site-hu&amp;mt=8">Letöltés az App Store-ból</a>
+      <a class="btn btn-hayalet" href="/hu/nasil-yapilir.html">Hogyan működik</a>
+    </div>
+  </div>
+</section>
+
+<section class="ayr" aria-label="Adatvédelem, verziójegyzetek és kapcsolat">
+  <div class="kap">
+    <div id="gizlilik">
+      <p class="km">Adatvédelem</p>
       <h2>Nincs fiók, nincs fölösleges adat</h2>
-      <p class="section-lead">A Motoseyir használatához nem kell nevet, e-mailt vagy telefonszámot megadnod. Lentebb az adatvédelmi tájékoztató rövid összefoglalója; a teljes szöveg angolul az appban van, a Settings → Privacy Policy alatt.</p>
-      <ul class="gizlilik-liste">
-        <li>Nem kell fiókot létrehoznod — nem kérünk nevet, e-mailt, telefonszámot vagy születési dátumot.</li>
-        <li>Az útvonal kiszámításához a helyzeted és a kereséseid csak térképszolgáltatásokhoz mennek; egyik sem tárolja őket.</li>
-        <li>A túráid, a menetrögzítéseid, a naplójegyzeteid és a fotóid csak a készülékeden maradnak — amíg nem osztod meg őket a Communityben.</li>
-        <li>Hogy a próbaidőt és a kampányokat ne lehessen visszaélésre használni, a készülékedről visszafordíthatatlan, anonim azonosítólenyomat kerül a szerverünkre; ez a lenyomat nem azonosít téged.</li>
-        <li>Ha bekapcsolod a csoportos menetet, az utolsó helyzeted csak a menet közben oszlik meg, és a végén törlődik. Az intercom hangja soha nem kerül rögzítésre, csak azokhoz megy, akik éppen a szobában vannak.</li>
-        <li>Nincs reklám; egyetlen reklámhálózattal sem osztunk meg adatot.</li>
-      </ul>
-      <p><a href="/gizlilik/">A teljes adatvédelmi tájékoztató elolvasása (törökül) →</a></p>
+      <p class="metin">A Motoseyir használatához nem kell nevet, e-mailt vagy telefonszámot megadnod. Lentebb az adatvédelmi tájékoztató rövid összefoglalója; a teljes szöveg angolul az appban van, a Settings → Privacy Policy alatt.</p>
+      <ul class="d"><li>Nem kell fiókot létrehoznod — nem kérünk nevet, e-mailt, telefonszámot vagy születési dátumot.</li><li>Az útvonal kiszámításához a helyzeted és a kereséseid csak térképszolgáltatásokhoz mennek; egyik sem tárolja őket.</li><li>A túráid, a menetrögzítéseid, a naplójegyzeteid és a fotóid csak a készülékeden maradnak — amíg nem osztod meg őket a Communityben.</li><li>Hogy a próbaidőt és a kampányokat ne lehessen visszaélésre használni, a készülékedről visszafordíthatatlan, anonim azonosítólenyomat kerül a szerverünkre; ez a lenyomat nem azonosít téged.</li><li>Ha bekapcsolod a csoportos menetet, az utolsó helyzeted csak a menet közben oszlik meg, és a végén törlődik. Az intercom hangja soha nem kerül rögzítésre, csak azokhoz megy, akik éppen a szobában vannak.</li><li>Nincs reklám; egyetlen reklámhálózattal sem osztunk meg adatot.</li></ul>
+      <a class="ok" href="/gizlilik/">A teljes adatvédelmi tájékoztató elolvasása (törökül) →</a>
     </div>
-  </section>
-
-  <!-- YENİLİKLER -->
-  <section class="section section-2" id="yenilikler">
-    <div class="wrap">
-      <span class="eyebrow">Verziójegyzetek</span>
+    <div id="yenilikler">
+      <p class="km">Verziójegyzetek</p>
       <h2>Mi változott</h2>
-      <p class="section-lead">Minden nagyobb frissítés itt van, a legújabb legfölül.</p>
-
-      <!-- YENİ SÜRÜM ÇIKINCA: metinler dil/<kod>.json içindeki y110_* ve y107_*
-           anahtarlarında; yeni sürüm için şablona yeni bir <article> eklenir. -->
-      <article class="surum">
-        <div class="surum-baslik">
-          <span class="surum-no">1.1.0</span>
-          <span class="surum-tarih">2026. szeptember</span>
-        </div>
-        <ul>
-          <li>Fekvő tájolás: fordítsd oldalra a telefont, és a térkép, a kártyák és a gombok új elrendezésre váltanak. Navigációban a kanyar- és a megérkezéskártya balra, a térkép jobbra kerül; a túralista két hasábot mutat.</li>
-          <li>Csoportos intercom: a „My Ride Group”-ban egy személy mellett az „Invite to ride” egy koppintással elküldi az útvonalat és a hangkapcsolatot. Az intercom útvonal nélkül is elindul, minden barát hangerejét külön állítod, a Bluetooth-os bukósisakok pedig most közvetlenül kapcsolódnak.</li>
-          <li>Menetrögzítés a csoportnak: küldj el egy befejezett menetet a csoportodnak. A nyomvonal, a távolság és az idő 14 napig a csoportban marad; az indulás és a cél környéke rejtve marad.</li>
-          <li>Három új motorosjelölő — chopper, maxi scooter, touring — és egy új súgóoldal az appban: Settings → How it works.</li>
-          <li>A Community-bejegyzések megjelenés előtt átmennek egy ellenőrzésen; a kártyán nagyíthatod a térképet, a naplófotók pedig kártyaként jelennek meg a térképen.</li>
-          <li>A kanyarbemondásokat újra felvettük, természetesebbek.</li>
-        </ul>
-      </article>
-
-      <article class="surum">
-        <div class="surum-baslik">
-          <span class="surum-no">1.0.7</span>
-          <span class="surum-tarih">2026. szeptember</span>
-        </div>
-        <ul>
-          <li>Csoporthoz meghívóval vagy kóddal csatlakozni mostantól ingyenes; a csoport létrehozása a Pro csomagban marad. A meghívólink közvetlenül megnyitja az appot.</li>
-          <li>A túranapló mostantól a saját kamerájával fényképez, a borítófotót pedig egyenesen az Instagram-történetedbe küldheted.</li>
-          <li>A mértékegység onnan jön, ahol vagy: mérföld, mph és láb az USA-ban, mérföld és yard az Egyesült Királyságban, kilométer mindenhol máshol — és a hangos útmutatás is ugyanabban az egységben beszél.</li>
-          <li>Hét legendás amerikai útvonal került be: Tail of the Dragon, Cherohala Skyway, Blue Ridge Parkway, Beartooth Highway, Angeles Crest, Big Sur és Million Dollar Highway.</li>
-        </ul>
-      </article>
+      <p class="metin">A legutóbbi frissítések, legújabb elöl.</p>
+      <article class="surum"><header><b>1.1.8</b><time>2026. október</time></header>
+        <ul class="d"><li>Javítottuk az összeomlást, amely a Communityben a Blogról a Feedre váltáskor jelentkezett.</li><li>A 3D-s visszajátszásról készülő videófelvétel megbízhatóbban indul.</li><li>Már nem jelenik meg a „Ready” felirat, mielőtt a térkép betöltődne, és a kamera sem ugrik el, ha befejezed a csípéssel nagyítást.</li></ul></article>
+      <article class="surum"><header><b>1.1.7</b><time>2026. október</time></header>
+        <ul class="d"><li>Túratérkép: nézz meg egy hosszú túrát vagy menetet videóként, letisztult térképen. Ahogy az útvonalad kirajzolja magát, egyenként jelennek meg az érintett települések és a fotóid.</li><li>Új gyorsgombok a Start képernyőn: otthon és munkahely, menetrögzítés, egyórás kör innen, legendás út a közelben.</li><li>298 hágó és hat új legendás út az USA-ban, a Tengerpart mód pedig már egész Európában működik.</li><li>A „Settings” képernyőn a „Get to know Motoseyir” egy rövid videós körút az appról, fülenként.</li></ul></article>
+      <article class="surum"><header><b>1.1.6</b><time>2026. október</time></header>
+        <ul class="d"><li>Nézd 3D-ben: játszd vissza a rögzített menetet, mintha helikopterből követnéd; a fotóid ott bukkannak fel, ahol készítetted őket.</li><li>Megosztás videóként: készíts 15, 30 vagy 60 másodperces álló videót, Instagramra készen. Pro nem kell hozzá.</li><li>Menetelemzés: mozgásidő, valódi szünetek, éles kanyarok, összes emelkedés, és hogy az út mekkora része volt új neked.</li><li>A „Generate a tour” fülön az „Another one” három új kört hoz más utakon, és kerülheted az autópályákat, az útdíjas és a földutakat.</li></ul></article>
     </div>
-  </section>
-
-  <!-- İLETİŞİM -->
-  <section class="section" id="iletisim">
-    <div class="wrap">
-      <span class="eyebrow">Kapcsolat</span>
+    <div id="iletisim">
+      <p class="km">Kapcsolat</p>
       <h2>Valami nem működik, vagy van egy ötleted?</h2>
-      <div class="iletisim-grid">
-        <div class="iletisim-kart">
-          <h3>Támogatás az appban</h3>
-          <p>Írj nekünk egyenesen a Settings → „Something wrong, or an idea?” menüpontból; a válaszok ugyanoda érkeznek.</p>
-        </div>
-        <div class="iletisim-kart">
-          <h3>Instagram</h3>
-          <p>Kövess minket új útvonalakért, menetfotókért és bejelentésekért.</p>
-          <a class="btn btn-ghost btn-sm" href="https://www.instagram.com/motoseyir.app/">@motoseyir.app</a>
-        </div>
+      <div class="kartlar">
+        <div class="kart"><h3>Támogatás az appban</h3><p>Írj nekünk egyenesen a Settings → „Something wrong, or an idea?” menüpontból; a válaszok ugyanoda érkeznek.</p></div>
+        <div class="kart"><h3>Instagram</h3><p>Kövess minket új útvonalakért, menetfotókért és bejelentésekért.</p><a class="btn btn-hayalet btn-kucuk" href="https://www.instagram.com/motoseyir.app.en/">@motoseyir.app.en</a></div>
       </div>
     </div>
-  </section>
-
+  </div>
+</section>
 </main>
 
-<footer class="site-footer">
-  <div class="wrap">
-    <div class="footer-ust">
-      <div>
-        <a class="logo" href="#top" style="font-size:1.05rem;">MOTO<em>SEYİR</em></a>
-      </div>
-      <ul class="footer-links">
-        <li><a href="#ozellikler">Funkciók</a></li>
-        <li><a href="ozellikler.html">Minden funkció</a></li>
-        <li><a href="nasil-yapilir.html">Hogyan működik</a></li>
-        <li><a href="/gizlilik/">Adatvédelem (TR)</a></li>
-        <li><a href="#yenilikler">Újdonságok</a></li>
-        <li><a href="#iletisim">Kapcsolat</a></li>
-        <li><a href="https://www.instagram.com/motoseyir.app/">Instagram</a></li>
-        <li><a href="https://apps.apple.com/hu/app/id6792549131?pt=128439797&amp;ct=site-hu&amp;mt=8">App Store</a></li>
-      </ul>
+<footer>
+  <div class="alt-ic">
+    <div>
+      <p><a class="logo" href="#top" aria-label="Motoseyir"><img src="/img/favicon.png" alt="" width="28" height="28">MOTO<em>SEYİR</em></a></p>
+      <p style="margin-top:10px">© 2026 Motoseyir. Minden jog fenntartva.</p>
     </div>
-    <p>© 2026 Motoseyir. Minden jog fenntartva.</p>
-    <div class="dil-altbilgi">
-      <span class="dil-altbilgi-baslik">Nyelvek</span>
+    <ul>
+      <li><a href="/hu/ozellikler.html">Minden funkció</a></li><li><a href="/hu/nasil-yapilir.html">Hogyan működik</a></li><li><a href="/gizlilik/">Adatvédelem</a></li><li><a href="#yenilikler">Újdonságok</a></li><li><a href="#iletisim">Kapcsolat</a></li><li><a href="https://www.instagram.com/motoseyir.app.en/">Instagram</a></li><li><a href="https://apps.apple.com/hu/app/id6792549131?pt=128439797&amp;ct=site-hu&amp;mt=8">App Store</a></li>
+    </ul>
+    <div class="dil-altbilgi"><span>Nyelvek</span>
       <ul class="dil-liste">
   <li><a href="/" lang="tr" hreflang="tr">Türkçe</a></li>
   <li><a href="/en/" lang="en" hreflang="en">English</a></li>
@@ -463,6 +535,5 @@
     </div>
   </div>
 </footer>
-
 </body>
 </html>

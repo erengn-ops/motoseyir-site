@@ -2,9 +2,9 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Navegación para moto y planificador de rutas — Motoseyir</title>
-<meta name="description" content="Navegación para motoristas calculada por kilómetros: ruta más corta, carreteras secundarias, viajes con varias paradas, salidas en grupo, intercomunicador y rutas legendarias. Motoseyir, en el App Store.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Motoseyir — el navegador de moto para carreteras con curvas</title>
+<meta name="description" content="Navegador de moto que planifica por distancia, no por minutos: carreteras secundarias, costa, enduro, generador de tours, 1.600+ puertos, grupo y CarPlay.">
 <link rel="canonical" href="https://motoseyir-app.com/es/">
 <link rel="alternate" hreflang="tr" href="https://motoseyir-app.com/">
 <link rel="alternate" hreflang="en" href="https://motoseyir-app.com/en/">
@@ -26,20 +26,32 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Motoseyir">
 <meta property="og:locale" content="es_ES">
-<meta property="og:title" content="Motoseyir — el navegador que cuenta kilómetros, no minutos">
-<meta property="og:description" content="Ruta más corta, carreteras secundarias, viajes con varias paradas, salidas en grupo, intercomunicador y rutas legendarias — en una sola app.">
+<meta property="og:title" content="Motoseyir — el navegador de moto para carreteras con curvas">
+<meta property="og:description" content="Rutas por distancia, carreteras secundarias, generador de tours, 1.600+ puertos de montaña, salidas en grupo, intercomunicador y CarPlay en una sola app.">
 <meta property="og:url" content="https://motoseyir-app.com/es/">
 <meta property="og:image" content="https://motoseyir-app.com/img/og-kapak.jpg">
 <meta name="twitter:card" content="summary_large_image">
 
 <!-- Apple akıllı afiş: iOS Safari'de sayfanın üstünde "App Store'da aç" şeridi. -->
 <meta name="apple-itunes-app" content="app-id=6792549131">
+<meta name="theme-color" content="#101414">
+<link rel="icon" href="/img/favicon.png">
 
-<meta name="theme-color" content="#0E6E73" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0E1315" media="(prefers-color-scheme: dark)">
-<link rel="icon" href="../img/favicon.png">
-
-<link rel="stylesheet" href="../style.css">
+<!--
+  Arka plan videosu (m/sahne*.mp4): yapay zekâ ile üretildi, gerçek çekim DEĞİL. Higgsfield Wan 3.0, 18 Eki 2026,
+  başlangıç karesiz tek çekimler; cardoride.com benzeri sinema bandı için yeniden kurgulandı: üç kaynak çekimden
+  (drone ile geçit virajları, gidondan orman yolu, yandan kıyı yolu) yalnız gerçek hızda ve takılmasız aralıklar,
+  9 sert kesme (her çekim ~2,2–2,4 sn), 20,9 sn döngü, sessiz, renk işlemesiz. Ağır çekim kalan çekimler (tek çekim,
+  yol kenarı) kullanılmadı. Yatay 1920×1080 + 1280×720; dikey 608×1080 + 406×720 (sürücüyü kadrajda tutan 9:16 kırpma).
+  Ham dosyalar: motoseyir-social/02-kaynak/higgsfield/site-sahneler/
+  Bu sayfa sablon/anasayfa.html + dil/anasayfa.<kod>.json'dan üretilir (python3 uret.py); stil m/a.css, hareket m/a.js.
+-->
+<script>document.documentElement.className+=" js"</script>
+<link rel="preload" as="image" type="image/webp" href="/m/sahne-dikey-poster.webp" media="(max-width:700px)" fetchpriority="high">
+<link rel="preload" as="image" type="image/webp" href="/m/sahne-poster.webp" media="(min-width:701px)" fetchpriority="high">
+<link rel="preload" as="font" type="font/woff" href="/m/font/Manrope.woff" crossorigin>
+<link rel="stylesheet" href="/m/a.css">
+<script defer src="/m/a.js"></script>
 
 <script type="application/ld+json">
 {
@@ -51,20 +63,20 @@
   "inLanguage": "es",
   "url": "https://motoseyir-app.com/es/",
   "image": "https://motoseyir-app.com/img/og-kapak.jpg",
-  "description": "App de navegación para motoristas calculada por distancia: ruta más corta, carreteras secundarias, viajes con varias paradas, salidas en grupo, intercomunicador y rutas legendarias.",
+  "description": "App de navegación para motoristas que planifica por distancia: ruta más corta, carreteras secundarias, generador de tours, puertos de montaña, salidas en grupo, intercomunicador, CarPlay y rutas legendarias.",
   "offers": [
     {
       "@type": "Offer",
-      "name": "7 días de prueba gratis",
+      "name": "Gratis",
       "price": "0",
       "priceCurrency": "EUR",
-      "description": "7 días de prueba gratis de todas las funciones Pro en los planes trimestral y anual, para nuevos suscriptores, donde esté disponible."
+      "description": "Rutas y navegación ilimitadas en Turquía, Europa y EE. UU., 1 tour guardado; los planes Pro de 3 meses y anual incluyen 7 días de prueba gratis fuera de Turquía, para nuevos suscriptores."
     },
     {
       "@type": "Offer",
       "name": "Motoseyir Pro",
       "category": "subscription",
-      "description": "El mejor orden para varias paradas, viajes y tracks ilimitados, modos de carreteras secundarias y costa, Discover, crear grupos, intercomunicador y AI CoRider."
+      "description": "AI CoRider, CarPlay, creación de grupos e intercomunicador, Descubrir, generador de tours, tours y tracks ilimitados, modos de carreteras secundarias y costa, y mejor orden para varias paradas."
     }
   ],
   "downloadUrl": "https://apps.apple.com/es/app/id6792549131?pt=128439797&amp;ct=site-es&amp;mt=8"
@@ -72,22 +84,15 @@
 </script>
 </head>
 <body id="top">
-<a class="skip-link" href="#icerik">Ir al contenido</a>
+<a class="skip" href="#icerik">Ir al contenido</a>
 
-<header class="site-header">
-  <div class="wrap header-inner">
-    <a class="logo" href="#top">MOTO<em>SEYİR</em></a>
-    <nav aria-label="Navegación principal">
-      <ul class="nav">
-        <li><a href="#ozellikler">Funciones</a></li>
-        <li><a href="nasil-yapilir.html">Cómo se usa</a></li>
-        <li><a href="#fiyat">Precios</a></li>
-        <li><a href="#gizlilik">Privacidad</a></li>
-        <li><a href="#yenilikler">Novedades</a></li>
-        <li><a href="#iletisim">Contacto</a></li>
-      </ul>
-    </nav>
-    <div class="header-cta">
+<header class="ust" id="ustbar">
+  <div class="ust-ic">
+    <a class="logo" href="#top" aria-label="Motoseyir"><img src="/img/favicon.png" alt="" width="28" height="28">MOTO<em>SEYİR</em></a>
+    <nav aria-label="Navegación principal"><ul class="menu">
+      <li><a href="#rota">Ruta</a></li><li><a href="#gecit">Puertos de montaña</a></li><li><a href="#fiyat">Precios</a></li><li><a href="/es/nasil-yapilir.html">Cómo se usa</a></li>
+    </ul></nav>
+    <div class="ust-sag">
       <details class="dil-sec">
   <summary aria-label="Elegir idioma"><span class="dil-kod">ES</span><span class="dil-ad">Español</span></summary>
   <ul>
@@ -107,343 +112,410 @@
     <li><a href="/el/" lang="el" hreflang="el">Ελληνικά</a></li>
   </ul>
 </details>
-      <a class="btn btn-ghost btn-sm" href="https://apps.apple.com/es/app/id6792549131?pt=128439797&amp;ct=site-es&amp;mt=8">Descargar</a>
+      <a class="btn btn-kucuk" href="https://apps.apple.com/es/app/id6792549131?pt=128439797&amp;ct=site-es&amp;mt=8">Descargar</a>
     </div>
   </div>
 </header>
 
 <main id="icerik">
-
-  <!-- HERO -->
-  <section class="hero foto-arka">
-    <img class="foto-arka-img" src="../img/hero-sahil-yolu.jpg" alt="Un motorista por una carretera de montaña con curvas junto a la costa, con la luz del atardecer" fetchpriority="high">
-    <div class="foto-arka-golge" aria-hidden="true"></div>
-    <div class="wrap">
-      <div class="hero-icerik">
-        <span class="eyebrow">Motoseyir · El navegador del motorista</span>
-        <h1>El único navegador que cuenta los kilómetros.</h1>
-        <p class="lead">Motoseyir calcula la ruta por distancia, no por minutos. Entre los mismos dos puntos compara varias alternativas y propone la más corta. En un viaje con varias paradas también decide el orden de las paradas.</p>
-        <div class="hero-cta">
-          <a class="btn btn-light" href="https://apps.apple.com/es/app/id6792549131?pt=128439797&amp;ct=site-es&amp;mt=8">Descargar en el App Store</a>
-          <a class="btn btn-ghost" style="border-color:rgba(243,241,236,.35); color:var(--asfalt-metin);" href="#ozellikler">Ver las funciones</a>
-        </div>
-        <p class="hero-microcopy">Empieza con 7 días de prueba gratis en el plan trimestral o anual.<br>La interfaz de la app está en inglés, alemán, francés, italiano y turco.</p>
+<section class="kahraman" aria-label="Presentación">
+  <div class="k-arka">
+    <picture>
+      <source media="(max-width:700px)" srcset="/m/sahne-dikey-poster.webp" type="image/webp">
+      <img src="/m/sahne-poster.webp" alt="Un motorista por una carretera de montaña con curvas junto a la costa, con la luz del atardecer" fetchpriority="high" width="1600" height="900">
+    </picture>
+    <video id="hv" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+  </div>
+  <div class="k-ic">
+    <div class="k-metin">
+      <p class="ust-yazi">Motoseyir · El navegador del motorista</p>
+      <h1>Para quien <i>ama las curvas.</i></h1>
+      <p class="giris">Motoseyir planifica por distancia, no por minutos. Carreteras secundarias, costa o enduro: tú eliges. O dile en qué dirección quieres rodar y deja que él monte el tour. O elige un puerto de montaña y sal.</p>
+      <div class="cta-satir">
+        <a class="btn" href="https://apps.apple.com/es/app/id6792549131?pt=128439797&amp;ct=site-es&amp;mt=8"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.6c0-2.4 2-3.5 2-3.6-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.15-2.8.85-3.5.85s-1.8-.8-3-.8c-1.5 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.700 2.400 2.900 2.300 1.200 0 1.600-.7 3-.7s1.800.7 3 .7 2-1.100 2.800-2.300c.9-1.300 1.200-2.500 1.300-2.600-.1 0-2.500-1-2.500-3.600zM14.200 5.500c.6-.8 1.100-1.800.9-2.900-.9 0-2 .6-2.700 1.400-.6.700-1.100 1.800-1 2.800 1 .1 2.100-.5 2.800-1.300z"/></svg>Descargar en el App Store</a>
+        <p class="mikro">La ruta y la navegación son gratis e ilimitadas en Turquía, Europa y EE. UU., sin cuenta.</p>
       </div>
     </div>
-  </section>
-
-  <div class="rota-ayrac koyu" aria-hidden="true">
-    <svg viewBox="0 0 1200 34" preserveAspectRatio="none"><path class="cizgi" d="M0,17 C150,2 300,32 450,17 C600,2 750,32 900,17 C1050,2 1150,17 1200,17"/><circle class="nokta" cx="300" cy="20" r="4"/><circle class="nokta" cx="750" cy="14" r="4"/></svg>
-  </div>
-
-  <!-- NEDEN FARKLI -->
-  <section class="neden foto-arka">
-    <img class="foto-arka-img" src="../img/kask-yansima.jpg" alt="" loading="lazy">
-    <div class="foto-arka-golge" aria-hidden="true"></div>
-    <div class="wrap">
-      <span class="eyebrow">Por qué es diferente</span>
-      <p class="soz">Los demás navegadores buscan la carretera <span class="vurgu">más rápida</span>.<br>Motoseyir busca la <span class="vurgu">más corta</span>.</p>
-      <p class="soz-alt">Una ruta calculada para un coche comete siempre el mismo error en moto: recorta minutos y añade kilómetros. Tú te abres paso entre el tráfico, así que esa diferencia es real para ti: más gasolina, más desgaste de neumáticos. Motoseyir compara las alternativas y propone la más corta, aunque tarde unos minutos más.</p>
+    <div class="k-tel">
+      <div class="kt kt-arka"><img src="/m/ekran-tur-en.webp" alt="" width="540" height="1174" decoding="async"></div>
+      <div class="kt kt-on"><img src="/m/ekran-nav-en.webp" alt="Pantalla de navegación de Motoseyir: próximo giro, distancia restante y velocidad" width="540" height="1174" decoding="async"></div>
     </div>
-  </section>
-
-  <div class="rota-ayrac koyu" aria-hidden="true">
-    <svg viewBox="0 0 1200 34" preserveAspectRatio="none"><path class="cizgi" d="M0,17 C150,32 300,2 450,17 C600,32 750,2 900,17 C1050,32 1150,17 1200,17"/><circle class="nokta" cx="450" cy="17" r="4"/><circle class="nokta" cx="1050" cy="17" r="4"/></svg>
   </div>
+</section>
 
-  <!-- ÖZELLİKLER -->
-  <section class="section" id="ozellikler">
-    <div class="wrap">
-      <span class="eyebrow">Funciones</span>
-      <h2>Una app para todo lo que hace un motorista</h2>
-      <p class="section-lead">Ruta, viaje, salida y rodar juntos — cuatro bloques, una sola app. Las capturas de abajo son de la app misma.</p>
+<div class="serit" aria-label="Motoseyir en cifras"><div class="serit-ic">
+  <div class="sayi"><b>1.600+</b><span>puertos de montaña en 36 países</span></div>
+  <div class="sayi"><b>TR · EU · US</b><span>rutas legendarias de Turquía, Europa y EE. UU., listas para usar</span></div>
+  <div class="sayi"><b>CarPlay</b><span>tu ruta en la pantalla del coche, a pantalla completa</span></div>
+  <div class="sayi"><b>Grupo + Intercom</b><span>la misma ruta, y charla mientras se rueda</span></div>
+</div></div>
 
-      <!-- 1. En kısa rota -->
-      <div class="ozellik-satir">
-        <div class="ozellik-metin">
-          <span class="ozellik-etiket">Ruta</span>
-          <h3>Ruta más corta</h3>
-          <p>Entre los mismos dos puntos calcula varias alternativas y propone la de menor distancia, aunque tarde algo más.</p>
-        </div>
-        <div class="ozellik-gorsel">
-          <img src="../img/en-kisa-rota.jpg" width="414" height="900" alt="Pantalla que compara la ruta más corta con las alternativas" loading="lazy">
-        </div>
+<div class="ana" id="ozellikler">
+  <section class="bolum" id="rota">
+    <div class="kap"><div class="bolum-ik">
+      <div data-r class="tel-alan"><div class="tel"><img src="/m/ekran-nav-en.webp" alt="Pantalla de navegación de Motoseyir: próximo giro, distancia restante y velocidad" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r>
+        <p class="km">Ruta</p>
+        <h2>Primero los kilómetros, <i>después la diversión.</i></h2>
+        <p class="metin">Motoseyir compara las alternativas entre los mismos dos puntos y propone la más corta. En un tour con varias paradas, también decide el orden de las paradas. Lo demás lo decides tú.</p>
+        <ul class="liste">
+          <li><strong>Ruta más corta</strong><span class="a">Es la opción por defecto; cuenta kilómetros.</span></li>
+          <li><strong>«Back roads» y «Coast» <span class="etiket">Pro</span></strong><span class="a">Deja la vía principal por las de curvas.</span></li>
+          <li><strong>Enduro</strong><span class="a">Busca pistas de grava y caminos sin asfaltar.</span></li>
+        </ul>
       </div>
-
-      <!-- 2. Köy yolları / sahil -->
-      <div class="ozellik-satir ters">
-        <div class="ozellik-metin">
-          <span class="ozellik-etiket">Modos de viaje</span>
-          <h3>Carreteras secundarias y modo costa</h3>
-          <p>En el modo de carreteras secundarias la ruta se calcula en nuestro propio servidor, que también usa los caminos que un mapa normal se salta. De Ayder a Hemşin salen así 24,1 km; los mapas generales muestran 49,9 km entre los mismos dos puntos. El modo costa usa el mismo servidor para mantener la ruta junto al mar.</p>
-        </div>
-        <div class="ozellik-gorsel">
-          <img src="../img/koy-yollari.jpg" width="414" height="900" alt="Una ruta trazada en modo de carreteras secundarias, llena de curvas y paisaje" loading="lazy">
-        </div>
-      </div>
-
-      <!-- 3. Çok duraklı sıralama (kanıt çifti) -->
-      <div class="ozellik-satir">
-        <div class="ozellik-metin">
-          <span class="ozellik-etiket">Varias paradas · Pro</span>
-          <h3>El mejor orden de las paradas</h3>
-          <p>Introduces los puntos de entrega en el orden que quieras y «Best order» los recoloca para la distancia total más corta. El ejemplo de abajo es de una ruta real: las mismas cuatro paradas, 57,1 km en tu orden y 46,9 km en el orden que encontró la app.</p>
-        </div>
-        <div class="ozellik-gorsel ikili">
-          <figure>
-            <img src="../img/cok-duraklar-kendi-sira.jpg" width="413" height="900" alt="Cuatro paradas en el orden del motorista, 57,1 km en total" loading="lazy">
-            <figcaption>Tu orden — <span class="km-eski">57,1 km</span></figcaption>
-          </figure>
-          <figure>
-            <img src="../img/cok-duraklar-en-uygun.jpg" width="413" height="900" alt="Las mismas cuatro paradas en el orden que encontró Motoseyir, 46,9 km en total" loading="lazy">
-            <figcaption>El orden de Motoseyir — <span class="km-yeni">46,9 km</span></figcaption>
-          </figure>
-        </div>
-      </div>
-
-      <!-- 4. Efsane rotalar -->
-      <div class="ozellik-satir ters">
-        <div class="ozellik-metin">
-          <span class="ozellik-etiket">Rutas legendarias</span>
-          <h3>Rutas legendarias listas para rodar</h3>
-          <p>Puertos alpinos como el Stelvio y la Sellaronda están listos, junto con clásicos turcos como Şile–Ağva y la D400 licia y siete estadounidenses, Tail of the Dragon y Big Sur incluidos. Abres una de la lista y entra directamente en tus viajes, con sus paradas y su trazado.</p>
-        </div>
-        <div class="ozellik-gorsel">
-          <img src="../img/efsane-rotalar.jpg" width="413" height="900" alt="La lista de rutas legendarias ya preparadas" loading="lazy">
-        </div>
-      </div>
-
-      <!-- 5. Grup sürüşü + sürüşe çağır + interkom (1.1.0) -->
-      <div class="ozellik-satir">
-        <div class="ozellik-metin">
-          <span class="ozellik-etiket">Rodar juntos</span>
-          <h3>Salidas en grupo, invitación a rodar e intercomunicador</h3>
-          <p>Cuando alguien crea un grupo se genera un único código; todos entran con ese código y se ven unos a otros sobre la ruta. En «My Ride Group», «Invite to ride» junto a un amigo envía tu ruta y un enlace de voz con un toque; él responde con «Ride the same route» o «Riding behind you».</p>
-          <p>El intercomunicador también arranca sin ruta. El volumen de cada amigo se ajusta por separado y los cascos Bluetooth se conectan directamente. No se graba nada: el audio solo llega a quien está en la sala en ese momento, y la sala se cierra al terminar la ruta.</p>
-        </div>
-        <div class="ozellik-gorsel">
-          <img src="../img/grup-surusu.jpg" width="414" height="900" alt="La posición en directo de los amigos sobre la ruta en una salida en grupo" loading="lazy">
-        </div>
-      </div>
-
-      <!-- 6. Tur günlüğü -->
-      <div class="ozellik-satir ters">
-        <div class="ozellik-metin">
-          <span class="ozellik-etiket">Viajes</span>
-          <h3>Diario de viaje</h3>
-          <p>En cada parada haces una foto y dejas una nota corta, y las dos quedan bajo esa parada. Las fotos aparecen además como tarjetas en el mapa del viaje; tócalas para abrirlas a pantalla completa. El diario se queda en tu teléfono; si eliges compartirlo en Community, van tres fotos como máximo.</p>
-        </div>
-        <div class="ozellik-gorsel">
-          <img src="../img/tur-gunlugu.jpg" width="413" height="900" alt="Diario de viaje: añadir una foto y una nota a una parada" loading="lazy">
-        </div>
-      </div>
-
-      <!-- 7. Hava durumu -->
-      <div class="ozellik-satir">
-        <div class="ozellik-metin">
-          <span class="ozellik-etiket">Tiempo</span>
-          <h3>Aviso de lluvia en la ruta</h3>
-          <p>Si se espera lluvia en tu ruta, avisa por adelantado para la hora a la que vas a llegar allí. Si el tiempo está seco, no aparece nada en pantalla.</p>
-        </div>
-        <div class="ozellik-gorsel">
-          <img src="../img/hava-durumu.jpg" width="414" height="900" alt="Aviso del tiempo sobre la ruta en la planificación del viaje" loading="lazy">
-        </div>
-      </div>
-
-      <!-- 8. Sürüş kaydı + parkur -->
-      <div class="ozellik-satir ters">
-        <div class="ozellik-metin">
-          <span class="ozellik-etiket">Mis rutas</span>
-          <h3>Grabación de rutas y tracks</h3>
-          <p>La grabación sigue con la pantalla apagada y el track se colorea según la velocidad. Una ruta terminada puedes enviarla a tu grupo: track, distancia y tiempo se quedan allí 14 días. De un track importado en GPX calcula la distancia, el desnivel acumulado y la pendiente máxima; al deslizar el dedo por el perfil, el punto se mueve por el mapa.</p>
-        </div>
-        <div class="ozellik-gorsel">
-          <img src="../img/parkur-istatistik.jpg" width="414" height="900" alt="Perfil de altitud de un track con distancia, desnivel y dificultad" loading="lazy">
-        </div>
-      </div>
-
-      <!-- 9. Keşfet -->
-      <div class="ozellik-satir">
-        <div class="ozellik-metin">
-          <span class="ozellik-etiket">Discover</span>
-          <h3>Discover: lugares junto a la ruta</h3>
-          <p>Lista las calas, los campings y los sitios para comer alrededor de tu ruta. Miras la valoración y la distancia a tu trazado y añades como parada el que te gusta.</p>
-        </div>
-        <div class="ozellik-gorsel">
-          <img src="../img/kesfet.jpg" width="414" height="900" alt="La pantalla Discover: sugerencias alrededor de la ruta" loading="lazy">
-        </div>
-      </div>
-
-      <h3 style="margin-top:3rem; font-size:1.1rem;">También en la app</h3>
-      <ul class="diger-liste" style="margin-top:1.25rem;">
-        <li>
-          <h3>Coste de combustible</h3>
-          <p>Ves el coste estimado de combustible antes de salir. El cálculo es en litros a los 100 km, y en millas por galón (mpg) en Estados Unidos.</p>
-        </li>
-        <li>
-          <h3>Guía por voz</h3>
-          <p>Las indicaciones las dice la voz de tu teléfono en el idioma de la app; con la app en turco vienen de una voz humana grabada. La distancia sigue tu región: en Estados Unidos, «en 500 pies gira a la derecha».</p>
-        </li>
-        <li>
-          <h3>Feed de Community</h3>
-          <p>Los viajes que compartes aparecen en el feed con tu nombre de usuario y tu icono, y se pueden comentar y marcar como favoritos. Las publicaciones pasan por una revisión antes de salir. Unos 400 metros cerca de tu salida y tu llegada se recortan antes de compartir.</p>
-        </li>
-        <li>
-          <h3>Uso en horizontal</h3>
-          <p>Gira el teléfono y el mapa, las tarjetas y los botones pasan a otra disposición: en navegación, las tarjetas de giro y de llegada a la izquierda y el mapa a la derecha; la lista de viajes pasa a dos columnas.</p>
-        </li>
-        <li>
-          <h3>Iconos de motorista</h3>
-          <p>El icono del mapa lo eliges en la cuadrícula de los ajustes: moto, chopper, maxiscooter, touring, flecha o casco. En los tres que llegaron con la última actualización se ve también al piloto.</p>
-        </li>
+    </div>
+    <div class="ayrinti" data-r aria-label="Detalles de la navegación">
+      <dl class="veri-say">
+        <div><dt>Ilimitada</dt><dd>navegación gratis en Turquía, Europa y EE. UU.</dd></div>
+        <div><dt>26</dt><dd>paradas en un solo tour</dd></div>
+        <div><dt>2</dt><dd>rutas alternativas, con la más corta marcada</dd></div>
+        <div><dt>726</dt><dd>radares en Turquía</dd></div>
+      </dl>
+      <ul class="izgara">
+        <li><h3>Guiado de carril</h3><p>Antes de un cruce te muestra en qué carril ponerte, en el móvil y en CarPlay, y además lo dice en voz alta.</p></li>
+        <li><h3>Límites de velocidad</h3><p>Donde se conoce el límite, la señal de velocidad se queda en pantalla.</p></li>
+        <li><h3>Radares</h3><p>Conoce los 726 radares de Turquía gracias a OpenStreetMap y te avisa una vez por radar, 500 m o 20 segundos antes.</p></li>
+        <li><h3>Guiado por voz</h3><p>Usa la mejor voz de tu móvil en tu idioma. Cambia a avisos cortos si prefieres oír menos.</p></li>
+        <li><h3>«No toll roads»</h3><p>Con un toque quitas las carreteras de peaje de la ruta.</p></li>
+        <li><h3>En la pantalla de bloqueo</h3><p>Tu próximo giro aparece en la pantalla de bloqueo y en la Dynamic Island, así que no tienes que desbloquear el móvil.</p></li>
       </ul>
-
-      <!-- AI CoRider mağaza sürümünde YOK: tek satır "Yakında", ayrıntı yok. -->
-      <p class="kucuk" style="margin-top:1.75rem;"><strong>Pronto: AI CoRider</strong> — un copiloto con el que hablas dentro del casco. Todavía no está en la versión del App Store; llegará a Pro en una actualización posterior.</p>
-
-      <p style="margin-top:2.5rem; display:flex; gap:1rem; flex-wrap:wrap;">
-        <a class="btn btn-ghost" href="ozellikler.html">Ver todas las funciones en detalle →</a>
-        <a class="btn btn-ghost" href="nasil-yapilir.html">¿Abres la app por primera vez? Empieza aquí →</a>
-      </p>
+    </div>
     </div>
   </section>
 
-  <!-- ÜCRETSİZ / PRO -->
-  <section class="section section-2" id="fiyat">
-    <div class="wrap">
-      <span class="eyebrow">Precios</span>
-      <h2>Prueba gratis 7 días todas las funciones Pro</h2>
-      <p class="section-lead">No hace falta cuenta. Motoseyir se usa con una suscripción Pro; los planes trimestral y anual empiezan con 7 días de prueba gratis para nuevos suscriptores, y puedes cancelar cuando quieras desde tu cuenta de la tienda.</p>
-      <div class="plan-grid">
-        <div class="plan">
-          <h3>7 días de prueba gratis</h3>
-          <p class="fiyat-notu">En los planes trimestral y anual, para nuevos suscriptores, donde esté disponible.</p>
-          <ul>
-            <li>Todas las funciones Pro durante 7 días</li>
-            <li>AI CoRider: 5 minutos para probarlo</li>
-            <li>Navegación paso a paso con guía por voz</li>
-            <li>Aviso de lluvia en la ruta</li>
-            <li>Entrar en un grupo por invitación o con código</li>
+  <section class="bolum ters" id="tur">
+    <div class="kap"><div class="bolum-ik">
+      <div data-r class="tel-alan"><div class="tel"><img src="/m/ekran-tur-en.webp" alt="Pantalla del generador de tours: dial de dirección y duración" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r>
+        <p class="km">Generador de tours</p>
+        <h2>Elige dirección y tiempo, <i>el tour está listo.</i> <span class="etiket">Pro</span></h2>
+        <p class="metin">Gira el dial hacia donde quieres ir y elige cuántas horas tienes. Motoseyir dibuja un tour en esa dirección; lo ves en el mapa y sales si te gusta.</p>
+      </div>
+    </div>
+    <div class="ayrinti" data-r aria-label="Detalles del generador de tours">
+      <dl class="veri-say uc">
+        <div><dt>30–300 km</dt><dd>longitud del tour, o elígela en horas</dd></div>
+        <div><dt>3</dt><dd>niveles de curvas: «Relaxed», «Twisty», «Very twisty»</dd></div>
+        <div><dt>9</dt><dd>opciones con «Another one»</dd></div>
+      </dl>
+      <ul class="izgara">
+        <li><h3>Dirección</h3><p>Gira el dial o elige «Any direction». El tour te devuelve al punto de salida.</p></li>
+        <li><h3>Horas o kilómetros</h3><p>Dile de cuánto tiempo dispones, en pasos de media hora, y Motoseyir lo convierte en distancia.</p></li>
+        <li><h3>Qué evitar</h3><p>Activa «No motorways», «No tolls» y «No dirt», cada uno por separado.</p></li>
+        <li><h3>Tres tours a la vez</h3><p>Recibes las tres mejores opciones. ¿No te convencen? «Another one» encuentra otras nuevas por carreteras distintas.</p></li>
+        <li><h3>Puertos en el camino</h3><p>Cada tour enumera los puertos de montaña que cruza.</p></li>
+        <li><h3>Pruébalo gratis</h3><p>Cualquiera puede generar un tour y verlo en el mapa. Guardar tours con curvas o sin autopista forma parte de Pro.</p></li>
+      </ul>
+    </div>
+    </div>
+  </section>
+
+  <section class="bolum" id="gecit">
+    <div class="kap"><div class="bolum-ik">
+      <div data-r class="tel-alan"><div class="tel"><img src="/m/ekran-gecit-en.webp" alt="Pantalla de puertos de montaña: un mapa de puertos alpinos con una lista de altitudes" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r>
+        <p class="km">Puertos de montaña</p>
+        <h2>1.600+ puertos, <i>en un solo mapa.</i></h2>
+        <p class="metin">Cada puerto tiene su altitud y su ubicación exacta, y la mayoría tiene fotos. Los que cierran en invierno muestran los meses de cierre, y los caminos de tierra aparecen marcados como tales. Añade los que te gusten a tu tour y sal.</p>
+        <ul class="pinler" aria-label="Puertos de ejemplo">
+          <li><span class="m">2.764 m</span><span class="ad">Col de l’Iseran</span><span class="ay">Cerrado de noviembre a mayo</span></li>
+          <li><span class="m">2.758 m</span><span class="ad">Passo dello Stelvio</span><span class="ay">Cerrado de noviembre a abril</span></li>
+          <li><span class="m">2.744 m</span><span class="ad">Col Agnel</span><span class="ay">Cerrado de octubre a junio</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="veri" data-r aria-label="Datos de los puertos">
+      <dl class="veri-say">
+        <div><dt>1.638</dt><dd>puertos en 36 países</dd></div>
+        <div><dt>317</dt><dd>puertos por encima de 2.000 m</dd></div>
+        <div><dt>1.045</dt><dd>puertos con fotos</dd></div>
+        <div><dt>98</dt><dd>puertos con cierre invernal conocido</dd></div>
+      </dl>
+      <div class="veri-ik">
+        <div>
+          <h3>Por región</h3>
+          <ul class="bolgeler">
+            <li style="--o:100%"><span class="ad">Alpes y Dolomitas</span><span class="n">535</span></li>
+            <li style="--o:76%"><span class="ad">Resto de Europa</span><span class="n">407</span></li>
+            <li style="--o:56%"><span class="ad">Estados Unidos</span><span class="n">298</span></li>
+            <li style="--o:21%"><span class="ad">Turquía</span><span class="n">115</span></li>
+            <li style="--o:18%"><span class="ad">Pirineos</span><span class="n">94</span></li>
+            <li style="--o:11%"><span class="ad">Cárpatos</span><span class="n">60</span></li>
+            <li style="--o:10%"><span class="ad">Asia Central</span><span class="n">55</span></li>
+            <li style="--o:8%"><span class="ad">Balcanes</span><span class="n">45</span></li>
+            <li style="--o:4%"><span class="ad">Cáucaso</span><span class="n">23</span></li>
+            <li style="--o:1%"><span class="ad">Escandinavia</span><span class="n">6</span></li>
           </ul>
         </div>
-        <div class="plan on-cikan">
-          <h3>Motoseyir Pro</h3>
-          <p class="fiyat-notu">Los precios cambian según la región; los ves en la pantalla de suscripción del App Store.</p>
-          <ul>
-            <li>AI CoRider, 15 minutos al mes</li>
-            <li>El mejor orden para varias paradas</li>
-            <li>Viajes y tracks ilimitados</li>
-            <li>Modos de carreteras secundarias, costa y enduro</li>
-            <li>Sugerencias de Discover junto a la ruta</li>
-            <li>Crear grupos e intercomunicador</li>
+        <div>
+          <h3>Los cinco más altos de EE. UU., todos en Colorado</h3>
+          <ol class="pinler yuksekler">
+            <li><span class="m">3.696 m</span><span class="ad">Cottonwood Pass</span></li>
+            <li><span class="m">3.689 m</span><span class="ad">Independence Pass</span></li>
+            <li><span class="m">3.662 m</span><span class="ad">Cumberland Pass</span></li>
+            <li><span class="m">3.655 m</span><span class="ad">Loveland Pass</span></li>
+            <li><span class="m">3.635 m</span><span class="ad">Hagerman Pass</span></li>
+          </ol>
+          <h3>De dónde salen los datos</h3>
+          <ul class="liste veri-not">
+            <li><strong>Ubicación</strong><span class="a">El punto de OpenStreetMap que marca el puerto. Está en la carretera, en la cima, no en la coordenada aproximada de una enciclopedia.</span></li>
+            <li><strong>Altitud</strong><span class="a">De la ficha del puerto en Wikipedia o Wikidata, o de OpenStreetMap si no la hay. Es el punto más alto de la carretera.</span></li>
+            <li><strong>Cierres invernales</strong><span class="a">De la etiqueta de cierre estacional de la carretera en OpenStreetMap. Si tu tour cruza un puerto que puede estar cerrado ese mes, la app te avisa.</span></li>
+            <li><strong>Badges</strong><span class="a">Los puertos que cruzas se marcan solos a partir de tu registro de salidas. No hace falta internet.</span></li>
           </ul>
         </div>
       </div>
+      <p class="veri-atif">Datos de ubicación y cierre © colaboradores de OpenStreetMap (ODbL). Fotos de Wikimedia Commons; la app muestra el autor y la licencia de cada una.</p>
+    </div></div>
+  </section>
+
+  <section class="bolum ters" id="corider">
+    <div class="kap"><div class="bolum-ik">
+      <div data-r class="tel-alan"><div class="tel"><img src="/m/ekran-corider-en.webp" alt="Pantalla de AI CoRider: planificador y opciones de chat" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r>
+        <p class="km">AI CoRider</p>
+        <h2>Un copiloto <i>dentro del casco.</i> <span class="etiket">Pro</span></h2>
+        <p class="metin">Hablas tú y las manos siguen en el manillar. No hace falta sacar el móvil para preguntar algo, añadir una parada o planificar un descanso.</p>
+      </div>
+    </div>
+    <div class="ayrinti" data-r aria-label="Detalles de AI CoRider">
+      <dl class="veri-say uc">
+        <div><dt>4</dt><dd>voces para elegir</dd></div>
+        <div><dt>Bluetooth</dt><dd>funciona a través del intercomunicador de tu casco</dd></div>
+        <div><dt>30·60·180</dt><dd>minutos por paquete adicional que no caduca nunca</dd></div>
+      </dl>
+      <ul class="izgara">
+        <li><h3>Cambia la ruta con la voz</h3><p>Añade, quita y salta paradas. Cambia tu destino y ordena las paradas.</p></li>
+        <li><h3>Encuentra lo que tienes delante</h3><p>Busca gasolina, comida o alojamiento más adelante en la carretera y menciona primero lo mejor valorado.</p></li>
+        <li><h3>Tiempo y autonomía</h3><p>Pregunta qué tiempo hará o hasta dónde llegas con el depósito.</p></li>
+        <li><h3>Mantiene al grupo en contacto</h3><p>Te dice dónde está cada uno y envía un mensaje al grupo por ti.</p></li>
+        <li><h3>Lleva la salida</h3><p>Inicia o termina la navegación, activa la grabación de la salida y te lleva a casa.</p></li>
+        <li><h3>Tiempo de conversación</h3><p>Pro incluye tiempo de conversación que se renueva cada 30 días. Si necesitas más, añade un paquete que no caduca nunca.</p></li>
+      </ul>
+    </div>
     </div>
   </section>
 
-  <div class="rota-ayrac" aria-hidden="true">
-    <svg viewBox="0 0 1200 34" preserveAspectRatio="none"><path class="cizgi" d="M0,17 C150,2 300,32 450,17 C600,2 750,32 900,17 C1050,2 1150,17 1200,17"/><circle class="nokta" cx="300" cy="20" r="4"/><circle class="nokta" cx="900" cy="20" r="4"/></svg>
-  </div>
+  <section class="bolum" id="birlikte">
+    <div class="kap"><div class="bolum-ik">
+      <div data-r class="tel-alan cift dikey">
+        <div class="tel"><img src="/m/ekran-grup-en.webp" alt="Pantalla de salida en grupo: la ruta en el mapa y el próximo giro" width="540" height="1174" loading="lazy"></div>
+        <div class="arac"><img src="/m/ekran-carplay-en.webp" alt="Navegación de Motoseyir en una pantalla de CarPlay" width="900" height="540" loading="lazy"></div>
+      </div>
+      <div data-r>
+        <p class="km">Juntos</p>
+        <h2>Rueda en grupo, <i>hablando por el camino.</i></h2>
+        <p class="metin">Haz la misma ruta que tus amigos y míralos a todos en el mapa. Unirte a un grupo con una invitación o un código es gratis.</p>
+        <ul class="liste">
+          <li><strong>Creación de grupos <span class="etiket">Pro</span></strong><span class="a">Punto de encuentro, ubicación en directo, una sola ruta.</span></li>
+          <li><strong>Intercomunicador <span class="etiket">Pro</span></strong><span class="a">Habla con el grupo mientras conduces, sin hardware adicional.</span></li>
+          <li><strong>CarPlay <span class="etiket">Pro</span></strong><span class="a">Tu ruta en la pantalla del coche; el móvil se queda en el bolsillo.</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ayrinti" data-r aria-label="Detalles de grupo, intercomunicador y CarPlay">
+      <dl class="veri-say uc">
+        <div><dt>12</dt><dd>motoristas en un grupo</dd></div>
+        <div><dt>Gratis</dt><dd>unirse con un código o una invitación</dd></div>
+        <div><dt>7</dt><dd>categorías de búsqueda a lo largo de la ruta en CarPlay</dd></div>
+      </dl>
+      <ul class="izgara">
+        <li><h3>Unirse es fácil</h3><p>Escribe el código de 8 caracteres o toca el enlace. Crear un grupo forma parte de Pro.</p></li>
+        <li><h3>Ubicación solo mientras rodas</h3><p>Tu ubicación se comparte solo mientras la navegación está activa, y al terminarla deja de compartirse.</p></li>
+        <li><h3>Micrófono abierto</h3><p>Sin pulsar para hablar en el intercomunicador: habla y ya. Silencia a quien quieras. No se graba nada.</p></li>
+        <li><h3>CoRider en el grupo</h3><p>Invita a CoRider a la sala del grupo y lo oye todo el mundo.</p></li>
+        <li><h3>Navegación en CarPlay</h3><p>Mapa, giros y carriles en la pantalla del coche. Desde ahí saltas una parada, grabas la salida o contestas una llamada del intercomunicador.</p></li>
+        <li><h3>Panel</h3><p>En el Panel de CarPlay, tu próximo giro aparece junto a tus otras apps.</p></li>
+      </ul>
+    </div>
+    </div>
+  </section>
 
-  <!-- GİZLİLİK — kaynak: uygulama içi gizlilik politikasının "Kısaca" bölümü -->
-  <section class="section" id="gizlilik">
-    <div class="wrap">
-      <span class="eyebrow">Tus datos</span>
+  <section class="bolum ters" id="kesfet">
+    <div class="kap"><div class="bolum-ik">
+      <div data-r class="tel-alan"><div class="tel"><img src="/m/ekran-kesfet-en.webp" alt="Pantalla Descubrir: paradas a lo largo de la ruta y su lista" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r>
+        <p class="km">Descubrir</p>
+        <h2>Descubre lo que hay <i>por el camino.</i> <span class="etiket">Pro</span></h2>
+        <p class="metin">Mira las carreteras secundarias, las carreteras de playa, los campings y los sitios para comer a lo largo de tu ruta, y añade los que te gusten.</p>
+      </div>
+    </div>
+    <div class="ayrinti" data-r aria-label="Detalles de Descubrir">
+      <dl class="veri-say uc">
+        <div><dt>9.668</dt><dd>calas y playas en Turquía</dd></div>
+        <div><dt>20.106</dt><dd>lugares de camping y naturaleza en Turquía</dd></div>
+        <div><dt>6</dt><dd>categorías</dd></div>
+      </dl>
+      <ul class="izgara">
+        <li><h3>Categorías</h3><p>«All», «Bay & beach», «Camping & nature», «Food & drink», «Fuel» y «Passes».</p></li>
+        <li><h3>A lo largo de la ruta</h3><p>Muestra a qué distancia por delante está un sitio, cuánto se aparta de la ruta y de qué lado de la carretera queda.</p></li>
+        <li><h3>«Explore this area»</h3><p>Mueve el mapa adonde quieras y busca alrededor de ese punto.</p></li>
+        <li><h3>«Camping & nature»</h3><p>Campings, áreas para autocaravanas, parques nacionales, cascadas, cuevas, lagos, zonas de picnic y rutas de senderismo.</p></li>
+        <li><h3>Fotos</h3><p>De Wikimedia Commons. En iPhone, tocar un sitio abre también la ficha de lugar de Apple.</p></li>
+        <li><h3>Primero los más conocidos</h3><p>Los puertos y las rutas legendarias se ordenan por lo conocidos que son.</p></li>
+      </ul>
+    </div>
+    </div>
+  </section>
+
+  <section class="bolum st" id="surus-sonrasi">
+    <div class="kap"><div class="bolum-ik">
+      <div data-r>
+        <p class="km">Después de la salida</p>
+        <h2>La carretera que has recorrido <i>se queda contigo.</i></h2>
+        <p class="metin">Graba la salida, revísala más tarde y conviértela en un vídeo del mapa del viaje para compartir.</p>
+        <ul class="liste">
+          <li><strong>Grabación de la salida y 3D replay</strong><span class="a">Vuelve a ver en el mapa cómo rodaste.</span></li>
+          <li><strong>Vídeo del mapa del viaje</strong><span class="a">Convierte tu tour en un vídeo corto.</span></li>
+          <li><strong>Aviso de lluvia</strong><span class="a">Si se prevé lluvia en tus paradas, la ves en la ruta.</span></li>
+          <li><strong>Importar GPX</strong><span class="a">Trae a la app la ruta que ya tienes.</span></li>
+        </ul>
+      </div>
+      <div data-r class="tel-alan"><div class="tel"><video data-src="/m/gezi-en.mp4" muted loop playsinline preload="none" data-poster="/m/gezi-en.jpg" aria-label="Un ejemplo de vídeo del mapa del viaje: la ruta Estambul–Atenas"></video></div></div>
+    </div>
+    <div class="ayrinti" data-r aria-label="Detalles de después de la salida">
+      <dl class="veri-say">
+        <div><dt>200</dt><dd>salidas guardadas en tu móvil</dd></div>
+        <div><dt>22</dt><dd>badges de 11 tipos</dd></div>
+        <div><dt>60×</dt><dd>velocidad máxima del 3D replay</dd></div>
+        <div><dt>1080×1920</dt><dd>vídeo vertical, 15, 30 o 60 segundos</dd></div>
+      </dl>
+      <ul class="izgara">
+        <li><h3>Análisis de la salida</h3><p>Tiempo en movimiento y paradas reales, curvas cerradas por cada 100 km, desnivel total, tramos de 10 km. Todo se calcula en tu móvil.</p></li>
+        <li><h3>Carreteras nuevas</h3><p>Mira qué parte de la salida fue por carreteras que nunca habías recorrido.</p></li>
+        <li><h3>Vista de helicóptero</h3><p>Repite la salida en el mapa satélite 3D de Apple a velocidad 1, 5, 20 o 60 veces.</p></li>
+        <li><h3>Badges</h3><p>Primera salida, distancia total, 500 km en una salida, salidas al amanecer y de noche, rachas semanales, desnivel, altura del Everest, colección de puertos, tres países.</p></li>
+        <li><h3>GPX</h3><p>Exporta las salidas como archivos GPX con marca de tiempo e importa una ruta GPX que ya tengas.</p></li>
+        <li><h3>Compartir</h3><p>Envía el vídeo a tu historia de Instagram u obtén un enlace para compartir la salida.</p></li>
+      </ul>
+    </div>
+    </div>
+  </section>
+
+<!-- Haritada sen: sürükleyerek dönen motosiklet -->
+<section class="bolum" id="sahne" aria-label="Tú en el mapa">
+    <div class="kap"><div class="bolum-ik">
+      <div data-r>
+        <p class="km">Tú en el mapa</p>
+        <h2>Tú también <i>estás en el mapa.</i></h2>
+        <p class="metin">Mientras rodas, un marcador te representa en el mapa. Lo eliges en la cuadrícula de «Settings»: moto, chopper, scooter maxi, touring, flecha o casco.</p>
+      </div>
+      <div data-r>
+        <div class="motor" id="motor" role="img" aria-label="La moto que te representa en el mapa; arrastra a izquierda o derecha para girarla"><img id="motorimg" src="/m/bike/090.webp" alt="" width="760" height="699" loading="lazy" decoding="async"></div>
+        <p class="motor-not">Arrastra para girar</p>
+      </div>
+    </div></div>
+  </section>
+
+  <section class="bolum ters" id="efsane">
+    <div class="kap"><div class="bolum-ik">
+      <div data-r class="tel-alan"><div class="tel"><img src="/m/ekran-efsane-en.webp" alt="Pantalla de rutas legendarias: una lista de rutas ya hechas y su mapa" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r>
+        <p class="km">Rutas legendarias</p>
+        <h2>Rutas legendarias, <i>de Turquía a América.</i></h2>
+        <p class="metin">Las carreteras famosas de Turquía, Europa y EE. UU. vienen como rutas listas para usar: Tail of the Dragon, Beartooth Highway, Big Sur y más. Elige una y sal.</p>
+      </div>
+    </div>
+    <div class="ayrinti" data-r aria-label="Detalles de las rutas legendarias">
+      <dl class="veri-say uc">
+        <div><dt>17</dt><dd>rutas legendarias en Europa</dd></div>
+        <div><dt>26</dt><dd>rutas legendarias en EE. UU.</dd></div>
+        <div><dt>11</dt><dd>tours listos en Turquía</dd></div>
+      </dl>
+      <ul class="izgara">
+        <li><h3>Europa</h3><p>Stelvio, Grossglockner, Transfăgărășan, Trollstigen, la Atlantic Road, Galibier y más.</p></li>
+        <li><h3>Estados Unidos</h3><p>Tail of the Dragon, Beartooth, Going-to-the-Sun Road, Big Sur, Million Dollar Highway y más.</p></li>
+        <li><h3>Turquía</h3><p>Şile–Ağva, la costa licia por la D400, Assos y el monte Ida, la península de Datça, las mesetas de Ayder y más.</p></li>
+        <li><h3>Los datos de cada carretera</h3><p>Las carreteras de Europa y EE. UU. incluyen fuentes, altura de la cima y número de curvas y horquillas.</p></li>
+        <li><h3>Notas de temporada</h3><p>En qué meses está abierta y si cierra en invierno, para comprobarlo antes de salir.</p></li>
+        <li><h3>Un toque y tienes la ruta</h3><p>Elige una carretera y la ruta está lista para rodar.</p></li>
+      </ul>
+    </div>
+    </div>
+  </section>
+
+  <section class="bolum" id="tani">
+    <div class="kap"><div class="bolum-ik">
+      <div data-r>
+        <p class="km">Conócela</p>
+        <h2>Conoce <i>Motoseyir.</i></h2>
+        <p class="metin">Lo que hay dentro de la app, en dos minutos.</p>
+      </div>
+      <div data-r class="tel-alan"><div class="tani-kutu" id="tani-kutu">
+        <button type="button" id="tani-btn" aria-label="Reproducir el vídeo de presentación"><img src="/m/tani-en.jpg" alt="" loading="lazy" width="1080" height="1920"><span class="oynat"></span></button>
+      </div></div>
+    </div></div>
+  </section>
+
+  <!-- Fiyat -->
+  <section class="bolum" id="fiyat">
+    <div class="kap" data-r>
+      <p class="km">Precios</p>
+      <h2>Gratis para rodar, <i>Pro cuando quieras más.</i></h2>
+      <div class="fiyat">
+        <div class="plan"><h3>Gratis</h3><p>La planificación de rutas y la navegación paso a paso son ilimitadas en Turquía, Europa y EE. UU. No hace falta cuenta; el plan gratuito guarda 1 tour.</p></div>
+        <div class="plan pro"><h3>Motoseyir <i>Pro</i></h3><p>Los planes de 3 meses y anual empiezan con 7 días de prueba gratis fuera de Turquía, para nuevos suscriptores. Pro desbloquea:</p>
+          <ul><li>AI CoRider</li><li>Apple CarPlay</li><li>Creación de grupos e intercomunicador</li><li>Descubrir y generador de tours</li><li>Tours y tracks ilimitados</li><li>Modos «Back roads» y «Coast», mejor orden para varias paradas</li></ul>
+        </div>
+      </div>
+      <p class="fiyat-not">Los precios actuales varían según la región; los ves en la pantalla de suscripción del App Store. Cancela cuando quieras desde tu cuenta del App Store.</p>
+    </div>
+  </section>
+</div>
+
+<section class="varis">
+  <div class="kap" data-r>
+    <h2>La carretera <i>está lista.</i></h2>
+    <div class="cta-satir">
+      <a class="btn" href="https://apps.apple.com/es/app/id6792549131?pt=128439797&amp;ct=site-es&amp;mt=8">Descargar en el App Store</a>
+      <a class="btn btn-hayalet" href="/es/nasil-yapilir.html">Cómo se usa</a>
+    </div>
+  </div>
+</section>
+
+<section class="ayr" aria-label="Privacidad, novedades y contacto">
+  <div class="kap">
+    <div id="gizlilik">
+      <p class="km">Privacidad</p>
       <h2>Sin cuenta y sin datos innecesarios</h2>
-      <p class="section-lead">Para usar Motoseyir no tienes que dar nombre, correo ni teléfono. Aquí abajo, un resumen de la política de privacidad; el texto completo está en inglés dentro de la app, en Settings → Privacy Policy.</p>
-      <ul class="gizlilik-liste">
-        <li>No necesitas crear una cuenta: no pedimos nombre, correo, teléfono ni fecha de nacimiento.</li>
-        <li>Para calcular tu ruta, tu ubicación y tus búsquedas solo se envían a servicios de mapas; ninguno las guarda.</li>
-        <li>Tus viajes, tus grabaciones, tus notas del diario y tus fotos se quedan solo en tu dispositivo, salvo que los compartas en Community.</li>
-        <li>Para evitar abusos de la prueba y de las campañas, a nuestro servidor llega un resumen de identidad anónimo e irreversible de tu dispositivo; ese resumen no te identifica.</li>
-        <li>Si activas las salidas en grupo, tu última ubicación solo se comparte mientras ruedas y se borra al terminar. El audio del intercomunicador no se graba: solo llega a quien está en la sala en ese momento.</li>
-        <li>Sin publicidad; no se comparten datos con ninguna red publicitaria.</li>
-      </ul>
-      <p><a href="/gizlilik/">Leer la política de privacidad completa (en turco) →</a></p>
+      <p class="metin">Para usar Motoseyir no tienes que dar nombre, correo ni teléfono. Aquí abajo, un resumen de la política de privacidad; el texto completo está en inglés dentro de la app, en Settings → Privacy Policy.</p>
+      <ul class="d"><li>No necesitas crear una cuenta: no pedimos nombre, correo, teléfono ni fecha de nacimiento.</li><li>Para calcular tu ruta, tu ubicación y tus búsquedas solo se envían a servicios de mapas; ninguno las guarda.</li><li>Tus viajes, tus grabaciones, tus notas del diario y tus fotos se quedan solo en tu dispositivo, salvo que los compartas en Community.</li><li>Para evitar abusos de la prueba y de las campañas, a nuestro servidor llega un resumen de identidad anónimo e irreversible de tu dispositivo; ese resumen no te identifica.</li><li>Si activas las salidas en grupo, tu última ubicación solo se comparte mientras ruedas y se borra al terminar. El audio del intercomunicador no se graba: solo llega a quien está en la sala en ese momento.</li><li>Sin publicidad; no se comparten datos con ninguna red publicitaria.</li></ul>
+      <a class="ok" href="/gizlilik/">Leer la política de privacidad completa (en turco) →</a>
     </div>
-  </section>
-
-  <!-- YENİLİKLER -->
-  <section class="section section-2" id="yenilikler">
-    <div class="wrap">
-      <span class="eyebrow">Notas de versión</span>
+    <div id="yenilikler">
+      <p class="km">Notas de versión</p>
       <h2>Qué ha cambiado</h2>
-      <p class="section-lead">Cada actualización importante está aquí, la más reciente arriba.</p>
-
-      <!-- YENİ SÜRÜM ÇIKINCA: metinler dil/<kod>.json içindeki y110_* ve y107_*
-           anahtarlarında; yeni sürüm için şablona yeni bir <article> eklenir. -->
-      <article class="surum">
-        <div class="surum-baslik">
-          <span class="surum-no">1.1.0</span>
-          <span class="surum-tarih">Septiembre de 2026</span>
-        </div>
-        <ul>
-          <li>Uso en horizontal: gira el teléfono y el mapa, las tarjetas y los botones pasan a otra disposición. En navegación, las tarjetas de giro y de llegada a la izquierda y el mapa a la derecha; la lista de viajes muestra dos columnas.</li>
-          <li>Intercomunicador de grupo: en «My Ride Group», «Invite to ride» junto a una persona envía tu ruta y un enlace de voz con un toque. El intercomunicador también arranca sin ruta, el volumen de cada amigo se ajusta por separado y los cascos Bluetooth ya se conectan directamente.</li>
-          <li>Grabación de ruta al grupo: envía a tu grupo una ruta terminada. Track, distancia y tiempo se quedan en el grupo 14 días; la zona alrededor de tu salida y tu llegada queda oculta.</li>
-          <li>Tres iconos de motorista nuevos —chopper, maxiscooter y touring— y una página de ayuda nueva dentro de la app: Settings → How it works.</li>
-          <li>Las publicaciones de Community pasan por una revisión antes de salir; en la tarjeta puedes ampliar el mapa y las fotos del diario aparecen como tarjetas en el mapa.</li>
-          <li>Los avisos de giro se han vuelto a grabar y suenan más naturales.</li>
-        </ul>
-      </article>
-
-      <article class="surum">
-        <div class="surum-baslik">
-          <span class="surum-no">1.0.7</span>
-          <span class="surum-tarih">Septiembre de 2026</span>
-        </div>
-        <ul>
-          <li>Entrar en un grupo por invitación o con código ya es gratis; crearlo sigue en Pro. El enlace de invitación abre la app directamente.</li>
-          <li>El diario de viaje ahora hace las fotos con su propia cámara, y la foto de portada puedes enviarla directamente a tu historia de Instagram.</li>
-          <li>La unidad viene de dónde estás: millas, mph y pies en Estados Unidos, millas y yardas en el Reino Unido y kilómetros en el resto — la guía por voz habla en la misma unidad.</li>
-          <li>Se han añadido siete rutas legendarias estadounidenses: Tail of the Dragon, Cherohala Skyway, Blue Ridge Parkway, Beartooth Highway, Angeles Crest, Big Sur y Million Dollar Highway.</li>
-        </ul>
-      </article>
+      <p class="metin">Las últimas actualizaciones, de la más reciente a la más antigua.</p>
+      <article class="surum"><header><b>1.1.8</b><time>octubre de 2026</time></header>
+        <ul class="d"><li>Corregido un cierre inesperado al pasar de «Blog» a «Feed» en «Community».</li><li>La grabación en vídeo de tu 3D replay arranca con más fiabilidad.</li><li>«Ready» ya no aparece antes de que el mapa termine de cargar, y la cámara ya no da un salto cuando sueltas un zoom con dos dedos.</li></ul></article>
+      <article class="surum"><header><b>1.1.7</b><time>octubre de 2026</time></header>
+        <ul class="d"><li>«Trip map»: mira un tour largo o una salida en vídeo sobre un mapa limpio. Mientras se dibuja tu ruta, van apareciendo los pueblos por los que pasaste y tus fotos.</li><li>Nuevos atajos en la pantalla «Start»: «Home» y «Work», «Record ride», un circuito de una hora desde donde estás, una ruta legendaria cercana.</li><li>298 puertos de montaña y seis rutas legendarias nuevas en EE. UU., y el modo «Coast» ya funciona también en toda Europa.</li><li>«Get to know Motoseyir», en «Settings», es una visita guiada en vídeo por la app, pestaña por pestaña.</li></ul></article>
+      <article class="surum"><header><b>1.1.6</b><time>octubre de 2026</time></header>
+        <ul class="d"><li>«Watch in 3D»: repite una salida grabada como si la siguieras desde un helicóptero; tus fotos aparecen donde las hiciste.</li><li>«Share as video»: crea un vídeo vertical de 15, 30 o 60 segundos, listo para Instagram. No hace falta Pro.</li><li>Análisis de la salida: tiempo en movimiento, paradas reales, curvas cerradas, desnivel total y qué parte de la carretera era nueva para ti.</li><li>En el generador de tours, «Another one» trae tres circuitos nuevos por carreteras distintas, y puedes evitar autopistas, peajes y caminos de tierra.</li></ul></article>
     </div>
-  </section>
-
-  <!-- İLETİŞİM -->
-  <section class="section" id="iletisim">
-    <div class="wrap">
-      <span class="eyebrow">Contacto</span>
+    <div id="iletisim">
+      <p class="km">Contacto</p>
       <h2>¿Algo va mal o tienes una idea?</h2>
-      <div class="iletisim-grid">
-        <div class="iletisim-kart">
-          <h3>Soporte dentro de la app</h3>
-          <p>Escríbenos directamente desde Settings → «Something wrong, or an idea?»; las respuestas llegan al mismo sitio.</p>
-        </div>
-        <div class="iletisim-kart">
-          <h3>Instagram</h3>
-          <p>Síguenos para ver rutas nuevas, fotos de salidas y anuncios.</p>
-          <a class="btn btn-ghost btn-sm" href="https://www.instagram.com/motoseyir.app/">@motoseyir.app</a>
-        </div>
+      <div class="kartlar">
+        <div class="kart"><h3>Soporte dentro de la app</h3><p>Escríbenos directamente desde Settings → «Something wrong, or an idea?»; las respuestas llegan al mismo sitio.</p></div>
+        <div class="kart"><h3>Instagram</h3><p>Síguenos para ver rutas nuevas, fotos de salidas y anuncios.</p><a class="btn btn-hayalet btn-kucuk" href="https://www.instagram.com/motoseyir.app.en/">@motoseyir.app.en</a></div>
       </div>
     </div>
-  </section>
-
+  </div>
+</section>
 </main>
 
-<footer class="site-footer">
-  <div class="wrap">
-    <div class="footer-ust">
-      <div>
-        <a class="logo" href="#top" style="font-size:1.05rem;">MOTO<em>SEYİR</em></a>
-      </div>
-      <ul class="footer-links">
-        <li><a href="#ozellikler">Funciones</a></li>
-        <li><a href="ozellikler.html">Todas las funciones</a></li>
-        <li><a href="nasil-yapilir.html">Cómo se usa</a></li>
-        <li><a href="/gizlilik/">Privacidad (TR)</a></li>
-        <li><a href="#yenilikler">Novedades</a></li>
-        <li><a href="#iletisim">Contacto</a></li>
-        <li><a href="https://www.instagram.com/motoseyir.app/">Instagram</a></li>
-        <li><a href="https://apps.apple.com/es/app/id6792549131?pt=128439797&amp;ct=site-es&amp;mt=8">App Store</a></li>
-      </ul>
+<footer>
+  <div class="alt-ic">
+    <div>
+      <p><a class="logo" href="#top" aria-label="Motoseyir"><img src="/img/favicon.png" alt="" width="28" height="28">MOTO<em>SEYİR</em></a></p>
+      <p style="margin-top:10px">© 2026 Motoseyir. Todos los derechos reservados.</p>
     </div>
-    <p>© 2026 Motoseyir. Todos los derechos reservados.</p>
-    <div class="dil-altbilgi">
-      <span class="dil-altbilgi-baslik">Idiomas</span>
+    <ul>
+      <li><a href="/es/ozellikler.html">Todas las funciones</a></li><li><a href="/es/nasil-yapilir.html">Cómo se usa</a></li><li><a href="/gizlilik/">Privacidad</a></li><li><a href="#yenilikler">Novedades</a></li><li><a href="#iletisim">Contacto</a></li><li><a href="https://www.instagram.com/motoseyir.app.en/">Instagram</a></li><li><a href="https://apps.apple.com/es/app/id6792549131?pt=128439797&amp;ct=site-es&amp;mt=8">App Store</a></li>
+    </ul>
+    <div class="dil-altbilgi"><span>Idiomas</span>
       <ul class="dil-liste">
   <li><a href="/" lang="tr" hreflang="tr">Türkçe</a></li>
   <li><a href="/en/" lang="en" hreflang="en">English</a></li>
@@ -463,6 +535,5 @@
     </div>
   </div>
 </footer>
-
 </body>
 </html>

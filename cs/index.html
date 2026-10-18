@@ -2,9 +2,9 @@
 <html lang="cs">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Motocyklová navigace a plánovač trasy — Motoseyir</title>
-<meta name="description" content="Navigace pro motorkáře, která počítá kilometry: nejkratší trasa, vedlejší cesty, výlety s více zastávkami, jízda ve skupině, intercom a legendární trasy. Motoseyir v App Store.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Motoseyir — motorkářská navigace pro klikaté cesty</title>
+<meta name="description" content="Motorkářská navigace, která plánuje podle vzdálenosti, ne minut. Vedlejší cesty, pobřeží, enduro, generátor výletů, 1 600+ průsmyků, jízda ve skupině a CarPlay.">
 <link rel="canonical" href="https://motoseyir-app.com/cs/">
 <link rel="alternate" hreflang="tr" href="https://motoseyir-app.com/">
 <link rel="alternate" hreflang="en" href="https://motoseyir-app.com/en/">
@@ -26,20 +26,32 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Motoseyir">
 <meta property="og:locale" content="cs_CZ">
-<meta property="og:title" content="Motoseyir — navigace, která počítá kilometry, ne minuty">
-<meta property="og:description" content="Nejkratší trasa, vedlejší cesty, výlety s více zastávkami, jízda ve skupině, intercom a legendární trasy — v jedné aplikaci.">
+<meta property="og:title" content="Motoseyir — motorkářská navigace pro klikaté cesty">
+<meta property="og:description" content="Trasy podle vzdálenosti, vedlejší cesty, generátor výletů, 1 600+ průsmyků, jízda ve skupině, intercom a CarPlay — v jedné aplikaci.">
 <meta property="og:url" content="https://motoseyir-app.com/cs/">
 <meta property="og:image" content="https://motoseyir-app.com/img/og-kapak.jpg">
 <meta name="twitter:card" content="summary_large_image">
 
 <!-- Apple akıllı afiş: iOS Safari'de sayfanın üstünde "App Store'da aç" şeridi. -->
 <meta name="apple-itunes-app" content="app-id=6792549131">
+<meta name="theme-color" content="#101414">
+<link rel="icon" href="/img/favicon.png">
 
-<meta name="theme-color" content="#0E6E73" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0E1315" media="(prefers-color-scheme: dark)">
-<link rel="icon" href="../img/favicon.png">
-
-<link rel="stylesheet" href="../style.css">
+<!--
+  Arka plan videosu (m/sahne*.mp4): yapay zekâ ile üretildi, gerçek çekim DEĞİL. Higgsfield Wan 3.0, 18 Eki 2026,
+  başlangıç karesiz tek çekimler; cardoride.com benzeri sinema bandı için yeniden kurgulandı: üç kaynak çekimden
+  (drone ile geçit virajları, gidondan orman yolu, yandan kıyı yolu) yalnız gerçek hızda ve takılmasız aralıklar,
+  9 sert kesme (her çekim ~2,2–2,4 sn), 20,9 sn döngü, sessiz, renk işlemesiz. Ağır çekim kalan çekimler (tek çekim,
+  yol kenarı) kullanılmadı. Yatay 1920×1080 + 1280×720; dikey 608×1080 + 406×720 (sürücüyü kadrajda tutan 9:16 kırpma).
+  Ham dosyalar: motoseyir-social/02-kaynak/higgsfield/site-sahneler/
+  Bu sayfa sablon/anasayfa.html + dil/anasayfa.<kod>.json'dan üretilir (python3 uret.py); stil m/a.css, hareket m/a.js.
+-->
+<script>document.documentElement.className+=" js"</script>
+<link rel="preload" as="image" type="image/webp" href="/m/sahne-dikey-poster.webp" media="(max-width:700px)" fetchpriority="high">
+<link rel="preload" as="image" type="image/webp" href="/m/sahne-poster.webp" media="(min-width:701px)" fetchpriority="high">
+<link rel="preload" as="font" type="font/woff" href="/m/font/Manrope.woff" crossorigin>
+<link rel="stylesheet" href="/m/a.css">
+<script defer src="/m/a.js"></script>
 
 <script type="application/ld+json">
 {
@@ -51,20 +63,20 @@
   "inLanguage": "cs",
   "url": "https://motoseyir-app.com/cs/",
   "image": "https://motoseyir-app.com/img/og-kapak.jpg",
-  "description": "Navigační aplikace pro motorkáře počítaná na vzdálenost: nejkratší trasa, vedlejší cesty, výlety s více zastávkami, jízda ve skupině, intercom a legendární trasy.",
+  "description": "Navigace pro motorkáře, která počítá vzdálenost: vedlejší cesty, generátor výletů, průsmyky, jízda ve skupině, intercom, CarPlay a legendární silnice.",
   "offers": [
     {
       "@type": "Offer",
-      "name": "7 dní zdarma",
+      "name": "Zdarma",
       "price": "0",
       "priceCurrency": "EUR",
-      "description": "7 dní na zkoušku zdarma se všemi funkcemi Pro u čtvrtletního a ročního předplatného, pro nové předplatitele, kde je to dostupné."
+      "description": "Neomezené plánování tras a navigace v Turecku, Evropě a USA, 1 uložený výlet; čtvrtletní a roční předplatné Pro začíná mimo Turecko 7denní zkušební dobou zdarma, pro nové předplatitele."
     },
     {
       "@type": "Offer",
       "name": "Motoseyir Pro",
       "category": "subscription",
-      "description": "Nejlepší pořadí zastávek, neomezené výlety a stopy, režim vedlejších cest a pobřeží, Discover, zakládání skupin, intercom a AI CoRider."
+      "description": "AI CoRider, CarPlay, zakládání skupin a intercom, Discover, generátor výletů, neomezené výlety a stopy, režim vedlejších cest a pobřeží a nejlepší pořadí zastávek."
     }
   ],
   "downloadUrl": "https://apps.apple.com/cz/app/id6792549131?pt=128439797&amp;ct=site-cs&amp;mt=8"
@@ -72,22 +84,15 @@
 </script>
 </head>
 <body id="top">
-<a class="skip-link" href="#icerik">Přejít na obsah</a>
+<a class="skip" href="#icerik">Přejít na obsah</a>
 
-<header class="site-header">
-  <div class="wrap header-inner">
-    <a class="logo" href="#top">MOTO<em>SEYİR</em></a>
-    <nav aria-label="Hlavní navigace">
-      <ul class="nav">
-        <li><a href="#ozellikler">Funkce</a></li>
-        <li><a href="nasil-yapilir.html">Jak to funguje</a></li>
-        <li><a href="#fiyat">Ceny</a></li>
-        <li><a href="#gizlilik">Soukromí</a></li>
-        <li><a href="#yenilikler">Novinky</a></li>
-        <li><a href="#iletisim">Kontakt</a></li>
-      </ul>
-    </nav>
-    <div class="header-cta">
+<header class="ust" id="ustbar">
+  <div class="ust-ic">
+    <a class="logo" href="#top" aria-label="Motoseyir"><img src="/img/favicon.png" alt="" width="28" height="28">MOTO<em>SEYİR</em></a>
+    <nav aria-label="Hlavní navigace"><ul class="menu">
+      <li><a href="#rota">Trasa</a></li><li><a href="#gecit">Průsmyky</a></li><li><a href="#fiyat">Ceny</a></li><li><a href="/cs/nasil-yapilir.html">Jak to funguje</a></li>
+    </ul></nav>
+    <div class="ust-sag">
       <details class="dil-sec">
   <summary aria-label="Vybrat jazyk"><span class="dil-kod">CS</span><span class="dil-ad">Čeština</span></summary>
   <ul>
@@ -107,343 +112,410 @@
     <li><a href="/el/" lang="el" hreflang="el">Ελληνικά</a></li>
   </ul>
 </details>
-      <a class="btn btn-ghost btn-sm" href="https://apps.apple.com/cz/app/id6792549131?pt=128439797&amp;ct=site-cs&amp;mt=8">Stáhnout</a>
+      <a class="btn btn-kucuk" href="https://apps.apple.com/cz/app/id6792549131?pt=128439797&amp;ct=site-cs&amp;mt=8">Stáhnout</a>
     </div>
   </div>
 </header>
 
 <main id="icerik">
-
-  <!-- HERO -->
-  <section class="hero foto-arka">
-    <img class="foto-arka-img" src="../img/hero-sahil-yolu.jpg" alt="Motorkář na klikaté horské cestě u pobřeží ve světle zapadajícího slunce" fetchpriority="high">
-    <div class="foto-arka-golge" aria-hidden="true"></div>
-    <div class="wrap">
-      <div class="hero-icerik">
-        <span class="eyebrow">Motoseyir · Navigace motorkáře</span>
-        <h1>Jediná navigace, která počítá kilometry.</h1>
-        <p class="lead">Motoseyir počítá trasu podle vzdálenosti, ne podle minut. Mezi stejnými dvěma body porovná několik variant a nabídne tu nejkratší. U výletu s více zastávkami určí i jejich pořadí.</p>
-        <div class="hero-cta">
-          <a class="btn btn-light" href="https://apps.apple.com/cz/app/id6792549131?pt=128439797&amp;ct=site-cs&amp;mt=8">Stáhnout v App Store</a>
-          <a class="btn btn-ghost" style="border-color:rgba(243,241,236,.35); color:var(--asfalt-metin);" href="#ozellikler">Prohlédnout funkce</a>
-        </div>
-        <p class="hero-microcopy">Začni 7 dny na zkoušku zdarma se čtvrtletním nebo ročním předplatným.<br>Rozhraní aplikace je v angličtině, němčině, francouzštině, italštině a turečtině.</p>
+<section class="kahraman" aria-label="Úvod">
+  <div class="k-arka">
+    <picture>
+      <source media="(max-width:700px)" srcset="/m/sahne-dikey-poster.webp" type="image/webp">
+      <img src="/m/sahne-poster.webp" alt="Motorkář na klikaté horské cestě u pobřeží ve světle zapadajícího slunce" fetchpriority="high" width="1600" height="900">
+    </picture>
+    <video id="hv" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+  </div>
+  <div class="k-ic">
+    <div class="k-metin">
+      <p class="ust-yazi">Motoseyir · Navigace motorkáře</p>
+      <h1>Pro ty, kdo <i>milují zatáčky.</i></h1>
+      <p class="giris">Motoseyir plánuje podle vzdálenosti, ne podle minut. Vedlejší cesty, pobřeží nebo enduro: vybíráš ty. Nebo řekni, kterým směrem chceš jet, a výlet postaví za tebe. Nebo si vyber průsmyk a jeď.</p>
+      <div class="cta-satir">
+        <a class="btn" href="https://apps.apple.com/cz/app/id6792549131?pt=128439797&amp;ct=site-cs&amp;mt=8"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.6c0-2.4 2-3.5 2-3.6-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.15-2.8.85-3.5.85s-1.8-.8-3-.8c-1.5 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.700 2.400 2.900 2.300 1.200 0 1.600-.7 3-.7s1.800.7 3 .7 2-1.100 2.800-2.300c.9-1.300 1.200-2.500 1.300-2.600-.1 0-2.500-1-2.500-3.600zM14.200 5.500c.6-.8 1.100-1.800.9-2.900-.9 0-2 .6-2.700 1.400-.6.700-1.100 1.800-1 2.800 1 .1 2.100-.5 2.800-1.300z"/></svg>Stáhnout v App Store</a>
+        <p class="mikro">Plánování tras a navigace jsou v Turecku, Evropě a USA zdarma a bez omezení; účet nepotřebuješ.</p>
       </div>
     </div>
-  </section>
-
-  <div class="rota-ayrac koyu" aria-hidden="true">
-    <svg viewBox="0 0 1200 34" preserveAspectRatio="none"><path class="cizgi" d="M0,17 C150,2 300,32 450,17 C600,2 750,32 900,17 C1050,2 1150,17 1200,17"/><circle class="nokta" cx="300" cy="20" r="4"/><circle class="nokta" cx="750" cy="14" r="4"/></svg>
-  </div>
-
-  <!-- NEDEN FARKLI -->
-  <section class="neden foto-arka">
-    <img class="foto-arka-img" src="../img/kask-yansima.jpg" alt="" loading="lazy">
-    <div class="foto-arka-golge" aria-hidden="true"></div>
-    <div class="wrap">
-      <span class="eyebrow">Proč je jiná</span>
-      <p class="soz">Ostatní navigace hledají <span class="vurgu">nejrychlejší</span> cestu.<br>Motoseyir hledá <span class="vurgu">nejkratší</span>.</p>
-      <p class="soz-alt">Trasa spočítaná pro auto dělá na motorce vždycky stejnou chybu: ubere minuty a přidá kilometry. Ty se kolonou protáhneš, takže ten rozdíl je pro tebe skutečný — víc benzínu, víc opotřebených gum. Motoseyir porovná varianty a nabídne tu nejkratší, i když bude o pár minut delší.</p>
+    <div class="k-tel">
+      <div class="kt kt-arka"><img src="/m/ekran-tur-en.webp" alt="" width="540" height="1174" decoding="async"></div>
+      <div class="kt kt-on"><img src="/m/ekran-nav-en.webp" alt="Navigační obrazovka v Motoseyiru: další odbočka, zbývající vzdálenost a rychlost" width="540" height="1174" decoding="async"></div>
     </div>
-  </section>
-
-  <div class="rota-ayrac koyu" aria-hidden="true">
-    <svg viewBox="0 0 1200 34" preserveAspectRatio="none"><path class="cizgi" d="M0,17 C150,32 300,2 450,17 C600,32 750,2 900,17 C1050,32 1150,17 1200,17"/><circle class="nokta" cx="450" cy="17" r="4"/><circle class="nokta" cx="1050" cy="17" r="4"/></svg>
   </div>
+</section>
 
-  <!-- ÖZELLİKLER -->
-  <section class="section" id="ozellikler">
-    <div class="wrap">
-      <span class="eyebrow">Funkce</span>
-      <h2>Jedna aplikace na všechno, co motorkář dělá</h2>
-      <p class="section-lead">Trasa, výlet, jízda a jízda spolu — čtyři části, jedna aplikace. Snímky níž jsou z aplikace samotné.</p>
+<div class="serit" aria-label="Motoseyir v číslech"><div class="serit-ic">
+  <div class="sayi"><b>1 600+</b><span>průsmyků ve 36 zemích</span></div>
+  <div class="sayi"><b>TR · EU · US</b><span>legendárních silnic Turecka, Evropy a USA, hotových jako trasy</span></div>
+  <div class="sayi"><b>CarPlay</b><span>tvoje trasa na displeji auta, na celou obrazovku</span></div>
+  <div class="sayi"><b>Skupina + intercom</b><span>stejná trasa, povídání za jízdy</span></div>
+</div></div>
 
-      <!-- 1. En kısa rota -->
-      <div class="ozellik-satir">
-        <div class="ozellik-metin">
-          <span class="ozellik-etiket">Trasa</span>
-          <h3>Nejkratší trasa</h3>
-          <p>Mezi stejnými dvěma body spočítá několik variant a nabídne tu s nejkratší vzdáleností — i když bude o chvíli delší.</p>
-        </div>
-        <div class="ozellik-gorsel">
-          <img src="../img/en-kisa-rota.jpg" width="414" height="900" alt="Obrazovka srovnávající nejkratší trasu s variantami" loading="lazy">
-        </div>
+<div class="ana" id="ozellikler">
+  <section class="bolum" id="rota">
+    <div class="kap"><div class="bolum-ik">
+      <div data-r class="tel-alan"><div class="tel"><img src="/m/ekran-nav-en.webp" alt="Navigační obrazovka v Motoseyiru: další odbočka, zbývající vzdálenost a rychlost" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r>
+        <p class="km">Trasa</p>
+        <h2>Nejdřív kilometry, <i>potom radost z jízdy.</i></h2>
+        <p class="metin">Porovná alternativy mezi stejnými dvěma body a nabídne tu nejkratší. U výletu s více zastávkami určí i jejich pořadí. Zbytek je na tobě.</p>
+        <ul class="liste">
+          <li><strong>Nejkratší trasa</strong><span class="a">Výchozí volba; řídí se kilometry.</span></li>
+          <li><strong>Vedlejší cesty a pobřeží <span class="etiket">Pro</span></strong><span class="a">Opustí hlavní silnici kvůli těm klikatým.</span></li>
+          <li><strong>Enduro</strong><span class="a">Hledá šotolinu a nezpevněné cesty.</span></li>
+        </ul>
       </div>
-
-      <!-- 2. Köy yolları / sahil -->
-      <div class="ozellik-satir ters">
-        <div class="ozellik-metin">
-          <span class="ozellik-etiket">Režimy výletu</span>
-          <h3>Vedlejší cesty a režim pobřeží</h3>
-          <p>V režimu vedlejších cest se trasa počítá na našem vlastním serveru, který používá i cestičky, které běžná mapa vynechá. Z Ayderu do Hemşinu tak vyjde 24,1 km; obecné mapy mezi stejnými body ukazují 49,9 km. Režim pobřeží drží trasu stejným serverem u pobřežní linie.</p>
-        </div>
-        <div class="ozellik-gorsel">
-          <img src="../img/koy-yollari.jpg" width="414" height="900" alt="Trasa vedená v režimu vedlejších cest, plná zatáček a výhledů" loading="lazy">
-        </div>
-      </div>
-
-      <!-- 3. Çok duraklı sıralama (kanıt çifti) -->
-      <div class="ozellik-satir">
-        <div class="ozellik-metin">
-          <span class="ozellik-etiket">Více zastávek · Pro</span>
-          <h3>Nejlepší pořadí zastávek</h3>
-          <p>Doručovací body zadáš v jakémkoli pořadí a „Best order“ je přeskládá na nejkratší celkovou vzdálenost. Příklad níž je ze skutečné jízdy: stejné čtyři zastávky, 57,1 km ve tvém pořadí a 46,9 km v pořadí, které našla aplikace.</p>
-        </div>
-        <div class="ozellik-gorsel ikili">
-          <figure>
-            <img src="../img/cok-duraklar-kendi-sira.jpg" width="413" height="900" alt="Čtyři zastávky ve vlastním pořadí jezdce, celkem 57,1 km" loading="lazy">
-            <figcaption>Tvoje pořadí — <span class="km-eski">57,1 km</span></figcaption>
-          </figure>
-          <figure>
-            <img src="../img/cok-duraklar-en-uygun.jpg" width="413" height="900" alt="Stejné čtyři zastávky v pořadí, které našel Motoseyir, celkem 46,9 km" loading="lazy">
-            <figcaption>Pořadí Motoseyiru — <span class="km-yeni">46,9 km</span></figcaption>
-          </figure>
-        </div>
-      </div>
-
-      <!-- 4. Efsane rotalar -->
-      <div class="ozellik-satir ters">
-        <div class="ozellik-metin">
-          <span class="ozellik-etiket">Legendární trasy</span>
-          <h3>Legendární trasy připravené k jízdě</h3>
-          <p>Alpské přejezdy jako Stelvio a Sellaronda jsou připravené, spolu s tureckými klasikami jako Şile–Ağva a lykijská D400 a sedmi americkými, včetně Tail of the Dragon a Big Sur. Otevřeš jednu ze seznamu a projde ti přímo do výletů, se zastávkami i průběhem.</p>
-        </div>
-        <div class="ozellik-gorsel">
-          <img src="../img/efsane-rotalar.jpg" width="413" height="900" alt="Seznam hotových legendárních tras" loading="lazy">
-        </div>
-      </div>
-
-      <!-- 5. Grup sürüşü + sürüşe çağır + interkom (1.1.0) -->
-      <div class="ozellik-satir">
-        <div class="ozellik-metin">
-          <span class="ozellik-etiket">Jízda spolu</span>
-          <h3>Jízda ve skupině, pozvánka a intercom</h3>
-          <p>Když někdo založí skupinu, vznikne jediný kód; všichni se jím připojí a vidí se navzájem na trase. V „My Ride Group“ pošle „Invite to ride“ vedle kamaráda tvou trasu a hlasové spojení jedním dotykem; on odpoví „Ride the same route“ nebo „Riding behind you“.</p>
-          <p>Intercom se spustí i bez trasy. Hlasitost každého kamaráda si nastavíš zvlášť a helmy s Bluetooth se připojují přímo. Nic se nenahrává: zvuk jde jen k těm, kdo jsou v tu chvíli v pokoji, a pokoj se po jízdě zavře.</p>
-        </div>
-        <div class="ozellik-gorsel">
-          <img src="../img/grup-surusu.jpg" width="414" height="900" alt="Živá pozice kamarádů na trase během jízdy ve skupině" loading="lazy">
-        </div>
-      </div>
-
-      <!-- 6. Tur günlüğü -->
-      <div class="ozellik-satir ters">
-        <div class="ozellik-metin">
-          <span class="ozellik-etiket">Výlety</span>
-          <h3>Deník výletu</h3>
-          <p>Na každé zastávce vyfotíš snímek a necháš krátkou poznámku — obojí zůstane pod tou zastávkou. Fotky se navíc objeví jako kartičky na mapě výletu; dotykem je otevřeš na celou obrazovku. Deník zůstává v telefonu; když se rozhodneš sdílet ho v Community, jdou s ním nejvýš tři fotky.</p>
-        </div>
-        <div class="ozellik-gorsel">
-          <img src="../img/tur-gunlugu.jpg" width="413" height="900" alt="Deník výletu: přidání fotky a poznámky k zastávce" loading="lazy">
-        </div>
-      </div>
-
-      <!-- 7. Hava durumu -->
-      <div class="ozellik-satir">
-        <div class="ozellik-metin">
-          <span class="ozellik-etiket">Počasí</span>
-          <h3>Varování před deštěm na trase</h3>
-          <p>Když se na trase čeká déšť, aplikace varuje dopředu — na čas, kdy tam skutečně budeš. Když je suché počasí, neobjeví se nic.</p>
-        </div>
-        <div class="ozellik-gorsel">
-          <img src="../img/hava-durumu.jpg" width="414" height="900" alt="Varování před počasím na trase v plánu výletu" loading="lazy">
-        </div>
-      </div>
-
-      <!-- 8. Sürüş kaydı + parkur -->
-      <div class="ozellik-satir ters">
-        <div class="ozellik-metin">
-          <span class="ozellik-etiket">Moje jízdy</span>
-          <h3>Záznam jízdy a stopy</h3>
-          <p>Záznam běží i při vypnuté obrazovce a stopa se barví podle rychlosti. Dokončenou jízdu můžeš poslat skupině: stopa, vzdálenost a čas tam zůstanou 14 dní. U stopy nahrané z GPX spočítá vzdálenost, celkové stoupání a nejprudší kopec; jak jezdíš prstem po profilu, bod se posouvá po mapě.</p>
-        </div>
-        <div class="ozellik-gorsel">
-          <img src="../img/parkur-istatistik.jpg" width="414" height="900" alt="Výškový profil stopy se vzdáleností, stoupáním a obtížností" loading="lazy">
-        </div>
-      </div>
-
-      <!-- 9. Keşfet -->
-      <div class="ozellik-satir">
-        <div class="ozellik-metin">
-          <span class="ozellik-etiket">Discover</span>
-          <h3>Discover: místa u trasy</h3>
-          <p>Aplikace vypíše zátoky, kempy a místa k jídlu okolo tvé trasy. Podíváš se na hodnocení a vzdálenost od průběhu a to, co se ti zamlouvá, přidáš jako zastávku.</p>
-        </div>
-        <div class="ozellik-gorsel">
-          <img src="../img/kesfet.jpg" width="414" height="900" alt="Obrazovka Discover: návrhy okolo trasy" loading="lazy">
-        </div>
-      </div>
-
-      <h3 style="margin-top:3rem; font-size:1.1rem;">Také v aplikaci</h3>
-      <ul class="diger-liste" style="margin-top:1.25rem;">
-        <li>
-          <h3>Cena paliva</h3>
-          <p>Odhadovanou cenu paliva vidíš předtím, než vyjedeš. Počítá se v litrech na 100 km, v USA v mílích na galon (mpg).</p>
-        </li>
-        <li>
-          <h3>Hlasová navigace</h3>
-          <p>Pokyny k odbočení říká hlas tvého telefonu v jazyce aplikace; když je aplikace v turečtině, přijdou z nahraného lidského hlasu. Vzdálenost jde podle tvého regionu — v USA „za 500 stop odboč vpravo“.</p>
-        </li>
-        <li>
-          <h3>Feed Community</h3>
-          <p>Výlety, které nasdílíš, se ve feedu objeví s tvou přezdívkou a ikonou a ostatní je můžou lajkovat a komentovat. Příspěvky jdou před zveřejněním přes kontrolu. Asi 400 metrů u tvého startu a cíle se před sdílením odřízne.</p>
-        </li>
-        <li>
-          <h3>Na šířku</h3>
-          <p>Otoč telefon a mapa, kartičky a tlačítka přejdou do jiného rozvržení: v navigaci je kartička odbočení a příjezdu vlevo a mapa vpravo; seznam výletů přejde na dva sloupce.</p>
-        </li>
-        <li>
-          <h3>Ikony jezdce</h3>
-          <p>Ikonu na mapě vybíráš z mřížky v nastavení: motorka, chopper, maxi skútr, touring, šipka nebo helma. U tří přidaných v poslední aktualizaci je vidět i jezdec.</p>
-        </li>
+    </div>
+    <div class="ayrinti" data-r aria-label="Podrobnosti o navigaci">
+      <dl class="veri-say">
+        <div><dt>Neomezeně</dt><dd>bezplatná navigace v Turecku, Evropě a USA</dd></div>
+        <div><dt>26</dt><dd>zastávek v jednom výletu</dd></div>
+        <div><dt>2</dt><dd>alternativní trasy, nejkratší je označená</dd></div>
+        <div><dt>726</dt><dd>radarů v Turecku</dd></div>
+      </dl>
+      <ul class="izgara">
+        <li><h3>Jízdní pruhy</h3><p>Před křižovatkou ukáže, v jakém pruhu máš být, na telefonu i v CarPlay, a řekne to nahlas.</p></li>
+        <li><h3>Rychlostní limity</h3><p>Kde je limit znám, zůstane rychlostní značka na obrazovce.</p></li>
+        <li><h3>Radary</h3><p>Zná všech 726 radarů v Turecku z OpenStreetMap a u každého varuje jednou, 500 m nebo 20 sekund předem.</p></li>
+        <li><h3>Hlasové navádění</h3><p>Použije nejlepší hlas v telefonu ve tvém jazyce. Přepni na krátké pokyny, jestli chceš slyšet méně.</p></li>
+        <li><h3>„No toll roads“</h3><p>Jedním klepnutím vyřadíš z trasy placené silnice.</p></li>
+        <li><h3>Na zamčené obrazovce</h3><p>Další odbočka se ukazuje na zamčené obrazovce i v Dynamic Island, takže telefon nemusíš odemykat.</p></li>
       </ul>
-
-      <!-- AI CoRider mağaza sürümünde YOK: tek satır "Yakında", ayrıntı yok. -->
-      <p class="kucuk" style="margin-top:1.75rem;"><strong>Brzy: AI CoRider</strong> — spolujezdec, se kterým mluvíš v helmě. Ve verzi z App Storu ještě není; do Pro přijde v pozdější aktualizaci.</p>
-
-      <p style="margin-top:2.5rem; display:flex; gap:1rem; flex-wrap:wrap;">
-        <a class="btn btn-ghost" href="ozellikler.html">Všechny funkce podrobně →</a>
-        <a class="btn btn-ghost" href="nasil-yapilir.html">Otevíráš appku poprvé? Začni tady →</a>
-      </p>
+    </div>
     </div>
   </section>
 
-  <!-- ÜCRETSİZ / PRO -->
-  <section class="section section-2" id="fiyat">
-    <div class="wrap">
-      <span class="eyebrow">Ceny</span>
-      <h2>Vyzkoušej všechny funkce Pro 7 dní zdarma</h2>
-      <p class="section-lead">Účet není potřeba. Motoseyir funguje s předplatným Pro; čtvrtletní a roční předplatné začíná pro nové předplatitele 7 dny na zkoušku zdarma a zrušit ho můžeš kdykoli ve svém účtu v obchodě.</p>
-      <div class="plan-grid">
-        <div class="plan">
-          <h3>7 dní zdarma</h3>
-          <p class="fiyat-notu">U čtvrtletního a ročního předplatného, pro nové předplatitele, kde je to dostupné.</p>
-          <ul>
-            <li>Všechny funkce Pro na 7 dní</li>
-            <li>AI CoRider: 5 minut na vyzkoušení</li>
-            <li>Navigace krok za krokem s hlasovou navigací</li>
-            <li>Varování před deštěm na trase</li>
-            <li>Připojení do skupiny přes pozvánku nebo kód</li>
+  <section class="bolum ters" id="tur">
+    <div class="kap"><div class="bolum-ik">
+      <div data-r class="tel-alan"><div class="tel"><img src="/m/ekran-tur-en.webp" alt="Obrazovka „Generate a tour“: ciferník pro směr a délku" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r>
+        <p class="km">Generátor výletů</p>
+        <h2>Zvol směr a čas, <i>výlet je hotový.</i> <span class="etiket">Pro</span></h2>
+        <p class="metin">Natoč ciferník na stranu, kam chceš jet, a vyber, kolik máš hodin. Motoseyir nakreslí výlet tím směrem; uvidíš ho na mapě a vyrazíš, když se ti zalíbí.</p>
+      </div>
+    </div>
+    <div class="ayrinti" data-r aria-label="Podrobnosti o generátoru výletů">
+      <dl class="veri-say uc">
+        <div><dt>30–300 km</dt><dd>délka výletu, nebo ji zvol v hodinách</dd></div>
+        <div><dt>3</dt><dd>úrovně zatáček: „Relaxed“, „Twisty“, „Very twisty“</dd></div>
+        <div><dt>9</dt><dd>možností s „Another one“</dd></div>
+      </dl>
+      <ul class="izgara">
+        <li><h3>Směr</h3><p>Otoč ciferník nebo zvol „Any direction“. Výlet tě přivede zpátky na start.</p></li>
+        <li><h3>Hodiny nebo kilometry</h3><p>Řekni, kolik máš času, po půlhodinách, a Motoseyir to převede na vzdálenost.</p></li>
+        <li><h3>Čemu se vyhnout</h3><p>Zapni „No motorways“, „No tolls“ a „No dirt“, každé zvlášť.</p></li>
+        <li><h3>Tři výlety najednou</h3><p>Dostaneš tři nejlepší možnosti. Žádná nesedí? „Another one“ najde nové po jiných cestách.</p></li>
+        <li><h3>Průsmyky po cestě</h3><p>U každého výletu je seznam průsmyků, přes které vede.</p></li>
+        <li><h3>Vyzkoušíš zdarma</h3><p>Výlet může vygenerovat a na mapě vidět každý. Ukládání klikatých výletů a výletů bez dálnic patří do Pro.</p></li>
+      </ul>
+    </div>
+    </div>
+  </section>
+
+  <section class="bolum" id="gecit">
+    <div class="kap"><div class="bolum-ik">
+      <div data-r class="tel-alan"><div class="tel"><img src="/m/ekran-gecit-en.webp" alt="Obrazovka „Mountain passes“: mapa alpských průsmyků se seznamem nadmořských výšek" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r>
+        <p class="km">Průsmyky</p>
+        <h2>1 600+ průsmyků, <i>na jedné mapě.</i></h2>
+        <p class="metin">Každý průsmyk má nadmořskou výšku a přesnou polohu, většina i fotky. Průsmyky, které se v zimě zavírají, ukazují měsíce uzavírky a nezpevněné cesty jsou zvlášť označené. Přidej si ty, které se ti líbí, do výletu a jeď.</p>
+        <ul class="pinler" aria-label="Ukázkové průsmyky">
+          <li><span class="m">2 764 m</span><span class="ad">Col de l’Iseran</span><span class="ay">Zavřeno listopad–květen</span></li>
+          <li><span class="m">2 758 m</span><span class="ad">Passo dello Stelvio</span><span class="ay">Zavřeno listopad–duben</span></li>
+          <li><span class="m">2 744 m</span><span class="ad">Col Agnel</span><span class="ay">Zavřeno říjen–červen</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="veri" data-r aria-label="Data o průsmycích">
+      <dl class="veri-say">
+        <div><dt>1 638</dt><dd>průsmyků ve 36 zemích</dd></div>
+        <div><dt>317</dt><dd>průsmyků nad 2 000 m</dd></div>
+        <div><dt>1 045</dt><dd>průsmyků s fotkami</dd></div>
+        <div><dt>98</dt><dd>průsmyků se známou zimní uzavírkou</dd></div>
+      </dl>
+      <div class="veri-ik">
+        <div>
+          <h3>Podle oblasti</h3>
+          <ul class="bolgeler">
+            <li style="--o:100%"><span class="ad">Alpy a Dolomity</span><span class="n">535</span></li>
+            <li style="--o:76%"><span class="ad">Zbytek Evropy</span><span class="n">407</span></li>
+            <li style="--o:56%"><span class="ad">Spojené státy</span><span class="n">298</span></li>
+            <li style="--o:21%"><span class="ad">Turecko</span><span class="n">115</span></li>
+            <li style="--o:18%"><span class="ad">Pyreneje</span><span class="n">94</span></li>
+            <li style="--o:11%"><span class="ad">Karpaty</span><span class="n">60</span></li>
+            <li style="--o:10%"><span class="ad">Střední Asie</span><span class="n">55</span></li>
+            <li style="--o:8%"><span class="ad">Balkán</span><span class="n">45</span></li>
+            <li style="--o:4%"><span class="ad">Kavkaz</span><span class="n">23</span></li>
+            <li style="--o:1%"><span class="ad">Skandinávie</span><span class="n">6</span></li>
           </ul>
         </div>
-        <div class="plan on-cikan">
-          <h3>Motoseyir Pro</h3>
-          <p class="fiyat-notu">Aktuální ceny se liší podle regionu; uvidíš je na obrazovce předplatného v App Storu.</p>
-          <ul>
-            <li>AI CoRider, 15 minut měsíčně</li>
-            <li>Nejlepší pořadí zastávek</li>
-            <li>Neomezené výlety a stopy</li>
-            <li>Režim vedlejších cest, pobřeží a enduro</li>
-            <li>Návrhy Discover u trasy</li>
-            <li>Zakládání skupin a intercom</li>
+        <div>
+          <h3>Pět nejvyšších v USA, všechny v Coloradu</h3>
+          <ol class="pinler yuksekler">
+            <li><span class="m">3 696 m</span><span class="ad">Cottonwood Pass</span></li>
+            <li><span class="m">3 689 m</span><span class="ad">Independence Pass</span></li>
+            <li><span class="m">3 662 m</span><span class="ad">Cumberland Pass</span></li>
+            <li><span class="m">3 655 m</span><span class="ad">Loveland Pass</span></li>
+            <li><span class="m">3 635 m</span><span class="ad">Hagerman Pass</span></li>
+          </ol>
+          <h3>Odkud data pocházejí</h3>
+          <ul class="liste veri-not">
+            <li><strong>Poloha</strong><span class="a">Bod v OpenStreetMap, který označuje průsmyk. Leží na silnici přímo na vrcholu, ne v přibližných souřadnicích z encyklopedie.</span></li>
+            <li><strong>Nadmořská výška</strong><span class="a">Převzatá ze záznamu průsmyku (Wikipedia, Wikidata), jinak z OpenStreetMap. Jde o nejvyšší bod silnice.</span></li>
+            <li><strong>Zimní uzavírky</strong><span class="a">Ze značky sezónní uzavírky silnice v OpenStreetMap. Pokud výlet vede přes průsmyk, který může být ten měsíc zavřený, aplikace to řekne.</span></li>
+            <li><strong>Odznaky</strong><span class="a">Průsmyky, které přejedeš, se samy odškrtnou podle záznamu tvých jízd. Internet není potřeba.</span></li>
           </ul>
         </div>
       </div>
+      <p class="veri-atif">Data o poloze a uzavírkách © přispěvatelé OpenStreetMap (ODbL). Fotky z Wikimedia Commons; u každé fotky aplikace ukazuje autora a licenci.</p>
+    </div></div>
+  </section>
+
+  <section class="bolum ters" id="corider">
+    <div class="kap"><div class="bolum-ik">
+      <div data-r class="tel-alan"><div class="tel"><img src="/m/ekran-corider-en.webp" alt="Obrazovka AI CoRider: plánovač a možnosti chatu" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r>
+        <p class="km">AI CoRider</p>
+        <h2>Parťák na cestě <i>přímo v helmě.</i> <span class="etiket">Pro</span></h2>
+        <p class="metin">Mluvíš ty, ruce zůstávají na řídítkách. Nemusíš sahat po telefonu, když se chceš na něco zeptat, přidat zastávku nebo naplánovat pauzu.</p>
+      </div>
+    </div>
+    <div class="ayrinti" data-r aria-label="Podrobnosti o AI CoRider">
+      <dl class="veri-say uc">
+        <div><dt>4</dt><dd>hlasy na výběr</dd></div>
+        <div><dt>Bluetooth</dt><dd>funguje přes interkom v helmě</dd></div>
+        <div><dt>30·60·180</dt><dd>minutové doplňkové balíčky, které nevyprší</dd></div>
+      </dl>
+      <ul class="izgara">
+        <li><h3>Změna trasy hlasem</h3><p>Přidává, odebírá a přeskakuje zastávky. Mění cíl a řadí zastávky do pořadí.</p></li>
+        <li><h3>Najde, co je před tebou</h3><p>Hledá cestou benzín, jídlo nebo nocleh a nejdřív jmenuje nejlépe hodnocené.</p></li>
+        <li><h3>Počasí a dojezd</h3><p>Zeptej se, jaké bude počasí nebo jak daleko dojedeš na nádrž.</p></li>
+        <li><h3>Drží skupinu pohromadě</h3><p>Řekne ti, kde je kdo, a pošle skupině zprávu za tebe.</p></li>
+        <li><h3>Řídí jízdu</h3><p>Spustí nebo ukončí navigaci, zapne záznam jízdy a zavede tě domů.</p></li>
+        <li><h3>Doba hovoru</h3><p>Pro obsahuje dobu hovoru, která se obnovuje každých 30 dní. Když ti nestačí, přidáš si balíček, který nevyprší.</p></li>
+      </ul>
+    </div>
     </div>
   </section>
 
-  <div class="rota-ayrac" aria-hidden="true">
-    <svg viewBox="0 0 1200 34" preserveAspectRatio="none"><path class="cizgi" d="M0,17 C150,2 300,32 450,17 C600,2 750,32 900,17 C1050,2 1150,17 1200,17"/><circle class="nokta" cx="300" cy="20" r="4"/><circle class="nokta" cx="900" cy="20" r="4"/></svg>
-  </div>
+  <section class="bolum" id="birlikte">
+    <div class="kap"><div class="bolum-ik">
+      <div data-r class="tel-alan cift dikey">
+        <div class="tel"><img src="/m/ekran-grup-en.webp" alt="Obrazovka jízdy ve skupině: trasa na mapě a další odbočka" width="540" height="1174" loading="lazy"></div>
+        <div class="arac"><img src="/m/ekran-carplay-en.webp" alt="Navigace Motoseyir na displeji CarPlay" width="900" height="540" loading="lazy"></div>
+      </div>
+      <div data-r>
+        <p class="km">Společně</p>
+        <h2>Jeďte ve skupině, <i>povídejte si za jízdy.</i></h2>
+        <p class="metin">Jeď stejnou trasu jako kamarádi a všechny uvidíš na mapě. Připojení do skupiny přes pozvánku nebo kód je zdarma.</p>
+        <ul class="liste">
+          <li><strong>Zakládání skupiny <span class="etiket">Pro</span></strong><span class="a">Místo setkání, poloha živě, jedna trasa.</span></li>
+          <li><strong>Intercom <span class="etiket">Pro</span></strong><span class="a">Mluv se skupinou za jízdy; bez dalšího hardwaru.</span></li>
+          <li><strong>CarPlay <span class="etiket">Pro</span></strong><span class="a">Tvoje trasa na displeji auta; telefon zůstane v kapse.</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ayrinti" data-r aria-label="Podrobnosti o skupině, intercomu a CarPlay">
+      <dl class="veri-say uc">
+        <div><dt>12</dt><dd>jezdců v jedné skupině</dd></div>
+        <div><dt>Zdarma</dt><dd>připojení kódem nebo pozvánkou</dd></div>
+        <div><dt>7</dt><dd>kategorií k hledání podél trasy v CarPlay</dd></div>
+      </dl>
+      <ul class="izgara">
+        <li><h3>Snadné připojení</h3><p>Zadej 8místný kód nebo klepni na odkaz. Založení skupiny patří do Pro.</p></li>
+        <li><h3>Poloha jen za jízdy</h3><p>Tvoje poloha se sdílí, jen když běží navigace, a sdílení skončí s ní.</p></li>
+        <li><h3>Otevřený mikrofon</h3><p>V intercomu není push-to-talk: prostě mluvíš. Kohokoli ztlumíš. Nic se nenahrává.</p></li>
+        <li><h3>CoRider ve skupině</h3><p>Pozvi CoRider do místnosti skupiny a uslyší ho všichni.</p></li>
+        <li><h3>Navigace v CarPlay</h3><p>Mapa, odbočky a pruhy na displeji auta. Odtud přeskočíš zastávku, nahraješ jízdu nebo přijmeš hovor z intercomu.</p></li>
+        <li><h3>Dashboard</h3><p>V CarPlay Dashboard je další odbočka vedle tvých ostatních aplikací.</p></li>
+      </ul>
+    </div>
+    </div>
+  </section>
 
-  <!-- GİZLİLİK — kaynak: uygulama içi gizlilik politikasının "Kısaca" bölümü -->
-  <section class="section" id="gizlilik">
-    <div class="wrap">
-      <span class="eyebrow">Tvoje data</span>
+  <section class="bolum ters" id="kesfet">
+    <div class="kap"><div class="bolum-ik">
+      <div data-r class="tel-alan"><div class="tel"><img src="/m/ekran-kesfet-en.webp" alt="Obrazovka „Discover“: zastávky podél trasy a jejich seznam" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r>
+        <p class="km">Discover</p>
+        <h2>Objevuj, co je <i>cestou.</i> <span class="etiket">Pro</span></h2>
+        <p class="metin">V kartě „Discover“ uvidíš vedlejší cesty, cesty podél pláží, kempy a místa k jídlu u své trasy a přidáš si ty, které se ti líbí.</p>
+      </div>
+    </div>
+    <div class="ayrinti" data-r aria-label="Podrobnosti o Discover">
+      <dl class="veri-say uc">
+        <div><dt>9 668</dt><dd>zátok a pláží v Turecku</dd></div>
+        <div><dt>20 106</dt><dd>míst pro kempování a přírodu v Turecku</dd></div>
+        <div><dt>6</dt><dd>kategorií</dd></div>
+      </dl>
+      <ul class="izgara">
+        <li><h3>Kategorie</h3><p>„All“, „Bay & beach“, „Camping & nature“, „Food & drink“, „Fuel“ a „Passes“.</p></li>
+        <li><h3>Podél trasy</h3><p>Ukáže, jak daleko před tebou místo je, jak moc je mimo trasu a na které straně silnice.</p></li>
+        <li><h3>„Explore this area“</h3><p>Posuň mapu kamkoli a hledej kolem toho místa.</p></li>
+        <li><h3>„Camping & nature“</h3><p>Kempy, parkoviště pro karavany, národní parky, vodopády, jeskyně, jezera, místa na piknik a turistické stezky.</p></li>
+        <li><h3>Fotky</h3><p>Z Wikimedia Commons. V iPhonu klepnutí na místo otevře i kartu místa od Apple.</p></li>
+        <li><h3>Nejznámější první</h3><p>Průsmyky a legendární silnice jsou seřazené podle toho, jak jsou známé.</p></li>
+      </ul>
+    </div>
+    </div>
+  </section>
+
+  <section class="bolum st" id="surus-sonrasi">
+    <div class="kap"><div class="bolum-ik">
+      <div data-r>
+        <p class="km">Po jízdě</p>
+        <h2>Cesta, kterou jsi ujel, <i>ti zůstane.</i></h2>
+        <p class="metin">Nahraj jízdu, později si ji pusť znovu a udělej z ní video z mapy cesty, které můžeš sdílet.</p>
+        <ul class="liste">
+          <li><strong>Záznam jízdy a 3D přehrávání</strong><span class="a">Pusť si cestu, kterou jsi jel, znovu na mapě.</span></li>
+          <li><strong>Video z mapy cesty</strong><span class="a">Udělej ze svého výletu krátké video.</span></li>
+          <li><strong>Upozornění na déšť</strong><span class="a">Když se na tvých zastávkách čeká déšť, uvidíš to na trase.</span></li>
+          <li><strong>Import GPX</strong><span class="a">Přines do aplikace trasu, kterou už máš.</span></li>
+        </ul>
+      </div>
+      <div data-r class="tel-alan"><div class="tel"><video data-src="/m/gezi-en.mp4" muted loop playsinline preload="none" data-poster="/m/gezi-en.jpg" aria-label="Ukázka videa z mapy cesty: trasa Istanbul–Athény"></video></div></div>
+    </div>
+    <div class="ayrinti" data-r aria-label="Podrobnosti o tom, co přijde po jízdě">
+      <dl class="veri-say">
+        <div><dt>200</dt><dd>jízd uložených v telefonu</dd></div>
+        <div><dt>22</dt><dd>odznaků v 11 druzích</dd></div>
+        <div><dt>60×</dt><dd>nejvyšší rychlost 3D přehrávání</dd></div>
+        <div><dt>1080×1920</dt><dd>svislé video, 15, 30 nebo 60 sekund</dd></div>
+      </dl>
+      <ul class="izgara">
+        <li><h3>Rozbor jízdy</h3><p>Doba v pohybu a skutečné zastávky, ostré zatáčky na 100 km, celkové převýšení, úseky po 10 km. Všechno se počítá v telefonu.</p></li>
+        <li><h3>Nové cesty</h3><p>Podívej se, jaká část jízdy vedla po cestách, které pro tebe byly nové.</p></li>
+        <li><h3>Pohled z helikoptery</h3><p>Přehraj si jízdu na 3D satelitní mapě Apple v 1, 5, 20 nebo 60násobné rychlosti.</p></li>
+        <li><h3>Odznaky</h3><p>První jízda, celková vzdálenost, 500 km v jedné jízdě, jízdy za svítání a v noci, týdenní série, stoupání, výška Everestu, sbírání průsmyků, tři země.</p></li>
+        <li><h3>GPX</h3><p>Exportuj jízdy jako soubory GPX s časovými značkami a importuj trasu GPX, kterou už máš.</p></li>
+        <li><h3>Sdílení</h3><p>Pošli video do Instagram Stories nebo získej odkaz ke sdílení jízdy.</p></li>
+      </ul>
+    </div>
+    </div>
+  </section>
+
+<!-- Haritada sen: sürükleyerek dönen motosiklet -->
+<section class="bolum" id="sahne" aria-label="Ty na mapě">
+    <div class="kap"><div class="bolum-ik">
+      <div data-r>
+        <p class="km">Ty na mapě</p>
+        <h2>Na mapě <i>jsi taky ty.</i></h2>
+        <p class="metin">Za jízdy tě na mapě zastupuje značka. Vybereš si ji z mřížky v Nastavení: motorka, chopper, maxiskútr, touring, šipka nebo helma.</p>
+      </div>
+      <div data-r>
+        <div class="motor" id="motor" role="img" aria-label="Motorka, která tě na mapě zastupuje; tažením doleva nebo doprava ji otočíš"><img id="motorimg" src="/m/bike/090.webp" alt="" width="760" height="699" loading="lazy" decoding="async"></div>
+        <p class="motor-not">Tažením otáčej</p>
+      </div>
+    </div></div>
+  </section>
+
+  <section class="bolum ters" id="efsane">
+    <div class="kap"><div class="bolum-ik">
+      <div data-r class="tel-alan"><div class="tel"><img src="/m/ekran-efsane-en.webp" alt="Obrazovka legendárních silnic: seznam hotových tras a jejich mapa" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r>
+        <p class="km">Legendární silnice</p>
+        <h2>Legendární silnice, <i>od Turecka po Ameriku.</i></h2>
+        <p class="metin">Slavné silnice Turecka, Evropy a USA jsou hotové jako trasy: Tail of the Dragon, Beartooth Highway, Big Sur a další. Vyber si jednu a jeď.</p>
+      </div>
+    </div>
+    <div class="ayrinti" data-r aria-label="Podrobnosti o legendárních silnicích">
+      <dl class="veri-say uc">
+        <div><dt>17</dt><dd>legendárních silnic v Evropě</dd></div>
+        <div><dt>26</dt><dd>legendárních silnic v USA</dd></div>
+        <div><dt>11</dt><dd>hotových výletů v Turecku</dd></div>
+      </dl>
+      <ul class="izgara">
+        <li><h3>Evropa</h3><p>Stelvio, Grossglockner, Transfăgărășan, Trollstigen, Atlantic Road, Galibier a další.</p></li>
+        <li><h3>Spojené státy</h3><p>Tail of the Dragon, Beartooth, Going-to-the-Sun Road, Big Sur, Million Dollar Highway a další.</p></li>
+        <li><h3>Turecko</h3><p>Şile–Ağva, lykijské pobřeží na D400, Assos a hora Ida, poloostrov Datça, yayla Ayder (horské pastviny) a další.</p></li>
+        <li><h3>Fakta o každé silnici</h3><p>U evropských a amerických silnic jsou zdroje, výška vrcholu a počet zatáček a serpentin.</p></li>
+        <li><h3>Poznámky k sezóně</h3><p>V kterých měsících je otevřená a jestli se v zimě zavírá, ať to můžeš před cestou ověřit.</p></li>
+        <li><h3>Jedno klepnutí k trase</h3><p>Vyber silnici a trasa je připravená k jízdě.</p></li>
+      </ul>
+    </div>
+    </div>
+  </section>
+
+  <section class="bolum" id="tani">
+    <div class="kap"><div class="bolum-ik">
+      <div data-r>
+        <p class="km">Poznej ji</p>
+        <h2>Poznej ji <i>blíž.</i></h2>
+        <p class="metin">Co v aplikaci najdeš, za dvě minuty.</p>
+      </div>
+      <div data-r class="tel-alan"><div class="tani-kutu" id="tani-kutu">
+        <button type="button" id="tani-btn" aria-label="Přehrát úvodní video"><img src="/m/tani-en.jpg" alt="" loading="lazy" width="1080" height="1920"><span class="oynat"></span></button>
+      </div></div>
+    </div></div>
+  </section>
+
+  <!-- Fiyat -->
+  <section class="bolum" id="fiyat">
+    <div class="kap" data-r>
+      <p class="km">Ceny</p>
+      <h2>Jezdit se dá zdarma, <i>Pro přijde, až budeš chtít víc.</i></h2>
+      <div class="fiyat">
+        <div class="plan"><h3>Zdarma</h3><p>Plánování tras a navigace odbočku po odbočce jsou v Turecku, Evropě a USA bez omezení. Účet nepotřebuješ; zdarma si uložíš 1 výlet.</p></div>
+        <div class="plan pro"><h3>Motoseyir <i>Pro</i></h3><p>Čtvrtletní a roční předplatné začíná mimo Turecko 7denní zkušební dobou zdarma, pro nové předplatitele. Pro odemyká:</p>
+          <ul><li>AI CoRider</li><li>Apple CarPlay</li><li>Zakládání skupin a intercom</li><li>„Discover“ a generátor výletů</li><li>Neomezené výlety a stopy</li><li>Režim vedlejších cest a pobřeží, nejlepší pořadí více zastávek</li></ul>
+        </div>
+      </div>
+      <p class="fiyat-not">Aktuální ceny se liší podle regionu; uvidíš je na obrazovce předplatného v App Store. Zrušit můžeš kdykoli ve svém účtu App Store.</p>
+    </div>
+  </section>
+</div>
+
+<section class="varis">
+  <div class="kap" data-r>
+    <h2>Cesta je <i>připravená.</i></h2>
+    <div class="cta-satir">
+      <a class="btn" href="https://apps.apple.com/cz/app/id6792549131?pt=128439797&amp;ct=site-cs&amp;mt=8">Stáhnout v App Store</a>
+      <a class="btn btn-hayalet" href="/cs/nasil-yapilir.html">Jak to funguje</a>
+    </div>
+  </div>
+</section>
+
+<section class="ayr" aria-label="Soukromí, poznámky k vydání a kontakt">
+  <div class="kap">
+    <div id="gizlilik">
+      <p class="km">Soukromí</p>
       <h2>Žádný účet, žádná zbytečná data</h2>
-      <p class="section-lead">Abys mohl Motoseyir používat, nemusíš dávat jméno, e-mail ani telefon. Níž je krátké shrnutí zásad ochrany soukromí; celý text je v aplikaci v angličtině, v Settings → Privacy Policy.</p>
-      <ul class="gizlilik-liste">
-        <li>Nemusíš si zakládat účet — nechceme jméno, e-mail, telefon ani datum narození.</li>
-        <li>K výpočtu trasy jdou tvoje poloha a hledané výrazy jen do mapových služeb; žádná z nich je neukládá.</li>
-        <li>Tvoje výlety, záznamy jízd, poznámky z deníku a fotky zůstávají jen ve tvém zařízení — dokud je nenasdílíš v Community.</li>
-        <li>Aby se nedalo zneužívat zkušební období a kampaně, jde na náš server nevratný anonymní odtisk identity tvého zařízení; ten odtisk tě neidentifikuje.</li>
-        <li>Když zapneš jízdu ve skupině, tvá poslední poloha se sdílí jen během jízdy a po jejím konci se maže. Zvuk z intercomu se nikdy nenahrává, jde jen k těm, kdo jsou v tu chvíli v pokoji.</li>
-        <li>Žádné reklamy; žádná data se nesdílí s reklamními sítěmi.</li>
-      </ul>
-      <p><a href="/gizlilik/">Přečíst celé zásady ochrany soukromí (v turečtině) →</a></p>
+      <p class="metin">Abys mohl Motoseyir používat, nemusíš dávat jméno, e-mail ani telefon. Níž je krátké shrnutí zásad ochrany soukromí; celý text je v aplikaci v angličtině, v Settings → Privacy Policy.</p>
+      <ul class="d"><li>Nemusíš si zakládat účet — nechceme jméno, e-mail, telefon ani datum narození.</li><li>K výpočtu trasy jdou tvoje poloha a hledané výrazy jen do mapových služeb; žádná z nich je neukládá.</li><li>Tvoje výlety, záznamy jízd, poznámky z deníku a fotky zůstávají jen ve tvém zařízení — dokud je nenasdílíš v Community.</li><li>Aby se nedalo zneužívat zkušební období a kampaně, jde na náš server nevratný anonymní odtisk identity tvého zařízení; ten odtisk tě neidentifikuje.</li><li>Když zapneš jízdu ve skupině, tvá poslední poloha se sdílí jen během jízdy a po jejím konci se maže. Zvuk z intercomu se nikdy nenahrává, jde jen k těm, kdo jsou v tu chvíli v pokoji.</li><li>Žádné reklamy; žádná data se nesdílí s reklamními sítěmi.</li></ul>
+      <a class="ok" href="/gizlilik/">Přečíst celé zásady ochrany soukromí (v turečtině) →</a>
     </div>
-  </section>
-
-  <!-- YENİLİKLER -->
-  <section class="section section-2" id="yenilikler">
-    <div class="wrap">
-      <span class="eyebrow">Poznámky k verzi</span>
+    <div id="yenilikler">
+      <p class="km">Poznámky k verzi</p>
       <h2>Co se změnilo</h2>
-      <p class="section-lead">Každá větší aktualizace je tady, nejnovější nahoře.</p>
-
-      <!-- YENİ SÜRÜM ÇIKINCA: metinler dil/<kod>.json içindeki y110_* ve y107_*
-           anahtarlarında; yeni sürüm için şablona yeni bir <article> eklenir. -->
-      <article class="surum">
-        <div class="surum-baslik">
-          <span class="surum-no">1.1.0</span>
-          <span class="surum-tarih">Září 2026</span>
-        </div>
-        <ul>
-          <li>Na šířku: otoč telefon a mapa, kartičky i tlačítka přejdou do jiného rozvržení. V navigaci je kartička odbočení a příjezdu vlevo a mapa vpravo; seznam výletů ukazuje dva sloupce.</li>
-          <li>Skupinový intercom: v „My Ride Group“ pošle „Invite to ride“ vedle člověka trasu a hlasové spojení jedním dotykem. Intercom se spustí i bez trasy, hlasitost každého kamaráda se nastavuje zvlášť a helmy s Bluetooth se teď připojují přímo.</li>
-          <li>Záznam jízdy skupině: pošli skupině dokončenou jízdu. Stopa, vzdálenost a čas zůstanou ve skupině 14 dní; okolí startu a cíle zůstává skryté.</li>
-          <li>Tři nové ikony jezdce — chopper, maxi skútr, touring — a nová stránka nápovědy v aplikaci: Settings → How it works.</li>
-          <li>Příspěvky v Community jdou před zveřejněním přes kontrolu; na kartičce můžeš zvětšit mapu a fotky z deníku se objevují jako kartičky na mapě.</li>
-          <li>Pokyny k odbočení nahrané znovu, zní přirozeněji.</li>
-        </ul>
-      </article>
-
-      <article class="surum">
-        <div class="surum-baslik">
-          <span class="surum-no">1.0.7</span>
-          <span class="surum-tarih">Září 2026</span>
-        </div>
-        <ul>
-          <li>Připojit se do skupiny přes pozvánku nebo kód je teď zdarma; zakládání skupiny zůstává v Pro. Odkaz z pozvánky otevře aplikaci přímo.</li>
-          <li>Deník výletu teď fotí vlastní kamerou a titulní fotku pošleš přímo do svého příběhu na Instagramu.</li>
-          <li>Jednotka se bere podle toho, kde jsi: míle, mph a stopy v USA, míle a yardy ve Velké Británii, kilometry všude jinde — a hlasová navigace mluví ve stejné jednotce.</li>
-          <li>Přidáno sedm legendárních amerických tras: Tail of the Dragon, Cherohala Skyway, Blue Ridge Parkway, Beartooth Highway, Angeles Crest, Big Sur a Million Dollar Highway.</li>
-        </ul>
-      </article>
+      <p class="metin">Poslední aktualizace, nejnovější nahoře.</p>
+      <article class="surum"><header><b>1.1.8</b><time>říjen 2026</time></header>
+        <ul class="d"><li>Opraven pád při přepnutí z Blogu na Feed v Community.</li><li>Nahrávání videa z 3D přehrávání jízdy se spouští spolehlivěji.</li><li>„Připraveno“ se už neukazuje dřív, než se načte mapa, a kamera neskáče, když přestaneš přibližovat dvěma prsty.</li></ul></article>
+      <article class="surum"><header><b>1.1.7</b><time>říjen 2026</time></header>
+        <ul class="d"><li>Mapa cesty: sleduj dlouhý výlet nebo jízdu jako video na čisté mapě. Jak se trasa kreslí, postupně se objevují projetá města a tvoje fotky.</li><li>Nové zkratky na úvodní obrazovce: domov a práce, záznam jízdy, hodinový okruh odsud, legendární silnice poblíž.</li><li>298 průsmyků a šest nových legendárních silnic v USA a režim pobřeží teď funguje i v celé Evropě.</li><li>„Poznej Motoseyir“ v Nastavení je krátká videoprohlídka aplikace, záložku po záložce.</li></ul></article>
+      <article class="surum"><header><b>1.1.6</b><time>říjen 2026</time></header>
+        <ul class="d"><li>Sleduj ve 3D: přehraj si zaznamenanou jízdu jako z helikoptery; fotky se objeví tam, kde byly pořízeny.</li><li>Sdílej jako video: udělej svislé video na 15, 30 nebo 60 sekund, hotové pro Instagram. Pro nepotřebuješ.</li><li>Rozbor jízdy: doba v pohybu, skutečné pauzy, ostré zatáčky, celkové převýšení a kolik cesty pro tebe bylo nové.</li><li>V generátoru výletů přináší „Another one“ tři nové okruhy po jiných cestách a můžeš zapnout „No motorways“, „No tolls“ a „No dirt“.</li></ul></article>
     </div>
-  </section>
-
-  <!-- İLETİŞİM -->
-  <section class="section" id="iletisim">
-    <div class="wrap">
-      <span class="eyebrow">Kontakt</span>
+    <div id="iletisim">
+      <p class="km">Kontakt</p>
       <h2>Něco nefunguje, nebo máš nápad?</h2>
-      <div class="iletisim-grid">
-        <div class="iletisim-kart">
-          <h3>Podpora v aplikaci</h3>
-          <p>Napiš nám přímo přes Settings → „Something wrong, or an idea?“; odpovědi se vrátí na stejné místo.</p>
-        </div>
-        <div class="iletisim-kart">
-          <h3>Instagram</h3>
-          <p>Sleduj nás kvůli novým trasám, fotkám z jízd a oznámením.</p>
-          <a class="btn btn-ghost btn-sm" href="https://www.instagram.com/motoseyir.app/">@motoseyir.app</a>
-        </div>
+      <div class="kartlar">
+        <div class="kart"><h3>Podpora v aplikaci</h3><p>Napiš nám přímo přes Settings → „Something wrong, or an idea?“; odpovědi se vrátí na stejné místo.</p></div>
+        <div class="kart"><h3>Instagram</h3><p>Sleduj nás kvůli novým trasám, fotkám z jízd a oznámením.</p><a class="btn btn-hayalet btn-kucuk" href="https://www.instagram.com/motoseyir.app.en/">@motoseyir.app.en</a></div>
       </div>
     </div>
-  </section>
-
+  </div>
+</section>
 </main>
 
-<footer class="site-footer">
-  <div class="wrap">
-    <div class="footer-ust">
-      <div>
-        <a class="logo" href="#top" style="font-size:1.05rem;">MOTO<em>SEYİR</em></a>
-      </div>
-      <ul class="footer-links">
-        <li><a href="#ozellikler">Funkce</a></li>
-        <li><a href="ozellikler.html">Všechny funkce</a></li>
-        <li><a href="nasil-yapilir.html">Jak to funguje</a></li>
-        <li><a href="/gizlilik/">Soukromí (TR)</a></li>
-        <li><a href="#yenilikler">Novinky</a></li>
-        <li><a href="#iletisim">Kontakt</a></li>
-        <li><a href="https://www.instagram.com/motoseyir.app/">Instagram</a></li>
-        <li><a href="https://apps.apple.com/cz/app/id6792549131?pt=128439797&amp;ct=site-cs&amp;mt=8">App Store</a></li>
-      </ul>
+<footer>
+  <div class="alt-ic">
+    <div>
+      <p><a class="logo" href="#top" aria-label="Motoseyir"><img src="/img/favicon.png" alt="" width="28" height="28">MOTO<em>SEYİR</em></a></p>
+      <p style="margin-top:10px">© 2026 Motoseyir. Všechna práva vyhrazena.</p>
     </div>
-    <p>© 2026 Motoseyir. Všechna práva vyhrazena.</p>
-    <div class="dil-altbilgi">
-      <span class="dil-altbilgi-baslik">Jazyky</span>
+    <ul>
+      <li><a href="/cs/ozellikler.html">Všechny funkce</a></li><li><a href="/cs/nasil-yapilir.html">Jak to funguje</a></li><li><a href="/gizlilik/">Soukromí</a></li><li><a href="#yenilikler">Novinky</a></li><li><a href="#iletisim">Kontakt</a></li><li><a href="https://www.instagram.com/motoseyir.app.en/">Instagram</a></li><li><a href="https://apps.apple.com/cz/app/id6792549131?pt=128439797&amp;ct=site-cs&amp;mt=8">App Store</a></li>
+    </ul>
+    <div class="dil-altbilgi"><span>Jazyky</span>
       <ul class="dil-liste">
   <li><a href="/" lang="tr" hreflang="tr">Türkçe</a></li>
   <li><a href="/en/" lang="en" hreflang="en">English</a></li>
@@ -463,6 +535,5 @@
     </div>
   </div>
 </footer>
-
 </body>
 </html>
