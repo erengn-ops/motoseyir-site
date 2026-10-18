@@ -28,14 +28,14 @@
   "og_baslik": "Motoseyir — The Sat Nav That Counts Kilometres, Not Minutes",
   "og_aciklama": "Shortest route, back roads, multi-stop tours, group riding, intercom and legendary routes — in one app.",
   "jsonld_aciklama": "Distance-first navigation app for motorcyclists: shortest route, back roads, multi-stop tours, group riding, intercom and legendary routes.",
-  "jsonld_ucretsiz": "7-day free trial of every Pro feature on the 3-month and yearly plans, for new subscribers where available.",
+  "jsonld_ucretsiz": "Unlimited routing and navigation in Türkiye, Europe and the USA, 1 saved tour; Pro’s 3-month and yearly plans include a 7-day free trial outside Türkiye, for new subscribers.",
   "jsonld_pro": "Best order for multiple stops, unlimited tours and trails, Back roads and Coast modes, Discover, group creation, intercom and AI CoRider.",
 
   "hero_alt": "A motorcyclist riding a twisty mountain road along the coast in the light of sunset",
   "hero_eyebrow": "Motoseyir · The rider’s sat nav",
   "hero_h1": "The only sat nav that counts the kilometres.",
   "hero_lead": "Motoseyir works out the route by distance, not by minutes. It compares several alternatives between the same two points and suggests the shortest one. On a multi-stop tour it works out the order of the stops, too.",
-  "hero_micro": "Start with a 7-day free trial on the 3-month or yearly plan.",
+  "hero_micro": "Routing and navigation are free and unlimited in Türkiye, Europe and the USA; no account needed.",
 
   "neden_eyebrow": "Why it’s different",
   "neden_soz": "Other sat navs find the <span class=\"vurgu\">fastest</span> road.<br>Motoseyir finds the <span class=\"vurgu\">shortest</span> one.",
@@ -108,8 +108,8 @@
   "d5_p": "You pick your marker from the grid in Settings: bike, chopper, maxi scooter, touring, arrow or helmet. The three added in the latest update show the rider as well.",
 
   "fiyat_eyebrow": "Pricing",
-  "fiyat_h2": "Try every Pro feature free for 7 days",
-  "fiyat_lead": "No account needed. Motoseyir works with a Pro subscription; the 3-month and yearly plans start with a 7-day free trial for new subscribers, and you can cancel anytime in your store account.",
+  "fiyat_h2": "Free to ride, Pro when you want more",
+  "fiyat_lead": "No account needed. Routing and navigation are free and unlimited in Türkiye, Europe and the USA, with 1 saved tour. Pro’s 3-month and yearly plans start with a 7-day free trial outside Türkiye, for new subscribers; cancel anytime in your store account.",
   "plan_ucretsiz_ad": "7-day free trial",
   "plan_ucretsiz_notu": "On the 3-month and yearly plans, for new subscribers where available.",
   "pu1": "Every Pro feature for 7 days",

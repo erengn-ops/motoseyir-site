@@ -28,14 +28,14 @@
   "og_baslik": "Motoseyir — Motosiklete Göre En Kısa Yolu Bulan Navigasyon",
   "og_aciklama": "En kısa rota, köy yolları, çok duraklı turlar, grup sürüşü, interkom ve efsane rotalar — tek uygulamada.",
   "jsonld_aciklama": "Motosiklet sürücüleri için mesafe odaklı navigasyon uygulaması: en kısa rota, köy yolları, çok duraklı turlar, grup sürüşü, interkom ve efsane rotalar.",
-  "jsonld_ucretsiz": "Sınırsız rota hesaplama ve 1 kayıtlı tur; kurulumda 7 gün tüm özellikler açık.",
+  "jsonld_ucretsiz": "Türkiye, Avrupa ve ABD’de sınırsız rota ve navigasyon, 1 kayıtlı tur; Pro’nun 3 aylık ve yıllık planlarında (Türkiye hariç) 7 gün ücretsiz deneme.",
   "jsonld_pro": "Çok duraklıda en uygun sıralama, sınırsız tur ve parkur, köy yolları/sahil modları, Keşfet, grup kurma, interkom ve AI CoRider.",
 
   "hero_alt": "Kıyı boyunca uzanan virajlı bir dağ yolunda, gün batımı ışığında ilerleyen bir motosikletli",
   "hero_eyebrow": "Motoseyir · Motorcunun navigasyonu",
   "hero_h1": "Kilometreyi hesaba katan tek navigasyon.",
   "hero_lead": "Motoseyir rotayı süreye göre değil mesafeye göre hesaplıyor. Aynı iki nokta için birkaç alternatifi karşılaştırır, en kısasını önerir. Çok duraklı bir turda durakların sırasını da o kuruyor.",
-  "hero_micro": "Kurulumda 7 gün her şey açık. Sonrasında da rota sınırsız ve ücretsiz.",
+  "hero_micro": "Türkiye, Avrupa ve ABD’de rota ve navigasyon ücretsiz ve sınırsız; hesap gerekmez.",
 
   "neden_eyebrow": "Neden farklı",
   "neden_soz": "Başka navigasyonlar <span class=\"vurgu\">en hızlı</span> yolu bulur.<br>Motoseyir <span class=\"vurgu\">en kısa</span> olanı bulur.",
@@ -109,7 +109,7 @@
 
   "fiyat_eyebrow": "Fiyatlandırma",
   "fiyat_h2": "Ücretsiz başla, istersen Pro’ya geç",
-  "fiyat_lead": "Hesap açmana gerek yok. Kurulumda 7 gün her şey açık; sonrasında ücretsiz kademe sınırsız rota ve 1 kayıtlı turla devam eder.",
+  "fiyat_lead": "Hesap açmana gerek yok. Türkiye, Avrupa ve ABD’de rota ve navigasyon ücretsiz ve sınırsız; ücretsiz kademede 1 kayıtlı tur kalır. Pro’nun 3 aylık ve yıllık planları Türkiye dışında 7 gün ücretsiz denemeyle başlar.",
   "plan_ucretsiz_ad": "Ücretsiz",
   "plan_ucretsiz_notu": "Kurulumla birlikte, süresiz.",
   "pu1": "Sınırsız rota hesaplama",
