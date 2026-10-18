@@ -145,7 +145,7 @@
   "y110_3": "Fahrtaufzeichnung an die Gruppe: Schick eine beendete Fahrt an deine Gruppe. Strecke, Distanz und Zeit bleiben 14 Tage in der Gruppe; die Umgebung von Start und Ziel bleibt verborgen.",
   "y110_4": "Drei neue Fahrer-Marker — Chopper, Maxi-Scooter, Touring — und eine neue Hilfeseite in der App: Einstellungen → So geht’s.",
   "y110_5": "Community-Beiträge werden vor der Veröffentlichung geprüft; die Karte auf einer Karte lässt sich vergrößern, und Tagebuchfotos erscheinen als Karten auf der Karte.",
-  "y110_6": "Abbiegeansagen neu aufgenommen, natürlicher. Der Code MOTOSEYIR7 in den Einstellungen schaltet auf diesem Gerät einmal fünf Tage Pro frei.",
+  "y110_6": "Abbiegeansagen neu aufgenommen, natürlicher.",
   "y107_tarih": "September 2026",
   "y107_1": "Einer Gruppe per Einladung oder Code beizutreten ist jetzt gratis; das Erstellen bleibt in Pro. Ein Einladungslink öffnet die App direkt.",
   "y107_2": "Das Tourtagebuch fotografiert jetzt mit eigener Kamera, und das Titelbild schickst du direkt in deine Instagram-Story.",
@@ -235,7 +235,7 @@
   "hb2": "„Start“ auf der Karte unten → die Navigation startet und das Band oben zeigt das nächste Manöver.",
   "hb3": "Tippe rechts auf die Aufnahmetaste → die Fahrtaufzeichnung startet, dieselbe Taste beendet sie.",
   "hb4": "Gib auf dem Tab „Meine Touren“ einen Namen ein und tippe auf „Erstellen“ → du beginnst deine Tour mit mehreren Stopps.",
-  "hb5": "Einstellungen → „Die 5 Tage jetzt starten“: der Code MOTOSEYIR7 schaltet fünf Tage Pro frei, einmal pro Gerät.",
+  "hb5": "Einstellungen → App-Store-Code einlösen: Wenn du einen App-Store-Angebotscode hast (zum Beispiel ein Geschenk von uns), löst du ihn hier ein.",
 
   "k_rota": "Route",
   "rota1": "Tippe oben in das Feld und wähle einen Vorschlag → das Ziel wird hinzugefügt; ab dem zweiten Ziel wird es eine Route mit mehreren Stopps (Pro).",
@@ -295,7 +295,7 @@
   "ayar1": "Darstellung → Farbschema und App-Sprache.",
   "ayar2": "Karte → Kartenebene (Standard oder Satellit), Kartendesign und Navigationssymbol: Motorrad, Chopper, Maxi-Scooter, Touring, Pfeil, Helm.",
   "ayar3": "Fahren → Sprachführung, Verbrauch und Spritpreis; der Sparbericht rechnet mit diesen zwei Werten.",
-  "ayar4": "„Die 5 Tage jetzt starten“ → der Code MOTOSEYIR7 lässt sich auf diesem Gerät einmal einlösen und schaltet fünf Tage Pro frei.",
+  "ayar4": "App-Store-Code einlösen → Apples eigener Code-Bildschirm öffnet sich; nach Eingabe des Codes ist Pro sofort aktiv.",
   "ayar5": "Schreib uns über die Support-Zeile → die Antwort erscheint an derselben Stelle; die Instagram-Zeile kündigt neue Funktionen an.",
   "ayar6": "Dreh das Telefon ins Querformat → Karten und Listen sammeln sich links, die Karte nimmt den Rest; in der Navigation genauso.",
 

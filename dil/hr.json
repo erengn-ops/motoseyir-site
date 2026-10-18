@@ -145,7 +145,7 @@
   "y110_3": "Snimka vožnje grupi: pošalji grupi završenu vožnju. Trag, udaljenost i vrijeme ostaju u grupi 14 dana; okolina tvog starta i cilja ostaje skrivena.",
   "y110_4": "Tri nove ikone vozača — chopper, maxi skuter, touring — i nova stranica pomoći u aplikaciji: Settings → How it works.",
   "y110_5": "Objave u Communityju prolaze provjeru prije objave; na kartici možeš povećati kartu, a fotografije iz dnevnika pojavljuju se kao kartice na karti.",
-  "y110_6": "Najave skretanja snimljene su ponovno, zvuče prirodnije. Kod MOTOSEYIR7 u postavkama otvara pet dana Pro verzije, jednom na ovom uređaju.",
+  "y110_6": "Najave skretanja snimljene su ponovno, zvuče prirodnije.",
   "y107_tarih": "Rujan 2026.",
   "y107_1": "Pridruživanje grupi pozivom ili kodom sada je besplatno; stvaranje grupe ostaje u Pro verziji. Link poziva otvara aplikaciju direktno.",
   "y107_2": "Dnevnik ture sada fotografira vlastitom kamerom, a naslovnu fotografiju pošlješ ravno u svoju Instagram priču.",
@@ -235,7 +235,7 @@
   "hb2": "Start na kartici ispod → otvori se navigacija, a traka na vrhu pokazuje sljedeći manevar.",
   "hb3": "Dodirni tipku snimanja desno → snimanje vožnje počne, a ista tipka ga završi.",
   "hb4": "U kartici My Tours upiši ime i dodirni Create → počinješ graditi turu s više stanica.",
-  "hb5": "Settings → Start the 5 days now: kod MOTOSEYIR7 otvara pet dana Pro verzije, jednom po uređaju.",
+  "hb5": "Settings → Redeem an App Store offer code: ako imate kod ponude za App Store (na primjer naš poklon), iskoristite ga ovdje.",
 
   "k_rota": "Ruta",
   "rota1": "Upiši nešto u polje na vrhu i odaberi prijedlog → odredište se doda; od drugog odredišta ruta postaje ruta s više stanica (Pro).",
@@ -295,7 +295,7 @@
   "ayar1": "Appearance → paleta boja i jezik aplikacije.",
   "ayar2": "Map → sloj (standardni ili satelitski), tema karte i ikona navigacije: motor, chopper, maxi skuter, touring, strelica, kaciga.",
   "ayar3": "Riding → glasovno navođenje, potrošnja i cijena goriva; izvještaj o štednji računa se iz tih dviju vrijednosti.",
-  "ayar4": "Start the 5 days now → kod MOTOSEYIR7 na ovom uređaju koristi se jednom i otvara pet dana Pro verzije.",
+  "ayar4": "Redeem an App Store offer code → otvara se Appleov zaslon za kodove; nakon unosa koda Pro se odmah uključuje.",
   "ayar5": "Piši nam iz reda Support → odgovor vidiš na istom mjestu; red Instagram najavljuje nove funkcije.",
   "ayar6": "Okreni telefon vodoravno → kartice i popisi skupljaju se lijevo, a karta uzima ostatak; u navigaciji isto tako.",
 

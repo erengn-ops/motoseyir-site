@@ -145,7 +145,7 @@
   "y110_3": "Gruba sürüş kaydı: bitirdiğin sürüşü grubuna gönderebiliyorsun. İz, mesafe ve süre 14 gün grupta kalıyor; başlangıç ve bitişin yakını gizli.",
   "y110_4": "Üç yeni sürücü işaretçisi — chopper, maksi scooter, touring — ve uygulama içinde yeni bir Yardım sayfası: Ayarlar → Nasıl yapılır?",
   "y110_5": "Topluluk gönderileri yayına girmeden önce onaydan geçiyor; kartta haritayı büyütebiliyorsun ve günlük fotoğrafları haritada kart olarak görünüyor.",
-  "y110_6": "Dönüş anonsları yeniden kaydedildi, daha doğal. Ayarlar’daki MOTOSEYIR7 kodu bu cihazda bir kez beş gün Pro açıyor.",
+  "y110_6": "Dönüş anonsları yeniden kaydedildi, daha doğal.",
   "y107_tarih": "Eylül 2026",
   "y107_1": "Gruba davetle ya da kodla katılmak ücretsiz oldu; grup kurmak Pro’da kalıyor. Davet bağlantısı doğrudan uygulamayı açıyor.",
   "y107_2": "Tur günlüğü artık kendi kamerasıyla çekiyor; kapak fotoğrafını seçip doğrudan Instagram hikâyene gönderebiliyorsun.",
@@ -235,7 +235,7 @@
   "hb2": "Alttaki karttan Başla → navigasyon açılır, üstteki şerit sıradaki manevrayı gösterir.",
   "hb3": "Sağdaki kayıt düğmesine dokun → sürüş kaydı başlar, aynı düğme kaydı bitirir.",
   "hb4": "Turlarım sekmesinde ad yaz ve Oluştur → çok duraklı turunu kurmaya başlarsın.",
-  "hb5": "Ayarlar → 5 günü şimdi başlat: MOTOSEYIR7 kodu bu cihazda bir kez beş gün Pro açar.",
+  "hb5": "Ayarlar → App Store indirim kodu kullan: elinde bir App Store teklif kodu varsa (örneğin bizden hediye) buradan kullanırsın.",
 
   "k_rota": "Rota",
   "rota1": "Üstteki alana yaz ve öneriden seç → varış eklenir; ikinci varıştan sonrası çok duraklı rota olur (Pro).",
@@ -295,7 +295,7 @@
   "ayar1": "Görünüm → renk paleti ve uygulama dili.",
   "ayar2": "Harita → katman (standart ya da uydu), harita teması ve navigasyon işaretçisi: motor, chopper, maksi scooter, touring, ok, kask.",
   "ayar3": "Sürüş → sesli yönlendirme, yakıt tüketimi ve yakıt fiyatı; tasarruf raporu bu iki değere göre hesaplanır.",
-  "ayar4": "5 günü şimdi başlat → MOTOSEYIR7 kodu bu cihazda bir kez kullanılır, beş gün Pro açar.",
+  "ayar4": "App Store indirim kodu kullan → Apple’ın kendi kod ekranı açılır; kodu yazınca Pro hemen açılır.",
   "ayar5": "Destek satırından bize yaz → yanıtı aynı yerde görürsün; Instagram satırı yeni özellikleri duyurur.",
   "ayar6": "Telefonu yatay çevir → kartlar ve listeler sola toplanır, harita kalan alanı alır; navigasyonda da böyle.",
 

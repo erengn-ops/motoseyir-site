@@ -106,5 +106,20 @@
  "fiyat_not": "Current prices vary by region; you see them on the subscription screen in the App Store. Cancel anytime in your App Store account.",
  "varis_h2": "The road is <i>ready.</i>",
  "varis_nasil": "How it works",
- "ayr_etiket": "Privacy, release notes and contact"
+ "ayr_etiket": "Privacy, release notes and contact",
+ "yeni_lead": "Recent updates, newest first.",
+ "y118_tarih": "October 2026",
+ "y117_tarih": "October 2026",
+ "y116_tarih": "October 2026",
+ "y118_1": "Fixed a crash when switching from Blog to Feed in Community.",
+ "y118_2": "Recording a video of your 3D ride replay starts more reliably.",
+ "y118_3": "“Ready” no longer shows before the map has loaded, and the camera no longer jumps when you finish a pinch zoom.",
+ "y117_1": "Trip map: watch a long tour or ride as a video on a clean map. As your route draws itself, the towns you passed and your photos appear one by one.",
+ "y117_2": "New shortcuts on the Start screen: home and work, record a ride, a one-hour loop from here, a legendary road nearby.",
+ "y117_3": "298 mountain passes and six new legendary roads in the USA, and Coastal mode now works across Europe too.",
+ "y117_4": "“Get to know Motoseyir” in Settings is a short video tour of the app, tab by tab.",
+ "y116_1": "Watch in 3D: replay a recorded ride as if you were following from a helicopter; your photos pop up where you took them.",
+ "y116_2": "Share as video: make a 15, 30 or 60-second vertical video, ready for Instagram. No Pro needed.",
+ "y116_3": "Ride analysis: moving time, real breaks, sharp curves, total climb, and how much of the road was new to you.",
+ "y116_4": "In Tour Generator, “Another one” brings three new loops on different roads, and you can avoid highways, tolls and dirt roads."
 }

@@ -145,7 +145,7 @@
   "y110_3": "Registrazione del giro al gruppo: manda al gruppo un giro finito. Traccia, distanza e tempo restano nel gruppo 14 giorni; la zona attorno a partenza e arrivo resta nascosta.",
   "y110_4": "Tre nuove icone del motociclista — chopper, maxi scooter, touring — e una nuova pagina di aiuto nell’app: Impostazioni → Come si fa?",
   "y110_5": "I post della Community passano da un’approvazione prima di andare online; sulla scheda puoi ingrandire la mappa e le foto del diario compaiono come schede sulla mappa.",
-  "y110_6": "Annunci di svolta registrati di nuovo, più naturali. Il codice MOTOSEYIR7 nelle impostazioni sblocca cinque giorni di Pro, una volta sola su questo dispositivo.",
+  "y110_6": "Annunci di svolta registrati di nuovo, più naturali.",
   "y107_tarih": "Settembre 2026",
   "y107_1": "Entrare in un gruppo con invito o codice ora è gratis; crearne uno resta in Pro. Il link dell’invito apre direttamente l’app.",
   "y107_2": "Il diario del tour ora scatta con la propria fotocamera, e la foto di copertina la mandi direttamente nella tua storia Instagram.",
@@ -235,7 +235,7 @@
   "hb2": "Parti sulla scheda in basso → la navigazione si avvia e la striscia in alto mostra la manovra successiva.",
   "hb3": "Tocca il pulsante di registrazione a destra → la registrazione del giro inizia e lo stesso pulsante la chiude.",
   "hb4": "Nella scheda I miei tour, scrivi un nome e tocca Crea → inizi a costruire il tuo tour con più tappe.",
-  "hb5": "Impostazioni → Avvia i 5 giorni ora: il codice MOTOSEYIR7 sblocca cinque giorni di Pro, una volta per dispositivo.",
+  "hb5": "Impostazioni → Usa un codice App Store: se hai un codice offerta dell’App Store (per esempio un nostro regalo), lo usi qui.",
 
   "k_rota": "Percorso",
   "rota1": "Scrivi nel campo in alto e scegli un suggerimento → la destinazione viene aggiunta; dalla seconda in poi diventa un percorso con più tappe (Pro).",
@@ -295,7 +295,7 @@
   "ayar1": "Aspetto → combinazione di colori e lingua dell’app.",
   "ayar2": "Mappa → livello (standard o satellite), tema mappa e icona di navigazione: moto, chopper, maxi scooter, touring, freccia, casco.",
   "ayar3": "Guida → guida vocale, consumo e prezzo del carburante; il report di risparmio si calcola da questi due valori.",
-  "ayar4": "Avvia i 5 giorni ora → il codice MOTOSEYIR7 si usa una volta sola su questo dispositivo e sblocca cinque giorni di Pro.",
+  "ayar4": "Usa un codice App Store → si apre la schermata dei codici di Apple; inserito il codice, Pro si attiva subito.",
   "ayar5": "Scrivici dalla riga Assistenza → vedi la risposta nello stesso posto; la riga Instagram annuncia le novità.",
   "ayar6": "Ruota il telefono in orizzontale → schede ed elenchi si raccolgono a sinistra e la mappa prende il resto; in navigazione è uguale.",
 
