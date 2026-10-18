@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="{{lang}}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{baslik}}</title>
+<meta name="description" content="{{aciklama}}">
+<link rel="canonical" href="{{kanonik}}">
+{{alternatifler}}
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Motoseyir">
+<meta property="og:locale" content="{{og_locale}}">
+<meta property="og:title" content="{{og_baslik}}">
+<meta property="og:description" content="{{og_aciklama}}">
+<meta property="og:url" content="{{kanonik}}">
+<meta property="og:image" content="https://motoseyir-app.com/img/og-kapak.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Apple akıllı afiş: iOS Safari'de sayfanın üstünde "App Store'da aç" şeridi. -->
+<meta name="apple-itunes-app" content="app-id={{uygulama_id}}">
+<meta name="theme-color" content="#0B1315">
+<link rel="icon" href="/img/favicon.png">
+
+<!--
+  Arka plan videosu (m/hero.mp4, m/hero-dikey.mp4): yapay zekâ ile üretildi, gerçek çekim DEĞİL.
+  Higgsfield Wan 3.0, 14 Eki 2026, 30 sn 1080p; başlangıç karesi mağaza setinin Akdeniz panoraması
+  (o da yapay zekâ görseli). Döngü için son 1 sn ilk 1 sn'ye çapraz geçişli (29 sn), sessiz.
+  Ham dosya: motoseyir-social/02-kaynak/higgsfield/wan3-hero-30sn-ham.mp4
+  Bu sayfa sablon/anasayfa.html + dil/anasayfa.<kod>.json'dan üretilir (python3 uret.py); stil m/a.css, hareket m/a.js.
+-->
+<script>document.documentElement.className+=" js"</script>
+<link rel="preload" as="image" type="image/webp" href="/m/hero-dikey-poster.webp" media="(max-width:700px)" fetchpriority="high">
+<link rel="preload" as="image" type="image/webp" href="/m/hero-poster.webp" media="(min-width:701px)" fetchpriority="high">
+<link rel="preload" as="font" type="font/woff" href="/m/font/SofiaSansExtraCondensed.woff" crossorigin>
+<link rel="preload" as="font" type="font/woff" href="/m/font/Manrope.woff" crossorigin>
+<link rel="preload" as="font" type="font/woff" href="/m/font/InstrumentSerif-Italic.woff" crossorigin>
+<link rel="stylesheet" href="/m/a.css">
+<script defer src="/m/a.js"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Motoseyir",
+  "operatingSystem": "iOS",
+  "applicationCategory": "NavigationApplication",
+  "inLanguage": "{{lang}}",
+  "url": "{{kanonik}}",
+  "image": "https://motoseyir-app.com/img/og-kapak.jpg",
+  "description": "{{jsonld_aciklama}}",
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "{{plan_ucretsiz_ad}}",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "description": "{{jsonld_ucretsiz}}"
+    },
+    {
+      "@type": "Offer",
+      "name": "Motoseyir Pro",
+      "category": "subscription",
+      "description": "{{jsonld_pro}}"
+    }
+  ],
+  "downloadUrl": "{{store}}"
+}
+</script>
+</head>
+<body id="top">
+<a class="skip" href="#icerik">{{skip}}</a>
+
+<header class="ust" id="ustbar">
+  <div class="ust-ic">
+    <a class="logo" href="#top" aria-label="Motoseyir">MOTO<em>SEYİR</em></a>
+    <nav aria-label="{{nav_etiket}}"><ul class="menu">
+      <li><a href="#rota">{{m_rota}}</a></li><li><a href="#gecit">{{m_gecit}}</a></li><li><a href="#fiyat">{{m_fiyat}}</a></li><li><a href="{{nasil_url}}">{{nav_nasil}}</a></li>
+    </ul></nav>
+    <div class="ust-sag">
+      {{dil_secici}}
+      <a class="btn btn-kucuk" href="{{store}}">{{btn_indir}}</a>
+    </div>
+  </div>
+</header>
+
+<main id="icerik">
+<section class="kahraman" aria-label="{{h_etiket}}">
+  <div class="k-arka">
+    <picture>
+      <source media="(max-width:700px)" srcset="/m/hero-dikey-poster.webp" type="image/webp">
+      <img src="/m/hero-poster.webp" alt="{{hero_alt}}" fetchpriority="high" width="1600" height="900">
+    </picture>
+    <video id="hv" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+  </div>
+  <div class="k-ic">
+    <p class="ust-yazi">{{hero_eyebrow}}</p>
+    <h1>{{hero_h1}}</h1>
+    <p class="giris">{{hero_lead}}</p>
+    <div class="cta-satir">
+      <a class="btn" href="{{store}}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.6c0-2.4 2-3.5 2-3.6-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.15-2.8.85-3.5.85s-1.8-.8-3-.8c-1.5 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.700 2.400 2.900 2.300 1.200 0 1.600-.7 3-.7s1.800.7 3 .7 2-1.100 2.800-2.300c.9-1.300 1.200-2.500 1.300-2.600-.1 0-2.500-1-2.500-3.600zM14.200 5.500c.6-.8 1.100-1.800.9-2.900-.9 0-2 .6-2.700 1.400-.6.700-1.100 1.800-1 2.800 1 .1 2.100-.5 2.800-1.300z"/></svg>{{btn_store}}</a>
+      <p class="mikro">{{hero_micro}}</p>
+    </div>
+  </div>
+  <span class="kaydir" aria-hidden="true">{{h_kaydir}}</span>
+</section>
+
+<div class="serit" aria-label="{{serit_etiket}}"><div class="serit-ic">
+  <div class="sayi"><b><span data-n="1600" data-ek="+">{{s1_b}}</span></b><span>{{s1_t}}</span></div>
+  <div class="sayi"><b>TR · EU · US</b><span>{{s2_t}}</span></div>
+  <div class="sayi"><b>CarPlay</b><span>{{s3_t}}</span></div>
+  <div class="sayi"><b>{{s4_b}}</b><span>{{s4_t}}</span></div>
+</div></div>
+
+<div class="ana" id="ozellikler">
+  <div class="rh" aria-hidden="true">
+    <div class="rh-yol"><svg focusable="false"></svg></div>
+    <div class="rh-klip"><svg focusable="false"></svg></div>
+    <div class="pilot"><i></i></div>
+  </div>
+
+  <!-- KM 01 -->
+  <section class="bolum" id="rota" data-km>
+    <div class="kap"><div class="bolum-ik">
+      <div class="tel-alan"><div class="tel" data-egik="-3" data-yon="-1"><img src="/m/ekran-nav-{{dil_kodu}}.webp" alt="{{k1_alt}}" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r>
+        <p class="km"><b>KM 01</b>{{k1_ad}}</p>
+        <h2 data-bol>{{k1_h2}}</h2>
+        <p class="metin">{{k1_p}}</p>
+        <ul class="liste">
+          <li><strong>{{k1_a_t}}</strong><span class="a">{{k1_a_d}}</span></li>
+          <li><strong>{{k1_b_t}} <span class="etiket">Pro</span></strong><span class="a">{{k1_b_d}}</span></li>
+          <li><strong>{{k1_c_t}}</strong><span class="a">{{k1_c_d}}</span></li>
+        </ul>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- KM 02 -->
+  <section class="bolum ters" id="tur" data-km>
+    <div class="kap"><div class="bolum-ik">
+      <div class="tel-alan"><div class="tel" data-egik="2.5" data-yon="1"><img src="/m/ekran-tur-{{dil_kodu}}.webp" alt="{{k2_alt}}" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r>
+        <p class="km"><b>KM 02</b>{{k2_ad}}</p>
+        <h2 data-bol>{{k2_h2}} <span class="etiket">Pro</span></h2>
+        <p class="metin">{{k2_p}}</p>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- KM 03 -->
+  <section class="bolum" id="gecit" data-km>
+    <div class="kap"><div class="bolum-ik">
+      <div class="tel-alan"><div class="tel" data-egik="-3" data-yon="-1"><img src="/m/ekran-gecit-{{dil_kodu}}.webp" alt="{{k3_alt}}" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r>
+        <p class="km"><b>KM 03</b>{{k3_ad}}</p>
+        <h2 data-bol>{{k3_h2}}</h2>
+        <p class="metin">{{k3_p}}</p>
+        <ul class="pinler" aria-label="{{k3_etiket}}">
+          <li style="--o:.92"><span class="m"><span data-n="2764">{{k3_m1}}</span> m</span><span class="ad">Col de l’Iseran</span><span class="ay">{{k3_ay1}}</span><span class="cubuk"><i></i></span></li>
+          <li style="--o:.919"><span class="m"><span data-n="2758">{{k3_m2}}</span> m</span><span class="ad">Passo dello Stelvio</span><span class="ay">{{k3_ay2}}</span><span class="cubuk"><i></i></span></li>
+          <li style="--o:.915"><span class="m"><span data-n="2744">{{k3_m3}}</span> m</span><span class="ad">Col Agnel</span><span class="ay">{{k3_ay3}}</span><span class="cubuk"><i></i></span></li>
+        </ul>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- KM 04 -->
+  <section class="bolum ters" id="corider" data-km>
+    <div class="kap"><div class="bolum-ik">
+      <div class="tel-alan"><div class="tel" data-egik="2.5" data-yon="1"><img src="/m/ekran-corider-{{dil_kodu}}.webp" alt="{{k4_alt}}" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r>
+        <p class="km"><b>KM 04</b>AI CoRider</p>
+        <h2 data-bol>{{k4_h2}} <span class="etiket">Pro</span></h2>
+        <p class="metin">{{k4_p}}</p>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- KM 05 -->
+  <section class="bolum" id="birlikte" data-km>
+    <div class="kap"><div class="bolum-ik">
+      <div class="tel-alan cift dikey">
+        <div class="tel" data-egik="-3" data-yon="-1"><img src="/m/ekran-grup-{{dil_kodu}}.webp" alt="{{k5_alt1}}" width="540" height="1174" loading="lazy"></div>
+        <div class="arac" data-egik="0" data-yon="1"><img src="/m/ekran-carplay-{{dil_kodu}}.webp" alt="{{k5_alt2}}" width="900" height="540" loading="lazy"></div>
+      </div>
+      <div data-r>
+        <p class="km"><b>KM 05</b>{{k5_ad}}</p>
+        <h2 data-bol>{{k5_h2}}</h2>
+        <p class="metin">{{k5_p}}</p>
+        <ul class="liste">
+          <li><strong>{{k5_a_t}} <span class="etiket">Pro</span></strong><span class="a">{{k5_a_d}}</span></li>
+          <li><strong>{{k5_b_t}} <span class="etiket">Pro</span></strong><span class="a">{{k5_b_d}}</span></li>
+          <li><strong>CarPlay <span class="etiket">Pro</span></strong><span class="a">{{k5_c_d}}</span></li>
+        </ul>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- KM 06 -->
+  <section class="bolum ters" id="kesfet" data-km>
+    <div class="kap"><div class="bolum-ik">
+      <div class="tel-alan"><div class="tel" data-egik="2.5" data-yon="1"><img src="/m/ekran-kesfet-{{dil_kodu}}.webp" alt="{{k6_alt}}" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r>
+        <p class="km"><b>KM 06</b>{{k6_ad}}</p>
+        <h2 data-bol>{{k6_h2}} <span class="etiket">Pro</span></h2>
+        <p class="metin">{{k6_p}}</p>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- KM 07 -->
+  <section class="bolum st" id="surus-sonrasi" data-km>
+    <div class="kap"><div class="bolum-ik">
+      <div data-r>
+        <p class="km"><b>KM 07</b>{{k7_ad}}</p>
+        <h2 data-bol>{{k7_h2}}</h2>
+        <p class="metin">{{k7_p}}</p>
+        <ul class="liste">
+          <li><strong>{{k7_a_t}}</strong><span class="a">{{k7_a_d}}</span></li>
+          <li><strong>{{k7_b_t}}</strong><span class="a">{{k7_b_d}}</span></li>
+          <li><strong>{{k7_c_t}}</strong><span class="a">{{k7_c_d}}</span></li>
+          <li><strong>{{k7_d_t}}</strong><span class="a">{{k7_d_d}}</span></li>
+        </ul>
+      </div>
+      <div class="tel-alan"><div class="tel" data-egik="-2.5" data-yon="-1"><video data-src="/m/gezi-{{dil_kodu}}.mp4" muted loop playsinline preload="none" data-poster="/m/gezi-{{dil_kodu}}.jpg" aria-label="{{k7_alt}}"></video></div></div>
+    </div></div>
+  </section>
+
+<!-- Haritada sen: kaydırdıkça dönen motosiklet -->
+<section class="sahne" id="sahne" data-km aria-label="{{k8_ad}}">
+  <div class="sahne-ic">
+    <div class="kap"><div class="motor-kap">
+      <div data-r>
+        <p class="km"><b>KM 08</b>{{k8_ad}}</p>
+        <h2 data-bol>{{k8_h2}}</h2>
+        <p class="metin">{{k8_p}}</p>
+      </div>
+      <div>
+        <div class="motor" id="motor" role="img" aria-label="{{k8_alt}}"><span class="halka"></span><img id="motorimg" src="/m/bike/090.webp" alt="" width="760" height="699" loading="lazy" decoding="async"></div>
+        <p class="motor-not">{{k8_not}}</p>
+      </div>
+    </div></div>
+  </div>
+</section>
+
+  <!-- KM 09: efsane yollar her listede en sonda -->
+  <section class="bolum ters" id="efsane" data-km>
+    <div class="kap"><div class="bolum-ik">
+      <div class="tel-alan"><div class="tel" data-egik="2.5" data-yon="1"><img src="/m/ekran-efsane-{{dil_kodu}}.webp" alt="{{k9_alt}}" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r>
+        <p class="km"><b>KM 09</b>{{k9_ad}}</p>
+        <h2 data-bol>{{k9_h2}}</h2>
+        <p class="metin">{{k9_p}}</p>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- KM 10 -->
+  <section class="bolum" id="tani" data-km>
+    <div class="kap"><div class="bolum-ik">
+      <div data-r>
+        <p class="km"><b>KM 10</b>{{k10_ad}}</p>
+        <h2 data-bol>{{k10_h2}}</h2>
+        <p class="metin">{{k10_p}}</p>
+      </div>
+      <div class="tel-alan"><div class="tani-kutu" id="tani-kutu" data-r>
+        <button type="button" id="tani-btn" aria-label="{{k10_btn}}"><img src="/m/tani-{{dil_kodu}}.jpg" alt="" loading="lazy" width="1080" height="1920"><span class="oynat"></span></button>
+      </div></div>
+    </div></div>
+  </section>
+
+  <!-- Fiyat -->
+  <section class="bolum" id="fiyat" data-km>
+    <div class="kap" data-r>
+      <p class="km"><b>KM 11</b>{{fiyat_ad}}</p>
+      <h2 data-bol>{{fiyat_h2}}</h2>
+      <div class="fiyat">
+        <div class="plan"><h3>{{plan_ucretsiz_ad}}</h3><p>{{plan_u_p}}</p></div>
+        <div class="plan pro"><h3>Motoseyir <i>Pro</i></h3><p>{{plan_p_p}}</p>
+          <ul><li>{{pp1}}</li><li>{{pp2}}</li><li>{{pp3}}</li><li>{{pp4}}</li><li>{{pp5}}</li><li>{{pp6}}</li></ul>
+        </div>
+      </div>
+      <p class="fiyat-not">{{fiyat_not}}</p>
+    </div>
+  </section>
+</div>
+
+<section class="varis">
+  <div class="kap" data-r>
+    <h2 data-bol>{{varis_h2}}</h2>
+    <div class="cta-satir">
+      <a class="btn" href="{{store}}">{{btn_store}}</a>
+      <a class="btn btn-hayalet" href="{{nasil_url}}">{{varis_nasil}}</a>
+    </div>
+  </div>
+</section>
+
+<section class="ayr" aria-label="{{ayr_etiket}}">
+  <div class="kap">
+    <div id="gizlilik">
+      <p class="km">{{nav_gizlilik}}</p>
+      <h2>{{gizlilik_h2}}</h2>
+      <p class="metin">{{gizlilik_lead}}</p>
+      <ul class="d"><li>{{g1}}</li><li>{{g2}}</li><li>{{g3}}</li><li>{{g4}}</li><li>{{g5}}</li><li>{{g6}}</li></ul>
+      <a class="ok" href="{{gizlilik_url}}">{{gizlilik_baglanti}}</a>
+    </div>
+    <div id="yenilikler">
+      <p class="km">{{yeni_eyebrow}}</p>
+      <h2>{{yeni_h2}}</h2>
+      <p class="metin">{{yeni_lead}}</p>
+      <article class="surum"><header><b>1.1.8</b><time>{{y118_tarih}}</time></header>
+        <ul class="d"><li>{{y118_1}}</li><li>{{y118_2}}</li><li>{{y118_3}}</li></ul></article>
+      <article class="surum"><header><b>1.1.7</b><time>{{y117_tarih}}</time></header>
+        <ul class="d"><li>{{y117_1}}</li><li>{{y117_2}}</li><li>{{y117_3}}</li><li>{{y117_4}}</li></ul></article>
+      <article class="surum"><header><b>1.1.6</b><time>{{y116_tarih}}</time></header>
+        <ul class="d"><li>{{y116_1}}</li><li>{{y116_2}}</li><li>{{y116_3}}</li><li>{{y116_4}}</li></ul></article>
+    </div>
+    <div id="iletisim">
+      <p class="km">{{nav_iletisim}}</p>
+      <h2>{{iletisim_h2}}</h2>
+      <div class="kartlar">
+        <div class="kart"><h3>{{iletisim_destek_h3}}</h3><p>{{iletisim_destek_p}}</p></div>
+        <div class="kart"><h3>Instagram</h3><p>{{iletisim_insta_p}}</p><a class="btn btn-hayalet btn-kucuk" href="https://www.instagram.com/motoseyir.app/">@motoseyir.app</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="alt-ic">
+    <div>
+      <p><a class="logo" href="#top" style="font-size:1.1rem">MOTO<em>SEYİR</em></a></p>
+      <p style="margin-top:10px">© {{yil}} Motoseyir. {{footer_haklar}}</p>
+    </div>
+    <ul>
+      <li><a href="{{ozellikler_url}}">{{footer_tum_ozellikler}}</a></li><li><a href="{{nasil_url}}">{{nav_nasil}}</a></li><li><a href="{{gizlilik_url}}">{{nav_gizlilik}}</a></li><li><a href="#yenilikler">{{nav_yenilikler}}</a></li><li><a href="#iletisim">{{nav_iletisim}}</a></li><li><a href="https://www.instagram.com/motoseyir.app/">Instagram</a></li><li><a href="{{store}}">App Store</a></li>
+    </ul>
+    <div class="dil-altbilgi"><span>{{footer_diller}}</span>
+      {{dil_altbilgi}}
+    </div>
+  </div>
+</footer>
+</body>
+</html>

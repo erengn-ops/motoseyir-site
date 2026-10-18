@@ -145,7 +145,7 @@
   "y110_3": "Grabación de ruta al grupo: envía a tu grupo una ruta terminada. Track, distancia y tiempo se quedan en el grupo 14 días; la zona alrededor de tu salida y tu llegada queda oculta.",
   "y110_4": "Tres iconos de motorista nuevos —chopper, maxiscooter y touring— y una página de ayuda nueva dentro de la app: Settings → How it works.",
   "y110_5": "Las publicaciones de Community pasan por una revisión antes de salir; en la tarjeta puedes ampliar el mapa y las fotos del diario aparecen como tarjetas en el mapa.",
-  "y110_6": "Los avisos de giro se han vuelto a grabar y suenan más naturales. El código MOTOSEYIR7 de los ajustes desbloquea cinco días de Pro, una sola vez en este dispositivo.",
+  "y110_6": "Los avisos de giro se han vuelto a grabar y suenan más naturales.",
   "y107_tarih": "Septiembre de 2026",
   "y107_1": "Entrar en un grupo por invitación o con código ya es gratis; crearlo sigue en Pro. El enlace de invitación abre la app directamente.",
   "y107_2": "El diario de viaje ahora hace las fotos con su propia cámara, y la foto de portada puedes enviarla directamente a tu historia de Instagram.",
@@ -235,7 +235,7 @@
   "hb2": "Start en la tarjeta de abajo → se abre la navegación y la banda de arriba muestra la siguiente maniobra.",
   "hb3": "Toca el botón de grabación de la derecha → empieza la grabación de la ruta, y el mismo botón la termina.",
   "hb4": "En la pestaña My Tours, escribe un nombre y toca Create → empiezas a montar tu viaje con varias paradas.",
-  "hb5": "Settings → Start the 5 days now: el código MOTOSEYIR7 desbloquea cinco días de Pro, una vez por dispositivo.",
+  "hb5": "Settings → Redeem an App Store offer code: si tienes un código de oferta de App Store (por ejemplo, un regalo nuestro), canjéalo aquí.",
 
   "k_rota": "Ruta",
   "rota1": "Escribe en el campo de arriba y elige una sugerencia → se añade el destino; a partir del segundo, la ruta pasa a tener varias paradas (Pro).",
@@ -295,7 +295,7 @@
   "ayar1": "Appearance → paleta de colores e idioma de la app.",
   "ayar2": "Map → capa (estándar o satélite), tema del mapa e icono de navegación: moto, chopper, maxiscooter, touring, flecha o casco.",
   "ayar3": "Riding → guía por voz, consumo y precio del combustible; el informe de ahorro se calcula con esos dos valores.",
-  "ayar4": "Start the 5 days now → el código MOTOSEYIR7 se usa una sola vez en este dispositivo y desbloquea cinco días de Pro.",
+  "ayar4": "Redeem an App Store offer code → se abre la pantalla de códigos de Apple; al introducir el código, Pro se activa al momento.",
   "ayar5": "Escríbenos desde la fila Support → la respuesta la ves en el mismo sitio; la fila de Instagram anuncia las novedades.",
   "ayar6": "Gira el teléfono a horizontal → las tarjetas y las listas se agrupan a la izquierda y el mapa se queda con el resto; en navegación, igual.",
 

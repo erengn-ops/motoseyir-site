@@ -145,7 +145,7 @@
   "y110_3": "Záznam jazdy skupine: pošli skupine dokončenú jazdu. Stopa, vzdialenosť a čas zostanú v skupine 14 dní; okolie štartu a cieľa zostáva skryté.",
   "y110_4": "Tri nové ikony jazdca — chopper, maxi skúter, touring — a nová stránka pomoci v aplikácii: Settings → How it works.",
   "y110_5": "Príspevky v Community idú pred zverejnením cez kontrolu; na kartičke môžeš zväčšiť mapu a fotky z denníka sa objavujú ako kartičky na mape.",
-  "y110_6": "Pokyny na odbočenie nahrané znova, znejú prirodzenejšie. Kód MOTOSEYIR7 v nastaveniach odomkne päť dní Pro, na tomto zariadení raz.",
+  "y110_6": "Pokyny na odbočenie nahrané znova, znejú prirodzenejšie.",
   "y107_tarih": "September 2026",
   "y107_1": "Pripojiť sa do skupiny cez pozvanie alebo kód je teraz zadarmo; zakladanie skupiny zostáva v Pro. Odkaz z pozvania otvorí aplikáciu priamo.",
   "y107_2": "Denník výletu teraz fotí vlastnou kamerou a titulnú fotku pošleš priamo do svojej instagramovej story.",
@@ -235,7 +235,7 @@
   "hb2": "Start na kartičke dole → otvorí sa navigácia a pruh navrchu ukazuje ďalší manéver.",
   "hb3": "Dotkni sa tlačidla záznamu vpravo → záznam jazdy začne a to isté tlačidlo ho ukončí.",
   "hb4": "V karte My Tours napíš názov a dotkni sa Create → začneš skladať výlet s viacerými zastávkami.",
-  "hb5": "Settings → Start the 5 days now: kód MOTOSEYIR7 odomkne päť dní Pro, raz na zariadenie.",
+  "hb5": "Settings → Redeem an App Store offer code: ak máte kód ponuky App Store (napríklad darček od nás), uplatníte ho tu.",
 
   "k_rota": "Trasa",
   "rota1": "Napíš niečo do poľa navrchu a vyber návrh → cieľ sa pridá; od druhého cieľa je z trasy trasa s viacerými zastávkami (Pro).",
@@ -295,7 +295,7 @@
   "ayar1": "Appearance → farebná paleta a jazyk aplikácie.",
   "ayar2": "Map → vrstva (štandardná alebo satelitná), téma mapy a ikona navigácie: motorka, chopper, maxi skúter, touring, šípka, prilba.",
   "ayar3": "Riding → hlasová navigácia, spotreba a cena paliva; report úspory sa počíta z týchto dvoch hodnôt.",
-  "ayar4": "Start the 5 days now → kód MOTOSEYIR7 sa na tomto zariadení dá použiť raz a odomkne päť dní Pro.",
+  "ayar4": "Redeem an App Store offer code → otvorí sa obrazovka kódov od Apple; po zadaní kódu sa Pro hneď zapne.",
   "ayar5": "Napíš nám z riadku Support → odpoveď uvidíš na tom istom mieste; riadok Instagram oznamuje nové funkcie.",
   "ayar6": "Otoč telefón na šírku → kartičky a zoznamy sa zoberú vľavo a mapa si vezme zvyšok; v navigácii úplne rovnako.",
 

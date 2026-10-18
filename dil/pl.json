@@ -145,7 +145,7 @@
   "y110_3": "Zapis jazdy do grupy: wyślij zakończoną jazdę do swojej grupy. Ślad, dystans i czas zostają w grupie 14 dni; okolice startu i mety pozostają ukryte.",
   "y110_4": "Trzy nowe ikony motocyklisty — chopper, maxi skuter, touring — oraz nowa strona pomocy w aplikacji: Settings → How it works.",
   "y110_5": "Wpisy w Community przechodzą weryfikację, zanim staną się widoczne; na karcie możesz powiększyć mapę, a zdjęcia z dziennika pojawiają się jako kafelki na mapie.",
-  "y110_6": "Komunikaty o skrętach nagrane od nowa, brzmią naturalniej. Kod MOTOSEYIR7 w ustawieniach daje pięć dni Pro, raz na tym urządzeniu.",
+  "y110_6": "Komunikaty o skrętach nagrane od nowa, brzmią naturalniej.",
   "y107_tarih": "Wrzesień 2026",
   "y107_1": "Dołączenie do grupy z zaproszenia albo kodem jest teraz bezpłatne; tworzenie grupy zostaje w Pro. Link z zaproszeniem otwiera aplikację bezpośrednio.",
   "y107_2": "Dziennik wycieczki fotografuje teraz własnym aparatem, a zdjęcie okładkowe wyślesz prosto na swoją relację na Instagramie.",
@@ -235,7 +235,7 @@
   "hb2": "Start na karcie u dołu → otwiera się nawigacja, a pasek na górze pokazuje następny manewr.",
   "hb3": "Dotknij przycisku zapisu po prawej → rejestrowanie jazdy się zaczyna, a ten sam przycisk je kończy.",
   "hb4": "W zakładce My Tours wpisz nazwę i dotknij Create → zaczynasz budować wycieczkę z wieloma przystankami.",
-  "hb5": "Settings → Start the 5 days now: kod MOTOSEYIR7 daje pięć dni Pro, raz na urządzenie.",
+  "hb5": "Settings → Redeem an App Store offer code: jeśli masz kod oferty App Store (na przykład prezent od nas), zrealizujesz go tutaj.",
 
   "k_rota": "Trasa",
   "rota1": "Wpisz coś w pole na górze i wybierz podpowiedź → cel zostaje dodany; od drugiego celu trasa staje się wieloprzystankowa (Pro).",
@@ -295,7 +295,7 @@
   "ayar1": "Appearance → paleta kolorów i język aplikacji.",
   "ayar2": "Map → warstwa (standardowa albo satelitarna), motyw mapy i ikona nawigacji: motocykl, chopper, maxi skuter, touring, strzałka, kask.",
   "ayar3": "Riding → prowadzenie głosowe, spalanie i cena paliwa; raport oszczędności liczy się z tych dwóch wartości.",
-  "ayar4": "Start the 5 days now → kod MOTOSEYIR7 działa na tym urządzeniu raz i daje pięć dni Pro.",
+  "ayar4": "Redeem an App Store offer code → otwiera się ekran kodów Apple; po wpisaniu kodu Pro włącza się od razu.",
   "ayar5": "Napisz do nas z wiersza Support → odpowiedź zobaczysz w tym samym miejscu; wiersz Instagram ogłasza nowe funkcje.",
   "ayar6": "Obróć telefon w poziom → karty i listy zbierają się po lewej, a mapa bierze resztę; w nawigacji dokładnie tak samo.",
 

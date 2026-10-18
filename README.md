@@ -19,6 +19,22 @@ bozulmasın diye; diğer diller `/<kod>/` altına.
 Metin değişikliği `dil/<kod>.json`, yapı/düzen değişikliği `sablon/*.html`
 içine yazılır, sonra betik yeniden koşturulur.
 
+## Hareketli anasayfa (TR + EN)
+
+`/` ve `/en/` yeni, kaydırma sahneli anasayfayı kullanır; öteki 12 dilin anasayfası
+eski `sablon/index.html` ile üretilmeye devam eder (`uret.py` içindeki
+`HAREKETLI_ANASAYFA`).
+
+| Yol | Ne |
+| --- | --- |
+| `sablon/anasayfa.html` | yeni anasayfa şablonu |
+| `dil/anasayfa.tr.json`, `dil/anasayfa.en.json` | yeni anasayfanın metinleri (ortak anahtarlar `dil/<kod>.json`'dan gelir) |
+| `m/a.css`, `m/a.js` | paylaşılan stil ve hareket (bağımlılık yok, tek scroll dinleyicisi) |
+| `m/` | video, poster, ekran görüntüleri, motosiklet kareleri, yazı tipleri (OFL metinleriyle) |
+
+Arka plan videosu yapay zekâ ile üretildi (Higgsfield Wan 3.0); gerçek çekim değildir.
+`_kanit/` yerel test kanıtıdır, depoya girmez.
+
 ## Dosya düzeni
 
 | Yol | Ne |

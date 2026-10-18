@@ -2,9 +2,9 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Motosiklet Navigasyonu ve Rota Planlayıcı — Motoseyir</title>
-<meta name="description" content="Motosiklet sürücüleri için mesafe odaklı navigasyon: en kısa rota, köy yolları, çok duraklı turlar, grup sürüşü, interkom ve efsane rotalar. Motoseyir, App Store’da.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Motoseyir — Virajı seven motorcunun navigasyonu</title>
+<meta name="description" content="Motoseyir, rotayı süreye göre değil mesafeye göre hesaplayan motosiklet navigasyonu. Köy yolu, sahil ve enduro modları, tur üretici, 1.600’ü aşkın dağ geçidi, grup sürüşü ve CarPlay.">
 <link rel="canonical" href="https://motoseyir-app.com/">
 <link rel="alternate" hreflang="tr" href="https://motoseyir-app.com/">
 <link rel="alternate" hreflang="en" href="https://motoseyir-app.com/en/">
@@ -26,20 +26,32 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Motoseyir">
 <meta property="og:locale" content="tr_TR">
-<meta property="og:title" content="Motoseyir — Motosiklete Göre En Kısa Yolu Bulan Navigasyon">
-<meta property="og:description" content="En kısa rota, köy yolları, çok duraklı turlar, grup sürüşü, interkom ve efsane rotalar — tek uygulamada.">
+<meta property="og:title" content="Motoseyir — Virajı seven motorcunun navigasyonu">
+<meta property="og:description" content="Mesafeye göre rota, köy yolları, tur üretici, 1.600’ü aşkın dağ geçidi, grup sürüşü, interkom ve CarPlay — tek uygulamada.">
 <meta property="og:url" content="https://motoseyir-app.com/">
 <meta property="og:image" content="https://motoseyir-app.com/img/og-kapak.jpg">
 <meta name="twitter:card" content="summary_large_image">
 
 <!-- Apple akıllı afiş: iOS Safari'de sayfanın üstünde "App Store'da aç" şeridi. -->
 <meta name="apple-itunes-app" content="app-id=6792549131">
+<meta name="theme-color" content="#0B1315">
+<link rel="icon" href="/img/favicon.png">
 
-<meta name="theme-color" content="#0E6E73" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0E1315" media="(prefers-color-scheme: dark)">
-<link rel="icon" href="img/favicon.png">
-
-<link rel="stylesheet" href="style.css">
+<!--
+  Arka plan videosu (m/hero.mp4, m/hero-dikey.mp4): yapay zekâ ile üretildi, gerçek çekim DEĞİL.
+  Higgsfield Wan 3.0, 14 Eki 2026, 30 sn 1080p; başlangıç karesi mağaza setinin Akdeniz panoraması
+  (o da yapay zekâ görseli). Döngü için son 1 sn ilk 1 sn'ye çapraz geçişli (29 sn), sessiz.
+  Ham dosya: motoseyir-social/02-kaynak/higgsfield/wan3-hero-30sn-ham.mp4
+  Bu sayfa sablon/anasayfa.html + dil/anasayfa.<kod>.json'dan üretilir (python3 uret.py); stil m/a.css, hareket m/a.js.
+-->
+<script>document.documentElement.className+=" js"</script>
+<link rel="preload" as="image" type="image/webp" href="/m/hero-dikey-poster.webp" media="(max-width:700px)" fetchpriority="high">
+<link rel="preload" as="image" type="image/webp" href="/m/hero-poster.webp" media="(min-width:701px)" fetchpriority="high">
+<link rel="preload" as="font" type="font/woff" href="/m/font/SofiaSansExtraCondensed.woff" crossorigin>
+<link rel="preload" as="font" type="font/woff" href="/m/font/Manrope.woff" crossorigin>
+<link rel="preload" as="font" type="font/woff" href="/m/font/InstrumentSerif-Italic.woff" crossorigin>
+<link rel="stylesheet" href="/m/a.css">
+<script defer src="/m/a.js"></script>
 
 <script type="application/ld+json">
 {
@@ -51,7 +63,7 @@
   "inLanguage": "tr",
   "url": "https://motoseyir-app.com/",
   "image": "https://motoseyir-app.com/img/og-kapak.jpg",
-  "description": "Motosiklet sürücüleri için mesafe odaklı navigasyon uygulaması: en kısa rota, köy yolları, çok duraklı turlar, grup sürüşü, interkom ve efsane rotalar.",
+  "description": "Motosiklet sürücüleri için mesafe odaklı navigasyon uygulaması: en kısa rota, köy yolları, tur üretici, dağ geçitleri, grup sürüşü, interkom, CarPlay ve efsane rotalar.",
   "offers": [
     {
       "@type": "Offer",
@@ -64,7 +76,7 @@
       "@type": "Offer",
       "name": "Motoseyir Pro",
       "category": "subscription",
-      "description": "Çok duraklıda en uygun sıralama, sınırsız tur ve parkur, köy yolları/sahil modları, Keşfet, grup kurma, interkom ve AI CoRider."
+      "description": "AI CoRider, CarPlay, grup kurma ve interkom, Keşfet, tur üretici, sınırsız tur ve parkur, köy yolu/sahil modları ve çok duraklıda en uygun sıralama."
     }
   ],
   "downloadUrl": "https://apps.apple.com/tr/app/id6792549131?pt=128439797&amp;ct=site-tr&amp;mt=8"
@@ -72,22 +84,15 @@
 </script>
 </head>
 <body id="top">
-<a class="skip-link" href="#icerik">İçeriğe geç</a>
+<a class="skip" href="#icerik">İçeriğe geç</a>
 
-<header class="site-header">
-  <div class="wrap header-inner">
-    <a class="logo" href="#top">MOTO<em>SEYİR</em></a>
-    <nav aria-label="Ana gezinme">
-      <ul class="nav">
-        <li><a href="#ozellikler">Özellikler</a></li>
-        <li><a href="nasil-yapilir.html">Nasıl Yapılır</a></li>
-        <li><a href="#fiyat">Ücretsiz &amp; Pro</a></li>
-        <li><a href="#gizlilik">Gizlilik</a></li>
-        <li><a href="#yenilikler">Yenilikler</a></li>
-        <li><a href="#iletisim">İletişim</a></li>
-      </ul>
-    </nav>
-    <div class="header-cta">
+<header class="ust" id="ustbar">
+  <div class="ust-ic">
+    <a class="logo" href="#top" aria-label="Motoseyir">MOTO<em>SEYİR</em></a>
+    <nav aria-label="Ana gezinme"><ul class="menu">
+      <li><a href="#rota">Rota</a></li><li><a href="#gecit">Dağ geçitleri</a></li><li><a href="#fiyat">Fiyat</a></li><li><a href="/nasil-yapilir.html">Nasıl Yapılır</a></li>
+    </ul></nav>
+    <div class="ust-sag">
       <details class="dil-sec">
   <summary aria-label="Dil seç"><span class="dil-kod">TR</span><span class="dil-ad">Türkçe</span></summary>
   <ul>
@@ -107,343 +112,265 @@
     <li><a href="/el/" lang="el" hreflang="el">Ελληνικά</a></li>
   </ul>
 </details>
-      <a class="btn btn-ghost btn-sm" href="https://apps.apple.com/tr/app/id6792549131?pt=128439797&amp;ct=site-tr&amp;mt=8">İndir</a>
+      <a class="btn btn-kucuk" href="https://apps.apple.com/tr/app/id6792549131?pt=128439797&amp;ct=site-tr&amp;mt=8">İndir</a>
     </div>
   </div>
 </header>
 
 <main id="icerik">
-
-  <!-- HERO -->
-  <section class="hero foto-arka">
-    <img class="foto-arka-img" src="img/hero-sahil-yolu.jpg" alt="Kıyı boyunca uzanan virajlı bir dağ yolunda, gün batımı ışığında ilerleyen bir motosikletli" fetchpriority="high">
-    <div class="foto-arka-golge" aria-hidden="true"></div>
-    <div class="wrap">
-      <div class="hero-icerik">
-        <span class="eyebrow">Motoseyir · Motorcunun navigasyonu</span>
-        <h1>Kilometreyi hesaba katan tek navigasyon.</h1>
-        <p class="lead">Motoseyir rotayı süreye göre değil mesafeye göre hesaplıyor. Aynı iki nokta için birkaç alternatifi karşılaştırır, en kısasını önerir. Çok duraklı bir turda durakların sırasını da o kuruyor.</p>
-        <div class="hero-cta">
-          <a class="btn btn-light" href="https://apps.apple.com/tr/app/id6792549131?pt=128439797&amp;ct=site-tr&amp;mt=8">App Store’da İndir</a>
-          <a class="btn btn-ghost" style="border-color:rgba(243,241,236,.35); color:var(--asfalt-metin);" href="#ozellikler">Özellikleri gör</a>
-        </div>
-        <p class="hero-microcopy">Türkiye, Avrupa ve ABD’de rota ve navigasyon ücretsiz ve sınırsız; hesap gerekmez.</p>
-      </div>
+<section class="kahraman" aria-label="Giriş">
+  <div class="k-arka">
+    <picture>
+      <source media="(max-width:700px)" srcset="/m/hero-dikey-poster.webp" type="image/webp">
+      <img src="/m/hero-poster.webp" alt="Kıyı boyunca uzanan virajlı bir dağ yolunda, gün batımı ışığında ilerleyen bir motosikletli" fetchpriority="high" width="1600" height="900">
+    </picture>
+    <video id="hv" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+  </div>
+  <div class="k-ic">
+    <p class="ust-yazi">Motoseyir · Motorcunun navigasyonu</p>
+    <h1>Virajı seven <i>motorcu için.</i></h1>
+    <p class="giris">Motoseyir rotayı süreye göre değil, mesafeye göre hesaplar. Köy yolu mu, sahil mi, enduro mu, sen seç. İstersen yönünü söyle, turunu o üretsin; istersen bir dağ geçidi seçip yola çık.</p>
+    <div class="cta-satir">
+      <a class="btn" href="https://apps.apple.com/tr/app/id6792549131?pt=128439797&amp;ct=site-tr&amp;mt=8"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.6c0-2.4 2-3.5 2-3.6-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.15-2.8.85-3.5.85s-1.8-.8-3-.8c-1.5 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.700 2.400 2.900 2.300 1.200 0 1.600-.7 3-.7s1.800.7 3 .7 2-1.100 2.800-2.300c.9-1.300 1.200-2.500 1.300-2.600-.1 0-2.500-1-2.500-3.600zM14.200 5.500c.6-.8 1.100-1.800.9-2.900-.9 0-2 .6-2.700 1.400-.6.700-1.100 1.800-1 2.800 1 .1 2.100-.5 2.800-1.300z"/></svg>App Store’da İndir</a>
+      <p class="mikro">Türkiye, Avrupa ve ABD’de rota ve navigasyon ücretsiz ve sınırsız; hesap gerekmez.</p>
     </div>
-  </section>
+  </div>
+  <span class="kaydir" aria-hidden="true">Yola çık</span>
+</section>
 
-  <div class="rota-ayrac koyu" aria-hidden="true">
-    <svg viewBox="0 0 1200 34" preserveAspectRatio="none"><path class="cizgi" d="M0,17 C150,2 300,32 450,17 C600,2 750,32 900,17 C1050,2 1150,17 1200,17"/><circle class="nokta" cx="300" cy="20" r="4"/><circle class="nokta" cx="750" cy="14" r="4"/></svg>
+<div class="serit" aria-label="Rakamlarla Motoseyir"><div class="serit-ic">
+  <div class="sayi"><b><span data-n="1600" data-ek="+">1.600+</span></b><span>dağ geçidi; fotoğraf, rakım ve kapalı aylarıyla</span></div>
+  <div class="sayi"><b>TR · EU · US</b><span>Türkiye, Avrupa ve ABD’nin efsane yolları hazır rota olarak</span></div>
+  <div class="sayi"><b>CarPlay</b><span>rotan araç ekranında, tam ekran</span></div>
+  <div class="sayi"><b>Grup + İnterkom</b><span>aynı rotada, konuşarak</span></div>
+</div></div>
+
+<div class="ana" id="ozellikler">
+  <div class="rh" aria-hidden="true">
+    <div class="rh-yol"><svg focusable="false"></svg></div>
+    <div class="rh-klip"><svg focusable="false"></svg></div>
+    <div class="pilot"><i></i></div>
   </div>
 
-  <!-- NEDEN FARKLI -->
-  <section class="neden foto-arka">
-    <img class="foto-arka-img" src="img/kask-yansima.jpg" alt="" loading="lazy">
-    <div class="foto-arka-golge" aria-hidden="true"></div>
-    <div class="wrap">
-      <span class="eyebrow">Neden farklı</span>
-      <p class="soz">Başka navigasyonlar <span class="vurgu">en hızlı</span> yolu bulur.<br>Motoseyir <span class="vurgu">en kısa</span> olanı bulur.</p>
-      <p class="soz-alt">Arabaya göre hesaplanan bir rota motorda hep aynı hataya düşer: süreyi kısaltır, kilometreyi uzatır. Sen trafikte aralardan geçebiliyorsun, o yüzden aradaki fark senin için gerçek: daha çok yakıt, daha çok lastik yıpranması. Motoseyir birkaç alternatifi karşılaştırır, süresi biraz uzasa bile mesafesi en kısa olanı önerir.</p>
-    </div>
+  <!-- KM 01 -->
+  <section class="bolum" id="rota" data-km>
+    <div class="kap"><div class="bolum-ik">
+      <div class="tel-alan"><div class="tel" data-egik="-3" data-yon="-1"><img src="/m/ekran-nav-tr.webp" alt="Motoseyir’de navigasyon ekranı: sıradaki dönüş, kalan mesafe ve hız" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r>
+        <p class="km"><b>KM 01</b>Rota</p>
+        <h2 data-bol>Önce kilometre, <i>sonra keyif.</i></h2>
+        <p class="metin">Aynı iki nokta arasındaki alternatifleri karşılaştırır, en kısasını önerir. Çok duraklı bir turda durakların sırasını da o kurar. Gerisini sen seçersin.</p>
+        <ul class="liste">
+          <li><strong>En kısa rota</strong><span class="a">Varsayılan; kilometreyi esas alır.</span></li>
+          <li><strong>Köy yolu ve Sahil <span class="etiket">Pro</span></strong><span class="a">Ana yolu bırakıp virajlı yollardan gider.</span></li>
+          <li><strong>Enduro</strong><span class="a">Stabilize ve toprak yolları arar.</span></li>
+        </ul>
+      </div>
+    </div></div>
   </section>
 
-  <div class="rota-ayrac koyu" aria-hidden="true">
-    <svg viewBox="0 0 1200 34" preserveAspectRatio="none"><path class="cizgi" d="M0,17 C150,32 300,2 450,17 C600,32 750,2 900,17 C1050,32 1150,17 1200,17"/><circle class="nokta" cx="450" cy="17" r="4"/><circle class="nokta" cx="1050" cy="17" r="4"/></svg>
+  <!-- KM 02 -->
+  <section class="bolum ters" id="tur" data-km>
+    <div class="kap"><div class="bolum-ik">
+      <div class="tel-alan"><div class="tel" data-egik="2.5" data-yon="1"><img src="/m/ekran-tur-tr.webp" alt="Tur üret ekranı: yön ve süre kadranı" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r>
+        <p class="km"><b>KM 02</b>Tur üret</p>
+        <h2 data-bol>Yönü ve süreyi söyle, <i>tur hazır.</i> <span class="etiket">Pro</span></h2>
+        <p class="metin">Kadranı gitmek istediğin yöne çevir, kaç saat süreceğini seç. Motoseyir o yöne giden bir tur çizer; haritada görürsün, beğenirsen başlarsın.</p>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- KM 03 -->
+  <section class="bolum" id="gecit" data-km>
+    <div class="kap"><div class="bolum-ik">
+      <div class="tel-alan"><div class="tel" data-egik="-3" data-yon="-1"><img src="/m/ekran-gecit-tr.webp" alt="Dağ geçitleri ekranı: Alpler’deki geçitlerin haritası ve rakım listesi" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r>
+        <p class="km"><b>KM 03</b>Dağ geçitleri</p>
+        <h2 data-bol>1.600’ü aşkın geçit, <i>tek haritada.</i></h2>
+        <p class="metin">Her geçidin fotoğrafı, rakımı ve hangi aylarda kapalı olduğu var. Beğendiğini turuna ekle, yola çık.</p>
+        <ul class="pinler" aria-label="Örnek geçitler">
+          <li style="--o:.92"><span class="m"><span data-n="2764">2.764</span> m</span><span class="ad">Col de l’Iseran</span><span class="ay">Kasım–Mayıs kapalı</span><span class="cubuk"><i></i></span></li>
+          <li style="--o:.919"><span class="m"><span data-n="2758">2.758</span> m</span><span class="ad">Passo dello Stelvio</span><span class="ay">Kasım–Nisan kapalı</span><span class="cubuk"><i></i></span></li>
+          <li style="--o:.915"><span class="m"><span data-n="2744">2.744</span> m</span><span class="ad">Col Agnel</span><span class="ay">Ekim–Haziran kapalı</span><span class="cubuk"><i></i></span></li>
+        </ul>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- KM 04 -->
+  <section class="bolum ters" id="corider" data-km>
+    <div class="kap"><div class="bolum-ik">
+      <div class="tel-alan"><div class="tel" data-egik="2.5" data-yon="1"><img src="/m/ekran-corider-tr.webp" alt="AI CoRider ekranı: planlayıcı ve sohbet seçenekleri" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r>
+        <p class="km"><b>KM 04</b>AI CoRider</p>
+        <h2 data-bol>Kaskının içinde <i>bir yol arkadaşı.</i> <span class="etiket">Pro</span></h2>
+        <p class="metin">Sesli konuşursun, eller gidonda kalır. Bir şey sormak, durak eklemek ya da molayı planlamak için telefona uzanman gerekmez.</p>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- KM 05 -->
+  <section class="bolum" id="birlikte" data-km>
+    <div class="kap"><div class="bolum-ik">
+      <div class="tel-alan cift dikey">
+        <div class="tel" data-egik="-3" data-yon="-1"><img src="/m/ekran-grup-tr.webp" alt="Grup sürüşü ekranı: haritada rota ve sıradaki dönüş" width="540" height="1174" loading="lazy"></div>
+        <div class="arac" data-egik="0" data-yon="1"><img src="/m/ekran-carplay-tr.webp" alt="CarPlay ekranında Motoseyir navigasyonu" width="900" height="540" loading="lazy"></div>
+      </div>
+      <div data-r>
+        <p class="km"><b>KM 05</b>Birlikte</p>
+        <h2 data-bol>Grupla sür, <i>konuşa konuşa.</i></h2>
+        <p class="metin">Arkadaşlarınla aynı rotaya çık, herkesi haritada gör. Davetle ya da kodla bir gruba katılmak ücretsiz.</p>
+        <ul class="liste">
+          <li><strong>Grup kurma <span class="etiket">Pro</span></strong><span class="a">Toplanma noktası, canlı konum, aynı rota.</span></li>
+          <li><strong>İnterkom <span class="etiket">Pro</span></strong><span class="a">Sürerken gruptakilerle sesli konuş; ek donanım gerekmez.</span></li>
+          <li><strong>CarPlay <span class="etiket">Pro</span></strong><span class="a">Rotan araç ekranında; telefonu cebinden çıkarma.</span></li>
+        </ul>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- KM 06 -->
+  <section class="bolum ters" id="kesfet" data-km>
+    <div class="kap"><div class="bolum-ik">
+      <div class="tel-alan"><div class="tel" data-egik="2.5" data-yon="1"><img src="/m/ekran-kesfet-tr.webp" alt="Keşfet ekranı: rota üstündeki duraklar ve listesi" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r>
+        <p class="km"><b>KM 06</b>Keşfet</p>
+        <h2 data-bol>Yol üstünde <i>keşfet.</i> <span class="etiket">Pro</span></h2>
+        <p class="metin">Rotanın üstündeki köy ve plaj yollarını, kamp alanlarını, yeme–içme duraklarını gör; beğendiğini rotaya ekle.</p>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- KM 07 -->
+  <section class="bolum st" id="surus-sonrasi" data-km>
+    <div class="kap"><div class="bolum-ik">
+      <div data-r>
+        <p class="km"><b>KM 07</b>Sürüşten sonra</p>
+        <h2 data-bol>Yaptığın yol <i>kalsın.</i></h2>
+        <p class="metin">Sürüşü kaydet, sonra yeniden izle. Gezi haritası videosuna çevirip paylaş.</p>
+        <ul class="liste">
+          <li><strong>Sürüş kaydı ve 3B tekrar</strong><span class="a">Gittiğin yolu haritada yeniden izle.</span></li>
+          <li><strong>Gezi haritası videosu</strong><span class="a">Turunu kısa bir videoya çevir.</span></li>
+          <li><strong>Yağmur uyarısı</strong><span class="a">Duraklarında yağış bekleniyorsa rotada görürsün.</span></li>
+          <li><strong>GPX içe aktarma</strong><span class="a">Elindeki rotayı uygulamaya al.</span></li>
+        </ul>
+      </div>
+      <div class="tel-alan"><div class="tel" data-egik="-2.5" data-yon="-1"><video data-src="/m/gezi-tr.mp4" muted loop playsinline preload="none" data-poster="/m/gezi-tr.jpg" aria-label="Bir gezi haritası videosundan örnek: İstanbul–Atina rotası"></video></div></div>
+    </div></div>
+  </section>
+
+<!-- Haritada sen: kaydırdıkça dönen motosiklet -->
+<section class="sahne" id="sahne" data-km aria-label="Haritada sen">
+  <div class="sahne-ic">
+    <div class="kap"><div class="motor-kap">
+      <div data-r>
+        <p class="km"><b>KM 08</b>Haritada sen</p>
+        <h2 data-bol>Haritada <i>sen de varsın.</i></h2>
+        <p class="metin">Sürerken haritada seni bir işaretçi temsil eder. Ayarlar’daki ızgaradan birini seçersin: motosiklet, chopper, maksi scooter, touring, ok ya da kask.</p>
+      </div>
+      <div>
+        <div class="motor" id="motor" role="img" aria-label="Haritada seni temsil eden motosiklet; sağa sola sürükleyerek döndürebilirsin"><span class="halka"></span><img id="motorimg" src="/m/bike/090.webp" alt="" width="760" height="699" loading="lazy" decoding="async"></div>
+        <p class="motor-not">Kaydır ya da sürükle</p>
+      </div>
+    </div></div>
   </div>
+</section>
 
-  <!-- ÖZELLİKLER -->
-  <section class="section" id="ozellikler">
-    <div class="wrap">
-      <span class="eyebrow">Özellikler</span>
-      <h2>Bir uygulama, motorcunun bütün işi</h2>
-      <p class="section-lead">Rota, tur, sürüş ve birlikte sürmek — dört başlık, tek uygulama. Aşağıdaki kareler uygulamanın kendisinden.</p>
-
-      <!-- 1. En kısa rota -->
-      <div class="ozellik-satir">
-        <div class="ozellik-metin">
-          <span class="ozellik-etiket">Rota</span>
-          <h3>En kısa rota</h3>
-          <p>Aynı iki nokta için birkaç alternatif rota hesaplıyor, en kısa mesafeli olanı öneriyor — süresi biraz daha uzun olsa bile. Ücretsiz kademede de rota sayısı sınırsız.</p>
-        </div>
-        <div class="ozellik-gorsel">
-          <img src="img/en-kisa-rota.jpg" width="414" height="900" alt="En kısa mesafe rotası ve alternatiflerin karşılaştırıldığı ekran" loading="lazy">
-        </div>
+  <!-- KM 09: efsane yollar her listede en sonda -->
+  <section class="bolum ters" id="efsane" data-km>
+    <div class="kap"><div class="bolum-ik">
+      <div class="tel-alan"><div class="tel" data-egik="2.5" data-yon="1"><img src="/m/ekran-efsane-tr.webp" alt="Efsane yollar ekranı: hazır rotaların listesi ve haritası" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r>
+        <p class="km"><b>KM 09</b>Efsane yollar</p>
+        <h2 data-bol>Türkiye’den Amerika’ya <i>efsane yollar.</i></h2>
+        <p class="metin">Türkiye, Avrupa ve ABD’nin ünlü yolları hazır rota olarak içinde: Tail of the Dragon, Beartooth Highway, Big Sur ve daha fazlası. Seç, yola çık.</p>
       </div>
-
-      <!-- 2. Köy yolları / sahil -->
-      <div class="ozellik-satir ters">
-        <div class="ozellik-metin">
-          <span class="ozellik-etiket">Tur modları</span>
-          <h3>Köy yolları ve sahil modu</h3>
-          <p>Köy yolları modunda rota kendi sunucumuzdan hesaplanıyor, klasik haritanın atladığı köy yollarını da kullanıyor. Ayder’den Hemşin’e mesafe böyle 24,1 km çıkıyor; aynı iki nokta için genel haritalar 49,9 km gösteriyor. Sahil modu aynı sunucuyla rotayı kıyı boyunca tutuyor.</p>
-        </div>
-        <div class="ozellik-gorsel">
-          <img src="img/koy-yollari.jpg" width="414" height="900" alt="Köy yolları modunda çizilmiş, viraj ve manzara ağırlıklı bir rota" loading="lazy">
-        </div>
-      </div>
-
-      <!-- 3. Çok duraklı sıralama (kanıt çifti) -->
-      <div class="ozellik-satir">
-        <div class="ozellik-metin">
-          <span class="ozellik-etiket">Çok duraklı · Kurye Pro</span>
-          <h3>En uygun durak sırası</h3>
-          <p>Teslimat noktalarını istediğin sırada giriyorsun, “En uygun sıra” toplam mesafeye göre yeniden diziyor. Aşağıdaki örnek gerçek bir sürüşten: aynı dört durak, kendi sıranda 57,1 km, uygulamanın bulduğu sırada 46,9 km.</p>
-        </div>
-        <div class="ozellik-gorsel ikili">
-          <figure>
-            <img src="img/cok-duraklar-kendi-sira.jpg" width="413" height="900" alt="Kendi sırasıyla dört durak, toplam 57,1 km" loading="lazy">
-            <figcaption>Kendi sıran — <span class="km-eski">57,1 km</span></figcaption>
-          </figure>
-          <figure>
-            <img src="img/cok-duraklar-en-uygun.jpg" width="413" height="900" alt="Motoseyir’in bulduğu sırayla aynı dört durak, toplam 46,9 km" loading="lazy">
-            <figcaption>Motoseyir’in sırası — <span class="km-yeni">46,9 km</span></figcaption>
-          </figure>
-        </div>
-      </div>
-
-      <!-- 4. Efsane rotalar -->
-      <div class="ozellik-satir ters">
-        <div class="ozellik-metin">
-          <span class="ozellik-etiket">Efsane rotalar</span>
-          <h3>Hazır efsane rotalar</h3>
-          <p>Şile–Ağva, Likya D400 ve Nemrut gibi Türkiye rotaları, Stelvio ve Sellaronda gibi Alp geçitleri hazır duruyor; yedi Amerikan klasiği de listede, Tail of the Dragon ve Big Sur dahil. Listeden birini açtığında durakları ve rotasıyla doğrudan turlarına giriyor.</p>
-        </div>
-        <div class="ozellik-gorsel">
-          <img src="img/efsane-rotalar.jpg" width="413" height="900" alt="Hazır efsane rotalar listesi: Şile–Ağva Sahili ve Sapanca–Maşukiye–Kartepe" loading="lazy">
-        </div>
-      </div>
-
-      <!-- 5. Grup sürüşü + sürüşe çağır + interkom (1.1.0) -->
-      <div class="ozellik-satir">
-        <div class="ozellik-metin">
-          <span class="ozellik-etiket">Birlikte sürmek</span>
-          <h3>Grup sürüşü, sürüşe çağırma ve interkom</h3>
-          <p>Bir kişi grup kurunca tek bir kod üretiliyor, herkes o koda katılıyor ve rota üzerinde birbirini görüyor. Sürüş Grubum’da bir arkadaşının yanındaki “Sürüşe çağır” rotayı ve sesli bağlantıyı tek dokunuşla gönderiyor; o da “Aynı rotayı sür” ya da “Arkada geliyorum” diye cevap veriyor.</p>
-          <p>İnterkom rota kurmadan da başlıyor. Her arkadaşının sesini ayrı ayarlıyorsun, Bluetooth kask doğrudan bağlanıyor. Ses kaydedilmiyor, yalnız o an odadakilere gidiyor; sürüş bitince oda kapanıyor.</p>
-        </div>
-        <div class="ozellik-gorsel">
-          <img src="img/grup-surusu.jpg" width="414" height="900" alt="Grup sürüşünde arkadaşların rota üzerinde canlı konumu" loading="lazy">
-        </div>
-      </div>
-
-      <!-- 6. Tur günlüğü -->
-      <div class="ozellik-satir ters">
-        <div class="ozellik-metin">
-          <span class="ozellik-etiket">Turlarım</span>
-          <h3>Tur günlüğü</h3>
-          <p>Her durakta fotoğraf çekip kısa bir not bırakıyorsun, ikisi de o durağın altında kalıyor. Fotoğraflar tur haritasında birer kart olarak da görünüyor; dokununca tam ekran açılıyor. Günlük telefonunda duruyor; Topluluk’ta paylaşmayı seçtiğinde en fazla üç fotoğraf gidiyor.</p>
-        </div>
-        <div class="ozellik-gorsel">
-          <img src="img/tur-gunlugu.jpg" width="413" height="900" alt="Tur günlüğü: durak fotoğrafı ve not ekleme ekranı" loading="lazy">
-        </div>
-      </div>
-
-      <!-- 7. Hava durumu -->
-      <div class="ozellik-satir">
-        <div class="ozellik-metin">
-          <span class="ozellik-etiket">Hava durumu</span>
-          <h3>Hava durumu uyarısı</h3>
-          <p>Rota üzerinde yağış bekleniyorsa, oraya varacağın saate göre önceden uyarıyor. Hava kuruysa ekranda hiçbir şey çıkmıyor.</p>
-        </div>
-        <div class="ozellik-gorsel">
-          <img src="img/hava-durumu.jpg" width="414" height="900" alt="Tur planında rota üzerindeki hava durumu uyarısı" loading="lazy">
-        </div>
-      </div>
-
-      <!-- 8. Sürüş kaydı + parkur -->
-      <div class="ozellik-satir ters">
-        <div class="ozellik-metin">
-          <span class="ozellik-etiket">Sürüşlerim</span>
-          <h3>Sürüş kaydı ve parkurlar</h3>
-          <p>Sürüş kaydı ekran kapalıyken de sürüyor, iz hızına göre renkleniyor. Bitirdiğin sürüşü grubuna gönderebiliyorsun: iz, mesafe ve süre 14 gün grupta kalıyor. GPX ile aldığın bir parkurun mesafesini, toplam tırmanışını ve en dik yokuşunu çıkarıyor; profilde parmağını gezdirdikçe haritadaki nokta değişiyor.</p>
-        </div>
-        <div class="ozellik-gorsel">
-          <img src="img/parkur-istatistik.jpg" width="414" height="900" alt="Parkur yükseklik profili: mesafe, tırmanış ve zorluk istatistikleri" loading="lazy">
-        </div>
-      </div>
-
-      <!-- 9. Keşfet -->
-      <div class="ozellik-satir">
-        <div class="ozellik-metin">
-          <span class="ozellik-etiket">Keşfet</span>
-          <h3>Keşfet</h3>
-          <p>Rotanın çevresindeki koyları, kamp alanlarını ve yeme içme yerlerini listeliyor. Puanına ve rotana uzaklığına bakıp beğendiğini durak olarak ekliyorsun.</p>
-        </div>
-        <div class="ozellik-gorsel">
-          <img src="img/kesfet.jpg" width="414" height="900" alt="Keşfet ekranı: rotanın çevresindeki öneriler" loading="lazy">
-        </div>
-      </div>
-
-      <h3 style="margin-top:3rem; font-size:1.1rem;">Ayrıca uygulamada</h3>
-      <ul class="diger-liste" style="margin-top:1.25rem;">
-        <li>
-          <h3>Yakıt hesabı</h3>
-          <p>Rotanın tahmini yakıt maliyetini önceden görüyorsun. Türkiye’de litre/100 km, ABD’de galon başına mil (mpg) üzerinden hesaplıyor.</p>
-        </li>
-        <li>
-          <h3>Kayıtlı Türkçe sesli yönlendirme</h3>
-          <p>Yönlendirme sentezlenmiş bir sesten değil, kayıtlı doğal bir seslendirmeden geliyor; dönüş anonsları son güncellemede yeniden kaydedildi. Mesafe de bölgene göre söyleniyor, ABD’de “500 fit sonra sağa dön” gibi.</p>
-        </li>
-        <li>
-          <h3>Topluluk akışı</h3>
-          <p>Paylaştığın turlar kullanıcı adın ve simgenle akışta görünüyor, beğenilip yorumlanabiliyor. Gönderiler yayına girmeden önce onaydan geçiyor. Başlangıç ve bitiş noktan paylaşımdan önce yaklaşık 400 metre kırpılıyor.</p>
-        </li>
-        <li>
-          <h3>Yatay kullanım</h3>
-          <p>Telefonu yan çevirince harita, kartlar ve düğmeler yeni bir düzene geçiyor: navigasyonda manevra ve varış kartı solda, harita sağda; Turlarım yatayda iki sütun.</p>
-        </li>
-        <li>
-          <h3>Sürücü işaretçileri</h3>
-          <p>Haritadaki işaretçiyi Ayarlar’daki ızgaradan seçiyorsun: motor, chopper, maksi scooter, touring, ok ya da kask. Son güncellemede gelen üçünde sürücü de görünüyor.</p>
-        </li>
-      </ul>
-
-      <!-- AI CoRider mağaza sürümünde YOK: tek satır "Yakında", ayrıntı yok. -->
-      <p class="kucuk" style="margin-top:1.75rem;"><strong>Yakında: AI CoRider</strong> — kaskının içinde konuşabileceğin bir yol arkadaşı. Mağaza sürümünde henüz yok; sonraki güncellemelerde Pro’ya geliyor.</p>
-
-      <p style="margin-top:2.5rem; display:flex; gap:1rem; flex-wrap:wrap;">
-        <a class="btn btn-ghost" href="ozellikler.html">Tüm özellikleri ayrıntısıyla gör →</a>
-        <a class="btn btn-ghost" href="nasil-yapilir.html">Uygulamayı ilk kez mi açıyorsun? Nasıl yapılır →</a>
-      </p>
-    </div>
+    </div></div>
   </section>
 
-  <!-- ÜCRETSİZ / PRO -->
-  <section class="section section-2" id="fiyat">
-    <div class="wrap">
-      <span class="eyebrow">Fiyatlandırma</span>
-      <h2>Ücretsiz başla, istersen Pro’ya geç</h2>
-      <p class="section-lead">Hesap açmana gerek yok. Türkiye, Avrupa ve ABD’de rota ve navigasyon ücretsiz ve sınırsız; ücretsiz kademede 1 kayıtlı tur kalır. Pro’nun 3 aylık ve yıllık planları Türkiye dışında 7 gün ücretsiz denemeyle başlar.</p>
-      <div class="plan-grid">
-        <div class="plan">
-          <h3>Ücretsiz</h3>
-          <p class="fiyat-notu">Kurulumla birlikte, süresiz.</p>
-          <ul>
-            <li>Sınırsız rota hesaplama</li>
-            <li>1 kayıtlı tur</li>
-            <li>Adım adım navigasyon ve sesli yönlendirme</li>
-            <li>Rota üzerinde yağış uyarısı</li>
-            <li>Gruba davetle ya da kodla katılma</li>
-          </ul>
-        </div>
-        <div class="plan on-cikan">
-          <h3>Motoseyir Pro</h3>
-          <p class="fiyat-notu">Güncel fiyatlar bölgene göre değişir; App Store’daki abonelik ekranında görürsün.</p>
-          <ul>
-            <li>AI CoRider, ayda 15 dk</li>
-            <li>Çok duraklıda en uygun sıralama</li>
-            <li>Sınırsız tur ve parkur</li>
-            <li>Köy yolları, sahil ve enduro modları</li>
-            <li>Keşfet uğrak önerileri</li>
-            <li>Grup kurma ve interkom</li>
-          </ul>
-        </div>
+  <!-- KM 10 -->
+  <section class="bolum" id="tani" data-km>
+    <div class="kap"><div class="bolum-ik">
+      <div data-r>
+        <p class="km"><b>KM 10</b>Motoseyir’i tanı</p>
+        <h2 data-bol>Motoseyir’i <i>tanı.</i></h2>
+        <p class="metin">Uygulamanın içinde neler var, iki dakikada.</p>
       </div>
-    </div>
+      <div class="tel-alan"><div class="tani-kutu" id="tani-kutu" data-r>
+        <button type="button" id="tani-btn" aria-label="Tanıtım videosunu oynat"><img src="/m/tani-tr.jpg" alt="" loading="lazy" width="1080" height="1920"><span class="oynat"></span></button>
+      </div></div>
+    </div></div>
   </section>
 
-  <div class="rota-ayrac" aria-hidden="true">
-    <svg viewBox="0 0 1200 34" preserveAspectRatio="none"><path class="cizgi" d="M0,17 C150,2 300,32 450,17 C600,2 750,32 900,17 C1050,2 1150,17 1200,17"/><circle class="nokta" cx="300" cy="20" r="4"/><circle class="nokta" cx="900" cy="20" r="4"/></svg>
+  <!-- Fiyat -->
+  <section class="bolum" id="fiyat" data-km>
+    <div class="kap" data-r>
+      <p class="km"><b>KM 11</b>Fiyat</p>
+      <h2 data-bol>Ücretsiz başla, <i>istersen Pro.</i></h2>
+      <div class="fiyat">
+        <div class="plan"><h3>Ücretsiz</h3><p>Türkiye, Avrupa ve ABD’de rota hesaplama ve adım adım navigasyon sınırsız. Hesap açman gerekmez; ücretsiz kademede 1 kayıtlı tur tutabilirsin.</p></div>
+        <div class="plan pro"><h3>Motoseyir <i>Pro</i></h3><p>3 aylık ve yıllık planlar, yeni abonelere Türkiye dışında 7 gün ücretsiz denemeyle başlar. Pro şunları açar:</p>
+          <ul><li>AI CoRider</li><li>Apple CarPlay</li><li>Grup kurma ve interkom</li><li>Keşfet ve tur üretici</li><li>Sınırsız tur ve parkur</li><li>Köy yolu ve Sahil modları, çok duraklıda en uygun sıra</li></ul>
+        </div>
+      </div>
+      <p class="fiyat-not">Güncel fiyatlar bölgene göre değişir; App Store’daki abonelik ekranında görürsün. İstediğin zaman App Store hesabından iptal edebilirsin.</p>
+    </div>
+  </section>
+</div>
+
+<section class="varis">
+  <div class="kap" data-r>
+    <h2 data-bol>Yol <i>hazır.</i></h2>
+    <div class="cta-satir">
+      <a class="btn" href="https://apps.apple.com/tr/app/id6792549131?pt=128439797&amp;ct=site-tr&amp;mt=8">App Store’da İndir</a>
+      <a class="btn btn-hayalet" href="/nasil-yapilir.html">Nasıl yapılır</a>
+    </div>
   </div>
+</section>
 
-  <!-- GİZLİLİK — kaynak: uygulama içi gizlilik politikasının "Kısaca" bölümü -->
-  <section class="section" id="gizlilik">
-    <div class="wrap">
-      <span class="eyebrow">Verilerin</span>
+<section class="ayr" aria-label="Gizlilik, sürüm notları ve iletişim">
+  <div class="kap">
+    <div id="gizlilik">
+      <p class="km">Gizlilik</p>
       <h2>Hesap yok, gereksiz veri yok</h2>
-      <p class="section-lead">Motoseyir’i kullanmak için ad, e-posta ya da telefon vermen gerekmez. Aşağıdakiler, gizlilik politikasının kısa özeti:</p>
-      <ul class="gizlilik-liste">
-        <li>Hesap oluşturmana gerek yok — ad, e-posta, telefon ya da doğum tarihi istemeyiz.</li>
-        <li>Rotanı hesaplamak için konumun ve arama sorguların yalnızca harita servislerine iletilir; hiçbirinde kaydedilmez.</li>
-        <li>Turların, sürüş kayıtların, günlük notların ve fotoğrafların yalnızca cihazında kalır — Topluluk’ta paylaşmadığın sürece.</li>
-        <li>Deneme ve kampanya haklarının kötüye kullanılmasını önlemek için cihazının geri döndürülemez, anonim bir kimlik özeti sunucumuza gönderilir; bu özet seni tanımlamaz.</li>
-        <li>Grup sürüşünü açtığında son konumun yalnız sürüş sürerken paylaşılır ve bitince silinir. İnterkomda ses kaydedilmez, yalnız o an odadakilere aktarılır.</li>
-        <li>Reklam yok; hiçbir reklam ağıyla veri paylaşılmaz.</li>
-      </ul>
-      <p><a href="/gizlilik/">Gizlilik politikasının tamamını oku →</a></p>
+      <p class="metin">Motoseyir’i kullanmak için ad, e-posta ya da telefon vermen gerekmez. Aşağıdakiler, gizlilik politikasının kısa özeti:</p>
+      <ul class="d"><li>Hesap oluşturmana gerek yok — ad, e-posta, telefon ya da doğum tarihi istemeyiz.</li><li>Rotanı hesaplamak için konumun ve arama sorguların yalnızca harita servislerine iletilir; hiçbirinde kaydedilmez.</li><li>Turların, sürüş kayıtların, günlük notların ve fotoğrafların yalnızca cihazında kalır — Topluluk’ta paylaşmadığın sürece.</li><li>Deneme ve kampanya haklarının kötüye kullanılmasını önlemek için cihazının geri döndürülemez, anonim bir kimlik özeti sunucumuza gönderilir; bu özet seni tanımlamaz.</li><li>Grup sürüşünü açtığında son konumun yalnız sürüş sürerken paylaşılır ve bitince silinir. İnterkomda ses kaydedilmez, yalnız o an odadakilere aktarılır.</li><li>Reklam yok; hiçbir reklam ağıyla veri paylaşılmaz.</li></ul>
+      <a class="ok" href="/gizlilik/">Gizlilik politikasının tamamını oku →</a>
     </div>
-  </section>
-
-  <!-- YENİLİKLER -->
-  <section class="section section-2" id="yenilikler">
-    <div class="wrap">
-      <span class="eyebrow">Sürüm notları</span>
+    <div id="yenilikler">
+      <p class="km">Sürüm notları</p>
       <h2>Neler değişti</h2>
-      <p class="section-lead">Her büyük güncelleme burada, en yenisi en üstte.</p>
-
-      <!-- YENİ SÜRÜM ÇIKINCA: metinler dil/<kod>.json içindeki y110_* ve y107_*
-           anahtarlarında; yeni sürüm için şablona yeni bir <article> eklenir. -->
-      <article class="surum">
-        <div class="surum-baslik">
-          <span class="surum-no">1.1.0</span>
-          <span class="surum-tarih">Eylül 2026</span>
-        </div>
-        <ul>
-          <li>Yatay kullanım: telefonu yan çevirince harita, kartlar ve düğmeler yeni düzene geçiyor. Navigasyonda manevra ve varış kartı solda, harita sağda; Turlarım yatayda iki sütun.</li>
-          <li>Grup interkomu: Sürüş Grubum’da kişinin yanındaki “Sürüşe çağır” rotayı ve sesli bağlantıyı tek dokunuşla gönderiyor. İnterkom rotasız da başlıyor, her arkadaşın sesi ayrı ayarlanıyor, Bluetooth kask artık doğrudan bağlanıyor.</li>
-          <li>Gruba sürüş kaydı: bitirdiğin sürüşü grubuna gönderebiliyorsun. İz, mesafe ve süre 14 gün grupta kalıyor; başlangıç ve bitişin yakını gizli.</li>
-          <li>Üç yeni sürücü işaretçisi — chopper, maksi scooter, touring — ve uygulama içinde yeni bir Yardım sayfası: Ayarlar → Nasıl yapılır?</li>
-          <li>Topluluk gönderileri yayına girmeden önce onaydan geçiyor; kartta haritayı büyütebiliyorsun ve günlük fotoğrafları haritada kart olarak görünüyor.</li>
-          <li>Dönüş anonsları yeniden kaydedildi, daha doğal. Ayarlar’daki MOTOSEYIR7 kodu bu cihazda bir kez beş gün Pro açıyor.</li>
-        </ul>
-      </article>
-
-      <article class="surum">
-        <div class="surum-baslik">
-          <span class="surum-no">1.0.7</span>
-          <span class="surum-tarih">Eylül 2026</span>
-        </div>
-        <ul>
-          <li>Gruba davetle ya da kodla katılmak ücretsiz oldu; grup kurmak Pro’da kalıyor. Davet bağlantısı doğrudan uygulamayı açıyor.</li>
-          <li>Tur günlüğü artık kendi kamerasıyla çekiyor; kapak fotoğrafını seçip doğrudan Instagram hikâyene gönderebiliyorsun.</li>
-          <li>Ölçü birimi bulunduğun bölgeden geliyor: ABD’de mil/mph/fit, Birleşik Krallık’ta mil/yarda, diğer her yerde kilometre — sesli yönlendirme de aynı birimle konuşuyor.</li>
-          <li>Yedi Amerikan efsane rotası eklendi: Tail of the Dragon, Cherohala Skyway, Blue Ridge Parkway, Beartooth Highway, Angeles Crest, Big Sur, Million Dollar Highway.</li>
-        </ul>
-      </article>
+      <p class="metin">Son güncellemeler, en yenisi en üstte.</p>
+      <article class="surum"><header><b>1.1.8</b><time>Ekim 2026</time></header>
+        <ul class="d"><li>Topluluk'ta Blog'dan Akış'a geçerken uygulamanın kapanması giderildi.</li><li>Sürüşünü 3B izlerken video kaydı daha güvenilir başlıyor.</li><li>Harita tam yüklenmeden “Hazır” görünmüyor; iki parmakla yakınlaştırıp bırakınca kamera artık zıplamıyor.</li></ul></article>
+      <article class="surum"><header><b>1.1.7</b><time>Ekim 2026</time></header>
+        <ul class="d"><li>Gezi haritası: uzun bir turu ya da sürüşü sade bir haritada video olarak izle. Rotan çizilirken geçtiğin şehirler ve fotoğrafların sırayla belirir.</li><li>Başla ekranında yeni kısayollar: ev ve iş, sürüşü kaydet, buradan bir saatlik tur, yakındaki efsane yol.</li><li>ABD'de 298 dağ geçidi ve altı yeni efsane yol eklendi; Sahil modu artık Avrupa'da da çalışıyor.</li><li>Ayarlar'daki “Motoseyir'i tanı” videosu uygulamayı sekme sekme gösteriyor.</li></ul></article>
+      <article class="surum"><header><b>1.1.6</b><time>Ekim 2026</time></header>
+        <ul class="d"><li>3B izle: kaydettiğin sürüşü helikopterden izler gibi yeniden izle; eklediğin fotoğraflar çekildikleri yerde açılır.</li><li>Video olarak paylaş: 15, 30 ya da 60 saniyelik dikey video çıkar, Instagram'a hazır. Pro gerekmez.</li><li>Sürüş analizi: hareket süresi, gerçek molalar, sert virajlar, toplam tırmanış ve yolun ne kadarını ilk kez sürdüğün.</li><li>Tur üret'te “Başka bir tane” farklı yollardan üç yeni tur getiriyor; otoyol, gişe ve toprak yoldan kaçınabilirsin.</li></ul></article>
     </div>
-  </section>
-
-  <!-- İLETİŞİM -->
-  <section class="section" id="iletisim">
-    <div class="wrap">
-      <span class="eyebrow">İletişim</span>
+    <div id="iletisim">
+      <p class="km">İletişim</p>
       <h2>Bir sorun mu var, bir fikrin mi?</h2>
-      <div class="iletisim-grid">
-        <div class="iletisim-kart">
-          <h3>Uygulama içi destek</h3>
-          <p>Ayarlar → “Bir sorun mu var, bir fikrin mi?” bölümünden doğrudan yazabilirsin; yanıtlar yine oradan gelir.</p>
-        </div>
-        <div class="iletisim-kart">
-          <h3>Instagram</h3>
-          <p>Yeni rotalar, sürüş fotoğrafları ve duyurular için takip et.</p>
-          <a class="btn btn-ghost btn-sm" href="https://www.instagram.com/motoseyir.app/">@motoseyir.app</a>
-        </div>
+      <div class="kartlar">
+        <div class="kart"><h3>Uygulama içi destek</h3><p>Ayarlar → “Bir sorun mu var, bir fikrin mi?” bölümünden doğrudan yazabilirsin; yanıtlar yine oradan gelir.</p></div>
+        <div class="kart"><h3>Instagram</h3><p>Yeni rotalar, sürüş fotoğrafları ve duyurular için takip et.</p><a class="btn btn-hayalet btn-kucuk" href="https://www.instagram.com/motoseyir.app/">@motoseyir.app</a></div>
       </div>
     </div>
-  </section>
-
+  </div>
+</section>
 </main>
 
-<footer class="site-footer">
-  <div class="wrap">
-    <div class="footer-ust">
-      <div>
-        <a class="logo" href="#top" style="font-size:1.05rem;">MOTO<em>SEYİR</em></a>
-      </div>
-      <ul class="footer-links">
-        <li><a href="#ozellikler">Özellikler</a></li>
-        <li><a href="ozellikler.html">Tüm özellikler</a></li>
-        <li><a href="nasil-yapilir.html">Nasıl Yapılır</a></li>
-        <li><a href="/gizlilik/">Gizlilik</a></li>
-        <li><a href="#yenilikler">Yenilikler</a></li>
-        <li><a href="#iletisim">İletişim</a></li>
-        <li><a href="https://www.instagram.com/motoseyir.app/">Instagram</a></li>
-        <li><a href="https://apps.apple.com/tr/app/id6792549131?pt=128439797&amp;ct=site-tr&amp;mt=8">App Store</a></li>
-      </ul>
+<footer>
+  <div class="alt-ic">
+    <div>
+      <p><a class="logo" href="#top" style="font-size:1.1rem">MOTO<em>SEYİR</em></a></p>
+      <p style="margin-top:10px">© 2026 Motoseyir. Tüm hakları saklıdır.</p>
     </div>
-    <p>© 2026 Motoseyir. Tüm hakları saklıdır.</p>
-    <div class="dil-altbilgi">
-      <span class="dil-altbilgi-baslik">Diller</span>
+    <ul>
+      <li><a href="/ozellikler.html">Tüm özellikler</a></li><li><a href="/nasil-yapilir.html">Nasıl Yapılır</a></li><li><a href="/gizlilik/">Gizlilik</a></li><li><a href="#yenilikler">Yenilikler</a></li><li><a href="#iletisim">İletişim</a></li><li><a href="https://www.instagram.com/motoseyir.app/">Instagram</a></li><li><a href="https://apps.apple.com/tr/app/id6792549131?pt=128439797&amp;ct=site-tr&amp;mt=8">App Store</a></li>
+    </ul>
+    <div class="dil-altbilgi"><span>Diller</span>
       <ul class="dil-liste">
   <li><strong lang="tr">Türkçe</strong></li>
   <li><a href="/en/" lang="en" hreflang="en">English</a></li>
@@ -463,6 +390,5 @@
     </div>
   </div>
 </footer>
-
 </body>
 </html>

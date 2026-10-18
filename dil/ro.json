@@ -145,7 +145,7 @@
   "y110_3": "Înregistrarea cursei către grup: trimite grupului o cursă încheiată. Urma, distanța și timpul rămân în grup 14 zile; zona din jurul plecării și sosirii rămâne ascunsă.",
   "y110_4": "Trei pictograme noi de motociclist — chopper, maxi scuter, touring — și o pagină de ajutor nouă în aplicație: Settings → How it works.",
   "y110_5": "Postările din Community trec printr-o verificare înainte de publicare; pe fișă poți mări harta, iar pozele din jurnal apar ca fișe pe hartă.",
-  "y110_6": "Anunțurile de viraj au fost reînregistrate, sună mai natural. Codul MOTOSEYIR7 din setări deschide cinci zile de Pro, o singură dată pe acest dispozitiv.",
+  "y110_6": "Anunțurile de viraj au fost reînregistrate, sună mai natural.",
   "y107_tarih": "Septembrie 2026",
   "y107_1": "Intrarea într-un grup prin invitație sau cod este acum gratuită; crearea rămâne în Pro. Linkul de invitație deschide direct aplicația.",
   "y107_2": "Jurnalul turului fotografiază acum cu propria cameră, iar poza de copertă o trimiți direct în story-ul tău de Instagram.",
@@ -235,7 +235,7 @@
   "hb2": "Start pe fișa de jos → se deschide navigația, iar banda de sus arată manevra următoare.",
   "hb3": "Atinge butonul de înregistrare din dreapta → pornește înregistrarea cursei, iar același buton o încheie.",
   "hb4": "În fila My Tours, scrie un nume și atinge Create → începi să construiești turul cu mai multe opriri.",
-  "hb5": "Settings → Start the 5 days now: codul MOTOSEYIR7 deschide cinci zile de Pro, o dată pe dispozitiv.",
+  "hb5": "Settings → Redeem an App Store offer code: dacă ai un cod de ofertă App Store (de exemplu, un cadou de la noi), îl folosești aici.",
 
   "k_rota": "Traseu",
   "rota1": "Scrie în câmpul de sus și alege o sugestie → destinația se adaugă; după a doua destinație traseul devine cu mai multe opriri (Pro).",
@@ -295,7 +295,7 @@
   "ayar1": "Appearance → paleta de culori și limba aplicației.",
   "ayar2": "Map → strat (standard sau satelit), tema hărții și pictograma de navigație: motocicletă, chopper, maxi scuter, touring, săgeată, cască.",
   "ayar3": "Riding → ghidare vocală, consum și preț al combustibilului; raportul de economie se calculează din aceste două valori.",
-  "ayar4": "Start the 5 days now → codul MOTOSEYIR7 se folosește o singură dată pe acest dispozitiv și deschide cinci zile de Pro.",
+  "ayar4": "Redeem an App Store offer code → se deschide ecranul de coduri Apple; după ce introduci codul, Pro pornește imediat.",
   "ayar5": "Scrie-ne din rândul Support → răspunsul îl vezi în același loc; rândul Instagram anunță funcțiile noi.",
   "ayar6": "Întoarce telefonul pe lat → fișele și listele se strâng în stânga, iar harta ia restul; în navigație la fel.",
 

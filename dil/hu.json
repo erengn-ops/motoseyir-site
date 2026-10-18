@@ -145,7 +145,7 @@
   "y110_3": "Menetrögzítés a csoportnak: küldj el egy befejezett menetet a csoportodnak. A nyomvonal, a távolság és az idő 14 napig a csoportban marad; az indulás és a cél környéke rejtve marad.",
   "y110_4": "Három új motorosjelölő — chopper, maxi scooter, touring — és egy új súgóoldal az appban: Settings → How it works.",
   "y110_5": "A Community-bejegyzések megjelenés előtt átmennek egy ellenőrzésen; a kártyán nagyíthatod a térképet, a naplófotók pedig kártyaként jelennek meg a térképen.",
-  "y110_6": "A kanyarbemondásokat újra felvettük, természetesebbek. A beállításokban a MOTOSEYIR7 kód ezen a készüléken egyszer öt napig Pro-t ad.",
+  "y110_6": "A kanyarbemondásokat újra felvettük, természetesebbek.",
   "y107_tarih": "2026. szeptember",
   "y107_1": "Csoporthoz meghívóval vagy kóddal csatlakozni mostantól ingyenes; a csoport létrehozása a Pro csomagban marad. A meghívólink közvetlenül megnyitja az appot.",
   "y107_2": "A túranapló mostantól a saját kamerájával fényképez, a borítófotót pedig egyenesen az Instagram-történetedbe küldheted.",
@@ -235,7 +235,7 @@
   "hb2": "Start az alsó kártyán → megnyílik a navigáció, a felső sáv pedig a következő manővert mutatja.",
   "hb3": "Koppints a jobb oldali rögzítés gombra → indul a menetrögzítés, és ugyanaz a gomb be is fejezi.",
   "hb4": "A My Tours fülön írj be egy nevet, és koppints a Create-re → elkezded összeállítani a több megállós túrádat.",
-  "hb5": "Settings → Start the 5 days now: a MOTOSEYIR7 kód készülékenként egyszer öt napig Pro-t ad.",
+  "hb5": "Settings → Redeem an App Store offer code: ha van App Store-ajánlatkódod (például tőlünk ajándékba), itt váltod be.",
 
   "k_rota": "Útvonal",
   "rota1": "Írj a felső mezőbe, és válassz egy javaslatot → a cél bekerül; a második cél után az útvonal több megállóssá válik (Pro).",
@@ -295,7 +295,7 @@
   "ayar1": "Appearance → színpaletta és az app nyelve.",
   "ayar2": "Map → réteg (normál vagy műholdas), térképtéma és a navigációs jelölő: motor, chopper, maxi scooter, touring, nyíl, bukósisak.",
   "ayar3": "Riding → hangos útmutatás, fogyasztás és üzemanyagár; a megtakarítási jelentés ebből a két értékből számol.",
-  "ayar4": "Start the 5 days now → a MOTOSEYIR7 kód ezen a készüléken egyszer használható, és öt napig Pro-t ad.",
+  "ayar4": "Redeem an App Store offer code → megnyílik az Apple kódbeváltó képernyője; a kód beírása után a Pro azonnal bekapcsol.",
   "ayar5": "Írj nekünk a Support sorból → a választ ugyanott látod; az Instagram sor az új funkciókat hirdeti.",
   "ayar6": "Fordítsd fekvőbe a telefont → a kártyák és a listák balra gyűlnek, a térkép elfoglalja a maradékot; navigációban is ugyanígy.",
 
