@@ -42,7 +42,11 @@ a{color:inherit}
 .btn-hayalet{background:var(--yuzey);color:var(--yazi);box-shadow:inset 0 0 0 1px var(--cizgi)}
 .btn-hayalet:hover{background:var(--yuksek)}
 .js .ust:not(.acik) .btn-kucuk{box-shadow:inset 0 0 0 1px rgba(255,255,255,.35)}
-@media(min-width:900px){.ust nav{display:block}.ust-sag{margin-left:8px}.ust-ic{padding-inline:40px}}
+@media(min-width:900px){.ust-sag{margin-left:8px}.ust-ic{padding-inline:40px}}
+/* Menüde beş öğe var (AI CoRider eklendi, 19 Eki): satıra sığmayan dillerde (el, hu, de) menü 1060 px'e kadar gizli, öğeler tek satır. */
+.menu a{white-space:nowrap}
+@media(min-width:1060px){.ust nav{display:block}}
+@media(min-width:1060px) and (max-width:1239px){.menu{gap:20px}}
 
 /* dil seçici (uret.py'nin <details> işaretlemesi) */
 .dil-sec{position:relative;font:700 .8rem/1 var(--sans);letter-spacing:.04em}
@@ -220,6 +224,7 @@ h2{font:800 clamp(1.9rem,5.6vw,3rem)/1.1 var(--sans);letter-spacing:-.025em;text
 .ayr ul.d{list-style:none;margin-top:20px;display:grid;gap:11px;max-width:46rem}
 .ayr ul.d li{padding-left:20px;position:relative;color:var(--yazi-2);font-size:.95rem}
 .ayr ul.d li::before{content:"";position:absolute;left:0;top:.65em;width:6px;height:6px;border-radius:50%;background:var(--vurgu)}
+.cr-daha a{display:inline-block;margin-top:18px;color:var(--vurgu);font-weight:700;text-underline-offset:3px}
 .ayr a.ok{display:inline-block;margin-top:18px;color:var(--vurgu);font-weight:700;text-underline-offset:3px}
 .surum{margin-top:18px;max-width:46rem;background:var(--yuzey);border:1px solid var(--cizgi);border-radius:var(--r);padding:18px 22px 22px}
 .surum header{display:flex;gap:14px;align-items:baseline}
