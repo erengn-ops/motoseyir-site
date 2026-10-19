@@ -40,7 +40,7 @@
       MH.basliklar($$(".kahraman h1"), false);                                  /* kahraman başlığı yüklemede açılır */
       MH.basliklar($$("h2, .cr-h, .hk-adim h3").filter(function (e) { return !e.closest(".kahraman"); }));
     }
-    R.classList.add("hazir"); videoBaslat();
+    R.classList.add("hazir"); videoBaslat(); demoBaslat();
     if (HM) {
       /* sayılar, telefonlar, düğmeler: ilk boyamadan sonra */
       MH.sayaclar($$(".sayi b, .veri-say dt, .pinler .m, .bolgeler .n"));
@@ -76,6 +76,49 @@
     else W.addEventListener("load", function () { idle(basla); });
   }
   function idle(f) { if (W.requestIdleCallback) W.requestIdleCallback(f, { timeout: 400 }); else setTimeout(f, 200); }
+
+  /* ---------- telefon demoları (19 Eki 2026) ----------
+     Çerçevedeki ekran görüntüsünün yerinde uygulamanın gerçek kullanımı (m/demo-<ad>-<kod>.mp4). uret.py yalnız o dilin klibi VARSA
+     <video data-demo> yazar (şimdilik yalnız TR: klipte Türkçe arayüz var); yoksa durağan görüntü olduğu gibi kalır, JS'siz de öyle (<noscript>).
+     Kapak görünmeye 300 px kala yüklenir; video yüzde 20'si görününce oynar, çıkınca ve sekme arka plana gidince durur (pil).
+     Hareketi azalt, veri tasarrufu, 2G: yalnız kapak, video hiç indirilmez. İlk ekrandaki telefon (data-demo-ilk) ayrıca yükleme bitip
+     kahraman bandı başlayana kadar bekler; zayıf donanımda (MH.hafif) kapakta kalır. Kaynak: HEVC (hvc1) çözen cihazda önce o, yoksa
+     H.264 — kahraman bandındaki hevcVar() denetimi. */
+  function demoBaslat() {
+    var liste = $$("video[data-demo]");
+    if (!liste.length) return;
+    var c = navigator.connection || {};
+    var sade = azalt || !IO || !!(c.saveData || /(^|-)2g$/.test(c.effectiveType || ""));   /* yalnız kapak */
+    var gor = new Set();
+    function kapak(v) { var p = v.getAttribute("data-poster"); if (p && !v.getAttribute("poster")) v.poster = p; }
+    function hazirla(v) {
+      if (v.__hz) return; v.__hz = 1; kapak(v);
+      if (sade || (v.hasAttribute("data-demo-ilk") && MH.hafif)) return;
+      var hev = hevcVar();
+      $$("source[data-src]", v).forEach(function (k) {
+        if (/hvc1/.test(k.type) && !hev) k.parentNode.removeChild(k); else k.src = k.getAttribute("data-src");
+      });
+      v.__kay = 1; v.load();
+    }
+    function oynat(v) { if (!v.__kay) return; var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+    if (!IO) { liste.forEach(hazirla); return; }
+    var hz = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { hz.unobserve(e.target); hazirla(e.target); } }); }, { rootMargin: "300px 0px" });
+    if (sade) { liste.forEach(function (v) { hz.observe(v); }); return; }
+    var oyn = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        var v = e.target;
+        if (e.isIntersecting) { gor.add(v); hazirla(v); if (!D.hidden) oynat(v); } else { gor.delete(v); v.pause(); }
+      });
+    }, { threshold: .2 });
+    function izle(v) { hz.observe(v); oyn.observe(v); }
+    D.addEventListener("visibilitychange", function () { gor.forEach(function (v) { if (D.hidden) v.pause(); else oynat(v); }); });
+    var ilk = liste.filter(function (v) { return v.hasAttribute("data-demo-ilk"); });
+    liste.forEach(function (v) { if (ilk.indexOf(v) < 0) izle(v); });
+    if (ilk.length) {
+      var sonra = function () { idle(function () { setTimeout(function () { ilk.forEach(izle); }, 700); }); };
+      if (D.readyState === "complete") sonra(); else W.addEventListener("load", sonra);
+    }
+  }
 
   /* klipler: görününce yüklenir ve oynar, çıkınca durur */
   var klipler = $$("video[data-src]");

@@ -144,7 +144,7 @@ h2{font:800 clamp(1.9rem,5.6vw,3rem)/1.1 var(--sans);letter-spacing:-.025em;text
     background:linear-gradient(180deg,rgba(255,255,255,.24) 0,rgba(255,255,255,0) 16%,rgba(255,255,255,0) 82%,rgba(0,0,0,.18) 100%),
       linear-gradient(90deg,#c9c6c0 0,#8f8c86 15%,#b6b3ad 38%,#d8d5cf 60%,#9a978f 83%,#c9c6c0 100%);
     box-shadow:inset 0 0 0 .3cqw rgba(255,255,255,.55),inset 0 0 0 .6cqw rgba(0,0,0,.10),0 1px 2px rgba(22,34,31,.14),0 20px 40px -20px rgba(22,34,31,.35)}
-  .tel>img,.tel>video,.tel>.ada,.tel>.ekr,.kt>img{position:absolute;left:2.2cqw;top:2.2cqw;width:calc(100% - 4.4cqw);height:calc(100% - 4.4cqw);z-index:1;
+  .tel>img,.tel>video,.tel>.ada,.tel>.ekr,.kt>img,.kt>video,.tel>noscript>img,.kt>noscript>img{position:absolute;left:2.2cqw;top:2.2cqw;width:calc(100% - 4.4cqw);height:calc(100% - 4.4cqw);z-index:1;
     border-radius:11.8cqw;background:#000;object-fit:cover;box-shadow:0 0 0 1.5cqw #040404,0 0 0 1.62cqw rgba(0,0,0,.45)}
   .tu{position:absolute;inset:0;z-index:0;pointer-events:none}
   .tu::before,.tu::after{content:"";position:absolute;top:0;bottom:0;width:.8cqw}
@@ -158,7 +158,7 @@ h2{font:800 clamp(1.9rem,5.6vw,3rem)/1.1 var(--sans);letter-spacing:-.025em;text
 @supports not (width:1cqw){
   /* eski tarayıcı: sade siyah çerçeve (cqw yok) */
   .tel,.kt{aspect-ratio:1000/2121;border-radius:14%/6.6%;background:#0d1211;padding:2.2%}
-  .tel img,.tel video,.kt img{width:100%;height:100%;object-fit:cover;border-radius:11%/5%;background:#111}
+  .tel img,.tel video,.kt img,.kt video{width:100%;height:100%;object-fit:cover;border-radius:11%/5%;background:#111}
   .tu,.ada{display:none}
 }
 .cift{display:flex;justify-content:center;align-items:flex-start}

@@ -99,6 +99,8 @@
 </header>
 
 <main id="icerik">
+<!-- Telefon demoları (19 Eki 2026): `<img data-demo="…">` işaretli ekran görüntüsünü uret.py, o dilin klibi (m/demo-<ad>-<kod>.mp4) varsa
+     `<video>` ile değiştirir (şimdilik yalnız TR: klipte Türkçe arayüz var); yoksa durağan görüntü kalır. Oynatma: m/a.js "telefon demoları". -->
 <section class="kahraman" aria-label="{{h_etiket}}">
   <div class="k-arka">
     <picture>
@@ -119,7 +121,7 @@
     </div>
     <div class="k-tel">
       <div class="kt kt-arka"><i class="tu" aria-hidden="true"></i><img src="/m/ekran-tur-{{dil_kodu}}.webp" alt="" width="540" height="1174" decoding="async"></div>
-      <div class="kt kt-on"><i class="tu" aria-hidden="true"></i><img src="/m/ekran-nav-{{dil_kodu}}.webp" alt="{{k1_alt}}" width="540" height="1174" decoding="async"></div>
+      <div class="kt kt-on"><i class="tu" aria-hidden="true"></i><img data-demo="rota" data-demo-ilk src="/m/ekran-nav-{{dil_kodu}}.webp" alt="{{k1_alt}}" width="540" height="1174" decoding="async"></div>
     </div>
   </div>
 </section>
@@ -159,7 +161,7 @@
 <div class="ana" id="ozellikler">
   <section class="bolum" id="rota">
     <div class="kap"><div class="bolum-ik">
-      <div data-r class="tel-alan"><div class="tel"><i class="tu" aria-hidden="true"></i><img src="/m/ekran-nav-{{dil_kodu}}.webp" alt="{{k1_alt}}" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r class="tel-alan"><div class="tel"><i class="tu" aria-hidden="true"></i><img data-demo="rota" src="/m/ekran-nav-{{dil_kodu}}.webp" alt="{{k1_alt}}" width="540" height="1174" loading="lazy"></div></div>
       <div data-r>
         <p class="km">{{k1_ad}}</p>
         <h2>{{k1_h2}}</h2>
@@ -192,7 +194,7 @@
 
   <section class="bolum ters" id="tur">
     <div class="kap"><div class="bolum-ik">
-      <div data-r class="tel-alan"><div class="tel"><i class="tu" aria-hidden="true"></i><img src="/m/ekran-tur-{{dil_kodu}}.webp" alt="{{k2_alt}}" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r class="tel-alan"><div class="tel"><i class="tu" aria-hidden="true"></i><img data-demo="tur-uret" src="/m/ekran-tur-{{dil_kodu}}.webp" alt="{{k2_alt}}" width="540" height="1174" loading="lazy"></div></div>
       <div data-r>
         <p class="km">{{k2_ad}}</p>
         <h2>{{k2_h2}}</h2>
@@ -219,7 +221,7 @@
 
   <section class="bolum" id="gecit">
     <div class="kap"><div class="bolum-ik">
-      <div data-r class="tel-alan"><div class="tel"><i class="tu" aria-hidden="true"></i><img src="/m/ekran-gecit-{{dil_kodu}}.webp" alt="{{k3_alt}}" width="540" height="1174" loading="lazy"></div></div>
+      <div data-r class="tel-alan"><div class="tel"><i class="tu" aria-hidden="true"></i><img data-demo="gecit" src="/m/ekran-gecit-{{dil_kodu}}.webp" alt="{{k3_alt}}" width="540" height="1174" loading="lazy"></div></div>
       <div data-r>
         <p class="km">{{k3_ad}}</p>
         <h2>{{k3_h2}}</h2>

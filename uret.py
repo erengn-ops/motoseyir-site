@@ -82,6 +82,44 @@ HAREKETLI_ANASAYFA = tuple(sorted(y.stem.split(".")[1] for y in (Path(__file__).
 # o dilin dosyası yoksa İngilizcesi kullanılır.
 M_DILLI = re.compile(r'(/m/[a-z0-9-]+-)([a-z]{2})(\.(?:webp|jpg|png|mp4))')
 
+# TELEFON DEMO KLİPLERİ (19 Eki 2026): şablonda `<img data-demo="<ad>" …>` işaretli ekran görüntüsü, o dilin klibi VARSA
+# (`m/demo-<ad>-<kod>.mp4`) yerinde `<video>` ile değişir; yoksa işaret silinir, durağan görüntü olduğu gibi kalır.
+# Klipler uygulamanın arayüz dilini gösterir (Türkçe metin) — başka dilin sayfasına Türkçe klip KONMAZ; o dilin klibi
+# çekilince `m/demo-<ad>-<kod>.{mp4,webp}` (+ isteğe bağlı `-hevc.mp4`) dosyalarını koymak yeter, betik değişmez.
+# `data-demo-ilk`: sayfanın ilk ekranındaki telefon — kapak (`poster`) doğrudan yazılır, video yükleme bittikten sonra başlar
+# (bkz. m/a.js "telefon demoları"). Öteki kapaklar görünmeye yakın yüklenir (`data-poster`). `<noscript>` JS'siz durağan
+# görüntüyü korur (a.css `.tel>noscript>img`).
+# `type`ta TAM kodek dizisi: Chrome çıplak "hvc1"i reddeder (canPlayType "") ve sessizce H.264'e düşer; Safari ikisini de kabul eder.
+# Klipler HEVC Main, seviye 5.0, ana kademe, hvc1 etiketli (ffprobe: profile=Main level=150).
+HEVC_KODEK = "hvc1.1.6.L150.B0"
+DEMO_IMG = re.compile(r'<img\b[^>]*?\bdata-demo="([a-z0-9-]+)"[^>]*>')
+DEMO_ISARET = re.compile(r'\s+data-demo(?:-ilk)?(?:="[^"]*")?')
+ALT = re.compile(r'\balt="([^"]*)"')
+
+
+def demolari_yerlestir(html: str, kod: str) -> str:
+    def degistir(m: re.Match) -> str:
+        etiket, ad = m.group(0), m.group(1)
+        durag = DEMO_ISARET.sub("", etiket)  # işaretsiz durağan görüntü
+        if not (KOK / f"m/demo-{ad}-{kod}.mp4").exists():
+            return durag
+        ilk = "data-demo-ilk" in etiket
+        kaynak = ""
+        if (KOK / f"m/demo-{ad}-{kod}-hevc.mp4").exists():  # HEVC önce; a.js çözemeyen cihazda eler
+            kaynak += f'<source data-src="/m/demo-{ad}-{kod}-hevc.mp4" type=\'video/mp4; codecs="{HEVC_KODEK}"\'>'
+        kaynak += f'<source data-src="/m/demo-{ad}-{kod}.mp4" type="video/mp4">'
+        kapak = ""
+        if (KOK / f"m/demo-{ad}-{kod}.webp").exists():
+            kapak = f' {"poster" if ilk else "data-poster"}="/m/demo-{ad}-{kod}.webp"'
+        alt = ALT.search(etiket)
+        etiket_alt = f' aria-label="{alt.group(1)}"' if alt and alt.group(1) else ""
+        video = (f'<video data-demo{" data-demo-ilk" if ilk else ""} muted loop playsinline preload="none"{kapak}'
+                 f' width="1320" height="2868"{etiket_alt}>{kaynak}</video>')
+        return f"{video}<noscript>{durag}</noscript>"
+
+    return DEMO_IMG.sub(degistir, html)
+
+
 VARSAYILAN = "tr"  # köke yazılan dil
 X_DEFAULT = "en"
 
@@ -362,6 +400,8 @@ def main() -> None:
             html = doldur(sablon_metni, degerler, f"{kod}/{dosya}")
             html = varliklari_surumle(html)
             html = gorselleri_yerelle(html, kod)
+            if sablon_metni is hareketli:
+                html = demolari_yerlestir(html, kod)
             if sablon_metni is hareketli or dosya == "corider.html":
                 html = M_DILLI.sub(lambda m: m.group(0) if m.group(2) != kod or (KOK / m.group(0).lstrip("/")).exists()
                                    else f"{m.group(1)}en{m.group(3)}", html)
