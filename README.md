@@ -31,7 +31,7 @@ eski `sablon/index.html` ile üretilmeye devam eder (`uret.py` içindeki
 | `dil/anasayfa.tr.json`, `dil/anasayfa.en.json` | yeni anasayfanın metinleri (ortak anahtarlar `dil/<kod>.json`'dan gelir) |
 | `m/a.css`, `m/a.js` | anasayfa stili ve sayfaya özgü hareket: kahraman, sticky anlatı + rota çizgisi, dönen motor (bağımlılık yok; renkler uygulamanın kendi paleti, tek yazı ailesi Manrope) |
 | `m/h.js` | ortak hareket kütüphanesi (anasayfa + AI CoRider sayfası): kelime kelime başlıklar, sayaçlar, eğim, mıknatıs düğmeler, paralaks yedeği. Hareket kuralları `m/a.css` / `m/corider.css` sonundaki «HAREKET» bloğunda; her şey `html.hm` (JS var + hareketi azalt kapalı) altında, yoksa içerik durağan ve görünür. `html.sd` = tarayıcı `animation-timeline` biliyor → kaydırma efektleri CSS'te, bilmiyorsa h.js `--p`/`--hp`/ilerleme çizgisini yazar |
-| `m/` | video, poster, ekran görüntüleri, motosiklet kareleri, yazı tipleri (OFL metinleriyle) |
+| `m/` | video, poster, ekran görüntüleri, motosiklet kareleri, yazı tipleri (OFL metinleriyle). Videolar TAM çözünürlük, ham kaynaktan: kahraman bandı `sahne-hd` (1920×1080) / `sahne-dikey-hd` (608×1080, kaynağın kendi pikseli) + `-hevc` eşleri (hvc1; Safari/iPhone ve HEVC çözen Chrome); CoRider klipleri 1080×2212 (`corider-<dil>`), gezi 1080×1920 (`gezi-<dil>`). 720p / `-kucuk` yedekler kaldırıldı. Kesim listesi ve kodlama ayarları `sablon/anasayfa.html` baştaki yorumda. Tanıtım videosu (`tani`) depoda değil, Cloudflare Worker'dan geliyor |
 
 Arka plan videosu yapay zekâ ile üretildi (Higgsfield Wan 3.0); gerçek çekim değildir.
 `_kanit/` yerel test kanıtıdır, depoya girmez.

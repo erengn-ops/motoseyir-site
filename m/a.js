@@ -52,8 +52,14 @@
   }
   if (D.fonts && D.fonts.ready) { D.fonts.ready.then(ac); setTimeout(ac, 900); } else ac();
 
-  /* ---------- kahraman videosu: yükleme bittikten sonra, ağ elverirse ---------- */
-  function idle(f) { if (W.requestIdleCallback) W.requestIdleCallback(f, { timeout: 400 }); else setTimeout(f, 200); }
+  /* ---------- kahraman videosu: yükleme bittikten sonra ----------
+     Çözünürlük HER cihazda ve bağlantıda tam: geniş ekran sahne-hd (1920×1080), dar ekran sahne-dikey-hd (608×1080 = kaynağın
+     kendi pikselleri, büyütme yok). 720p yedekler kaldırıldı. HEVC (hvc1) çözebilen cihaz (Safari/iPhone, donanım desteği olan
+     Chrome/Edge) aynı kaliteyi ~%60 boyutla alıyor; yoksa H.264. Yalnız veri tasarrufu ya da 2G'de video hiç yüklenmez
+     (durağan poster kalır): oraya 30 MB'lık bir dosya göndermek çözünürlük değil, kullanıcıyı kaybettirir. */
+  function hevcVar() {
+    try { var t = D.createElement("video"); return !!(t.canPlayType && t.canPlayType('video/mp4; codecs="hvc1.1.6.L120.B0"') === "probably"); } catch (e) { return false; }
+  }
   var hv = $("#hv");
   function videoBaslat() {
     if (azalt || !hv) return;
@@ -61,10 +67,7 @@
     if (c.saveData || /(^|-)2g$/.test(c.effectiveType || "")) return;
     var basla = function () {
       var dikey = matchMedia("(max-width:700px)").matches;
-      /* HD (18 Eki): kaynağın kendi çözünürlüğü, 1664×936 / dikey 700×1244. Geniş ve keskin ekranda HD; 3g'de hafif sürüm. */
-      var yavas = /3g$/.test(c.effectiveType || "");
-      var genis = (screen.width || 0) * (W.devicePixelRatio || 1) >= 1700;
-      hv.src = dikey ? (yavas ? "/m/sahne-dikey.mp4" : "/m/sahne-dikey-hd.mp4") : (genis && !yavas ? "/m/sahne-hd.mp4" : "/m/sahne.mp4");
+      hv.src = "/m/sahne-" + (dikey ? "dikey-hd" : "hd") + (hevcVar() ? "-hevc" : "") + ".mp4";
       hv.addEventListener("playing", function () { hv.classList.add("oynuyor"); }, { once: true });
       var p = hv.play(); if (p && p.catch) p.catch(function () {});
       new IntersectionObserver(function (e) { if (e[0].isIntersecting) { hv.play().catch(function () {}); } else hv.pause(); }).observe(hv);
@@ -72,14 +75,12 @@
     if (D.readyState === "complete") idle(basla);
     else W.addEventListener("load", function () { idle(basla); });
   }
+  function idle(f) { if (W.requestIdleCallback) W.requestIdleCallback(f, { timeout: 400 }); else setTimeout(f, 200); }
 
   /* klipler: görününce yüklenir ve oynar, çıkınca durur */
   var klipler = $$("video[data-src]");
-  /* küçük sürüm (data-kucuk) varsa: veri tasarrufu ya da 3g/2g'de o yüklenir */
-  function kaynak(v) {
-    var c = navigator.connection || {}, k = v.getAttribute("data-kucuk");
-    return k && (c.saveData || /(^|-)[23]g$/.test(c.effectiveType || "")) ? k : v.getAttribute("data-src");
-  }
+  /* Tek sürüm: tam çözünürlük (küçük/düşük çözünürlüklü yedekler kaldırıldı). */
+  function kaynak(v) { return v.getAttribute("data-src"); }
   if (azalt) klipler.forEach(function (v) { var dp = v.getAttribute("data-poster"); if (dp) v.poster = dp; });  /* hareket azaltmada video yüklenmez; durağan kapak görünür */
   if (IO && !azalt) {
     var kio = new IntersectionObserver(function (es) {

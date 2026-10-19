@@ -67,10 +67,8 @@
 
   /* ---------- gerçek kayıt: görününce yüklenir, sessiz oynar; "Sesi aç" ile ses (anasayfayla aynı mantık) ---------- */
   var v = $("#cr-video"), b = $("#cr-ses");
-  function kaynak() {
-    var c = navigator.connection || {}, k = v.getAttribute("data-kucuk");
-    return k && (c.saveData || /(^|-)[23]g$/.test(c.effectiveType || "")) ? k : v.getAttribute("data-src");
-  }
+  /* Tek sürüm, tam çözünürlük (küçük yedek kaldırıldı). */
+  function kaynak() { return v.getAttribute("data-src"); }
   if (v && b) {
     var y = $("span", b);
     var etiket = function () { var a = !v.muted && !v.paused; b.setAttribute("aria-pressed", a ? "true" : "false"); y.textContent = b.getAttribute(a ? "data-kapat" : "data-ac"); };

@@ -38,7 +38,7 @@
 <link rel="icon" href="/img/favicon.png">
 
 <!--
-  Arka plan videosu (m/sahne*.mp4): yapay zekâ ile üretildi, gerçek çekim DEĞİL. Higgsfield Wan 3.0, 18 Eki 2026,
+  Arka plan videosu (m/sahne-*.mp4): yapay zekâ ile üretildi, gerçek çekim DEĞİL. Higgsfield Wan 3.0, 18 Eki 2026,
   başlangıç karesiz tek çekimler; cardoride.com benzeri sinema bandı için yeniden kurgulandı (19 Eki): beş kaynak
   çekimden (iki drone: geçit virajları 30 sn + 10 sn, gidondan orman yolu, iki yandan kıyı yolu: 30 sn + 10 sn)
   yalnız gerçek hızda ve takılmasız aralıklar, 11 sert kesme (her çekim ~1,8–2,4 sn), 22,7 sn döngü, sessiz, renk
@@ -48,6 +48,11 @@
   Ağır çekim kalan çekimler (tek çekim, yol kenarı) kullanılmadı. Yatay 1920×1080 + 1280×720; dikey 608×1080 + 406×720
   (her çekimde sürücüyü kadrajda tutan 9:16 kırpma, çekim başına ayrı x).
   Ham dosyalar: motoseyir-social/02-kaynak/higgsfield/site-sahneler/
+  19 Eki 2026 (3. aşama, "1080p'de hiçbir şey kaybetmeyelim"): montaj ESKİ ÇIKTIDAN DEĞİL, ham 1920×1080 çekimlerden yeniden kuruldu
+  (aynı 11 kesim, kare kesin: 3-gidon 210, 6-yandan 135, 1-drone 90, 2-yandan 45, 5-drone 360, 3-gidon 708, 6-yandan 210,
+  1-drone 210, 3-gidon 330, 5-drone 540, 6-yandan 510; dikey 608×1080 = kesim başına aynı x kırpması: 656, 810, 800, 400, 366, 656,
+  810, 588, 656, 776, 810). x264 High 4.2, veryslow, tune film, CRF 26,5 (yatay) / 22 (dikey), 1 sn anahtar kare, yuv420p, sessiz;
+  HEVC (hvc1) eşleri x265 slow CRF 27 / 25. Dosyalar: sahne-hd(.hevc).mp4, sahne-dikey-hd(.hevc).mp4; 720p yedekler kaldırıldı.
   Bu sayfa sablon/anasayfa.html + dil/anasayfa.<kod>.json'dan üretilir (python3 uret.py); stil m/a.css, hareket m/a.js.
 -->
 <script>!function(d,c){c=" js";if(!matchMedia("(prefers-reduced-motion: reduce)").matches){c+=" hm";if(self.CSS&&CSS.supports&&CSS.supports("animation-timeline:view()"))c+=" sd"}d.className+=c}(document.documentElement)</script>
@@ -128,7 +133,7 @@
   <div class="k-arka">
     <picture>
       <source media="(max-width:700px)" srcset="/m/sahne-dikey-poster.webp" type="image/webp">
-      <img src="/m/sahne-poster.webp" alt="Motoros egy kanyargós hegyi úton a tengerparton, naplementében" fetchpriority="high" width="1600" height="900">
+      <img src="/m/sahne-poster.webp" alt="Motoros egy kanyargós hegyi úton a tengerparton, naplementében" fetchpriority="high" width="1920" height="1080">
     </picture>
     <video id="hv" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
   </div>
@@ -343,7 +348,7 @@
 
     <div class="cr-video bolum-ik" data-r>
       <div class="cr-tel">
-        <div class="tel sade"><video id="cr-video" data-src="/m/corider-en.mp4" data-kucuk="/m/corider-kucuk-en.mp4" poster="/m/corider-en.webp" muted loop playsinline preload="none" width="540" height="1106" aria-label="AI CoRider hanggal: a motoros a hátralévő időről és az esőről kérdez, talál egy megállóhelyet, és hozzáadja az útvonalhoz"></video></div>
+        <div class="tel sade"><video id="cr-video" data-src="/m/corider-en.mp4" poster="/m/corider-en.webp" muted loop playsinline preload="none" width="540" height="1106" aria-label="AI CoRider hanggal: a motoros a hátralévő időről és az esőről kérdez, talál egy megállóhelyet, és hozzáadja az útvonalhoz"></video></div>
         <button class="ses-btn" id="cr-ses" type="button" aria-pressed="false" data-ac="Hang be" data-kapat="Hang ki"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path class="h" d="M4 9.5v5h3.6L12 18.5v-13L7.6 9.5H4z" fill="currentColor"/><path class="d" d="M15.5 9a4.2 4.2 0 0 1 0 6M17.8 6.6a7.5 7.5 0 0 1 0 10.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Hang be</span></button>
       </div>
       <div>
