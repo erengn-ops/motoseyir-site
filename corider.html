@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI CoRider — Kaskında konuşan yol arkadaşı | Motoseyir</title>
+<meta name="description" content="AI CoRider, Motoseyir’in sesli yol arkadaşı: durak ekler, yol üstünde yer arar, hava ve yakıt menzilini söyler, rotayı senin yerine değiştirir. Eller gidonda kalır.">
+<link rel="canonical" href="https://motoseyir-app.com/corider.html">
+<link rel="alternate" hreflang="tr" href="https://motoseyir-app.com/corider.html">
+<link rel="alternate" hreflang="en" href="https://motoseyir-app.com/en/corider.html">
+<link rel="alternate" hreflang="de" href="https://motoseyir-app.com/de/corider.html">
+<link rel="alternate" hreflang="fr" href="https://motoseyir-app.com/fr/corider.html">
+<link rel="alternate" hreflang="it" href="https://motoseyir-app.com/it/corider.html">
+<link rel="alternate" hreflang="es" href="https://motoseyir-app.com/es/corider.html">
+<link rel="alternate" hreflang="nl" href="https://motoseyir-app.com/nl/corider.html">
+<link rel="alternate" hreflang="pl" href="https://motoseyir-app.com/pl/corider.html">
+<link rel="alternate" hreflang="cs" href="https://motoseyir-app.com/cs/corider.html">
+<link rel="alternate" hreflang="sk" href="https://motoseyir-app.com/sk/corider.html">
+<link rel="alternate" hreflang="hu" href="https://motoseyir-app.com/hu/corider.html">
+<link rel="alternate" hreflang="ro" href="https://motoseyir-app.com/ro/corider.html">
+<link rel="alternate" hreflang="hr" href="https://motoseyir-app.com/hr/corider.html">
+<link rel="alternate" hreflang="el" href="https://motoseyir-app.com/el/corider.html">
+<link rel="alternate" hreflang="x-default" href="https://motoseyir-app.com/en/corider.html">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Motoseyir">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:title" content="AI CoRider: gözün yolda kalsın, o dinlesin">
+<meta property="og:description" content="AI CoRider, Motoseyir’in sesli yol arkadaşı: durak ekler, yol üstünde yer arar, hava ve yakıt menzilini söyler, rotayı senin yerine değiştirir. Eller gidonda kalır.">
+<meta property="og:url" content="https://motoseyir-app.com/corider.html">
+<meta property="og:image" content="https://motoseyir-app.com/img/og-kapak.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="apple-itunes-app" content="app-id=6792549131">
+<meta name="theme-color" content="#050B13">
+<link rel="icon" href="/img/favicon.png">
+
+<!--
+  AI CoRider sayfası: sablon/corider.html + dil/anasayfa.<kod>.json + dil/corider.<kod>.json'dan üretilir (python3 uret.py).
+  Stil m/corider.css, hareket m/corider.js. Görseller yalnız kendi varlıklarımız: uygulamadan gerçek ekran kaydı
+  (m/corider-*.mp4) ve uygulamanın AI CoRider yüzü (img/ai-corider.png'nin saydamlaştırılmış hâli, m/corider-yuz.webp).
+  Konuşma örnekleri tasarım örneğidir; uygulamadaki gerçek durum etiketleriyle (Köy yolları, rotaya eklendi...) eşleşir.
+-->
+<script>document.documentElement.className+=" cjs"</script>
+<link rel="preload" as="font" type="font/woff" href="/m/font/Manrope.woff" crossorigin>
+<link rel="stylesheet" href="/m/corider.css">
+<script defer src="/m/corider.js"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "name": "AI CoRider — Kaskında konuşan yol arkadaşı | Motoseyir",
+      "url": "https://motoseyir-app.com/corider.html",
+      "inLanguage": "tr",
+      "description": "AI CoRider, Motoseyir’in sesli yol arkadaşı: durak ekler, yol üstünde yer arar, hava ve yakıt menzilini söyler, rotayı senin yerine değiştirir. Eller gidonda kalır.",
+      "isPartOf": {"@type": "WebSite", "name": "Motoseyir", "url": "https://motoseyir-app.com/"}
+    },
+    {
+      "@type": "FAQPage",
+      "inLanguage": "tr",
+      "mainEntity": [
+        {"@type": "Question", "name": "AI CoRider sürekli beni dinliyor mu?", "acceptedAnswer": {"@type": "Answer", "text": "Hayır. “Hey” gibi bir çağrı sözcüğü yok. Mikrofon yalnız sen haritadaki AI CoRider düğmesine basınca açılır. Oturum sen kapatınca, bir süre konuşmayınca ya da navigasyon bitince kendiliğinden kapanır."}},
+        {"@type": "Question", "name": "İnternet olmadan çalışır mı?", "acceptedAnswer": {"@type": "Answer", "text": "Hayır. Söylediklerin cevabı üretmek için bulut tabanlı bir ses servisine gittiği için AI CoRider internet ister. Bağlantı yokken oturum açılamaz."}},
+        {"@type": "Question", "name": "Hangi dilde konuşabilirim?", "acceptedAnswer": {"@type": "Answer", "text": "Hangi dilde konuşursan o dilde cevap verir. Ezberlenecek komut yok, kendi cümlenle söylemen yeter."}},
+        {"@type": "Question", "name": "Konuşma süresi bitince ne olur?", "acceptedAnswer": {"@type": "Answer", "text": "Pro’da her 30 günde 10 dakika yenilenir, ücretsiz denemede 5 dakika verilir. Yetmezse süresi dolmayan 30, 60 ya da 180 dakikalık paket alırsın."}},
+        {"@type": "Question", "name": "Planlayıcı ile Sohbet arasındaki fark ne?", "acceptedAnswer": {"@type": "Answer", "text": "Planlayıcı rotanı bilir ve işini yapar: durak ekler, yer arar, rotayı değiştirir. Pro’ya dahildir. Sohbet’te konuyu sen seçersin, önceki sohbetleri hatırlar; dakika paketiyle açılır."}},
+        {"@type": "Question", "name": "Grupta herkes duyar mı, dakika kimden düşer?", "acceptedAnswer": {"@type": "Answer", "text": "Grup interkomunda AI CoRider’ı çağırırsan odadaki herkes duyar. Dakika, onu çağıranın hesabından düşer."}},
+        {"@type": "Question", "name": "Benzinim yeter mi diye soruyorum, menzil söylemiyor. Neden?", "acceptedAnswer": {"@type": "Answer", "text": "Menzil için Ayarlar’a dolu depoyla gittiğin yolu bir kez yazman gerekir. Bu yazılmadıysa AI CoRider tahmin yürütmez, bunu söyler."}},
+        {"@type": "Question", "name": "Kaskta duymak için Bluetooth şart mı?", "acceptedAnswer": {"@type": "Answer", "text": "Kask telefona Bluetooth ile bağlıysa ses oradan gelir, değilse telefondan çıkar. Rüzgârda duyamazsan “sesini aç” demen yeter."}}
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body id="top">
+<a class="skip" href="#icerik">İçeriğe geç</a>
+
+<header class="ust">
+  <div class="ust-ic">
+    <a class="logo" href="/" aria-label="Motoseyir"><img src="/img/favicon.png" alt="" width="28" height="28">MOTO<em>SEYİR</em></a>
+    <nav aria-label="Ana gezinme"><ul class="menu">
+      <li><a href="/">Anasayfa</a></li><li><a href="#nasil">Nasıl çalışır</a></li><li><a href="#konusma">Konuşmalar</a></li><li><a href="#yetenek">Neler yapar</a></li><li><a href="#dakika">Süre</a></li><li><a href="#sss">SSS</a></li>
+    </ul></nav>
+    <div class="ust-sag">
+      <details class="dil-sec">
+  <summary aria-label="Dil seç"><span class="dil-kod">TR</span><span class="dil-ad">Türkçe</span></summary>
+  <ul>
+    <li><span aria-current="true">Türkçe</span></li>
+    <li><a href="/en/corider.html" lang="en" hreflang="en">English</a></li>
+    <li><a href="/de/corider.html" lang="de" hreflang="de">Deutsch</a></li>
+    <li><a href="/fr/corider.html" lang="fr" hreflang="fr">Français</a></li>
+    <li><a href="/it/corider.html" lang="it" hreflang="it">Italiano</a></li>
+    <li><a href="/es/corider.html" lang="es" hreflang="es">Español</a></li>
+    <li><a href="/nl/corider.html" lang="nl" hreflang="nl">Nederlands</a></li>
+    <li><a href="/pl/corider.html" lang="pl" hreflang="pl">Polski</a></li>
+    <li><a href="/cs/corider.html" lang="cs" hreflang="cs">Čeština</a></li>
+    <li><a href="/sk/corider.html" lang="sk" hreflang="sk">Slovenčina</a></li>
+    <li><a href="/hu/corider.html" lang="hu" hreflang="hu">Magyar</a></li>
+    <li><a href="/ro/corider.html" lang="ro" hreflang="ro">Română</a></li>
+    <li><a href="/hr/corider.html" lang="hr" hreflang="hr">Hrvatski</a></li>
+    <li><a href="/el/corider.html" lang="el" hreflang="el">Ελληνικά</a></li>
+  </ul>
+</details>
+      <a class="btn btn-kucuk" href="https://apps.apple.com/tr/app/id6792549131?pt=128439797&amp;ct=site-tr&amp;mt=8">İndir</a>
+    </div>
+  </div>
+</header>
+
+<main id="icerik">
+<section class="kh" aria-labelledby="h1">
+  <div class="kh-ic">
+    <div class="kh-metin">
+      <p class="ust-yazi">Motoseyir Pro · AI CoRider</p>
+      <h1 id="h1">Gözün yolda kalsın. <i>O&nbsp;dinlesin.</i></h1>
+      <p class="giris">AI CoRider, kaskındaki kulaklıktan konuşan yol arkadaşın. Rotanı bilir: durak ekler, yol üstünde yer arar, rotayı senin yerine değiştirir. Düğmeye basıp kendi cümlenle sorarsın, cevabı kaskından duyarsın; eller gidonda kalır.</p>
+      <div class="cta-satir">
+        <a class="btn" href="https://apps.apple.com/tr/app/id6792549131?pt=128439797&amp;ct=site-tr&amp;mt=8"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.6c0-2.4 2-3.5 2-3.6-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.15-2.8.85-3.5.85s-1.8-.8-3-.8c-1.5 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.700 2.400 2.900 2.300 1.200 0 1.600-.7 3-.7s1.800.7 3 .7 2-1.100 2.800-2.300c.9-1.300 1.200-2.500 1.300-2.600-.1 0-2.500-1-2.500-3.600zM14.200 5.500c.6-.8 1.100-1.800.9-2.900-.9 0-2 .6-2.700 1.400-.6.700-1.100 1.800-1 2.800 1 .1 2.100-.5 2.800-1.300z"/></svg>App Store’da İndir</a>
+        <a class="btn btn-hayalet" href="#nasil">Nasıl çalışır</a>
+        <p class="mikro">Pro özelliği. İstersen süresi dolmayan dakika paketi de alabilirsin.</p>
+      </div>
+    </div>
+    <div class="orb" aria-hidden="true">
+      <canvas id="orb-c" width="660" height="660"></canvas>
+      <img class="orb-yuz" src="/m/corider-yuz.webp" alt="" width="320" height="320">
+      <span class="orb-durum">Dinliyor</span>
+    </div>
+  </div>
+</section>
+
+<div class="serit"><dl aria-label="AI CoRider rakamlarla">
+  <div><dt>~30</dt><dd>sesle yapılan işlem</dd></div>
+  <div><dt>4</dt><dd>ses seçeneği: Quartz, Tempo, Stone, Willow</dd></div>
+  <div><dt>Bluetooth</dt><dd>kask interkomunla çalışır</dd></div>
+  <div><dt>30·60·180</dt><dd>dakikalık ek paket; süresi dolmaz</dd></div>
+</dl></div>
+
+<section class="bl" id="nasil" aria-labelledby="nasil-h">
+  <div class="kap">
+    <div class="bl-ust">
+      <p class="km">Kullanım</p>
+      <h2 id="nasil-h">Bas, konuş, <i>kaskından duy.</i></h2>
+    </div>
+    <ol class="adimlar">
+      <li><span class="n" aria-hidden="true">1</span><h3>Düğmeye bas</h3><p>Haritadaki AI CoRider düğmesine basarsın, konuşma başlar.</p></li>
+      <li><span class="n" aria-hidden="true">2</span><h3>Normal konuş</h3><p>Komut ezberlemen gerekmez. Hangi dilde konuşursan o dilde cevap verir.</p></li>
+      <li><span class="n" aria-hidden="true">3</span><h3>Kaskından duy</h3><p>Kask telefona Bluetooth ile bağlıysa ses oradan gelir. Rüzgârda duyamazsan “sesini aç” demen yeter.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="bl z1" id="konusma" aria-labelledby="konusma-h">
+  <div class="kap">
+    <div class="bl-ust">
+      <p class="km">Örnek konuşmalar</p>
+      <h2 id="konusma-h">Böyle <i>konuşulur.</i></h2>
+      <p class="lead">Bunlar örnek. Ezberlenecek komut yok, kendi cümlenle söylemen yeter.</p>
+    </div>
+    <div class="konusmalar">
+      <article class="soh">
+        <p class="soh-t">Rota ve hava</p>
+        <div class="satir sen"><span class="kim">Sen</span><p>Varışa ne kadar kaldı? Yolda yağmur var mı?</p></div>
+        <div class="satir ai"><span class="kim">AI CoRider</span><p>İstanbul’a 2 saat 49 dakika kaldı. Rota boyunca yağış görünmüyor.</p></div>
+        <div class="satir sen"><span class="kim">Sen</span><p>Kaçta varırım?</p></div>
+        <div class="satir ai"><span class="kim">AI CoRider</span><p>Tahmini varış saatin 17.28.</p></div>
+        <span class="chip oku"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/></svg>Kalan süre, yağış, varış saati</span>
+      </article>
+      <article class="soh">
+        <p class="soh-t">Yol üstünde mola</p>
+        <div class="satir sen"><span class="kim">Sen</span><p>Yolda iyi bir kahveci var mı?</p></div>
+        <div class="satir ai"><span class="kim">AI CoRider</span><p>28 km ileride, yolun sağında, puanı yüksek bir yer var. Durak olarak ekleyeyim mi?</p></div>
+        <div class="satir sen"><span class="kim">Sen</span><p>Ekle.</p></div>
+        <div class="satir ai"><span class="kim">AI CoRider</span><p>Ekledim, rotayı yeniliyorum.</p></div>
+        <span class="chip" lang="tr"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Kahveci rotaya eklendi</span>
+      </article>
+      <article class="soh">
+        <p class="soh-t">Rota kipi</p>
+        <div class="satir sen"><span class="kim">Sen</span><p>Köy yollarından gidelim.</p></div>
+        <div class="satir ai"><span class="kim">AI CoRider</span><p>Köy yollarına geçiyorum, rota hesaplanıyor.</p></div>
+        <span class="chip" lang="tr"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Köy yolları</span>
+      </article>
+      <article class="soh">
+        <p class="soh-t">Yakıt</p>
+        <div class="satir sen"><span class="kim">Sen</span><p>Benzinim varışa yeter mi?</p></div>
+        <div class="satir ai"><span class="kim">AI CoRider</span><p>Yeter: menzilin yaklaşık 210 km, varışa 140 km var.</p></div>
+        <span class="chip oku"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/></svg>Yakıt menzili</span>
+      </article>
+      <article class="soh">
+        <p class="soh-t">Grup</p>
+        <div class="satir sen"><span class="kim">Sen</span><p>Gruba mola haberi ver.</p></div>
+        <div class="satir ai"><span class="kim">AI CoRider</span><p>Gruba haber verdim: mola verelim.</p></div>
+        <span class="chip" lang="tr"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Gruba gönderildi: Mola</span>
+      </article>
+      <article class="soh">
+        <p class="soh-t">Hatırlatma</p>
+        <div class="satir sen"><span class="kim">Sen</span><p>Yarın zinciri yağlamayı hatırlat.</p></div>
+        <div class="satir ai"><span class="kim">AI CoRider</span><p>Tamam. Yarın beni açtığında ilk bunu söylerim.</p></div>
+        <span class="chip oku"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/></svg>Yarın ilk bunu söyler</span>
+      </article>
+    </div>
+    <p class="soh-not">Örnekler tasarım amaçlı yazıldı. Düz çizgili etiketler uygulamada ekranda çıkan durum etiketlerinin aynısıdır; kesikli etiketler ekrana çıkmaz, yalnız olanı anlatır.</p>
+  </div>
+</section>
+
+<section class="bl" id="kayit" aria-labelledby="kayit-h">
+  <div class="kap video-ik">
+    <div class="tel-kap">
+      <div class="tel"><video id="cr-video" data-src="/m/corider-tr.mp4" data-kucuk="/m/corider-kucuk-tr.mp4" poster="/m/corider-tr.webp" muted loop playsinline preload="none" width="540" height="1106" aria-label="AI CoRider ile sesli konuşma: kalan süre ve yağış sorulur, bir mola yeri bulunur ve rotaya eklenir"></video></div>
+      <button class="ses-btn" id="cr-ses" type="button" aria-pressed="false" data-ac="Sesi aç" data-kapat="Sesi kapat"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path class="h" d="M4 9.5v5h3.6L12 18.5v-13L7.6 9.5H4z" fill="currentColor"/><path class="d" d="M15.5 9a4.2 4.2 0 0 1 0 6M17.8 6.6a7.5 7.5 0 0 1 0 10.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Sesi aç</span></button>
+    </div>
+    <div>
+      <p class="km">Gerçek kayıt</p>
+      <h2 id="kayit-h">Gerçek bir sürüşten</h2>
+      <p class="lead">Uygulamadan alınmış gerçek kayıt: sürücü kalan süreyi ve yağışı soruyor, bir mola yeri istiyor, seçtiği yer rotaya durak olarak giriyor.</p>
+      <p class="not">Uygulamadan gerçek ekran kaydı.</p>
+    </div>
+  </div>
+</section>
+
+<section class="bl z1" id="yetenek" aria-labelledby="yetenek-h">
+  <div class="kap">
+    <div class="bl-ust">
+      <p class="km">Neler yapar</p>
+      <h2 id="yetenek-h">Yaklaşık 30 işi <i>sesinle yaparsın.</i></h2>
+      <p class="lead">Beş başlıkta topladık. Hiçbirini ezberlemen gerekmez; ne istediğini kendi cümlenle söylemen yeter.</p>
+    </div>
+    <div class="yetenek">
+      <section class="grup" aria-labelledby="g1-h"><span class="no" aria-hidden="true">01</span><h3 id="g1-h">Rota</h3><p>Rotayı senin yerine düzeltir.</p><ul><li>Durak ekler, çıkarır ya da sıradakini atlar</li><li>Varış noktasını değiştirir, durakları sıraya koyar</li><li>Köy yolları ile en kısa rota arasında geçer</li><li>Rotayı haritada gösterir, seni eve götürür</li></ul></section>
+      <section class="grup" aria-labelledby="g2-h"><span class="no" aria-hidden="true">02</span><h3 id="g2-h">Yolda</h3><p>Yol üstünde ve çevrende arar.</p><ul><li>İlerideki benzinliği, yemeği ya da kahveyi bulur; puanı yüksek olanı önce söyler</li><li>Bu gece nerede kalabileceğini arar</li><li>Kalan süreyi, sıradaki dönüşü ve şu an nerede olduğunu söyler</li><li>Önündeki yolda sert viraj ve tırmanış var mı, söyler</li></ul></section>
+      <section class="grup" aria-labelledby="g3-h"><span class="no" aria-hidden="true">03</span><h3 id="g3-h">Hava ve menzil</h3><p>Yola çıkmadan ve yoldayken sorulacaklar.</p><ul><li>Hava nasıl olacak, rotada yağmur var mı</li><li>Yağış radarına bakar ve haritada açar</li><li>Depo nereye kadar yeter, yolda benzinlik var mı</li><li class="r">Radar yalnız ABD’de ve Almanya’da çalışır. Menzil için Ayarlar’a dolu depoyla gittiğin yolu bir kez yazman gerekir.</li></ul></section>
+      <section class="grup" aria-labelledby="g4-h"><span class="no" aria-hidden="true">04</span><h3 id="g4-h">Grup</h3><p>Grup sürüşü açıkken.</p><ul><li>Kimin nerede olduğunu, kimin ne kadar geride kaldığını söyler</li><li>Gruba hazır uyarı yollar: geride kaldım, mola, tehlike, benzin</li><li>Rotayı gruba sen paylaştıysan, değişikliğin kime gideceğini sorar</li></ul></section>
+      <section class="grup" aria-labelledby="g5-h"><span class="no" aria-hidden="true">05</span><h3 id="g5-h">Sürüş</h3><p>Eller gidonda kalırken.</p><ul><li>Navigasyonu başlatır ve bitirir</li><li>Sürüş kaydını açar ve kapatır</li><li>Rehberinden birini bulur; aramak için ekrana tek dokunuş yeter</li><li>İstediğin notu saklar, “unut” dersen siler</li><li>Konuşma sesini açar ya da kısar: “sesini aç”</li></ul></section>
+    </div>
+    <div class="cagri-kutu">
+      <h3>Grup odasında</h3>
+      <p>Grup interkomunda AI CoRider’ı çağırırsan odadaki herkes duyar. Dakika, onu çağıranın hesabından düşer.</p>
+    </div>
+  </div>
+</section>
+
+<section class="bl" id="kipler" aria-labelledby="kip-h">
+  <div class="kap">
+    <div class="bl-ust">
+      <p class="km">İki kip</p>
+      <h2 id="kip-h">İşini yapan ya da <i>sohbet eden.</i></h2>
+      <p class="lead">Konuşurken “sohbet modunu aç” demen yeter.</p>
+    </div>
+    <div class="kipler">
+      <article class="kip"><h3>Planlayıcı</h3><p>Rotanı bilir ve işini yapar.</p><ul><li>Yolda benzinlik var mı?</li><li>Arkadaşlar nerede?</li><li>Köy yollarından gidelim.</li><li>Hava nasıl olacak?</li><li>Eve dön.</li></ul><span class="rozet">Pro’ya dahil</span></article>
+      <article class="kip"><h3>Sohbet</h3><p>Konuyu sen seçersin, önceki sohbetleri hatırlar.</p><ul><li>İngilizce pratik yapalım.</li><li>Bugünü birlikte planlayalım.</li><li>Bana bir hikâye anlat.</li><li>Dün nerede kalmıştık?</li></ul><span class="rozet">Dakika paketiyle açılır</span></article>
+    </div>
+    <div class="sesler">
+      <div><h3>Dört ses</h3><p>Ayarlar’da her birini dinleyip seçersin: Quartz, Tempo, Stone ya da Willow.</p></div>
+      <ul class="ses-liste" aria-label="Dört ses">
+        <li><i aria-hidden="true"><b></b><b></b><b></b><b></b><b></b></i>Quartz</li><li><i aria-hidden="true"><b></b><b></b><b></b><b></b><b></b></i>Tempo</li><li><i aria-hidden="true"><b></b><b></b><b></b><b></b><b></b></i>Stone</li><li><i aria-hidden="true"><b></b><b></b><b></b><b></b><b></b></i>Willow</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="bl z1" id="dakika" aria-labelledby="dakika-h">
+  <div class="kap">
+    <div class="bl-ust">
+      <p class="km">Süre ve paket</p>
+      <h2 id="dakika-h">Konuşma süresi, <i>sade hesap.</i></h2>
+      <p class="lead">AI CoRider’a harcadığın dakikaları Pro’da yenilenen süre ve süresi dolmayan paketler karşılar.</p>
+    </div>
+    <div class="sureler">
+      <div class="sure"><b>10 dk</b><h3>Pro’da, her 30 günde</h3><p>Konuşma süren her 30 günde yeniden 10 dakikaya döner.</p></div>
+      <div class="sure"><b>5 dk</b><h3>Ücretsiz denemede</h3><p>Deneme süresince 5 dakika konuşabilirsin.</p></div>
+      <div class="sure"><b>30 · 60 · 180</b><h3>Dakika paketi</h3><p>30, 60 ya da 180 dakika. Süresi dolmaz, ay sonunda uçmaz; Sohbet kipi de bununla açılır.</p></div>
+    </div>
+    <p class="fiyat-not">Rakamlar yeni abonelere göredir. Güncel fiyatlar bölgene göre değişir; App Store’daki abonelik ekranında görürsün. İstediğin zaman App Store hesabından iptal edebilirsin.</p>
+  </div>
+</section>
+
+<section class="bl" id="gizlilik" aria-labelledby="gizlilik-h">
+  <div class="kap">
+    <div class="bl-ust">
+      <p class="km">Gizlilik</p>
+      <h2 id="gizlilik-h">Sesin <i>sende kalır.</i></h2>
+    </div>
+    <ul class="gizlilik">
+      <li><h3>Sen açınca çalışır</h3><p>Mikrofon yalnız haritadaki AI CoRider düğmesine bastığında açılır.</p></li>
+      <li><h3>Ses saklanmaz</h3><p>Sesin bizde kaydedilmez. Cevabı üretmek için üçüncü taraf bir bulut ses servisine gider.</p></li>
+      <li><h3>Ham konum gitmez</h3><p>Rotadan yalnız kalan yol ve sıradaki manevra gibi bilgiler metin olarak gider.</p></li>
+      <li><h3>Notlar telefonunda</h3><p>İstediğin notlar telefonunda saklanır; “unut” dersen silinir.</p></li>
+    </ul>
+    <p class="gz-tam"><strong>Gizlilik.</strong> AI CoRider yalnız sen açınca çalışır. Sesin bizde kaydedilmez ve saklanmaz; söylediklerin, cevabı üretmek için üçüncü taraf bir bulut ses servisine gider. Bu servise ham konumun gitmez, rotadan yalnız kalan yol ve sıradaki manevra gibi bilgiler metin olarak gider. Oturum sen kapatınca, bir süre konuşmayınca ya da navigasyon bitince kendiliğinden kapanır. <a href="/gizlilik/">Ayrıntılar gizlilik sayfasında.</a></p>
+  </div>
+</section>
+
+<section class="bl z1" id="sss" aria-labelledby="sss-h">
+  <div class="kap">
+    <div class="bl-ust">
+      <p class="km">Sık sorulanlar</p>
+      <h2 id="sss-h">Aklındakiler</h2>
+    </div>
+    <div class="sss-liste">
+      <details class="sss" name="sss"><summary>AI CoRider sürekli beni dinliyor mu?</summary><div class="cevap"><p>Hayır. “Hey” gibi bir çağrı sözcüğü yok. Mikrofon yalnız sen haritadaki AI CoRider düğmesine basınca açılır. Oturum sen kapatınca, bir süre konuşmayınca ya da navigasyon bitince kendiliğinden kapanır.</p></div></details>
+      <details class="sss" name="sss"><summary>İnternet olmadan çalışır mı?</summary><div class="cevap"><p>Hayır. Söylediklerin cevabı üretmek için bulut tabanlı bir ses servisine gittiği için AI CoRider internet ister. Bağlantı yokken oturum açılamaz.</p></div></details>
+      <details class="sss" name="sss"><summary>Hangi dilde konuşabilirim?</summary><div class="cevap"><p>Hangi dilde konuşursan o dilde cevap verir. Ezberlenecek komut yok, kendi cümlenle söylemen yeter.</p></div></details>
+      <details class="sss" name="sss"><summary>Konuşma süresi bitince ne olur?</summary><div class="cevap"><p>Pro’da her 30 günde 10 dakika yenilenir, ücretsiz denemede 5 dakika verilir. Yetmezse süresi dolmayan 30, 60 ya da 180 dakikalık paket alırsın.</p></div></details>
+      <details class="sss" name="sss"><summary>Planlayıcı ile Sohbet arasındaki fark ne?</summary><div class="cevap"><p>Planlayıcı rotanı bilir ve işini yapar: durak ekler, yer arar, rotayı değiştirir. Pro’ya dahildir. Sohbet’te konuyu sen seçersin, önceki sohbetleri hatırlar; dakika paketiyle açılır.</p></div></details>
+      <details class="sss" name="sss"><summary>Grupta herkes duyar mı, dakika kimden düşer?</summary><div class="cevap"><p>Grup interkomunda AI CoRider’ı çağırırsan odadaki herkes duyar. Dakika, onu çağıranın hesabından düşer.</p></div></details>
+      <details class="sss" name="sss"><summary>Benzinim yeter mi diye soruyorum, menzil söylemiyor. Neden?</summary><div class="cevap"><p>Menzil için Ayarlar’a dolu depoyla gittiğin yolu bir kez yazman gerekir. Bu yazılmadıysa AI CoRider tahmin yürütmez, bunu söyler.</p></div></details>
+      <details class="sss" name="sss"><summary>Kaskta duymak için Bluetooth şart mı?</summary><div class="cevap"><p>Kask telefona Bluetooth ile bağlıysa ses oradan gelir, değilse telefondan çıkar. Rüzgârda duyamazsan “sesini aç” demen yeter.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<section class="varis" aria-labelledby="varis-h">
+  <div class="kap">
+    <h2 id="varis-h">Düğmeye bas, <i>yola devam et.</i></h2>
+    <div class="cta-satir">
+      <a class="btn" href="https://apps.apple.com/tr/app/id6792549131?pt=128439797&amp;ct=site-tr&amp;mt=8">App Store’da İndir</a>
+      <a class="btn btn-hayalet" href="/ozellikler.html">Tüm özellikler</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="alt-ic">
+    <div>
+      <p><a class="logo" href="/" aria-label="Motoseyir"><img src="/img/favicon.png" alt="" width="28" height="28">MOTO<em>SEYİR</em></a></p>
+      <p style="margin-top:10px">© 2026 Motoseyir. Tüm hakları saklıdır.</p>
+    </div>
+    <ul>
+      <li><a href="/">Anasayfa</a></li><li><a href="/ozellikler.html">Tüm özellikler</a></li><li><a href="/nasil-yapilir.html">Nasıl Yapılır</a></li><li><a href="/gizlilik/">Gizlilik</a></li><li><a href="/#iletisim">İletişim</a></li><li><a href="https://www.instagram.com/motoseyir.app/">Instagram</a></li><li><a href="https://apps.apple.com/tr/app/id6792549131?pt=128439797&amp;ct=site-tr&amp;mt=8">App Store</a></li>
+    </ul>
+    <div class="dil-altbilgi"><span>Diller</span>
+      <ul class="dil-liste">
+  <li><strong lang="tr">Türkçe</strong></li>
+  <li><a href="/en/corider.html" lang="en" hreflang="en">English</a></li>
+  <li><a href="/de/corider.html" lang="de" hreflang="de">Deutsch</a></li>
+  <li><a href="/fr/corider.html" lang="fr" hreflang="fr">Français</a></li>
+  <li><a href="/it/corider.html" lang="it" hreflang="it">Italiano</a></li>
+  <li><a href="/es/corider.html" lang="es" hreflang="es">Español</a></li>
+  <li><a href="/nl/corider.html" lang="nl" hreflang="nl">Nederlands</a></li>
+  <li><a href="/pl/corider.html" lang="pl" hreflang="pl">Polski</a></li>
+  <li><a href="/cs/corider.html" lang="cs" hreflang="cs">Čeština</a></li>
+  <li><a href="/sk/corider.html" lang="sk" hreflang="sk">Slovenčina</a></li>
+  <li><a href="/hu/corider.html" lang="hu" hreflang="hu">Magyar</a></li>
+  <li><a href="/ro/corider.html" lang="ro" hreflang="ro">Română</a></li>
+  <li><a href="/hr/corider.html" lang="hr" hreflang="hr">Hrvatski</a></li>
+  <li><a href="/el/corider.html" lang="el" hreflang="el">Ελληνικά</a></li>
+</ul>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

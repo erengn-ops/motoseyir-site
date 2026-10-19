@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI CoRider — parťák v tvé helmě | Motoseyir</title>
+<meta name="description" content="AI CoRider s tebou mluví přes helmu: přidává zastávky, hledá místa na trase, řekne počasí i dojezd paliva a změní trasu za tebe. Ruce zůstávají na řídítkách.">
+<link rel="canonical" href="https://motoseyir-app.com/cs/corider.html">
+<link rel="alternate" hreflang="tr" href="https://motoseyir-app.com/corider.html">
+<link rel="alternate" hreflang="en" href="https://motoseyir-app.com/en/corider.html">
+<link rel="alternate" hreflang="de" href="https://motoseyir-app.com/de/corider.html">
+<link rel="alternate" hreflang="fr" href="https://motoseyir-app.com/fr/corider.html">
+<link rel="alternate" hreflang="it" href="https://motoseyir-app.com/it/corider.html">
+<link rel="alternate" hreflang="es" href="https://motoseyir-app.com/es/corider.html">
+<link rel="alternate" hreflang="nl" href="https://motoseyir-app.com/nl/corider.html">
+<link rel="alternate" hreflang="pl" href="https://motoseyir-app.com/pl/corider.html">
+<link rel="alternate" hreflang="cs" href="https://motoseyir-app.com/cs/corider.html">
+<link rel="alternate" hreflang="sk" href="https://motoseyir-app.com/sk/corider.html">
+<link rel="alternate" hreflang="hu" href="https://motoseyir-app.com/hu/corider.html">
+<link rel="alternate" hreflang="ro" href="https://motoseyir-app.com/ro/corider.html">
+<link rel="alternate" hreflang="hr" href="https://motoseyir-app.com/hr/corider.html">
+<link rel="alternate" hreflang="el" href="https://motoseyir-app.com/el/corider.html">
+<link rel="alternate" hreflang="x-default" href="https://motoseyir-app.com/en/corider.html">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Motoseyir">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:title" content="AI CoRider: oči na silnici, on poslouchá">
+<meta property="og:description" content="AI CoRider s tebou mluví přes helmu: přidává zastávky, hledá místa na trase, řekne počasí i dojezd paliva a změní trasu za tebe. Ruce zůstávají na řídítkách.">
+<meta property="og:url" content="https://motoseyir-app.com/cs/corider.html">
+<meta property="og:image" content="https://motoseyir-app.com/img/og-kapak.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="apple-itunes-app" content="app-id=6792549131">
+<meta name="theme-color" content="#050B13">
+<link rel="icon" href="/img/favicon.png">
+
+<!--
+  AI CoRider sayfası: sablon/corider.html + dil/anasayfa.<kod>.json + dil/corider.<kod>.json'dan üretilir (python3 uret.py).
+  Stil m/corider.css, hareket m/corider.js. Görseller yalnız kendi varlıklarımız: uygulamadan gerçek ekran kaydı
+  (m/corider-*.mp4) ve uygulamanın AI CoRider yüzü (img/ai-corider.png'nin saydamlaştırılmış hâli, m/corider-yuz.webp).
+  Konuşma örnekleri tasarım örneğidir; uygulamadaki gerçek durum etiketleriyle (Köy yolları, rotaya eklendi...) eşleşir.
+-->
+<script>document.documentElement.className+=" cjs"</script>
+<link rel="preload" as="font" type="font/woff" href="/m/font/Manrope.woff" crossorigin>
+<link rel="stylesheet" href="/m/corider.css">
+<script defer src="/m/corider.js"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "name": "AI CoRider — parťák v tvé helmě | Motoseyir",
+      "url": "https://motoseyir-app.com/cs/corider.html",
+      "inLanguage": "cs",
+      "description": "AI CoRider s tebou mluví přes helmu: přidává zastávky, hledá místa na trase, řekne počasí i dojezd paliva a změní trasu za tebe. Ruce zůstávají na řídítkách.",
+      "isPartOf": {"@type": "WebSite", "name": "Motoseyir", "url": "https://motoseyir-app.com/"}
+    },
+    {
+      "@type": "FAQPage",
+      "inLanguage": "cs",
+      "mainEntity": [
+        {"@type": "Question", "name": "Poslouchá mě AI CoRider pořád?", "acceptedAnswer": {"@type": "Answer", "text": "Ne. Žádné probouzecí slovo neexistuje. Mikrofon se otevře, jen když na mapě klepneš na tlačítko AI CoRider. Relace se zavře, když ji ukončíš, po delším tichu nebo s koncem navigace."}},
+        {"@type": "Question", "name": "Funguje to bez internetu?", "acceptedAnswer": {"@type": "Answer", "text": "Ne. To, co řekneš, jde pro odpověď do cloudové hlasové služby, takže AI CoRider potřebuje internet. Bez připojení se relace nespustí."}},
+        {"@type": "Question", "name": "V jakém jazyce můžu mluvit?", "acceptedAnswer": {"@type": "Answer", "text": "Odpovídá v jazyce, ve kterém mluvíš. Žádné příkazy se učit nemusíš, řekni to po svém."}},
+        {"@type": "Question", "name": "Co se stane, když dojde hovorový čas?", "acceptedAnswer": {"@type": "Answer", "text": "Pro obnovuje každých 30 dní 10 minut, v bezplatné zkušební době je jich 5. Když to nestačí, přidej si balíček 30, 60 nebo 180 minut, který nikdy nevyprší."}},
+        {"@type": "Question", "name": "Jaký je rozdíl mezi Plánovačem a Chatem?", "acceptedAnswer": {"@type": "Answer", "text": "Plánovač zná tvou trasu a vyřídí, co je třeba: přidává zastávky, hledá místa a mění trasu; je součástí Pro. V Chatu téma volíš ty a on si pamatuje dřívější rozhovory; otevírá se balíčkem minut."}},
+        {"@type": "Question", "name": "Slyší ho ve skupině všichni a z čího účtu se minuty strhávají?", "acceptedAnswer": {"@type": "Answer", "text": "Když zavoláš AI CoRider do interkomu skupiny, uslyší ho všichni v místnosti. Minuty se strhávají z účtu toho, kdo ho zavolal."}},
+        {"@type": "Question", "name": "Ptám se, jestli vystačím s benzínem, ale dojezd neřekne. Proč?", "acceptedAnswer": {"@type": "Answer", "text": "Pro dojezd zadej jednou v Nastavení, kolik ujedeš na plnou nádrž. Dokud to neuděláš, AI CoRider nehádá, ale řekne ti to."}},
+        {"@type": "Question", "name": "Potřebuju Bluetooth, abych ho slyšel v helmě?", "acceptedAnswer": {"@type": "Answer", "text": "Pokud je helma s telefonem spojená přes Bluetooth, hlas jde přes ni, jinak z telefonu. Ve větru neslyšíš? Řekni prostě „hlasitěji“."}}
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body id="top">
+<a class="skip" href="#icerik">Přejít na obsah</a>
+
+<header class="ust">
+  <div class="ust-ic">
+    <a class="logo" href="/cs/" aria-label="Motoseyir"><img src="/img/favicon.png" alt="" width="28" height="28">MOTO<em>SEYİR</em></a>
+    <nav aria-label="Hlavní navigace"><ul class="menu">
+      <li><a href="/cs/">Domů</a></li><li><a href="#nasil">Jak to funguje</a></li><li><a href="#konusma">Rozhovory</a></li><li><a href="#yetenek">Co umí</a></li><li><a href="#dakika">Minuty</a></li><li><a href="#sss">FAQ</a></li>
+    </ul></nav>
+    <div class="ust-sag">
+      <details class="dil-sec">
+  <summary aria-label="Vybrat jazyk"><span class="dil-kod">CS</span><span class="dil-ad">Čeština</span></summary>
+  <ul>
+    <li><a href="/corider.html" lang="tr" hreflang="tr">Türkçe</a></li>
+    <li><a href="/en/corider.html" lang="en" hreflang="en">English</a></li>
+    <li><a href="/de/corider.html" lang="de" hreflang="de">Deutsch</a></li>
+    <li><a href="/fr/corider.html" lang="fr" hreflang="fr">Français</a></li>
+    <li><a href="/it/corider.html" lang="it" hreflang="it">Italiano</a></li>
+    <li><a href="/es/corider.html" lang="es" hreflang="es">Español</a></li>
+    <li><a href="/nl/corider.html" lang="nl" hreflang="nl">Nederlands</a></li>
+    <li><a href="/pl/corider.html" lang="pl" hreflang="pl">Polski</a></li>
+    <li><span aria-current="true">Čeština</span></li>
+    <li><a href="/sk/corider.html" lang="sk" hreflang="sk">Slovenčina</a></li>
+    <li><a href="/hu/corider.html" lang="hu" hreflang="hu">Magyar</a></li>
+    <li><a href="/ro/corider.html" lang="ro" hreflang="ro">Română</a></li>
+    <li><a href="/hr/corider.html" lang="hr" hreflang="hr">Hrvatski</a></li>
+    <li><a href="/el/corider.html" lang="el" hreflang="el">Ελληνικά</a></li>
+  </ul>
+</details>
+      <a class="btn btn-kucuk" href="https://apps.apple.com/cz/app/id6792549131?pt=128439797&amp;ct=site-cs&amp;mt=8">Stáhnout</a>
+    </div>
+  </div>
+</header>
+
+<main id="icerik">
+<section class="kh" aria-labelledby="h1">
+  <div class="kh-ic">
+    <div class="kh-metin">
+      <p class="ust-yazi">Motoseyir Pro · AI CoRider</p>
+      <h1 id="h1">Oči na silnici. <i>On&nbsp;poslouchá.</i></h1>
+      <p class="giris">AI CoRider je parťák, který s tebou mluví přes sluchátko v helmě. Zná tvou trasu: přidává zastávky, hledá místa cestou a mění trasu za tebe. Stiskneš tlačítko, zeptáš se po svém a odpověď uslyšíš v helmě. Ruce zůstávají na řídítkách.</p>
+      <div class="cta-satir">
+        <a class="btn" href="https://apps.apple.com/cz/app/id6792549131?pt=128439797&amp;ct=site-cs&amp;mt=8"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.6c0-2.4 2-3.5 2-3.6-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.15-2.8.85-3.5.85s-1.8-.8-3-.8c-1.5 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.700 2.400 2.900 2.300 1.200 0 1.600-.7 3-.7s1.800.7 3 .7 2-1.100 2.800-2.300c.9-1.300 1.200-2.500 1.300-2.600-.1 0-2.500-1-2.500-3.600zM14.200 5.500c.6-.8 1.100-1.800.9-2.900-.9 0-2 .6-2.700 1.400-.6.700-1.100 1.800-1 2.800 1 .1 2.100-.5 2.800-1.300z"/></svg>Stáhnout v App Store</a>
+        <a class="btn btn-hayalet" href="#nasil">Jak to funguje</a>
+        <p class="mikro">Funkce Pro. Můžeš si také koupit balíčky minut, které nevyprší.</p>
+      </div>
+    </div>
+    <div class="orb" aria-hidden="true">
+      <canvas id="orb-c" width="660" height="660"></canvas>
+      <img class="orb-yuz" src="/m/corider-yuz.webp" alt="" width="320" height="320">
+      <span class="orb-durum">Poslouchá</span>
+    </div>
+  </div>
+</section>
+
+<div class="serit"><dl aria-label="AI CoRider v číslech">
+  <div><dt>~30</dt><dd>akcí hlasem</dd></div>
+  <div><dt>4</dt><dd>hlasy: Quartz, Tempo, Stone, Willow</dd></div>
+  <div><dt>Bluetooth</dt><dd>funguje přes interkom v helmě</dd></div>
+  <div><dt>30·60·180</dt><dd>minutové doplňkové balíčky, které nevyprší</dd></div>
+</dl></div>
+
+<section class="bl" id="nasil" aria-labelledby="nasil-h">
+  <div class="kap">
+    <div class="bl-ust">
+      <p class="km">Použití</p>
+      <h2 id="nasil-h">Stiskni, mluv, <i>poslouchej v helmě.</i></h2>
+    </div>
+    <ol class="adimlar">
+      <li><span class="n" aria-hidden="true">1</span><h3>Stiskni tlačítko</h3><p>Klepni na mapě na tlačítko AI CoRider a mluv.</p></li>
+      <li><span class="n" aria-hidden="true">2</span><h3>Mluv normálně</h3><p>Žádné příkazy si pamatovat nemusíš. Odpovídá v jazyce, ve kterém mluvíš.</p></li>
+      <li><span class="n" aria-hidden="true">3</span><h3>Poslouchej v helmě</h3><p>Pokud je helma s telefonem spojená přes Bluetooth, hlas jde právě přes ni. Ve větru neslyšíš? Řekni prostě „hlasitěji“.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="bl z1" id="konusma" aria-labelledby="konusma-h">
+  <div class="kap">
+    <div class="bl-ust">
+      <p class="km">Ukázkové rozhovory</p>
+      <h2 id="konusma-h">Takhle <i>se s ním mluví.</i></h2>
+      <p class="lead">Jsou to jen příklady. Žádné příkazy se učit nemusíš, řekni to po svém.</p>
+    </div>
+    <div class="konusmalar">
+      <article class="soh">
+        <p class="soh-t">Trasa a počasí</p>
+        <div class="satir sen"><span class="kim">Ty</span><p>Kolik zbývá? Bude cestou pršet?</p></div>
+        <div class="satir ai"><span class="kim">AI CoRider</span><p>Do cíle zbývají 2 hodiny a 49 minut. Na trase srážky nevidím.</p></div>
+        <div class="satir sen"><span class="kim">Ty</span><p>Kdy tam budu?</p></div>
+        <div class="satir ai"><span class="kim">AI CoRider</span><p>Přibližně v 17:28.</p></div>
+        <span class="chip oku"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/></svg>Zbývající čas, déšť, čas příjezdu</span>
+      </article>
+      <article class="soh">
+        <p class="soh-t">Zastávka cestou</p>
+        <div class="satir sen"><span class="kim">Ty</span><p>Je cestou nějaká dobrá kavárna?</p></div>
+        <div class="satir ai"><span class="kim">AI CoRider</span><p>Za 28 km je jedna, vpravo, s dobrým hodnocením. Mám ji přidat jako zastávku?</p></div>
+        <div class="satir sen"><span class="kim">Ty</span><p>Ano, přidej.</p></div>
+        <div class="satir ai"><span class="kim">AI CoRider</span><p>Hotovo, přepočítávám trasu.</p></div>
+        <span class="chip" lang="en"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Café added to route</span>
+      </article>
+      <article class="soh">
+        <p class="soh-t">Režim trasy</p>
+        <div class="satir sen"><span class="kim">Ty</span><p>Pojedeme po vedlejších silnicích.</p></div>
+        <div class="satir ai"><span class="kim">AI CoRider</span><p>Přepínám na vedlejší silnice a počítám trasu.</p></div>
+        <span class="chip" lang="en"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Back roads</span>
+      </article>
+      <article class="soh">
+        <p class="soh-t">Palivo</p>
+        <div class="satir sen"><span class="kim">Ty</span><p>Vystačím s benzínem do cíle?</p></div>
+        <div class="satir ai"><span class="kim">AI CoRider</span><p>Ano: dojezd máš asi 210 km a do cíle je to 140 km.</p></div>
+        <span class="chip oku"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/></svg>Dojezd paliva</span>
+      </article>
+      <article class="soh">
+        <p class="soh-t">Skupina</p>
+        <div class="satir sen"><span class="kim">Ty</span><p>Řekni skupině, že děláme pauzu.</p></div>
+        <div class="satir ai"><span class="kim">AI CoRider</span><p>Hotovo. Skupina ví, že děláme pauzu.</p></div>
+        <span class="chip" lang="en"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Sent to the group: Break</span>
+      </article>
+      <article class="soh">
+        <p class="soh-t">Připomínka</p>
+        <div class="satir sen"><span class="kim">Ty</span><p>Připomeň mi zítra namazat řetěz.</p></div>
+        <div class="satir ai"><span class="kim">AI CoRider</span><p>Dobře. Zítra ti to řeknu hned, jak mě zapneš.</p></div>
+        <span class="chip oku"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/></svg>Zítra to řekne jako první</span>
+      </article>
+    </div>
+    <p class="soh-not">Ukázky jsou psané pro ilustraci. Štítky s plným okrajem jsou stavové štítky, které aplikace ukazuje na obrazovce, citované tak, jak se tam objevují (anglicky); štítky s čárkovaným okrajem se na obrazovce neobjeví, jen popisují, co se děje.</p>
+  </div>
+</section>
+
+<section class="bl" id="kayit" aria-labelledby="kayit-h">
+  <div class="kap video-ik">
+    <div class="tel-kap">
+      <div class="tel"><video id="cr-video" data-src="/m/corider-en.mp4" data-kucuk="/m/corider-kucuk-en.mp4" poster="/m/corider-en.webp" muted loop playsinline preload="none" width="540" height="1106" aria-label="AI CoRider hlasem: jezdec se ptá na zbývající čas a déšť, najde místo na zastávku a přidá ho do trasy"></video></div>
+      <button class="ses-btn" id="cr-ses" type="button" aria-pressed="false" data-ac="Zapnout zvuk" data-kapat="Vypnout zvuk"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path class="h" d="M4 9.5v5h3.6L12 18.5v-13L7.6 9.5H4z" fill="currentColor"/><path class="d" d="M15.5 9a4.2 4.2 0 0 1 0 6M17.8 6.6a7.5 7.5 0 0 1 0 10.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Zapnout zvuk</span></button>
+    </div>
+    <div>
+      <p class="km">Skutečný záznam</p>
+      <h2 id="kayit-h">Ze skutečné jízdy</h2>
+      <p class="lead">Skutečný záznam z aplikace: jezdec se ptá, kolik zbývá a jestli bude pršet, hledá místo na zastávku a to, které vybere, se přidá do trasy.</p>
+      <p class="not">Skutečný záznam obrazovky z aplikace. Mluví se anglicky.</p>
+    </div>
+  </div>
+</section>
+
+<section class="bl z1" id="yetenek" aria-labelledby="yetenek-h">
+  <div class="kap">
+    <div class="bl-ust">
+      <p class="km">Co umí</p>
+      <h2 id="yetenek-h">Kolem 30 akcí <i>hlasem.</i></h2>
+      <p class="lead">Shrnuté do pěti skupin. Nemusíš se je učit zpaměti: řekni po svém, co chceš.</p>
+    </div>
+    <div class="yetenek">
+      <section class="grup" aria-labelledby="g1-h"><span class="no" aria-hidden="true">01</span><h3 id="g1-h">Trasa</h3><p>Opraví trasu za tebe.</p><ul><li>Přidá zastávku, odebere ji nebo přeskočí další</li><li>Změní cíl a seřadí zastávky</li><li>Přepíná mezi vedlejšími silnicemi a nejkratší trasou</li><li>Ukáže trasu na mapě a odvede tě domů</li></ul></section>
+      <section class="grup" aria-labelledby="g2-h"><span class="no" aria-hidden="true">02</span><h3 id="g2-h">Na cestě</h3><p>Hledá na trase i kolem tebe.</p><ul><li>Najde pumpu, jídlo nebo kávu před tebou a nejdřív jmenuje nejlépe hodnocené místo</li><li>Hledá, kde dnes přespat</li><li>Řekne ti zbývající čas, další odbočku a kde právě jsi</li><li>Řekne, jestli před tebou jsou ostré zatáčky nebo stoupání</li></ul></section>
+      <section class="grup" aria-labelledby="g3-h"><span class="no" aria-hidden="true">03</span><h3 id="g3-h">Počasí a dojezd</h3><p>Na co se ptáš před jízdou i za jízdy.</p><ul><li>Jaké bude počasí a jestli na trase prší</li><li>Podívá se na srážkový radar a otevře ho na mapě</li><li>Kam dojedeš na nádrž a jestli je cestou pumpa</li><li class="r">Srážkový radar funguje jen v USA a v Německu. Pro dojezd zadej jednou v Nastavení, kolik ujedeš na plnou nádrž.</li></ul></section>
+      <section class="grup" aria-labelledby="g4-h"><span class="no" aria-hidden="true">04</span><h3 id="g4-h">Skupina</h3><p>Když běží jízda ve skupině.</p><ul><li>Řekne, kde je kdo a kdo zůstal pozadu</li><li>Pošle skupině hotové upozornění: zůstávám pozadu, pauza, nebezpečí, benzín</li><li>Pokud trasu se skupinou sdílíš, zeptá se, koho se změna týká</li></ul></section>
+      <section class="grup" aria-labelledby="g5-h"><span class="no" aria-hidden="true">05</span><h3 id="g5-h">Jízda</h3><p>Když ruce zůstávají na řídítkách.</p><ul><li>Spustí a ukončí navigaci</li><li>Zapne a zastaví záznam jízdy</li><li>Najde někoho v kontaktech; k zavolání stačí jedno klepnutí na displej</li><li>Uloží poznámku, když o to požádáš, a smaže ji, když řekneš „zapomeň“</li><li>Zesílí nebo ztlumí vlastní hlas: „hlasitěji“</li></ul></section>
+    </div>
+    <div class="cagri-kutu">
+      <h3>V místnosti skupiny</h3>
+      <p>Zavolej AI CoRider do interkomu skupiny a uslyší ho všichni v místnosti. Minuty se strhávají z účtu toho, kdo ho zavolal.</p>
+    </div>
+  </div>
+</section>
+
+<section class="bl" id="kipler" aria-labelledby="kip-h">
+  <div class="kap">
+    <div class="bl-ust">
+      <p class="km">Dva režimy</p>
+      <h2 id="kip-h">Jeden vyřizuje, <i>druhý si povídá.</i></h2>
+      <p class="lead">Stačí během hovoru říct „zapni režim chatu“.</p>
+    </div>
+    <div class="kipler">
+      <article class="kip"><h3>Plánovač</h3><p>Zná tvou trasu a vyřídí, co je třeba.</p><ul><li>Je cestou nějaká pumpa?</li><li>Kde jsou ostatní?</li><li>Pojedeme po vedlejších silnicích.</li><li>Jaké bude počasí?</li><li>Odvez mě domů.</li></ul><span class="rozet">Součást Pro</span></article>
+      <article class="kip"><h3>Chat</h3><p>Téma volíš ty, pamatuje si dřívější rozhovory.</p><ul><li>Procvičme angličtinu.</li><li>Naplánujme si spolu den.</li><li>Vyprávěj mi příběh.</li><li>Kde jsme včera skončili?</li></ul><span class="rozet">Otevírá se balíčkem minut</span></article>
+    </div>
+    <div class="sesler">
+      <div><h3>Čtyři hlasy</h3><p>Každý si poslechneš v Nastavení a vybereš: Quartz, Tempo, Stone nebo Willow.</p></div>
+      <ul class="ses-liste" aria-label="Čtyři hlasy">
+        <li><i aria-hidden="true"><b></b><b></b><b></b><b></b><b></b></i>Quartz</li><li><i aria-hidden="true"><b></b><b></b><b></b><b></b><b></b></i>Tempo</li><li><i aria-hidden="true"><b></b><b></b><b></b><b></b><b></b></i>Stone</li><li><i aria-hidden="true"><b></b><b></b><b></b><b></b><b></b></i>Willow</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="bl z1" id="dakika" aria-labelledby="dakika-h">
+  <div class="kap">
+    <div class="bl-ust">
+      <p class="km">Minuty a balíčky</p>
+      <h2 id="dakika-h">Hovorový čas, <i>jednoduše.</i></h2>
+      <p class="lead">Minuty strávené s AI CoRider se odečítají z času, který Pro obnovuje, a z balíčků, které nevyprší.</p>
+    </div>
+    <div class="sureler">
+      <div class="sure"><b>10 min</b><h3>V Pro, každých 30 dní</h3><p>Tvůj hovorový čas se každých 30 dní vrací na 10 minut.</p></div>
+      <div class="sure"><b>5 min</b><h3>V bezplatné zkušební době</h3><p>Během zkušební doby můžeš mluvit 5 minut.</p></div>
+      <div class="sure"><b>30 · 60 · 180</b><h3>Balíčky minut</h3><p>30, 60 nebo 180 minut. Nevyprší a s koncem měsíce nepropadnou; otevírá se jimi i režim chatu.</p></div>
+    </div>
+    <p class="fiyat-not">Čísla platí pro nové předplatitele. Aktuální ceny se liší podle regionu; uvidíš je na obrazovce předplatného v App Store. Zrušit můžeš kdykoli ve svém účtu App Store.</p>
+  </div>
+</section>
+
+<section class="bl" id="gizlilik" aria-labelledby="gizlilik-h">
+  <div class="kap">
+    <div class="bl-ust">
+      <p class="km">Soukromí</p>
+      <h2 id="gizlilik-h">Tvůj hlas <i>zůstává tvůj.</i></h2>
+    </div>
+    <ul class="gizlilik">
+      <li><h3>Funguje, jen když ho spustíš</h3><p>Mikrofon se otevře, až když na mapě klepneš na tlačítko AI CoRider.</p></li>
+      <li><h3>Hlas se neukládá</h3><p>Tvůj hlas u nás nenahráváme ani neukládáme. Aby vznikla odpověď, odchází do cloudové hlasové služby třetí strany.</p></li>
+      <li><h3>Žádná přesná poloha</h3><p>Z trasy odchází jen text, třeba zbývající vzdálenost a další manévr.</p></li>
+      <li><h3>Poznámky v telefonu</h3><p>Poznámky, které chceš uložit, zůstávají v telefonu; řekneš-li „zapomeň“, smažou se.</p></li>
+    </ul>
+    <p class="gz-tam"><strong>Soukromí.</strong> AI CoRider se spustí, jen když ho zapneš. Tvůj hlas u nás nikdo nenahrává ani neukládá; co řekneš, jde do cloudové hlasové služby třetí strany, aby mohla odpovědět. Přesná poloha do té služby nejde; z trasy dostane jen text, třeba zbývající vzdálenost a další manévr. Relace se zavře, když ji ukončíš, po delším tichu nebo s koncem navigace. <a href="/gizlilik/">Podrobnosti jsou v zásadách ochrany soukromí.</a></p>
+  </div>
+</section>
+
+<section class="bl z1" id="sss" aria-labelledby="sss-h">
+  <div class="kap">
+    <div class="bl-ust">
+      <p class="km">Časté dotazy</p>
+      <h2 id="sss-h">Na co se můžeš ptát</h2>
+    </div>
+    <div class="sss-liste">
+      <details class="sss" name="sss"><summary>Poslouchá mě AI CoRider pořád?</summary><div class="cevap"><p>Ne. Žádné probouzecí slovo neexistuje. Mikrofon se otevře, jen když na mapě klepneš na tlačítko AI CoRider. Relace se zavře, když ji ukončíš, po delším tichu nebo s koncem navigace.</p></div></details>
+      <details class="sss" name="sss"><summary>Funguje to bez internetu?</summary><div class="cevap"><p>Ne. To, co řekneš, jde pro odpověď do cloudové hlasové služby, takže AI CoRider potřebuje internet. Bez připojení se relace nespustí.</p></div></details>
+      <details class="sss" name="sss"><summary>V jakém jazyce můžu mluvit?</summary><div class="cevap"><p>Odpovídá v jazyce, ve kterém mluvíš. Žádné příkazy se učit nemusíš, řekni to po svém.</p></div></details>
+      <details class="sss" name="sss"><summary>Co se stane, když dojde hovorový čas?</summary><div class="cevap"><p>Pro obnovuje každých 30 dní 10 minut, v bezplatné zkušební době je jich 5. Když to nestačí, přidej si balíček 30, 60 nebo 180 minut, který nikdy nevyprší.</p></div></details>
+      <details class="sss" name="sss"><summary>Jaký je rozdíl mezi Plánovačem a Chatem?</summary><div class="cevap"><p>Plánovač zná tvou trasu a vyřídí, co je třeba: přidává zastávky, hledá místa a mění trasu; je součástí Pro. V Chatu téma volíš ty a on si pamatuje dřívější rozhovory; otevírá se balíčkem minut.</p></div></details>
+      <details class="sss" name="sss"><summary>Slyší ho ve skupině všichni a z čího účtu se minuty strhávají?</summary><div class="cevap"><p>Když zavoláš AI CoRider do interkomu skupiny, uslyší ho všichni v místnosti. Minuty se strhávají z účtu toho, kdo ho zavolal.</p></div></details>
+      <details class="sss" name="sss"><summary>Ptám se, jestli vystačím s benzínem, ale dojezd neřekne. Proč?</summary><div class="cevap"><p>Pro dojezd zadej jednou v Nastavení, kolik ujedeš na plnou nádrž. Dokud to neuděláš, AI CoRider nehádá, ale řekne ti to.</p></div></details>
+      <details class="sss" name="sss"><summary>Potřebuju Bluetooth, abych ho slyšel v helmě?</summary><div class="cevap"><p>Pokud je helma s telefonem spojená přes Bluetooth, hlas jde přes ni, jinak z telefonu. Ve větru neslyšíš? Řekni prostě „hlasitěji“.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<section class="varis" aria-labelledby="varis-h">
+  <div class="kap">
+    <h2 id="varis-h">Stiskni tlačítko, <i>jeď dál.</i></h2>
+    <div class="cta-satir">
+      <a class="btn" href="https://apps.apple.com/cz/app/id6792549131?pt=128439797&amp;ct=site-cs&amp;mt=8">Stáhnout v App Store</a>
+      <a class="btn btn-hayalet" href="/cs/ozellikler.html">Všechny funkce</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="alt-ic">
+    <div>
+      <p><a class="logo" href="/cs/" aria-label="Motoseyir"><img src="/img/favicon.png" alt="" width="28" height="28">MOTO<em>SEYİR</em></a></p>
+      <p style="margin-top:10px">© 2026 Motoseyir. Všechna práva vyhrazena.</p>
+    </div>
+    <ul>
+      <li><a href="/cs/">Domů</a></li><li><a href="/cs/ozellikler.html">Všechny funkce</a></li><li><a href="/cs/nasil-yapilir.html">Jak to funguje</a></li><li><a href="/gizlilik/">Soukromí</a></li><li><a href="/cs/#iletisim">Kontakt</a></li><li><a href="https://www.instagram.com/motoseyir.app.en/">Instagram</a></li><li><a href="https://apps.apple.com/cz/app/id6792549131?pt=128439797&amp;ct=site-cs&amp;mt=8">App Store</a></li>
+    </ul>
+    <div class="dil-altbilgi"><span>Jazyky</span>
+      <ul class="dil-liste">
+  <li><a href="/corider.html" lang="tr" hreflang="tr">Türkçe</a></li>
+  <li><a href="/en/corider.html" lang="en" hreflang="en">English</a></li>
+  <li><a href="/de/corider.html" lang="de" hreflang="de">Deutsch</a></li>
+  <li><a href="/fr/corider.html" lang="fr" hreflang="fr">Français</a></li>
+  <li><a href="/it/corider.html" lang="it" hreflang="it">Italiano</a></li>
+  <li><a href="/es/corider.html" lang="es" hreflang="es">Español</a></li>
+  <li><a href="/nl/corider.html" lang="nl" hreflang="nl">Nederlands</a></li>
+  <li><a href="/pl/corider.html" lang="pl" hreflang="pl">Polski</a></li>
+  <li><strong lang="cs">Čeština</strong></li>
+  <li><a href="/sk/corider.html" lang="sk" hreflang="sk">Slovenčina</a></li>
+  <li><a href="/hu/corider.html" lang="hu" hreflang="hu">Magyar</a></li>
+  <li><a href="/ro/corider.html" lang="ro" hreflang="ro">Română</a></li>
+  <li><a href="/hr/corider.html" lang="hr" hreflang="hr">Hrvatski</a></li>
+  <li><a href="/el/corider.html" lang="el" hreflang="el">Ελληνικά</a></li>
+</ul>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

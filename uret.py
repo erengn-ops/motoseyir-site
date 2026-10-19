@@ -5,7 +5,7 @@
 
     python3 uret.py
 
-Ne yapar: `sablon/` altındaki üç HTML şablonunu `dil/<kod>.json` metinleriyle
+Ne yapar: `sablon/` altındaki HTML şablonlarını `dil/<kod>.json` metinleriyle
 doldurup 14 dilde sayfa yazar. Türkçe KÖKE (index.html, ozellikler.html,
 nasil-yapilir.html) — eski adresler bozulmasın diye. Diğer diller
 `/<kod>/index.html` gibi alt yollara. Ayrıca sitemap.xml ve robots.txt
@@ -13,7 +13,7 @@ yeniden yazılır.
 
 Yalnız Python 3 standart kütüphanesi kullanılıyor; kurulum gerektirmez.
 
-ELLE DÜZENLENMEZ: kökteki ve dil klasörlerindeki üç sayfa bu betiğin
+ELLE DÜZENLENMEZ: kökteki ve dil klasörlerindeki sayfalar bu betiğin
 çıktısıdır. Metin değişikliği `dil/<kod>.json`, yapı değişikliği `sablon/`
 içine yazılır, sonra betik yeniden koşturulur.
 
@@ -42,6 +42,9 @@ SAYFALAR = {
     "index.html": ("index.html", "weekly", "1.0"),
     "ozellikler.html": ("ozellikler.html", "monthly", "0.8"),
     "nasil-yapilir.html": ("nasil-yapilir.html", "monthly", "0.6"),
+    # AI CoRider sayfası (19 Eki 2026): koyu, kendi tasarımı — `sablon/corider.html` + `dil/corider.<kod>.json`
+    # (anasayfa metinleri de okunur: k4_*, a4_*, c_*); stil `m/corider.css`, hareket `m/corider.js`.
+    "corider.html": ("corider.html", "monthly", "0.8"),
 }
 
 # DİLLER — sıra hem dil seçicide hem sitemap'te bu sırayla görünür.
@@ -322,6 +325,8 @@ def main() -> None:
                 "dil_altbilgi": dil_altbilgi(kod, dosya),
                 "store": magaza_baglantisi(kod),
                 "gizlilik_url": gizlilik_url(kod),
+                "anasayfa_url": sayfa_yolu(kod, "index.html"),
+                "corider_url": sayfa_yolu(kod, "corider.html"),
                 "uygulama_id": UYGULAMA_ID,
                 "yil": YIL,
             }
@@ -329,12 +334,16 @@ def main() -> None:
             if dosya == "index.html" and kod in HAREKETLI_ANASAYFA:
                 sablon_metni = hareketli
                 metin_d = {**metin, **json.loads((DIL / f"anasayfa.{kod}.json").read_text(encoding="utf-8"))}
+            elif dosya == "corider.html":
+                metin_d = {**metin,
+                           **json.loads((DIL / f"anasayfa.{kod}.json").read_text(encoding="utf-8")),
+                           **json.loads((DIL / f"corider.{kod}.json").read_text(encoding="utf-8"))}
             else:
                 metin_d = metin
             degerler = {**metin_d, **ortak}
             html = doldur(sablon_metni, degerler, f"{kod}/{dosya}")
             html = gorselleri_yerelle(html, kod)
-            if sablon_metni is hareketli:
+            if sablon_metni is hareketli or dosya == "corider.html":
                 html = M_DILLI.sub(lambda m: m.group(0) if m.group(2) != kod or (KOK / m.group(0).lstrip("/")).exists()
                                    else f"{m.group(1)}en{m.group(3)}", html)
             (dizin / dosya).write_text(html, encoding="utf-8")

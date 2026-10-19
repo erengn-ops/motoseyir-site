@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI CoRider — le coéquipier dans ton casque | Motoseyir</title>
+<meta name="description" content="AI CoRider te parle dans ton casque : il ajoute des étapes, cherche des lieux sur ton trajet, donne la météo et l’autonomie, et change l’itinéraire à ta place.">
+<link rel="canonical" href="https://motoseyir-app.com/fr/corider.html">
+<link rel="alternate" hreflang="tr" href="https://motoseyir-app.com/corider.html">
+<link rel="alternate" hreflang="en" href="https://motoseyir-app.com/en/corider.html">
+<link rel="alternate" hreflang="de" href="https://motoseyir-app.com/de/corider.html">
+<link rel="alternate" hreflang="fr" href="https://motoseyir-app.com/fr/corider.html">
+<link rel="alternate" hreflang="it" href="https://motoseyir-app.com/it/corider.html">
+<link rel="alternate" hreflang="es" href="https://motoseyir-app.com/es/corider.html">
+<link rel="alternate" hreflang="nl" href="https://motoseyir-app.com/nl/corider.html">
+<link rel="alternate" hreflang="pl" href="https://motoseyir-app.com/pl/corider.html">
+<link rel="alternate" hreflang="cs" href="https://motoseyir-app.com/cs/corider.html">
+<link rel="alternate" hreflang="sk" href="https://motoseyir-app.com/sk/corider.html">
+<link rel="alternate" hreflang="hu" href="https://motoseyir-app.com/hu/corider.html">
+<link rel="alternate" hreflang="ro" href="https://motoseyir-app.com/ro/corider.html">
+<link rel="alternate" hreflang="hr" href="https://motoseyir-app.com/hr/corider.html">
+<link rel="alternate" hreflang="el" href="https://motoseyir-app.com/el/corider.html">
+<link rel="alternate" hreflang="x-default" href="https://motoseyir-app.com/en/corider.html">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Motoseyir">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="AI CoRider : les yeux sur la route, lui écoute">
+<meta property="og:description" content="AI CoRider te parle dans ton casque : il ajoute des étapes, cherche des lieux sur ton trajet, donne la météo et l’autonomie, et change l’itinéraire à ta place.">
+<meta property="og:url" content="https://motoseyir-app.com/fr/corider.html">
+<meta property="og:image" content="https://motoseyir-app.com/img/og-kapak.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="apple-itunes-app" content="app-id=6792549131">
+<meta name="theme-color" content="#050B13">
+<link rel="icon" href="/img/favicon.png">
+
+<!--
+  AI CoRider sayfası: sablon/corider.html + dil/anasayfa.<kod>.json + dil/corider.<kod>.json'dan üretilir (python3 uret.py).
+  Stil m/corider.css, hareket m/corider.js. Görseller yalnız kendi varlıklarımız: uygulamadan gerçek ekran kaydı
+  (m/corider-*.mp4) ve uygulamanın AI CoRider yüzü (img/ai-corider.png'nin saydamlaştırılmış hâli, m/corider-yuz.webp).
+  Konuşma örnekleri tasarım örneğidir; uygulamadaki gerçek durum etiketleriyle (Köy yolları, rotaya eklendi...) eşleşir.
+-->
+<script>document.documentElement.className+=" cjs"</script>
+<link rel="preload" as="font" type="font/woff" href="/m/font/Manrope.woff" crossorigin>
+<link rel="stylesheet" href="/m/corider.css">
+<script defer src="/m/corider.js"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "name": "AI CoRider — le coéquipier dans ton casque | Motoseyir",
+      "url": "https://motoseyir-app.com/fr/corider.html",
+      "inLanguage": "fr",
+      "description": "AI CoRider te parle dans ton casque : il ajoute des étapes, cherche des lieux sur ton trajet, donne la météo et l’autonomie, et change l’itinéraire à ta place.",
+      "isPartOf": {"@type": "WebSite", "name": "Motoseyir", "url": "https://motoseyir-app.com/"}
+    },
+    {
+      "@type": "FAQPage",
+      "inLanguage": "fr",
+      "mainEntity": [
+        {"@type": "Question", "name": "AI CoRider m’écoute-t-il en permanence ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. Il n’y a pas de mot d’activation. Le micro ne s’ouvre que lorsque tu touches le bouton AI CoRider sur la carte. La session se ferme quand tu la termines, après un moment de silence ou quand la navigation s’arrête."}},
+        {"@type": "Question", "name": "Ça marche sans internet ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. Ce que tu dis part vers un service vocal cloud pour produire la réponse : AI CoRider a donc besoin d’une connexion internet. Sans elle, aucune session ne peut démarrer."}},
+        {"@type": "Question", "name": "Dans quelle langue puis-je parler ?", "acceptedAnswer": {"@type": "Answer", "text": "Il répond dans la langue que tu parles. Aucune commande à retenir, dis-le avec tes mots."}},
+        {"@type": "Question", "name": "Que se passe-t-il quand mon temps de parole est épuisé ?", "acceptedAnswer": {"@type": "Answer", "text": "Pro renouvelle 10 minutes tous les 30 jours, et l’essai gratuit en comprend 5. Si ça ne suffit pas, ajoute un forfait de 30, 60 ou 180 minutes qui n’expire jamais."}},
+        {"@type": "Question", "name": "Quelle différence entre Planificateur et Discussion ?", "acceptedAnswer": {"@type": "Answer", "text": "Le Planificateur connaît ton itinéraire et fait le boulot : il ajoute des étapes, cherche des lieux et change le trajet ; il est inclus dans Pro. En Discussion, tu choisis le sujet et il se souvient des échanges précédents ; ce mode s’ouvre avec un forfait de minutes."}},
+        {"@type": "Question", "name": "Dans un groupe, tout le monde l’entend-il, et sur quel compte les minutes sont-elles décomptées ?", "acceptedAnswer": {"@type": "Answer", "text": "Si tu appelles AI CoRider dans l’interphone du groupe, tout le monde dans le salon l’entend. Les minutes sont décomptées du compte de celui qui l’a appelé."}},
+        {"@type": "Question", "name": "Je demande si j’ai assez d’essence, mais il ne donne pas d’autonomie. Pourquoi ?", "acceptedAnswer": {"@type": "Answer", "text": "Pour l’autonomie, indique une fois dans les Réglages la distance parcourue avec un plein. Tant que ce n’est pas fait, AI CoRider ne devine pas : il te le dit."}},
+        {"@type": "Question", "name": "Faut-il le Bluetooth pour l’entendre dans le casque ?", "acceptedAnswer": {"@type": "Answer", "text": "Si le casque est relié au téléphone en Bluetooth, la voix passe par lui, sinon elle sort du téléphone. Tu entends mal dans le vent ? Dis simplement « plus fort »."}}
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body id="top">
+<a class="skip" href="#icerik">Aller au contenu</a>
+
+<header class="ust">
+  <div class="ust-ic">
+    <a class="logo" href="/fr/" aria-label="Motoseyir"><img src="/img/favicon.png" alt="" width="28" height="28">MOTO<em>SEYİR</em></a>
+    <nav aria-label="Navigation principale"><ul class="menu">
+      <li><a href="/fr/">Accueil</a></li><li><a href="#nasil">Comment ça marche</a></li><li><a href="#konusma">Conversations</a></li><li><a href="#yetenek">Ce qu’il fait</a></li><li><a href="#dakika">Minutes</a></li><li><a href="#sss">FAQ</a></li>
+    </ul></nav>
+    <div class="ust-sag">
+      <details class="dil-sec">
+  <summary aria-label="Choisir la langue"><span class="dil-kod">FR</span><span class="dil-ad">Français</span></summary>
+  <ul>
+    <li><a href="/corider.html" lang="tr" hreflang="tr">Türkçe</a></li>
+    <li><a href="/en/corider.html" lang="en" hreflang="en">English</a></li>
+    <li><a href="/de/corider.html" lang="de" hreflang="de">Deutsch</a></li>
+    <li><span aria-current="true">Français</span></li>
+    <li><a href="/it/corider.html" lang="it" hreflang="it">Italiano</a></li>
+    <li><a href="/es/corider.html" lang="es" hreflang="es">Español</a></li>
+    <li><a href="/nl/corider.html" lang="nl" hreflang="nl">Nederlands</a></li>
+    <li><a href="/pl/corider.html" lang="pl" hreflang="pl">Polski</a></li>
+    <li><a href="/cs/corider.html" lang="cs" hreflang="cs">Čeština</a></li>
+    <li><a href="/sk/corider.html" lang="sk" hreflang="sk">Slovenčina</a></li>
+    <li><a href="/hu/corider.html" lang="hu" hreflang="hu">Magyar</a></li>
+    <li><a href="/ro/corider.html" lang="ro" hreflang="ro">Română</a></li>
+    <li><a href="/hr/corider.html" lang="hr" hreflang="hr">Hrvatski</a></li>
+    <li><a href="/el/corider.html" lang="el" hreflang="el">Ελληνικά</a></li>
+  </ul>
+</details>
+      <a class="btn btn-kucuk" href="https://apps.apple.com/fr/app/id6792549131?pt=128439797&amp;ct=site-fr&amp;mt=8">Télécharger</a>
+    </div>
+  </div>
+</header>
+
+<main id="icerik">
+<section class="kh" aria-labelledby="h1">
+  <div class="kh-ic">
+    <div class="kh-metin">
+      <p class="ust-yazi">Motoseyir Pro · AI CoRider</p>
+      <h1 id="h1">Les yeux sur la route. <i>Lui,&nbsp;il&nbsp;écoute.</i></h1>
+      <p class="giris">AI CoRider est le coéquipier qui te parle dans le casque. Il connaît ton itinéraire : il ajoute des étapes, cherche des lieux en chemin et change le trajet à ta place. Tu appuies sur le bouton, tu poses ta question avec tes mots et tu entends la réponse dans ton casque. Les mains restent sur le guidon.</p>
+      <div class="cta-satir">
+        <a class="btn" href="https://apps.apple.com/fr/app/id6792549131?pt=128439797&amp;ct=site-fr&amp;mt=8"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.6c0-2.4 2-3.5 2-3.6-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.15-2.8.85-3.5.85s-1.8-.8-3-.8c-1.5 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.700 2.400 2.900 2.300 1.200 0 1.600-.7 3-.7s1.800.7 3 .7 2-1.100 2.800-2.300c.9-1.300 1.200-2.500 1.300-2.600-.1 0-2.500-1-2.500-3.600zM14.200 5.500c.6-.8 1.100-1.800.9-2.900-.9 0-2 .6-2.700 1.400-.6.700-1.100 1.800-1 2.800 1 .1 2.100-.5 2.800-1.300z"/></svg>Télécharger sur l’App Store</a>
+        <a class="btn btn-hayalet" href="#nasil">Comment ça marche</a>
+        <p class="mikro">Une fonction Pro. Tu peux aussi acheter des forfaits de minutes qui n’expirent jamais.</p>
+      </div>
+    </div>
+    <div class="orb" aria-hidden="true">
+      <canvas id="orb-c" width="660" height="660"></canvas>
+      <img class="orb-yuz" src="/m/corider-yuz.webp" alt="" width="320" height="320">
+      <span class="orb-durum">À l’écoute</span>
+    </div>
+  </div>
+</section>
+
+<div class="serit"><dl aria-label="AI CoRider en chiffres">
+  <div><dt>~30</dt><dd>actions à la voix</dd></div>
+  <div><dt>4</dt><dd>voix : Quartz, Tempo, Stone, Willow</dd></div>
+  <div><dt>Bluetooth</dt><dd>fonctionne via l’intercom de ton casque</dd></div>
+  <div><dt>30·60·180</dt><dd>minutes par pack complémentaire, sans date d’expiration</dd></div>
+</dl></div>
+
+<section class="bl" id="nasil" aria-labelledby="nasil-h">
+  <div class="kap">
+    <div class="bl-ust">
+      <p class="km">Utilisation</p>
+      <h2 id="nasil-h">Appuie, parle, <i>écoute dans ton casque.</i></h2>
+    </div>
+    <ol class="adimlar">
+      <li><span class="n" aria-hidden="true">1</span><h3>Appuie sur le bouton</h3><p>Touche le bouton AI CoRider sur la carte, puis parle.</p></li>
+      <li><span class="n" aria-hidden="true">2</span><h3>Parle normalement</h3><p>Aucune commande à retenir. Il répond dans la langue que tu parles.</p></li>
+      <li><span class="n" aria-hidden="true">3</span><h3>Écoute dans ton casque</h3><p>Si le casque est relié au téléphone en Bluetooth, la voix passe par lui. Tu entends mal dans le vent ? Dis simplement « plus fort ».</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="bl z1" id="konusma" aria-labelledby="konusma-h">
+  <div class="kap">
+    <div class="bl-ust">
+      <p class="km">Exemples de conversations</p>
+      <h2 id="konusma-h">Voilà <i>comment on lui parle.</i></h2>
+      <p class="lead">Ce sont des exemples. Pas de commandes à apprendre, dis-le avec tes mots.</p>
+    </div>
+    <div class="konusmalar">
+      <article class="soh">
+        <p class="soh-t">Itinéraire et météo</p>
+        <div class="satir sen"><span class="kim">Toi</span><p>Il reste combien de route ? Il va pleuvoir en chemin ?</p></div>
+        <div class="satir ai"><span class="kim">AI CoRider</span><p>Il reste 2 h 49 jusqu’à l’arrivée. Aucune pluie n’est annoncée sur le trajet.</p></div>
+        <div class="satir sen"><span class="kim">Toi</span><p>J’arrive à quelle heure ?</p></div>
+        <div class="satir ai"><span class="kim">AI CoRider</span><p>Vers 17 h 28.</p></div>
+        <span class="chip oku"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/></svg>Temps restant, pluie, heure d’arrivée</span>
+      </article>
+      <article class="soh">
+        <p class="soh-t">Une pause en chemin</p>
+        <div class="satir sen"><span class="kim">Toi</span><p>Il y a un bon café sur la route ?</p></div>
+        <div class="satir ai"><span class="kim">AI CoRider</span><p>Il y en a un à 28 km, sur ta droite, avec une bonne note. Je l’ajoute comme étape ?</p></div>
+        <div class="satir sen"><span class="kim">Toi</span><p>Oui, ajoute-le.</p></div>
+        <div class="satir ai"><span class="kim">AI CoRider</span><p>C’est fait, je recalcule l’itinéraire.</p></div>
+        <span class="chip" lang="fr"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Café ajouté à l’itinéraire</span>
+      </article>
+      <article class="soh">
+        <p class="soh-t">Mode d’itinéraire</p>
+        <div class="satir sen"><span class="kim">Toi</span><p>Prenons les petites routes.</p></div>
+        <div class="satir ai"><span class="kim">AI CoRider</span><p>Je passe aux petites routes, je calcule l’itinéraire.</p></div>
+        <span class="chip" lang="fr"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Petites routes</span>
+      </article>
+      <article class="soh">
+        <p class="soh-t">Carburant</p>
+        <div class="satir sen"><span class="kim">Toi</span><p>J’ai assez d’essence pour arriver ?</p></div>
+        <div class="satir ai"><span class="kim">AI CoRider</span><p>Oui : ton autonomie est d’environ 210 km, l’arrivée est à 140 km.</p></div>
+        <span class="chip oku"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/></svg>Autonomie</span>
+      </article>
+      <article class="soh">
+        <p class="soh-t">Groupe</p>
+        <div class="satir sen"><span class="kim">Toi</span><p>Dis au groupe qu’on fait une pause.</p></div>
+        <div class="satir ai"><span class="kim">AI CoRider</span><p>C’est fait. J’ai dit au groupe : on fait une pause.</p></div>
+        <span class="chip" lang="fr"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Envoyé au groupe : Pause</span>
+      </article>
+      <article class="soh">
+        <p class="soh-t">Rappel</p>
+        <div class="satir sen"><span class="kim">Toi</span><p>Rappelle-moi demain de graisser la chaîne.</p></div>
+        <div class="satir ai"><span class="kim">AI CoRider</span><p>D’accord. Demain, c’est la première chose que je te dirai quand tu m’ouvriras.</p></div>
+        <span class="chip oku"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/></svg>Le dit en premier demain</span>
+      </article>
+    </div>
+    <p class="soh-not">Les exemples sont écrits pour illustrer. Les étiquettes à trait plein sont celles que l’appli affiche à l’écran ; celles en pointillés n’apparaissent pas à l’écran, elles décrivent seulement ce qui se passe.</p>
+  </div>
+</section>
+
+<section class="bl" id="kayit" aria-labelledby="kayit-h">
+  <div class="kap video-ik">
+    <div class="tel-kap">
+      <div class="tel"><video id="cr-video" data-src="/m/corider-en.mp4" data-kucuk="/m/corider-kucuk-en.mp4" poster="/m/corider-en.webp" muted loop playsinline preload="none" width="540" height="1106" aria-label="AI CoRider à la voix : le pilote demande le temps restant et la pluie, trouve un endroit où s’arrêter et l’ajoute à l’itinéraire"></video></div>
+      <button class="ses-btn" id="cr-ses" type="button" aria-pressed="false" data-ac="Activer le son" data-kapat="Couper le son"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path class="h" d="M4 9.5v5h3.6L12 18.5v-13L7.6 9.5H4z" fill="currentColor"/><path class="d" d="M15.5 9a4.2 4.2 0 0 1 0 6M17.8 6.6a7.5 7.5 0 0 1 0 10.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Activer le son</span></button>
+    </div>
+    <div>
+      <p class="km">Vraie séquence</p>
+      <h2 id="kayit-h">D’une vraie sortie</h2>
+      <p class="lead">Un vrai enregistrement de l’appli : le pilote demande le temps restant et la pluie, cherche un endroit où s’arrêter, et celui qu’il choisit s’ajoute à l’itinéraire comme étape.</p>
+      <p class="not">Vraie capture d’écran de l’appli. La conversation est en anglais.</p>
+    </div>
+  </div>
+</section>
+
+<section class="bl z1" id="yetenek" aria-labelledby="yetenek-h">
+  <div class="kap">
+    <div class="bl-ust">
+      <p class="km">Ce qu’il fait</p>
+      <h2 id="yetenek-h">Environ 30 actions <i>à la voix.</i></h2>
+      <p class="lead">Réunies en cinq thèmes. Rien à retenir par cœur : dis ce que tu veux avec tes mots.</p>
+    </div>
+    <div class="yetenek">
+      <section class="grup" aria-labelledby="g1-h"><span class="no" aria-hidden="true">01</span><h3 id="g1-h">Itinéraire</h3><p>Il corrige l’itinéraire à ta place.</p><ul><li>Ajoute une étape, la retire ou saute la suivante</li><li>Change la destination et remet les étapes dans l’ordre</li><li>Passe des petites routes à l’itinéraire le plus court, et inversement</li><li>Montre l’itinéraire sur la carte, te ramène à la maison</li></ul></section>
+      <section class="grup" aria-labelledby="g2-h"><span class="no" aria-hidden="true">02</span><h3 id="g2-h">En route</h3><p>Il cherche sur ton trajet et autour de toi.</p><ul><li>Trouve une station, un repas ou un café devant toi, le mieux noté en premier</li><li>Cherche où dormir ce soir</li><li>Te dit le temps restant, le prochain virage et où tu es</li><li>Te dit s’il y a des virages serrés ou des montées devant</li></ul></section>
+      <section class="grup" aria-labelledby="g3-h"><span class="no" aria-hidden="true">03</span><h3 id="g3-h">Météo et autonomie</h3><p>Ce que tu demandes avant et pendant la sortie.</p><ul><li>Quel temps il va faire, s’il pleut sur ton trajet</li><li>Regarde le radar de pluie et l’ouvre sur la carte</li><li>Jusqu’où ton réservoir te mène, s’il y a une station en chemin</li><li class="r">Le radar de pluie ne fonctionne qu’aux États-Unis et en Allemagne. Pour l’autonomie, indique une fois dans les Réglages la distance parcourue avec un plein.</li></ul></section>
+      <section class="grup" aria-labelledby="g4-h"><span class="no" aria-hidden="true">04</span><h3 id="g4-h">Groupe</h3><p>Quand une sortie de groupe est en cours.</p><ul><li>Te dit où est chacun et qui est à la traîne</li><li>Envoie au groupe une alerte toute prête : je suis en retard, pause, danger, essence</li><li>Si tu as partagé l’itinéraire avec le groupe, il demande à qui s’applique le changement</li></ul></section>
+      <section class="grup" aria-labelledby="g5-h"><span class="no" aria-hidden="true">05</span><h3 id="g5-h">Sortie</h3><p>Pendant que les mains restent sur le guidon.</p><ul><li>Démarre et termine la navigation</li><li>Lance et arrête l’enregistrement de la sortie</li><li>Retrouve quelqu’un dans tes contacts ; un seul appui sur l’écran lance l’appel</li><li>Garde une note si tu le demandes, l’efface si tu dis « oublie »</li><li>Monte ou baisse sa propre voix : « plus fort »</li></ul></section>
+    </div>
+    <div class="cagri-kutu">
+      <h3>Dans le salon du groupe</h3>
+      <p>Appelle AI CoRider dans l’interphone du groupe et tout le monde l’entend. Les minutes sont décomptées du compte de celui qui l’a appelé.</p>
+    </div>
+  </div>
+</section>
+
+<section class="bl" id="kipler" aria-labelledby="kip-h">
+  <div class="kap">
+    <div class="bl-ust">
+      <p class="km">Deux modes</p>
+      <h2 id="kip-h">L’un fait le travail, <i>l’autre discute.</i></h2>
+      <p class="lead">Dis simplement « active le mode discussion » pendant que tu parles.</p>
+    </div>
+    <div class="kipler">
+      <article class="kip"><h3>Planificateur</h3><p>Il connaît ton itinéraire et fait le boulot.</p><ul><li>Il y a une station sur la route ?</li><li>Où sont les autres ?</li><li>Prenons les petites routes.</li><li>Quel temps va-t-il faire ?</li><li>Ramène-moi à la maison.</li></ul><span class="rozet">Inclus dans Pro</span></article>
+      <article class="kip"><h3>Discussion</h3><p>Tu choisis le sujet, il se souvient des échanges précédents.</p><ul><li>Pratiquons l’anglais.</li><li>Planifions la journée ensemble.</li><li>Raconte-moi une histoire.</li><li>On s’était arrêtés où hier ?</li></ul><span class="rozet">S’ouvre avec un forfait de minutes</span></article>
+    </div>
+    <div class="sesler">
+      <div><h3>Quatre voix</h3><p>Tu les écoutes dans les Réglages et tu choisis : Quartz, Tempo, Stone ou Willow.</p></div>
+      <ul class="ses-liste" aria-label="Quatre voix">
+        <li><i aria-hidden="true"><b></b><b></b><b></b><b></b><b></b></i>Quartz</li><li><i aria-hidden="true"><b></b><b></b><b></b><b></b><b></b></i>Tempo</li><li><i aria-hidden="true"><b></b><b></b><b></b><b></b><b></b></i>Stone</li><li><i aria-hidden="true"><b></b><b></b><b></b><b></b><b></b></i>Willow</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="bl z1" id="dakika" aria-labelledby="dakika-h">
+  <div class="kap">
+    <div class="bl-ust">
+      <p class="km">Minutes et forfaits</p>
+      <h2 id="dakika-h">Le temps de parole, <i>simplement.</i></h2>
+      <p class="lead">Les minutes passées avec AI CoRider viennent du temps que Pro renouvelle et des forfaits qui n’expirent jamais.</p>
+    </div>
+    <div class="sureler">
+      <div class="sure"><b>10 min</b><h3>Avec Pro, tous les 30 jours</h3><p>Ton temps de parole revient à 10 minutes tous les 30 jours.</p></div>
+      <div class="sure"><b>5 min</b><h3>Pendant l’essai gratuit</h3><p>Tu peux parler 5 minutes pendant l’essai.</p></div>
+      <div class="sure"><b>30 · 60 · 180</b><h3>Forfaits de minutes</h3><p>30, 60 ou 180 minutes. Elles n’expirent jamais et ne disparaissent pas en fin de mois ; le mode discussion s’ouvre aussi avec.</p></div>
+    </div>
+    <p class="fiyat-not">Les chiffres valent pour les nouveaux abonnés. Les prix actuels varient selon la région ; tu les vois sur l’écran d’abonnement de l’App Store. Résiliation possible à tout moment depuis ton compte App Store.</p>
+  </div>
+</section>
+
+<section class="bl" id="gizlilik" aria-labelledby="gizlilik-h">
+  <div class="kap">
+    <div class="bl-ust">
+      <p class="km">Confidentialité</p>
+      <h2 id="gizlilik-h">Ta voix <i>reste à toi.</i></h2>
+    </div>
+    <ul class="gizlilik">
+      <li><h3>Il ne marche que si tu le lances</h3><p>Le micro ne s’ouvre que lorsque tu touches le bouton AI CoRider sur la carte.</p></li>
+      <li><h3>La voix n’est pas stockée</h3><p>Ta voix n’est ni enregistrée ni conservée chez nous. Pour produire la réponse, elle part vers un service vocal cloud tiers.</p></li>
+      <li><h3>Pas de position brute</h3><p>De l’itinéraire ne partent que des informations en texte, comme la distance restante et la prochaine manœuvre.</p></li>
+      <li><h3>Notes sur ton téléphone</h3><p>Les notes que tu lui demandes de garder sont stockées sur ton téléphone ; dis « oublie » et elles sont effacées.</p></li>
+    </ul>
+    <p class="gz-tam"><strong>Confidentialité.</strong> AI CoRider ne fonctionne que si tu l’actives. Ta voix n’est ni enregistrée ni conservée chez nous ; ce que tu dis part vers un service vocal cloud tiers pour qu’il puisse répondre. Ta position exacte n’est pas envoyée à ce service ; de l’itinéraire, il ne reçoit que du texte, comme la distance restante et la prochaine manœuvre. La session se ferme quand tu l’arrêtes, après un moment sans parole ou à la fin de la navigation. <a href="/gizlilik/">Détails dans la politique de confidentialité.</a></p>
+  </div>
+</section>
+
+<section class="bl z1" id="sss" aria-labelledby="sss-h">
+  <div class="kap">
+    <div class="bl-ust">
+      <p class="km">Questions fréquentes</p>
+      <h2 id="sss-h">Ce que tu te demandes</h2>
+    </div>
+    <div class="sss-liste">
+      <details class="sss" name="sss"><summary>AI CoRider m’écoute-t-il en permanence ?</summary><div class="cevap"><p>Non. Il n’y a pas de mot d’activation. Le micro ne s’ouvre que lorsque tu touches le bouton AI CoRider sur la carte. La session se ferme quand tu la termines, après un moment de silence ou quand la navigation s’arrête.</p></div></details>
+      <details class="sss" name="sss"><summary>Ça marche sans internet ?</summary><div class="cevap"><p>Non. Ce que tu dis part vers un service vocal cloud pour produire la réponse : AI CoRider a donc besoin d’une connexion internet. Sans elle, aucune session ne peut démarrer.</p></div></details>
+      <details class="sss" name="sss"><summary>Dans quelle langue puis-je parler ?</summary><div class="cevap"><p>Il répond dans la langue que tu parles. Aucune commande à retenir, dis-le avec tes mots.</p></div></details>
+      <details class="sss" name="sss"><summary>Que se passe-t-il quand mon temps de parole est épuisé ?</summary><div class="cevap"><p>Pro renouvelle 10 minutes tous les 30 jours, et l’essai gratuit en comprend 5. Si ça ne suffit pas, ajoute un forfait de 30, 60 ou 180 minutes qui n’expire jamais.</p></div></details>
+      <details class="sss" name="sss"><summary>Quelle différence entre Planificateur et Discussion ?</summary><div class="cevap"><p>Le Planificateur connaît ton itinéraire et fait le boulot : il ajoute des étapes, cherche des lieux et change le trajet ; il est inclus dans Pro. En Discussion, tu choisis le sujet et il se souvient des échanges précédents ; ce mode s’ouvre avec un forfait de minutes.</p></div></details>
+      <details class="sss" name="sss"><summary>Dans un groupe, tout le monde l’entend-il, et sur quel compte les minutes sont-elles décomptées ?</summary><div class="cevap"><p>Si tu appelles AI CoRider dans l’interphone du groupe, tout le monde dans le salon l’entend. Les minutes sont décomptées du compte de celui qui l’a appelé.</p></div></details>
+      <details class="sss" name="sss"><summary>Je demande si j’ai assez d’essence, mais il ne donne pas d’autonomie. Pourquoi ?</summary><div class="cevap"><p>Pour l’autonomie, indique une fois dans les Réglages la distance parcourue avec un plein. Tant que ce n’est pas fait, AI CoRider ne devine pas : il te le dit.</p></div></details>
+      <details class="sss" name="sss"><summary>Faut-il le Bluetooth pour l’entendre dans le casque ?</summary><div class="cevap"><p>Si le casque est relié au téléphone en Bluetooth, la voix passe par lui, sinon elle sort du téléphone. Tu entends mal dans le vent ? Dis simplement « plus fort ».</p></div></details>
+    </div>
+  </div>
+</section>
+
+<section class="varis" aria-labelledby="varis-h">
+  <div class="kap">
+    <h2 id="varis-h">Appuie sur le bouton, <i>continue la route.</i></h2>
+    <div class="cta-satir">
+      <a class="btn" href="https://apps.apple.com/fr/app/id6792549131?pt=128439797&amp;ct=site-fr&amp;mt=8">Télécharger sur l’App Store</a>
+      <a class="btn btn-hayalet" href="/fr/ozellikler.html">Toutes les fonctions</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="alt-ic">
+    <div>
+      <p><a class="logo" href="/fr/" aria-label="Motoseyir"><img src="/img/favicon.png" alt="" width="28" height="28">MOTO<em>SEYİR</em></a></p>
+      <p style="margin-top:10px">© 2026 Motoseyir. Tous droits réservés.</p>
+    </div>
+    <ul>
+      <li><a href="/fr/">Accueil</a></li><li><a href="/fr/ozellikler.html">Toutes les fonctions</a></li><li><a href="/fr/nasil-yapilir.html">Comment faire</a></li><li><a href="/gizlilik/">Confidentialité</a></li><li><a href="/fr/#iletisim">Contact</a></li><li><a href="https://www.instagram.com/motoseyir.app.en/">Instagram</a></li><li><a href="https://apps.apple.com/fr/app/id6792549131?pt=128439797&amp;ct=site-fr&amp;mt=8">App Store</a></li>
+    </ul>
+    <div class="dil-altbilgi"><span>Langues</span>
+      <ul class="dil-liste">
+  <li><a href="/corider.html" lang="tr" hreflang="tr">Türkçe</a></li>
+  <li><a href="/en/corider.html" lang="en" hreflang="en">English</a></li>
+  <li><a href="/de/corider.html" lang="de" hreflang="de">Deutsch</a></li>
+  <li><strong lang="fr">Français</strong></li>
+  <li><a href="/it/corider.html" lang="it" hreflang="it">Italiano</a></li>
+  <li><a href="/es/corider.html" lang="es" hreflang="es">Español</a></li>
+  <li><a href="/nl/corider.html" lang="nl" hreflang="nl">Nederlands</a></li>
+  <li><a href="/pl/corider.html" lang="pl" hreflang="pl">Polski</a></li>
+  <li><a href="/cs/corider.html" lang="cs" hreflang="cs">Čeština</a></li>
+  <li><a href="/sk/corider.html" lang="sk" hreflang="sk">Slovenčina</a></li>
+  <li><a href="/hu/corider.html" lang="hu" hreflang="hu">Magyar</a></li>
+  <li><a href="/ro/corider.html" lang="ro" hreflang="ro">Română</a></li>
+  <li><a href="/hr/corider.html" lang="hr" hreflang="hr">Hrvatski</a></li>
+  <li><a href="/el/corider.html" lang="el" hreflang="el">Ελληνικά</a></li>
+</ul>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

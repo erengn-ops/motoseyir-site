@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI CoRider — az útitárs a bukósisakodban | Motoseyir</title>
+<meta name="description" content="Az AI CoRider a sisakodon át beszél hozzád: megállót ad hozzá, helyeket keres az útvonalon, megmondja az időjárást és a hatótávot, és átírja az útvonalat.">
+<link rel="canonical" href="https://motoseyir-app.com/hu/corider.html">
+<link rel="alternate" hreflang="tr" href="https://motoseyir-app.com/corider.html">
+<link rel="alternate" hreflang="en" href="https://motoseyir-app.com/en/corider.html">
+<link rel="alternate" hreflang="de" href="https://motoseyir-app.com/de/corider.html">
+<link rel="alternate" hreflang="fr" href="https://motoseyir-app.com/fr/corider.html">
+<link rel="alternate" hreflang="it" href="https://motoseyir-app.com/it/corider.html">
+<link rel="alternate" hreflang="es" href="https://motoseyir-app.com/es/corider.html">
+<link rel="alternate" hreflang="nl" href="https://motoseyir-app.com/nl/corider.html">
+<link rel="alternate" hreflang="pl" href="https://motoseyir-app.com/pl/corider.html">
+<link rel="alternate" hreflang="cs" href="https://motoseyir-app.com/cs/corider.html">
+<link rel="alternate" hreflang="sk" href="https://motoseyir-app.com/sk/corider.html">
+<link rel="alternate" hreflang="hu" href="https://motoseyir-app.com/hu/corider.html">
+<link rel="alternate" hreflang="ro" href="https://motoseyir-app.com/ro/corider.html">
+<link rel="alternate" hreflang="hr" href="https://motoseyir-app.com/hr/corider.html">
+<link rel="alternate" hreflang="el" href="https://motoseyir-app.com/el/corider.html">
+<link rel="alternate" hreflang="x-default" href="https://motoseyir-app.com/en/corider.html">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Motoseyir">
+<meta property="og:locale" content="hu_HU">
+<meta property="og:title" content="AI CoRider: szemed az úton, ő figyel">
+<meta property="og:description" content="Az AI CoRider a sisakodon át beszél hozzád: megállót ad hozzá, helyeket keres az útvonalon, megmondja az időjárást és a hatótávot, és átírja az útvonalat.">
+<meta property="og:url" content="https://motoseyir-app.com/hu/corider.html">
+<meta property="og:image" content="https://motoseyir-app.com/img/og-kapak.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="apple-itunes-app" content="app-id=6792549131">
+<meta name="theme-color" content="#050B13">
+<link rel="icon" href="/img/favicon.png">
+
+<!--
+  AI CoRider sayfası: sablon/corider.html + dil/anasayfa.<kod>.json + dil/corider.<kod>.json'dan üretilir (python3 uret.py).
+  Stil m/corider.css, hareket m/corider.js. Görseller yalnız kendi varlıklarımız: uygulamadan gerçek ekran kaydı
+  (m/corider-*.mp4) ve uygulamanın AI CoRider yüzü (img/ai-corider.png'nin saydamlaştırılmış hâli, m/corider-yuz.webp).
+  Konuşma örnekleri tasarım örneğidir; uygulamadaki gerçek durum etiketleriyle (Köy yolları, rotaya eklendi...) eşleşir.
+-->
+<script>document.documentElement.className+=" cjs"</script>
+<link rel="preload" as="font" type="font/woff" href="/m/font/Manrope.woff" crossorigin>
+<link rel="stylesheet" href="/m/corider.css">
+<script defer src="/m/corider.js"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "name": "AI CoRider — az útitárs a bukósisakodban | Motoseyir",
+      "url": "https://motoseyir-app.com/hu/corider.html",
+      "inLanguage": "hu",
+      "description": "Az AI CoRider a sisakodon át beszél hozzád: megállót ad hozzá, helyeket keres az útvonalon, megmondja az időjárást és a hatótávot, és átírja az útvonalat.",
+      "isPartOf": {"@type": "WebSite", "name": "Motoseyir", "url": "https://motoseyir-app.com/"}
+    },
+    {
+      "@type": "FAQPage",
+      "inLanguage": "hu",
+      "mainEntity": [
+        {"@type": "Question", "name": "Folyamatosan hallgat az AI CoRider?", "acceptedAnswer": {"@type": "Answer", "text": "Nem. Nincs ébresztőszó. A mikrofon csak akkor nyílik meg, ha a térképen az AI CoRider gombra koppintasz. A munkamenet akkor zárul, ha te bezárod, hosszabb csend után vagy ha a navigáció véget ér."}},
+        {"@type": "Question", "name": "Működik internet nélkül?", "acceptedAnswer": {"@type": "Answer", "text": "Nem. Amit mondasz, a válaszhoz egy felhőalapú hangszolgáltatásba kerül, ezért az AI CoRidernek internet kell. Kapcsolat nélkül nem indítható munkamenet."}},
+        {"@type": "Question", "name": "Milyen nyelven beszélhetek hozzá?", "acceptedAnswer": {"@type": "Answer", "text": "Azon a nyelven válaszol, amelyen beszélsz. Nem kell parancsokat tanulnod, mondd a saját szavaiddal."}},
+        {"@type": "Question", "name": "Mi történik, ha elfogy a beszédidő?", "acceptedAnswer": {"@type": "Answer", "text": "A Pro 30 naponta 10 percet újít meg, az ingyenes próbaidőszakban 5 percet kapsz. Ha ez kevés, vegyél 30, 60 vagy 180 perces csomagot, amely sosem jár le."}},
+        {"@type": "Question", "name": "Mi a különbség a Tervező és a Csevegés között?", "acceptedAnswer": {"@type": "Answer", "text": "A Tervező ismeri az útvonalad, és elintézi a dolgokat: megállót ad hozzá, helyeket keres, átírja az útvonalat; a Pro része. A Csevegésben a témát te választod, és emlékszik a korábbi beszélgetésekre; percdíjcsomaggal nyílik."}},
+        {"@type": "Question", "name": "Csoportban mindenki hallja, és kinek a perceiből fogy?", "acceptedAnswer": {"@type": "Answer", "text": "Ha behívod az AI CoRidert a csoport intercomjába, a szobában mindenki hallja. A perceket annak a fiókjából vonja le, aki behívta."}},
+        {"@type": "Question", "name": "Megkérdezem, elég lesz-e a benzin, de nem mond hatótávot. Miért?", "acceptedAnswer": {"@type": "Answer", "text": "A hatótávhoz add meg egyszer a Beállításokban, mennyit mentél tele tankkal. Amíg ez nincs meg, az AI CoRider nem találgat, hanem szól."}},
+        {"@type": "Question", "name": "Kell Bluetooth, hogy halljam a sisakban?", "acceptedAnswer": {"@type": "Answer", "text": "Ha a sisak Bluetooth-on csatlakozik a telefonhoz, a hang azon át szól, különben a telefonból. Szélben nem hallod? Mondd egyszerűen: „hangosabban”."}}
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body id="top">
+<a class="skip" href="#icerik">Ugrás a tartalomra</a>
+
+<header class="ust">
+  <div class="ust-ic">
+    <a class="logo" href="/hu/" aria-label="Motoseyir"><img src="/img/favicon.png" alt="" width="28" height="28">MOTO<em>SEYİR</em></a>
+    <nav aria-label="Fő navigáció"><ul class="menu">
+      <li><a href="/hu/">Főoldal</a></li><li><a href="#nasil">Hogyan működik</a></li><li><a href="#konusma">Beszélgetések</a></li><li><a href="#yetenek">Mit tud</a></li><li><a href="#dakika">Percek</a></li><li><a href="#sss">GYIK</a></li>
+    </ul></nav>
+    <div class="ust-sag">
+      <details class="dil-sec">
+  <summary aria-label="Nyelv választása"><span class="dil-kod">HU</span><span class="dil-ad">Magyar</span></summary>
+  <ul>
+    <li><a href="/corider.html" lang="tr" hreflang="tr">Türkçe</a></li>
+    <li><a href="/en/corider.html" lang="en" hreflang="en">English</a></li>
+    <li><a href="/de/corider.html" lang="de" hreflang="de">Deutsch</a></li>
+    <li><a href="/fr/corider.html" lang="fr" hreflang="fr">Français</a></li>
+    <li><a href="/it/corider.html" lang="it" hreflang="it">Italiano</a></li>
+    <li><a href="/es/corider.html" lang="es" hreflang="es">Español</a></li>
+    <li><a href="/nl/corider.html" lang="nl" hreflang="nl">Nederlands</a></li>
+    <li><a href="/pl/corider.html" lang="pl" hreflang="pl">Polski</a></li>
+    <li><a href="/cs/corider.html" lang="cs" hreflang="cs">Čeština</a></li>
+    <li><a href="/sk/corider.html" lang="sk" hreflang="sk">Slovenčina</a></li>
+    <li><span aria-current="true">Magyar</span></li>
+    <li><a href="/ro/corider.html" lang="ro" hreflang="ro">Română</a></li>
+    <li><a href="/hr/corider.html" lang="hr" hreflang="hr">Hrvatski</a></li>
+    <li><a href="/el/corider.html" lang="el" hreflang="el">Ελληνικά</a></li>
+  </ul>
+</details>
+      <a class="btn btn-kucuk" href="https://apps.apple.com/hu/app/id6792549131?pt=128439797&amp;ct=site-hu&amp;mt=8">Letöltés</a>
+    </div>
+  </div>
+</header>
+
+<main id="icerik">
+<section class="kh" aria-labelledby="h1">
+  <div class="kh-ic">
+    <div class="kh-metin">
+      <p class="ust-yazi">Motoseyir Pro · AI CoRider</p>
+      <h1 id="h1">Szemed az úton. <i>Ő&nbsp;figyel.</i></h1>
+      <p class="giris">Az AI CoRider az útitárs, aki a sisakodban lévő fülhallgatón át beszél hozzád. Ismeri az útvonalad: megállót ad hozzá, helyeket keres az út mentén, és átírja helyetted az útvonalat. Megnyomod a gombot, a saját szavaiddal megkérdezed, a választ pedig a sisakban hallod. A kezed a kormányon marad.</p>
+      <div class="cta-satir">
+        <a class="btn" href="https://apps.apple.com/hu/app/id6792549131?pt=128439797&amp;ct=site-hu&amp;mt=8"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.6c0-2.4 2-3.5 2-3.6-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.15-2.8.85-3.5.85s-1.8-.8-3-.8c-1.5 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.700 2.400 2.900 2.300 1.200 0 1.600-.7 3-.7s1.800.7 3 .7 2-1.100 2.800-2.300c.9-1.300 1.200-2.500 1.300-2.600-.1 0-2.500-1-2.500-3.600zM14.200 5.500c.6-.8 1.100-1.800.9-2.900-.9 0-2 .6-2.700 1.400-.6.700-1.100 1.800-1 2.800 1 .1 2.100-.5 2.800-1.300z"/></svg>Letöltés az App Store-ból</a>
+        <a class="btn btn-hayalet" href="#nasil">Hogyan működik</a>
+        <p class="mikro">Pro funkció. Vehetsz lejárat nélküli percdíjcsomagot is.</p>
+      </div>
+    </div>
+    <div class="orb" aria-hidden="true">
+      <canvas id="orb-c" width="660" height="660"></canvas>
+      <img class="orb-yuz" src="/m/corider-yuz.webp" alt="" width="320" height="320">
+      <span class="orb-durum">Figyel</span>
+    </div>
+  </div>
+</section>
+
+<div class="serit"><dl aria-label="Az AI CoRider számokban">
+  <div><dt>~30</dt><dd>művelet hanggal</dd></div>
+  <div><dt>4</dt><dd>hang: Quartz, Tempo, Stone, Willow</dd></div>
+  <div><dt>Bluetooth</dt><dd>a bukósisakod intercomján keresztül is működik</dd></div>
+  <div><dt>30·60·180</dt><dd>perces kiegészítő csomag, amely nem jár le</dd></div>
+</dl></div>
+
+<section class="bl" id="nasil" aria-labelledby="nasil-h">
+  <div class="kap">
+    <div class="bl-ust">
+      <p class="km">Használat</p>
+      <h2 id="nasil-h">Nyomd meg, beszélj, <i>hallgasd a sisakban.</i></h2>
+    </div>
+    <ol class="adimlar">
+      <li><span class="n" aria-hidden="true">1</span><h3>Nyomd meg a gombot</h3><p>Koppints a térképen az AI CoRider gombra, és beszélj.</p></li>
+      <li><span class="n" aria-hidden="true">2</span><h3>Beszélj természetesen</h3><p>Nem kell parancsokat megjegyezned. Azon a nyelven válaszol, amelyen beszélsz.</p></li>
+      <li><span class="n" aria-hidden="true">3</span><h3>Hallgasd a sisakban</h3><p>Ha a sisak Bluetooth-on csatlakozik a telefonhoz, a hang azon át szól. Szélben nem hallod? Mondd egyszerűen: „hangosabban”.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="bl z1" id="konusma" aria-labelledby="konusma-h">
+  <div class="kap">
+    <div class="bl-ust">
+      <p class="km">Példabeszélgetések</p>
+      <h2 id="konusma-h">Így <i>beszélsz vele.</i></h2>
+      <p class="lead">Ezek csak példák. Nem kell parancsokat megtanulnod, mondd a saját szavaiddal.</p>
+    </div>
+    <div class="konusmalar">
+      <article class="soh">
+        <p class="soh-t">Útvonal és időjárás</p>
+        <div class="satir sen"><span class="kim">Te</span><p>Mennyi van még hátra? Esni fog az úton?</p></div>
+        <div class="satir ai"><span class="kim">AI CoRider</span><p>A célig 2 óra 49 perc van hátra. Az útvonalon nem látszik csapadék.</p></div>
+        <div class="satir sen"><span class="kim">Te</span><p>Mikorra érek oda?</p></div>
+        <div class="satir ai"><span class="kim">AI CoRider</span><p>Nagyjából 17:28-ra.</p></div>
+        <span class="chip oku"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/></svg>Hátralévő idő, eső, érkezési idő</span>
+      </article>
+      <article class="soh">
+        <p class="soh-t">Megálló útközben</p>
+        <div class="satir sen"><span class="kim">Te</span><p>Van az úton valahol jó kávézó?</p></div>
+        <div class="satir ai"><span class="kim">AI CoRider</span><p>28 km-re innen, jobb oldalon van egy jó értékeléssel. Megállóként hozzáadjam?</p></div>
+        <div class="satir sen"><span class="kim">Te</span><p>Igen, add hozzá.</p></div>
+        <div class="satir ai"><span class="kim">AI CoRider</span><p>Kész, újraszámolom az útvonalat.</p></div>
+        <span class="chip" lang="en"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Café added to route</span>
+      </article>
+      <article class="soh">
+        <p class="soh-t">Útvonalmód</p>
+        <div class="satir sen"><span class="kim">Te</span><p>Menjünk mellékutakon.</p></div>
+        <div class="satir ai"><span class="kim">AI CoRider</span><p>Átváltok mellékutakra, számolom az útvonalat.</p></div>
+        <span class="chip" lang="en"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Back roads</span>
+      </article>
+      <article class="soh">
+        <p class="soh-t">Üzemanyag</p>
+        <div class="satir sen"><span class="kim">Te</span><p>Elég lesz a benzin a célig?</p></div>
+        <div class="satir ai"><span class="kim">AI CoRider</span><p>Igen: a hatótávod nagyjából 210 km, a célig 140 km van hátra.</p></div>
+        <span class="chip oku"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/></svg>Hatótáv</span>
+      </article>
+      <article class="soh">
+        <p class="soh-t">Csoport</p>
+        <div class="satir sen"><span class="kim">Te</span><p>Szólj a csoportnak, hogy pihenőt tartunk.</p></div>
+        <div class="satir ai"><span class="kim">AI CoRider</span><p>Kész. Szóltam a csoportnak, hogy pihenőt tartunk.</p></div>
+        <span class="chip" lang="en"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Sent to the group: Break</span>
+      </article>
+      <article class="soh">
+        <p class="soh-t">Emlékeztető</p>
+        <div class="satir sen"><span class="kim">Te</span><p>Emlékeztess holnap a lánc olajozására.</p></div>
+        <div class="satir ai"><span class="kim">AI CoRider</span><p>Rendben. Holnap, amint megnyitsz, ezt mondom először.</p></div>
+        <span class="chip oku"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/></svg>Holnap ezt mondja először</span>
+      </article>
+    </div>
+    <p class="soh-not">A példák szemléltetésre készültek. A folytonos szélű címkék azok az állapotcímkék, amelyeket az alkalmazás a képernyőn mutat, úgy idézve, ahogy ott megjelennek (angolul); a szaggatott szélűek nem jelennek meg a képernyőn, csak azt írják le, mi történik.</p>
+  </div>
+</section>
+
+<section class="bl" id="kayit" aria-labelledby="kayit-h">
+  <div class="kap video-ik">
+    <div class="tel-kap">
+      <div class="tel"><video id="cr-video" data-src="/m/corider-en.mp4" data-kucuk="/m/corider-kucuk-en.mp4" poster="/m/corider-en.webp" muted loop playsinline preload="none" width="540" height="1106" aria-label="AI CoRider hanggal: a motoros a hátralévő időről és az esőről kérdez, talál egy megállóhelyet, és hozzáadja az útvonalhoz"></video></div>
+      <button class="ses-btn" id="cr-ses" type="button" aria-pressed="false" data-ac="Hang be" data-kapat="Hang ki"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path class="h" d="M4 9.5v5h3.6L12 18.5v-13L7.6 9.5H4z" fill="currentColor"/><path class="d" d="M15.5 9a4.2 4.2 0 0 1 0 6M17.8 6.6a7.5 7.5 0 0 1 0 10.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Hang be</span></button>
+    </div>
+    <div>
+      <p class="km">Valódi felvétel</p>
+      <h2 id="kayit-h">Egy valódi útról</h2>
+      <p class="lead">Valódi felvétel az alkalmazásból: a motoros megkérdezi, mennyi van hátra és esni fog-e, megállóhelyet keres, és amit kiválaszt, az megállóként bekerül az útvonalba.</p>
+      <p class="not">Valódi képernyőfelvétel az alkalmazásból. A beszélgetés angolul zajlik.</p>
+    </div>
+  </div>
+</section>
+
+<section class="bl z1" id="yetenek" aria-labelledby="yetenek-h">
+  <div class="kap">
+    <div class="bl-ust">
+      <p class="km">Mit tud</p>
+      <h2 id="yetenek-h">Körülbelül 30 művelet <i>hanggal.</i></h2>
+      <p class="lead">Öt csoportba rendezve. Egyiket sem kell megtanulnod: mondd el a saját szavaiddal, mit szeretnél.</p>
+    </div>
+    <div class="yetenek">
+      <section class="grup" aria-labelledby="g1-h"><span class="no" aria-hidden="true">01</span><h3 id="g1-h">Útvonal</h3><p>Helyetted javítja az útvonalat.</p><ul><li>Megállót ad hozzá, töröl vagy átugorja a következőt</li><li>Átírja a célt, és sorba rendezi a megállókat</li><li>Vált a mellékutak és a legrövidebb útvonal között</li><li>Megmutatja az útvonalat a térképen, és hazavisz</li></ul></section>
+      <section class="grup" aria-labelledby="g2-h"><span class="no" aria-hidden="true">02</span><h3 id="g2-h">Úton</h3><p>Az útvonalon és körülötted keres.</p><ul><li>Benzinkutat, ételt vagy kávét talál előtted, és a legjobb értékelésűt mondja először</li><li>Szállást keres az éjszakára</li><li>Megmondja a hátralévő időt, a következő kanyart és hogy hol vagy</li><li>Megmondja, hogy vannak-e előtted éles kanyarok vagy emelkedők</li></ul></section>
+      <section class="grup" aria-labelledby="g3-h"><span class="no" aria-hidden="true">03</span><h3 id="g3-h">Időjárás és hatótáv</h3><p>Amit indulás előtt és út közben kérdezel.</p><ul><li>Milyen lesz az idő, esik-e az útvonalon</li><li>Megnézi az esőradart, és megnyitja a térképen</li><li>Meddig bírja a tank, van-e útközben benzinkút</li><li class="r">Az esőradar csak az Egyesült Államokban és Németországban működik. A hatótávhoz add meg egyszer a Beállításokban, mennyit mentél tele tankkal.</li></ul></section>
+      <section class="grup" aria-labelledby="g4-h"><span class="no" aria-hidden="true">04</span><h3 id="g4-h">Csoport</h3><p>Amikor csoportos túra zajlik.</p><ul><li>Megmondja, ki hol van, és ki maradt le</li><li>Kész figyelmeztetést küld a csoportnak: lemaradtam, pihenő, veszély, benzin</li><li>Ha az útvonalat megosztottad a csoporttal, megkérdezi, kire vonatkozzon a változtatás</li></ul></section>
+      <section class="grup" aria-labelledby="g5-h"><span class="no" aria-hidden="true">05</span><h3 id="g5-h">Túra</h3><p>Amíg a kezed a kormányon marad.</p><ul><li>Elindítja és befejezi a navigációt</li><li>Elindítja és leállítja a túra rögzítését</li><li>Megkeres valakit a névjegyeid között; híváshoz elég egy koppintás a képernyőn</li><li>Elmenti a kért jegyzetet, és törli, ha azt mondod: „felejtsd el”</li><li>Hangosabbra vagy halkabbra állítja a saját hangját: „hangosabban”</li></ul></section>
+    </div>
+    <div class="cagri-kutu">
+      <h3>A csoport szobájában</h3>
+      <p>Hívd be az AI CoRidert a csoport intercomjába, és a szobában mindenki hallja. A perceket annak a fiókjából vonja le, aki behívta.</p>
+    </div>
+  </div>
+</section>
+
+<section class="bl" id="kipler" aria-labelledby="kip-h">
+  <div class="kap">
+    <div class="bl-ust">
+      <p class="km">Két mód</p>
+      <h2 id="kip-h">Az egyik elintézi, <i>a másik beszélget.</i></h2>
+      <p class="lead">Beszélgetés közben elég annyit mondanod: „kapcsold be a csevegő módot”.</p>
+    </div>
+    <div class="kipler">
+      <article class="kip"><h3>Tervező</h3><p>Ismeri az útvonalad, és elintézi a dolgokat.</p><ul><li>Van az úton benzinkút?</li><li>Hol vannak a többiek?</li><li>Menjünk mellékutakon.</li><li>Milyen lesz az idő?</li><li>Vigyél haza.</li></ul><span class="rozet">A Pro része</span></article>
+      <article class="kip"><h3>Csevegés</h3><p>A témát te választod, emlékszik a korábbi beszélgetésekre.</p><ul><li>Gyakoroljunk angolul.</li><li>Tervezzük meg együtt a napot.</li><li>Mesélj egy történetet.</li><li>Hol hagytuk abba tegnap?</li></ul><span class="rozet">Percdíjcsomaggal nyílik</span></article>
+    </div>
+    <div class="sesler">
+      <div><h3>Négy hang</h3><p>A Beállításokban mindegyiket meghallgathatod, és kiválaszthatod: Quartz, Tempo, Stone vagy Willow.</p></div>
+      <ul class="ses-liste" aria-label="Négy hang">
+        <li><i aria-hidden="true"><b></b><b></b><b></b><b></b><b></b></i>Quartz</li><li><i aria-hidden="true"><b></b><b></b><b></b><b></b><b></b></i>Tempo</li><li><i aria-hidden="true"><b></b><b></b><b></b><b></b><b></b></i>Stone</li><li><i aria-hidden="true"><b></b><b></b><b></b><b></b><b></b></i>Willow</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="bl z1" id="dakika" aria-labelledby="dakika-h">
+  <div class="kap">
+    <div class="bl-ust">
+      <p class="km">Percek és csomagok</p>
+      <h2 id="dakika-h">Beszédidő, <i>egyszerűen.</i></h2>
+      <p class="lead">Az AI CoRiderrel töltött perceket a Pro által megújított időből és a lejárat nélküli csomagokból vonja le.</p>
+    </div>
+    <div class="sureler">
+      <div class="sure"><b>10 perc</b><h3>A Prón, 30 naponta</h3><p>A beszédidőd 30 naponta újra 10 percre áll vissza.</p></div>
+      <div class="sure"><b>5 perc</b><h3>Az ingyenes próbaidőszakban</h3><p>A próbaidőszak alatt 5 percet beszélhetsz.</p></div>
+      <div class="sure"><b>30 · 60 · 180</b><h3>Percdíjcsomagok</h3><p>30, 60 vagy 180 perc. Nem járnak le, és hónap végén sem vesznek el; a csevegő mód is ezekkel nyílik.</p></div>
+    </div>
+    <p class="fiyat-not">A számok az új előfizetőkre vonatkoznak. Az aktuális árak régiónként változnak; az App Store előfizetési képernyőjén látod őket. Bármikor lemondhatod az App Store-fiókodban.</p>
+  </div>
+</section>
+
+<section class="bl" id="gizlilik" aria-labelledby="gizlilik-h">
+  <div class="kap">
+    <div class="bl-ust">
+      <p class="km">Adatvédelem</p>
+      <h2 id="gizlilik-h">A hangod <i>nálad marad.</i></h2>
+    </div>
+    <ul class="gizlilik">
+      <li><h3>Csak akkor működik, ha te indítod</h3><p>A mikrofon csak akkor nyílik meg, ha a térképen az AI CoRider gombra koppintasz.</p></li>
+      <li><h3>A hangot nem tároljuk</h3><p>A hangodat nem rögzítjük és nem tároljuk. A válasz előállításához egy külső szolgáltató felhőalapú hangszolgáltatásához jut el.</p></li>
+      <li><h3>Pontos hely nem megy el</h3><p>Az útvonalból csak szöveges adat távozik, például a hátralévő táv és a következő manőver.</p></li>
+      <li><h3>Jegyzetek a telefonodon</h3><p>A jegyzetek, amelyeket megjegyeztetsz, a telefonodon maradnak; ha azt mondod: „felejtsd el”, törlődnek.</p></li>
+    </ul>
+    <p class="gz-tam"><strong>Adatvédelem.</strong> Az AI CoRider csak akkor működik, ha te bekapcsolod. A hangodat nálunk nem rögzítik és nem tárolják; amit mondasz, egy külső szolgáltató felhőalapú hangszolgáltatásához kerül, hogy válaszolni tudjon. A pontos tartózkodási helyed nem megy el ehhez a szolgáltatáshoz; az útvonalból csak szöveg jut el hozzá, például a hátralévő távolság és a következő manőver. A munkamenet bezárul, ha te befejezed, ha egy ideig nem beszélsz, vagy ha véget ér a navigáció. <a href="/gizlilik/">A részletek az adatvédelmi tájékoztatóban vannak.</a></p>
+  </div>
+</section>
+
+<section class="bl z1" id="sss" aria-labelledby="sss-h">
+  <div class="kap">
+    <div class="bl-ust">
+      <p class="km">Gyakori kérdések</p>
+      <h2 id="sss-h">Amit érdemes tudni</h2>
+    </div>
+    <div class="sss-liste">
+      <details class="sss" name="sss"><summary>Folyamatosan hallgat az AI CoRider?</summary><div class="cevap"><p>Nem. Nincs ébresztőszó. A mikrofon csak akkor nyílik meg, ha a térképen az AI CoRider gombra koppintasz. A munkamenet akkor zárul, ha te bezárod, hosszabb csend után vagy ha a navigáció véget ér.</p></div></details>
+      <details class="sss" name="sss"><summary>Működik internet nélkül?</summary><div class="cevap"><p>Nem. Amit mondasz, a válaszhoz egy felhőalapú hangszolgáltatásba kerül, ezért az AI CoRidernek internet kell. Kapcsolat nélkül nem indítható munkamenet.</p></div></details>
+      <details class="sss" name="sss"><summary>Milyen nyelven beszélhetek hozzá?</summary><div class="cevap"><p>Azon a nyelven válaszol, amelyen beszélsz. Nem kell parancsokat tanulnod, mondd a saját szavaiddal.</p></div></details>
+      <details class="sss" name="sss"><summary>Mi történik, ha elfogy a beszédidő?</summary><div class="cevap"><p>A Pro 30 naponta 10 percet újít meg, az ingyenes próbaidőszakban 5 percet kapsz. Ha ez kevés, vegyél 30, 60 vagy 180 perces csomagot, amely sosem jár le.</p></div></details>
+      <details class="sss" name="sss"><summary>Mi a különbség a Tervező és a Csevegés között?</summary><div class="cevap"><p>A Tervező ismeri az útvonalad, és elintézi a dolgokat: megállót ad hozzá, helyeket keres, átírja az útvonalat; a Pro része. A Csevegésben a témát te választod, és emlékszik a korábbi beszélgetésekre; percdíjcsomaggal nyílik.</p></div></details>
+      <details class="sss" name="sss"><summary>Csoportban mindenki hallja, és kinek a perceiből fogy?</summary><div class="cevap"><p>Ha behívod az AI CoRidert a csoport intercomjába, a szobában mindenki hallja. A perceket annak a fiókjából vonja le, aki behívta.</p></div></details>
+      <details class="sss" name="sss"><summary>Megkérdezem, elég lesz-e a benzin, de nem mond hatótávot. Miért?</summary><div class="cevap"><p>A hatótávhoz add meg egyszer a Beállításokban, mennyit mentél tele tankkal. Amíg ez nincs meg, az AI CoRider nem találgat, hanem szól.</p></div></details>
+      <details class="sss" name="sss"><summary>Kell Bluetooth, hogy halljam a sisakban?</summary><div class="cevap"><p>Ha a sisak Bluetooth-on csatlakozik a telefonhoz, a hang azon át szól, különben a telefonból. Szélben nem hallod? Mondd egyszerűen: „hangosabban”.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<section class="varis" aria-labelledby="varis-h">
+  <div class="kap">
+    <h2 id="varis-h">Nyomd meg a gombot, <i>hajts tovább.</i></h2>
+    <div class="cta-satir">
+      <a class="btn" href="https://apps.apple.com/hu/app/id6792549131?pt=128439797&amp;ct=site-hu&amp;mt=8">Letöltés az App Store-ból</a>
+      <a class="btn btn-hayalet" href="/hu/ozellikler.html">Minden funkció</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="alt-ic">
+    <div>
+      <p><a class="logo" href="/hu/" aria-label="Motoseyir"><img src="/img/favicon.png" alt="" width="28" height="28">MOTO<em>SEYİR</em></a></p>
+      <p style="margin-top:10px">© 2026 Motoseyir. Minden jog fenntartva.</p>
+    </div>
+    <ul>
+      <li><a href="/hu/">Főoldal</a></li><li><a href="/hu/ozellikler.html">Minden funkció</a></li><li><a href="/hu/nasil-yapilir.html">Hogyan működik</a></li><li><a href="/gizlilik/">Adatvédelem</a></li><li><a href="/hu/#iletisim">Kapcsolat</a></li><li><a href="https://www.instagram.com/motoseyir.app.en/">Instagram</a></li><li><a href="https://apps.apple.com/hu/app/id6792549131?pt=128439797&amp;ct=site-hu&amp;mt=8">App Store</a></li>
+    </ul>
+    <div class="dil-altbilgi"><span>Nyelvek</span>
+      <ul class="dil-liste">
+  <li><a href="/corider.html" lang="tr" hreflang="tr">Türkçe</a></li>
+  <li><a href="/en/corider.html" lang="en" hreflang="en">English</a></li>
+  <li><a href="/de/corider.html" lang="de" hreflang="de">Deutsch</a></li>
+  <li><a href="/fr/corider.html" lang="fr" hreflang="fr">Français</a></li>
+  <li><a href="/it/corider.html" lang="it" hreflang="it">Italiano</a></li>
+  <li><a href="/es/corider.html" lang="es" hreflang="es">Español</a></li>
+  <li><a href="/nl/corider.html" lang="nl" hreflang="nl">Nederlands</a></li>
+  <li><a href="/pl/corider.html" lang="pl" hreflang="pl">Polski</a></li>
+  <li><a href="/cs/corider.html" lang="cs" hreflang="cs">Čeština</a></li>
+  <li><a href="/sk/corider.html" lang="sk" hreflang="sk">Slovenčina</a></li>
+  <li><strong lang="hu">Magyar</strong></li>
+  <li><a href="/ro/corider.html" lang="ro" hreflang="ro">Română</a></li>
+  <li><a href="/hr/corider.html" lang="hr" hreflang="hr">Hrvatski</a></li>
+  <li><a href="/el/corider.html" lang="el" hreflang="el">Ελληνικά</a></li>
+</ul>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

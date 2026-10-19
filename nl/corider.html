@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI CoRider — de rijmaat in je helm | Motoseyir</title>
+<meta name="description" content="AI CoRider praat via je helm met je: voegt stops toe, zoekt plekken langs je route, noemt weer en actieradius en past de route aan. Je handen blijven aan het stuur.">
+<link rel="canonical" href="https://motoseyir-app.com/nl/corider.html">
+<link rel="alternate" hreflang="tr" href="https://motoseyir-app.com/corider.html">
+<link rel="alternate" hreflang="en" href="https://motoseyir-app.com/en/corider.html">
+<link rel="alternate" hreflang="de" href="https://motoseyir-app.com/de/corider.html">
+<link rel="alternate" hreflang="fr" href="https://motoseyir-app.com/fr/corider.html">
+<link rel="alternate" hreflang="it" href="https://motoseyir-app.com/it/corider.html">
+<link rel="alternate" hreflang="es" href="https://motoseyir-app.com/es/corider.html">
+<link rel="alternate" hreflang="nl" href="https://motoseyir-app.com/nl/corider.html">
+<link rel="alternate" hreflang="pl" href="https://motoseyir-app.com/pl/corider.html">
+<link rel="alternate" hreflang="cs" href="https://motoseyir-app.com/cs/corider.html">
+<link rel="alternate" hreflang="sk" href="https://motoseyir-app.com/sk/corider.html">
+<link rel="alternate" hreflang="hu" href="https://motoseyir-app.com/hu/corider.html">
+<link rel="alternate" hreflang="ro" href="https://motoseyir-app.com/ro/corider.html">
+<link rel="alternate" hreflang="hr" href="https://motoseyir-app.com/hr/corider.html">
+<link rel="alternate" hreflang="el" href="https://motoseyir-app.com/el/corider.html">
+<link rel="alternate" hreflang="x-default" href="https://motoseyir-app.com/en/corider.html">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Motoseyir">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:title" content="AI CoRider: ogen op de weg, hij luistert">
+<meta property="og:description" content="AI CoRider praat via je helm met je: voegt stops toe, zoekt plekken langs je route, noemt weer en actieradius en past de route aan. Je handen blijven aan het stuur.">
+<meta property="og:url" content="https://motoseyir-app.com/nl/corider.html">
+<meta property="og:image" content="https://motoseyir-app.com/img/og-kapak.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="apple-itunes-app" content="app-id=6792549131">
+<meta name="theme-color" content="#050B13">
+<link rel="icon" href="/img/favicon.png">
+
+<!--
+  AI CoRider sayfası: sablon/corider.html + dil/anasayfa.<kod>.json + dil/corider.<kod>.json'dan üretilir (python3 uret.py).
+  Stil m/corider.css, hareket m/corider.js. Görseller yalnız kendi varlıklarımız: uygulamadan gerçek ekran kaydı
+  (m/corider-*.mp4) ve uygulamanın AI CoRider yüzü (img/ai-corider.png'nin saydamlaştırılmış hâli, m/corider-yuz.webp).
+  Konuşma örnekleri tasarım örneğidir; uygulamadaki gerçek durum etiketleriyle (Köy yolları, rotaya eklendi...) eşleşir.
+-->
+<script>document.documentElement.className+=" cjs"</script>
+<link rel="preload" as="font" type="font/woff" href="/m/font/Manrope.woff" crossorigin>
+<link rel="stylesheet" href="/m/corider.css">
+<script defer src="/m/corider.js"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "name": "AI CoRider — de rijmaat in je helm | Motoseyir",
+      "url": "https://motoseyir-app.com/nl/corider.html",
+      "inLanguage": "nl",
+      "description": "AI CoRider praat via je helm met je: voegt stops toe, zoekt plekken langs je route, noemt weer en actieradius en past de route aan. Je handen blijven aan het stuur.",
+      "isPartOf": {"@type": "WebSite", "name": "Motoseyir", "url": "https://motoseyir-app.com/"}
+    },
+    {
+      "@type": "FAQPage",
+      "inLanguage": "nl",
+      "mainEntity": [
+        {"@type": "Question", "name": "Luistert AI CoRider de hele tijd mee?", "acceptedAnswer": {"@type": "Answer", "text": "Nee. Er is geen wekwoord. De microfoon gaat pas open als je op de AI CoRider-knop op de kaart tikt. De sessie sluit als je haar stopt, na een tijd stilte of als de navigatie eindigt."}},
+        {"@type": "Question", "name": "Werkt het zonder internet?", "acceptedAnswer": {"@type": "Answer", "text": "Nee. Wat je zegt gaat voor het antwoord naar een cloud-spraakdienst, dus AI CoRider heeft internet nodig. Zonder verbinding kan er geen sessie starten."}},
+        {"@type": "Question", "name": "In welke taal kan ik praten?", "acceptedAnswer": {"@type": "Answer", "text": "Hij antwoordt in de taal die jij spreekt. Je hoeft geen commando’s te leren, zeg het in je eigen woorden."}},
+        {"@type": "Question", "name": "Wat gebeurt er als mijn spreektijd op is?", "acceptedAnswer": {"@type": "Answer", "text": "Pro vernieuwt elke 30 dagen 10 minuten en de gratis proefperiode bevat er 5. Is dat niet genoeg, neem dan een pakket van 30, 60 of 180 minuten dat nooit verloopt."}},
+        {"@type": "Question", "name": "Wat is het verschil tussen Planner en Chat?", "acceptedAnswer": {"@type": "Answer", "text": "De Planner kent je route en regelt dingen: hij voegt stops toe, zoekt plekken en past de route aan; hij zit in Pro. In Chat kies jij het onderwerp en hij onthoudt eerdere gesprekken; die modus opent met een minutenpakket."}},
+        {"@type": "Question", "name": "Hoort in een groep iedereen hem, en van wie gaan de minuten af?", "acceptedAnswer": {"@type": "Answer", "text": "Roep je AI CoRider in de groepsintercom, dan hoort iedereen in de ruimte hem. De minuten gaan van het account van wie hem riep."}},
+        {"@type": "Question", "name": "Ik vraag of mijn benzine genoeg is, maar krijg geen actieradius. Waarom?", "acceptedAnswer": {"@type": "Answer", "text": "Voor de actieradius vul je één keer in Instellingen in hoe ver je met een volle tank kwam. Tot dan gokt AI CoRider niet; hij zegt het je."}},
+        {"@type": "Question", "name": "Heb ik Bluetooth nodig om hem in mijn helm te horen?", "acceptedAnswer": {"@type": "Answer", "text": "Is je helm via Bluetooth met de telefoon verbonden, dan komt de stem daar uit, anders uit de telefoon. Hoor je niets in de wind? Zeg gewoon “harder”."}}
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body id="top">
+<a class="skip" href="#icerik">Naar de inhoud</a>
+
+<header class="ust">
+  <div class="ust-ic">
+    <a class="logo" href="/nl/" aria-label="Motoseyir"><img src="/img/favicon.png" alt="" width="28" height="28">MOTO<em>SEYİR</em></a>
+    <nav aria-label="Hoofdnavigatie"><ul class="menu">
+      <li><a href="/nl/">Home</a></li><li><a href="#nasil">Zo werkt het</a></li><li><a href="#konusma">Gesprekken</a></li><li><a href="#yetenek">Wat hij doet</a></li><li><a href="#dakika">Minuten</a></li><li><a href="#sss">FAQ</a></li>
+    </ul></nav>
+    <div class="ust-sag">
+      <details class="dil-sec">
+  <summary aria-label="Taal kiezen"><span class="dil-kod">NL</span><span class="dil-ad">Nederlands</span></summary>
+  <ul>
+    <li><a href="/corider.html" lang="tr" hreflang="tr">Türkçe</a></li>
+    <li><a href="/en/corider.html" lang="en" hreflang="en">English</a></li>
+    <li><a href="/de/corider.html" lang="de" hreflang="de">Deutsch</a></li>
+    <li><a href="/fr/corider.html" lang="fr" hreflang="fr">Français</a></li>
+    <li><a href="/it/corider.html" lang="it" hreflang="it">Italiano</a></li>
+    <li><a href="/es/corider.html" lang="es" hreflang="es">Español</a></li>
+    <li><span aria-current="true">Nederlands</span></li>
+    <li><a href="/pl/corider.html" lang="pl" hreflang="pl">Polski</a></li>
+    <li><a href="/cs/corider.html" lang="cs" hreflang="cs">Čeština</a></li>
+    <li><a href="/sk/corider.html" lang="sk" hreflang="sk">Slovenčina</a></li>
+    <li><a href="/hu/corider.html" lang="hu" hreflang="hu">Magyar</a></li>
+    <li><a href="/ro/corider.html" lang="ro" hreflang="ro">Română</a></li>
+    <li><a href="/hr/corider.html" lang="hr" hreflang="hr">Hrvatski</a></li>
+    <li><a href="/el/corider.html" lang="el" hreflang="el">Ελληνικά</a></li>
+  </ul>
+</details>
+      <a class="btn btn-kucuk" href="https://apps.apple.com/nl/app/id6792549131?pt=128439797&amp;ct=site-nl&amp;mt=8">Downloaden</a>
+    </div>
+  </div>
+</header>
+
+<main id="icerik">
+<section class="kh" aria-labelledby="h1">
+  <div class="kh-ic">
+    <div class="kh-metin">
+      <p class="ust-yazi">Motoseyir Pro · AI CoRider</p>
+      <h1 id="h1">Ogen op de weg. <i>Hij&nbsp;luistert.</i></h1>
+      <p class="giris">AI CoRider is de rijmaat die via de headset in je helm met je praat. Hij kent je route: hij voegt stops toe, zoekt plekken langs de weg en past de route voor je aan. Je drukt op de knop, vraagt het in je eigen woorden en hoort het antwoord in je helm. Je handen blijven aan het stuur.</p>
+      <div class="cta-satir">
+        <a class="btn" href="https://apps.apple.com/nl/app/id6792549131?pt=128439797&amp;ct=site-nl&amp;mt=8"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.6c0-2.4 2-3.5 2-3.6-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.15-2.8.85-3.5.85s-1.8-.8-3-.8c-1.5 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.700 2.400 2.900 2.300 1.200 0 1.600-.7 3-.7s1.800.7 3 .7 2-1.100 2.800-2.300c.9-1.300 1.200-2.500 1.300-2.600-.1 0-2.500-1-2.500-3.600zM14.200 5.500c.6-.8 1.100-1.800.9-2.900-.9 0-2 .6-2.700 1.400-.6.700-1.100 1.800-1 2.800 1 .1 2.100-.5 2.800-1.300z"/></svg>Downloaden in de App Store</a>
+        <a class="btn btn-hayalet" href="#nasil">Zo werkt het</a>
+        <p class="mikro">Een Pro-functie. Je kunt ook minutenpakketten kopen die nooit verlopen.</p>
+      </div>
+    </div>
+    <div class="orb" aria-hidden="true">
+      <canvas id="orb-c" width="660" height="660"></canvas>
+      <img class="orb-yuz" src="/m/corider-yuz.webp" alt="" width="320" height="320">
+      <span class="orb-durum">Luistert</span>
+    </div>
+  </div>
+</section>
+
+<div class="serit"><dl aria-label="AI CoRider in cijfers">
+  <div><dt>~30</dt><dd>acties met je stem</dd></div>
+  <div><dt>4</dt><dd>stemmen: Quartz, Tempo, Stone, Willow</dd></div>
+  <div><dt>Bluetooth</dt><dd>werkt via de intercom van je helm</dd></div>
+  <div><dt>30·60·180</dt><dd>minuten-pakketten die nooit verlopen</dd></div>
+</dl></div>
+
+<section class="bl" id="nasil" aria-labelledby="nasil-h">
+  <div class="kap">
+    <div class="bl-ust">
+      <p class="km">Gebruik</p>
+      <h2 id="nasil-h">Druk, praat, <i>hoor het in je helm.</i></h2>
+    </div>
+    <ol class="adimlar">
+      <li><span class="n" aria-hidden="true">1</span><h3>Druk op de knop</h3><p>Tik op de AI CoRider-knop op de kaart en begin te praten.</p></li>
+      <li><span class="n" aria-hidden="true">2</span><h3>Praat gewoon</h3><p>Je hoeft geen commando’s te onthouden. Hij antwoordt in de taal die jij spreekt.</p></li>
+      <li><span class="n" aria-hidden="true">3</span><h3>Hoor het in je helm</h3><p>Is je helm via Bluetooth met de telefoon verbonden, dan komt de stem daar uit. Hoor je niets in de wind? Zeg gewoon “harder”.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="bl z1" id="konusma" aria-labelledby="konusma-h">
+  <div class="kap">
+    <div class="bl-ust">
+      <p class="km">Voorbeeldgesprekken</p>
+      <h2 id="konusma-h">Zo <i>praat je met hem.</i></h2>
+      <p class="lead">Dit zijn voorbeelden. Je hoeft geen commando’s te leren, zeg het gewoon in je eigen woorden.</p>
+    </div>
+    <div class="konusmalar">
+      <article class="soh">
+        <p class="soh-t">Route en weer</p>
+        <div class="satir sen"><span class="kim">Jij</span><p>Hoe ver is het nog? Gaat het onderweg regenen?</p></div>
+        <div class="satir ai"><span class="kim">AI CoRider</span><p>Nog 2 uur en 49 minuten tot aankomst. Op de route is geen regen te zien.</p></div>
+        <div class="satir sen"><span class="kim">Jij</span><p>Hoe laat ben ik er?</p></div>
+        <div class="satir ai"><span class="kim">AI CoRider</span><p>Rond 17:28.</p></div>
+        <span class="chip oku"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/></svg>Resterende tijd, regen, aankomsttijd</span>
+      </article>
+      <article class="soh">
+        <p class="soh-t">Een stop onderweg</p>
+        <div class="satir sen"><span class="kim">Jij</span><p>Is er onderweg een goede koffieplek?</p></div>
+        <div class="satir ai"><span class="kim">AI CoRider</span><p>Over 28 km is er een, aan je rechterkant, met een hoge waardering. Zal ik hem als stop toevoegen?</p></div>
+        <div class="satir sen"><span class="kim">Jij</span><p>Ja, voeg toe.</p></div>
+        <div class="satir ai"><span class="kim">AI CoRider</span><p>Gedaan, ik bereken de route opnieuw.</p></div>
+        <span class="chip" lang="en"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Café added to route</span>
+      </article>
+      <article class="soh">
+        <p class="soh-t">Routemodus</p>
+        <div class="satir sen"><span class="kim">Jij</span><p>Laten we de binnenwegen nemen.</p></div>
+        <div class="satir ai"><span class="kim">AI CoRider</span><p>Ik schakel over op binnenwegen en bereken de route.</p></div>
+        <span class="chip" lang="en"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Back roads</span>
+      </article>
+      <article class="soh">
+        <p class="soh-t">Brandstof</p>
+        <div class="satir sen"><span class="kim">Jij</span><p>Haal ik het met mijn benzine?</p></div>
+        <div class="satir ai"><span class="kim">AI CoRider</span><p>Ja: je actieradius is ongeveer 210 km en de bestemming ligt 140 km verderop.</p></div>
+        <span class="chip oku"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/></svg>Actieradius</span>
+      </article>
+      <article class="soh">
+        <p class="soh-t">Groep</p>
+        <div class="satir sen"><span class="kim">Jij</span><p>Zeg tegen de groep dat we pauzeren.</p></div>
+        <div class="satir ai"><span class="kim">AI CoRider</span><p>Gedaan. Ik heb de groep gezegd dat we pauzeren.</p></div>
+        <span class="chip" lang="en"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Sent to the group: Break</span>
+      </article>
+      <article class="soh">
+        <p class="soh-t">Herinnering</p>
+        <div class="satir sen"><span class="kim">Jij</span><p>Herinner me morgen aan het smeren van de ketting.</p></div>
+        <div class="satir ai"><span class="kim">AI CoRider</span><p>Oké. Morgen zeg ik dat als eerste, zodra je me opent.</p></div>
+        <span class="chip oku"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/></svg>Zegt het morgen als eerste</span>
+      </article>
+    </div>
+    <p class="soh-not">De voorbeelden zijn ter illustratie geschreven. Labels met een doorgetrokken rand zijn de statuslabels die de app op het scherm toont, zoals ze daar staan (in het Engels); gestippelde labels verschijnen niet op het scherm, ze beschrijven alleen wat er gebeurt.</p>
+  </div>
+</section>
+
+<section class="bl" id="kayit" aria-labelledby="kayit-h">
+  <div class="kap video-ik">
+    <div class="tel-kap">
+      <div class="tel"><video id="cr-video" data-src="/m/corider-en.mp4" data-kucuk="/m/corider-kucuk-en.mp4" poster="/m/corider-en.webp" muted loop playsinline preload="none" width="540" height="1106" aria-label="AI CoRider met spraak: de rijder vraagt naar de resterende tijd en regen, vindt een plek om te stoppen en voegt die toe aan de route"></video></div>
+      <button class="ses-btn" id="cr-ses" type="button" aria-pressed="false" data-ac="Geluid aan" data-kapat="Geluid uit"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path class="h" d="M4 9.5v5h3.6L12 18.5v-13L7.6 9.5H4z" fill="currentColor"/><path class="d" d="M15.5 9a4.2 4.2 0 0 1 0 6M17.8 6.6a7.5 7.5 0 0 1 0 10.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Geluid aan</span></button>
+    </div>
+    <div>
+      <p class="km">Echte opname</p>
+      <h2 id="kayit-h">Van een echte rit</h2>
+      <p class="lead">Een echte opname uit de app: de rijder vraagt hoe lang het nog duurt en of het gaat regenen, zoekt een plek om te stoppen en wat hij kiest komt als stop in de route.</p>
+      <p class="not">Echte schermopname uit de app. Er wordt Engels gesproken.</p>
+    </div>
+  </div>
+</section>
+
+<section class="bl z1" id="yetenek" aria-labelledby="yetenek-h">
+  <div class="kap">
+    <div class="bl-ust">
+      <p class="km">Wat hij doet</p>
+      <h2 id="yetenek-h">Zo’n 30 acties <i>met je stem.</i></h2>
+      <p class="lead">Gegroepeerd in vijf thema’s. Je hoeft er niets van uit je hoofd te leren: zeg gewoon wat je wilt, in je eigen woorden.</p>
+    </div>
+    <div class="yetenek">
+      <section class="grup" aria-labelledby="g1-h"><span class="no" aria-hidden="true">01</span><h3 id="g1-h">Route</h3><p>Hij past de route voor je aan.</p><ul><li>Voegt een stop toe, haalt er een weg of slaat de volgende over</li><li>Wijzigt de bestemming en zet de stops in de juiste volgorde</li><li>Wisselt tussen binnenwegen en de kortste route</li><li>Toont de route op de kaart en brengt je naar huis</li></ul></section>
+      <section class="grup" aria-labelledby="g2-h"><span class="no" aria-hidden="true">02</span><h3 id="g2-h">Onderweg</h3><p>Hij zoekt langs je route en om je heen.</p><ul><li>Vindt verderop een tankstation, eten of koffie en noemt de best beoordeelde eerst</li><li>Zoekt een slaapplek voor vannacht</li><li>Vertelt je de resterende tijd, de volgende afslag en waar je bent</li><li>Zegt of er verderop scherpe bochten of klimmetjes komen</li></ul></section>
+      <section class="grup" aria-labelledby="g3-h"><span class="no" aria-hidden="true">03</span><h3 id="g3-h">Weer en actieradius</h3><p>Wat je vraagt voor en tijdens de rit.</p><ul><li>Hoe het weer wordt en of het op je route regent</li><li>Kijkt op de regenradar en opent die op de kaart</li><li>Hoe ver je tank reikt en of er onderweg een tankstation is</li><li class="r">De regenradar werkt alleen in de VS en Duitsland. Voor de actieradius vul je één keer in Instellingen in hoe ver je met een volle tank kwam.</li></ul></section>
+      <section class="grup" aria-labelledby="g4-h"><span class="no" aria-hidden="true">04</span><h3 id="g4-h">Groep</h3><p>Als er een groepsrit loopt.</p><ul><li>Vertelt waar iedereen is en wie achterop raakt</li><li>Stuurt de groep een kant-en-klare melding: ik ben achter, pauze, gevaar, benzine</li><li>Als jij de route met de groep deelde, vraagt hij voor wie een wijziging geldt</li></ul></section>
+      <section class="grup" aria-labelledby="g5-h"><span class="no" aria-hidden="true">05</span><h3 id="g5-h">Rit</h3><p>Terwijl je handen aan het stuur blijven.</p><ul><li>Start en beëindigt de navigatie</li><li>Start en stopt de ritopname</li><li>Zoekt iemand in je contacten; één tik op het scherm start het gesprek</li><li>Onthoudt een notitie als je dat vraagt en wist hem als je “vergeet het” zegt</li><li>Zet zijn eigen stem harder of zachter: “harder”</li></ul></section>
+    </div>
+    <div class="cagri-kutu">
+      <h3>In de groepsruimte</h3>
+      <p>Roep AI CoRider in de groepsintercom en iedereen in de ruimte hoort hem. De minuten gaan van het account van wie hem riep.</p>
+    </div>
+  </div>
+</section>
+
+<section class="bl" id="kipler" aria-labelledby="kip-h">
+  <div class="kap">
+    <div class="bl-ust">
+      <p class="km">Twee modi</p>
+      <h2 id="kip-h">De ene regelt, <i>de andere praat.</i></h2>
+      <p class="lead">Zeg tijdens het praten gewoon “zet de chatmodus aan”.</p>
+    </div>
+    <div class="kipler">
+      <article class="kip"><h3>Planner</h3><p>Hij kent je route en regelt dingen.</p><ul><li>Is er onderweg een tankstation?</li><li>Waar zijn de anderen?</li><li>Laten we de binnenwegen nemen.</li><li>Hoe wordt het weer?</li><li>Breng me naar huis.</li></ul><span class="rozet">Inbegrepen in Pro</span></article>
+      <article class="kip"><h3>Chat</h3><p>Jij kiest het onderwerp; hij onthoudt eerdere gesprekken.</p><ul><li>Laten we Engels oefenen.</li><li>Laten we de dag samen plannen.</li><li>Vertel me een verhaal.</li><li>Waar waren we gisteren gebleven?</li></ul><span class="rozet">Opent met een minutenpakket</span></article>
+    </div>
+    <div class="sesler">
+      <div><h3>Vier stemmen</h3><p>Je luistert ze af in Instellingen en kiest: Quartz, Tempo, Stone of Willow.</p></div>
+      <ul class="ses-liste" aria-label="Vier stemmen">
+        <li><i aria-hidden="true"><b></b><b></b><b></b><b></b><b></b></i>Quartz</li><li><i aria-hidden="true"><b></b><b></b><b></b><b></b><b></b></i>Tempo</li><li><i aria-hidden="true"><b></b><b></b><b></b><b></b><b></b></i>Stone</li><li><i aria-hidden="true"><b></b><b></b><b></b><b></b><b></b></i>Willow</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="bl z1" id="dakika" aria-labelledby="dakika-h">
+  <div class="kap">
+    <div class="bl-ust">
+      <p class="km">Minuten en pakketten</p>
+      <h2 id="dakika-h">Spreektijd, <i>simpel uitgelegd.</i></h2>
+      <p class="lead">De minuten die je met AI CoRider doorbrengt komen uit de tijd die Pro vernieuwt en uit pakketten die nooit verlopen.</p>
+    </div>
+    <div class="sureler">
+      <div class="sure"><b>10 min</b><h3>In Pro, elke 30 dagen</h3><p>Je spreektijd gaat elke 30 dagen terug naar 10 minuten.</p></div>
+      <div class="sure"><b>5 min</b><h3>In de gratis proefperiode</h3><p>Tijdens de proefperiode kun je 5 minuten praten.</p></div>
+      <div class="sure"><b>30 · 60 · 180</b><h3>Minutenpakketten</h3><p>30, 60 of 180 minuten. Ze verlopen nooit en verdwijnen niet aan het eind van de maand; ook de chatmodus opent ermee.</p></div>
+    </div>
+    <p class="fiyat-not">De cijfers gelden voor nieuwe abonnees. De actuele prijzen verschillen per regio; je ziet ze op het abonnementsscherm in de App Store. Opzeggen kan altijd in je App Store-account.</p>
+  </div>
+</section>
+
+<section class="bl" id="gizlilik" aria-labelledby="gizlilik-h">
+  <div class="kap">
+    <div class="bl-ust">
+      <p class="km">Privacy</p>
+      <h2 id="gizlilik-h">Je stem <i>blijft van jou.</i></h2>
+    </div>
+    <ul class="gizlilik">
+      <li><h3>Werkt alleen als jij het start</h3><p>De microfoon gaat pas open als je op de AI CoRider-knop op de kaart tikt.</p></li>
+      <li><h3>Stem wordt niet bewaard</h3><p>Je stem wordt bij ons niet opgenomen of bewaard. Voor het antwoord gaat ze naar een cloud-spraakdienst van een derde partij.</p></li>
+      <li><h3>Geen exacte locatie</h3><p>Van de route gaat alleen tekst weg, zoals de resterende afstand en de volgende manoeuvre.</p></li>
+      <li><h3>Notities op je telefoon</h3><p>Notities die je hem laat onthouden staan op je telefoon; zeg je “vergeet het”, dan worden ze gewist.</p></li>
+    </ul>
+    <p class="gz-tam"><strong>Privacy.</strong> AI CoRider werkt alleen als je hem zelf aanzet. Je stem wordt bij ons niet opgenomen of bewaard; wat je zegt gaat naar een cloudspraakdienst van een derde partij, zodat die kan antwoorden. Je exacte locatie gaat niet naar die dienst; van de route krijgt hij alleen tekst, zoals de resterende afstand en de volgende manoeuvre. De sessie sluit als je haar beëindigt, na een tijd zonder spraak of als de navigatie stopt. <a href="/gizlilik/">De details staan in het privacybeleid.</a></p>
+  </div>
+</section>
+
+<section class="bl z1" id="sss" aria-labelledby="sss-h">
+  <div class="kap">
+    <div class="bl-ust">
+      <p class="km">Veelgestelde vragen</p>
+      <h2 id="sss-h">Wat je je afvraagt</h2>
+    </div>
+    <div class="sss-liste">
+      <details class="sss" name="sss"><summary>Luistert AI CoRider de hele tijd mee?</summary><div class="cevap"><p>Nee. Er is geen wekwoord. De microfoon gaat pas open als je op de AI CoRider-knop op de kaart tikt. De sessie sluit als je haar stopt, na een tijd stilte of als de navigatie eindigt.</p></div></details>
+      <details class="sss" name="sss"><summary>Werkt het zonder internet?</summary><div class="cevap"><p>Nee. Wat je zegt gaat voor het antwoord naar een cloud-spraakdienst, dus AI CoRider heeft internet nodig. Zonder verbinding kan er geen sessie starten.</p></div></details>
+      <details class="sss" name="sss"><summary>In welke taal kan ik praten?</summary><div class="cevap"><p>Hij antwoordt in de taal die jij spreekt. Je hoeft geen commando’s te leren, zeg het in je eigen woorden.</p></div></details>
+      <details class="sss" name="sss"><summary>Wat gebeurt er als mijn spreektijd op is?</summary><div class="cevap"><p>Pro vernieuwt elke 30 dagen 10 minuten en de gratis proefperiode bevat er 5. Is dat niet genoeg, neem dan een pakket van 30, 60 of 180 minuten dat nooit verloopt.</p></div></details>
+      <details class="sss" name="sss"><summary>Wat is het verschil tussen Planner en Chat?</summary><div class="cevap"><p>De Planner kent je route en regelt dingen: hij voegt stops toe, zoekt plekken en past de route aan; hij zit in Pro. In Chat kies jij het onderwerp en hij onthoudt eerdere gesprekken; die modus opent met een minutenpakket.</p></div></details>
+      <details class="sss" name="sss"><summary>Hoort in een groep iedereen hem, en van wie gaan de minuten af?</summary><div class="cevap"><p>Roep je AI CoRider in de groepsintercom, dan hoort iedereen in de ruimte hem. De minuten gaan van het account van wie hem riep.</p></div></details>
+      <details class="sss" name="sss"><summary>Ik vraag of mijn benzine genoeg is, maar krijg geen actieradius. Waarom?</summary><div class="cevap"><p>Voor de actieradius vul je één keer in Instellingen in hoe ver je met een volle tank kwam. Tot dan gokt AI CoRider niet; hij zegt het je.</p></div></details>
+      <details class="sss" name="sss"><summary>Heb ik Bluetooth nodig om hem in mijn helm te horen?</summary><div class="cevap"><p>Is je helm via Bluetooth met de telefoon verbonden, dan komt de stem daar uit, anders uit de telefoon. Hoor je niets in de wind? Zeg gewoon “harder”.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<section class="varis" aria-labelledby="varis-h">
+  <div class="kap">
+    <h2 id="varis-h">Druk op de knop, <i>rij gewoon door.</i></h2>
+    <div class="cta-satir">
+      <a class="btn" href="https://apps.apple.com/nl/app/id6792549131?pt=128439797&amp;ct=site-nl&amp;mt=8">Downloaden in de App Store</a>
+      <a class="btn btn-hayalet" href="/nl/ozellikler.html">Alle functies</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="alt-ic">
+    <div>
+      <p><a class="logo" href="/nl/" aria-label="Motoseyir"><img src="/img/favicon.png" alt="" width="28" height="28">MOTO<em>SEYİR</em></a></p>
+      <p style="margin-top:10px">© 2026 Motoseyir. Alle rechten voorbehouden.</p>
+    </div>
+    <ul>
+      <li><a href="/nl/">Home</a></li><li><a href="/nl/ozellikler.html">Alle functies</a></li><li><a href="/nl/nasil-yapilir.html">Hoe het werkt</a></li><li><a href="/gizlilik/">Privacy</a></li><li><a href="/nl/#iletisim">Contact</a></li><li><a href="https://www.instagram.com/motoseyir.app.en/">Instagram</a></li><li><a href="https://apps.apple.com/nl/app/id6792549131?pt=128439797&amp;ct=site-nl&amp;mt=8">App Store</a></li>
+    </ul>
+    <div class="dil-altbilgi"><span>Talen</span>
+      <ul class="dil-liste">
+  <li><a href="/corider.html" lang="tr" hreflang="tr">Türkçe</a></li>
+  <li><a href="/en/corider.html" lang="en" hreflang="en">English</a></li>
+  <li><a href="/de/corider.html" lang="de" hreflang="de">Deutsch</a></li>
+  <li><a href="/fr/corider.html" lang="fr" hreflang="fr">Français</a></li>
+  <li><a href="/it/corider.html" lang="it" hreflang="it">Italiano</a></li>
+  <li><a href="/es/corider.html" lang="es" hreflang="es">Español</a></li>
+  <li><strong lang="nl">Nederlands</strong></li>
+  <li><a href="/pl/corider.html" lang="pl" hreflang="pl">Polski</a></li>
+  <li><a href="/cs/corider.html" lang="cs" hreflang="cs">Čeština</a></li>
+  <li><a href="/sk/corider.html" lang="sk" hreflang="sk">Slovenčina</a></li>
+  <li><a href="/hu/corider.html" lang="hu" hreflang="hu">Magyar</a></li>
+  <li><a href="/ro/corider.html" lang="ro" hreflang="ro">Română</a></li>
+  <li><a href="/hr/corider.html" lang="hr" hreflang="hr">Hrvatski</a></li>
+  <li><a href="/el/corider.html" lang="el" hreflang="el">Ελληνικά</a></li>
+</ul>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

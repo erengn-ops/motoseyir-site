@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="{{lang}}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{cr_baslik}}</title>
+<meta name="description" content="{{cr_aciklama}}">
+<link rel="canonical" href="{{kanonik}}">
+{{alternatifler}}
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Motoseyir">
+<meta property="og:locale" content="{{og_locale}}">
+<meta property="og:title" content="{{cr_og_baslik}}">
+<meta property="og:description" content="{{cr_aciklama}}">
+<meta property="og:url" content="{{kanonik}}">
+<meta property="og:image" content="https://motoseyir-app.com/img/og-kapak.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="apple-itunes-app" content="app-id={{uygulama_id}}">
+<meta name="theme-color" content="#050B13">
+<link rel="icon" href="/img/favicon.png">
+
+<!--
+  AI CoRider sayfası: sablon/corider.html + dil/anasayfa.<kod>.json + dil/corider.<kod>.json'dan üretilir (python3 uret.py).
+  Stil m/corider.css, hareket m/corider.js. Görseller yalnız kendi varlıklarımız: uygulamadan gerçek ekran kaydı
+  (m/corider-*.mp4) ve uygulamanın AI CoRider yüzü (img/ai-corider.png'nin saydamlaştırılmış hâli, m/corider-yuz.webp).
+  Konuşma örnekleri tasarım örneğidir; uygulamadaki gerçek durum etiketleriyle (Köy yolları, rotaya eklendi...) eşleşir.
+-->
+<script>document.documentElement.className+=" cjs"</script>
+<link rel="preload" as="font" type="font/woff" href="/m/font/Manrope.woff" crossorigin>
+<link rel="stylesheet" href="/m/corider.css">
+<script defer src="/m/corider.js"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "name": "{{cr_baslik}}",
+      "url": "{{kanonik}}",
+      "inLanguage": "{{lang}}",
+      "description": "{{cr_aciklama}}",
+      "isPartOf": {"@type": "WebSite", "name": "Motoseyir", "url": "https://motoseyir-app.com/"}
+    },
+    {
+      "@type": "FAQPage",
+      "inLanguage": "{{lang}}",
+      "mainEntity": [
+        {"@type": "Question", "name": "{{cr_f1_q}}", "acceptedAnswer": {"@type": "Answer", "text": "{{cr_f1_a}}"}},
+        {"@type": "Question", "name": "{{cr_f2_q}}", "acceptedAnswer": {"@type": "Answer", "text": "{{cr_f2_a}}"}},
+        {"@type": "Question", "name": "{{cr_f3_q}}", "acceptedAnswer": {"@type": "Answer", "text": "{{cr_f3_a}}"}},
+        {"@type": "Question", "name": "{{cr_f4_q}}", "acceptedAnswer": {"@type": "Answer", "text": "{{cr_f4_a}}"}},
+        {"@type": "Question", "name": "{{cr_f5_q}}", "acceptedAnswer": {"@type": "Answer", "text": "{{cr_f5_a}}"}},
+        {"@type": "Question", "name": "{{cr_f6_q}}", "acceptedAnswer": {"@type": "Answer", "text": "{{cr_f6_a}}"}},
+        {"@type": "Question", "name": "{{cr_f7_q}}", "acceptedAnswer": {"@type": "Answer", "text": "{{cr_f7_a}}"}},
+        {"@type": "Question", "name": "{{cr_f8_q}}", "acceptedAnswer": {"@type": "Answer", "text": "{{cr_f8_a}}"}}
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body id="top">
+<a class="skip" href="#icerik">{{skip}}</a>
+
+<header class="ust">
+  <div class="ust-ic">
+    <a class="logo" href="{{anasayfa_url}}" aria-label="Motoseyir"><img src="/img/favicon.png" alt="" width="28" height="28">MOTO<em>SEYİR</em></a>
+    <nav aria-label="{{nav_etiket}}"><ul class="menu">
+      <li><a href="{{anasayfa_url}}">{{nav_anasayfa}}</a></li><li><a href="#nasil">{{cr_n_nasil}}</a></li><li><a href="#konusma">{{cr_n_konusma}}</a></li><li><a href="#yetenek">{{cr_n_yetenek}}</a></li><li><a href="#dakika">{{cr_n_dakika}}</a></li><li><a href="#sss">{{cr_n_sss}}</a></li>
+    </ul></nav>
+    <div class="ust-sag">
+      {{dil_secici}}
+      <a class="btn btn-kucuk" href="{{store}}">{{btn_indir}}</a>
+    </div>
+  </div>
+</header>
+
+<main id="icerik">
+<section class="kh" aria-labelledby="h1">
+  <div class="kh-ic">
+    <div class="kh-metin">
+      <p class="ust-yazi">{{cr_eyebrow}}</p>
+      <h1 id="h1">{{cr_h1}}</h1>
+      <p class="giris">{{cr_lead}}</p>
+      <div class="cta-satir">
+        <a class="btn" href="{{store}}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.6c0-2.4 2-3.5 2-3.6-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.15-2.8.85-3.5.85s-1.8-.8-3-.8c-1.5 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.700 2.400 2.900 2.300 1.200 0 1.600-.7 3-.7s1.800.7 3 .7 2-1.100 2.800-2.300c.9-1.300 1.200-2.500 1.300-2.600-.1 0-2.500-1-2.500-3.600zM14.200 5.500c.6-.8 1.100-1.800.9-2.900-.9 0-2 .6-2.700 1.400-.6.700-1.100 1.800-1 2.800 1 .1 2.100-.5 2.800-1.300z"/></svg>{{btn_store}}</a>
+        <a class="btn btn-hayalet" href="#nasil">{{cr_btn_nasil}}</a>
+        <p class="mikro">{{cr_micro}}</p>
+      </div>
+    </div>
+    <div class="orb" aria-hidden="true">
+      <canvas id="orb-c" width="660" height="660"></canvas>
+      <img class="orb-yuz" src="/m/corider-yuz.webp" alt="" width="320" height="320">
+      <span class="orb-durum">{{cr_orb}}</span>
+    </div>
+  </div>
+</section>
+
+<div class="serit"><dl aria-label="{{cr_serit_etiket}}">
+  <div><dt>{{a4_s0_b}}</dt><dd>{{a4_s0_t}}</dd></div>
+  <div><dt>{{a4_s1_b}}</dt><dd>{{a4_s1_t}}</dd></div>
+  <div><dt>{{a4_s2_b}}</dt><dd>{{a4_s2_t}}</dd></div>
+  <div><dt>{{a4_s3_b}}</dt><dd>{{a4_s3_t}}</dd></div>
+</dl></div>
+
+<section class="bl" id="nasil" aria-labelledby="nasil-h">
+  <div class="kap">
+    <div class="bl-ust">
+      <p class="km">{{cr_nasil_km}}</p>
+      <h2 id="nasil-h">{{cr_nasil_h2}}</h2>
+    </div>
+    <ol class="adimlar">
+      <li><span class="n" aria-hidden="true">1</span><h3>{{c_h1_t}}</h3><p>{{c_h1_d}}</p></li>
+      <li><span class="n" aria-hidden="true">2</span><h3>{{c_h2_t}}</h3><p>{{c_h2_d}}</p></li>
+      <li><span class="n" aria-hidden="true">3</span><h3>{{c_h3_t}}</h3><p>{{c_h3_d}}</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="bl z1" id="konusma" aria-labelledby="konusma-h">
+  <div class="kap">
+    <div class="bl-ust">
+      <p class="km">{{cr_k_km}}</p>
+      <h2 id="konusma-h">{{cr_k_h2}}</h2>
+      <p class="lead">{{c_say_p}}</p>
+    </div>
+    <div class="konusmalar">
+      <article class="soh">
+        <p class="soh-t">{{cr_d1_t}}</p>
+        <div class="satir sen"><span class="kim">{{cr_sen}}</span><p>{{cr_d1_q}}</p></div>
+        <div class="satir ai"><span class="kim">AI CoRider</span><p>{{cr_d1_a}}</p></div>
+        <div class="satir sen"><span class="kim">{{cr_sen}}</span><p>{{cr_d1_q2}}</p></div>
+        <div class="satir ai"><span class="kim">AI CoRider</span><p>{{cr_d1_a2}}</p></div>
+        <span class="chip oku"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/></svg>{{cr_d1_c}}</span>
+      </article>
+      <article class="soh">
+        <p class="soh-t">{{cr_d2_t}}</p>
+        <div class="satir sen"><span class="kim">{{cr_sen}}</span><p>{{cr_d2_q}}</p></div>
+        <div class="satir ai"><span class="kim">AI CoRider</span><p>{{cr_d2_a}}</p></div>
+        <div class="satir sen"><span class="kim">{{cr_sen}}</span><p>{{cr_d2_q2}}</p></div>
+        <div class="satir ai"><span class="kim">AI CoRider</span><p>{{cr_d2_a2}}</p></div>
+        <span class="chip" lang="{{cr_chip_lang}}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>{{cr_d2_c}}</span>
+      </article>
+      <article class="soh">
+        <p class="soh-t">{{cr_d3_t}}</p>
+        <div class="satir sen"><span class="kim">{{cr_sen}}</span><p>{{cr_d3_q}}</p></div>
+        <div class="satir ai"><span class="kim">AI CoRider</span><p>{{cr_d3_a}}</p></div>
+        <span class="chip" lang="{{cr_chip_lang}}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>{{cr_d3_c}}</span>
+      </article>
+      <article class="soh">
+        <p class="soh-t">{{cr_d4_t}}</p>
+        <div class="satir sen"><span class="kim">{{cr_sen}}</span><p>{{cr_d4_q}}</p></div>
+        <div class="satir ai"><span class="kim">AI CoRider</span><p>{{cr_d4_a}}</p></div>
+        <span class="chip oku"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/></svg>{{cr_d4_c}}</span>
+      </article>
+      <article class="soh">
+        <p class="soh-t">{{cr_d5_t}}</p>
+        <div class="satir sen"><span class="kim">{{cr_sen}}</span><p>{{cr_d5_q}}</p></div>
+        <div class="satir ai"><span class="kim">AI CoRider</span><p>{{cr_d5_a}}</p></div>
+        <span class="chip" lang="{{cr_chip_lang}}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>{{cr_d5_c}}</span>
+      </article>
+      <article class="soh">
+        <p class="soh-t">{{cr_d6_t}}</p>
+        <div class="satir sen"><span class="kim">{{cr_sen}}</span><p>{{cr_d6_q}}</p></div>
+        <div class="satir ai"><span class="kim">AI CoRider</span><p>{{cr_d6_a}}</p></div>
+        <span class="chip oku"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/></svg>{{cr_d6_c}}</span>
+      </article>
+    </div>
+    <p class="soh-not">{{cr_k_not}}</p>
+  </div>
+</section>
+
+<section class="bl" id="kayit" aria-labelledby="kayit-h">
+  <div class="kap video-ik">
+    <div class="tel-kap">
+      <div class="tel"><video id="cr-video" data-src="/m/corider-{{dil_kodu}}.mp4" data-kucuk="/m/corider-kucuk-{{dil_kodu}}.mp4" poster="/m/corider-{{dil_kodu}}.webp" muted loop playsinline preload="none" width="540" height="1106" aria-label="{{c_vid_alt}}"></video></div>
+      <button class="ses-btn" id="cr-ses" type="button" aria-pressed="false" data-ac="{{c_ses_ac}}" data-kapat="{{c_ses_kapat}}"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path class="h" d="M4 9.5v5h3.6L12 18.5v-13L7.6 9.5H4z" fill="currentColor"/><path class="d" d="M15.5 9a4.2 4.2 0 0 1 0 6M17.8 6.6a7.5 7.5 0 0 1 0 10.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>{{c_ses_ac}}</span></button>
+    </div>
+    <div>
+      <p class="km">{{cr_v_km}}</p>
+      <h2 id="kayit-h">{{c_vid_h}}</h2>
+      <p class="lead">{{c_vid_p}}</p>
+      <p class="not">{{c_vid_not}}</p>
+    </div>
+  </div>
+</section>
+
+<section class="bl z1" id="yetenek" aria-labelledby="yetenek-h">
+  <div class="kap">
+    <div class="bl-ust">
+      <p class="km">{{cr_y_km}}</p>
+      <h2 id="yetenek-h">{{cr_y_h2}}</h2>
+      <p class="lead">{{cr_y_p}}</p>
+    </div>
+    <div class="yetenek">
+      <section class="grup" aria-labelledby="g1-h"><span class="no" aria-hidden="true">01</span><h3 id="g1-h">{{cr_g1_h}}</h3><p>{{cr_g1_p}}</p><ul>{{cr_g1_l}}</ul></section>
+      <section class="grup" aria-labelledby="g2-h"><span class="no" aria-hidden="true">02</span><h3 id="g2-h">{{cr_g2_h}}</h3><p>{{cr_g2_p}}</p><ul>{{cr_g2_l}}</ul></section>
+      <section class="grup" aria-labelledby="g3-h"><span class="no" aria-hidden="true">03</span><h3 id="g3-h">{{cr_g3_h}}</h3><p>{{cr_g3_p}}</p><ul>{{cr_g3_l}}</ul></section>
+      <section class="grup" aria-labelledby="g4-h"><span class="no" aria-hidden="true">04</span><h3 id="g4-h">{{cr_g4_h}}</h3><p>{{cr_g4_p}}</p><ul>{{cr_g4_l}}</ul></section>
+      <section class="grup" aria-labelledby="g5-h"><span class="no" aria-hidden="true">05</span><h3 id="g5-h">{{cr_g5_h}}</h3><p>{{cr_g5_p}}</p><ul>{{cr_g5_l}}</ul></section>
+    </div>
+    <div class="cagri-kutu">
+      <h3>{{a4_8_t}}</h3>
+      <p>{{a4_8_d}}</p>
+    </div>
+  </div>
+</section>
+
+<section class="bl" id="kipler" aria-labelledby="kip-h">
+  <div class="kap">
+    <div class="bl-ust">
+      <p class="km">{{cr_m_km}}</p>
+      <h2 id="kip-h">{{cr_m_h2}}</h2>
+      <p class="lead">{{cr_m_p}}</p>
+    </div>
+    <div class="kipler">
+      <article class="kip"><h3>{{cr_m1_h}}</h3><p>{{cr_m1_d}}</p><ul>{{cr_m1_l}}</ul><span class="rozet">{{cr_m1_r}}</span></article>
+      <article class="kip"><h3>{{cr_m2_h}}</h3><p>{{cr_m2_d}}</p><ul>{{cr_m2_l}}</ul><span class="rozet">{{cr_m2_r}}</span></article>
+    </div>
+    <div class="sesler">
+      <div><h3>{{cr_ses_h}}</h3><p>{{cr_ses_p}}</p></div>
+      <ul class="ses-liste" aria-label="{{cr_ses_h}}">
+        <li><i aria-hidden="true"><b></b><b></b><b></b><b></b><b></b></i>Quartz</li><li><i aria-hidden="true"><b></b><b></b><b></b><b></b><b></b></i>Tempo</li><li><i aria-hidden="true"><b></b><b></b><b></b><b></b><b></b></i>Stone</li><li><i aria-hidden="true"><b></b><b></b><b></b><b></b><b></b></i>Willow</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="bl z1" id="dakika" aria-labelledby="dakika-h">
+  <div class="kap">
+    <div class="bl-ust">
+      <p class="km">{{cr_t_km}}</p>
+      <h2 id="dakika-h">{{cr_t_h2}}</h2>
+      <p class="lead">{{cr_t_p}}</p>
+    </div>
+    <div class="sureler">
+      <div class="sure"><b>{{cr_t1_b}}</b><h3>{{cr_t1_h}}</h3><p>{{cr_t1_d}}</p></div>
+      <div class="sure"><b>{{cr_t2_b}}</b><h3>{{cr_t2_h}}</h3><p>{{cr_t2_d}}</p></div>
+      <div class="sure"><b>30 · 60 · 180</b><h3>{{cr_t3_h}}</h3><p>{{cr_t3_d}}</p></div>
+    </div>
+    <p class="fiyat-not">{{cr_t_not}} {{fiyat_not}}</p>
+  </div>
+</section>
+
+<section class="bl" id="gizlilik" aria-labelledby="gizlilik-h">
+  <div class="kap">
+    <div class="bl-ust">
+      <p class="km">{{nav_gizlilik}}</p>
+      <h2 id="gizlilik-h">{{cr_p_h2}}</h2>
+    </div>
+    <ul class="gizlilik">
+      <li><h3>{{cr_p1_h}}</h3><p>{{cr_p1_d}}</p></li>
+      <li><h3>{{cr_p2_h}}</h3><p>{{cr_p2_d}}</p></li>
+      <li><h3>{{cr_p3_h}}</h3><p>{{cr_p3_d}}</p></li>
+      <li><h3>{{cr_p4_h}}</h3><p>{{cr_p4_d}}</p></li>
+    </ul>
+    <p class="gz-tam">{{c_gz_p}} <a href="{{gizlilik_url}}">{{c_gz_l}}</a></p>
+  </div>
+</section>
+
+<section class="bl z1" id="sss" aria-labelledby="sss-h">
+  <div class="kap">
+    <div class="bl-ust">
+      <p class="km">{{cr_s_km}}</p>
+      <h2 id="sss-h">{{cr_s_h2}}</h2>
+    </div>
+    <div class="sss-liste">
+      <details class="sss" name="sss"><summary>{{cr_f1_q}}</summary><div class="cevap"><p>{{cr_f1_a}}</p></div></details>
+      <details class="sss" name="sss"><summary>{{cr_f2_q}}</summary><div class="cevap"><p>{{cr_f2_a}}</p></div></details>
+      <details class="sss" name="sss"><summary>{{cr_f3_q}}</summary><div class="cevap"><p>{{cr_f3_a}}</p></div></details>
+      <details class="sss" name="sss"><summary>{{cr_f4_q}}</summary><div class="cevap"><p>{{cr_f4_a}}</p></div></details>
+      <details class="sss" name="sss"><summary>{{cr_f5_q}}</summary><div class="cevap"><p>{{cr_f5_a}}</p></div></details>
+      <details class="sss" name="sss"><summary>{{cr_f6_q}}</summary><div class="cevap"><p>{{cr_f6_a}}</p></div></details>
+      <details class="sss" name="sss"><summary>{{cr_f7_q}}</summary><div class="cevap"><p>{{cr_f7_a}}</p></div></details>
+      <details class="sss" name="sss"><summary>{{cr_f8_q}}</summary><div class="cevap"><p>{{cr_f8_a}}</p></div></details>
+    </div>
+  </div>
+</section>
+
+<section class="varis" aria-labelledby="varis-h">
+  <div class="kap">
+    <h2 id="varis-h">{{cr_cta_h2}}</h2>
+    <div class="cta-satir">
+      <a class="btn" href="{{store}}">{{btn_store}}</a>
+      <a class="btn btn-hayalet" href="{{ozellikler_url}}">{{footer_tum_ozellikler}}</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="alt-ic">
+    <div>
+      <p><a class="logo" href="{{anasayfa_url}}" aria-label="Motoseyir"><img src="/img/favicon.png" alt="" width="28" height="28">MOTO<em>SEYİR</em></a></p>
+      <p style="margin-top:10px">© {{yil}} Motoseyir. {{footer_haklar}}</p>
+    </div>
+    <ul>
+      <li><a href="{{anasayfa_url}}">{{nav_anasayfa}}</a></li><li><a href="{{ozellikler_url}}">{{footer_tum_ozellikler}}</a></li><li><a href="{{nasil_url}}">{{nav_nasil}}</a></li><li><a href="{{gizlilik_url}}">{{nav_gizlilik}}</a></li><li><a href="{{anasayfa_url}}#iletisim">{{nav_iletisim}}</a></li><li><a href="{{insta_url}}">Instagram</a></li><li><a href="{{store}}">App Store</a></li>
+    </ul>
+    <div class="dil-altbilgi"><span>{{footer_diller}}</span>
+      {{dil_altbilgi}}
+    </div>
+  </div>
+</footer>
+</body>
+</html>
