@@ -292,6 +292,24 @@ def sitemap() -> str:
     return "\n".join(parca) + "\n"
 
 
+
+# ÖNBELLEK KIRICI (19 Eki 2026): GitHub Pages /m/*.css|js'i 10 dk önbelleğe veriyor; yayından sonra tarayıcı yeni HTML'i
+# eski a.css ile çiziyordu (sahibin ekranında geçit şeridi düz liste, "Bir bakışta" bandı dağınık). Adrese içerik özeti
+# eklenir: dosya değişince adres değişir, eski önbellek kullanılmaz.
+import hashlib as _hashlib
+_VARLIK = re.compile(r'((?:href|src)="/m/[A-Za-z0-9_.-]+\.(?:css|js))(")')
+_ozet_onbellek: dict = {}
+def varliklari_surumle(html: str) -> str:
+    def degistir(m: re.Match) -> str:
+        yol = m.group(1).split('"', 1)[1].lstrip("/")
+        if yol not in _ozet_onbellek:
+            dosya = KOK / yol
+            _ozet_onbellek[yol] = _hashlib.md5(dosya.read_bytes()).hexdigest()[:8] if dosya.exists() else ""
+        oz = _ozet_onbellek[yol]
+        return f'{m.group(1)}?v={oz}{m.group(2)}' if oz else m.group(0)
+    return _VARLIK.sub(degistir, html)
+
+
 def main() -> None:
     sablonlar = {}
     for ad in SAYFALAR:
@@ -342,6 +360,7 @@ def main() -> None:
                 metin_d = metin
             degerler = {**metin_d, **ortak}
             html = doldur(sablon_metni, degerler, f"{kod}/{dosya}")
+            html = varliklari_surumle(html)
             html = gorselleri_yerelle(html, kod)
             if sablon_metni is hareketli or dosya == "corider.html":
                 html = M_DILLI.sub(lambda m: m.group(0) if m.group(2) != kod or (KOK / m.group(0).lstrip("/")).exists()
