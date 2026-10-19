@@ -118,7 +118,7 @@
   "pu4": "Esőfigyelmeztetés az útvonalon",
   "pu5": "Csatlakozás csoporthoz meghívóval vagy kóddal",
   "plan_pro_notu": "Az aktuális árak régiónként változnak; az App Store előfizetési képernyőjén látod a sajátodat.",
-  "pp1": "AI CoRider, havi 15 perc",
+  "pp1": "AI CoRider, havi 10 perc",
   "pp2": "Legjobb sorrend több megállóhoz",
   "pp3": "Korlátlan túra és nyomvonal",
   "pp4": "Mellékutas, tengerparti és enduro mód",
@@ -303,7 +303,7 @@
   "abo1": "Háromhavi és éves csomag → az új előfizetőknek 7 nap ingyenes; ha legalább 24 órával a vége előtt lemondod, nem fizetsz semmit.",
   "abo2": "Meghívtak egy csoportos túrára → a meghívó linkjével ingyen csatlakozol.",
   "abo3": "Motoseyir Pro → legjobb sorrend, korlátlan túra és nyomvonal, túramódok, Discover, csoport létrehozása és AI CoRider.",
-  "abo4": "AI CoRider → Próval havi 15 perc, a próbában 5 perc; a perccsomagok többet adnak.",
+  "abo4": "AI CoRider → Próval havi 10 perc, a próbában 5 perc; a perccsomagok többet adnak.",
   "abo5": "Settings → Restore purchases: új telefonon visszakapod az előfizetésedet.",
 
   "ny_dip": "Nincs itt, amit kérdezni szeretnél? Írj nekünk az appban a Settings → „Something wrong, or an idea?” menüpontból; a válasz ugyanoda érkezik."
