@@ -280,23 +280,64 @@
       <div data-r>
         <p class="km">AI CoRider</p>
         <h2>Útitárs <i>a bukósisakodban.</i> <span class="etiket">Pro</span></h2>
-        <p class="metin">Te beszélsz, a kezed a kormányon marad. Nem kell a telefonért nyúlnod, ha kérdeznél valamit, megállót adnál hozzá vagy pihenőt terveznél.</p>
+        <p class="metin">Az AI CoRider egy útitárs, aki a bukósisakodban beszél hozzád. Megnyomod a gombot és kérdezel: ismeri az útvonalad, keres az út mentén, megállót ad hozzá, és helyetted módosítja az útvonalat. A választ a sisakodban hallod, a kezed a kormányon marad.</p>
       </div>
     </div>
+    <div class="cr" data-r>
+      <h3 class="cr-h">Mit mondhatsz</h3>
+      <p class="cr-p">Ezek csak példák. Nem kell parancsokat megtanulnod, mondd a saját szavaiddal.</p>
+      <ul class="cr-soz">
+        <li><p class="cr-b">Mennyi van még hátra? Esni fog az úton?</p><span class="cr-t">Hátralévő idő és eső</span></li>
+        <li><p class="cr-b">Van valahol az úton jó hely enni?</p><span class="cr-t">Az útvonal mentén keres, a legjobbra értékelt elöl</span></li>
+        <li><p class="cr-b">Add hozzá az elsőt megállónak.</p><span class="cr-t">Hozzáadja a megállót és frissíti az útvonalat</span></li>
+        <li><p class="cr-b">Menjünk mellékutakon.</p><span class="cr-t">Átváltja az útvonal módját</span></li>
+        <li><p class="cr-b">Elég lesz a benzin a célig?</p><span class="cr-t">Kiszámolja a tank hatótávját</span></li>
+        <li><p class="cr-b">Hol alhatok ma éjjel?</p><span class="cr-t">Szállást keres</span></li>
+        <li><p class="cr-b">Szólj a csoportnak, hogy pihenőt tartunk.</p><span class="cr-t">Kész értesítést küld a csoportnak</span></li>
+        <li><p class="cr-b">Emlékeztess holnap a lánc olajozására.</p><span class="cr-t">Elmenti a jegyzetet, és másnap szól</span></li>
+      </ul>
+    </div>
+
+    <div class="cr" data-r>
+      <h3 class="cr-h">Hogyan működik</h3>
+      <ol class="cr-adim">
+        <li><span class="n" aria-hidden="true">1</span><h4>Nyomd meg a gombot</h4><p>Koppints a térképen az AI CoRider gombra, és beszélj.</p></li>
+        <li><span class="n" aria-hidden="true">2</span><h4>Beszélj természetesen</h4><p>Nem kell parancsokat megjegyezned. Azon a nyelven válaszol, amelyen beszélsz.</p></li>
+        <li><span class="n" aria-hidden="true">3</span><h4>Hallgasd a sisakban</h4><p>Ha a sisak Bluetooth-on csatlakozik a telefonhoz, a hang azon át szól. Szélben nem hallod? Mondd egyszerűen: „hangosabban”.</p></li>
+      </ol>
+    </div>
+
+    <div class="cr-video bolum-ik" data-r>
+      <div class="cr-tel">
+        <div class="tel sade"><video id="cr-video" data-src="/m/corider-en.mp4" data-kucuk="/m/corider-kucuk-en.mp4" poster="/m/corider-en.webp" muted loop playsinline preload="none" width="540" height="1106" aria-label="AI CoRider hanggal: a motoros a hátralévő időről és az esőről kérdez, talál egy megállóhelyet, és hozzáadja az útvonalhoz"></video></div>
+        <button class="ses-btn" id="cr-ses" type="button" aria-pressed="false" data-ac="Hang be" data-kapat="Hang ki"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path class="h" d="M4 9.5v5h3.6L12 18.5v-13L7.6 9.5H4z" fill="currentColor"/><path class="d" d="M15.5 9a4.2 4.2 0 0 1 0 6M17.8 6.6a7.5 7.5 0 0 1 0 10.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Hang be</span></button>
+      </div>
+      <div>
+        <h3 class="cr-h">Egy valódi útról</h3>
+        <p class="metin">Valódi felvétel az alkalmazásból: a motoros megkérdezi, mennyi van hátra és esni fog-e, megállóhelyet keres, és amit kiválaszt, az megállóként bekerül az útvonalba.</p>
+        <p class="cr-not">Valódi képernyőfelvétel az alkalmazásból. A beszélgetés angolul zajlik.</p>
+      </div>
+    </div>
+
     <div class="ayrinti" data-r aria-label="AI CoRider részletesen">
-      <dl class="veri-say uc">
-        <div><dt>4</dt><dd>hang közül választhatsz</dd></div>
+      <dl class="veri-say">
+        <div><dt>~30</dt><dd>művelet hanggal</dd></div>
+        <div><dt>4</dt><dd>hang: Quartz, Tempo, Stone, Willow</dd></div>
         <div><dt>Bluetooth</dt><dd>a bukósisakod intercomján keresztül is működik</dd></div>
         <div><dt>30·60·180</dt><dd>perces kiegészítő csomag, amely nem jár le</dd></div>
       </dl>
       <ul class="izgara">
         <li><h3>Útvonalmódosítás hanggal</h3><p>Megállót ad hozzá, töröl és kihagy. Módosítja az úticélt, és sorba rakja a megállókat.</p></li>
         <li><h3>Megtalálja, ami előtted van</h3><p>Üzemanyagot, ételt vagy szállást keres az út mentén, és a legjobbra értékeltet említi elsőként.</p></li>
-        <li><h3>Időjárás és hatótáv</h3><p>Kérdezd meg, milyen lesz az idő, vagy meddig visz el a tank.</p></li>
-        <li><h3>Összetartja a csoportot</h3><p>Megmondja, hol van mindenki, és üzenetet küld helyetted a csoportnak.</p></li>
+        <li><h3>Időjárás és hatótáv</h3><p>Kérdezz az időjárásról, az útvonalon várható esőről és arról, meddig visz el a tank. A hatótávhoz elég egyszer megadni a beállításokban, mennyit mész egy teli tankkal.</p></li>
+        <li><h3>Összetartja a csoportot</h3><p>Megmondja, hol van mindenki, és helyetted kész értesítést küld a csoportnak: lemaradok, pihenő, veszély vagy benzin.</p></li>
         <li><h3>Viszi a menetet</h3><p>Elindítja vagy leállítja a navigációt, bekapcsolja a menetrögzítést, és hazavisz.</p></li>
-        <li><h3>Beszédidő</h3><p>A Pro 30 naponta megújuló beszédidőt tartalmaz. Ha több kell, vegyél egy csomagot, amely nem jár le.</p></li>
+        <li><h3>Beszédidő</h3><p>A Pro 30 naponta 10 perc beszédidőt újít meg, az ingyenes próbaidőszakban 5 percet kapsz. Ha több kell, vegyél 30, 60 vagy 180 perces csomagot, amely nem jár le.</p></li>
+        <li><h3>Két mód</h3><p>A „Planner” ismeri az útvonalad, és elintézi a dolgokat; a Pro része. A „Chat” módban te választod a témát, és emlékszik a korábbi beszélgetésekre; percekből álló csomaggal nyílik.</p></li>
+        <li><h3>A csoport szobájában</h3><p>Hívd be az AI CoRidert a csoport intercomjába, és a szobában mindenki hallja. A perceket annak a fiókjából vonja le, aki behívta.</p></li>
+        <li><h3>Emlékszik és hív</h3><p>Megjegyzi a kért jegyzeteket, és elfelejti őket, ha azt mondod: „felejtsd el”. Megkeres valakit a névjegyeidben; egy koppintás a képernyőn indítja a hívást.</p></li>
       </ul>
+      <p class="veri-atif cr-gz"><strong>Adatvédelem.</strong> Az AI CoRider csak akkor működik, ha te bekapcsolod. A hangodat nálunk nem rögzítik és nem tárolják; amit mondasz, egy külső szolgáltató felhőalapú hangszolgáltatásához kerül, hogy válaszolni tudjon. A pontos tartózkodási helyed nem megy el ehhez a szolgáltatáshoz; az útvonalból csak szöveg jut el hozzá, például a hátralévő távolság és a következő manőver. A munkamenet bezárul, ha te befejezed, ha egy ideig nem beszélsz, vagy ha véget ér a navigáció. <a href="/gizlilik/">A részletek az adatvédelmi tájékoztatóban vannak.</a></p>
     </div>
     </div>
   </section>

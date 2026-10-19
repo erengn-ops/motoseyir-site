@@ -251,8 +251,45 @@
         <p class="metin">{{k4_p}}</p>
       </div>
     </div>
+    <div class="cr" data-r>
+      <h3 class="cr-h">{{c_say_h}}</h3>
+      <p class="cr-p">{{c_say_p}}</p>
+      <ul class="cr-soz">
+        <li><p class="cr-b">{{c_s1}}</p><span class="cr-t">{{c_t1}}</span></li>
+        <li><p class="cr-b">{{c_s2}}</p><span class="cr-t">{{c_t2}}</span></li>
+        <li><p class="cr-b">{{c_s3}}</p><span class="cr-t">{{c_t3}}</span></li>
+        <li><p class="cr-b">{{c_s4}}</p><span class="cr-t">{{c_t4}}</span></li>
+        <li><p class="cr-b">{{c_s5}}</p><span class="cr-t">{{c_t5}}</span></li>
+        <li><p class="cr-b">{{c_s6}}</p><span class="cr-t">{{c_t6}}</span></li>
+        <li><p class="cr-b">{{c_s7}}</p><span class="cr-t">{{c_t7}}</span></li>
+        <li><p class="cr-b">{{c_s8}}</p><span class="cr-t">{{c_t8}}</span></li>
+      </ul>
+    </div>
+
+    <div class="cr" data-r>
+      <h3 class="cr-h">{{c_how_h}}</h3>
+      <ol class="cr-adim">
+        <li><span class="n" aria-hidden="true">1</span><h4>{{c_h1_t}}</h4><p>{{c_h1_d}}</p></li>
+        <li><span class="n" aria-hidden="true">2</span><h4>{{c_h2_t}}</h4><p>{{c_h2_d}}</p></li>
+        <li><span class="n" aria-hidden="true">3</span><h4>{{c_h3_t}}</h4><p>{{c_h3_d}}</p></li>
+      </ol>
+    </div>
+
+    <div class="cr-video bolum-ik" data-r>
+      <div class="cr-tel">
+        <div class="tel sade"><video id="cr-video" data-src="/m/corider-{{dil_kodu}}.mp4" data-kucuk="/m/corider-kucuk-{{dil_kodu}}.mp4" poster="/m/corider-{{dil_kodu}}.webp" muted loop playsinline preload="none" width="540" height="1106" aria-label="{{c_vid_alt}}"></video></div>
+        <button class="ses-btn" id="cr-ses" type="button" aria-pressed="false" data-ac="{{c_ses_ac}}" data-kapat="{{c_ses_kapat}}"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path class="h" d="M4 9.5v5h3.6L12 18.5v-13L7.6 9.5H4z" fill="currentColor"/><path class="d" d="M15.5 9a4.2 4.2 0 0 1 0 6M17.8 6.6a7.5 7.5 0 0 1 0 10.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>{{c_ses_ac}}</span></button>
+      </div>
+      <div>
+        <h3 class="cr-h">{{c_vid_h}}</h3>
+        <p class="metin">{{c_vid_p}}</p>
+        <p class="cr-not">{{c_vid_not}}</p>
+      </div>
+    </div>
+
     <div class="ayrinti" data-r aria-label="{{a4_etiket}}">
-      <dl class="veri-say uc">
+      <dl class="veri-say">
+        <div><dt>{{a4_s0_b}}</dt><dd>{{a4_s0_t}}</dd></div>
         <div><dt>{{a4_s1_b}}</dt><dd>{{a4_s1_t}}</dd></div>
         <div><dt>{{a4_s2_b}}</dt><dd>{{a4_s2_t}}</dd></div>
         <div><dt>{{a4_s3_b}}</dt><dd>{{a4_s3_t}}</dd></div>
@@ -264,7 +301,11 @@
         <li><h3>{{a4_4_t}}</h3><p>{{a4_4_d}}</p></li>
         <li><h3>{{a4_5_t}}</h3><p>{{a4_5_d}}</p></li>
         <li><h3>{{a4_6_t}}</h3><p>{{a4_6_d}}</p></li>
+        <li><h3>{{a4_7_t}}</h3><p>{{a4_7_d}}</p></li>
+        <li><h3>{{a4_8_t}}</h3><p>{{a4_8_d}}</p></li>
+        <li><h3>{{a4_9_t}}</h3><p>{{a4_9_d}}</p></li>
       </ul>
+      <p class="veri-atif cr-gz">{{c_gz_p}} <a href="{{gizlilik_url}}">{{c_gz_l}}</a></p>
     </div>
     </div>
   </section>

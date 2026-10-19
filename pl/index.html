@@ -280,23 +280,64 @@
       <div data-r>
         <p class="km">AI CoRider</p>
         <h2>Towarzysz jazdy <i>w Twoim kasku.</i> <span class="etiket">Pro</span></h2>
-        <p class="metin">Mówisz, a ręce zostają na kierownicy. Nie musisz sięgać po telefon, żeby o coś zapytać, dodać przystanek czy zaplanować postój.</p>
+        <p class="metin">AI CoRider to towarzysz jazdy, który mówi do Ciebie w kasku. Naciskasz przycisk i pytasz: zna Twoją trasę, szuka wzdłuż niej, dodaje przystanki i zmienia trasę za Ciebie. Odpowiedź słyszysz w kasku, a ręce zostają na kierownicy.</p>
       </div>
     </div>
+    <div class="cr" data-r>
+      <h3 class="cr-h">Co możesz powiedzieć</h3>
+      <p class="cr-p">To tylko przykłady. Nie ma komend do wykucia, powiedz to po swojemu.</p>
+      <ul class="cr-soz">
+        <li><p class="cr-b">Ile jeszcze zostało? Będzie padać po drodze?</p><span class="cr-t">Pozostały czas i deszcz</span></li>
+        <li><p class="cr-b">Jest po drodze jakieś dobre miejsce na obiad?</p><span class="cr-t">Szuka przy trasie, najpierw najwyżej oceniane</span></li>
+        <li><p class="cr-b">Dodaj pierwsze jako przystanek.</p><span class="cr-t">Dodaje przystanek i odświeża trasę</span></li>
+        <li><p class="cr-b">Jedźmy bocznymi drogami.</p><span class="cr-t">Zmienia tryb trasy</span></li>
+        <li><p class="cr-b">Starczy mi paliwa do celu?</p><span class="cr-t">Liczy zasięg na baku</span></li>
+        <li><p class="cr-b">Gdzie mogę dziś przenocować?</p><span class="cr-t">Szuka noclegu</span></li>
+        <li><p class="cr-b">Powiedz grupie, że robimy przerwę.</p><span class="cr-t">Wysyła grupie gotowy komunikat</span></li>
+        <li><p class="cr-b">Przypomnij mi jutro o smarowaniu łańcucha.</p><span class="cr-t">Zapisuje notatkę i przypomina następnego dnia</span></li>
+      </ul>
+    </div>
+
+    <div class="cr" data-r>
+      <h3 class="cr-h">Jak to działa</h3>
+      <ol class="cr-adim">
+        <li><span class="n" aria-hidden="true">1</span><h4>Naciśnij przycisk</h4><p>Dotknij przycisku AI CoRider na mapie i mów.</p></li>
+        <li><span class="n" aria-hidden="true">2</span><h4>Mów normalnie</h4><p>Nie musisz uczyć się komend. Odpowiada w języku, w którym do niego mówisz.</p></li>
+        <li><span class="n" aria-hidden="true">3</span><h4>Słuchaj w kasku</h4><p>Jeśli kask jest połączony z telefonem przez Bluetooth, głos płynie właśnie przez niego. Nie słychać na wietrze? Powiedz po prostu „głośniej”.</p></li>
+      </ol>
+    </div>
+
+    <div class="cr-video bolum-ik" data-r>
+      <div class="cr-tel">
+        <div class="tel sade"><video id="cr-video" data-src="/m/corider-en.mp4" data-kucuk="/m/corider-kucuk-en.mp4" poster="/m/corider-en.webp" muted loop playsinline preload="none" width="540" height="1106" aria-label="AI CoRider głosem: kierowca pyta o pozostały czas i deszcz, znajduje miejsce na postój i dodaje je do trasy"></video></div>
+        <button class="ses-btn" id="cr-ses" type="button" aria-pressed="false" data-ac="Włącz dźwięk" data-kapat="Wyłącz dźwięk"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path class="h" d="M4 9.5v5h3.6L12 18.5v-13L7.6 9.5H4z" fill="currentColor"/><path class="d" d="M15.5 9a4.2 4.2 0 0 1 0 6M17.8 6.6a7.5 7.5 0 0 1 0 10.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Włącz dźwięk</span></button>
+      </div>
+      <div>
+        <h3 class="cr-h">Z prawdziwej jazdy</h3>
+        <p class="metin">Prawdziwe nagranie z aplikacji: kierowca pyta, ile jeszcze zostało i czy będzie padać, szuka miejsca na postój, a wybrane trafia na trasę jako przystanek.</p>
+        <p class="cr-not">Prawdziwe nagranie ekranu z aplikacji. Rozmowa jest po angielsku.</p>
+      </div>
+    </div>
+
     <div class="ayrinti" data-r aria-label="Szczegóły AI CoRider">
-      <dl class="veri-say uc">
-        <div><dt>4</dt><dd>głosy do wyboru</dd></div>
+      <dl class="veri-say">
+        <div><dt>~30</dt><dd>akcji głosem</dd></div>
+        <div><dt>4</dt><dd>głosy: Quartz, Tempo, Stone, Willow</dd></div>
         <div><dt>Bluetooth</dt><dd>działa przez interkom w kasku</dd></div>
         <div><dt>30·60·180</dt><dd>minutowe pakiety dodatkowe, które nie wygasają</dd></div>
       </dl>
       <ul class="izgara">
         <li><h3>Zmiana trasy głosem</h3><p>Dodaje, usuwa i pomija przystanki. Zmienia cel i układa przystanki w kolejności.</p></li>
         <li><h3>Znajduje to, co przed Tobą</h3><p>Szuka paliwa, jedzenia lub noclegu przy trasie i najpierw wymienia te najwyżej oceniane.</p></li>
-        <li><h3>Pogoda i zasięg</h3><p>Zapytaj, jaka będzie pogoda albo ile przejedziesz na baku.</p></li>
-        <li><h3>Trzyma grupę w kontakcie</h3><p>Mówi, gdzie są wszyscy, i wysyła grupie wiadomość za Ciebie.</p></li>
+        <li><h3>Pogoda i zasięg</h3><p>Zapytaj o pogodę, deszcz na trasie i o to, jak daleko dojedziesz na baku. Do zasięgu wystarczy raz wpisać w ustawieniach, ile przejeżdżasz na pełnym baku.</p></li>
+        <li><h3>Trzyma grupę w kontakcie</h3><p>Mówi, gdzie są wszyscy, i wysyła grupie za Ciebie gotowy komunikat: zostaję z tyłu, postój, niebezpieczeństwo albo paliwo.</p></li>
         <li><h3>Prowadzi jazdę</h3><p>Włącza i kończy nawigację, uruchamia nagrywanie jazdy i prowadzi do domu.</p></li>
-        <li><h3>Czas rozmowy</h3><p>Pro zawiera czas rozmowy odnawiany co 30 dni. Jeśli potrzebujesz więcej, dokup pakiet, który nie wygasa.</p></li>
+        <li><h3>Czas rozmowy</h3><p>Pro odnawia co 30 dni 10 minut czasu rozmowy, a w bezpłatnym okresie próbnym jest ich 5. Jeśli potrzebujesz więcej, dokup pakiet 30, 60 lub 180 minut, który nie wygasa.</p></li>
+        <li><h3>Dwa tryby</h3><p>„Planner” zna Twoją trasę i działa za Ciebie; jest w Pro. W „Chat” sam wybierasz temat, a on pamięta wcześniejsze rozmowy; otwiera się z pakietem minut.</p></li>
+        <li><h3>W pokoju grupy</h3><p>Przywołaj AI CoRider do interkomu grupy, a usłyszą go wszyscy w pokoju. Minuty schodzą z konta osoby, która go wywołała.</p></li>
+        <li><h3>Pamięta i dzwoni</h3><p>Zapamiętuje notatki, o które poprosisz, i zapomina je, gdy powiesz „zapomnij o tym”. Znajduje osobę w kontaktach; jedno dotknięcie ekranu uruchamia połączenie.</p></li>
       </ul>
+      <p class="veri-atif cr-gz"><strong>Prywatność.</strong> AI CoRider działa tylko wtedy, gdy sam go włączysz. Twój głos nie jest u nas nagrywany ani przechowywany; to, co mówisz, trafia do chmurowej usługi głosowej zewnętrznego dostawcy, żeby mogła odpowiedzieć. Dokładna lokalizacja nie trafia do tej usługi; z trasy dostaje tylko tekst, na przykład pozostały dystans i następny manewr. Sesja kończy się, gdy ją zakończysz, po dłuższej ciszy albo wraz z końcem nawigacji. <a href="/gizlilik/">Szczegóły są w polityce prywatności.</a></p>
     </div>
     </div>
   </section>

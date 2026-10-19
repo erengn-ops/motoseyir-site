@@ -280,23 +280,64 @@
       <div data-r>
         <p class="km">AI CoRider</p>
         <h2>Parťák na ceste <i>priamo v prilbe.</i> <span class="etiket">Pro</span></h2>
-        <p class="metin">Rozprávaš ty, ruky zostávajú na riadidlách. Nemusíš siahať po telefóne, keď sa chceš na niečo opýtať, pridať zastávku alebo naplánovať pauzu.</p>
+        <p class="metin">AI CoRider je spolujazdec, ktorý s tebou hovorí v prilbe. Stlačíš tlačidlo a opýtaš sa: pozná tvoju trasu, hľadá popri nej, pridáva zastávky a mení trasu za teba. Odpoveď počuješ v prilbe a ruky ostávajú na riadidlách.</p>
       </div>
     </div>
+    <div class="cr" data-r>
+      <h3 class="cr-h">Čo môžeš povedať</h3>
+      <p class="cr-p">Sú to len príklady. Žiadne príkazy sa učiť nemusíš, povedz to po svojom.</p>
+      <ul class="cr-soz">
+        <li><p class="cr-b">Koľko ešte zostáva? Bude cestou pršať?</p><span class="cr-t">Zostávajúci čas a dážď</span></li>
+        <li><p class="cr-b">Je cestou nejaké dobré miesto na jedlo?</p><span class="cr-t">Hľadá popri trase, najlepšie hodnotené ako prvé</span></li>
+        <li><p class="cr-b">Pridaj prvé ako zastávku.</p><span class="cr-t">Pridá zastávku a obnoví trasu</span></li>
+        <li><p class="cr-b">Pôjdeme po vedľajších cestách.</p><span class="cr-t">Prepne režim trasy</span></li>
+        <li><p class="cr-b">Vystačím s benzínom do cieľa?</p><span class="cr-t">Vypočíta dojazd na nádrž</span></li>
+        <li><p class="cr-b">Kde môžem dnes prespať?</p><span class="cr-t">Hľadá ubytovanie</span></li>
+        <li><p class="cr-b">Povedz skupine, že robíme prestávku.</p><span class="cr-t">Pošle skupine hotové upozornenie</span></li>
+        <li><p class="cr-b">Pripomeň mi zajtra namazať reťaz.</p><span class="cr-t">Uloží poznámku a ďalší deň ti ju povie</span></li>
+      </ul>
+    </div>
+
+    <div class="cr" data-r>
+      <h3 class="cr-h">Ako to funguje</h3>
+      <ol class="cr-adim">
+        <li><span class="n" aria-hidden="true">1</span><h4>Stlač tlačidlo</h4><p>Klepni na mape na tlačidlo AI CoRider a hovor.</p></li>
+        <li><span class="n" aria-hidden="true">2</span><h4>Hovor normálne</h4><p>Žiadne príkazy si pamätať nemusíš. Odpovedá v jazyku, v ktorom hovoríš.</p></li>
+        <li><span class="n" aria-hidden="true">3</span><h4>Počúvaj v prilbe</h4><p>Ak je prilba s telefónom spojená cez Bluetooth, hlas ide práve cez ňu. Vo vetre nepočuješ? Povedz jednoducho „hlasnejšie“.</p></li>
+      </ol>
+    </div>
+
+    <div class="cr-video bolum-ik" data-r>
+      <div class="cr-tel">
+        <div class="tel sade"><video id="cr-video" data-src="/m/corider-en.mp4" data-kucuk="/m/corider-kucuk-en.mp4" poster="/m/corider-en.webp" muted loop playsinline preload="none" width="540" height="1106" aria-label="AI CoRider hlasom: jazdec sa pýta na zostávajúci čas a dážď, nájde miesto na zastávku a pridá ho do trasy"></video></div>
+        <button class="ses-btn" id="cr-ses" type="button" aria-pressed="false" data-ac="Zapnúť zvuk" data-kapat="Vypnúť zvuk"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path class="h" d="M4 9.5v5h3.6L12 18.5v-13L7.6 9.5H4z" fill="currentColor"/><path class="d" d="M15.5 9a4.2 4.2 0 0 1 0 6M17.8 6.6a7.5 7.5 0 0 1 0 10.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Zapnúť zvuk</span></button>
+      </div>
+      <div>
+        <h3 class="cr-h">Zo skutočnej jazdy</h3>
+        <p class="metin">Skutočný záznam z aplikácie: jazdec sa pýta, koľko zostáva a či bude pršať, hľadá miesto na zastávku a to, ktoré vyberie, sa pridá do trasy.</p>
+        <p class="cr-not">Skutočný záznam obrazovky z aplikácie. Hovorí sa po anglicky.</p>
+      </div>
+    </div>
+
     <div class="ayrinti" data-r aria-label="Podrobnosti o AI CoRider">
-      <dl class="veri-say uc">
-        <div><dt>4</dt><dd>hlasy na výber</dd></div>
+      <dl class="veri-say">
+        <div><dt>~30</dt><dd>akcií hlasom</dd></div>
+        <div><dt>4</dt><dd>hlasy: Quartz, Tempo, Stone, Willow</dd></div>
         <div><dt>Bluetooth</dt><dd>funguje cez intercom v prilbe</dd></div>
         <div><dt>30·60·180</dt><dd>minútové doplnkové balíčky, ktoré nevypršia</dd></div>
       </dl>
       <ul class="izgara">
         <li><h3>Zmena trasy hlasom</h3><p>Pridáva, odoberá a preskakuje zastávky. Mení cieľ a radí zastávky do poradia.</p></li>
         <li><h3>Nájde, čo je pred tebou</h3><p>Hľadá po ceste benzín, jedlo alebo nocľah a najprv menuje najlepšie hodnotené.</p></li>
-        <li><h3>Počasie a dojazd</h3><p>Opýtaj sa, aké bude počasie alebo ako ďaleko dojazdíš na jednu nádrž.</p></li>
-        <li><h3>Drží skupinu pokope</h3><p>Povie ti, kde je kto, a pošle skupine správu za teba.</p></li>
+        <li><h3>Počasie a dojazd</h3><p>Opýtaj sa na počasie, dážď na trase a ako ďaleko dojedieš na nádrž. Kvôli dojazdu stačí raz v nastaveniach zadať, koľko prejdeš na plnú nádrž.</p></li>
+        <li><h3>Drží skupinu pokope</h3><p>Povie ti, kde sú všetci, a pošle skupine za teba hotové upozornenie: zaostávam, prestávka, nebezpečenstvo alebo benzín.</p></li>
         <li><h3>Riadi jazdu</h3><p>Spustí alebo ukončí navigáciu, zapne záznam jazdy a zavedie ťa domov.</p></li>
-        <li><h3>Čas hovoru</h3><p>Pro obsahuje čas hovoru, ktorý sa obnovuje každých 30 dní. Ak ti nestačí, pridáš si balíček, ktorý nevyprší.</p></li>
+        <li><h3>Čas hovoru</h3><p>Pro obnovuje každých 30 dní 10 minút hovorového času, v bezplatnej skúšobnej dobe je ich 5. Ak potrebuješ viac, pridaj si balík 30, 60 alebo 180 minút, ktorý nikdy nevyprší.</p></li>
+        <li><h3>Dva režimy</h3><p>„Planner“ pozná tvoju trasu a veci zariaďuje; je súčasťou Pro. V „Chat“ si tému vyberáš ty a pamätá si skoršie rozhovory; otvorí sa s balíkom minút.</p></li>
+        <li><h3>V miestnosti skupiny</h3><p>Zavolaj AI CoRider do interkomu skupiny a započujú ho všetci v miestnosti. Minúty sa strhávajú z účtu toho, kto ho zavolal.</p></li>
+        <li><h3>Pamätá si a volá</h3><p>Uloží poznámky, o ktoré požiadaš, a zabudne ich, keď povieš „zabudni na to“. Nájde niekoho v kontaktoch; jedno klepnutie na obrazovku spustí hovor.</p></li>
       </ul>
+      <p class="veri-atif cr-gz"><strong>Súkromie.</strong> AI CoRider sa spustí, len keď ho zapneš. Tvoj hlas u nás nikto nenahráva ani neukladá; čo povieš, ide do cloudovej hlasovej služby tretej strany, aby mohla odpovedať. Presná poloha do tej služby nejde; z trasy dostane len text, napríklad zostávajúcu vzdialenosť a ďalší manéver. Relácia sa zatvorí, keď ju ukončíš, po dlhšom tichu alebo s koncom navigácie. <a href="/gizlilik/">Podrobnosti sú v zásadách ochrany súkromia.</a></p>
     </div>
     </div>
   </section>

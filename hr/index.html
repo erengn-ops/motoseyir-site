@@ -280,23 +280,64 @@
       <div data-r>
         <p class="km">AI CoRider</p>
         <h2>Suvozač <i>u tvojoj kacigi.</i> <span class="etiket">Pro</span></h2>
-        <p class="metin">Ti govoriš, ruke ostaju na upravljaču. Ne moraš posezati za telefonom da nešto pitaš, dodaš stanicu ili isplaniraš pauzu.</p>
+        <p class="metin">AI CoRider je suvozač koji ti govori u kacigi. Pritisneš tipku i pitaš: poznaje tvoju rutu, traži uz put, dodaje zaustavljanja i mijenja rutu umjesto tebe. Odgovor čuješ u kacigi, a ruke ostaju na upravljaču.</p>
       </div>
     </div>
+    <div class="cr" data-r>
+      <h3 class="cr-h">Što možeš reći</h3>
+      <p class="cr-p">Ovo su samo primjeri. Ne treba učiti naredbe, reci to svojim riječima.</p>
+      <ul class="cr-soz">
+        <li><p class="cr-b">Koliko je još ostalo? Hoće li kišiti usput?</p><span class="cr-t">Preostalo vrijeme i kiša</span></li>
+        <li><p class="cr-b">Ima li usput dobro mjesto za jelo?</p><span class="cr-t">Traži uz rutu, najbolje ocijenjena prva</span></li>
+        <li><p class="cr-b">Dodaj prvo kao zaustavljanje.</p><span class="cr-t">Dodaje zaustavljanje i osvježava rutu</span></li>
+        <li><p class="cr-b">Idemo sporednim cestama.</p><span class="cr-t">Mijenja način rute</span></li>
+        <li><p class="cr-b">Hoće li mi goriva biti do cilja?</p><span class="cr-t">Računa domet spremnika</span></li>
+        <li><p class="cr-b">Gdje mogu prespavati večeras?</p><span class="cr-t">Traži smještaj</span></li>
+        <li><p class="cr-b">Reci grupi da radimo pauzu.</p><span class="cr-t">Šalje grupi gotovo upozorenje</span></li>
+        <li><p class="cr-b">Podsjeti me sutra da podmažem lanac.</p><span class="cr-t">Sprema bilješku i sutradan ti je kaže</span></li>
+      </ul>
+    </div>
+
+    <div class="cr" data-r>
+      <h3 class="cr-h">Kako radi</h3>
+      <ol class="cr-adim">
+        <li><span class="n" aria-hidden="true">1</span><h4>Pritisni tipku</h4><p>Dodirni tipku AI CoRider na karti i govori.</p></li>
+        <li><span class="n" aria-hidden="true">2</span><h4>Govori normalno</h4><p>Ne treba pamtiti naredbe. Odgovara na jeziku na kojem govoriš.</p></li>
+        <li><span class="n" aria-hidden="true">3</span><h4>Slušaj u kacigi</h4><p>Ako je kaciga preko Bluetootha spojena s telefonom, glas dolazi kroz nju. Ne čuješ na vjetru? Reci jednostavno „glasnije“.</p></li>
+      </ol>
+    </div>
+
+    <div class="cr-video bolum-ik" data-r>
+      <div class="cr-tel">
+        <div class="tel sade"><video id="cr-video" data-src="/m/corider-en.mp4" data-kucuk="/m/corider-kucuk-en.mp4" poster="/m/corider-en.webp" muted loop playsinline preload="none" width="540" height="1106" aria-label="AI CoRider glasom: vozač pita za preostalo vrijeme i kišu, nalazi mjesto za zaustavljanje i dodaje ga u rutu"></video></div>
+        <button class="ses-btn" id="cr-ses" type="button" aria-pressed="false" data-ac="Uključi zvuk" data-kapat="Isključi zvuk"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path class="h" d="M4 9.5v5h3.6L12 18.5v-13L7.6 9.5H4z" fill="currentColor"/><path class="d" d="M15.5 9a4.2 4.2 0 0 1 0 6M17.8 6.6a7.5 7.5 0 0 1 0 10.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Uključi zvuk</span></button>
+      </div>
+      <div>
+        <h3 class="cr-h">Iz prave vožnje</h3>
+        <p class="metin">Stvarna snimka iz aplikacije: vozač pita koliko je još ostalo i hoće li kišiti, traži mjesto za zaustavljanje, a odabrano ulazi u rutu kao zaustavljanje.</p>
+        <p class="cr-not">Stvarna snimka zaslona iz aplikacije. Razgovor je na engleskom.</p>
+      </div>
+    </div>
+
     <div class="ayrinti" data-r aria-label="AI CoRider u detalje">
-      <dl class="veri-say uc">
-        <div><dt>4</dt><dd>glasova na izbor</dd></div>
+      <dl class="veri-say">
+        <div><dt>~30</dt><dd>radnji glasom</dd></div>
+        <div><dt>4</dt><dd>glasovi: Quartz, Tempo, Stone, Willow</dd></div>
         <div><dt>Bluetooth</dt><dd>radi preko interfona tvoje kacige</dd></div>
         <div><dt>30·60·180</dt><dd>minuta u dodatnim paketima koji ne istječu</dd></div>
       </dl>
       <ul class="izgara">
         <li><h3>Mijenja rutu glasom</h3><p>Dodaje, uklanja i preskače stanice. Mijenja odredište i slaže stanice po redu.</p></li>
         <li><h3>Nalazi što je ispred</h3><p>Traži gorivo, hranu ili smještaj dalje uz cestu i prvo spominje najbolje ocijenjene.</p></li>
-        <li><h3>Vrijeme i doseg</h3><p>Pitaj kakvo će biti vrijeme ili dokle te nosi spremnik.</p></li>
-        <li><h3>Drži grupu povezanom</h3><p>Kaže ti gdje je tko i umjesto tebe šalje grupi poruku.</p></li>
+        <li><h3>Vrijeme i doseg</h3><p>Pitaj za vrijeme, kišu na ruti i dokle ćeš stići sa spremnikom. Za domet je dovoljno jednom upisati u postavkama koliko prijeđeš s punim spremnikom.</p></li>
+        <li><h3>Drži grupu povezanom</h3><p>Kaže ti gdje je tko i umjesto tebe šalje grupi gotovo upozorenje: zaostajem, pauza, opasnost ili gorivo.</p></li>
         <li><h3>Vodi vožnju</h3><p>Pokreće ili završava navigaciju, uključuje snimanje vožnje i vodi te kući.</p></li>
-        <li><h3>Vrijeme razgovora</h3><p>Pro uključuje vrijeme razgovora koje se obnavlja svakih 30 dana. Ako trebaš više, dodaj paket koji ne istječe.</p></li>
+        <li><h3>Vrijeme razgovora</h3><p>Pro svakih 30 dana obnavlja 10 minuta vremena razgovora, a besplatno probno razdoblje uključuje 5. Ako trebaš više, dodaj paket od 30, 60 ili 180 minuta koji nikad ne istječe.</p></li>
+        <li><h3>Dva načina</h3><p>„Planner“ poznaje tvoju rutu i obavlja stvari; dolazi uz Pro. U „Chat“ temu biraš ti, a on pamti prijašnje razgovore; otvara se uz paket minuta.</p></li>
+        <li><h3>U sobi grupe</h3><p>Pozovi AI CoRider u interfon grupe i čuju ga svi u sobi. Minute skida s računa onoga tko ga je pozvao.</p></li>
+        <li><h3>Pamti i zove</h3><p>Sprema bilješke koje zatražiš i zaboravlja ih kad kažeš „zaboravi to“. Pronalazi osobu u kontaktima; jedan dodir zaslona pokreće poziv.</p></li>
       </ul>
+      <p class="veri-atif cr-gz"><strong>Privatnost.</strong> AI CoRider radi samo kad ga ti uključiš. Tvoj glas kod nas se ne snima i ne pohranjuje; ono što kažeš ide glasovnoj usluzi u oblaku treće strane kako bi mogla odgovoriti. Točna lokacija ne ide toj usluzi; od rute dobiva samo tekst, na primjer preostalu udaljenost i sljedeći manevar. Sesija se zatvara kad je završiš, nakon dužeg šutenja ili kad završi navigacija. <a href="/gizlilik/">Pojedinosti su u pravilima o privatnosti.</a></p>
     </div>
     </div>
   </section>

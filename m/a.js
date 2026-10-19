@@ -57,15 +57,35 @@
 
   /* klipler: görününce yüklenir ve oynar, çıkınca durur */
   var klipler = $$("video[data-src]");
-  if (azalt) klipler.forEach(function (v) { v.poster = v.getAttribute("data-poster"); });  /* hareket azaltmada video yüklenmez; durağan kapak görünür */
+  /* küçük sürüm (data-kucuk) varsa: veri tasarrufu ya da 3g/2g'de o yüklenir */
+  function kaynak(v) {
+    var c = navigator.connection || {}, k = v.getAttribute("data-kucuk");
+    return k && (c.saveData || /(^|-)[23]g$/.test(c.effectiveType || "")) ? k : v.getAttribute("data-src");
+  }
+  if (azalt) klipler.forEach(function (v) { var dp = v.getAttribute("data-poster"); if (dp) v.poster = dp; });  /* hareket azaltmada video yüklenmez; durağan kapak görünür */
   if ("IntersectionObserver" in W && !azalt) {
     var kio = new IntersectionObserver(function (es) {
       es.forEach(function (e) {
         var v = e.target;
-        if (e.isIntersecting) { if (!v.poster) v.poster = v.getAttribute("data-poster"); if (!v.getAttribute("src")) v.src = v.getAttribute("data-src"); v.play().catch(function () {}); } else v.pause();
+        if (e.isIntersecting) { if (!v.poster && v.getAttribute("data-poster")) v.poster = v.getAttribute("data-poster"); if (!v.getAttribute("src")) v.src = kaynak(v); v.play().catch(function () {}); } else v.pause();
       });
     }, { threshold: .25, rootMargin: "200px 0px" });
     klipler.forEach(function (v) { kio.observe(v); });
+  }
+
+  /* AI CoRider kaydı: sessiz döner; düğmeyle ses açılır, bölümden çıkınca ses kendiliğinden kapanır.
+     Hareket azaltmada video hiç kendi başına oynamaz; düğme oynatıp sesi de açar. */
+  var cv = $("#cr-video"), cb = $("#cr-ses");
+  if (cv && cb) {
+    var cy = $("span", cb);
+    var etiket = function () { var a = !cv.muted && !cv.paused; cb.setAttribute("aria-pressed", a ? "true" : "false"); cy.textContent = cb.getAttribute(a ? "data-kapat" : "data-ac"); };
+    cb.addEventListener("click", function () {
+      if (!cv.getAttribute("src")) cv.src = kaynak(cv);
+      if (!cv.muted && !cv.paused) { cv.muted = true; } else { cv.muted = false; cv.play().catch(function () {}); }
+      etiket();
+    });
+    cv.addEventListener("play", etiket); cv.addEventListener("pause", etiket);
+    if ("IntersectionObserver" in W) new IntersectionObserver(function (e) { if (!e[0].isIntersecting && !cv.muted) { cv.muted = true; etiket(); } }, { threshold: .1 }).observe(cv);
   }
 
   /* "Motoseyir'i tanı": tıklayınca yüklenir */

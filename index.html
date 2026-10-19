@@ -280,23 +280,64 @@
       <div data-r>
         <p class="km">AI CoRider</p>
         <h2>Kaskının içinde <i>bir yol arkadaşı.</i> <span class="etiket">Pro</span></h2>
-        <p class="metin">Sesli konuşursun, eller gidonda kalır. Bir şey sormak, durak eklemek ya da molayı planlamak için telefona uzanman gerekmez.</p>
+        <p class="metin">AI CoRider, kaskındaki kulaklıktan konuşan yol arkadaşın. Düğmeye basıp sorarsın; rotanı bilir, yol üstünde yer arar, durak ekler ve rotayı senin yerine değiştirir. Cevabı kaskından duyarsın, eller gidonda kalır.</p>
       </div>
     </div>
+    <div class="cr" data-r>
+      <h3 class="cr-h">Ne diyebilirsin</h3>
+      <p class="cr-p">Bunlar örnek. Ezberlenecek komut yok, kendi cümlenle söylemen yeter.</p>
+      <ul class="cr-soz">
+        <li><p class="cr-b">Varışa ne kadar kaldı? Yolda yağmur var mı?</p><span class="cr-t">Kalan süre ve yağış</span></li>
+        <li><p class="cr-b">Yolda iyi bir tost yeri var mı?</p><span class="cr-t">Yol üstünde arar, puanı yüksek olanı önce söyler</span></li>
+        <li><p class="cr-b">İlkini durak olarak ekle.</p><span class="cr-t">Durağı ekler, rotayı yeniler</span></li>
+        <li><p class="cr-b">Köy yollarından gidelim.</p><span class="cr-t">Rota kipini değiştirir</span></li>
+        <li><p class="cr-b">Benzinim varışa yeter mi?</p><span class="cr-t">Depo menzilini hesaplar</span></li>
+        <li><p class="cr-b">Bu gece nerede kalırım?</p><span class="cr-t">Konaklama arar</span></li>
+        <li><p class="cr-b">Gruba mola haberi ver.</p><span class="cr-t">Gruba hazır uyarı yollar</span></li>
+        <li><p class="cr-b">Yarın zinciri yağlamayı hatırlat.</p><span class="cr-t">Notu saklar, ertesi gün söyler</span></li>
+      </ul>
+    </div>
+
+    <div class="cr" data-r>
+      <h3 class="cr-h">Nasıl çalışır</h3>
+      <ol class="cr-adim">
+        <li><span class="n" aria-hidden="true">1</span><h4>Düğmeye bas</h4><p>Haritadaki AI CoRider düğmesine basarsın, konuşma başlar.</p></li>
+        <li><span class="n" aria-hidden="true">2</span><h4>Normal konuş</h4><p>Komut ezberlemen gerekmez. Hangi dilde konuşursan o dilde cevap verir.</p></li>
+        <li><span class="n" aria-hidden="true">3</span><h4>Kaskından duy</h4><p>Kask telefona Bluetooth ile bağlıysa ses oradan gelir. Rüzgârda duyamazsan “sesini aç” demen yeter.</p></li>
+      </ol>
+    </div>
+
+    <div class="cr-video bolum-ik" data-r>
+      <div class="cr-tel">
+        <div class="tel sade"><video id="cr-video" data-src="/m/corider-tr.mp4" data-kucuk="/m/corider-kucuk-tr.mp4" poster="/m/corider-tr.webp" muted loop playsinline preload="none" width="540" height="1106" aria-label="AI CoRider ile sesli konuşma: kalan süre ve yağış sorulur, bir mola yeri bulunur ve rotaya eklenir"></video></div>
+        <button class="ses-btn" id="cr-ses" type="button" aria-pressed="false" data-ac="Sesi aç" data-kapat="Sesi kapat"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path class="h" d="M4 9.5v5h3.6L12 18.5v-13L7.6 9.5H4z" fill="currentColor"/><path class="d" d="M15.5 9a4.2 4.2 0 0 1 0 6M17.8 6.6a7.5 7.5 0 0 1 0 10.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Sesi aç</span></button>
+      </div>
+      <div>
+        <h3 class="cr-h">Gerçek bir sürüşten</h3>
+        <p class="metin">Uygulamadan alınmış gerçek kayıt: sürücü kalan süreyi ve yağışı soruyor, bir mola yeri istiyor, seçtiği yer rotaya durak olarak giriyor.</p>
+        <p class="cr-not">Uygulamadan gerçek ekran kaydı.</p>
+      </div>
+    </div>
+
     <div class="ayrinti" data-r aria-label="AI CoRider ayrıntıları">
-      <dl class="veri-say uc">
-        <div><dt>4</dt><dd>ses seçeneği</dd></div>
+      <dl class="veri-say">
+        <div><dt>~30</dt><dd>sesle yapılan işlem</dd></div>
+        <div><dt>4</dt><dd>ses seçeneği: Quartz, Tempo, Stone, Willow</dd></div>
         <div><dt>Bluetooth</dt><dd>kask interkomunla çalışır</dd></div>
         <div><dt>30·60·180</dt><dd>dakikalık ek paket; süresi dolmaz</dd></div>
       </dl>
       <ul class="izgara">
         <li><h3>Rotayı sesle değiştir</h3><p>Durak ekler, çıkarır, atlar. Varış noktasını değiştirir, durakları sıraya koyar.</p></li>
         <li><h3>Yol üstünde arar</h3><p>İlerideki benzinliği, yemeği ya da konaklamayı bulur; puanı yüksek olanı önce söyler.</p></li>
-        <li><h3>Hava ve menzil</h3><p>Hava nasıl olacak, depo nereye kadar yeter, sorman yeterli.</p></li>
-        <li><h3>Grupla</h3><p>Gruptakilerin nerede olduğunu söyler, gruba senin yerine mesaj atar.</p></li>
+        <li><h3>Hava ve menzil</h3><p>Hava nasıl olacak, rotada yağmur var mı, depo nereye kadar yeter, sorman yeterli. Menzil için Ayarlar’a dolu depoyla gittiğin yolu bir kez yazman gerekir.</p></li>
+        <li><h3>Grupla</h3><p>Gruptakilerin nerede olduğunu söyler, gruba senin yerine hazır bir uyarı yollar: geride kaldım, mola, tehlike ya da benzin.</p></li>
         <li><h3>Sürüşü yönetir</h3><p>Navigasyonu başlatır ya da bitirir, sürüş kaydını açar, seni eve götürür.</p></li>
-        <li><h3>Konuşma süresi</h3><p>Pro’da her 30 günde bir konuşma süresi yenilenir. Yetmezse süresi dolmayan ek paket alırsın.</p></li>
+        <li><h3>Konuşma süresi</h3><p>Pro’da her 30 günde 10 dakika konuşma süresi yenilenir, ücretsiz denemede 5 dakika verilir. Yetmezse süresi dolmayan 30, 60 ya da 180 dakikalık paket alırsın.</p></li>
+        <li><h3>İki kip</h3><p>“Planlayıcı” rotanı bilir ve işini yapar; Pro’ya dahildir. “Sohbet”te konuyu sen seçersin, önceki sohbetleri hatırlar; dakika paketiyle açılır.</p></li>
+        <li><h3>Grup odasında</h3><p>Grup interkomunda AI CoRider’ı çağırırsan odadaki herkes duyar. Dakika, onu çağıranın hesabından düşer.</p></li>
+        <li><h3>Hatırlar ve arar</h3><p>İstediğin notu saklar, “unut” dersen siler. Rehberinden birini bulur; aramak için ekrana tek dokunuş yeter.</p></li>
       </ul>
+      <p class="veri-atif cr-gz"><strong>Gizlilik.</strong> AI CoRider yalnız sen açınca çalışır. Sesin bizde kaydedilmez ve saklanmaz; söylediklerin, cevabı üretmek için üçüncü taraf bir bulut ses servisine gider. Bu servise ham konumun gitmez, rotadan yalnız kalan yol ve sıradaki manevra gibi bilgiler metin olarak gider. Oturum sen kapatınca, bir süre konuşmayınca ya da navigasyon bitince kendiliğinden kapanır. <a href="/gizlilik/">Ayrıntılar gizlilik sayfasında.</a></p>
     </div>
     </div>
   </section>
