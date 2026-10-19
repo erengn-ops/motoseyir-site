@@ -149,8 +149,35 @@ h1{font-weight:800;font-size:clamp(2.45rem,10.6vw,6rem);line-height:1.02;letter-
 .video-ik{display:grid;gap:36px;align-items:center}
 .video-ik>*{min-width:0}
 .tel-kap{display:flex;flex-direction:column;align-items:center;gap:20px}
-.tel{position:relative;width:min(66vw,290px);aspect-ratio:540/1106;border-radius:13%/6.4%;background:#02060b;padding:3%;box-shadow:0 0 0 1px rgba(62,201,255,.35),0 0 80px -10px rgba(62,201,255,.28),0 30px 60px -20px rgba(0,0,0,.8)}
-.tel video{width:100%;height:100%;object-fit:cover;border-radius:10.5%/5%;background:#0B1A2B}
+.tel{position:relative;width:min(66vw,290px)}
+/* ---------- iPhone 17 Pro Max çerçevesi (19 Eki 2026) ----------
+   Cihaz ~77,6×163,4 mm. Ölçüler cihaz genişliğinin yüzdesi (cqw: .tel/.kt genişliğinin %1'i): titanyum kenar 0,7 + siyah çerçeve 1,5, dört yanda EŞİT
+   → ekran kenardan 2,2 içeride (oran 1000:2121 ≈ 0,4715). Dış köşe tek yarıçap 14 cqw (dairesel), ekran köşesi 14 − 2,2 = 11,8 (eş merkezli).
+   Ekran görüntüleri (1320×2868) Dynamic Island'ı ZATEN taşıyor → CSS adası YOK. Ekranı adasız olan tek yer CoRider videosu (.sade): orada
+   Apple'ın konumunda (genişlik %28, yükseklik %3,8, üst %1,2) tek bir hap çiziliyor. Yan tuşlar .tu'da: sol Eylem + ses ×2, sağ güç + Kamera Kontrolü. */
+.tel{--ti-s:linear-gradient(90deg,#807d77,#c9c6c0);--ti-g:linear-gradient(90deg,#c9c6c0,#8f8c86);--ti-k:linear-gradient(90deg,#4a4845,#6e6b66)}
+@supports(width:1cqw){
+  .tel{aspect-ratio:1000/2121;container-type:inline-size;border-radius:0;background:none;padding:0;box-shadow:none}
+  .tel::before{content:"";position:absolute;inset:0;z-index:0;top:0;left:0;width:auto;height:auto;transform:none;border-radius:14cqw;
+    background:linear-gradient(180deg,rgba(255,255,255,.24) 0,rgba(255,255,255,0) 16%,rgba(255,255,255,0) 82%,rgba(0,0,0,.18) 100%),
+      linear-gradient(90deg,#c9c6c0 0,#8f8c86 15%,#b6b3ad 38%,#d8d5cf 60%,#9a978f 83%,#c9c6c0 100%);
+    box-shadow:inset 0 0 0 .3cqw rgba(255,255,255,.55),inset 0 0 0 .6cqw rgba(0,0,0,.10),0 0 80px -10px rgba(62,201,255,.28),0 30px 60px -20px rgba(0,0,0,.8)}
+  .tel>img,.tel>video,.tel>.ada{position:absolute;left:2.2cqw;top:2.2cqw;width:calc(100% - 4.4cqw);height:calc(100% - 4.4cqw);z-index:1;
+    border-radius:11.8cqw;background:#000;object-fit:cover;box-shadow:0 0 0 1.5cqw #040404,0 0 0 1.62cqw rgba(0,0,0,.45)}
+  .tu{position:absolute;inset:0;z-index:0;pointer-events:none}
+  .tu::before,.tu::after{content:"";position:absolute;top:0;bottom:0;width:.8cqw}
+  .tu::before{left:-.6cqw;background:var(--ti-s) 0 14.98%/100% 3.9% no-repeat,var(--ti-s) 0 23.09%/100% 7.3% no-repeat,var(--ti-s) 0 33.44%/100% 7.3% no-repeat}
+  .tu::after{right:-.6cqw;background:var(--ti-g) 0 31.03%/100% 13.0% no-repeat,var(--ti-k) 0 64.45%/100% 6.6% no-repeat}
+  .tel>.ada{background:#ECEEEA}
+  .tel>.ada::after{content:"";position:absolute;left:50%;top:1.2%;width:28%;height:3.8%;transform:translateX(-50%);background:#000;border-radius:99px}
+  .tel.sade>video{top:auto;bottom:2.2cqw;height:auto;aspect-ratio:540/1106;border-radius:0 0 11.8cqw 11.8cqw;box-shadow:none}
+}
+@supports not (width:1cqw){
+  /* eski tarayıcı: sade siyah çerçeve (cqw yok) */
+  .tel{aspect-ratio:1000/2121;border-radius:14%/6.6%;background:#0d1211;padding:2.2%}
+  .tel img,.tel video{width:100%;height:100%;object-fit:cover;border-radius:11%/5%;background:#111}
+  .tu,.ada{display:none}
+}
 .ses-btn{display:inline-flex;align-items:center;gap:9px;padding:11px 18px;border:1px solid var(--kenar);border-radius:99px;background:rgba(62,201,255,.08);color:var(--y);font:700 .9rem/1 var(--sans);cursor:pointer;transition:background-color .2s,border-color .2s}
 .ses-btn:hover{background:rgba(62,201,255,.16);border-color:var(--cy)}
 .ses-btn .d{opacity:0}.ses-btn[aria-pressed="true"] .d{opacity:1}
@@ -317,6 +344,7 @@ footer{background:var(--z0);border-top:1px solid var(--kenar-2);padding:34px 0 c
 .tel{position:relative}
 .tel::after,.grup::before,.kip::before,.soh::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:3;opacity:0;transition:opacity .4s;background:radial-gradient(300px circle at var(--gx,50%) var(--gy,0%),rgba(120,220,255,.14),transparent 62%)}
 .tel.tilt::after,.grup.tilt::before,.kip.tilt::before,.soh.tilt::before{opacity:1}
+@supports(width:1cqw){.tel::after{border-radius:14cqw}}
 .soh,.kip{position:relative}
 @keyframes par{from{translate:0 calc(var(--d,34px)*-1)}to{translate:0 var(--d,34px)}}
 .hm.sd .par{animation:par linear both;animation-timeline:view()}

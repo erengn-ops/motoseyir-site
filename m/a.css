@@ -87,9 +87,7 @@ h1 i,h2 i,.plan h3 i{font-style:normal}
 
 /* iki telefon; mobilde yalnız öndeki, alt kenardan göz ucuyla */
 .k-tel{position:relative;height:clamp(150px,38vw,230px);width:min(100%,380px);margin:0 auto;overflow:hidden}
-.kt{position:absolute;aspect-ratio:1320/2868;border-radius:13%/6%;background:#0d1211;padding:3.2%;box-shadow:0 0 0 1px rgba(255,255,255,.18),0 18px 40px -18px rgba(0,0,0,.6)}
-.kt::before{content:"";position:absolute;top:2.6%;left:50%;width:27%;height:2.4%;transform:translateX(-50%);background:#000;border-radius:99px;z-index:2}
-.kt img{width:100%;height:100%;object-fit:cover;border-radius:10.5%/4.8%;background:#111}
+.kt{position:absolute}
 .kt-on{left:50%;top:0;width:min(62vw,250px);margin-left:calc(min(62vw,250px) / -2)}
 .kt-arka{display:none}
 .js .kt{opacity:0;transition:opacity .8s ease}
@@ -132,9 +130,36 @@ h2{font:800 clamp(1.9rem,5.6vw,3rem)/1.1 var(--sans);letter-spacing:-.025em;text
 
 /* ---------- Telefon (gerçek ekran görüntüleri) ---------- */
 .tel-alan{display:flex;justify-content:center}
-.tel{position:relative;width:min(70vw,290px);aspect-ratio:1320/2868;border-radius:13%/6%;background:#0d1211;padding:3.2%;box-shadow:0 0 0 1px rgba(22,34,31,.55),0 1px 2px rgba(22,34,31,.12),0 20px 40px -20px rgba(22,34,31,.35)}
-.tel::before{content:"";position:absolute;top:2.6%;left:50%;width:27%;height:2.4%;transform:translateX(-50%);background:#000;border-radius:99px;z-index:2}
-.tel img,.tel video{width:100%;height:100%;object-fit:cover;border-radius:10.5%/4.8%;background:#111}
+.tel{position:relative;width:min(70vw,290px)}
+/* ---------- iPhone 17 Pro Max çerçevesi (19 Eki 2026) ----------
+   Cihaz ~77,6×163,4 mm. Ölçüler cihaz genişliğinin yüzdesi (cqw: .tel/.kt genişliğinin %1'i): titanyum kenar 0,7 + siyah çerçeve 1,5, dört yanda EŞİT
+   → ekran kenardan 2,2 içeride (oran 1000:2121 ≈ 0,4715). Dış köşe tek yarıçap 14 cqw (dairesel), ekran köşesi 14 − 2,2 = 11,8 (eş merkezli).
+   Ekran görüntüleri (1320×2868) Dynamic Island'ı ZATEN taşıyor → CSS adası YOK. Ekranı adasız olan tek yer CoRider videosu (.sade): orada
+   Apple'ın konumunda (genişlik %28, yükseklik %3,8, üst %1,2) tek bir hap çiziliyor. Yan tuşlar .tu'da: sol Eylem + ses ×2, sağ güç + Kamera Kontrolü. */
+.tel,.kt{--ti-s:linear-gradient(90deg,#807d77,#c9c6c0);--ti-g:linear-gradient(90deg,#c9c6c0,#8f8c86);--ti-k:linear-gradient(90deg,#4a4845,#6e6b66)}
+@supports(width:1cqw){
+  .tel,.kt{aspect-ratio:1000/2121;container-type:inline-size;border-radius:0;background:none;padding:0;box-shadow:none}
+  .tel::before,.kt::before{content:"";position:absolute;inset:0;z-index:0;top:0;left:0;width:auto;height:auto;transform:none;border-radius:14cqw;
+    background:linear-gradient(180deg,rgba(255,255,255,.24) 0,rgba(255,255,255,0) 16%,rgba(255,255,255,0) 82%,rgba(0,0,0,.18) 100%),
+      linear-gradient(90deg,#c9c6c0 0,#8f8c86 15%,#b6b3ad 38%,#d8d5cf 60%,#9a978f 83%,#c9c6c0 100%);
+    box-shadow:inset 0 0 0 .3cqw rgba(255,255,255,.55),inset 0 0 0 .6cqw rgba(0,0,0,.10),0 1px 2px rgba(22,34,31,.14),0 20px 40px -20px rgba(22,34,31,.35)}
+  .tel>img,.tel>video,.tel>.ada,.tel>.ekr,.kt>img{position:absolute;left:2.2cqw;top:2.2cqw;width:calc(100% - 4.4cqw);height:calc(100% - 4.4cqw);z-index:1;
+    border-radius:11.8cqw;background:#000;object-fit:cover;box-shadow:0 0 0 1.5cqw #040404,0 0 0 1.62cqw rgba(0,0,0,.45)}
+  .tu{position:absolute;inset:0;z-index:0;pointer-events:none}
+  .tu::before,.tu::after{content:"";position:absolute;top:0;bottom:0;width:.8cqw}
+  .tu::before{left:-.6cqw;background:var(--ti-s) 0 14.98%/100% 3.9% no-repeat,var(--ti-s) 0 23.09%/100% 7.3% no-repeat,var(--ti-s) 0 33.44%/100% 7.3% no-repeat}
+  .tu::after{right:-.6cqw;background:var(--ti-g) 0 31.03%/100% 13.0% no-repeat,var(--ti-k) 0 64.45%/100% 6.6% no-repeat}
+  .tel>.ada{background:#ECEEEA}
+  .tel>.ada::after{content:"";position:absolute;left:50%;top:1.2%;width:28%;height:3.8%;transform:translateX(-50%);background:#000;border-radius:99px}
+  .tel>.ada.hap{background:none;box-shadow:none;z-index:2}   /* yalnız hap: ekranı adasız olan video (gezi) üstüne tek ada */
+  .tel.sade>video{top:auto;bottom:2.2cqw;height:auto;aspect-ratio:540/1106;border-radius:0 0 11.8cqw 11.8cqw;box-shadow:none}
+}
+@supports not (width:1cqw){
+  /* eski tarayıcı: sade siyah çerçeve (cqw yok) */
+  .tel,.kt{aspect-ratio:1000/2121;border-radius:14%/6.6%;background:#0d1211;padding:2.2%}
+  .tel img,.tel video,.kt img{width:100%;height:100%;object-fit:cover;border-radius:11%/5%;background:#111}
+  .tu,.ada{display:none}
+}
 .cift{display:flex;justify-content:center;align-items:flex-start}
 .cift.dikey{flex-direction:column;align-items:center}
 .cift.dikey .tel{width:min(60vw,260px)}
@@ -284,8 +309,6 @@ footer{background:var(--yuksek);border-top:1px solid var(--cizgi);padding:34px 0
 .cr-video .metin{margin-top:12px}
 .cr-not{margin-top:14px;font-size:.84rem;color:var(--yazi-3)}
 .cr-tel{display:flex;flex-direction:column;align-items:center;gap:18px}
-.tel.sade{aspect-ratio:540/1106}
-.tel.sade::before{display:none}
 .ses-btn{display:inline-flex;align-items:center;gap:9px;padding:10px 18px;border:1px solid var(--cizgi);border-radius:99px;background:var(--yuzey);color:var(--yazi);font:700 .9rem/1 var(--sans);cursor:pointer;transition:background-color .2s,border-color .2s}
 .ses-btn:hover{border-color:var(--vurgu);background:var(--vurgu-acik)}
 .ses-btn .d{opacity:0}.ses-btn[aria-pressed="true"] .d{opacity:1}
@@ -379,6 +402,7 @@ footer{background:var(--yuksek);border-top:1px solid var(--cizgi);padding:34px 0
 .hm .tel.tilt,.hm .arac.tilt{transition:transform .12s linear}
 .tel::after,.arac::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:3;opacity:0;transition:opacity .4s;background:radial-gradient(260px circle at var(--gx,50%) var(--gy,0%),rgba(255,255,255,.2),transparent 62%)}
 .tel.tilt::after,.arac.tilt::after{opacity:1}
+@supports(width:1cqw){.tel::after{border-radius:14cqw}}
 @keyframes par{from{translate:0 calc(var(--d,34px)*-1)}to{translate:0 var(--d,34px)}}
 .hm .par{will-change:translate}
 .hm.sd .par{animation:par linear both;animation-timeline:view()}
@@ -397,10 +421,10 @@ footer{background:var(--yuksek);border-top:1px solid var(--cizgi);padding:34px 0
 .hk-yapis{position:sticky;top:calc(60px + env(safe-area-inset-top));z-index:2;height:min(46svh,400px);display:grid;place-items:center;background:#0E1514}
 .hk-yapis::after{content:"";position:absolute;left:0;right:0;bottom:-28px;height:28px;background:linear-gradient(#0E1514,rgba(14,21,20,0));pointer-events:none}
 .hk-tel{height:100%;display:grid;place-items:center;perspective:1100px}
-.hk-tel .tel{position:relative;height:min(calc(100% - 20px),680px);width:auto;aspect-ratio:1320/2868;transform:none;transition:transform 1.1s cubic-bezier(.16,.84,.24,1);
-  box-shadow:0 0 0 1px rgba(255,255,255,.22),0 40px 80px -30px rgba(0,0,0,.9),0 0 120px -28px rgba(61,61,245,.5)}
+.hk-tel .tel{position:relative;height:min(calc(100% - 20px),680px);width:auto;transform:none;transition:transform 1.1s cubic-bezier(.16,.84,.24,1)}
+.hk-tel .tel::before{box-shadow:inset 0 0 0 .3cqw rgba(255,255,255,.55),inset 0 0 0 .6cqw rgba(0,0,0,.10),0 40px 80px -30px rgba(0,0,0,.9),0 0 120px -28px rgba(61,61,245,.5)}
 .hk-tel .tel::after{display:none}
-.hk-tel .ekr{position:absolute;inset:0;margin:3.2%;border-radius:10.5%/4.8%;overflow:hidden;background:#111}
+.hk-tel .ekr{overflow:hidden}
 .hk-tel .e{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .6s ease}
 .hk-sahne[data-a="0"] .e0,.hk-sahne[data-a="1"] .e1,.hk-sahne[data-a="2"] .e2,.hk-sahne[data-a="3"] .e3{opacity:1}
 .hk-adimlar{list-style:none;position:relative;padding-left:44px}
@@ -466,7 +490,7 @@ html:not(.js) .hk-adimlar{padding-left:0}
 .hm #corider :is(h2,h3,h4,p,li,dt,dd,strong,span,a,button,time),.hm .varis :is(h2,a){transition:color .7s ease,background-color .7s ease,border-color .7s ease,box-shadow .7s ease}
 #corider.ton{--zemin:#0B1A2B;--yuzey:#102338;--yuksek:#0B1A2B;--cizgi:rgba(62,201,255,.22);--yazi:#EAF6FF;--yazi-2:#9FC2DA;--yazi-3:#8FB3CC;
   --vurgu:#3EC9FF;--vurgu-koyu:#7DDCFF;--vurgu-acik:rgba(62,201,255,.12);--vurgu-ustu:#071019;color:var(--yazi)}
-#corider.ton .tel{box-shadow:0 0 0 1px rgba(62,201,255,.4),0 0 90px -12px rgba(62,201,255,.3),0 30px 60px -20px rgba(0,0,0,.8)}
+#corider.ton .tel::before{box-shadow:inset 0 0 0 .3cqw rgba(255,255,255,.55),inset 0 0 0 .6cqw rgba(0,0,0,.10),0 0 90px -12px rgba(62,201,255,.3),0 30px 60px -20px rgba(0,0,0,.8)}
 #corider.ton .etiket{box-shadow:inset 0 0 0 1px rgba(62,201,255,.32)}
 #corider.ton .cr-b{box-shadow:none}
 #corider.ton .ses-btn:hover{background:rgba(62,201,255,.16)}
