@@ -24,8 +24,6 @@
 
   "baslik": "Navegación para moto y planificador de rutas — Motoseyir",
   "aciklama": "Navegación para motoristas calculada por kilómetros: ruta más corta, carreteras secundarias, viajes con varias paradas, salidas en grupo, intercomunicador y rutas legendarias. Motoseyir, en el App Store.",
-  "og_baslik": "Motoseyir — el navegador que cuenta kilómetros, no minutos",
-  "og_aciklama": "Ruta más corta, carreteras secundarias, viajes con varias paradas, salidas en grupo, intercomunicador y rutas legendarias — en una sola app.",
   "jsonld_aciklama": "App de navegación para motoristas calculada por distancia: ruta más corta, carreteras secundarias, viajes con varias paradas, salidas en grupo, intercomunicador y rutas legendarias.",
   "jsonld_ucretsiz": "7 días de prueba gratis de todas las funciones Pro en los planes trimestral y anual, para nuevos suscriptores, donde esté disponible.",
   "jsonld_pro": "El mejor orden para varias paradas, viajes y tracks ilimitados, modos de carreteras secundarias y costa, Discover, crear grupos, intercomunicador y AI CoRider.",
@@ -157,11 +155,9 @@
   "iletisim_insta_p": "Síguenos para ver rutas nuevas, fotos de salidas y anuncios.",
 
   "oz_baslik": "Funciones de la app de navegación para moto — Motoseyir",
-  "oz_aciklama": "Todas las funciones de Motoseyir en una página: ruta más corta, mejor orden de paradas, carreteras secundarias, rutas legendarias, Discover, diario de viaje, tiempo, tracks, salidas en grupo, intercomunicador, uso en horizontal y Community.",
-  "oz_og_baslik": "Todas las funciones de Motoseyir",
-  "oz_og_aciklama": "Ruta más corta, mejor orden de paradas, carreteras secundarias, rutas legendarias, salidas en grupo, intercomunicador y más.",
+  "oz_aciklama": "Todas las funciones del navegador para moto Motoseyir en una página: ruta más corta, paradas, carreteras secundarias, rutas legendarias, diario de viaje, grupo.",
   "oz_eyebrow": "Funciones · en detalle",
-  "oz_h1": "Todas las funciones de Motoseyir",
+  "oz_h1": "Motoseyir, navegador para moto: todas las funciones",
   "oz_sayfa_lead": "Esta página crece. Cuando llega una función nueva, se añade primero aquí, bajo el título que le toca. Abajo hay cinco grupos: ciudad y mensajería, mototurismo, en carretera y después de la ruta, rodar juntos, y en las montañas y en el coche.",
 
   "kume1_h2": "Para la ciudad y la mensajería",
@@ -247,10 +243,8 @@
   "oz24_h3": "Seis marcadores",
   "oz24_p": "En el mapa te representa uno de estos marcadores: Supersport, Chopper, Maxi scooter, Touring, Arrow o Helmet. Lo eliges en Settings → Map → Navigation marker y CarPlay muestra el mismo. Los cuatro primeros son 3D, con piloto, y se inclinan en las curvas.",
 
-  "ny_baslik": "Cómo usar Motoseyir — rutas, salidas en grupo y diario",
-  "ny_aciklama": "Guía paso a paso de Motoseyir: crear una ruta, viajes con varias paradas, grabación de rutas, diario de viaje, salidas en grupo e intercomunicador, Community, ajustes y suscripción.",
-  "ny_og_baslik": "¿Cómo se usa Motoseyir?",
-  "ny_og_aciklama": "De crear una ruta a rodar en grupo, de la grabación a Community: guía paso a paso de Motoseyir.",
+  "ny_baslik": "Cómo usar el navegador para moto Motoseyir paso a paso",
+  "ny_aciklama": "Cómo crear una ruta en moto con Motoseyir: ruta, viajes con varias paradas, grabación de rutas, diario de viaje, salidas en grupo e intercomunicador.",
   "ny_eyebrow": "Cómo se usa",
   "ny_h1": "Así se usa Motoseyir de principio a fin",
   "ny_lead": "Esta página es la versión larga de Settings → «How it works» dentro de la app: los mismos temas y el mismo orden. Toca un título para abrirlo y vuelve a tocarlo para cerrarlo. Los nombres de los botones van en inglés, como los ves en la app.",

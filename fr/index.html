@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Motoseyir — le GPS moto pour les routes sinueuses</title>
-<meta name="description" content="GPS moto qui planifie au kilomètre, pas à la minute : modes Petites routes et Côte, générateur de circuits, 1 600+ cols, sorties en groupe et CarPlay.">
+<title>GPS moto et itinéraires moto : application Motoseyir</title>
+<meta name="description" content="Motoseyir est un GPS moto qui planifie au kilomètre, pas à la minute : petites routes, circuits moto, 1 600+ cols, sorties en groupe, intercom et CarPlay.">
 <link rel="canonical" href="https://motoseyir-app.com/fr/">
 <link rel="alternate" hreflang="tr" href="https://motoseyir-app.com/">
 <link rel="alternate" hreflang="en" href="https://motoseyir-app.com/en/">
@@ -22,15 +22,22 @@
 <link rel="alternate" hreflang="el" href="https://motoseyir-app.com/el/">
 <link rel="alternate" hreflang="x-default" href="https://motoseyir-app.com/en/">
 
-<!-- Open Graph -->
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Motoseyir">
 <meta property="og:locale" content="fr_FR">
-<meta property="og:title" content="Motoseyir — le GPS moto pour les routes sinueuses">
-<meta property="og:description" content="Itinéraires au kilomètre, petites routes, générateur de circuits, 1 600+ cols, sorties en groupe, intercom et CarPlay, dans une seule app.">
+<meta property="og:title" content="GPS moto et itinéraires moto : application Motoseyir">
+<meta property="og:description" content="Motoseyir est un GPS moto qui planifie au kilomètre, pas à la minute : petites routes, circuits moto, 1 600+ cols, sorties en groupe, intercom et CarPlay.">
 <meta property="og:url" content="https://motoseyir-app.com/fr/">
 <meta property="og:image" content="https://motoseyir-app.com/img/og-kapak.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GPS moto et itinéraires moto : application Motoseyir">
+<meta name="twitter:description" content="Motoseyir est un GPS moto qui planifie au kilomètre, pas à la minute : petites routes, circuits moto, 1 600+ cols, sorties en groupe, intercom et CarPlay.">
+<meta name="twitter:image" content="https://motoseyir-app.com/img/og-kapak.jpg">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 
 <!-- Apple akıllı afiş: iOS Safari'de sayfanın üstünde "App Store'da aç" şeridi. -->
 <meta name="apple-itunes-app" content="app-id=6792549131">
@@ -68,30 +75,149 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "Motoseyir",
-  "operatingSystem": "iOS",
-  "applicationCategory": "NavigationApplication",
-  "inLanguage": "fr",
-  "url": "https://motoseyir-app.com/fr/",
-  "image": "https://motoseyir-app.com/img/og-kapak.jpg",
-  "description": "App de navigation pour motards, au kilomètre : itinéraire le plus court, petites routes, générateur de circuits, cols, sorties en groupe, intercom, CarPlay et routes légendaires.",
-  "offers": [
+  "@graph": [
     {
-      "@type": "Offer",
-      "name": "Gratuit",
-      "price": "0",
-      "priceCurrency": "EUR",
-      "description": "Itinéraires et navigation illimités en Turquie, en Europe et aux États-Unis, 1 tour enregistré ; les formules Pro de 3 mois et annuelle peuvent inclure 7 jours d’essai gratuit pour les nouveaux abonnés."
+      "@type": "Organization",
+      "@id": "https://motoseyir-app.com/#organization",
+      "name": "Motoseyir",
+      "url": "https://motoseyir-app.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://motoseyir-app.com/img/uygulama-simgesi-512.png",
+        "width": 512,
+        "height": 512
+      },
+      "sameAs": [
+        "https://www.instagram.com/motoseyir.app/",
+        "https://www.instagram.com/motoseyir.app.en/"
+      ]
     },
     {
-      "@type": "Offer",
-      "name": "Motoseyir Pro",
-      "category": "subscription",
-      "description": "AI CoRider, CarPlay, création de groupe, Explorer, tours et pistes illimités, modes de tour, création de circuits sinueux ou sans autoroute."
+      "@type": "WebSite",
+      "@id": "https://motoseyir-app.com/#website",
+      "url": "https://motoseyir-app.com/",
+      "name": "Motoseyir",
+      "inLanguage": "fr",
+      "publisher": {
+        "@id": "https://motoseyir-app.com/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://motoseyir-app.com/fr/#sayfa",
+      "url": "https://motoseyir-app.com/fr/",
+      "name": "GPS moto et itinéraires moto : application Motoseyir",
+      "description": "Motoseyir est un GPS moto qui planifie au kilomètre, pas à la minute : petites routes, circuits moto, 1 600+ cols, sorties en groupe, intercom et CarPlay.",
+      "inLanguage": "fr",
+      "isPartOf": {
+        "@id": "https://motoseyir-app.com/#website"
+      },
+      "about": {
+        "@id": "https://motoseyir-app.com/#uygulama"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://motoseyir-app.com/img/og-kapak.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "dateModified": "2026-10-20",
+      "mainEntity": {
+        "@id": "https://motoseyir-app.com/fr/#sss"
+      }
+    },
+    {
+      "@type": "MobileApplication",
+      "@id": "https://motoseyir-app.com/#uygulama",
+      "name": "Motoseyir",
+      "operatingSystem": "iOS",
+      "applicationCategory": "NavigationApplication",
+      "inLanguage": "fr",
+      "url": "https://motoseyir-app.com/fr/",
+      "image": "https://motoseyir-app.com/img/og-kapak.jpg",
+      "description": "App de navigation pour motards, au kilomètre : itinéraire le plus court, petites routes, générateur de circuits, cols, sorties en groupe, intercom, CarPlay et routes légendaires.",
+      "screenshot": [
+        "https://motoseyir-app.com/m/ekran-nav-en.webp",
+        "https://motoseyir-app.com/m/ekran-tur-en.webp",
+        "https://motoseyir-app.com/m/ekran-gecit-en.webp",
+        "https://motoseyir-app.com/m/ekran-corider-en.webp"
+      ],
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Gratuit",
+          "price": "0",
+          "priceCurrency": "EUR",
+          "description": "Itinéraires et navigation illimités en Turquie, en Europe et aux États-Unis, 1 tour enregistré ; les formules Pro de 3 mois et annuelle peuvent inclure 7 jours d’essai gratuit pour les nouveaux abonnés."
+        },
+        {
+          "@type": "Offer",
+          "name": "Motoseyir Pro",
+          "category": "subscription",
+          "description": "AI CoRider, CarPlay, création de groupe, Explorer, tours et pistes illimités, modes de tour, création de circuits sinueux ou sans autoroute."
+        }
+      ],
+      "downloadUrl": "https://apps.apple.com/fr/app/id6792549131?pt=128439797&ct=site-fr&mt=8",
+      "publisher": {
+        "@id": "https://motoseyir-app.com/#organization"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://motoseyir-app.com/fr/#sss",
+      "inLanguage": "fr",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Qu’est-ce que Motoseyir ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Motoseyir est une application de GPS et de planification d’itinéraires pour motards. Elle calcule à la distance plutôt qu’à la minute, propose les modes Petites routes et Côte, et compose un circuit selon la direction et la durée que tu choisis."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Motoseyir est-il gratuit ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La planification d’itinéraire et la navigation guidée sont gratuites et illimitées en Turquie, en Europe et aux États-Unis, sans compte. La version gratuite garde 1 tour enregistré. AI CoRider, CarPlay, création de groupe, Explorer et tours illimités sont dans Pro."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "En quoi Motoseyir diffère-t-il des autres GPS ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Il calcule l’itinéraire à la distance, pas à la minute : il compare les variantes entre les deux mêmes points et propose la plus courte. Sur un tour à plusieurs étapes, il décide aussi de l’ordre des étapes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Où fonctionne-t-il ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "L’itinéraire et la navigation fonctionnent en Turquie, en Europe et aux États-Unis. La carte des cols compte plus de 1 600 cols dans 36 pays."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Fonctionne-t-il avec CarPlay ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. Apple CarPlay fait partie de Pro ; ton itinéraire s’affiche en plein écran sur l’écran de la voiture."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Puis-je rouler avec des amis ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. Vous prenez le même itinéraire, tout le monde est visible sur la carte et vous parlez par l’intercom de groupe. Rejoindre un groupe par invitation ou par code est gratuit ; créer un groupe se fait avec Pro."
+          }
+        }
+      ]
     }
-  ],
-  "downloadUrl": "https://apps.apple.com/fr/app/id6792549131?pt=128439797&amp;ct=site-fr&amp;mt=8"
+  ]
 }
 </script>
 </head>
@@ -143,7 +269,7 @@
   </div>
   <div class="k-ic">
     <div class="k-metin">
-      <p class="ust-yazi">Motoseyir · Le GPS du motard</p>
+      <p class="ust-yazi">Motoseyir · Le GPS moto</p>
       <h1>Pour ceux qui <i>aiment les virages.</i></h1>
       <p class="giris">Motoseyir calcule l’itinéraire à la distance, pas à la minute. Petites routes ou côte, c’est toi qui choisis. Ou dis-lui dans quelle direction tu veux rouler et laisse-le composer le circuit. Ou choisis un col et pars.</p>
       <div class="cta-satir">
@@ -583,6 +709,8 @@
         <li><h3>Mode paysage</h3><p>Tourne le téléphone sur le côté : les cartes se regroupent à gauche et la carte prend le reste ; Mes tours passe sur deux colonnes.</p></li>
         <li><h3>Unités et langue</h3><p>Les unités suivent l’endroit où tu es : miles, mph et pieds aux États-Unis, miles et yards au Royaume-Uni, kilomètres partout ailleurs. L’app parle turc, anglais, allemand, français et italien et suit la langue de ton téléphone.</p></li>
         </ul>
+        <p class="cr-daha"><a href="/fr/ozellikler.html">Voir toutes les fonctions en détail →</a></p>
+        <p class="cr-daha"><a href="/fr/nasil-yapilir.html">Tu ouvres l’appli pour la première fois ? Commence ici →</a></p>
       </div>
     </div>
   </section>
@@ -612,6 +740,27 @@
         </div>
       </div>
       <p class="fiyat-not">Les prix actuels varient selon la région ; tu les vois sur l’écran d’abonnement de l’App Store. Résiliation possible à tout moment depuis ton compte App Store.</p>
+    </div>
+  </section>
+
+  <!-- SSS (20 Eki 2026): arama niyeti için kısa, GÖRÜNÜR soru-cevaplar (yalnız sitede zaten yazan olgular). FAQPage yapısal verisi aynı
+       anahtarlardan (faq_q1/faq_a1 …) uret.py json_ld() ile üretilir; buraya soru eklerken dil dosyalarına da ekle, görünür metin = JSON-LD. -->
+  <section class="bolum" id="sss" aria-labelledby="sss-h">
+    <div class="kap">
+      <div data-r>
+        <p class="km">Questions fréquentes</p>
+        <h2 id="sss-h">GPS moto, <i>questions fréquentes.</i></h2>
+      </div>
+      <div class="ayrinti" data-r>
+        <ul class="izgara">
+        <li><h3>Qu’est-ce que Motoseyir ?</h3><p>Motoseyir est une application de GPS et de planification d’itinéraires pour motards. Elle calcule à la distance plutôt qu’à la minute, propose les modes Petites routes et Côte, et compose un circuit selon la direction et la durée que tu choisis.</p></li>
+        <li><h3>Motoseyir est-il gratuit ?</h3><p>La planification d’itinéraire et la navigation guidée sont gratuites et illimitées en Turquie, en Europe et aux États-Unis, sans compte. La version gratuite garde 1 tour enregistré. AI CoRider, CarPlay, création de groupe, Explorer et tours illimités sont dans Pro.</p></li>
+        <li><h3>En quoi Motoseyir diffère-t-il des autres GPS ?</h3><p>Il calcule l’itinéraire à la distance, pas à la minute : il compare les variantes entre les deux mêmes points et propose la plus courte. Sur un tour à plusieurs étapes, il décide aussi de l’ordre des étapes.</p></li>
+        <li><h3>Où fonctionne-t-il ?</h3><p>L’itinéraire et la navigation fonctionnent en Turquie, en Europe et aux États-Unis. La carte des cols compte plus de 1 600 cols dans 36 pays.</p></li>
+        <li><h3>Fonctionne-t-il avec CarPlay ?</h3><p>Oui. Apple CarPlay fait partie de Pro ; ton itinéraire s’affiche en plein écran sur l’écran de la voiture.</p></li>
+        <li><h3>Puis-je rouler avec des amis ?</h3><p>Oui. Vous prenez le même itinéraire, tout le monde est visible sur la carte et vous parlez par l’intercom de groupe. Rejoindre un groupe par invitation ou par code est gratuit ; créer un groupe se fait avec Pro.</p></li>
+        </ul>
+      </div>
     </div>
   </section>
 </div>

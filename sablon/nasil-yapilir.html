@@ -7,34 +7,29 @@
 <meta name="description" content="{{ny_aciklama}}">
 <link rel="canonical" href="{{kanonik}}">
 {{alternatifler}}
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Motoseyir">
-<meta property="og:locale" content="{{og_locale}}">
-<meta property="og:title" content="{{ny_og_baslik}}">
-<meta property="og:description" content="{{ny_og_aciklama}}">
-<meta property="og:url" content="{{kanonik}}">
-<meta property="og:image" content="https://motoseyir-app.com/img/og-kapak.jpg">
-<meta name="twitter:card" content="summary_large_image">
+{{seo_head}}
 <meta name="apple-itunes-app" content="app-id={{uygulama_id}}">
 <meta name="theme-color" content="#0E6E73" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0E1315" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="{{kok}}img/favicon.png">
 <link rel="stylesheet" href="{{kok}}style.css">
+
+{{json_ld}}
 </head>
 <body>
 <a class="skip-link" href="#icerik">{{skip}}</a>
 
 <header class="site-header">
   <div class="wrap header-inner">
-    <a class="logo" href="index.html">MOTO<em>SEYİR</em></a>
+    <a class="logo" href="{{anasayfa_url}}">MOTO<em>SEYİR</em></a>
     <nav aria-label="{{nav_etiket}}">
       <ul class="nav">
-        <li><a href="index.html">{{nav_anasayfa}}</a></li>
-        <li><a href="index.html#ozellikler">{{nav_ozellikler}}</a></li>
-        <li><a href="ozellikler.html">{{footer_tum_ozellikler}}</a></li>
-        <li><a href="corider.html">AI CoRider</a></li>
-        <li><a href="index.html#gizlilik">{{nav_gizlilik}}</a></li>
-        <li><a href="index.html#iletisim">{{nav_iletisim}}</a></li>
+        <li><a href="{{anasayfa_url}}">{{nav_anasayfa}}</a></li>
+        <li><a href="{{anasayfa_url}}#ozellikler">{{nav_ozellikler}}</a></li>
+        <li><a href="{{ozellikler_url}}">{{footer_tum_ozellikler}}</a></li>
+        <li><a href="{{corider_url}}">AI CoRider</a></li>
+        <li><a href="{{anasayfa_url}}#gizlilik">{{nav_gizlilik}}</a></li>
+        <li><a href="{{anasayfa_url}}#iletisim">{{nav_iletisim}}</a></li>
       </ul>
     </nav>
     <div class="header-cta">
@@ -180,8 +175,8 @@
 
       <p style="margin-top:2.5rem; color:var(--text-muted); font-size:.92rem;">{{ny_dip}}</p>
       <p style="margin-top:1.5rem; display:flex; gap:1rem; flex-wrap:wrap;">
-        <a class="btn btn-ghost" href="index.html">{{btn_anasayfa}}</a>
-        <a class="btn btn-ghost" href="ozellikler.html">{{btn_tum_ozellikler}}</a>
+        <a class="btn btn-ghost" href="{{anasayfa_url}}">{{btn_anasayfa}}</a>
+        <a class="btn btn-ghost" href="{{ozellikler_url}}">{{btn_tum_ozellikler}}</a>
       </p>
     </div>
   </section>
@@ -191,15 +186,15 @@
   <div class="wrap">
     <div class="footer-ust">
       <div>
-        <a class="logo" href="index.html" style="font-size:1.05rem;">MOTO<em>SEYİR</em></a>
+        <a class="logo" href="{{anasayfa_url}}" style="font-size:1.05rem;">MOTO<em>SEYİR</em></a>
       </div>
       <ul class="footer-links">
-        <li><a href="index.html">{{nav_anasayfa}}</a></li>
-        <li><a href="ozellikler.html">{{footer_tum_ozellikler}}</a></li>
-        <li><a href="corider.html">AI CoRider</a></li>
+        <li><a href="{{anasayfa_url}}">{{nav_anasayfa}}</a></li>
+        <li><a href="{{ozellikler_url}}">{{footer_tum_ozellikler}}</a></li>
+        <li><a href="{{corider_url}}">AI CoRider</a></li>
         <li><a href="{{gizlilik_url}}">{{nav_gizlilik}}{{gizlilik_tr_notu}}</a></li>
-        <li><a href="index.html#yenilikler">{{nav_yenilikler}}</a></li>
-        <li><a href="index.html#iletisim">{{nav_iletisim}}</a></li>
+        <li><a href="{{anasayfa_url}}#yenilikler">{{nav_yenilikler}}</a></li>
+        <li><a href="{{anasayfa_url}}#iletisim">{{nav_iletisim}}</a></li>
         <li><a href="https://www.instagram.com/motoseyir.app/">Instagram</a></li>
         <li><a href="{{store}}">App Store</a></li>
       </ul>

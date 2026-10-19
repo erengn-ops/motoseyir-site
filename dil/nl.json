@@ -24,8 +24,6 @@
 
   "baslik": "Motornavigatie en routeplanner — Motoseyir",
   "aciklama": "Navigatie voor motorrijders die kilometers telt: kortste route, binnenwegen, toertochten met meerdere stops, groepsritten, intercom en legendarische routes. Motoseyir, in de App Store.",
-  "og_baslik": "Motoseyir — de navigatie die kilometers telt, geen minuten",
-  "og_aciklama": "Kortste route, binnenwegen, toertochten met meerdere stops, groepsritten, intercom en legendarische routes — in één app.",
   "jsonld_aciklama": "Navigatie-app voor motorrijders die op afstand rekent: kortste route, binnenwegen, toertochten met meerdere stops, groepsritten, intercom en legendarische routes.",
   "jsonld_ucretsiz": "7 dagen gratis proberen van alle Pro-functies bij het 3-maands- en jaarabonnement, voor nieuwe abonnees, waar beschikbaar.",
   "jsonld_pro": "Beste volgorde bij meerdere stops, onbeperkte toertochten en tracks, binnenwegen- en kustmodus, Discover, groepen maken, intercom en AI CoRider.",
@@ -157,11 +155,9 @@
   "iletisim_insta_p": "Volg ons voor nieuwe routes, ritfoto's en aankondigingen.",
 
   "oz_baslik": "Functies van de motornavigatie-app — Motoseyir",
-  "oz_aciklama": "Alle functies van Motoseyir op één pagina: kortste route, beste volgorde van stops, binnenwegen, legendarische routes, Discover, rittendagboek, weer, tracks, groepsritten, intercom, liggend gebruik en Community.",
-  "oz_og_baslik": "Alle functies van Motoseyir",
-  "oz_og_aciklama": "Kortste route, beste volgorde van stops, binnenwegen, legendarische routes, groepsritten, intercom en meer.",
+  "oz_aciklama": "Alle functies van de motornavigatie Motoseyir op één pagina: kortste route, volgorde van stops, binnenwegen, legendarische routes, rittendagboek, groepsritten.",
   "oz_eyebrow": "Functies · in detail",
-  "oz_h1": "Alle functies van Motoseyir",
+  "oz_h1": "Motoseyir motornavigatie: alle functies",
   "oz_sayfa_lead": "Deze pagina groeit. Komt er een functie bij, dan staat hij eerst hier, onder het kopje waar hij hoort. Hieronder vijf groepen: stad en koeriers, toeren, op de weg en na de rit, samen rijden, en in de bergen en in de auto.",
 
   "kume1_h2": "Voor de stad en voor koeriers",
@@ -247,10 +243,8 @@
   "oz24_h3": "Zes iconen",
   "oz24_p": "Op de kaart ben jij een Supersport, Chopper, Maxi scooter, Touring, Arrow of Helmet. Je kiest het icoon bij Settings → Map → Navigation marker, en CarPlay toont hetzelfde. De eerste vier zijn 3D, met een rijder erop, en leunen de bocht in.",
 
-  "ny_baslik": "Motoseyir gebruiken — routes, groepsritten en dagboek",
-  "ny_aciklama": "Stap voor stap door Motoseyir: een route bouwen, toertochten met meerdere stops, ritregistratie, rittendagboek, groepsritten en intercom, Community, instellingen en abonnement.",
-  "ny_og_baslik": "Hoe gebruik je Motoseyir?",
-  "ny_og_aciklama": "Van route tot groepsrit, van ritregistratie tot Community: Motoseyir stap voor stap.",
+  "ny_baslik": "Motornavigatie gebruiken: Motoseyir stap voor stap",
+  "ny_aciklama": "Zo plan je een motorroute met Motoseyir: route bouwen, tochten met meerdere stops, ritregistratie, rittendagboek, groepsritten, intercom en abonnement.",
   "ny_eyebrow": "Hoe het werkt",
   "ny_h1": "Zo gebruik je Motoseyir van begin tot eind",
   "ny_lead": "Deze pagina is de lange versie van Settings → «How it works» in de app: dezelfde onderwerpen, dezelfde volgorde. Tik op een kop om hem te openen, tik opnieuw om hem te sluiten. De knopnamen staan in het Engels, net zoals je ze in de app ziet.",

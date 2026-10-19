@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Motoseyir — navigația motociclistului pe drumuri cu curbe</title>
-<meta name="description" content="Motoseyir, navigație pentru motociclete care planifică după distanță, nu după minute. Drumuri secundare și coastă, generator de tururi, 1.600+ pasuri montane, mers în grup și CarPlay.">
+<title>Navigație moto și planificator de trasee — Motoseyir</title>
+<meta name="description" content="Motoseyir este o navigație pentru motociclete care planifică după distanță, nu după minute. Drumuri secundare, tururi, 1.600+ pasuri montane, grup și CarPlay.">
 <link rel="canonical" href="https://motoseyir-app.com/ro/">
 <link rel="alternate" hreflang="tr" href="https://motoseyir-app.com/">
 <link rel="alternate" hreflang="en" href="https://motoseyir-app.com/en/">
@@ -22,15 +22,22 @@
 <link rel="alternate" hreflang="el" href="https://motoseyir-app.com/el/">
 <link rel="alternate" hreflang="x-default" href="https://motoseyir-app.com/en/">
 
-<!-- Open Graph -->
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Motoseyir">
 <meta property="og:locale" content="ro_RO">
-<meta property="og:title" content="Motoseyir — navigația motociclistului pe drumuri cu curbe">
-<meta property="og:description" content="Traseu după distanță, drumuri secundare, generator de tururi, peste 1.600 de pasuri, mers în grup, interfon și CarPlay — într-o singură aplicație.">
+<meta property="og:title" content="Navigație moto și planificator de trasee — Motoseyir">
+<meta property="og:description" content="Motoseyir este o navigație pentru motociclete care planifică după distanță, nu după minute. Drumuri secundare, tururi, 1.600+ pasuri montane, grup și CarPlay.">
 <meta property="og:url" content="https://motoseyir-app.com/ro/">
 <meta property="og:image" content="https://motoseyir-app.com/img/og-kapak.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Navigație moto și planificator de trasee — Motoseyir">
+<meta name="twitter:description" content="Motoseyir este o navigație pentru motociclete care planifică după distanță, nu după minute. Drumuri secundare, tururi, 1.600+ pasuri montane, grup și CarPlay.">
+<meta name="twitter:image" content="https://motoseyir-app.com/img/og-kapak.jpg">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 
 <!-- Apple akıllı afiş: iOS Safari'de sayfanın üstünde "App Store'da aç" şeridi. -->
 <meta name="apple-itunes-app" content="app-id=6792549131">
@@ -68,30 +75,149 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "Motoseyir",
-  "operatingSystem": "iOS",
-  "applicationCategory": "NavigationApplication",
-  "inLanguage": "ro",
-  "url": "https://motoseyir-app.com/ro/",
-  "image": "https://motoseyir-app.com/img/og-kapak.jpg",
-  "description": "Navigație pe distanță pentru motocicliști: cel mai scurt traseu, drumuri secundare, generator de tururi, pasuri, grup, interfon, CarPlay și drumuri legendare.",
-  "offers": [
+  "@graph": [
     {
-      "@type": "Offer",
-      "name": "Gratuit",
-      "price": "0",
-      "priceCurrency": "EUR",
-      "description": "Planificare și navigație nelimitate în Turcia, Europa și SUA, 1 tur salvat; abonamentele Pro de 3 luni și anual pot include 7 zile de probă gratuită pentru abonații noi."
+      "@type": "Organization",
+      "@id": "https://motoseyir-app.com/#organization",
+      "name": "Motoseyir",
+      "url": "https://motoseyir-app.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://motoseyir-app.com/img/uygulama-simgesi-512.png",
+        "width": 512,
+        "height": 512
+      },
+      "sameAs": [
+        "https://www.instagram.com/motoseyir.app/",
+        "https://www.instagram.com/motoseyir.app.en/"
+      ]
     },
     {
-      "@type": "Offer",
-      "name": "Motoseyir Pro",
-      "category": "subscription",
-      "description": "AI CoRider, CarPlay, crearea de grupuri, Discover, tururi și urme nelimitate, modurile de tur și crearea de tururi cu curbe sau fără autostradă."
+      "@type": "WebSite",
+      "@id": "https://motoseyir-app.com/#website",
+      "url": "https://motoseyir-app.com/",
+      "name": "Motoseyir",
+      "inLanguage": "ro",
+      "publisher": {
+        "@id": "https://motoseyir-app.com/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://motoseyir-app.com/ro/#sayfa",
+      "url": "https://motoseyir-app.com/ro/",
+      "name": "Navigație moto și planificator de trasee — Motoseyir",
+      "description": "Motoseyir este o navigație pentru motociclete care planifică după distanță, nu după minute. Drumuri secundare, tururi, 1.600+ pasuri montane, grup și CarPlay.",
+      "inLanguage": "ro",
+      "isPartOf": {
+        "@id": "https://motoseyir-app.com/#website"
+      },
+      "about": {
+        "@id": "https://motoseyir-app.com/#uygulama"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://motoseyir-app.com/img/og-kapak.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "dateModified": "2026-10-20",
+      "mainEntity": {
+        "@id": "https://motoseyir-app.com/ro/#sss"
+      }
+    },
+    {
+      "@type": "MobileApplication",
+      "@id": "https://motoseyir-app.com/#uygulama",
+      "name": "Motoseyir",
+      "operatingSystem": "iOS",
+      "applicationCategory": "NavigationApplication",
+      "inLanguage": "ro",
+      "url": "https://motoseyir-app.com/ro/",
+      "image": "https://motoseyir-app.com/img/og-kapak.jpg",
+      "description": "Navigație pe distanță pentru motocicliști: cel mai scurt traseu, drumuri secundare, generator de tururi, pasuri, grup, interfon, CarPlay și drumuri legendare.",
+      "screenshot": [
+        "https://motoseyir-app.com/m/ekran-nav-en.webp",
+        "https://motoseyir-app.com/m/ekran-tur-en.webp",
+        "https://motoseyir-app.com/m/ekran-gecit-en.webp",
+        "https://motoseyir-app.com/m/ekran-corider-en.webp"
+      ],
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Gratuit",
+          "price": "0",
+          "priceCurrency": "EUR",
+          "description": "Planificare și navigație nelimitate în Turcia, Europa și SUA, 1 tur salvat; abonamentele Pro de 3 luni și anual pot include 7 zile de probă gratuită pentru abonații noi."
+        },
+        {
+          "@type": "Offer",
+          "name": "Motoseyir Pro",
+          "category": "subscription",
+          "description": "AI CoRider, CarPlay, crearea de grupuri, Discover, tururi și urme nelimitate, modurile de tur și crearea de tururi cu curbe sau fără autostradă."
+        }
+      ],
+      "downloadUrl": "https://apps.apple.com/ro/app/id6792549131?pt=128439797&ct=site-ro&mt=8",
+      "publisher": {
+        "@id": "https://motoseyir-app.com/#organization"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://motoseyir-app.com/ro/#sss",
+      "inLanguage": "ro",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Ce este Motoseyir?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Motoseyir este o aplicație de navigație și planificare a traseelor pentru motociclete. Calculează după distanță, nu după minute, are moduri pentru drumuri secundare și coastă și trasează un tur în direcția și pe durata aleasă de tine."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Este Motoseyir gratuit?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Planificarea traseului și navigația pas cu pas sunt gratuite și nelimitate în Turcia, Europa și SUA, fără cont. Nivelul gratuit păstrează 1 tur salvat. AI CoRider, CarPlay, crearea de grupuri, Discover și tururile nelimitate sunt în Pro."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Prin ce diferă Motoseyir de alte navigații?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Planifică după distanță, nu după minute: compară variantele dintre aceleași două puncte și o propune pe cea mai scurtă. Într-un tur cu mai multe opriri stabilește și ordinea opririlor."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Unde funcționează?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Planificarea traseului și navigația funcționează în Turcia, Europa și SUA. Harta pasurilor cuprinde peste 1.600 de pasuri montane în 36 de țări."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Funcționează cu CarPlay?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Da. Apple CarPlay face parte din Pro; traseul tău apare pe tot ecranul mașinii."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Pot merge cu prietenii?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Da. Mergeți pe același traseu, vă vedeți pe hartă și vorbiți prin interfonul de grup. Intrarea într-un grup cu invitație sau cod este gratuită; crearea unui grup este în Pro."
+          }
+        }
+      ]
     }
-  ],
-  "downloadUrl": "https://apps.apple.com/ro/app/id6792549131?pt=128439797&amp;ct=site-ro&amp;mt=8"
+  ]
 }
 </script>
 </head>
@@ -143,7 +269,7 @@
   </div>
   <div class="k-ic">
     <div class="k-metin">
-      <p class="ust-yazi">Motoseyir · Navigația motociclistului</p>
+      <p class="ust-yazi">Motoseyir · Navigație moto</p>
       <h1>Pentru cei cărora <i>le plac curbele.</i></h1>
       <p class="giris">Motoseyir planifică după distanță, nu după minute. Drumuri secundare sau coastă, alegi tu. Sau spune-i încotro vrei să mergi și lasă-l să construiască turul; sau alege un pas montan și pornește.</p>
       <div class="cta-satir">
@@ -583,6 +709,8 @@
         <li><h3>Mod peisaj</h3><p>Întoarce telefonul pe lat și fișele se strâng în stânga, iar harta ocupă restul; My Tours trece pe două coloane.</p></li>
         <li><h3>Unități și limbă</h3><p>Unitățile urmează locul în care te afli: mile, mph și picioare în SUA, mile și yarzi în Regatul Unit, kilometri în rest. Aplicația vorbește turca, engleza, germana, franceza și italiana și urmează limba telefonului tău.</p></li>
         </ul>
+        <p class="cr-daha"><a href="/ro/ozellikler.html">Vezi toate funcțiile în detaliu →</a></p>
+        <p class="cr-daha"><a href="/ro/nasil-yapilir.html">Deschizi aplicația prima dată? Începe aici →</a></p>
       </div>
     </div>
   </section>
@@ -612,6 +740,27 @@
         </div>
       </div>
       <p class="fiyat-not">Prețurile actuale diferă în funcție de regiune; le vezi pe ecranul de abonament din App Store. Poți anula oricând din contul tău App Store.</p>
+    </div>
+  </section>
+
+  <!-- SSS (20 Eki 2026): arama niyeti için kısa, GÖRÜNÜR soru-cevaplar (yalnız sitede zaten yazan olgular). FAQPage yapısal verisi aynı
+       anahtarlardan (faq_q1/faq_a1 …) uret.py json_ld() ile üretilir; buraya soru eklerken dil dosyalarına da ekle, görünür metin = JSON-LD. -->
+  <section class="bolum" id="sss" aria-labelledby="sss-h">
+    <div class="kap">
+      <div data-r>
+        <p class="km">Întrebări frecvente</p>
+        <h2 id="sss-h">Navigație moto, <i>întrebări frecvente.</i></h2>
+      </div>
+      <div class="ayrinti" data-r>
+        <ul class="izgara">
+        <li><h3>Ce este Motoseyir?</h3><p>Motoseyir este o aplicație de navigație și planificare a traseelor pentru motociclete. Calculează după distanță, nu după minute, are moduri pentru drumuri secundare și coastă și trasează un tur în direcția și pe durata aleasă de tine.</p></li>
+        <li><h3>Este Motoseyir gratuit?</h3><p>Planificarea traseului și navigația pas cu pas sunt gratuite și nelimitate în Turcia, Europa și SUA, fără cont. Nivelul gratuit păstrează 1 tur salvat. AI CoRider, CarPlay, crearea de grupuri, Discover și tururile nelimitate sunt în Pro.</p></li>
+        <li><h3>Prin ce diferă Motoseyir de alte navigații?</h3><p>Planifică după distanță, nu după minute: compară variantele dintre aceleași două puncte și o propune pe cea mai scurtă. Într-un tur cu mai multe opriri stabilește și ordinea opririlor.</p></li>
+        <li><h3>Unde funcționează?</h3><p>Planificarea traseului și navigația funcționează în Turcia, Europa și SUA. Harta pasurilor cuprinde peste 1.600 de pasuri montane în 36 de țări.</p></li>
+        <li><h3>Funcționează cu CarPlay?</h3><p>Da. Apple CarPlay face parte din Pro; traseul tău apare pe tot ecranul mașinii.</p></li>
+        <li><h3>Pot merge cu prietenii?</h3><p>Da. Mergeți pe același traseu, vă vedeți pe hartă și vorbiți prin interfonul de grup. Intrarea într-un grup cu invitație sau cod este gratuită; crearea unui grup este în Pro.</p></li>
+        </ul>
+      </div>
     </div>
   </section>
 </div>

@@ -24,8 +24,6 @@
 
   "baslik": "Motorrad-Navigation und Routenplaner — Motoseyir",
   "aciklama": "Navigation für Motorradfahrer, die nach Kilometern rechnet: kürzeste Route, Nebenstraßen, Touren mit mehreren Stopps, Gruppenfahrt, Intercom und legendäre Routen. Motoseyir im App Store.",
-  "og_baslik": "Motoseyir — die Navigation, die Kilometer zählt, nicht Minuten",
-  "og_aciklama": "Kürzeste Route, Nebenstraßen, Touren mit mehreren Stopps, Gruppenfahrt, Intercom und legendäre Routen — in einer App.",
   "jsonld_aciklama": "Navigations-App für Motorradfahrer, die nach Strecke rechnet: kürzeste Route, Nebenstraßen, Touren mit mehreren Stopps, Gruppenfahrt, Intercom und legendäre Routen.",
   "jsonld_ucretsiz": "7 Tage kostenloser Test aller Pro-Funktionen im 3-Monats- und im Jahresabo, für neue Abonnenten, wo verfügbar.",
   "jsonld_pro": "Beste Reihenfolge bei mehreren Stopps, unbegrenzte Touren und Trails, Nebenstraßen- und Küstenmodus, Entdecken, Gruppen erstellen, Intercom und AI CoRider.",
@@ -157,11 +155,9 @@
   "iletisim_insta_p": "Folge uns für neue Routen, Fahrtfotos und Ankündigungen.",
 
   "oz_baslik": "Funktionen der Motorrad-Navigations-App — Motoseyir",
-  "oz_aciklama": "Alle Funktionen von Motoseyir auf einer Seite: kürzeste Route, beste Reihenfolge der Stopps, Nebenstraßen, legendäre Routen, Entdecken, Tourtagebuch, Wetter, Trails, Gruppenfahrt, Intercom, Querformat und Community.",
-  "oz_og_baslik": "Alle Funktionen von Motoseyir",
-  "oz_og_aciklama": "Kürzeste Route, beste Reihenfolge der Stopps, Nebenstraßen, legendäre Routen, Gruppenfahrt, Intercom und mehr.",
+  "oz_aciklama": "Alle Funktionen der Motorrad-Navi-App Motoseyir auf einer Seite: kürzeste Route, Stopp-Reihenfolge, Nebenstraßen, legendäre Routen, Tourtagebuch, Gruppenfahrt.",
   "oz_eyebrow": "Funktionen · im Detail",
-  "oz_h1": "Alle Funktionen von Motoseyir",
+  "oz_h1": "Motoseyir Motorrad-Navi: alle Funktionen",
   "oz_sayfa_lead": "Diese Seite wächst. Kommt eine neue Funktion, steht sie zuerst hier, unter der passenden Überschrift. Unten gibt es fünf Gruppen: Stadt und Kurier, Touren, unterwegs und nach der Fahrt, gemeinsam fahren sowie Berge und Auto.",
 
   "kume1_h2": "Für die Stadt und für Kuriere",
@@ -247,10 +243,8 @@
   "oz24_h3": "Sechs Marker",
   "oz24_p": "Auf der Karte stellt dich einer von sechs Markern dar: Supersport, Chopper, Maxi-Scooter, Touring, Pfeil oder Helm. Du wählst ihn unter Einstellungen → Karte → Navigationssymbol, und CarPlay zeigt denselben. Die ersten vier sind in 3D, mit Fahrer, und legen sich in die Kurve.",
 
-  "ny_baslik": "Motoseyir bedienen — Route, Gruppenfahrt und Tagebuch",
-  "ny_aciklama": "Motoseyir Schritt für Schritt: Route bauen, Touren mit mehreren Stopps, Fahrtaufzeichnung, Tourtagebuch, Gruppenfahrt und Intercom, Community, Einstellungen und Abo.",
-  "ny_og_baslik": "Wie bedient man Motoseyir?",
-  "ny_og_aciklama": "Von der Route bis zur Gruppenfahrt, von der Aufzeichnung bis zur Community: Motoseyir Schritt für Schritt.",
+  "ny_baslik": "Motorrad-Navi bedienen: Motoseyir Schritt für Schritt",
+  "ny_aciklama": "So planst du eine Motorradroute mit Motoseyir: Route bauen, Touren mit mehreren Stopps, Fahrtaufzeichnung, Tourtagebuch, Gruppenfahrt, Intercom und Abo.",
   "ny_eyebrow": "So geht’s",
   "ny_h1": "So bedienst du Motoseyir von Anfang bis Ende",
   "ny_lead": "Diese Seite ist die lange Fassung von Einstellungen → „So geht’s“ in der App: gleiche Themen, gleiche Reihenfolge. Auf eine Überschrift tippen öffnet sie, noch einmal tippen schließt sie.",

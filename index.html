@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Motoseyir — Virajı seven motorcunun navigasyonu</title>
-<meta name="description" content="Motoseyir, rotayı süreye göre değil mesafeye göre hesaplayan motosiklet navigasyonu. Köy yolu ve sahil modları, tur üretici, 1.600’ü aşkın dağ geçidi, grup sürüşü ve CarPlay.">
+<title>Motosiklet Navigasyon ve Rota Uygulaması — Motoseyir</title>
+<meta name="description" content="Motoseyir, rotayı süreye göre değil mesafeye göre hesaplayan motosiklet navigasyonu. Köy yolu, motor turu planlama, 1.600+ dağ geçidi, grup sürüşü ve CarPlay.">
 <link rel="canonical" href="https://motoseyir-app.com/">
 <link rel="alternate" hreflang="tr" href="https://motoseyir-app.com/">
 <link rel="alternate" hreflang="en" href="https://motoseyir-app.com/en/">
@@ -22,15 +22,22 @@
 <link rel="alternate" hreflang="el" href="https://motoseyir-app.com/el/">
 <link rel="alternate" hreflang="x-default" href="https://motoseyir-app.com/en/">
 
-<!-- Open Graph -->
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Motoseyir">
 <meta property="og:locale" content="tr_TR">
-<meta property="og:title" content="Motoseyir — Virajı seven motorcunun navigasyonu">
-<meta property="og:description" content="Mesafeye göre rota, köy yolları, tur üretici, 1.600’ü aşkın dağ geçidi, grup sürüşü, interkom ve CarPlay — tek uygulamada.">
+<meta property="og:title" content="Motosiklet Navigasyon ve Rota Uygulaması — Motoseyir">
+<meta property="og:description" content="Motoseyir, rotayı süreye göre değil mesafeye göre hesaplayan motosiklet navigasyonu. Köy yolu, motor turu planlama, 1.600+ dağ geçidi, grup sürüşü ve CarPlay.">
 <meta property="og:url" content="https://motoseyir-app.com/">
 <meta property="og:image" content="https://motoseyir-app.com/img/og-kapak.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Motosiklet Navigasyon ve Rota Uygulaması — Motoseyir">
+<meta name="twitter:description" content="Motoseyir, rotayı süreye göre değil mesafeye göre hesaplayan motosiklet navigasyonu. Köy yolu, motor turu planlama, 1.600+ dağ geçidi, grup sürüşü ve CarPlay.">
+<meta name="twitter:image" content="https://motoseyir-app.com/img/og-kapak.jpg">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 
 <!-- Apple akıllı afiş: iOS Safari'de sayfanın üstünde "App Store'da aç" şeridi. -->
 <meta name="apple-itunes-app" content="app-id=6792549131">
@@ -68,30 +75,149 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "Motoseyir",
-  "operatingSystem": "iOS",
-  "applicationCategory": "NavigationApplication",
-  "inLanguage": "tr",
-  "url": "https://motoseyir-app.com/",
-  "image": "https://motoseyir-app.com/img/og-kapak.jpg",
-  "description": "Motosiklet sürücüleri için mesafe odaklı navigasyon uygulaması: en kısa rota, köy yolları, tur üretici, dağ geçitleri, grup sürüşü, interkom, CarPlay ve efsane rotalar.",
-  "offers": [
+  "@graph": [
     {
-      "@type": "Offer",
-      "name": "Ücretsiz",
-      "price": "0",
-      "priceCurrency": "EUR",
-      "description": "Türkiye, Avrupa ve ABD’de sınırsız rota ve navigasyon, 1 kayıtlı tur; Pro’nun 3 aylık ve yıllık planlarında yeni abonelere 7 günlük ücretsiz deneme sunulabilir."
+      "@type": "Organization",
+      "@id": "https://motoseyir-app.com/#organization",
+      "name": "Motoseyir",
+      "url": "https://motoseyir-app.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://motoseyir-app.com/img/uygulama-simgesi-512.png",
+        "width": 512,
+        "height": 512
+      },
+      "sameAs": [
+        "https://www.instagram.com/motoseyir.app/",
+        "https://www.instagram.com/motoseyir.app.en/"
+      ]
     },
     {
-      "@type": "Offer",
-      "name": "Motoseyir Pro",
-      "category": "subscription",
-      "description": "AI CoRider, CarPlay, grup kurma, Keşfet, sınırsız tur ve parkur, tur modları ve virajlı ya da otoyolsuz tur kurma."
+      "@type": "WebSite",
+      "@id": "https://motoseyir-app.com/#website",
+      "url": "https://motoseyir-app.com/",
+      "name": "Motoseyir",
+      "inLanguage": "tr",
+      "publisher": {
+        "@id": "https://motoseyir-app.com/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://motoseyir-app.com/#sayfa",
+      "url": "https://motoseyir-app.com/",
+      "name": "Motosiklet Navigasyon ve Rota Uygulaması — Motoseyir",
+      "description": "Motoseyir, rotayı süreye göre değil mesafeye göre hesaplayan motosiklet navigasyonu. Köy yolu, motor turu planlama, 1.600+ dağ geçidi, grup sürüşü ve CarPlay.",
+      "inLanguage": "tr",
+      "isPartOf": {
+        "@id": "https://motoseyir-app.com/#website"
+      },
+      "about": {
+        "@id": "https://motoseyir-app.com/#uygulama"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://motoseyir-app.com/img/og-kapak.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "dateModified": "2026-10-20",
+      "mainEntity": {
+        "@id": "https://motoseyir-app.com/#sss"
+      }
+    },
+    {
+      "@type": "MobileApplication",
+      "@id": "https://motoseyir-app.com/#uygulama",
+      "name": "Motoseyir",
+      "operatingSystem": "iOS",
+      "applicationCategory": "NavigationApplication",
+      "inLanguage": "tr",
+      "url": "https://motoseyir-app.com/",
+      "image": "https://motoseyir-app.com/img/og-kapak.jpg",
+      "description": "Motosiklet sürücüleri için mesafe odaklı navigasyon uygulaması: en kısa rota, köy yolları, tur üretici, dağ geçitleri, grup sürüşü, interkom, CarPlay ve efsane rotalar.",
+      "screenshot": [
+        "https://motoseyir-app.com/m/ekran-nav-tr.webp",
+        "https://motoseyir-app.com/m/ekran-tur-tr.webp",
+        "https://motoseyir-app.com/m/ekran-gecit-tr.webp",
+        "https://motoseyir-app.com/m/ekran-corider-tr.webp"
+      ],
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Ücretsiz",
+          "price": "0",
+          "priceCurrency": "EUR",
+          "description": "Türkiye, Avrupa ve ABD’de sınırsız rota ve navigasyon, 1 kayıtlı tur; Pro’nun 3 aylık ve yıllık planlarında yeni abonelere 7 günlük ücretsiz deneme sunulabilir."
+        },
+        {
+          "@type": "Offer",
+          "name": "Motoseyir Pro",
+          "category": "subscription",
+          "description": "AI CoRider, CarPlay, grup kurma, Keşfet, sınırsız tur ve parkur, tur modları ve virajlı ya da otoyolsuz tur kurma."
+        }
+      ],
+      "downloadUrl": "https://apps.apple.com/tr/app/id6792549131?pt=128439797&ct=site-tr&mt=8",
+      "publisher": {
+        "@id": "https://motoseyir-app.com/#organization"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://motoseyir-app.com/#sss",
+      "inLanguage": "tr",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Motoseyir nedir?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Motoseyir, motosiklet sürücüleri için bir motosiklet navigasyonu ve rota planlama uygulaması. Rotayı süreye değil mesafeye göre hesaplar, köy yolu ve sahil modları sunar, seçtiğin yöne ve süreye göre motor turu çizer."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Motoseyir ücretsiz mi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Türkiye, Avrupa ve ABD’de rota hesaplama ve adım adım navigasyon ücretsiz ve sınırsız; hesap açman gerekmez. Ücretsiz kademede 1 kayıtlı tur tutabilirsin. AI CoRider, CarPlay, grup kurma, Keşfet ve sınırsız tur Pro ile açılır."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Motoseyir diğer navigasyonlardan nasıl ayrılıyor?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Rotayı süreye göre değil mesafeye göre hesaplar: aynı iki nokta arasındaki alternatifleri karşılaştırır, en kısasını önerir. Çok duraklı bir turda durakların sırasını da kendisi kurar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Hangi ülkelerde çalışır?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Rota hesaplama ve navigasyon Türkiye, Avrupa ve ABD’de çalışır. Dağ geçidi haritasında 36 ülkeden 1.600’ü aşkın geçit var."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "CarPlay ile kullanabilir miyim?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Evet. Apple CarPlay Pro ile açılır; rotan araç ekranında tam ekran görünür."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Arkadaşlarımla birlikte sürebilir miyim?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Evet. Aynı rotaya çıkarsınız, herkes haritada görünür, grup interkomuyla konuşursunuz. Davetle ya da kodla bir gruba katılmak ücretsiz; grup kurmak Pro’da."
+          }
+        }
+      ]
     }
-  ],
-  "downloadUrl": "https://apps.apple.com/tr/app/id6792549131?pt=128439797&amp;ct=site-tr&amp;mt=8"
+  ]
 }
 </script>
 </head>
@@ -143,7 +269,7 @@
   </div>
   <div class="k-ic">
     <div class="k-metin">
-      <p class="ust-yazi">Motoseyir · Motorcunun navigasyonu</p>
+      <p class="ust-yazi">Motoseyir · Motosiklet navigasyonu</p>
       <h1>Virajı seven <i>motorcu için.</i></h1>
       <p class="giris">Motoseyir rotayı süreye göre değil, mesafeye göre hesaplar. Köy yolu mu, sahil mi, sen seç. İstersen yönünü söyle, turunu o üretsin; istersen bir dağ geçidi seçip yola çık.</p>
       <div class="cta-satir">
@@ -583,6 +709,8 @@
         <li><h3>Yatay kullanım</h3><p>Telefonu yan çevirince kartlar sola toplanır, harita kalan alanı alır; Turlarım iki sütuna geçer.</p></li>
         <li><h3>Birimler ve dil</h3><p>Birimler bulunduğun bölgeden gelir: ABD’de mil, mph ve fit, Birleşik Krallık’ta mil ve yarda, başka yerlerde kilometre. Uygulama Türkçe, İngilizce, Almanca, Fransızca ve İtalyanca konuşur; telefonun dilini izler.</p></li>
         </ul>
+        <p class="cr-daha"><a href="/ozellikler.html">Tüm özellikleri ayrıntısıyla gör →</a></p>
+        <p class="cr-daha"><a href="/nasil-yapilir.html">Uygulamayı ilk kez mi açıyorsun? Nasıl yapılır →</a></p>
       </div>
     </div>
   </section>
@@ -612,6 +740,27 @@
         </div>
       </div>
       <p class="fiyat-not">Güncel fiyatlar bölgene göre değişir; App Store’daki abonelik ekranında görürsün. İstediğin zaman App Store hesabından iptal edebilirsin.</p>
+    </div>
+  </section>
+
+  <!-- SSS (20 Eki 2026): arama niyeti için kısa, GÖRÜNÜR soru-cevaplar (yalnız sitede zaten yazan olgular). FAQPage yapısal verisi aynı
+       anahtarlardan (faq_q1/faq_a1 …) uret.py json_ld() ile üretilir; buraya soru eklerken dil dosyalarına da ekle, görünür metin = JSON-LD. -->
+  <section class="bolum" id="sss" aria-labelledby="sss-h">
+    <div class="kap">
+      <div data-r>
+        <p class="km">Sık sorulanlar</p>
+        <h2 id="sss-h">Motosiklet navigasyonu, <i>sık sorulan sorular.</i></h2>
+      </div>
+      <div class="ayrinti" data-r>
+        <ul class="izgara">
+        <li><h3>Motoseyir nedir?</h3><p>Motoseyir, motosiklet sürücüleri için bir motosiklet navigasyonu ve rota planlama uygulaması. Rotayı süreye değil mesafeye göre hesaplar, köy yolu ve sahil modları sunar, seçtiğin yöne ve süreye göre motor turu çizer.</p></li>
+        <li><h3>Motoseyir ücretsiz mi?</h3><p>Türkiye, Avrupa ve ABD’de rota hesaplama ve adım adım navigasyon ücretsiz ve sınırsız; hesap açman gerekmez. Ücretsiz kademede 1 kayıtlı tur tutabilirsin. AI CoRider, CarPlay, grup kurma, Keşfet ve sınırsız tur Pro ile açılır.</p></li>
+        <li><h3>Motoseyir diğer navigasyonlardan nasıl ayrılıyor?</h3><p>Rotayı süreye göre değil mesafeye göre hesaplar: aynı iki nokta arasındaki alternatifleri karşılaştırır, en kısasını önerir. Çok duraklı bir turda durakların sırasını da kendisi kurar.</p></li>
+        <li><h3>Hangi ülkelerde çalışır?</h3><p>Rota hesaplama ve navigasyon Türkiye, Avrupa ve ABD’de çalışır. Dağ geçidi haritasında 36 ülkeden 1.600’ü aşkın geçit var.</p></li>
+        <li><h3>CarPlay ile kullanabilir miyim?</h3><p>Evet. Apple CarPlay Pro ile açılır; rotan araç ekranında tam ekran görünür.</p></li>
+        <li><h3>Arkadaşlarımla birlikte sürebilir miyim?</h3><p>Evet. Aynı rotaya çıkarsınız, herkes haritada görünür, grup interkomuyla konuşursunuz. Davetle ya da kodla bir gruba katılmak ücretsiz; grup kurmak Pro’da.</p></li>
+        </ul>
+      </div>
     </div>
   </section>
 </div>

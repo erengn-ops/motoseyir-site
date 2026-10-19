@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Funciones de la app de navegación para moto — Motoseyir</title>
-<meta name="description" content="Todas las funciones de Motoseyir en una página: ruta más corta, mejor orden de paradas, carreteras secundarias, rutas legendarias, Discover, diario de viaje, tiempo, tracks, salidas en grupo, intercomunicador, uso en horizontal y Community.">
+<meta name="description" content="Todas las funciones del navegador para moto Motoseyir en una página: ruta más corta, paradas, carreteras secundarias, rutas legendarias, diario de viaje, grupo.">
 <link rel="canonical" href="https://motoseyir-app.com/es/ozellikler.html">
 <link rel="alternate" hreflang="tr" href="https://motoseyir-app.com/ozellikler.html">
 <link rel="alternate" hreflang="en" href="https://motoseyir-app.com/en/ozellikler.html">
@@ -21,35 +21,155 @@
 <link rel="alternate" hreflang="hr" href="https://motoseyir-app.com/hr/ozellikler.html">
 <link rel="alternate" hreflang="el" href="https://motoseyir-app.com/el/ozellikler.html">
 <link rel="alternate" hreflang="x-default" href="https://motoseyir-app.com/en/ozellikler.html">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Motoseyir">
 <meta property="og:locale" content="es_ES">
-<meta property="og:title" content="Todas las funciones de Motoseyir">
-<meta property="og:description" content="Ruta más corta, mejor orden de paradas, carreteras secundarias, rutas legendarias, salidas en grupo, intercomunicador y más.">
+<meta property="og:title" content="Funciones de la app de navegación para moto — Motoseyir">
+<meta property="og:description" content="Todas las funciones del navegador para moto Motoseyir en una página: ruta más corta, paradas, carreteras secundarias, rutas legendarias, diario de viaje, grupo.">
 <meta property="og:url" content="https://motoseyir-app.com/es/ozellikler.html">
 <meta property="og:image" content="https://motoseyir-app.com/img/og-kapak.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Funciones de la app de navegación para moto — Motoseyir">
+<meta name="twitter:description" content="Todas las funciones del navegador para moto Motoseyir en una página: ruta más corta, paradas, carreteras secundarias, rutas legendarias, diario de viaje, grupo.">
+<meta name="twitter:image" content="https://motoseyir-app.com/img/og-kapak.jpg">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 <meta name="apple-itunes-app" content="app-id=6792549131">
 <meta name="theme-color" content="#0E6E73" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0E1315" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="../img/favicon.png">
 <link rel="stylesheet" href="../style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://motoseyir-app.com/#organization",
+      "name": "Motoseyir",
+      "url": "https://motoseyir-app.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://motoseyir-app.com/img/uygulama-simgesi-512.png",
+        "width": 512,
+        "height": 512
+      },
+      "sameAs": [
+        "https://www.instagram.com/motoseyir.app/",
+        "https://www.instagram.com/motoseyir.app.en/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://motoseyir-app.com/#website",
+      "url": "https://motoseyir-app.com/",
+      "name": "Motoseyir",
+      "inLanguage": "es",
+      "publisher": {
+        "@id": "https://motoseyir-app.com/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://motoseyir-app.com/es/ozellikler.html#sayfa",
+      "url": "https://motoseyir-app.com/es/ozellikler.html",
+      "name": "Funciones de la app de navegación para moto — Motoseyir",
+      "description": "Todas las funciones del navegador para moto Motoseyir en una página: ruta más corta, paradas, carreteras secundarias, rutas legendarias, diario de viaje, grupo.",
+      "inLanguage": "es",
+      "isPartOf": {
+        "@id": "https://motoseyir-app.com/#website"
+      },
+      "about": {
+        "@id": "https://motoseyir-app.com/#uygulama"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://motoseyir-app.com/img/og-kapak.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "dateModified": "2026-10-20",
+      "breadcrumb": {
+        "@id": "https://motoseyir-app.com/es/ozellikler.html#ekmek"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://motoseyir-app.com/es/ozellikler.html#ekmek",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://motoseyir-app.com/es/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Funciones",
+          "item": "https://motoseyir-app.com/es/ozellikler.html"
+        }
+      ]
+    },
+    {
+      "@type": "MobileApplication",
+      "@id": "https://motoseyir-app.com/#uygulama",
+      "name": "Motoseyir",
+      "operatingSystem": "iOS",
+      "applicationCategory": "NavigationApplication",
+      "inLanguage": "es",
+      "url": "https://motoseyir-app.com/es/",
+      "image": "https://motoseyir-app.com/img/og-kapak.jpg",
+      "description": "App de navegación para motoristas calculada por distancia: ruta más corta, carreteras secundarias, viajes con varias paradas, salidas en grupo, intercomunicador y rutas legendarias.",
+      "screenshot": [
+        "https://motoseyir-app.com/m/ekran-nav-en.webp",
+        "https://motoseyir-app.com/m/ekran-tur-en.webp",
+        "https://motoseyir-app.com/m/ekran-gecit-en.webp",
+        "https://motoseyir-app.com/m/ekran-corider-en.webp"
+      ],
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "7 días de prueba gratis",
+          "price": "0",
+          "priceCurrency": "EUR",
+          "description": "7 días de prueba gratis de todas las funciones Pro en los planes trimestral y anual, para nuevos suscriptores, donde esté disponible."
+        },
+        {
+          "@type": "Offer",
+          "name": "Motoseyir Pro",
+          "category": "subscription",
+          "description": "El mejor orden para varias paradas, viajes y tracks ilimitados, modos de carreteras secundarias y costa, Discover, crear grupos, intercomunicador y AI CoRider."
+        }
+      ],
+      "downloadUrl": "https://apps.apple.com/es/app/id6792549131?pt=128439797&ct=site-es&mt=8",
+      "publisher": {
+        "@id": "https://motoseyir-app.com/#organization"
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <a class="skip-link" href="#icerik">Ir al contenido</a>
 
 <header class="site-header">
   <div class="wrap header-inner">
-    <a class="logo" href="index.html">MOTO<em>SEYİR</em></a>
+    <a class="logo" href="/es/">MOTO<em>SEYİR</em></a>
     <nav aria-label="Navegación principal">
       <ul class="nav">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="corider.html">AI CoRider</a></li>
-        <li><a href="nasil-yapilir.html">Cómo se usa</a></li>
-        <li><a href="index.html#fiyat">Precios</a></li>
-        <li><a href="index.html#gizlilik">Privacidad</a></li>
-        <li><a href="index.html#yenilikler">Novedades</a></li>
-        <li><a href="index.html#iletisim">Contacto</a></li>
+        <li><a href="/es/">Inicio</a></li>
+        <li><a href="/es/corider.html">AI CoRider</a></li>
+        <li><a href="/es/nasil-yapilir.html">Cómo se usa</a></li>
+        <li><a href="/es/#fiyat">Precios</a></li>
+        <li><a href="/es/#gizlilik">Privacidad</a></li>
+        <li><a href="/es/#yenilikler">Novedades</a></li>
+        <li><a href="/es/#iletisim">Contacto</a></li>
       </ul>
     </nav>
     <div class="header-cta">
@@ -81,7 +201,7 @@
   <section class="section" style="padding-bottom:1.5rem;">
     <div class="wrap">
       <span class="eyebrow">Funciones · en detalle</span>
-      <h1 style="font-family:var(--serif); font-size:clamp(1.9rem,4.4vw,2.7rem); line-height:1.14; margin:0 0 1rem; max-width:22ch;">Todas las funciones de Motoseyir</h1>
+      <h1 style="font-family:var(--serif); font-size:clamp(1.9rem,4.4vw,2.7rem); line-height:1.14; margin:0 0 1rem; max-width:22ch;">Motoseyir, navegador para moto: todas las funciones</h1>
       <p class="section-lead">Esta página crece. Cuando llega una función nueva, se añade primero aquí, bajo el título que le toca. Abajo hay cinco grupos: ciudad y mensajería, mototurismo, en carretera y después de la ruta, rodar juntos, y en las montañas y en el coche.</p>
     </div>
   </section>
@@ -353,7 +473,7 @@
   <section class="section">
     <div class="wrap" style="text-align:left;">
       <a class="btn btn-primary" href="https://apps.apple.com/es/app/id6792549131?pt=128439797&amp;ct=site-es&amp;mt=8">Descargar en el App Store</a>
-      <a class="btn btn-ghost" href="index.html">← Volver al inicio</a>
+      <a class="btn btn-ghost" href="/es/">← Volver al inicio</a>
     </div>
   </section>
 </main>
@@ -362,15 +482,15 @@
   <div class="wrap">
     <div class="footer-ust">
       <div>
-        <a class="logo" href="index.html" style="font-size:1.05rem;">MOTO<em>SEYİR</em></a>
+        <a class="logo" href="/es/" style="font-size:1.05rem;">MOTO<em>SEYİR</em></a>
       </div>
       <ul class="footer-links">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="corider.html">AI CoRider</a></li>
-        <li><a href="nasil-yapilir.html">Cómo se usa</a></li>
+        <li><a href="/es/">Inicio</a></li>
+        <li><a href="/es/corider.html">AI CoRider</a></li>
+        <li><a href="/es/nasil-yapilir.html">Cómo se usa</a></li>
         <li><a href="/gizlilik/">Privacidad (TR)</a></li>
-        <li><a href="index.html#yenilikler">Novedades</a></li>
-        <li><a href="index.html#iletisim">Contacto</a></li>
+        <li><a href="/es/#yenilikler">Novedades</a></li>
+        <li><a href="/es/#iletisim">Contacto</a></li>
         <li><a href="https://www.instagram.com/motoseyir.app/">Instagram</a></li>
         <li><a href="https://apps.apple.com/es/app/id6792549131?pt=128439797&amp;ct=site-es&amp;mt=8">App Store</a></li>
       </ul>

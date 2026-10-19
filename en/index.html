@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Motoseyir — The motorcyclist’s sat nav for twisty roads</title>
-<meta name="description" content="Motoseyir is a motorcycle sat nav that plans by distance, not by minutes. Back roads and coast modes, a tour generator, 1,600+ mountain passes, group rides and CarPlay.">
+<title>Motorcycle GPS and Route Planner App — Motoseyir</title>
+<meta name="description" content="Motoseyir is a motorcycle navigation app that plans by distance, not minutes. Back roads, tour planning, 1,600+ mountain passes, group rides and CarPlay.">
 <link rel="canonical" href="https://motoseyir-app.com/en/">
 <link rel="alternate" hreflang="tr" href="https://motoseyir-app.com/">
 <link rel="alternate" hreflang="en" href="https://motoseyir-app.com/en/">
@@ -22,15 +22,22 @@
 <link rel="alternate" hreflang="el" href="https://motoseyir-app.com/el/">
 <link rel="alternate" hreflang="x-default" href="https://motoseyir-app.com/en/">
 
-<!-- Open Graph -->
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Motoseyir">
 <meta property="og:locale" content="en_GB">
-<meta property="og:title" content="Motoseyir — The motorcyclist’s sat nav for twisty roads">
-<meta property="og:description" content="Distance-first routing, back roads, a tour generator, 1,600+ mountain passes, group rides, intercom and CarPlay — in one app.">
+<meta property="og:title" content="Motorcycle GPS and Route Planner App — Motoseyir">
+<meta property="og:description" content="Motoseyir is a motorcycle navigation app that plans by distance, not minutes. Back roads, tour planning, 1,600+ mountain passes, group rides and CarPlay.">
 <meta property="og:url" content="https://motoseyir-app.com/en/">
 <meta property="og:image" content="https://motoseyir-app.com/img/og-kapak.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Motorcycle GPS and Route Planner App — Motoseyir">
+<meta name="twitter:description" content="Motoseyir is a motorcycle navigation app that plans by distance, not minutes. Back roads, tour planning, 1,600+ mountain passes, group rides and CarPlay.">
+<meta name="twitter:image" content="https://motoseyir-app.com/img/og-kapak.jpg">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 
 <!-- Apple akıllı afiş: iOS Safari'de sayfanın üstünde "App Store'da aç" şeridi. -->
 <meta name="apple-itunes-app" content="app-id=6792549131">
@@ -68,30 +75,149 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "Motoseyir",
-  "operatingSystem": "iOS",
-  "applicationCategory": "NavigationApplication",
-  "inLanguage": "en",
-  "url": "https://motoseyir-app.com/en/",
-  "image": "https://motoseyir-app.com/img/og-kapak.jpg",
-  "description": "Distance-first navigation app for motorcyclists: shortest route, back roads, tour generator, mountain passes, group riding, intercom, CarPlay and legendary routes.",
-  "offers": [
+  "@graph": [
     {
-      "@type": "Offer",
-      "name": "Free",
-      "price": "0",
-      "priceCurrency": "EUR",
-      "description": "Unlimited routing and navigation in Türkiye, Europe and the USA, 1 saved tour; Pro’s 3-month and yearly plans can include a 7-day free trial for new subscribers."
+      "@type": "Organization",
+      "@id": "https://motoseyir-app.com/#organization",
+      "name": "Motoseyir",
+      "url": "https://motoseyir-app.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://motoseyir-app.com/img/uygulama-simgesi-512.png",
+        "width": 512,
+        "height": 512
+      },
+      "sameAs": [
+        "https://www.instagram.com/motoseyir.app/",
+        "https://www.instagram.com/motoseyir.app.en/"
+      ]
     },
     {
-      "@type": "Offer",
-      "name": "Motoseyir Pro",
-      "category": "subscription",
-      "description": "AI CoRider, CarPlay, group creation, Discover, unlimited tours and trails, tour modes, and building twisty or motorway-free tours."
+      "@type": "WebSite",
+      "@id": "https://motoseyir-app.com/#website",
+      "url": "https://motoseyir-app.com/",
+      "name": "Motoseyir",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://motoseyir-app.com/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://motoseyir-app.com/en/#sayfa",
+      "url": "https://motoseyir-app.com/en/",
+      "name": "Motorcycle GPS and Route Planner App — Motoseyir",
+      "description": "Motoseyir is a motorcycle navigation app that plans by distance, not minutes. Back roads, tour planning, 1,600+ mountain passes, group rides and CarPlay.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://motoseyir-app.com/#website"
+      },
+      "about": {
+        "@id": "https://motoseyir-app.com/#uygulama"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://motoseyir-app.com/img/og-kapak.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "dateModified": "2026-10-20",
+      "mainEntity": {
+        "@id": "https://motoseyir-app.com/en/#sss"
+      }
+    },
+    {
+      "@type": "MobileApplication",
+      "@id": "https://motoseyir-app.com/#uygulama",
+      "name": "Motoseyir",
+      "operatingSystem": "iOS",
+      "applicationCategory": "NavigationApplication",
+      "inLanguage": "en",
+      "url": "https://motoseyir-app.com/en/",
+      "image": "https://motoseyir-app.com/img/og-kapak.jpg",
+      "description": "Distance-first navigation app for motorcyclists: shortest route, back roads, tour generator, mountain passes, group riding, intercom, CarPlay and legendary routes.",
+      "screenshot": [
+        "https://motoseyir-app.com/m/ekran-nav-en.webp",
+        "https://motoseyir-app.com/m/ekran-tur-en.webp",
+        "https://motoseyir-app.com/m/ekran-gecit-en.webp",
+        "https://motoseyir-app.com/m/ekran-corider-en.webp"
+      ],
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Free",
+          "price": "0",
+          "priceCurrency": "EUR",
+          "description": "Unlimited routing and navigation in Türkiye, Europe and the USA, 1 saved tour; Pro’s 3-month and yearly plans can include a 7-day free trial for new subscribers."
+        },
+        {
+          "@type": "Offer",
+          "name": "Motoseyir Pro",
+          "category": "subscription",
+          "description": "AI CoRider, CarPlay, group creation, Discover, unlimited tours and trails, tour modes, and building twisty or motorway-free tours."
+        }
+      ],
+      "downloadUrl": "https://apps.apple.com/app/id6792549131?pt=128439797&ct=site-en&mt=8",
+      "publisher": {
+        "@id": "https://motoseyir-app.com/#organization"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://motoseyir-app.com/en/#sss",
+      "inLanguage": "en",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Motoseyir?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Motoseyir is a motorcycle navigation and route planning app. It plans by distance instead of minutes, offers Back roads and Coast modes, and builds a tour in the direction and for the length of time you choose."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Motoseyir free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Routing and step-by-step navigation are free and unlimited in Türkiye, Europe and the USA, and no account is needed. The free tier keeps 1 saved tour. AI CoRider, CarPlay, group creation, Discover and unlimited tours come with Pro."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is Motoseyir different from other sat navs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It works out the route by distance, not by minutes: it compares the alternatives between the same two points and suggests the shortest one. On a multi-stop tour it works out the order of the stops, too."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where does it work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Routing and navigation work in Türkiye, Europe and the USA. The mountain pass map covers 1,600+ passes in 36 countries."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it work with CarPlay?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Apple CarPlay is part of Pro, and your route fills the car screen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I ride with friends?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You take the same route, see everyone on the map and talk over the group intercom. Joining a group by invite or code is free; creating a group is part of Pro."
+          }
+        }
+      ]
     }
-  ],
-  "downloadUrl": "https://apps.apple.com/app/id6792549131?pt=128439797&amp;ct=site-en&amp;mt=8"
+  ]
 }
 </script>
 </head>
@@ -143,7 +269,7 @@
   </div>
   <div class="k-ic">
     <div class="k-metin">
-      <p class="ust-yazi">Motoseyir · The rider’s sat nav</p>
+      <p class="ust-yazi">Motoseyir · Motorcycle navigation</p>
       <h1>For riders who <i>love a corner.</i></h1>
       <p class="giris">Motoseyir plans by distance, not by minutes. Back roads or the coast, you choose. Or tell it which way you want to ride and let it build the tour; or pick a mountain pass and go.</p>
       <div class="cta-satir">
@@ -583,6 +709,8 @@
         <li><h3>Landscape</h3><p>Turn the phone sideways and the cards gather on the left while the map takes the rest; My Tours switches to two columns.</p></li>
         <li><h3>Units and language</h3><p>Units follow where you are: miles, mph and feet in the US, miles and yards in the UK, kilometres elsewhere. The app speaks Turkish, English, German, French and Italian and follows your phone’s language.</p></li>
         </ul>
+        <p class="cr-daha"><a href="/en/ozellikler.html">See every feature in detail →</a></p>
+        <p class="cr-daha"><a href="/en/nasil-yapilir.html">First time opening the app? Start here →</a></p>
       </div>
     </div>
   </section>
@@ -612,6 +740,27 @@
         </div>
       </div>
       <p class="fiyat-not">Current prices vary by region; you see them on the subscription screen in the App Store. Cancel anytime in your App Store account.</p>
+    </div>
+  </section>
+
+  <!-- SSS (20 Eki 2026): arama niyeti için kısa, GÖRÜNÜR soru-cevaplar (yalnız sitede zaten yazan olgular). FAQPage yapısal verisi aynı
+       anahtarlardan (faq_q1/faq_a1 …) uret.py json_ld() ile üretilir; buraya soru eklerken dil dosyalarına da ekle, görünür metin = JSON-LD. -->
+  <section class="bolum" id="sss" aria-labelledby="sss-h">
+    <div class="kap">
+      <div data-r>
+        <p class="km">FAQ</p>
+        <h2 id="sss-h">Motorcycle navigation, <i>quick answers.</i></h2>
+      </div>
+      <div class="ayrinti" data-r>
+        <ul class="izgara">
+        <li><h3>What is Motoseyir?</h3><p>Motoseyir is a motorcycle navigation and route planning app. It plans by distance instead of minutes, offers Back roads and Coast modes, and builds a tour in the direction and for the length of time you choose.</p></li>
+        <li><h3>Is Motoseyir free?</h3><p>Routing and step-by-step navigation are free and unlimited in Türkiye, Europe and the USA, and no account is needed. The free tier keeps 1 saved tour. AI CoRider, CarPlay, group creation, Discover and unlimited tours come with Pro.</p></li>
+        <li><h3>How is Motoseyir different from other sat navs?</h3><p>It works out the route by distance, not by minutes: it compares the alternatives between the same two points and suggests the shortest one. On a multi-stop tour it works out the order of the stops, too.</p></li>
+        <li><h3>Where does it work?</h3><p>Routing and navigation work in Türkiye, Europe and the USA. The mountain pass map covers 1,600+ passes in 36 countries.</p></li>
+        <li><h3>Does it work with CarPlay?</h3><p>Yes. Apple CarPlay is part of Pro, and your route fills the car screen.</p></li>
+        <li><h3>Can I ride with friends?</h3><p>Yes. You take the same route, see everyone on the map and talk over the group intercom. Joining a group by invite or code is free; creating a group is part of Pro.</p></li>
+        </ul>
+      </div>
     </div>
   </section>
 </div>

@@ -24,8 +24,6 @@
 
   "baslik": "Navigation moto et planificateur d’itinéraires — Motoseyir",
   "aciklama": "La navigation qui compte les kilomètres, pensée pour les motards : itinéraire le plus court, petites routes, tours à plusieurs étapes, sortie en groupe, intercom et itinéraires légendaires. Motoseyir sur l’App Store.",
-  "og_baslik": "Motoseyir — la navigation qui compte les kilomètres, pas les minutes",
-  "og_aciklama": "Itinéraire le plus court, petites routes, tours à plusieurs étapes, sortie en groupe, intercom et itinéraires légendaires — dans une seule appli.",
   "jsonld_aciklama": "Application de navigation pour motards, calculée sur la distance : itinéraire le plus court, petites routes, tours à plusieurs étapes, sortie en groupe, intercom et itinéraires légendaires.",
   "jsonld_ucretsiz": "7 jours d’essai gratuit de toutes les fonctions Pro avec les formules 3 mois et annuelle, pour les nouveaux abonnés, là où l’offre existe.",
   "jsonld_pro": "Meilleur ordre pour plusieurs étapes, tours et pistes illimités, modes Petites routes et Côte, Explorer, création de groupes, intercom et AI CoRider.",
@@ -157,11 +155,9 @@
   "iletisim_insta_p": "Suis-nous pour les nouveaux itinéraires, les photos de sortie et les annonces.",
 
   "oz_baslik": "Fonctions de l’application de navigation moto — Motoseyir",
-  "oz_aciklama": "Toutes les fonctions de Motoseyir sur une page : itinéraire le plus court, meilleur ordre des étapes, petites routes, itinéraires légendaires, Explorer, carnet de tour, météo, pistes, sortie en groupe, intercom, mode paysage et Communauté.",
-  "oz_og_baslik": "Toutes les fonctions de Motoseyir",
-  "oz_og_aciklama": "Itinéraire le plus court, meilleur ordre des étapes, petites routes, itinéraires légendaires, sortie en groupe, intercom et plus encore.",
+  "oz_aciklama": "Toutes les fonctions du GPS moto Motoseyir sur une page : itinéraire le plus court, ordre des étapes, petites routes, itinéraires légendaires, carnet de tour.",
   "oz_eyebrow": "Fonctions · en détail",
-  "oz_h1": "Toutes les fonctions de Motoseyir",
+  "oz_h1": "Motoseyir, GPS moto : toutes les fonctions",
   "oz_sayfa_lead": "Cette page grandit. Quand une fonction arrive, elle est ajoutée ici d’abord, sous le bon titre. Il y a cinq groupes ci-dessous : ville et coursiers, voyage, sur la route et après la sortie, rouler ensemble, et en montagne et en voiture.",
 
   "kume1_h2": "Pour la ville et les coursiers",
@@ -247,10 +243,8 @@
   "oz24_h3": "Six repères",
   "oz24_p": "Sur la carte, un repère te représente : Supersport, Chopper, Maxi-scooter, Touring, Flèche ou Casque. Tu le choisis dans Réglages → Carte → Icône de navigation, et CarPlay affiche le même. Les quatre premiers sont en 3D, avec un pilote à bord, et s’inclinent dans les virages.",
 
-  "ny_baslik": "Comment utiliser Motoseyir — itinéraires, groupe et carnet",
-  "ny_aciklama": "Le guide pas à pas de Motoseyir : construire un itinéraire, tours à plusieurs étapes, enregistrement de sortie, carnet de tour, sortie en groupe et intercom, Communauté, réglages et abonnement.",
-  "ny_og_baslik": "Comment utiliser Motoseyir ?",
-  "ny_og_aciklama": "De l’itinéraire à la sortie en groupe, de l’enregistrement à la Communauté : le guide pas à pas de Motoseyir.",
+  "ny_baslik": "Comment utiliser le GPS moto Motoseyir, pas à pas",
+  "ny_aciklama": "Comment créer un itinéraire moto avec Motoseyir : itinéraire, tours à plusieurs étapes, enregistrement de sortie, carnet de tour, groupe et intercom.",
   "ny_eyebrow": "Comment faire",
   "ny_h1": "Voilà comment utiliser Motoseyir de bout en bout",
   "ny_lead": "Cette page est la version longue de Réglages → « Comment faire ? » dans l’appli : mêmes sujets, même ordre. Touche un titre pour l’ouvrir, touche encore pour le fermer.",

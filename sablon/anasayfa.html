@@ -8,15 +8,7 @@
 <link rel="canonical" href="{{kanonik}}">
 {{alternatifler}}
 
-<!-- Open Graph -->
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Motoseyir">
-<meta property="og:locale" content="{{og_locale}}">
-<meta property="og:title" content="{{og_baslik}}">
-<meta property="og:description" content="{{og_aciklama}}">
-<meta property="og:url" content="{{kanonik}}">
-<meta property="og:image" content="https://motoseyir-app.com/img/og-kapak.jpg">
-<meta name="twitter:card" content="summary_large_image">
+{{seo_head}}
 
 <!-- Apple akıllı afiş: iOS Safari'de sayfanın üstünde "App Store'da aç" şeridi. -->
 <meta name="apple-itunes-app" content="app-id={{uygulama_id}}">
@@ -51,35 +43,7 @@
 <script defer src="/m/h.js"></script>
 <script defer src="/m/a.js"></script>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "Motoseyir",
-  "operatingSystem": "iOS",
-  "applicationCategory": "NavigationApplication",
-  "inLanguage": "{{lang}}",
-  "url": "{{kanonik}}",
-  "image": "https://motoseyir-app.com/img/og-kapak.jpg",
-  "description": "{{jsonld_aciklama}}",
-  "offers": [
-    {
-      "@type": "Offer",
-      "name": "{{plan_ucretsiz_ad}}",
-      "price": "0",
-      "priceCurrency": "EUR",
-      "description": "{{jsonld_ucretsiz}}"
-    },
-    {
-      "@type": "Offer",
-      "name": "Motoseyir Pro",
-      "category": "subscription",
-      "description": "{{jsonld_pro}}"
-    }
-  ],
-  "downloadUrl": "{{store}}"
-}
-</script>
+{{json_ld}}
 </head>
 <body id="top">
 <a class="skip" href="#icerik">{{skip}}</a>
@@ -551,6 +515,8 @@
         <li><h3>{{dg_20_t}}</h3><p>{{dg_20_d}}</p></li>
         <li><h3>{{dg_21_t}}</h3><p>{{dg_21_d}}</p></li>
         </ul>
+        <p class="cr-daha"><a href="{{ozellikler_url}}">{{btn_tum_ozellikler}}</a></p>
+        <p class="cr-daha"><a href="{{nasil_url}}">{{btn_nasil_yapilir}}</a></p>
       </div>
     </div>
   </section>
@@ -580,6 +546,27 @@
         </div>
       </div>
       <p class="fiyat-not">{{fiyat_not}}</p>
+    </div>
+  </section>
+
+  <!-- SSS (20 Eki 2026): arama niyeti için kısa, GÖRÜNÜR soru-cevaplar (yalnız sitede zaten yazan olgular). FAQPage yapısal verisi aynı
+       anahtarlardan (faq_q1/faq_a1 …) uret.py json_ld() ile üretilir; buraya soru eklerken dil dosyalarına da ekle, görünür metin = JSON-LD. -->
+  <section class="bolum" id="sss" aria-labelledby="sss-h">
+    <div class="kap">
+      <div data-r>
+        <p class="km">{{faq_km}}</p>
+        <h2 id="sss-h">{{faq_h2}}</h2>
+      </div>
+      <div class="ayrinti" data-r>
+        <ul class="izgara">
+        <li><h3>{{faq_q1}}</h3><p>{{faq_a1}}</p></li>
+        <li><h3>{{faq_q2}}</h3><p>{{faq_a2}}</p></li>
+        <li><h3>{{faq_q3}}</h3><p>{{faq_a3}}</p></li>
+        <li><h3>{{faq_q4}}</h3><p>{{faq_a4}}</p></li>
+        <li><h3>{{faq_q5}}</h3><p>{{faq_a5}}</p></li>
+        <li><h3>{{faq_q6}}</h3><p>{{faq_a6}}</p></li>
+        </ul>
+      </div>
     </div>
   </section>
 </div>

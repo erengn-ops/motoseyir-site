@@ -22,15 +22,22 @@
 <link rel="alternate" hreflang="el" href="https://motoseyir-app.com/el/corider.html">
 <link rel="alternate" hreflang="x-default" href="https://motoseyir-app.com/en/corider.html">
 
-<!-- Open Graph -->
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Motoseyir">
 <meta property="og:locale" content="hu_HU">
-<meta property="og:title" content="AI CoRider: szemed az úton, ő figyel">
+<meta property="og:title" content="AI CoRider — az útitárs a bukósisakodban | Motoseyir">
 <meta property="og:description" content="Az AI CoRider a sisakodon át beszél hozzád: megállót ad hozzá, helyeket keres az útvonalon, megmondja az időjárást és a hatótávot, és átírja az útvonalat.">
 <meta property="og:url" content="https://motoseyir-app.com/hu/corider.html">
 <meta property="og:image" content="https://motoseyir-app.com/img/og-kapak.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI CoRider — az útitárs a bukósisakodban | Motoseyir">
+<meta name="twitter:description" content="Az AI CoRider a sisakodon át beszél hozzád: megállót ad hozzá, helyeket keres az útvonalon, megmondja az időjárást és a hatótávot, és átírja az útvonalat.">
+<meta name="twitter:image" content="https://motoseyir-app.com/img/og-kapak.jpg">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 <meta name="apple-itunes-app" content="app-id=6792549131">
 <meta name="theme-color" content="#050B13">
 <link rel="icon" href="/img/favicon.png">
@@ -52,25 +59,181 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "WebPage",
-      "name": "AI CoRider — az útitárs a bukósisakodban | Motoseyir",
-      "url": "https://motoseyir-app.com/hu/corider.html",
+      "@type": "Organization",
+      "@id": "https://motoseyir-app.com/#organization",
+      "name": "Motoseyir",
+      "url": "https://motoseyir-app.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://motoseyir-app.com/img/uygulama-simgesi-512.png",
+        "width": 512,
+        "height": 512
+      },
+      "sameAs": [
+        "https://www.instagram.com/motoseyir.app/",
+        "https://www.instagram.com/motoseyir.app.en/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://motoseyir-app.com/#website",
+      "url": "https://motoseyir-app.com/",
+      "name": "Motoseyir",
       "inLanguage": "hu",
+      "publisher": {
+        "@id": "https://motoseyir-app.com/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://motoseyir-app.com/hu/corider.html#sayfa",
+      "url": "https://motoseyir-app.com/hu/corider.html",
+      "name": "AI CoRider — az útitárs a bukósisakodban | Motoseyir",
       "description": "Az AI CoRider a sisakodon át beszél hozzád: megállót ad hozzá, helyeket keres az útvonalon, megmondja az időjárást és a hatótávot, és átírja az útvonalat.",
-      "isPartOf": {"@type": "WebSite", "name": "Motoseyir", "url": "https://motoseyir-app.com/"}
+      "inLanguage": "hu",
+      "isPartOf": {
+        "@id": "https://motoseyir-app.com/#website"
+      },
+      "about": {
+        "@id": "https://motoseyir-app.com/#uygulama"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://motoseyir-app.com/img/og-kapak.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "dateModified": "2026-10-20",
+      "breadcrumb": {
+        "@id": "https://motoseyir-app.com/hu/corider.html#ekmek"
+      },
+      "mainEntity": {
+        "@id": "https://motoseyir-app.com/hu/corider.html#sss"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://motoseyir-app.com/hu/corider.html#ekmek",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Főoldal",
+          "item": "https://motoseyir-app.com/hu/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "AI CoRider",
+          "item": "https://motoseyir-app.com/hu/corider.html"
+        }
+      ]
+    },
+    {
+      "@type": "MobileApplication",
+      "@id": "https://motoseyir-app.com/#uygulama",
+      "name": "Motoseyir",
+      "operatingSystem": "iOS",
+      "applicationCategory": "NavigationApplication",
+      "inLanguage": "hu",
+      "url": "https://motoseyir-app.com/hu/",
+      "image": "https://motoseyir-app.com/img/og-kapak.jpg",
+      "description": "Távolság alapú navigációs app motorosoknak: legrövidebb útvonal, mellékutak, túragenerátor, hágók, csoportos menet, intercom, CarPlay és legendás utak.",
+      "screenshot": [
+        "https://motoseyir-app.com/m/ekran-nav-en.webp",
+        "https://motoseyir-app.com/m/ekran-tur-en.webp",
+        "https://motoseyir-app.com/m/ekran-gecit-en.webp",
+        "https://motoseyir-app.com/m/ekran-corider-en.webp"
+      ],
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Ingyenes",
+          "price": "0",
+          "priceCurrency": "EUR",
+          "description": "Korlátlan útvonaltervezés és navigáció Törökországban, Európában és az USA-ban, 1 mentett túra; a Pro háromhavi és éves csomagja új előfizetőknek 7 napos ingyenes próbával járhat."
+        },
+        {
+          "@type": "Offer",
+          "name": "Motoseyir Pro",
+          "category": "subscription",
+          "description": "AI CoRider, CarPlay, csoport létrehozása, Discover, korlátlan túra és nyomvonal, túramódok, valamint kanyargós vagy autópálya-mentes túrák összeállítása."
+        }
+      ],
+      "downloadUrl": "https://apps.apple.com/hu/app/id6792549131?pt=128439797&ct=site-hu&mt=8",
+      "publisher": {
+        "@id": "https://motoseyir-app.com/#organization"
+      }
     },
     {
       "@type": "FAQPage",
+      "@id": "https://motoseyir-app.com/hu/corider.html#sss",
       "inLanguage": "hu",
       "mainEntity": [
-        {"@type": "Question", "name": "Folyamatosan hallgat az AI CoRider?", "acceptedAnswer": {"@type": "Answer", "text": "Nem. Nincs ébresztőszó. A mikrofon csak akkor nyílik meg, ha a térképen az AI CoRider gombra koppintasz. A munkamenet akkor zárul, ha te bezárod, hosszabb csend után vagy ha a navigáció véget ér."}},
-        {"@type": "Question", "name": "Működik internet nélkül?", "acceptedAnswer": {"@type": "Answer", "text": "Nem. Amit mondasz, a válaszhoz egy felhőalapú hangszolgáltatásba kerül, ezért az AI CoRidernek internet kell. Kapcsolat nélkül nem indítható munkamenet."}},
-        {"@type": "Question", "name": "Milyen nyelven beszélhetek hozzá?", "acceptedAnswer": {"@type": "Answer", "text": "Azon a nyelven válaszol, amelyen beszélsz. Nem kell parancsokat tanulnod, mondd a saját szavaiddal."}},
-        {"@type": "Question", "name": "Mi történik, ha elfogy a beszédidő?", "acceptedAnswer": {"@type": "Answer", "text": "A Pro 30 naponta 10 percet újít meg, az ingyenes próbaidőszakban 5 percet kapsz. Ha ez kevés, vegyél 30, 60 vagy 180 perces csomagot, amely sosem jár le."}},
-        {"@type": "Question", "name": "Mi a különbség a Tervező és a Csevegés között?", "acceptedAnswer": {"@type": "Answer", "text": "A Tervező ismeri az útvonalad, és elintézi a dolgokat: megállót ad hozzá, helyeket keres, átírja az útvonalat; a Pro része. A Csevegésben a témát te választod, és emlékszik a korábbi beszélgetésekre; percdíjcsomaggal nyílik."}},
-        {"@type": "Question", "name": "Csoportban mindenki hallja, és kinek a perceiből fogy?", "acceptedAnswer": {"@type": "Answer", "text": "Ha behívod az AI CoRidert a csoport intercomjába, a szobában mindenki hallja. A perceket annak a fiókjából vonja le, aki behívta."}},
-        {"@type": "Question", "name": "Megkérdezem, elég lesz-e a benzin, de nem mond hatótávot. Miért?", "acceptedAnswer": {"@type": "Answer", "text": "A hatótávhoz add meg egyszer a Beállításokban, mennyit mentél tele tankkal. Amíg ez nincs meg, az AI CoRider nem találgat, hanem szól."}},
-        {"@type": "Question", "name": "Kell Bluetooth, hogy halljam a sisakban?", "acceptedAnswer": {"@type": "Answer", "text": "Ha a sisak Bluetooth-on csatlakozik a telefonhoz, a hang azon át szól, különben a telefonból. Szélben nem hallod? Mondd egyszerűen: „hangosabban”."}}
+        {
+          "@type": "Question",
+          "name": "Folyamatosan hallgat az AI CoRider?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nem. Nincs ébresztőszó. A mikrofon csak akkor nyílik meg, ha a térképen az AI CoRider gombra koppintasz. A munkamenet akkor zárul, ha te bezárod, hosszabb csend után vagy ha a navigáció véget ér."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Működik internet nélkül?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nem. Amit mondasz, a válaszhoz egy felhőalapú hangszolgáltatásba kerül, ezért az AI CoRidernek internet kell. Kapcsolat nélkül nem indítható munkamenet."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Milyen nyelven beszélhetek hozzá?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Azon a nyelven válaszol, amelyen beszélsz. Nem kell parancsokat tanulnod, mondd a saját szavaiddal."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Mi történik, ha elfogy a beszédidő?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A Pro 30 naponta 10 percet újít meg, az ingyenes próbaidőszakban 5 percet kapsz. Ha ez kevés, vegyél 30, 60 vagy 180 perces csomagot, amely sosem jár le."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Mi a különbség a Tervező és a Csevegés között?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A Tervező ismeri az útvonalad, és elintézi a dolgokat: megállót ad hozzá, helyeket keres, átírja az útvonalat; a Pro része. A Csevegésben a témát te választod, és emlékszik a korábbi beszélgetésekre; percdíjcsomaggal nyílik."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Csoportban mindenki hallja, és kinek a perceiből fogy?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ha behívod az AI CoRidert a csoport intercomjába, a szobában mindenki hallja. A perceket annak a fiókjából vonja le, aki behívta."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Megkérdezem, elég lesz-e a benzin, de nem mond hatótávot. Miért?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A hatótávhoz add meg egyszer a Beállításokban, mennyit mentél tele tankkal. Amíg ez nincs meg, az AI CoRider nem találgat, hanem szól."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kell Bluetooth, hogy halljam a sisakban?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ha a sisak Bluetooth-on csatlakozik a telefonhoz, a hang azon át szól, különben a telefonból. Szélben nem hallod? Mondd egyszerűen: „hangosabban”."
+          }
+        }
       ]
     }
   ]

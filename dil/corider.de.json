@@ -1,7 +1,6 @@
 {
   "cr_baslik": "AI CoRider — der Mitfahrer in deinem Helm | Motoseyir",
-  "cr_og_baslik": "AI CoRider: Augen auf die Straße, er hört zu",
-  "cr_aciklama": "AI CoRider spricht in Motoseyir über deinen Helm mit dir: Er fügt Stopps hinzu, sucht Orte an der Route, nennt Wetter und Reichweite und ändert die Route für dich.",
+  "cr_aciklama": "AI CoRider spricht in Motoseyir über deinen Helm mit dir: Er fügt Stopps hinzu, sucht Orte an der Route, nennt Wetter und Reichweite und ändert die Route.",
   "cr_n_nasil": "So geht’s",
   "cr_n_konusma": "Gespräche",
   "cr_n_yetenek": "Was er kann",

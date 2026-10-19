@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Motoseyir — motorkářská navigace pro klikaté cesty</title>
-<meta name="description" content="Motoseyir je motorkářská navigace, která plánuje podle vzdálenosti, ne minut. Režimy vedlejších cest a pobřeží, generátor výletů, 1 600+ průsmyků, jízda ve skupině a CarPlay.">
+<title>Navigace na motorku a plánovač tras — Motoseyir</title>
+<meta name="description" content="Motoseyir je navigace na motorku, která plánuje podle vzdálenosti, ne minut. Vedlejší cesty, plánování výletů, 1 600+ průsmyků, jízda ve skupině a CarPlay.">
 <link rel="canonical" href="https://motoseyir-app.com/cs/">
 <link rel="alternate" hreflang="tr" href="https://motoseyir-app.com/">
 <link rel="alternate" hreflang="en" href="https://motoseyir-app.com/en/">
@@ -22,15 +22,22 @@
 <link rel="alternate" hreflang="el" href="https://motoseyir-app.com/el/">
 <link rel="alternate" hreflang="x-default" href="https://motoseyir-app.com/en/">
 
-<!-- Open Graph -->
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Motoseyir">
 <meta property="og:locale" content="cs_CZ">
-<meta property="og:title" content="Motoseyir — motorkářská navigace pro klikaté cesty">
-<meta property="og:description" content="Trasy podle vzdálenosti, vedlejší cesty, generátor výletů, 1 600+ průsmyků, jízda ve skupině, intercom a CarPlay — v jedné aplikaci.">
+<meta property="og:title" content="Navigace na motorku a plánovač tras — Motoseyir">
+<meta property="og:description" content="Motoseyir je navigace na motorku, která plánuje podle vzdálenosti, ne minut. Vedlejší cesty, plánování výletů, 1 600+ průsmyků, jízda ve skupině a CarPlay.">
 <meta property="og:url" content="https://motoseyir-app.com/cs/">
 <meta property="og:image" content="https://motoseyir-app.com/img/og-kapak.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Navigace na motorku a plánovač tras — Motoseyir">
+<meta name="twitter:description" content="Motoseyir je navigace na motorku, která plánuje podle vzdálenosti, ne minut. Vedlejší cesty, plánování výletů, 1 600+ průsmyků, jízda ve skupině a CarPlay.">
+<meta name="twitter:image" content="https://motoseyir-app.com/img/og-kapak.jpg">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 
 <!-- Apple akıllı afiş: iOS Safari'de sayfanın üstünde "App Store'da aç" şeridi. -->
 <meta name="apple-itunes-app" content="app-id=6792549131">
@@ -68,30 +75,149 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "Motoseyir",
-  "operatingSystem": "iOS",
-  "applicationCategory": "NavigationApplication",
-  "inLanguage": "cs",
-  "url": "https://motoseyir-app.com/cs/",
-  "image": "https://motoseyir-app.com/img/og-kapak.jpg",
-  "description": "Navigace pro motorkáře, která počítá vzdálenost: vedlejší cesty, generátor výletů, průsmyky, jízda ve skupině, intercom, CarPlay a legendární silnice.",
-  "offers": [
+  "@graph": [
     {
-      "@type": "Offer",
-      "name": "Zdarma",
-      "price": "0",
-      "priceCurrency": "EUR",
-      "description": "Neomezené plánování tras a navigace v Turecku, Evropě a USA, 1 uložený výlet; čtvrtletní a roční předplatné Pro může mít pro nové předplatitele 7denní zkušební dobu zdarma."
+      "@type": "Organization",
+      "@id": "https://motoseyir-app.com/#organization",
+      "name": "Motoseyir",
+      "url": "https://motoseyir-app.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://motoseyir-app.com/img/uygulama-simgesi-512.png",
+        "width": 512,
+        "height": 512
+      },
+      "sameAs": [
+        "https://www.instagram.com/motoseyir.app/",
+        "https://www.instagram.com/motoseyir.app.en/"
+      ]
     },
     {
-      "@type": "Offer",
-      "name": "Motoseyir Pro",
-      "category": "subscription",
-      "description": "AI CoRider, CarPlay, zakládání skupin, Discover, neomezené výlety a stopy, režimy výletu a sestavení klikatých výletů nebo výletů bez dálnic."
+      "@type": "WebSite",
+      "@id": "https://motoseyir-app.com/#website",
+      "url": "https://motoseyir-app.com/",
+      "name": "Motoseyir",
+      "inLanguage": "cs",
+      "publisher": {
+        "@id": "https://motoseyir-app.com/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://motoseyir-app.com/cs/#sayfa",
+      "url": "https://motoseyir-app.com/cs/",
+      "name": "Navigace na motorku a plánovač tras — Motoseyir",
+      "description": "Motoseyir je navigace na motorku, která plánuje podle vzdálenosti, ne minut. Vedlejší cesty, plánování výletů, 1 600+ průsmyků, jízda ve skupině a CarPlay.",
+      "inLanguage": "cs",
+      "isPartOf": {
+        "@id": "https://motoseyir-app.com/#website"
+      },
+      "about": {
+        "@id": "https://motoseyir-app.com/#uygulama"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://motoseyir-app.com/img/og-kapak.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "dateModified": "2026-10-20",
+      "mainEntity": {
+        "@id": "https://motoseyir-app.com/cs/#sss"
+      }
+    },
+    {
+      "@type": "MobileApplication",
+      "@id": "https://motoseyir-app.com/#uygulama",
+      "name": "Motoseyir",
+      "operatingSystem": "iOS",
+      "applicationCategory": "NavigationApplication",
+      "inLanguage": "cs",
+      "url": "https://motoseyir-app.com/cs/",
+      "image": "https://motoseyir-app.com/img/og-kapak.jpg",
+      "description": "Navigace pro motorkáře, která počítá vzdálenost: vedlejší cesty, generátor výletů, průsmyky, jízda ve skupině, intercom, CarPlay a legendární silnice.",
+      "screenshot": [
+        "https://motoseyir-app.com/m/ekran-nav-en.webp",
+        "https://motoseyir-app.com/m/ekran-tur-en.webp",
+        "https://motoseyir-app.com/m/ekran-gecit-en.webp",
+        "https://motoseyir-app.com/m/ekran-corider-en.webp"
+      ],
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Zdarma",
+          "price": "0",
+          "priceCurrency": "EUR",
+          "description": "Neomezené plánování tras a navigace v Turecku, Evropě a USA, 1 uložený výlet; čtvrtletní a roční předplatné Pro může mít pro nové předplatitele 7denní zkušební dobu zdarma."
+        },
+        {
+          "@type": "Offer",
+          "name": "Motoseyir Pro",
+          "category": "subscription",
+          "description": "AI CoRider, CarPlay, zakládání skupin, Discover, neomezené výlety a stopy, režimy výletu a sestavení klikatých výletů nebo výletů bez dálnic."
+        }
+      ],
+      "downloadUrl": "https://apps.apple.com/cz/app/id6792549131?pt=128439797&ct=site-cs&mt=8",
+      "publisher": {
+        "@id": "https://motoseyir-app.com/#organization"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://motoseyir-app.com/cs/#sss",
+      "inLanguage": "cs",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Co je Motoseyir?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Motoseyir je aplikace pro navigaci na motorku a plánování tras. Počítá vzdálenost místo minut, má režimy vedlejších cest a pobřeží a sestaví výlet směrem a na počet hodin, které zvolíš."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Je Motoseyir zdarma?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Plánování tras a navigace odbočku po odbočce jsou v Turecku, Evropě a USA zdarma a bez omezení, bez účtu. Zdarma si uložíš 1 výlet. AI CoRider, CarPlay, zakládání skupin, „Discover“ a neomezené výlety jsou v Pro."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Čím se Motoseyir liší od jiných navigací?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Plánuje podle vzdálenosti, ne minut: porovná alternativy mezi stejnými dvěma body a nabídne tu nejkratší. U výletu s více zastávkami určí i jejich pořadí."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kde funguje?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Plánování tras a navigace fungují v Turecku, Evropě a USA. Mapa průsmyků obsahuje přes 1 600 průsmyků ve 36 zemích."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Funguje s CarPlay?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ano. Apple CarPlay je součástí Pro; tvoje trasa se zobrazí na celé obrazovce auta."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Můžu jezdit s kamarády?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ano. Jedete stejnou trasu, všechny vidíte na mapě a mluvíte přes skupinový intercom. Připojení do skupiny přes pozvánku nebo kód je zdarma; zakládání skupin je v Pro."
+          }
+        }
+      ]
     }
-  ],
-  "downloadUrl": "https://apps.apple.com/cz/app/id6792549131?pt=128439797&amp;ct=site-cs&amp;mt=8"
+  ]
 }
 </script>
 </head>
@@ -143,7 +269,7 @@
   </div>
   <div class="k-ic">
     <div class="k-metin">
-      <p class="ust-yazi">Motoseyir · Navigace motorkáře</p>
+      <p class="ust-yazi">Motoseyir · Navigace na motorku</p>
       <h1>Pro ty, kdo <i>milují zatáčky.</i></h1>
       <p class="giris">Motoseyir plánuje podle vzdálenosti, ne podle minut. Vedlejší cesty, nebo pobřeží? Vybíráš ty. Nebo řekni, kterým směrem chceš jet, a výlet postaví za tebe. Nebo si vyber průsmyk a jeď.</p>
       <div class="cta-satir">
@@ -583,6 +709,8 @@
         <li><h3>Na šířku</h3><p>Když telefon otočíš na šířku, kartičky se seskupí vlevo a mapa zabere zbytek; „My Tours“ přejde na dva sloupce.</p></li>
         <li><h3>Jednotky a jazyk</h3><p>Jednotky se řídí tím, kde jsi: v USA míle, mph a stopy, ve Velké Británii míle a yardy, jinde kilometry. Aplikace mluví turecky, anglicky, německy, francouzsky a italsky a řídí se jazykem telefonu.</p></li>
         </ul>
+        <p class="cr-daha"><a href="/cs/ozellikler.html">Všechny funkce podrobně →</a></p>
+        <p class="cr-daha"><a href="/cs/nasil-yapilir.html">Otevíráš appku poprvé? Začni tady →</a></p>
       </div>
     </div>
   </section>
@@ -612,6 +740,27 @@
         </div>
       </div>
       <p class="fiyat-not">Aktuální ceny se liší podle regionu; uvidíš je na obrazovce předplatného v App Store. Zrušit můžeš kdykoli ve svém účtu App Store.</p>
+    </div>
+  </section>
+
+  <!-- SSS (20 Eki 2026): arama niyeti için kısa, GÖRÜNÜR soru-cevaplar (yalnız sitede zaten yazan olgular). FAQPage yapısal verisi aynı
+       anahtarlardan (faq_q1/faq_a1 …) uret.py json_ld() ile üretilir; buraya soru eklerken dil dosyalarına da ekle, görünür metin = JSON-LD. -->
+  <section class="bolum" id="sss" aria-labelledby="sss-h">
+    <div class="kap">
+      <div data-r>
+        <p class="km">Časté dotazy</p>
+        <h2 id="sss-h">Navigace na motorku, <i>časté dotazy.</i></h2>
+      </div>
+      <div class="ayrinti" data-r>
+        <ul class="izgara">
+        <li><h3>Co je Motoseyir?</h3><p>Motoseyir je aplikace pro navigaci na motorku a plánování tras. Počítá vzdálenost místo minut, má režimy vedlejších cest a pobřeží a sestaví výlet směrem a na počet hodin, které zvolíš.</p></li>
+        <li><h3>Je Motoseyir zdarma?</h3><p>Plánování tras a navigace odbočku po odbočce jsou v Turecku, Evropě a USA zdarma a bez omezení, bez účtu. Zdarma si uložíš 1 výlet. AI CoRider, CarPlay, zakládání skupin, „Discover“ a neomezené výlety jsou v Pro.</p></li>
+        <li><h3>Čím se Motoseyir liší od jiných navigací?</h3><p>Plánuje podle vzdálenosti, ne minut: porovná alternativy mezi stejnými dvěma body a nabídne tu nejkratší. U výletu s více zastávkami určí i jejich pořadí.</p></li>
+        <li><h3>Kde funguje?</h3><p>Plánování tras a navigace fungují v Turecku, Evropě a USA. Mapa průsmyků obsahuje přes 1 600 průsmyků ve 36 zemích.</p></li>
+        <li><h3>Funguje s CarPlay?</h3><p>Ano. Apple CarPlay je součástí Pro; tvoje trasa se zobrazí na celé obrazovce auta.</p></li>
+        <li><h3>Můžu jezdit s kamarády?</h3><p>Ano. Jedete stejnou trasu, všechny vidíte na mapě a mluvíte přes skupinový intercom. Připojení do skupiny přes pozvánku nebo kód je zdarma; zakládání skupin je v Pro.</p></li>
+        </ul>
+      </div>
     </div>
   </section>
 </div>

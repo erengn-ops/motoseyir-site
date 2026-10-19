@@ -24,8 +24,6 @@
 
   "baslik": "Nawigacja motocyklowa i planer trasy — Motoseyir",
   "aciklama": "Nawigacja dla motocyklistów liczona w kilometrach: najkrótsza trasa, boczne drogi, wycieczki z wieloma przystankami, jazda w grupie, interkom i legendarne trasy. Motoseyir w App Store.",
-  "og_baslik": "Motoseyir — nawigacja, która liczy kilometry, a nie minuty",
-  "og_aciklama": "Najkrótsza trasa, boczne drogi, wycieczki z wieloma przystankami, jazda w grupie, interkom i legendarne trasy — w jednej aplikacji.",
   "jsonld_aciklama": "Aplikacja nawigacyjna dla motocyklistów liczona na dystansie: najkrótsza trasa, boczne drogi, wycieczki z wieloma przystankami, jazda w grupie, interkom i legendarne trasy.",
   "jsonld_ucretsiz": "7 dni bezpłatnego okresu próbnego wszystkich funkcji Pro w planie 3-miesięcznym i rocznym, dla nowych subskrybentów, tam gdzie to dostępne.",
   "jsonld_pro": "Najlepsza kolejność przystanków, nieograniczone wycieczki i ślady, tryb bocznych dróg i wybrzeża, Discover, tworzenie grup, interkom i AI CoRider.",
@@ -157,11 +155,9 @@
   "iletisim_insta_p": "Obserwuj, żeby widzieć nowe trasy, zdjęcia z jazd i ogłoszenia.",
 
   "oz_baslik": "Funkcje aplikacji do nawigacji motocyklowej — Motoseyir",
-  "oz_aciklama": "Wszystkie funkcje Motoseyir na jednej stronie: najkrótsza trasa, najlepsza kolejność przystanków, boczne drogi, legendarne trasy, Discover, dziennik wycieczki, pogoda, ślady, jazda w grupie, interkom, tryb poziomy i Community.",
-  "oz_og_baslik": "Wszystkie funkcje Motoseyir",
-  "oz_og_aciklama": "Najkrótsza trasa, najlepsza kolejność przystanków, boczne drogi, legendarne trasy, jazda w grupie, interkom i więcej.",
+  "oz_aciklama": "Wszystkie funkcje nawigacji motocyklowej Motoseyir na jednej stronie: najkrótsza trasa, kolejność przystanków, boczne drogi, legendarne trasy, dziennik.",
   "oz_eyebrow": "Funkcje · szczegółowo",
-  "oz_h1": "Wszystkie funkcje Motoseyir",
+  "oz_h1": "Motoseyir, nawigacja motocyklowa: wszystkie funkcje",
   "oz_sayfa_lead": "Ta strona rośnie. Gdy pojawia się nowa funkcja, najpierw trafia tutaj, pod właściwy nagłówek. Poniżej jest pięć grup: miasto i kurierzy, wyprawy, w drodze i po jeździe, jazda razem, w górach i w samochodzie.",
 
   "kume1_h2": "Do miasta i dla kurierów",
@@ -247,10 +243,8 @@
   "oz24_h3": "Sześć ikon",
   "oz24_p": "Na mapie oznacza Cię Supersport, Chopper, Maxi scooter, Touring, Arrow albo Helmet. Wybierasz ikonę w Settings → Map → Navigation marker, a CarPlay pokazuje tę samą. Pierwsze cztery są w 3D, z motocyklistą na pokładzie, i pochylają się w zakrętach.",
 
-  "ny_baslik": "Jak korzystać z Motoseyir — trasy, jazda w grupie i dziennik",
-  "ny_aciklama": "Przewodnik krok po kroku po Motoseyir: budowanie trasy, wycieczki z wieloma przystankami, rejestrowanie jazdy, dziennik wycieczki, jazda w grupie i interkom, Community, ustawienia i subskrypcja.",
-  "ny_og_baslik": "Jak korzystać z Motoseyir?",
-  "ny_og_aciklama": "Od trasy do jazdy w grupie, od zapisu jazdy do Community: Motoseyir krok po kroku.",
+  "ny_baslik": "Jak korzystać z nawigacji motocyklowej Motoseyir",
+  "ny_aciklama": "Jak zaplanować trasę motocyklową w Motoseyir: budowanie trasy, wycieczki z wieloma przystankami, rejestrowanie jazdy, dziennik wycieczki, jazda w grupie.",
   "ny_eyebrow": "Jak to działa",
   "ny_h1": "Tak korzystasz z Motoseyir od początku do końca",
   "ny_lead": "Ta strona to długa wersja Settings → „How it works” w aplikacji: te same tematy, ta sama kolejność. Dotknij nagłówka, aby go otworzyć, dotknij ponownie, aby zamknąć. Nazwy przycisków są po angielsku, dokładnie tak, jak widzisz je w aplikacji.",

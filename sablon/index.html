@@ -8,15 +8,7 @@
 <link rel="canonical" href="{{kanonik}}">
 {{alternatifler}}
 
-<!-- Open Graph -->
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Motoseyir">
-<meta property="og:locale" content="{{og_locale}}">
-<meta property="og:title" content="{{og_baslik}}">
-<meta property="og:description" content="{{og_aciklama}}">
-<meta property="og:url" content="{{kanonik}}">
-<meta property="og:image" content="https://motoseyir-app.com/img/og-kapak.jpg">
-<meta name="twitter:card" content="summary_large_image">
+{{seo_head}}
 
 <!-- Apple akıllı afiş: iOS Safari'de sayfanın üstünde "App Store'da aç" şeridi. -->
 <meta name="apple-itunes-app" content="app-id={{uygulama_id}}">
@@ -27,35 +19,7 @@
 
 <link rel="stylesheet" href="{{kok}}style.css">
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "Motoseyir",
-  "operatingSystem": "iOS",
-  "applicationCategory": "NavigationApplication",
-  "inLanguage": "{{lang}}",
-  "url": "{{kanonik}}",
-  "image": "https://motoseyir-app.com/img/og-kapak.jpg",
-  "description": "{{jsonld_aciklama}}",
-  "offers": [
-    {
-      "@type": "Offer",
-      "name": "{{plan_ucretsiz_ad}}",
-      "price": "0",
-      "priceCurrency": "EUR",
-      "description": "{{jsonld_ucretsiz}}"
-    },
-    {
-      "@type": "Offer",
-      "name": "Motoseyir Pro",
-      "category": "subscription",
-      "description": "{{jsonld_pro}}"
-    }
-  ],
-  "downloadUrl": "{{store}}"
-}
-</script>
+{{json_ld}}
 </head>
 <body id="top">
 <a class="skip-link" href="#icerik">{{skip}}</a>
@@ -66,8 +30,8 @@
     <nav aria-label="{{nav_etiket}}">
       <ul class="nav">
         <li><a href="#ozellikler">{{nav_ozellikler}}</a></li>
-        <li><a href="corider.html">AI CoRider</a></li>
-        <li><a href="nasil-yapilir.html">{{nav_nasil}}</a></li>
+        <li><a href="{{corider_url}}">AI CoRider</a></li>
+        <li><a href="{{nasil_url}}">{{nav_nasil}}</a></li>
         <li><a href="#fiyat">{{nav_fiyat}}</a></li>
         <li><a href="#gizlilik">{{nav_gizlilik}}</a></li>
         <li><a href="#yenilikler">{{nav_yenilikler}}</a></li>
@@ -270,8 +234,8 @@
       <!-- AI CoRider mağaza sürümünde YOK: tek satır "Yakında", ayrıntı yok. -->
 
       <p style="margin-top:2.5rem; display:flex; gap:1rem; flex-wrap:wrap;">
-        <a class="btn btn-ghost" href="ozellikler.html">{{btn_tum_ozellikler}}</a>
-        <a class="btn btn-ghost" href="nasil-yapilir.html">{{btn_nasil_yapilir}}</a>
+        <a class="btn btn-ghost" href="{{ozellikler_url}}">{{btn_tum_ozellikler}}</a>
+        <a class="btn btn-ghost" href="{{nasil_url}}">{{btn_nasil_yapilir}}</a>
       </p>
     </div>
   </section>
@@ -400,9 +364,9 @@
       </div>
       <ul class="footer-links">
         <li><a href="#ozellikler">{{nav_ozellikler}}</a></li>
-        <li><a href="ozellikler.html">{{footer_tum_ozellikler}}</a></li>
-        <li><a href="corider.html">AI CoRider</a></li>
-        <li><a href="nasil-yapilir.html">{{nav_nasil}}</a></li>
+        <li><a href="{{ozellikler_url}}">{{footer_tum_ozellikler}}</a></li>
+        <li><a href="{{corider_url}}">AI CoRider</a></li>
+        <li><a href="{{nasil_url}}">{{nav_nasil}}</a></li>
         <li><a href="{{gizlilik_url}}">{{nav_gizlilik}}{{gizlilik_tr_notu}}</a></li>
         <li><a href="#yenilikler">{{nav_yenilikler}}</a></li>
         <li><a href="#iletisim">{{nav_iletisim}}</a></li>

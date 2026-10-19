@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>AI CoRider — parťák vo vašej prilbe | Motoseyir</title>
-<meta name="description" content="AI CoRider s tebou hovorí cez prilbu: pridáva zastávky, hľadá miesta na trase, povie počasie aj dojazd paliva a zmení trasu za teba. Ruky ostávajú na riadidlách.">
+<meta name="description" content="AI CoRider s tebou hovorí cez prilbu: pridáva zastávky, hľadá miesta na trase, povie počasie aj dojazd paliva a zmení trasu. Ruky ostávajú na riadidlách.">
 <link rel="canonical" href="https://motoseyir-app.com/sk/corider.html">
 <link rel="alternate" hreflang="tr" href="https://motoseyir-app.com/corider.html">
 <link rel="alternate" hreflang="en" href="https://motoseyir-app.com/en/corider.html">
@@ -22,15 +22,22 @@
 <link rel="alternate" hreflang="el" href="https://motoseyir-app.com/el/corider.html">
 <link rel="alternate" hreflang="x-default" href="https://motoseyir-app.com/en/corider.html">
 
-<!-- Open Graph -->
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Motoseyir">
 <meta property="og:locale" content="sk_SK">
-<meta property="og:title" content="AI CoRider: oči na ceste, on počúva">
-<meta property="og:description" content="AI CoRider s tebou hovorí cez prilbu: pridáva zastávky, hľadá miesta na trase, povie počasie aj dojazd paliva a zmení trasu za teba. Ruky ostávajú na riadidlách.">
+<meta property="og:title" content="AI CoRider — parťák vo vašej prilbe | Motoseyir">
+<meta property="og:description" content="AI CoRider s tebou hovorí cez prilbu: pridáva zastávky, hľadá miesta na trase, povie počasie aj dojazd paliva a zmení trasu. Ruky ostávajú na riadidlách.">
 <meta property="og:url" content="https://motoseyir-app.com/sk/corider.html">
 <meta property="og:image" content="https://motoseyir-app.com/img/og-kapak.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI CoRider — parťák vo vašej prilbe | Motoseyir">
+<meta name="twitter:description" content="AI CoRider s tebou hovorí cez prilbu: pridáva zastávky, hľadá miesta na trase, povie počasie aj dojazd paliva a zmení trasu. Ruky ostávajú na riadidlách.">
+<meta name="twitter:image" content="https://motoseyir-app.com/img/og-kapak.jpg">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 <meta name="apple-itunes-app" content="app-id=6792549131">
 <meta name="theme-color" content="#050B13">
 <link rel="icon" href="/img/favicon.png">
@@ -52,25 +59,181 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "WebPage",
-      "name": "AI CoRider — parťák vo vašej prilbe | Motoseyir",
-      "url": "https://motoseyir-app.com/sk/corider.html",
+      "@type": "Organization",
+      "@id": "https://motoseyir-app.com/#organization",
+      "name": "Motoseyir",
+      "url": "https://motoseyir-app.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://motoseyir-app.com/img/uygulama-simgesi-512.png",
+        "width": 512,
+        "height": 512
+      },
+      "sameAs": [
+        "https://www.instagram.com/motoseyir.app/",
+        "https://www.instagram.com/motoseyir.app.en/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://motoseyir-app.com/#website",
+      "url": "https://motoseyir-app.com/",
+      "name": "Motoseyir",
       "inLanguage": "sk",
-      "description": "AI CoRider s tebou hovorí cez prilbu: pridáva zastávky, hľadá miesta na trase, povie počasie aj dojazd paliva a zmení trasu za teba. Ruky ostávajú na riadidlách.",
-      "isPartOf": {"@type": "WebSite", "name": "Motoseyir", "url": "https://motoseyir-app.com/"}
+      "publisher": {
+        "@id": "https://motoseyir-app.com/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://motoseyir-app.com/sk/corider.html#sayfa",
+      "url": "https://motoseyir-app.com/sk/corider.html",
+      "name": "AI CoRider — parťák vo vašej prilbe | Motoseyir",
+      "description": "AI CoRider s tebou hovorí cez prilbu: pridáva zastávky, hľadá miesta na trase, povie počasie aj dojazd paliva a zmení trasu. Ruky ostávajú na riadidlách.",
+      "inLanguage": "sk",
+      "isPartOf": {
+        "@id": "https://motoseyir-app.com/#website"
+      },
+      "about": {
+        "@id": "https://motoseyir-app.com/#uygulama"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://motoseyir-app.com/img/og-kapak.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "dateModified": "2026-10-20",
+      "breadcrumb": {
+        "@id": "https://motoseyir-app.com/sk/corider.html#ekmek"
+      },
+      "mainEntity": {
+        "@id": "https://motoseyir-app.com/sk/corider.html#sss"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://motoseyir-app.com/sk/corider.html#ekmek",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Domov",
+          "item": "https://motoseyir-app.com/sk/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "AI CoRider",
+          "item": "https://motoseyir-app.com/sk/corider.html"
+        }
+      ]
+    },
+    {
+      "@type": "MobileApplication",
+      "@id": "https://motoseyir-app.com/#uygulama",
+      "name": "Motoseyir",
+      "operatingSystem": "iOS",
+      "applicationCategory": "NavigationApplication",
+      "inLanguage": "sk",
+      "url": "https://motoseyir-app.com/sk/",
+      "image": "https://motoseyir-app.com/img/og-kapak.jpg",
+      "description": "Navigácia pre motorkárov, ktorá počíta vzdialenosť: vedľajšie cesty, generátor výletov, priesmyky, jazda v skupine, intercom, CarPlay a legendárne cesty.",
+      "screenshot": [
+        "https://motoseyir-app.com/m/ekran-nav-en.webp",
+        "https://motoseyir-app.com/m/ekran-tur-en.webp",
+        "https://motoseyir-app.com/m/ekran-gecit-en.webp",
+        "https://motoseyir-app.com/m/ekran-corider-en.webp"
+      ],
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Zadarmo",
+          "price": "0",
+          "priceCurrency": "EUR",
+          "description": "Neobmedzené plánovanie trás a navigácia v Turecku, Európe a USA, 1 uložený výlet; štvrťročné a ročné predplatné Pro môže mať pre nových predplatiteľov 7-dňovú skúšobnú dobu zadarmo."
+        },
+        {
+          "@type": "Offer",
+          "name": "Motoseyir Pro",
+          "category": "subscription",
+          "description": "AI CoRider, CarPlay, zakladanie skupín, Discover, neobmedzené výlety a stopy, režimy výletu a zostavenie kľukatých výletov alebo výletov bez diaľnic."
+        }
+      ],
+      "downloadUrl": "https://apps.apple.com/sk/app/id6792549131?pt=128439797&ct=site-sk&mt=8",
+      "publisher": {
+        "@id": "https://motoseyir-app.com/#organization"
+      }
     },
     {
       "@type": "FAQPage",
+      "@id": "https://motoseyir-app.com/sk/corider.html#sss",
       "inLanguage": "sk",
       "mainEntity": [
-        {"@type": "Question", "name": "Počúva ma AI CoRider stále?", "acceptedAnswer": {"@type": "Answer", "text": "Nie. Žiadne prebúdzacie slovo neexistuje. Mikrofón sa otvorí, len keď na mape ťukneš na tlačidlo AI CoRider. Relácia sa zatvorí, keď ju ukončíš, po dlhšom tichu alebo s koncom navigácie."}},
-        {"@type": "Question", "name": "Funguje to bez internetu?", "acceptedAnswer": {"@type": "Answer", "text": "Nie. To, čo povieš, ide na odpoveď do cloudovej hlasovej služby, takže AI CoRider potrebuje internet. Bez pripojenia sa relácia nespustí."}},
-        {"@type": "Question", "name": "V akom jazyku môžem hovoriť?", "acceptedAnswer": {"@type": "Answer", "text": "Odpovedá v jazyku, v ktorom hovoríš. Žiadne príkazy sa učiť nemusíš, povedz to po svojom."}},
-        {"@type": "Question", "name": "Čo sa stane, keď sa minie hovorový čas?", "acceptedAnswer": {"@type": "Answer", "text": "Pro obnovuje každých 30 dní 10 minút, v bezplatnej skúšobnej dobe je ich 5. Ak to nestačí, pridaj si balík 30, 60 alebo 180 minút, ktorý nikdy nevyprší."}},
-        {"@type": "Question", "name": "Aký je rozdiel medzi Plánovačom a Chatom?", "acceptedAnswer": {"@type": "Answer", "text": "Plánovač pozná tvoju trasu a vybaví, čo treba: pridáva zastávky, hľadá miesta a mení trasu; je súčasťou Pro. V Chate tému volíš ty a on si pamätá skoršie rozhovory; otvára sa balíkom minút."}},
-        {"@type": "Question", "name": "Počujú ho v skupine všetci a z čieho účtu sa minúty strhávajú?", "acceptedAnswer": {"@type": "Answer", "text": "Keď zavoláš AI CoRider do interkomu skupiny, započujú ho všetci v miestnosti. Minúty sa strhávajú z účtu toho, kto ho zavolal."}},
-        {"@type": "Question", "name": "Pýtam sa, či vystačím s benzínom, ale dojazd nepovie. Prečo?", "acceptedAnswer": {"@type": "Answer", "text": "Pre dojazd zadaj raz v Nastaveniach, koľko prejdeš na plnú nádrž. Kým to neurobíš, AI CoRider nehádá, ale povie ti to."}},
-        {"@type": "Question", "name": "Potrebujem Bluetooth, aby som ho počul v prilbe?", "acceptedAnswer": {"@type": "Answer", "text": "Ak je prilba s telefónom spojená cez Bluetooth, hlas ide cez ňu, inak z telefónu. Vo vetre nepočuješ? Povedz jednoducho „hlasnejšie“."}}
+        {
+          "@type": "Question",
+          "name": "Počúva ma AI CoRider stále?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nie. Žiadne prebúdzacie slovo neexistuje. Mikrofón sa otvorí, len keď na mape ťukneš na tlačidlo AI CoRider. Relácia sa zatvorí, keď ju ukončíš, po dlhšom tichu alebo s koncom navigácie."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Funguje to bez internetu?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nie. To, čo povieš, ide na odpoveď do cloudovej hlasovej služby, takže AI CoRider potrebuje internet. Bez pripojenia sa relácia nespustí."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "V akom jazyku môžem hovoriť?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Odpovedá v jazyku, v ktorom hovoríš. Žiadne príkazy sa učiť nemusíš, povedz to po svojom."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Čo sa stane, keď sa minie hovorový čas?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pro obnovuje každých 30 dní 10 minút, v bezplatnej skúšobnej dobe je ich 5. Ak to nestačí, pridaj si balík 30, 60 alebo 180 minút, ktorý nikdy nevyprší."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Aký je rozdiel medzi Plánovačom a Chatom?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Plánovač pozná tvoju trasu a vybaví, čo treba: pridáva zastávky, hľadá miesta a mení trasu; je súčasťou Pro. V Chate tému volíš ty a on si pamätá skoršie rozhovory; otvára sa balíkom minút."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Počujú ho v skupine všetci a z čieho účtu sa minúty strhávajú?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Keď zavoláš AI CoRider do interkomu skupiny, započujú ho všetci v miestnosti. Minúty sa strhávajú z účtu toho, kto ho zavolal."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Pýtam sa, či vystačím s benzínom, ale dojazd nepovie. Prečo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pre dojazd zadaj raz v Nastaveniach, koľko prejdeš na plnú nádrž. Kým to neurobíš, AI CoRider nehádá, ale povie ti to."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Potrebujem Bluetooth, aby som ho počul v prilbe?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ak je prilba s telefónom spojená cez Bluetooth, hlas ide cez ňu, inak z telefónu. Vo vetre nepočuješ? Povedz jednoducho „hlasnejšie“."
+          }
+        }
       ]
     }
   ]

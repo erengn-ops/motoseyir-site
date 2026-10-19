@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Motoseyir — navigáció motorosoknak, kanyargós utakra</title>
-<meta name="description" content="A Motoseyir olyan motoros navigáció, amely távolság szerint tervez, nem perc szerint. Mellékutak és tengerparti mód, túragenerátor, 1 600+ hágó, csoportos menet és CarPlay.">
+<title>Motoros navigáció és útvonaltervező — Motoseyir</title>
+<meta name="description" content="A Motoseyir olyan motoros navigáció, amely távolság szerint tervez, nem perc szerint. Mellékutak, túratervezés, 1 600+ hágó, csoportos menet és CarPlay.">
 <link rel="canonical" href="https://motoseyir-app.com/hu/">
 <link rel="alternate" hreflang="tr" href="https://motoseyir-app.com/">
 <link rel="alternate" hreflang="en" href="https://motoseyir-app.com/en/">
@@ -22,15 +22,22 @@
 <link rel="alternate" hreflang="el" href="https://motoseyir-app.com/el/">
 <link rel="alternate" hreflang="x-default" href="https://motoseyir-app.com/en/">
 
-<!-- Open Graph -->
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Motoseyir">
 <meta property="og:locale" content="hu_HU">
-<meta property="og:title" content="Motoseyir — navigáció motorosoknak, kanyargós utakra">
-<meta property="og:description" content="Távolság szerint tervez: mellékutak, túragenerátor, 1 600+ hágó, csoportos menet, intercom és CarPlay — egy appban.">
+<meta property="og:title" content="Motoros navigáció és útvonaltervező — Motoseyir">
+<meta property="og:description" content="A Motoseyir olyan motoros navigáció, amely távolság szerint tervez, nem perc szerint. Mellékutak, túratervezés, 1 600+ hágó, csoportos menet és CarPlay.">
 <meta property="og:url" content="https://motoseyir-app.com/hu/">
 <meta property="og:image" content="https://motoseyir-app.com/img/og-kapak.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Motoros navigáció és útvonaltervező — Motoseyir">
+<meta name="twitter:description" content="A Motoseyir olyan motoros navigáció, amely távolság szerint tervez, nem perc szerint. Mellékutak, túratervezés, 1 600+ hágó, csoportos menet és CarPlay.">
+<meta name="twitter:image" content="https://motoseyir-app.com/img/og-kapak.jpg">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 
 <!-- Apple akıllı afiş: iOS Safari'de sayfanın üstünde "App Store'da aç" şeridi. -->
 <meta name="apple-itunes-app" content="app-id=6792549131">
@@ -68,30 +75,149 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "Motoseyir",
-  "operatingSystem": "iOS",
-  "applicationCategory": "NavigationApplication",
-  "inLanguage": "hu",
-  "url": "https://motoseyir-app.com/hu/",
-  "image": "https://motoseyir-app.com/img/og-kapak.jpg",
-  "description": "Távolság alapú navigációs app motorosoknak: legrövidebb útvonal, mellékutak, túragenerátor, hágók, csoportos menet, intercom, CarPlay és legendás utak.",
-  "offers": [
+  "@graph": [
     {
-      "@type": "Offer",
-      "name": "Ingyenes",
-      "price": "0",
-      "priceCurrency": "EUR",
-      "description": "Korlátlan útvonaltervezés és navigáció Törökországban, Európában és az USA-ban, 1 mentett túra; a Pro háromhavi és éves csomagja új előfizetőknek 7 napos ingyenes próbával járhat."
+      "@type": "Organization",
+      "@id": "https://motoseyir-app.com/#organization",
+      "name": "Motoseyir",
+      "url": "https://motoseyir-app.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://motoseyir-app.com/img/uygulama-simgesi-512.png",
+        "width": 512,
+        "height": 512
+      },
+      "sameAs": [
+        "https://www.instagram.com/motoseyir.app/",
+        "https://www.instagram.com/motoseyir.app.en/"
+      ]
     },
     {
-      "@type": "Offer",
-      "name": "Motoseyir Pro",
-      "category": "subscription",
-      "description": "AI CoRider, CarPlay, csoport létrehozása, Discover, korlátlan túra és nyomvonal, túramódok, valamint kanyargós vagy autópálya-mentes túrák összeállítása."
+      "@type": "WebSite",
+      "@id": "https://motoseyir-app.com/#website",
+      "url": "https://motoseyir-app.com/",
+      "name": "Motoseyir",
+      "inLanguage": "hu",
+      "publisher": {
+        "@id": "https://motoseyir-app.com/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://motoseyir-app.com/hu/#sayfa",
+      "url": "https://motoseyir-app.com/hu/",
+      "name": "Motoros navigáció és útvonaltervező — Motoseyir",
+      "description": "A Motoseyir olyan motoros navigáció, amely távolság szerint tervez, nem perc szerint. Mellékutak, túratervezés, 1 600+ hágó, csoportos menet és CarPlay.",
+      "inLanguage": "hu",
+      "isPartOf": {
+        "@id": "https://motoseyir-app.com/#website"
+      },
+      "about": {
+        "@id": "https://motoseyir-app.com/#uygulama"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://motoseyir-app.com/img/og-kapak.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "dateModified": "2026-10-20",
+      "mainEntity": {
+        "@id": "https://motoseyir-app.com/hu/#sss"
+      }
+    },
+    {
+      "@type": "MobileApplication",
+      "@id": "https://motoseyir-app.com/#uygulama",
+      "name": "Motoseyir",
+      "operatingSystem": "iOS",
+      "applicationCategory": "NavigationApplication",
+      "inLanguage": "hu",
+      "url": "https://motoseyir-app.com/hu/",
+      "image": "https://motoseyir-app.com/img/og-kapak.jpg",
+      "description": "Távolság alapú navigációs app motorosoknak: legrövidebb útvonal, mellékutak, túragenerátor, hágók, csoportos menet, intercom, CarPlay és legendás utak.",
+      "screenshot": [
+        "https://motoseyir-app.com/m/ekran-nav-en.webp",
+        "https://motoseyir-app.com/m/ekran-tur-en.webp",
+        "https://motoseyir-app.com/m/ekran-gecit-en.webp",
+        "https://motoseyir-app.com/m/ekran-corider-en.webp"
+      ],
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Ingyenes",
+          "price": "0",
+          "priceCurrency": "EUR",
+          "description": "Korlátlan útvonaltervezés és navigáció Törökországban, Európában és az USA-ban, 1 mentett túra; a Pro háromhavi és éves csomagja új előfizetőknek 7 napos ingyenes próbával járhat."
+        },
+        {
+          "@type": "Offer",
+          "name": "Motoseyir Pro",
+          "category": "subscription",
+          "description": "AI CoRider, CarPlay, csoport létrehozása, Discover, korlátlan túra és nyomvonal, túramódok, valamint kanyargós vagy autópálya-mentes túrák összeállítása."
+        }
+      ],
+      "downloadUrl": "https://apps.apple.com/hu/app/id6792549131?pt=128439797&ct=site-hu&mt=8",
+      "publisher": {
+        "@id": "https://motoseyir-app.com/#organization"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://motoseyir-app.com/hu/#sss",
+      "inLanguage": "hu",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Mi a Motoseyir?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A Motoseyir motoros navigációs és útvonaltervező app. Távolság szerint számol, nem perc szerint, van mellékút- és tengerparti módja, és a megadott irányba, a megadott óraszámra állít össze túrát."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ingyenes a Motoseyir?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Az útvonaltervezés és a lépésenkénti navigáció korlátlan és ingyenes Törökországban, Európában és az USA-ban, fiók nélkül. Az ingyenes szint 1 mentett túrát tárol. Az AI CoRider, a CarPlay, a csoportkészítés, a Discover és a korlátlan túra a Pro része."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Miben más a Motoseyir, mint a többi navigáció?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Távolság szerint tervez, nem perc szerint: ugyanazon két pont között összehasonlítja a változatokat, és a legrövidebbet ajánlja. Több megállós túrán a megállók sorrendjét is kiszámolja."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Hol működik?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Az útvonaltervezés és a navigáció Törökországban, Európában és az USA-ban működik. A hágótérkép 36 ország több mint 1 600 hágóját tartalmazza."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Működik CarPlay-jel?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Igen. Az Apple CarPlay a Pro része; az útvonalad teljes képernyőn jelenik meg az autó kijelzőjén."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Motorozhatok a barátaimmal?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Igen. Ugyanazon az útvonalon mentek, mindenkit látsz a térképen, és a csoportos intercomon beszélgettek. A csoporthoz meghívóval vagy kóddal csatlakozni ingyenes; csoportot létrehozni a Pro része."
+          }
+        }
+      ]
     }
-  ],
-  "downloadUrl": "https://apps.apple.com/hu/app/id6792549131?pt=128439797&amp;ct=site-hu&amp;mt=8"
+  ]
 }
 </script>
 </head>
@@ -143,7 +269,7 @@
   </div>
   <div class="k-ic">
     <div class="k-metin">
-      <p class="ust-yazi">Motoseyir · A motoros navigációja</p>
+      <p class="ust-yazi">Motoseyir · Motoros navigáció</p>
       <h1>Azoknak, akik <i>imádják a kanyart.</i></h1>
       <p class="giris">A Motoseyir távolság szerint tervez, nem perc szerint. Mellékutak vagy tengerpart, te döntesz. Vagy mondd meg, merre mennél, és építsen egy túrát; vagy válassz egy hágót, és indulj.</p>
       <div class="cta-satir">
@@ -583,6 +709,8 @@
         <li><h3>Fekvő tájolás</h3><p>Fordítsd oldalra a telefont: a kártyák balra gyűlnek, a térkép elfoglalja a maradékot; a My Tours két hasábra vált.</p></li>
         <li><h3>Mértékegységek és nyelv</h3><p>A mértékegység onnan jön, ahol vagy: mérföld, mph és láb az USA-ban, mérföld és yard az Egyesült Királyságban, kilométer mindenhol máshol. Az app törökül, angolul, németül, franciául és olaszul beszél, és a telefonod nyelvét követi.</p></li>
         </ul>
+        <p class="cr-daha"><a href="/hu/ozellikler.html">Minden funkció részletesen →</a></p>
+        <p class="cr-daha"><a href="/hu/nasil-yapilir.html">Most nyitod meg először az appot? Kezdd itt →</a></p>
       </div>
     </div>
   </section>
@@ -612,6 +740,27 @@
         </div>
       </div>
       <p class="fiyat-not">Az aktuális árak régiónként változnak; az App Store előfizetési képernyőjén látod őket. Bármikor lemondhatod az App Store-fiókodban.</p>
+    </div>
+  </section>
+
+  <!-- SSS (20 Eki 2026): arama niyeti için kısa, GÖRÜNÜR soru-cevaplar (yalnız sitede zaten yazan olgular). FAQPage yapısal verisi aynı
+       anahtarlardan (faq_q1/faq_a1 …) uret.py json_ld() ile üretilir; buraya soru eklerken dil dosyalarına da ekle, görünür metin = JSON-LD. -->
+  <section class="bolum" id="sss" aria-labelledby="sss-h">
+    <div class="kap">
+      <div data-r>
+        <p class="km">Gyakori kérdések</p>
+        <h2 id="sss-h">Motoros navigáció, <i>gyakori kérdések.</i></h2>
+      </div>
+      <div class="ayrinti" data-r>
+        <ul class="izgara">
+        <li><h3>Mi a Motoseyir?</h3><p>A Motoseyir motoros navigációs és útvonaltervező app. Távolság szerint számol, nem perc szerint, van mellékút- és tengerparti módja, és a megadott irányba, a megadott óraszámra állít össze túrát.</p></li>
+        <li><h3>Ingyenes a Motoseyir?</h3><p>Az útvonaltervezés és a lépésenkénti navigáció korlátlan és ingyenes Törökországban, Európában és az USA-ban, fiók nélkül. Az ingyenes szint 1 mentett túrát tárol. Az AI CoRider, a CarPlay, a csoportkészítés, a Discover és a korlátlan túra a Pro része.</p></li>
+        <li><h3>Miben más a Motoseyir, mint a többi navigáció?</h3><p>Távolság szerint tervez, nem perc szerint: ugyanazon két pont között összehasonlítja a változatokat, és a legrövidebbet ajánlja. Több megállós túrán a megállók sorrendjét is kiszámolja.</p></li>
+        <li><h3>Hol működik?</h3><p>Az útvonaltervezés és a navigáció Törökországban, Európában és az USA-ban működik. A hágótérkép 36 ország több mint 1 600 hágóját tartalmazza.</p></li>
+        <li><h3>Működik CarPlay-jel?</h3><p>Igen. Az Apple CarPlay a Pro része; az útvonalad teljes képernyőn jelenik meg az autó kijelzőjén.</p></li>
+        <li><h3>Motorozhatok a barátaimmal?</h3><p>Igen. Ugyanazon az útvonalon mentek, mindenkit látsz a térképen, és a csoportos intercomon beszélgettek. A csoporthoz meghívóval vagy kóddal csatlakozni ingyenes; csoportot létrehozni a Pro része.</p></li>
+        </ul>
+      </div>
     </div>
   </section>
 </div>

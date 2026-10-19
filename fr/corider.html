@@ -22,15 +22,22 @@
 <link rel="alternate" hreflang="el" href="https://motoseyir-app.com/el/corider.html">
 <link rel="alternate" hreflang="x-default" href="https://motoseyir-app.com/en/corider.html">
 
-<!-- Open Graph -->
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Motoseyir">
 <meta property="og:locale" content="fr_FR">
-<meta property="og:title" content="AI CoRider : les yeux sur la route, lui écoute">
+<meta property="og:title" content="AI CoRider — le coéquipier dans ton casque | Motoseyir">
 <meta property="og:description" content="AI CoRider te parle dans ton casque : il ajoute des étapes, cherche des lieux sur ton trajet, donne la météo et l’autonomie, et change l’itinéraire à ta place.">
 <meta property="og:url" content="https://motoseyir-app.com/fr/corider.html">
 <meta property="og:image" content="https://motoseyir-app.com/img/og-kapak.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI CoRider — le coéquipier dans ton casque | Motoseyir">
+<meta name="twitter:description" content="AI CoRider te parle dans ton casque : il ajoute des étapes, cherche des lieux sur ton trajet, donne la météo et l’autonomie, et change l’itinéraire à ta place.">
+<meta name="twitter:image" content="https://motoseyir-app.com/img/og-kapak.jpg">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 <meta name="apple-itunes-app" content="app-id=6792549131">
 <meta name="theme-color" content="#050B13">
 <link rel="icon" href="/img/favicon.png">
@@ -52,25 +59,181 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "WebPage",
-      "name": "AI CoRider — le coéquipier dans ton casque | Motoseyir",
-      "url": "https://motoseyir-app.com/fr/corider.html",
+      "@type": "Organization",
+      "@id": "https://motoseyir-app.com/#organization",
+      "name": "Motoseyir",
+      "url": "https://motoseyir-app.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://motoseyir-app.com/img/uygulama-simgesi-512.png",
+        "width": 512,
+        "height": 512
+      },
+      "sameAs": [
+        "https://www.instagram.com/motoseyir.app/",
+        "https://www.instagram.com/motoseyir.app.en/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://motoseyir-app.com/#website",
+      "url": "https://motoseyir-app.com/",
+      "name": "Motoseyir",
       "inLanguage": "fr",
+      "publisher": {
+        "@id": "https://motoseyir-app.com/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://motoseyir-app.com/fr/corider.html#sayfa",
+      "url": "https://motoseyir-app.com/fr/corider.html",
+      "name": "AI CoRider — le coéquipier dans ton casque | Motoseyir",
       "description": "AI CoRider te parle dans ton casque : il ajoute des étapes, cherche des lieux sur ton trajet, donne la météo et l’autonomie, et change l’itinéraire à ta place.",
-      "isPartOf": {"@type": "WebSite", "name": "Motoseyir", "url": "https://motoseyir-app.com/"}
+      "inLanguage": "fr",
+      "isPartOf": {
+        "@id": "https://motoseyir-app.com/#website"
+      },
+      "about": {
+        "@id": "https://motoseyir-app.com/#uygulama"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://motoseyir-app.com/img/og-kapak.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "dateModified": "2026-10-20",
+      "breadcrumb": {
+        "@id": "https://motoseyir-app.com/fr/corider.html#ekmek"
+      },
+      "mainEntity": {
+        "@id": "https://motoseyir-app.com/fr/corider.html#sss"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://motoseyir-app.com/fr/corider.html#ekmek",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://motoseyir-app.com/fr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "AI CoRider",
+          "item": "https://motoseyir-app.com/fr/corider.html"
+        }
+      ]
+    },
+    {
+      "@type": "MobileApplication",
+      "@id": "https://motoseyir-app.com/#uygulama",
+      "name": "Motoseyir",
+      "operatingSystem": "iOS",
+      "applicationCategory": "NavigationApplication",
+      "inLanguage": "fr",
+      "url": "https://motoseyir-app.com/fr/",
+      "image": "https://motoseyir-app.com/img/og-kapak.jpg",
+      "description": "App de navigation pour motards, au kilomètre : itinéraire le plus court, petites routes, générateur de circuits, cols, sorties en groupe, intercom, CarPlay et routes légendaires.",
+      "screenshot": [
+        "https://motoseyir-app.com/m/ekran-nav-en.webp",
+        "https://motoseyir-app.com/m/ekran-tur-en.webp",
+        "https://motoseyir-app.com/m/ekran-gecit-en.webp",
+        "https://motoseyir-app.com/m/ekran-corider-en.webp"
+      ],
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Gratuit",
+          "price": "0",
+          "priceCurrency": "EUR",
+          "description": "Itinéraires et navigation illimités en Turquie, en Europe et aux États-Unis, 1 tour enregistré ; les formules Pro de 3 mois et annuelle peuvent inclure 7 jours d’essai gratuit pour les nouveaux abonnés."
+        },
+        {
+          "@type": "Offer",
+          "name": "Motoseyir Pro",
+          "category": "subscription",
+          "description": "AI CoRider, CarPlay, création de groupe, Explorer, tours et pistes illimités, modes de tour, création de circuits sinueux ou sans autoroute."
+        }
+      ],
+      "downloadUrl": "https://apps.apple.com/fr/app/id6792549131?pt=128439797&ct=site-fr&mt=8",
+      "publisher": {
+        "@id": "https://motoseyir-app.com/#organization"
+      }
     },
     {
       "@type": "FAQPage",
+      "@id": "https://motoseyir-app.com/fr/corider.html#sss",
       "inLanguage": "fr",
       "mainEntity": [
-        {"@type": "Question", "name": "AI CoRider m’écoute-t-il en permanence ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. Il n’y a pas de mot d’activation. Le micro ne s’ouvre que lorsque tu touches le bouton AI CoRider sur la carte. La session se ferme quand tu la termines, après un moment de silence ou quand la navigation s’arrête."}},
-        {"@type": "Question", "name": "Ça marche sans internet ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. Ce que tu dis part vers un service vocal cloud pour produire la réponse : AI CoRider a donc besoin d’une connexion internet. Sans elle, aucune session ne peut démarrer."}},
-        {"@type": "Question", "name": "Dans quelle langue puis-je parler ?", "acceptedAnswer": {"@type": "Answer", "text": "Il répond dans la langue que tu parles. Aucune commande à retenir, dis-le avec tes mots."}},
-        {"@type": "Question", "name": "Que se passe-t-il quand mon temps de parole est épuisé ?", "acceptedAnswer": {"@type": "Answer", "text": "Pro renouvelle 10 minutes tous les 30 jours, et l’essai gratuit en comprend 5. Si ça ne suffit pas, ajoute un forfait de 30, 60 ou 180 minutes qui n’expire jamais."}},
-        {"@type": "Question", "name": "Quelle différence entre Planificateur et Discussion ?", "acceptedAnswer": {"@type": "Answer", "text": "Le Planificateur connaît ton itinéraire et fait le boulot : il ajoute des étapes, cherche des lieux et change le trajet ; il est inclus dans Pro. En Discussion, tu choisis le sujet et il se souvient des échanges précédents ; ce mode s’ouvre avec un forfait de minutes."}},
-        {"@type": "Question", "name": "Dans un groupe, tout le monde l’entend-il, et sur quel compte les minutes sont-elles décomptées ?", "acceptedAnswer": {"@type": "Answer", "text": "Si tu appelles AI CoRider dans l’interphone du groupe, tout le monde dans le salon l’entend. Les minutes sont décomptées du compte de celui qui l’a appelé."}},
-        {"@type": "Question", "name": "Je demande si j’ai assez d’essence, mais il ne donne pas d’autonomie. Pourquoi ?", "acceptedAnswer": {"@type": "Answer", "text": "Pour l’autonomie, indique une fois dans les Réglages la distance parcourue avec un plein. Tant que ce n’est pas fait, AI CoRider ne devine pas : il te le dit."}},
-        {"@type": "Question", "name": "Faut-il le Bluetooth pour l’entendre dans le casque ?", "acceptedAnswer": {"@type": "Answer", "text": "Si le casque est relié au téléphone en Bluetooth, la voix passe par lui, sinon elle sort du téléphone. Tu entends mal dans le vent ? Dis simplement « plus fort »."}}
+        {
+          "@type": "Question",
+          "name": "AI CoRider m’écoute-t-il en permanence ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Non. Il n’y a pas de mot d’activation. Le micro ne s’ouvre que lorsque tu touches le bouton AI CoRider sur la carte. La session se ferme quand tu la termines, après un moment de silence ou quand la navigation s’arrête."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ça marche sans internet ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Non. Ce que tu dis part vers un service vocal cloud pour produire la réponse : AI CoRider a donc besoin d’une connexion internet. Sans elle, aucune session ne peut démarrer."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Dans quelle langue puis-je parler ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Il répond dans la langue que tu parles. Aucune commande à retenir, dis-le avec tes mots."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Que se passe-t-il quand mon temps de parole est épuisé ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pro renouvelle 10 minutes tous les 30 jours, et l’essai gratuit en comprend 5. Si ça ne suffit pas, ajoute un forfait de 30, 60 ou 180 minutes qui n’expire jamais."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quelle différence entre Planificateur et Discussion ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Le Planificateur connaît ton itinéraire et fait le boulot : il ajoute des étapes, cherche des lieux et change le trajet ; il est inclus dans Pro. En Discussion, tu choisis le sujet et il se souvient des échanges précédents ; ce mode s’ouvre avec un forfait de minutes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Dans un groupe, tout le monde l’entend-il, et sur quel compte les minutes sont-elles décomptées ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Si tu appelles AI CoRider dans l’interphone du groupe, tout le monde dans le salon l’entend. Les minutes sont décomptées du compte de celui qui l’a appelé."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Je demande si j’ai assez d’essence, mais il ne donne pas d’autonomie. Pourquoi ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pour l’autonomie, indique une fois dans les Réglages la distance parcourue avec un plein. Tant que ce n’est pas fait, AI CoRider ne devine pas : il te le dit."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Faut-il le Bluetooth pour l’entendre dans le casque ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Si le casque est relié au téléphone en Bluetooth, la voix passe par lui, sinon elle sort du téléphone. Tu entends mal dans le vent ? Dis simplement « plus fort »."
+          }
+        }
       ]
     }
   ]

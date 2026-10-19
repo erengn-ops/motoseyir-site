@@ -24,8 +24,6 @@
 
   "baslik": "Motociklistička navigacija i planer rute — Motoseyir",
   "aciklama": "Navigacija za motocikliste koja računa kilometre: najkraća ruta, sporedne ceste, ture s više stanica, vožnja u grupi, interfon i legendarne rute. Motoseyir u App Storeu.",
-  "og_baslik": "Motoseyir — navigacija koja broji kilometre, a ne minute",
-  "og_aciklama": "Najkraća ruta, sporedne ceste, ture s više stanica, vožnja u grupi, interfon i legendarne rute — u jednoj aplikaciji.",
   "jsonld_aciklama": "Navigacijska aplikacija za motocikliste koja računa na udaljenost: najkraća ruta, sporedne ceste, ture s više stanica, vožnja u grupi, interfon i legendarne rute.",
   "jsonld_ucretsiz": "7 dana besplatne probe svih Pro značajki uz tromjesečnu i godišnju pretplatu, za nove pretplatnike, gdje je dostupno.",
   "jsonld_pro": "Najbolji redoslijed za više stanica, neograničene ture i staze, način sporednih cesta i obale, Discover, stvaranje grupa, interfon i AI CoRider.",
@@ -156,12 +154,10 @@
   "iletisim_destek_p": "Piši nam direktno iz Settings → „Something wrong, or an idea?”; odgovori dolaze na isto mjesto.",
   "iletisim_insta_p": "Prati nas za nove rute, fotografije s vožnji i najave.",
 
-  "oz_baslik": "Funkcije motociklističke navigacijske aplikacije — Motoseyir",
-  "oz_aciklama": "Sve funkcije Motoseyira na jednoj stranici: najkraća ruta, najbolji redoslijed stanica, sporedne ceste, legendarne rute, Discover, dnevnik ture, vrijeme, staze, vožnja u grupi, interfon, vodoravni prikaz i Community.",
-  "oz_og_baslik": "Sve funkcije Motoseyira",
-  "oz_og_aciklama": "Najkraća ruta, najbolji redoslijed stanica, sporedne ceste, legendarne rute, vožnja u grupi, interfon i još više.",
+  "oz_baslik": "Funkcije aplikacije za moto navigaciju — Motoseyir",
+  "oz_aciklama": "Sve funkcije moto navigacije Motoseyir na jednoj stranici: najkraća ruta, redoslijed stanica, sporedne ceste, legendarne rute, dnevnik ture, vožnja u grupi.",
   "oz_eyebrow": "Funkcije · detaljno",
-  "oz_h1": "Sve funkcije Motoseyira",
+  "oz_h1": "Motoseyir, moto navigacija: sve funkcije",
   "oz_sayfa_lead": "Ova stranica raste. Kad dođe nova funkcija, prvo dolazi ovamo, pod odgovarajući naslov. Ispod je pet skupina: grad i kuriri, putovanja, na putu i nakon vožnje, zajednička vožnja te planine i auto.",
 
   "kume1_h2": "Za grad i za kurire",
@@ -247,10 +243,8 @@
   "oz24_h3": "Šest oznaka",
   "oz24_p": "Na karti te predstavlja Supersport, Chopper, Maxi scooter, Touring, Arrow ili Helmet. Biraš ih u Settings → Map → Navigation marker, a ista se vidi i na CarPlayu. Prva četiri su 3D, s vozačem, i naginju se u zavojima.",
 
-  "ny_baslik": "Kako koristiti Motoseyir — ruta, grupa i dnevnik",
-  "ny_aciklama": "Vodič kroz Motoseyir korak po korak: izgradnja rute, ture s više stanica, snimanje vožnje, dnevnik ture, vožnja u grupi i interfon, Community, postavke i pretplata.",
-  "ny_og_baslik": "Kako se koristi Motoseyir?",
-  "ny_og_aciklama": "Od rute do vožnje u grupi, od snimanja do Communityja: Motoseyir korak po korak.",
+  "ny_baslik": "Kako koristiti moto navigaciju Motoseyir, korak po korak",
+  "ny_aciklama": "Kako isplanirati motociklističku rutu u Motoseyiru: izgradnja rute, ture s više stanica, snimanje vožnje, dnevnik ture, vožnja u grupi, interfon i pretplata.",
   "ny_eyebrow": "Kako radi",
   "ny_h1": "Ovako koristiš Motoseyir od početka do kraja",
   "ny_lead": "Ova stranica je dugačka verzija Settings → „How it works” u aplikaciji: iste teme, isti redoslijed. Dodirni naslov da se otvori, dodirni ponovno da se zatvori. Imena tipki su na engleskom, točno kako ih vidiš u aplikaciji.",

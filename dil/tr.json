@@ -24,8 +24,6 @@
 
   "baslik": "Motosiklet Navigasyonu ve Rota Planlayıcı — Motoseyir",
   "aciklama": "Motosiklet sürücüleri için mesafe odaklı navigasyon: en kısa rota, köy yolları, çok duraklı turlar, grup sürüşü, interkom ve efsane rotalar. Motoseyir, App Store’da.",
-  "og_baslik": "Motoseyir — Motosiklete Göre En Kısa Yolu Bulan Navigasyon",
-  "og_aciklama": "En kısa rota, köy yolları, çok duraklı turlar, grup sürüşü, interkom ve efsane rotalar — tek uygulamada.",
   "jsonld_aciklama": "Motosiklet sürücüleri için mesafe odaklı navigasyon uygulaması: en kısa rota, köy yolları, çok duraklı turlar, grup sürüşü, interkom ve efsane rotalar.",
   "jsonld_ucretsiz": "Türkiye, Avrupa ve ABD’de sınırsız rota ve navigasyon, 1 kayıtlı tur; Pro’nun 3 aylık ve yıllık planlarında (Türkiye hariç) 7 gün ücretsiz deneme.",
   "jsonld_pro": "Çok duraklıda en uygun sıralama, sınırsız tur ve parkur, köy yolları/sahil modları, Keşfet, grup kurma, interkom ve AI CoRider.",
@@ -157,11 +155,9 @@
   "iletisim_insta_p": "Yeni rotalar, sürüş fotoğrafları ve duyurular için takip et.",
 
   "oz_baslik": "Motosiklet Navigasyon Uygulaması Özellikleri — Motoseyir",
-  "oz_aciklama": "Motoseyir’in bütün özellikleri tek sayfada: en kısa rota, çok duraklı sıralama, köy yolları, efsane rotalar, Keşfet, tur günlüğü, hava durumu, parkurlar, grup sürüşü, interkom, yatay kullanım ve topluluk.",
-  "oz_og_baslik": "Motoseyir’in Bütün Özellikleri",
-  "oz_og_aciklama": "En kısa rota, çok duraklı sıralama, köy yolları, efsane rotalar, grup sürüşü, interkom ve daha fazlası.",
+  "oz_aciklama": "Motoseyir motosiklet navigasyonunun özellikleri tek sayfada: en kısa rota, çok duraklı sıralama, köy yolları, efsane rotalar, tur günlüğü, grup sürüşü.",
   "oz_eyebrow": "Özellikler · ayrıntılı",
-  "oz_h1": "Motoseyir’in bütün özellikleri",
+  "oz_h1": "Motoseyir motosiklet navigasyonu: bütün özellikler",
   "oz_sayfa_lead": "Bu sayfa büyüyor. Yeni bir özellik geldiğinde önce buraya, ilgili başlığın altına ekleniyor. Aşağıda beş grup var: şehir içi ve kurye, gezginler, sürüş ve sonrası, birlikte sürmek, dağlarda ve araçta.",
 
   "kume1_h2": "Şehir içi ve kurye için",
@@ -247,10 +243,8 @@
   "oz24_h3": "Altı işaretçi",
   "oz24_p": "Haritada seni Supersport, Chopper, Maksi scooter, Touring, Ok ya da Kask temsil eder. Ayarlar → Harita → Navigasyon işaretçisi’nden seçersin; CarPlay’de de aynısı görünür. İlk dördü üç boyutlu ve sürücülü, virajda yatar.",
 
-  "ny_baslik": "Motoseyir Nasıl Kullanılır — Rota, Grup Sürüşü, Günlük Rehberi",
-  "ny_aciklama": "Motoseyir’i adım adım kullanma rehberi: rota kurma, çok duraklı tur, sürüş kaydı, tur günlüğü, grup sürüşü ve interkom, Topluluk, Ayarlar ve abonelik.",
-  "ny_og_baslik": "Motoseyir Nasıl Kullanılır?",
-  "ny_og_aciklama": "Rota kurmaktan grup sürüşüne, sürüş kaydından Topluluk’a: Motoseyir’i adım adım anlatan rehber.",
+  "ny_baslik": "Motosiklet Navigasyonu Nasıl Kullanılır? — Motoseyir",
+  "ny_aciklama": "Motoseyir’de motosiklet rotası nasıl kurulur? Rota oluşturma, çok duraklı tur, sürüş kaydı, tur günlüğü, grup sürüşü, interkom ve abonelik: adım adım rehber.",
   "ny_eyebrow": "Nasıl yapılır",
   "ny_h1": "Motoseyir’i baştan sona böyle kullanıyorsun",
   "ny_lead": "Bu sayfa, uygulama içindeki Ayarlar → “Nasıl yapılır?” bölümünün geniş hâli: aynı konular, aynı sıra. Başlığa dokunup açıyorsun, tekrar dokunup kapatıyorsun.",

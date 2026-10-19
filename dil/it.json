@@ -24,8 +24,6 @@
 
   "baslik": "Navigatore per moto e pianificatore di percorsi — Motoseyir",
   "aciklama": "Navigazione per motociclisti calcolata sui chilometri: percorso più corto, strade secondarie, tour con più tappe, giro in gruppo, interfono e percorsi leggendari. Motoseyir sull’App Store.",
-  "og_baslik": "Motoseyir — il navigatore che conta i chilometri, non i minuti",
-  "og_aciklama": "Percorso più corto, strade secondarie, tour con più tappe, giro in gruppo, interfono e percorsi leggendari — in una sola app.",
   "jsonld_aciklama": "App di navigazione per motociclisti calcolata sulla distanza: percorso più corto, strade secondarie, tour con più tappe, giro in gruppo, interfono e percorsi leggendari.",
   "jsonld_ucretsiz": "7 giorni di prova gratuita di tutte le funzioni Pro con i piani trimestrale e annuale, per i nuovi abbonati, dove disponibile.",
   "jsonld_pro": "Ordine migliore con più tappe, tour e piste illimitati, modalità Strade secondarie e Costa, Esplora, creazione di gruppi, interfono e AI CoRider.",
@@ -157,11 +155,9 @@
   "iletisim_insta_p": "Seguici per nuovi percorsi, foto dei giri e annunci.",
 
   "oz_baslik": "Funzioni dell’app di navigazione per moto — Motoseyir",
-  "oz_aciklama": "Tutte le funzioni di Motoseyir in una pagina: percorso più corto, ordine migliore delle tappe, strade secondarie, percorsi leggendari, Esplora, diario del tour, meteo, piste, giro in gruppo, interfono, uso in orizzontale e Community.",
-  "oz_og_baslik": "Tutte le funzioni di Motoseyir",
-  "oz_og_aciklama": "Percorso più corto, ordine migliore delle tappe, strade secondarie, percorsi leggendari, giro in gruppo, interfono e altro.",
+  "oz_aciklama": "Tutte le funzioni del navigatore per moto Motoseyir in una pagina: percorso più corto, tappe, strade secondarie, percorsi leggendari, diario del tour, gruppo.",
   "oz_eyebrow": "Funzioni · in dettaglio",
-  "oz_h1": "Tutte le funzioni di Motoseyir",
+  "oz_h1": "Motoseyir, navigatore per moto: tutte le funzioni",
   "oz_sayfa_lead": "Questa pagina cresce. Quando arriva una funzione nuova, viene aggiunta prima qui, sotto il titolo giusto. Qui sotto ci sono cinque gruppi: città e corrieri, viaggi, in strada e dopo il giro, andare in gruppo, in montagna e in auto.",
 
   "kume1_h2": "Per la città e per i corrieri",
@@ -247,10 +243,8 @@
   "oz24_h3": "Sei icone",
   "oz24_p": "Sulla mappa ti rappresenta una di queste icone: Supersport, Chopper, Maxi scooter, Touring, Freccia o Casco. La scegli in Impostazioni → Mappa → Icona di navigazione e su CarPlay compare la stessa. Le prime quattro sono in 3D con il pilota in sella e si inclinano in curva.",
 
-  "ny_baslik": "Come si usa Motoseyir — percorsi, gruppo e diario",
-  "ny_aciklama": "La guida passo passo di Motoseyir: costruire un percorso, tour con più tappe, registrazione del giro, diario del tour, giro in gruppo e interfono, Community, impostazioni e abbonamento.",
-  "ny_og_baslik": "Come si usa Motoseyir?",
-  "ny_og_aciklama": "Dal percorso al giro in gruppo, dalla registrazione alla Community: la guida passo passo di Motoseyir.",
+  "ny_baslik": "Come usare il navigatore per moto Motoseyir, passo passo",
+  "ny_aciklama": "Come creare un percorso moto con Motoseyir: percorso, tour con più tappe, registrazione del giro, diario del tour, giro in gruppo, interfono e abbonamento.",
   "ny_eyebrow": "Come si fa",
   "ny_h1": "Ecco come si usa Motoseyir dall’inizio alla fine",
   "ny_lead": "Questa pagina è la versione lunga di Impostazioni → “Come si fa?” nell’app: stessi argomenti, stesso ordine. Tocca un titolo per aprirlo, tocca di nuovo per chiuderlo.",

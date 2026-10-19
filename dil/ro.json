@@ -24,8 +24,6 @@
 
   "baslik": "Navigație pentru motociclete și planificator de trasee — Motoseyir",
   "aciklama": "Navigație pentru motocicliști calculată în kilometri: cel mai scurt traseu, drumuri secundare, tururi cu mai multe opriri, mers în grup, interfon și trasee legendare. Motoseyir, în App Store.",
-  "og_baslik": "Motoseyir — navigația care numără kilometrii, nu minutele",
-  "og_aciklama": "Cel mai scurt traseu, drumuri secundare, tururi cu mai multe opriri, mers în grup, interfon și trasee legendare — într-o singură aplicație.",
   "jsonld_aciklama": "Aplicație de navigație pentru motocicliști calculată pe distanță: cel mai scurt traseu, drumuri secundare, tururi cu mai multe opriri, mers în grup, interfon și trasee legendare.",
   "jsonld_ucretsiz": "7 zile de probă gratuită a tuturor funcțiilor Pro la abonamentele de 3 luni și anual, pentru abonații noi, acolo unde este disponibil.",
   "jsonld_pro": "Cea mai bună ordine pentru mai multe opriri, tururi și trasee GPX nelimitate, modurile drumuri secundare și coastă, Discover, crearea de grupuri, interfon și AI CoRider.",
@@ -156,12 +154,10 @@
   "iletisim_destek_p": "Scrie-ne direct din Settings → „Something wrong, or an idea?”; răspunsurile vin în același loc.",
   "iletisim_insta_p": "Urmărește-ne pentru trasee noi, poze din curse și anunțuri.",
 
-  "oz_baslik": "Funcțiile aplicației de navigație pentru motociclete — Motoseyir",
-  "oz_aciklama": "Toate funcțiile Motoseyir pe o pagină: cel mai scurt traseu, cea mai bună ordine a opririlor, drumuri secundare, trasee legendare, Discover, jurnalul turului, vremea, trasee GPX, mers în grup, interfon, mod peisaj și Community.",
-  "oz_og_baslik": "Toate funcțiile Motoseyir",
-  "oz_og_aciklama": "Cel mai scurt traseu, cea mai bună ordine a opririlor, drumuri secundare, trasee legendare, mers în grup, interfon și altele.",
+  "oz_baslik": "Funcțiile aplicației de navigație moto — Motoseyir",
+  "oz_aciklama": "Toate funcțiile navigației moto Motoseyir pe o pagină: cel mai scurt traseu, ordinea opririlor, drumuri secundare, trasee legendare, jurnalul turului.",
   "oz_eyebrow": "Funcții · în detaliu",
-  "oz_h1": "Toate funcțiile Motoseyir",
+  "oz_h1": "Motoseyir, navigație moto: toate funcțiile",
   "oz_sayfa_lead": "Pagina asta crește. Când apare o funcție nouă, ajunge mai întâi aici, sub titlul potrivit. Mai jos sunt cinci grupe: oraș și curieri, călătorii, pe drum și după cursă, mersul împreună, și în munți și în mașină.",
 
   "kume1_h2": "Pentru oraș și pentru curieri",
@@ -247,10 +243,8 @@
   "oz24_h3": "Șase marcaje",
   "oz24_p": "Pe hartă te reprezintă un Supersport, Chopper, Maxi scooter, Touring, Arrow sau Helmet. Îl alegi la Settings → Map → Navigation marker, iar CarPlay îl arată pe același. Primele patru sunt 3D, cu motociclist pe ele, și se înclină în curbe.",
 
-  "ny_baslik": "Cum se folosește Motoseyir — traseu, grup și jurnal",
-  "ny_aciklama": "Ghid pas cu pas pentru Motoseyir: construirea unui traseu, tururi cu mai multe opriri, înregistrarea cursei, jurnalul turului, mers în grup și interfon, Community, setări și abonament.",
-  "ny_og_baslik": "Cum se folosește Motoseyir?",
-  "ny_og_aciklama": "De la traseu la mersul în grup, de la înregistrare la Community: ghid pas cu pas pentru Motoseyir.",
+  "ny_baslik": "Cum folosești navigația moto Motoseyir, pas cu pas",
+  "ny_aciklama": "Cum planifici un traseu moto în Motoseyir: construirea traseului, tururi cu mai multe opriri, înregistrarea cursei, jurnalul turului, grup și interfon.",
   "ny_eyebrow": "Cum funcționează",
   "ny_h1": "Așa folosești Motoseyir de la cap la coadă",
   "ny_lead": "Pagina asta e versiunea lungă a Settings → „How it works” din aplicație: aceleași subiecte, aceeași ordine. Atingi un titlu și se deschide, atingi din nou și se închide. Numele butoanelor sunt în engleză, exact cum le vezi în aplicație.",

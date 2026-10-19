@@ -24,8 +24,6 @@
 
   "baslik": "Motorcycle Navigation and Route Planner — Motoseyir",
   "aciklama": "Distance-first navigation for motorcyclists: shortest route, back roads, multi-stop tours, group riding, intercom and legendary routes. Motoseyir, on the App Store.",
-  "og_baslik": "Motoseyir — The Sat Nav That Counts Kilometres, Not Minutes",
-  "og_aciklama": "Shortest route, back roads, multi-stop tours, group riding, intercom and legendary routes — in one app.",
   "jsonld_aciklama": "Distance-first navigation app for motorcyclists: shortest route, back roads, multi-stop tours, group riding, intercom and legendary routes.",
   "jsonld_ucretsiz": "Unlimited routing and navigation in Türkiye, Europe and the USA, 1 saved tour; Pro’s 3-month and yearly plans include a 7-day free trial outside Türkiye, for new subscribers.",
   "jsonld_pro": "Best order for multiple stops, unlimited tours and trails, Back roads and Coast modes, Discover, group creation, intercom and AI CoRider.",
@@ -157,11 +155,9 @@
   "iletisim_insta_p": "Follow for new routes, ride photos and announcements.",
 
   "oz_baslik": "Motorcycle Navigation App Features — Motoseyir",
-  "oz_aciklama": "Every Motoseyir feature on one page: shortest route, best order for stops, back roads, legendary routes, Discover, tour journal, weather, trails, group riding, intercom, landscape mode and Community.",
-  "oz_og_baslik": "Every Motoseyir Feature",
-  "oz_og_aciklama": "Shortest route, best order for stops, back roads, legendary routes, group riding, intercom and more.",
+  "oz_aciklama": "Every feature of the Motoseyir motorcycle navigation app on one page: shortest route, stop order, back roads, legendary routes, tour journal, group riding.",
   "oz_eyebrow": "Features · in detail",
-  "oz_h1": "Every Motoseyir feature",
+  "oz_h1": "Motoseyir motorcycle navigation: every feature",
   "oz_sayfa_lead": "This page grows. When a new feature arrives it goes here first, under the heading it belongs to. There are five groups below: city and courier riding, touring, on the road and after the ride, riding together, and in the mountains and in the car.",
 
   "kume1_h2": "For city and courier riding",
@@ -247,10 +243,8 @@
   "oz24_h3": "Six markers",
   "oz24_p": "On the map you are a Supersport, Chopper, Maxi scooter, Touring, Arrow or Helmet. You pick it under Settings → Map → Navigation marker, and CarPlay shows the same one. The first four are 3D with a rider on board and lean into bends.",
 
-  "ny_baslik": "How to Use Motoseyir — Routes, Group Riding and the Journal",
-  "ny_aciklama": "A step-by-step guide to Motoseyir: building a route, multi-stop tours, ride recording, the tour journal, group riding and the intercom, Community, Settings and subscriptions.",
-  "ny_og_baslik": "How to Use Motoseyir",
-  "ny_og_aciklama": "From building a route to group riding, from ride recording to Community: a step-by-step guide to Motoseyir.",
+  "ny_baslik": "How to Use Motoseyir Motorcycle Navigation, Step by Step",
+  "ny_aciklama": "How to plan a motorcycle route in Motoseyir: building a route, multi-stop tours, ride recording, the tour journal, group riding, the intercom and subscriptions.",
   "ny_eyebrow": "How it works",
   "ny_h1": "How to use Motoseyir, start to finish",
   "ny_lead": "This page is the long version of Settings → “How it works” inside the app: same topics, same order. Tap a heading to open it, tap again to close.",

@@ -1,7 +1,6 @@
 {
-  "cr_baslik": "AI CoRider — Kaskında konuşan yol arkadaşı | Motoseyir",
-  "cr_og_baslik": "AI CoRider: gözün yolda kalsın, o dinlesin",
-  "cr_aciklama": "AI CoRider, Motoseyir’in sesli yol arkadaşı: durak ekler, yol üstünde yer arar, hava ve yakıt menzilini söyler, rotayı senin yerine değiştirir. Eller gidonda kalır.",
+  "cr_baslik": "AI CoRider: Motosiklet İçin Sesli Yol Arkadaşı — Motoseyir",
+  "cr_aciklama": "AI CoRider, Motoseyir’in sesli yol arkadaşı: durak ekler, yol üstünde yer arar, hava ve yakıt menzilini söyler, rotayı değiştirir. Eller gidonda kalır.",
   "cr_n_nasil": "Nasıl çalışır",
   "cr_n_konusma": "Konuşmalar",
   "cr_n_yetenek": "Neler yapar",

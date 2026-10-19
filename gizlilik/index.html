@@ -3,10 +3,75 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Motoseyir — Gizlilik ve Destek</title>
+<title>Gizlilik Politikası ve Destek — Motoseyir</title>
+<meta name="description" content="Motoseyir gizlilik politikası ve destek: hesap gerekmez, e-posta ve telefon istenmez, toplanan veriler ve sunucularımız ayrıntısıyla anlatılır, reklam yok.">
+<link rel="canonical" href="https://motoseyir-app.com/gizlilik/">
 <link rel="alternate" hreflang="tr" href="https://motoseyir-app.com/gizlilik/">
 <link rel="alternate" hreflang="en" href="https://motoseyir-app.com/gizlilik/en/">
 <link rel="alternate" hreflang="x-default" href="https://motoseyir-app.com/gizlilik/en/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Motoseyir">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:title" content="Gizlilik Politikası ve Destek — Motoseyir">
+<meta property="og:description" content="Motoseyir gizlilik politikası ve destek: hesap gerekmez, e-posta ve telefon istenmez, toplanan veriler ve sunucularımız ayrıntısıyla anlatılır, reklam yok.">
+<meta property="og:url" content="https://motoseyir-app.com/gizlilik/">
+<meta property="og:image" content="https://motoseyir-app.com/img/og-kapak.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Gizlilik Politikası ve Destek — Motoseyir">
+<meta name="twitter:description" content="Motoseyir gizlilik politikası ve destek: hesap gerekmez, e-posta ve telefon istenmez, toplanan veriler ve sunucularımız ayrıntısıyla anlatılır, reklam yok.">
+<meta name="twitter:image" content="https://motoseyir-app.com/img/og-kapak.jpg">
+<link rel="icon" href="/img/favicon.png">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://motoseyir-app.com/gizlilik/#sayfa",
+      "url": "https://motoseyir-app.com/gizlilik/",
+      "name": "Gizlilik Politikası ve Destek",
+      "description": "Motoseyir gizlilik politikası ve destek: hesap gerekmez, e-posta ve telefon istenmez, toplanan veriler ve sunucularımız ayrıntısıyla anlatılır, reklam yok.",
+      "inLanguage": "tr",
+      "isPartOf": {
+        "@id": "https://motoseyir-app.com/#website"
+      },
+      "breadcrumb": {
+        "@id": "https://motoseyir-app.com/gizlilik/#ekmek"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://motoseyir-app.com/gizlilik/#ekmek",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Anasayfa",
+          "item": "https://motoseyir-app.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Gizlilik Politikası ve Destek",
+          "item": "https://motoseyir-app.com/gizlilik/"
+        }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://motoseyir-app.com/#website",
+      "url": "https://motoseyir-app.com/",
+      "name": "Motoseyir",
+      "inLanguage": "tr"
+    }
+  ]
+}
+</script>
 <script>
   // 4 Eki 2026: App Store açıklamasındaki ve mağazadaki gizlilik bağlantısı bu adrese geliyor; ABD reklamından gelen
   // kullanıcı Türkçe metin görmesin. Tarayıcı dillerinin hiçbiri Türkçe değilse İngilizce sayfaya geçer.
@@ -14,6 +79,8 @@
   (function () {
     try {
       if (/[?&]dil=tr\b/.test(location.search)) return;
+      // 20 Eki 2026: arama motoru robotu tarayıcı dili olmadan geliyor; Türkçe sayfa Türkçe indekslensin (hreflang ile İngilizce eşi bağlı).
+      if (/bot|crawl|spider|slurp|google|bing|yandex|duckduck|facebookexternalhit/i.test(navigator.userAgent || "")) return;
       var d = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ""]);
       for (var i = 0; i < d.length; i++) if (/^tr\b/i.test(d[i])) return;
       location.replace("/gizlilik/en/" + location.hash);

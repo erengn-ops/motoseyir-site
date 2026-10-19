@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Motoseyir — motociklistička navigacija za vijugave ceste</title>
-<meta name="description" content="Motoseyir je navigacija za motocikliste koja planira po udaljenosti, a ne po minutama. Načini sporednih cesta i obale, generator tura, 1.600+ planinskih prijevoja, vožnja u grupi i CarPlay.">
+<title>Moto navigacija i planer ruta — Motoseyir</title>
+<meta name="description" content="Motoseyir je moto navigacija koja planira po udaljenosti, a ne po minutama. Sporedne ceste, planiranje tura, 1.600+ prijevoja, vožnja u grupi i CarPlay.">
 <link rel="canonical" href="https://motoseyir-app.com/hr/">
 <link rel="alternate" hreflang="tr" href="https://motoseyir-app.com/">
 <link rel="alternate" hreflang="en" href="https://motoseyir-app.com/en/">
@@ -22,15 +22,22 @@
 <link rel="alternate" hreflang="el" href="https://motoseyir-app.com/el/">
 <link rel="alternate" hreflang="x-default" href="https://motoseyir-app.com/en/">
 
-<!-- Open Graph -->
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Motoseyir">
 <meta property="og:locale" content="hr_HR">
-<meta property="og:title" content="Motoseyir — motociklistička navigacija za vijugave ceste">
-<meta property="og:description" content="Rute po udaljenosti, sporedne ceste, generator tura, 1.600+ prijevoja, vožnja u grupi, interfon i CarPlay — u jednoj aplikaciji.">
+<meta property="og:title" content="Moto navigacija i planer ruta — Motoseyir">
+<meta property="og:description" content="Motoseyir je moto navigacija koja planira po udaljenosti, a ne po minutama. Sporedne ceste, planiranje tura, 1.600+ prijevoja, vožnja u grupi i CarPlay.">
 <meta property="og:url" content="https://motoseyir-app.com/hr/">
 <meta property="og:image" content="https://motoseyir-app.com/img/og-kapak.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Moto navigacija i planer ruta — Motoseyir">
+<meta name="twitter:description" content="Motoseyir je moto navigacija koja planira po udaljenosti, a ne po minutama. Sporedne ceste, planiranje tura, 1.600+ prijevoja, vožnja u grupi i CarPlay.">
+<meta name="twitter:image" content="https://motoseyir-app.com/img/og-kapak.jpg">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 
 <!-- Apple akıllı afiş: iOS Safari'de sayfanın üstünde "App Store'da aç" şeridi. -->
 <meta name="apple-itunes-app" content="app-id=6792549131">
@@ -68,30 +75,149 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "Motoseyir",
-  "operatingSystem": "iOS",
-  "applicationCategory": "NavigationApplication",
-  "inLanguage": "hr",
-  "url": "https://motoseyir-app.com/hr/",
-  "image": "https://motoseyir-app.com/img/og-kapak.jpg",
-  "description": "Navigacija za motocikliste po udaljenosti: najkraća ruta, sporedne ceste, generator tura, prijevoji, vožnja u grupi, interfon, CarPlay i legendarne ceste.",
-  "offers": [
+  "@graph": [
     {
-      "@type": "Offer",
-      "name": "Besplatno",
-      "price": "0",
-      "priceCurrency": "EUR",
-      "description": "Neograničeno planiranje rute i navigacija u Turskoj, Europi i SAD-u, 1 spremljena tura; tromjesečna i godišnja Pro pretplata može novim pretplatnicima donijeti 7 dana besplatne probe."
+      "@type": "Organization",
+      "@id": "https://motoseyir-app.com/#organization",
+      "name": "Motoseyir",
+      "url": "https://motoseyir-app.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://motoseyir-app.com/img/uygulama-simgesi-512.png",
+        "width": 512,
+        "height": 512
+      },
+      "sameAs": [
+        "https://www.instagram.com/motoseyir.app/",
+        "https://www.instagram.com/motoseyir.app.en/"
+      ]
     },
     {
-      "@type": "Offer",
-      "name": "Motoseyir Pro",
-      "category": "subscription",
-      "description": "AI CoRider, CarPlay, stvaranje grupa, Discover, neograničene ture i staze, načini ture te slaganje vijugavih tura i tura bez autocesta."
+      "@type": "WebSite",
+      "@id": "https://motoseyir-app.com/#website",
+      "url": "https://motoseyir-app.com/",
+      "name": "Motoseyir",
+      "inLanguage": "hr",
+      "publisher": {
+        "@id": "https://motoseyir-app.com/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://motoseyir-app.com/hr/#sayfa",
+      "url": "https://motoseyir-app.com/hr/",
+      "name": "Moto navigacija i planer ruta — Motoseyir",
+      "description": "Motoseyir je moto navigacija koja planira po udaljenosti, a ne po minutama. Sporedne ceste, planiranje tura, 1.600+ prijevoja, vožnja u grupi i CarPlay.",
+      "inLanguage": "hr",
+      "isPartOf": {
+        "@id": "https://motoseyir-app.com/#website"
+      },
+      "about": {
+        "@id": "https://motoseyir-app.com/#uygulama"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://motoseyir-app.com/img/og-kapak.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "dateModified": "2026-10-20",
+      "mainEntity": {
+        "@id": "https://motoseyir-app.com/hr/#sss"
+      }
+    },
+    {
+      "@type": "MobileApplication",
+      "@id": "https://motoseyir-app.com/#uygulama",
+      "name": "Motoseyir",
+      "operatingSystem": "iOS",
+      "applicationCategory": "NavigationApplication",
+      "inLanguage": "hr",
+      "url": "https://motoseyir-app.com/hr/",
+      "image": "https://motoseyir-app.com/img/og-kapak.jpg",
+      "description": "Navigacija za motocikliste po udaljenosti: najkraća ruta, sporedne ceste, generator tura, prijevoji, vožnja u grupi, interfon, CarPlay i legendarne ceste.",
+      "screenshot": [
+        "https://motoseyir-app.com/m/ekran-nav-en.webp",
+        "https://motoseyir-app.com/m/ekran-tur-en.webp",
+        "https://motoseyir-app.com/m/ekran-gecit-en.webp",
+        "https://motoseyir-app.com/m/ekran-corider-en.webp"
+      ],
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Besplatno",
+          "price": "0",
+          "priceCurrency": "EUR",
+          "description": "Neograničeno planiranje rute i navigacija u Turskoj, Europi i SAD-u, 1 spremljena tura; tromjesečna i godišnja Pro pretplata može novim pretplatnicima donijeti 7 dana besplatne probe."
+        },
+        {
+          "@type": "Offer",
+          "name": "Motoseyir Pro",
+          "category": "subscription",
+          "description": "AI CoRider, CarPlay, stvaranje grupa, Discover, neograničene ture i staze, načini ture te slaganje vijugavih tura i tura bez autocesta."
+        }
+      ],
+      "downloadUrl": "https://apps.apple.com/hr/app/id6792549131?pt=128439797&ct=site-hr&mt=8",
+      "publisher": {
+        "@id": "https://motoseyir-app.com/#organization"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://motoseyir-app.com/hr/#sss",
+      "inLanguage": "hr",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Što je Motoseyir?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Motoseyir je aplikacija za motociklističku navigaciju i planiranje ruta. Računa po udaljenosti, a ne po minutama, ima načine za sporedne ceste i obalu te slaže turu u smjeru i na broj sati koje odabereš."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Je li Motoseyir besplatan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Planiranje rute i navigacija korak po korak besplatni su i neograničeni u Turskoj, Europi i SAD-u, bez računa. Besplatna razina čuva 1 spremljenu turu. AI CoRider, CarPlay, stvaranje grupa, Discover i neograničene ture dio su Pro."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Po čemu se Motoseyir razlikuje od drugih navigacija?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Planira po udaljenosti, a ne po minutama: uspoređuje varijante između istih dviju točaka i predlaže najkraću. Na turi s više stanica izračuna i redoslijed stanica."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Gdje radi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Planiranje rute i navigacija rade u Turskoj, Europi i SAD-u. Karta prijevoja sadrži više od 1.600 planinskih prijevoja u 36 zemalja."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Radi li s CarPlayem?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Da. Apple CarPlay dio je Pro; tvoja ruta prikazuje se preko cijelog zaslona auta."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Mogu li voziti s prijateljima?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Da. Vozite istom rutom, sve vidite na karti i razgovarate preko grupnog interfona. Pridruživanje grupi pozivom ili kodom je besplatno; stvaranje grupe dio je Pro."
+          }
+        }
+      ]
     }
-  ],
-  "downloadUrl": "https://apps.apple.com/hr/app/id6792549131?pt=128439797&amp;ct=site-hr&amp;mt=8"
+  ]
 }
 </script>
 </head>
@@ -143,7 +269,7 @@
   </div>
   <div class="k-ic">
     <div class="k-metin">
-      <p class="ust-yazi">Motoseyir · Navigacija motociklista</p>
+      <p class="ust-yazi">Motoseyir · Moto navigacija</p>
       <h1>Za one koji <i>vole zavoj.</i></h1>
       <p class="giris">Motoseyir planira po udaljenosti, a ne po minutama. Sporedne ceste ili obala, ti biraš. Ili mu reci kamo želiš voziti pa neka složi turu; ili odaberi prijevoj i kreni.</p>
       <div class="cta-satir">
@@ -583,6 +709,8 @@
         <li><h3>Vodoravni prikaz</h3><p>Okreni telefon vodoravno i kartice se skupe lijevo, a karta zauzme ostatak; „My Tours” prelazi na dva stupca.</p></li>
         <li><h3>Jedinice i jezik</h3><p>Jedinice prate gdje se nalaziš: milje, mph i stope u SAD-u, milje i jardi u Ujedinjenom Kraljevstvu, drugdje kilometri. Aplikacija govori turski, engleski, njemački, francuski i talijanski i prati jezik tvog telefona.</p></li>
         </ul>
+        <p class="cr-daha"><a href="/hr/ozellikler.html">Sve funkcije detaljno →</a></p>
+        <p class="cr-daha"><a href="/hr/nasil-yapilir.html">Otvaraš aplikaciju prvi put? Počni ovdje →</a></p>
       </div>
     </div>
   </section>
@@ -612,6 +740,27 @@
         </div>
       </div>
       <p class="fiyat-not">Trenutne cijene razlikuju se po regiji; vidiš ih na zaslonu pretplate u App Storeu. Otkazati možeš bilo kad u svom App Store računu.</p>
+    </div>
+  </section>
+
+  <!-- SSS (20 Eki 2026): arama niyeti için kısa, GÖRÜNÜR soru-cevaplar (yalnız sitede zaten yazan olgular). FAQPage yapısal verisi aynı
+       anahtarlardan (faq_q1/faq_a1 …) uret.py json_ld() ile üretilir; buraya soru eklerken dil dosyalarına da ekle, görünür metin = JSON-LD. -->
+  <section class="bolum" id="sss" aria-labelledby="sss-h">
+    <div class="kap">
+      <div data-r>
+        <p class="km">Česta pitanja</p>
+        <h2 id="sss-h">Moto navigacija, <i>česta pitanja.</i></h2>
+      </div>
+      <div class="ayrinti" data-r>
+        <ul class="izgara">
+        <li><h3>Što je Motoseyir?</h3><p>Motoseyir je aplikacija za motociklističku navigaciju i planiranje ruta. Računa po udaljenosti, a ne po minutama, ima načine za sporedne ceste i obalu te slaže turu u smjeru i na broj sati koje odabereš.</p></li>
+        <li><h3>Je li Motoseyir besplatan?</h3><p>Planiranje rute i navigacija korak po korak besplatni su i neograničeni u Turskoj, Europi i SAD-u, bez računa. Besplatna razina čuva 1 spremljenu turu. AI CoRider, CarPlay, stvaranje grupa, Discover i neograničene ture dio su Pro.</p></li>
+        <li><h3>Po čemu se Motoseyir razlikuje od drugih navigacija?</h3><p>Planira po udaljenosti, a ne po minutama: uspoređuje varijante između istih dviju točaka i predlaže najkraću. Na turi s više stanica izračuna i redoslijed stanica.</p></li>
+        <li><h3>Gdje radi?</h3><p>Planiranje rute i navigacija rade u Turskoj, Europi i SAD-u. Karta prijevoja sadrži više od 1.600 planinskih prijevoja u 36 zemalja.</p></li>
+        <li><h3>Radi li s CarPlayem?</h3><p>Da. Apple CarPlay dio je Pro; tvoja ruta prikazuje se preko cijelog zaslona auta.</p></li>
+        <li><h3>Mogu li voziti s prijateljima?</h3><p>Da. Vozite istom rutom, sve vidite na karti i razgovarate preko grupnog interfona. Pridruživanje grupi pozivom ili kodom je besplatno; stvaranje grupe dio je Pro.</p></li>
+        </ul>
+      </div>
     </div>
   </section>
 </div>

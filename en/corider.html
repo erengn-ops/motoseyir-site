@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>AI CoRider — the riding partner in your helmet | Motoseyir</title>
-<meta name="description" content="Motoseyir’s AI CoRider talks to you through your helmet: it adds stops, finds places on your route, checks weather and fuel range, and changes the route for you.">
+<title>AI CoRider — AI Voice Assistant for Motorcycles | Motoseyir</title>
+<meta name="description" content="Motoseyir’s AI CoRider talks to you through your helmet: it adds stops, finds places on your route, checks weather and fuel range, and changes the route.">
 <link rel="canonical" href="https://motoseyir-app.com/en/corider.html">
 <link rel="alternate" hreflang="tr" href="https://motoseyir-app.com/corider.html">
 <link rel="alternate" hreflang="en" href="https://motoseyir-app.com/en/corider.html">
@@ -22,15 +22,22 @@
 <link rel="alternate" hreflang="el" href="https://motoseyir-app.com/el/corider.html">
 <link rel="alternate" hreflang="x-default" href="https://motoseyir-app.com/en/corider.html">
 
-<!-- Open Graph -->
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Motoseyir">
 <meta property="og:locale" content="en_GB">
-<meta property="og:title" content="AI CoRider: eyes on the road, it listens">
-<meta property="og:description" content="Motoseyir’s AI CoRider talks to you through your helmet: it adds stops, finds places on your route, checks weather and fuel range, and changes the route for you.">
+<meta property="og:title" content="AI CoRider — AI Voice Assistant for Motorcycles | Motoseyir">
+<meta property="og:description" content="Motoseyir’s AI CoRider talks to you through your helmet: it adds stops, finds places on your route, checks weather and fuel range, and changes the route.">
 <meta property="og:url" content="https://motoseyir-app.com/en/corider.html">
 <meta property="og:image" content="https://motoseyir-app.com/img/og-kapak.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI CoRider — AI Voice Assistant for Motorcycles | Motoseyir">
+<meta name="twitter:description" content="Motoseyir’s AI CoRider talks to you through your helmet: it adds stops, finds places on your route, checks weather and fuel range, and changes the route.">
+<meta name="twitter:image" content="https://motoseyir-app.com/img/og-kapak.jpg">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 <meta name="apple-itunes-app" content="app-id=6792549131">
 <meta name="theme-color" content="#050B13">
 <link rel="icon" href="/img/favicon.png">
@@ -52,25 +59,181 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "WebPage",
-      "name": "AI CoRider — the riding partner in your helmet | Motoseyir",
-      "url": "https://motoseyir-app.com/en/corider.html",
+      "@type": "Organization",
+      "@id": "https://motoseyir-app.com/#organization",
+      "name": "Motoseyir",
+      "url": "https://motoseyir-app.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://motoseyir-app.com/img/uygulama-simgesi-512.png",
+        "width": 512,
+        "height": 512
+      },
+      "sameAs": [
+        "https://www.instagram.com/motoseyir.app/",
+        "https://www.instagram.com/motoseyir.app.en/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://motoseyir-app.com/#website",
+      "url": "https://motoseyir-app.com/",
+      "name": "Motoseyir",
       "inLanguage": "en",
-      "description": "Motoseyir’s AI CoRider talks to you through your helmet: it adds stops, finds places on your route, checks weather and fuel range, and changes the route for you.",
-      "isPartOf": {"@type": "WebSite", "name": "Motoseyir", "url": "https://motoseyir-app.com/"}
+      "publisher": {
+        "@id": "https://motoseyir-app.com/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://motoseyir-app.com/en/corider.html#sayfa",
+      "url": "https://motoseyir-app.com/en/corider.html",
+      "name": "AI CoRider — AI Voice Assistant for Motorcycles | Motoseyir",
+      "description": "Motoseyir’s AI CoRider talks to you through your helmet: it adds stops, finds places on your route, checks weather and fuel range, and changes the route.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://motoseyir-app.com/#website"
+      },
+      "about": {
+        "@id": "https://motoseyir-app.com/#uygulama"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://motoseyir-app.com/img/og-kapak.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "dateModified": "2026-10-20",
+      "breadcrumb": {
+        "@id": "https://motoseyir-app.com/en/corider.html#ekmek"
+      },
+      "mainEntity": {
+        "@id": "https://motoseyir-app.com/en/corider.html#sss"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://motoseyir-app.com/en/corider.html#ekmek",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://motoseyir-app.com/en/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "AI CoRider",
+          "item": "https://motoseyir-app.com/en/corider.html"
+        }
+      ]
+    },
+    {
+      "@type": "MobileApplication",
+      "@id": "https://motoseyir-app.com/#uygulama",
+      "name": "Motoseyir",
+      "operatingSystem": "iOS",
+      "applicationCategory": "NavigationApplication",
+      "inLanguage": "en",
+      "url": "https://motoseyir-app.com/en/",
+      "image": "https://motoseyir-app.com/img/og-kapak.jpg",
+      "description": "Distance-first navigation app for motorcyclists: shortest route, back roads, tour generator, mountain passes, group riding, intercom, CarPlay and legendary routes.",
+      "screenshot": [
+        "https://motoseyir-app.com/m/ekran-nav-en.webp",
+        "https://motoseyir-app.com/m/ekran-tur-en.webp",
+        "https://motoseyir-app.com/m/ekran-gecit-en.webp",
+        "https://motoseyir-app.com/m/ekran-corider-en.webp"
+      ],
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Free",
+          "price": "0",
+          "priceCurrency": "EUR",
+          "description": "Unlimited routing and navigation in Türkiye, Europe and the USA, 1 saved tour; Pro’s 3-month and yearly plans can include a 7-day free trial for new subscribers."
+        },
+        {
+          "@type": "Offer",
+          "name": "Motoseyir Pro",
+          "category": "subscription",
+          "description": "AI CoRider, CarPlay, group creation, Discover, unlimited tours and trails, tour modes, and building twisty or motorway-free tours."
+        }
+      ],
+      "downloadUrl": "https://apps.apple.com/app/id6792549131?pt=128439797&ct=site-en&mt=8",
+      "publisher": {
+        "@id": "https://motoseyir-app.com/#organization"
+      }
     },
     {
       "@type": "FAQPage",
+      "@id": "https://motoseyir-app.com/en/corider.html#sss",
       "inLanguage": "en",
       "mainEntity": [
-        {"@type": "Question", "name": "Is AI CoRider always listening?", "acceptedAnswer": {"@type": "Answer", "text": "No. There’s no wake word. The microphone opens only when you tap the AI CoRider button on the map. The session closes when you end it, after a stretch of silence, or when navigation ends."}},
-        {"@type": "Question", "name": "Does it work without internet?", "acceptedAnswer": {"@type": "Answer", "text": "No. What you say goes to a cloud voice service to produce the answer, so AI CoRider needs an internet connection. Without one, a session can’t start."}},
-        {"@type": "Question", "name": "Which languages can I speak?", "acceptedAnswer": {"@type": "Answer", "text": "It answers in the language you speak. There are no commands to learn; say it in your own words."}},
-        {"@type": "Question", "name": "What happens when my talk time runs out?", "acceptedAnswer": {"@type": "Answer", "text": "Pro renews 10 minutes every 30 days, and the free trial includes 5. If that isn’t enough, add a 30, 60 or 180 minute pack that never expires."}},
-        {"@type": "Question", "name": "What’s the difference between Planner and Chat?", "acceptedAnswer": {"@type": "Answer", "text": "Planner knows your route and gets things done: it adds stops, finds places and changes the route, and it’s included in Pro. In Chat you pick the topic and it remembers earlier chats; it opens with a minute pack."}},
-        {"@type": "Question", "name": "Does everyone in a group hear it, and whose minutes are used?", "acceptedAnswer": {"@type": "Answer", "text": "If you call AI CoRider into the group intercom, everyone in the room hears it. The minutes come from the account of whoever called it."}},
-        {"@type": "Question", "name": "I ask if my fuel will last, but it gives no range. Why?", "acceptedAnswer": {"@type": "Answer", "text": "For range, enter once in Settings the distance you rode on a full tank. Until you do, AI CoRider doesn’t guess; it tells you so."}},
-        {"@type": "Question", "name": "Do I need Bluetooth to hear it in my helmet?", "acceptedAnswer": {"@type": "Answer", "text": "If your helmet is connected to the phone over Bluetooth, the voice comes through it; otherwise it plays from the phone. Can’t hear it in the wind? Just say “turn it up”."}}
+        {
+          "@type": "Question",
+          "name": "Is AI CoRider always listening?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. There’s no wake word. The microphone opens only when you tap the AI CoRider button on the map. The session closes when you end it, after a stretch of silence, or when navigation ends."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it work without internet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. What you say goes to a cloud voice service to produce the answer, so AI CoRider needs an internet connection. Without one, a session can’t start."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which languages can I speak?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It answers in the language you speak. There are no commands to learn; say it in your own words."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens when my talk time runs out?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pro renews 10 minutes every 30 days, and the free trial includes 5. If that isn’t enough, add a 30, 60 or 180 minute pack that never expires."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What’s the difference between Planner and Chat?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Planner knows your route and gets things done: it adds stops, finds places and changes the route, and it’s included in Pro. In Chat you pick the topic and it remembers earlier chats; it opens with a minute pack."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does everyone in a group hear it, and whose minutes are used?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If you call AI CoRider into the group intercom, everyone in the room hears it. The minutes come from the account of whoever called it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "I ask if my fuel will last, but it gives no range. Why?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For range, enter once in Settings the distance you rode on a full tank. Until you do, AI CoRider doesn’t guess; it tells you so."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need Bluetooth to hear it in my helmet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If your helmet is connected to the phone over Bluetooth, the voice comes through it; otherwise it plays from the phone. Can’t hear it in the wind? Just say “turn it up”."
+          }
+        }
       ]
     }
   ]

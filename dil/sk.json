@@ -24,8 +24,6 @@
 
   "baslik": "Motocyklová navigácia a plánovač trasy — Motoseyir",
   "aciklama": "Navigácia pre motorkárov, ktorá počíta kilometre: najkratšia trasa, vedľajšie cesty, výlety s viacerými zastávkami, jazda v skupine, intercom a legendárne trasy. Motoseyir v App Store.",
-  "og_baslik": "Motoseyir — navigácia, ktorá počíta kilometre, nie minúty",
-  "og_aciklama": "Najkratšia trasa, vedľajšie cesty, výlety s viacerými zastávkami, jazda v skupine, intercom a legendárne trasy — v jednej aplikácii.",
   "jsonld_aciklama": "Navigačná aplikácia pre motorkárov počítaná na vzdialenosť: najkratšia trasa, vedľajšie cesty, výlety s viacerými zastávkami, jazda v skupine, intercom a legendárne trasy.",
   "jsonld_ucretsiz": "7 dní na skúšku zadarmo so všetkými funkciami Pro pri štvrťročnom a ročnom predplatnom, pre nových predplatiteľov, kde je to dostupné.",
   "jsonld_pro": "Najlepšie poradie zastávok, neobmedzené výlety a stopy, režim vedľajších ciest a pobrežia, Discover, zakladanie skupín, intercom a AI CoRider.",
@@ -156,12 +154,10 @@
   "iletisim_destek_p": "Napíš nám priamo cez Settings → „Something wrong, or an idea?“; odpovede sa vrátia na to isté miesto.",
   "iletisim_insta_p": "Sleduj nás pre nové trasy, fotky z jázd a oznámenia.",
 
-  "oz_baslik": "Funkcie motocyklovej navigačnej aplikácie — Motoseyir",
-  "oz_aciklama": "Všetky funkcie Motoseyiru na jednej stránke: najkratšia trasa, najlepšie poradie zastávok, vedľajšie cesty, legendárne trasy, Discover, denník výletu, počasie, stopy, jazda v skupine, intercom, režim na šírku a Community.",
-  "oz_og_baslik": "Všetky funkcie Motoseyiru",
-  "oz_og_aciklama": "Najkratšia trasa, najlepšie poradie zastávok, vedľajšie cesty, legendárne trasy, jazda v skupine, intercom a ďalšie.",
+  "oz_baslik": "Funkcie navigácie na motorku — Motoseyir",
+  "oz_aciklama": "Všetky funkcie navigácie na motorku Motoseyir na jednej stránke: najkratšia trasa, poradie zastávok, vedľajšie cesty, legendárne trasy, denník výletu.",
   "oz_eyebrow": "Funkcie · podrobne",
-  "oz_h1": "Všetky funkcie Motoseyiru",
+  "oz_h1": "Motoseyir, navigácia na motorku: všetky funkcie",
   "oz_sayfa_lead": "Táto stránka rastie. Keď príde nová funkcia, zamieri najprv sem, pod ten správny nadpis. Nižšie je päť skupín: mesto a kuriéri, cestovanie, na ceste a po jazde, jazda spolu, v horách a v aute.",
 
   "kume1_h2": "Do mesta a pre kuriérov",
@@ -247,10 +243,8 @@
   "oz24_h3": "Šesť značiek",
   "oz24_p": "Na mape ťa zastupuje Supersport, Chopper, Maxi scooter, Touring, Arrow alebo Helmet. Značku vyberieš v Settings → Map → Navigation marker a CarPlay ukazuje tú istú. Prvé štyri sú 3D s jazdcom v sedle a v zákrutách sa nakláňajú.",
 
-  "ny_baslik": "Ako používať Motoseyir — trasy, jazda v skupine a denník",
-  "ny_aciklama": "Sprievodca Motoseyirom krok za krokom: postaviť trasu, výlety s viacerými zastávkami, záznam jazdy, denník výletu, jazda v skupine a intercom, Community, nastavenia a predplatné.",
-  "ny_og_baslik": "Ako sa používa Motoseyir?",
-  "ny_og_aciklama": "Od trasy k jazde v skupine, od záznamu ku Community: Motoseyir krok za krokom.",
+  "ny_baslik": "Ako používať navigáciu na motorku Motoseyir krok za krokom",
+  "ny_aciklama": "Ako naplánovať trasu na motorku v Motoseyire: postaviť trasu, výlety s viacerými zastávkami, záznam jazdy, denník výletu, jazda v skupine a intercom.",
   "ny_eyebrow": "Ako to funguje",
   "ny_h1": "Takto používaš Motoseyir od začiatku do konca",
   "ny_lead": "Táto stránka je dlhá verzia Settings → „How it works“ v aplikácii: tie isté témy, to isté poradie. Dotkni sa nadpisu, aby sa otvoril, dotkni sa znova, aby sa zavrel. Názvy tlačidiel sú v angličtine, presne ako ich vidíš v aplikácii.",

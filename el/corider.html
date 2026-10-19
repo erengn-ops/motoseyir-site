@@ -22,15 +22,22 @@
 <link rel="alternate" hreflang="el" href="https://motoseyir-app.com/el/corider.html">
 <link rel="alternate" hreflang="x-default" href="https://motoseyir-app.com/en/corider.html">
 
-<!-- Open Graph -->
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Motoseyir">
 <meta property="og:locale" content="el_GR">
-<meta property="og:title" content="AI CoRider: μάτια στον δρόμο, αυτός ακούει">
+<meta property="og:title" content="AI CoRider — ο συνοδηγός μέσα στο κράνος σου | Motoseyir">
 <meta property="og:description" content="Το AI CoRider σου μιλά μέσα από το κράνος: προσθέτει στάσεις, ψάχνει μέρη στη διαδρομή, λέει τον καιρό και την αυτονομία και αλλάζει τη διαδρομή για σένα.">
 <meta property="og:url" content="https://motoseyir-app.com/el/corider.html">
 <meta property="og:image" content="https://motoseyir-app.com/img/og-kapak.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI CoRider — ο συνοδηγός μέσα στο κράνος σου | Motoseyir">
+<meta name="twitter:description" content="Το AI CoRider σου μιλά μέσα από το κράνος: προσθέτει στάσεις, ψάχνει μέρη στη διαδρομή, λέει τον καιρό και την αυτονομία και αλλάζει τη διαδρομή για σένα.">
+<meta name="twitter:image" content="https://motoseyir-app.com/img/og-kapak.jpg">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 <meta name="apple-itunes-app" content="app-id=6792549131">
 <meta name="theme-color" content="#050B13">
 <link rel="icon" href="/img/favicon.png">
@@ -52,25 +59,181 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "WebPage",
-      "name": "AI CoRider — ο συνοδηγός μέσα στο κράνος σου | Motoseyir",
-      "url": "https://motoseyir-app.com/el/corider.html",
+      "@type": "Organization",
+      "@id": "https://motoseyir-app.com/#organization",
+      "name": "Motoseyir",
+      "url": "https://motoseyir-app.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://motoseyir-app.com/img/uygulama-simgesi-512.png",
+        "width": 512,
+        "height": 512
+      },
+      "sameAs": [
+        "https://www.instagram.com/motoseyir.app/",
+        "https://www.instagram.com/motoseyir.app.en/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://motoseyir-app.com/#website",
+      "url": "https://motoseyir-app.com/",
+      "name": "Motoseyir",
       "inLanguage": "el",
+      "publisher": {
+        "@id": "https://motoseyir-app.com/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://motoseyir-app.com/el/corider.html#sayfa",
+      "url": "https://motoseyir-app.com/el/corider.html",
+      "name": "AI CoRider — ο συνοδηγός μέσα στο κράνος σου | Motoseyir",
       "description": "Το AI CoRider σου μιλά μέσα από το κράνος: προσθέτει στάσεις, ψάχνει μέρη στη διαδρομή, λέει τον καιρό και την αυτονομία και αλλάζει τη διαδρομή για σένα.",
-      "isPartOf": {"@type": "WebSite", "name": "Motoseyir", "url": "https://motoseyir-app.com/"}
+      "inLanguage": "el",
+      "isPartOf": {
+        "@id": "https://motoseyir-app.com/#website"
+      },
+      "about": {
+        "@id": "https://motoseyir-app.com/#uygulama"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://motoseyir-app.com/img/og-kapak.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "dateModified": "2026-10-20",
+      "breadcrumb": {
+        "@id": "https://motoseyir-app.com/el/corider.html#ekmek"
+      },
+      "mainEntity": {
+        "@id": "https://motoseyir-app.com/el/corider.html#sss"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://motoseyir-app.com/el/corider.html#ekmek",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Αρχική",
+          "item": "https://motoseyir-app.com/el/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "AI CoRider",
+          "item": "https://motoseyir-app.com/el/corider.html"
+        }
+      ]
+    },
+    {
+      "@type": "MobileApplication",
+      "@id": "https://motoseyir-app.com/#uygulama",
+      "name": "Motoseyir",
+      "operatingSystem": "iOS",
+      "applicationCategory": "NavigationApplication",
+      "inLanguage": "el",
+      "url": "https://motoseyir-app.com/el/",
+      "image": "https://motoseyir-app.com/img/og-kapak.jpg",
+      "description": "Πλοήγηση με βάση την απόσταση για μοτοσικλετιστές: συντομότερη διαδρομή, επαρχιακοί δρόμοι, γεννήτρια εκδρομών, ομαδική βόλτα, ενδοεπικοινωνία και CarPlay.",
+      "screenshot": [
+        "https://motoseyir-app.com/m/ekran-nav-en.webp",
+        "https://motoseyir-app.com/m/ekran-tur-en.webp",
+        "https://motoseyir-app.com/m/ekran-gecit-en.webp",
+        "https://motoseyir-app.com/m/ekran-corider-en.webp"
+      ],
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Δωρεάν",
+          "price": "0",
+          "priceCurrency": "EUR",
+          "description": "Απεριόριστος σχεδιασμός διαδρομής και πλοήγηση σε Τουρκία, Ευρώπη και ΗΠΑ, 1 αποθηκευμένη εκδρομή· στις συνδρομές Pro 3 μηνών και στις ετήσιες οι νέοι συνδρομητές μπορεί να έχουν δωρεάν δοκιμή 7 ημερών."
+        },
+        {
+          "@type": "Offer",
+          "name": "Motoseyir Pro",
+          "category": "subscription",
+          "description": "AI CoRider, CarPlay, δημιουργία ομάδας, Discover, απεριόριστες εκδρομές και ίχνη, λειτουργίες εκδρομής και εκδρομές με στροφές ή χωρίς αυτοκινητόδρομο."
+        }
+      ],
+      "downloadUrl": "https://apps.apple.com/gr/app/id6792549131?pt=128439797&ct=site-el&mt=8",
+      "publisher": {
+        "@id": "https://motoseyir-app.com/#organization"
+      }
     },
     {
       "@type": "FAQPage",
+      "@id": "https://motoseyir-app.com/el/corider.html#sss",
       "inLanguage": "el",
       "mainEntity": [
-        {"@type": "Question", "name": "Με ακούει συνέχεια το AI CoRider;", "acceptedAnswer": {"@type": "Answer", "text": "Όχι. Δεν υπάρχει λέξη ενεργοποίησης. Το μικρόφωνο ανοίγει μόνο όταν αγγίξεις στον χάρτη το κουμπί AI CoRider. Η συνεδρία κλείνει όταν τη σταματήσεις, μετά από παρατεταμένη σιωπή ή όταν τελειώσει η πλοήγηση."}},
-        {"@type": "Question", "name": "Λειτουργεί χωρίς ίντερνετ;", "acceptedAnswer": {"@type": "Answer", "text": "Όχι. Ό,τι λες πηγαίνει, για να παραχθεί η απάντηση, σε υπηρεσία φωνής στο cloud, γι’ αυτό το AI CoRider χρειάζεται σύνδεση στο ίντερνετ. Χωρίς σύνδεση δεν μπορεί να ξεκινήσει συνεδρία."}},
-        {"@type": "Question", "name": "Σε ποια γλώσσα μπορώ να μιλήσω;", "acceptedAnswer": {"@type": "Answer", "text": "Απαντά στη γλώσσα που μιλάς. Δεν χρειάζεται να μάθεις εντολές, πες το με δικά σου λόγια."}},
-        {"@type": "Question", "name": "Τι γίνεται όταν τελειώσει ο χρόνος ομιλίας;", "acceptedAnswer": {"@type": "Answer", "text": "Το Pro ανανεώνει κάθε 30 ημέρες 10 λεπτά και η δωρεάν δοκιμή περιλαμβάνει 5. Αν δεν φτάνουν, πρόσθεσε ένα πακέτο 30, 60 ή 180 λεπτών που δεν λήγει ποτέ."}},
-        {"@type": "Question", "name": "Ποια είναι η διαφορά ανάμεσα στον Σχεδιαστή διαδρομής και τη Συνομιλία;", "acceptedAnswer": {"@type": "Answer", "text": "Ο Σχεδιαστής διαδρομής ξέρει τη διαδρομή σου και τακτοποιεί τα πράγματα: προσθέτει στάσεις, ψάχνει μέρη και αλλάζει τη διαδρομή· περιλαμβάνεται στο Pro. Στη Συνομιλία διαλέγεις εσύ το θέμα και θυμάται τις προηγούμενες κουβέντες· ανοίγει με πακέτο λεπτών."}},
-        {"@type": "Question", "name": "Στην ομάδα το ακούν όλοι και από ποιου τον λογαριασμό αφαιρούνται τα λεπτά;", "acceptedAnswer": {"@type": "Answer", "text": "Αν καλέσεις το AI CoRider στο ενδοεπικοινωνιακό της ομάδας, το ακούν όλοι στο δωμάτιο. Τα λεπτά αφαιρούνται από τον λογαριασμό όποιου το κάλεσε."}},
-        {"@type": "Question", "name": "Ρωτάω αν φτάνει η βενζίνη, αλλά δεν μου λέει αυτονομία. Γιατί;", "acceptedAnswer": {"@type": "Answer", "text": "Για την αυτονομία, γράψε μία φορά στις Ρυθμίσεις πόσο διανύεις με γεμάτο ρεζερβουάρ. Μέχρι τότε το AI CoRider δεν μαντεύει, σου το λέει."}},
-        {"@type": "Question", "name": "Χρειάζομαι Bluetooth για να το ακούω στο κράνος;", "acceptedAnswer": {"@type": "Answer", "text": "Αν το κράνος είναι συνδεδεμένο με το τηλέφωνο μέσω Bluetooth, η φωνή ακούγεται από εκεί, αλλιώς από το τηλέφωνο. Δεν ακούς με τον αέρα; Πες απλά «πιο δυνατά»."}}
+        {
+          "@type": "Question",
+          "name": "Με ακούει συνέχεια το AI CoRider;",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Όχι. Δεν υπάρχει λέξη ενεργοποίησης. Το μικρόφωνο ανοίγει μόνο όταν αγγίξεις στον χάρτη το κουμπί AI CoRider. Η συνεδρία κλείνει όταν τη σταματήσεις, μετά από παρατεταμένη σιωπή ή όταν τελειώσει η πλοήγηση."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Λειτουργεί χωρίς ίντερνετ;",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Όχι. Ό,τι λες πηγαίνει, για να παραχθεί η απάντηση, σε υπηρεσία φωνής στο cloud, γι’ αυτό το AI CoRider χρειάζεται σύνδεση στο ίντερνετ. Χωρίς σύνδεση δεν μπορεί να ξεκινήσει συνεδρία."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Σε ποια γλώσσα μπορώ να μιλήσω;",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Απαντά στη γλώσσα που μιλάς. Δεν χρειάζεται να μάθεις εντολές, πες το με δικά σου λόγια."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Τι γίνεται όταν τελειώσει ο χρόνος ομιλίας;",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Το Pro ανανεώνει κάθε 30 ημέρες 10 λεπτά και η δωρεάν δοκιμή περιλαμβάνει 5. Αν δεν φτάνουν, πρόσθεσε ένα πακέτο 30, 60 ή 180 λεπτών που δεν λήγει ποτέ."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ποια είναι η διαφορά ανάμεσα στον Σχεδιαστή διαδρομής και τη Συνομιλία;",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ο Σχεδιαστής διαδρομής ξέρει τη διαδρομή σου και τακτοποιεί τα πράγματα: προσθέτει στάσεις, ψάχνει μέρη και αλλάζει τη διαδρομή· περιλαμβάνεται στο Pro. Στη Συνομιλία διαλέγεις εσύ το θέμα και θυμάται τις προηγούμενες κουβέντες· ανοίγει με πακέτο λεπτών."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Στην ομάδα το ακούν όλοι και από ποιου τον λογαριασμό αφαιρούνται τα λεπτά;",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Αν καλέσεις το AI CoRider στο ενδοεπικοινωνιακό της ομάδας, το ακούν όλοι στο δωμάτιο. Τα λεπτά αφαιρούνται από τον λογαριασμό όποιου το κάλεσε."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ρωτάω αν φτάνει η βενζίνη, αλλά δεν μου λέει αυτονομία. Γιατί;",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Για την αυτονομία, γράψε μία φορά στις Ρυθμίσεις πόσο διανύεις με γεμάτο ρεζερβουάρ. Μέχρι τότε το AI CoRider δεν μαντεύει, σου το λέει."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Χρειάζομαι Bluetooth για να το ακούω στο κράνος;",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Αν το κράνος είναι συνδεδεμένο με το τηλέφωνο μέσω Bluetooth, η φωνή ακούγεται από εκεί, αλλιώς από το τηλέφωνο. Δεν ακούς με τον αέρα; Πες απλά «πιο δυνατά»."
+          }
+        }
       ]
     }
   ]

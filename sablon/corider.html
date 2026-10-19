@@ -8,15 +8,7 @@
 <link rel="canonical" href="{{kanonik}}">
 {{alternatifler}}
 
-<!-- Open Graph -->
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Motoseyir">
-<meta property="og:locale" content="{{og_locale}}">
-<meta property="og:title" content="{{cr_og_baslik}}">
-<meta property="og:description" content="{{cr_aciklama}}">
-<meta property="og:url" content="{{kanonik}}">
-<meta property="og:image" content="https://motoseyir-app.com/img/og-kapak.jpg">
-<meta name="twitter:card" content="summary_large_image">
+{{seo_head}}
 <meta name="apple-itunes-app" content="app-id={{uygulama_id}}">
 <meta name="theme-color" content="#050B13">
 <link rel="icon" href="/img/favicon.png">
@@ -33,35 +25,7 @@
 <script defer src="/m/h.js"></script>
 <script defer src="/m/corider.js"></script>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebPage",
-      "name": "{{cr_baslik}}",
-      "url": "{{kanonik}}",
-      "inLanguage": "{{lang}}",
-      "description": "{{cr_aciklama}}",
-      "isPartOf": {"@type": "WebSite", "name": "Motoseyir", "url": "https://motoseyir-app.com/"}
-    },
-    {
-      "@type": "FAQPage",
-      "inLanguage": "{{lang}}",
-      "mainEntity": [
-        {"@type": "Question", "name": "{{cr_f1_q}}", "acceptedAnswer": {"@type": "Answer", "text": "{{cr_f1_a}}"}},
-        {"@type": "Question", "name": "{{cr_f2_q}}", "acceptedAnswer": {"@type": "Answer", "text": "{{cr_f2_a}}"}},
-        {"@type": "Question", "name": "{{cr_f3_q}}", "acceptedAnswer": {"@type": "Answer", "text": "{{cr_f3_a}}"}},
-        {"@type": "Question", "name": "{{cr_f4_q}}", "acceptedAnswer": {"@type": "Answer", "text": "{{cr_f4_a}}"}},
-        {"@type": "Question", "name": "{{cr_f5_q}}", "acceptedAnswer": {"@type": "Answer", "text": "{{cr_f5_a}}"}},
-        {"@type": "Question", "name": "{{cr_f6_q}}", "acceptedAnswer": {"@type": "Answer", "text": "{{cr_f6_a}}"}},
-        {"@type": "Question", "name": "{{cr_f7_q}}", "acceptedAnswer": {"@type": "Answer", "text": "{{cr_f7_a}}"}},
-        {"@type": "Question", "name": "{{cr_f8_q}}", "acceptedAnswer": {"@type": "Answer", "text": "{{cr_f8_a}}"}}
-      ]
-    }
-  ]
-}
-</script>
+{{json_ld}}
 </head>
 <body id="top">
 <a class="skip" href="#icerik">{{skip}}</a>

@@ -24,8 +24,6 @@
 
   "baslik": "Motoros navigáció és útvonaltervező — Motoseyir",
   "aciklama": "Kilométerben számoló navigáció motorosoknak: legrövidebb útvonal, mellékutak, több megállós túrák, csoportos menet, intercom és legendás útvonalak. A Motoseyir az App Store-ban.",
-  "og_baslik": "Motoseyir — a navigáció, amely kilométert számol, nem percet",
-  "og_aciklama": "Legrövidebb útvonal, mellékutak, több megállós túrák, csoportos menet, intercom és legendás útvonalak — egy appban.",
   "jsonld_aciklama": "Távolság alapján számoló navigációs app motorosoknak: legrövidebb útvonal, mellékutak, több megállós túrák, csoportos menet, intercom és legendás útvonalak.",
   "jsonld_ucretsiz": "7 napos ingyenes próba az összes Pro funkcióval a háromhavi és az éves csomagnál, új előfizetőknek, ahol elérhető.",
   "jsonld_pro": "Legjobb sorrend több megállóhoz, korlátlan túra és nyomvonal, mellékutas és tengerparti mód, Discover, csoport létrehozása, intercom és AI CoRider.",
@@ -157,11 +155,9 @@
   "iletisim_insta_p": "Kövess minket új útvonalakért, menetfotókért és bejelentésekért.",
 
   "oz_baslik": "A motoros navigációs app funkciói — Motoseyir",
-  "oz_aciklama": "A Motoseyir összes funkciója egy oldalon: legrövidebb útvonal, a megállók legjobb sorrendje, mellékutak, legendás útvonalak, Discover, túranapló, időjárás, nyomvonalak, csoportos menet, intercom, fekvő tájolás és Community.",
-  "oz_og_baslik": "A Motoseyir összes funkciója",
-  "oz_og_aciklama": "Legrövidebb útvonal, a megállók legjobb sorrendje, mellékutak, legendás útvonalak, csoportos menet, intercom és még több.",
+  "oz_aciklama": "A Motoseyir motoros navigáció összes funkciója egy oldalon: legrövidebb útvonal, megállók sorrendje, mellékutak, legendás útvonalak, túranapló, csoportos menet.",
   "oz_eyebrow": "Funkciók · részletesen",
-  "oz_h1": "A Motoseyir összes funkciója",
+  "oz_h1": "Motoseyir motoros navigáció: az összes funkció",
   "oz_sayfa_lead": "Ez az oldal növekszik. Ha új funkció jön, először ide kerül, a hozzá tartozó cím alá. Lentebb öt csoport van: város és kurírok, túrázás, az úton és a menet után, közös motorozás, valamint a hegyekben és az autóban.",
 
   "kume1_h2": "Városba és kurírmunkához",
@@ -247,10 +243,8 @@
   "oz24_h3": "Hat jelölő",
   "oz24_p": "A térképen a következők egyike jelöl téged: Supersport, Chopper, Maxi scooter, Touring, Arrow vagy Helmet. A Settings → Map → Navigation marker alatt választod ki, CarPlayen pedig ugyanaz látszik. Az első négy 3D-s, motorossal, és bedől a kanyarban.",
 
-  "ny_baslik": "Hogyan használd a Motoseyirt — útvonal, csoport és napló",
-  "ny_aciklama": "Lépésenkénti útmutató a Motoseyirhez: útvonal építése, több megállós túrák, menetrögzítés, túranapló, csoportos menet és intercom, Community, beállítások és előfizetés.",
-  "ny_og_baslik": "Hogyan használjuk a Motoseyirt?",
-  "ny_og_aciklama": "Az útvonaltól a csoportos menetig, a rögzítéstől a Communityig: lépésenkénti útmutató a Motoseyirhez.",
+  "ny_baslik": "Motoros navigáció használata: Motoseyir lépésről lépésre",
+  "ny_aciklama": "Hogyan tervezz motoros útvonalat a Motoseyirben: útvonal építése, több megállós túrák, menetrögzítés, túranapló, csoportos menet, intercom és előfizetés.",
   "ny_eyebrow": "Hogyan működik",
   "ny_h1": "Így használod a Motoseyirt az elejétől a végéig",
   "ny_lead": "Ez az oldal a Settings → „How it works” hosszú változata az appból: ugyanazok a témák, ugyanabban a sorrendben. Koppints egy címre, és kinyílik, koppints újra, és bezár. A gombok nevei angolul vannak, pontosan úgy, ahogy az appban látod őket.",

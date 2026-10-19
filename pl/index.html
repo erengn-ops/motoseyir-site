@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Motoseyir — nawigacja motocyklisty na kręte drogi</title>
-<meta name="description" content="Nawigacja motocyklowa, która liczy dystans, nie minuty. Tryby bocznych dróg i wybrzeża, generator wycieczek, 1 600+ przełęczy, jazda w grupie i CarPlay.">
+<title>Nawigacja motocyklowa i planer tras — Motoseyir</title>
+<meta name="description" content="Motoseyir to nawigacja motocyklowa, która liczy dystans, nie minuty. Boczne drogi, planowanie wycieczek, 1 600+ przełęczy, jazda w grupie, interkom i CarPlay.">
 <link rel="canonical" href="https://motoseyir-app.com/pl/">
 <link rel="alternate" hreflang="tr" href="https://motoseyir-app.com/">
 <link rel="alternate" hreflang="en" href="https://motoseyir-app.com/en/">
@@ -22,15 +22,22 @@
 <link rel="alternate" hreflang="el" href="https://motoseyir-app.com/el/">
 <link rel="alternate" hreflang="x-default" href="https://motoseyir-app.com/en/">
 
-<!-- Open Graph -->
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Motoseyir">
 <meta property="og:locale" content="pl_PL">
-<meta property="og:title" content="Motoseyir — nawigacja motocyklisty na kręte drogi">
-<meta property="og:description" content="Trasy liczone od dystansu, boczne drogi, generator wycieczek, 1 600+ przełęczy, jazda w grupie, interkom i CarPlay — w jednej aplikacji.">
+<meta property="og:title" content="Nawigacja motocyklowa i planer tras — Motoseyir">
+<meta property="og:description" content="Motoseyir to nawigacja motocyklowa, która liczy dystans, nie minuty. Boczne drogi, planowanie wycieczek, 1 600+ przełęczy, jazda w grupie, interkom i CarPlay.">
 <meta property="og:url" content="https://motoseyir-app.com/pl/">
 <meta property="og:image" content="https://motoseyir-app.com/img/og-kapak.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Nawigacja motocyklowa i planer tras — Motoseyir">
+<meta name="twitter:description" content="Motoseyir to nawigacja motocyklowa, która liczy dystans, nie minuty. Boczne drogi, planowanie wycieczek, 1 600+ przełęczy, jazda w grupie, interkom i CarPlay.">
+<meta name="twitter:image" content="https://motoseyir-app.com/img/og-kapak.jpg">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 
 <!-- Apple akıllı afiş: iOS Safari'de sayfanın üstünde "App Store'da aç" şeridi. -->
 <meta name="apple-itunes-app" content="app-id=6792549131">
@@ -68,30 +75,149 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "Motoseyir",
-  "operatingSystem": "iOS",
-  "applicationCategory": "NavigationApplication",
-  "inLanguage": "pl",
-  "url": "https://motoseyir-app.com/pl/",
-  "image": "https://motoseyir-app.com/img/og-kapak.jpg",
-  "description": "Nawigacja dla motocyklistów, która liczy dystans: boczne drogi, generator wycieczek, przełęcze, jazda w grupie, interkom, CarPlay i legendarne drogi.",
-  "offers": [
+  "@graph": [
     {
-      "@type": "Offer",
-      "name": "Za darmo",
-      "price": "0",
-      "priceCurrency": "EUR",
-      "description": "Nieograniczone wyznaczanie tras i nawigacja w Turcji, Europie i USA, 1 zapisana wycieczka; w planach Pro na 3 miesiące i na rok nowi subskrybenci mogą dostać 7-dniowy bezpłatny okres próbny."
+      "@type": "Organization",
+      "@id": "https://motoseyir-app.com/#organization",
+      "name": "Motoseyir",
+      "url": "https://motoseyir-app.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://motoseyir-app.com/img/uygulama-simgesi-512.png",
+        "width": 512,
+        "height": 512
+      },
+      "sameAs": [
+        "https://www.instagram.com/motoseyir.app/",
+        "https://www.instagram.com/motoseyir.app.en/"
+      ]
     },
     {
-      "@type": "Offer",
-      "name": "Motoseyir Pro",
-      "category": "subscription",
-      "description": "AI CoRider, CarPlay, tworzenie grup, Discover, nieograniczone wycieczki i ślady, tryby wycieczki oraz budowanie krętych albo bezautostradowych wycieczek."
+      "@type": "WebSite",
+      "@id": "https://motoseyir-app.com/#website",
+      "url": "https://motoseyir-app.com/",
+      "name": "Motoseyir",
+      "inLanguage": "pl",
+      "publisher": {
+        "@id": "https://motoseyir-app.com/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://motoseyir-app.com/pl/#sayfa",
+      "url": "https://motoseyir-app.com/pl/",
+      "name": "Nawigacja motocyklowa i planer tras — Motoseyir",
+      "description": "Motoseyir to nawigacja motocyklowa, która liczy dystans, nie minuty. Boczne drogi, planowanie wycieczek, 1 600+ przełęczy, jazda w grupie, interkom i CarPlay.",
+      "inLanguage": "pl",
+      "isPartOf": {
+        "@id": "https://motoseyir-app.com/#website"
+      },
+      "about": {
+        "@id": "https://motoseyir-app.com/#uygulama"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://motoseyir-app.com/img/og-kapak.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "dateModified": "2026-10-20",
+      "mainEntity": {
+        "@id": "https://motoseyir-app.com/pl/#sss"
+      }
+    },
+    {
+      "@type": "MobileApplication",
+      "@id": "https://motoseyir-app.com/#uygulama",
+      "name": "Motoseyir",
+      "operatingSystem": "iOS",
+      "applicationCategory": "NavigationApplication",
+      "inLanguage": "pl",
+      "url": "https://motoseyir-app.com/pl/",
+      "image": "https://motoseyir-app.com/img/og-kapak.jpg",
+      "description": "Nawigacja dla motocyklistów, która liczy dystans: boczne drogi, generator wycieczek, przełęcze, jazda w grupie, interkom, CarPlay i legendarne drogi.",
+      "screenshot": [
+        "https://motoseyir-app.com/m/ekran-nav-en.webp",
+        "https://motoseyir-app.com/m/ekran-tur-en.webp",
+        "https://motoseyir-app.com/m/ekran-gecit-en.webp",
+        "https://motoseyir-app.com/m/ekran-corider-en.webp"
+      ],
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Za darmo",
+          "price": "0",
+          "priceCurrency": "EUR",
+          "description": "Nieograniczone wyznaczanie tras i nawigacja w Turcji, Europie i USA, 1 zapisana wycieczka; w planach Pro na 3 miesiące i na rok nowi subskrybenci mogą dostać 7-dniowy bezpłatny okres próbny."
+        },
+        {
+          "@type": "Offer",
+          "name": "Motoseyir Pro",
+          "category": "subscription",
+          "description": "AI CoRider, CarPlay, tworzenie grup, Discover, nieograniczone wycieczki i ślady, tryby wycieczki oraz budowanie krętych albo bezautostradowych wycieczek."
+        }
+      ],
+      "downloadUrl": "https://apps.apple.com/pl/app/id6792549131?pt=128439797&ct=site-pl&mt=8",
+      "publisher": {
+        "@id": "https://motoseyir-app.com/#organization"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://motoseyir-app.com/pl/#sss",
+      "inLanguage": "pl",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Czym jest Motoseyir?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Motoseyir to aplikacja do nawigacji motocyklowej i planowania tras. Liczy dystans zamiast minut, ma tryby bocznych dróg i wybrzeża oraz układa wycieczkę w wybranym przez Ciebie kierunku i na wybraną liczbę godzin."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czy Motoseyir jest bezpłatny?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Planowanie tras i nawigacja zakręt po zakręcie są w Turcji, Europie i USA bezpłatne i bez limitu, bez konta. W wersji bezpłatnej zapiszesz 1 wycieczkę. AI CoRider, CarPlay, tworzenie grup, Discover i nieograniczone wycieczki są w Pro."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czym Motoseyir różni się od innych nawigacji?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Liczy dystans, nie minuty: porównuje warianty między tymi samymi dwoma punktami i proponuje najkrótszy. W wycieczce z wieloma przystankami sam ustawia też ich kolejność."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Gdzie działa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Wyznaczanie tras i nawigacja działają w Turcji, Europie i USA. Mapa przełęczy zawiera ponad 1 600 przełęczy w 36 krajach."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czy działa z CarPlay?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tak. Apple CarPlay jest częścią Pro; Twoja trasa wyświetla się na pełnym ekranie samochodu."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czy mogę jechać ze znajomymi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tak. Jedziecie tą samą trasą, widzicie wszystkich na mapie i rozmawiacie przez interkom grupowy. Dołączenie do grupy z zaproszenia albo kodem jest bezpłatne; tworzenie grup jest w Pro."
+          }
+        }
+      ]
     }
-  ],
-  "downloadUrl": "https://apps.apple.com/pl/app/id6792549131?pt=128439797&amp;ct=site-pl&amp;mt=8"
+  ]
 }
 </script>
 </head>
@@ -143,7 +269,7 @@
   </div>
   <div class="k-ic">
     <div class="k-metin">
-      <p class="ust-yazi">Motoseyir · Nawigacja motocyklisty</p>
+      <p class="ust-yazi">Motoseyir · Nawigacja motocyklowa</p>
       <h1>Dla tych, którzy <i>kochają zakręty.</i></h1>
       <p class="giris">Motoseyir wyznacza trasę według dystansu, nie według minut. Boczne drogi czy wybrzeże — wybierasz Ty. Albo powiedz, w którą stronę chcesz jechać, a wycieczkę ułoży za Ciebie. Albo wybierz przełęcz i ruszaj.</p>
       <div class="cta-satir">
@@ -583,6 +709,8 @@
         <li><h3>Tryb poziomy</h3><p>Gdy obrócisz telefon na bok, karty zbierają się po lewej, a mapa zajmuje resztę; My Tours przechodzi na dwie kolumny.</p></li>
         <li><h3>Jednostki i język</h3><p>Jednostki zależą od miejsca, w którym jesteś: mile, mph i stopy w USA, mile i jardy w Wielkiej Brytanii, kilometry gdzie indziej. Aplikacja mówi po turecku, angielsku, niemiecku, francusku i włosku i trzyma się języka telefonu.</p></li>
         </ul>
+        <p class="cr-daha"><a href="/pl/ozellikler.html">Wszystkie funkcje w szczegółach →</a></p>
+        <p class="cr-daha"><a href="/pl/nasil-yapilir.html">Pierwszy raz w aplikacji? Zacznij tutaj →</a></p>
       </div>
     </div>
   </section>
@@ -612,6 +740,27 @@
         </div>
       </div>
       <p class="fiyat-not">Aktualne ceny zależą od regionu; zobaczysz je na ekranie subskrypcji w App Store. Możesz anulować w każdej chwili na swoim koncie App Store.</p>
+    </div>
+  </section>
+
+  <!-- SSS (20 Eki 2026): arama niyeti için kısa, GÖRÜNÜR soru-cevaplar (yalnız sitede zaten yazan olgular). FAQPage yapısal verisi aynı
+       anahtarlardan (faq_q1/faq_a1 …) uret.py json_ld() ile üretilir; buraya soru eklerken dil dosyalarına da ekle, görünür metin = JSON-LD. -->
+  <section class="bolum" id="sss" aria-labelledby="sss-h">
+    <div class="kap">
+      <div data-r>
+        <p class="km">Częste pytania</p>
+        <h2 id="sss-h">Nawigacja motocyklowa, <i>częste pytania.</i></h2>
+      </div>
+      <div class="ayrinti" data-r>
+        <ul class="izgara">
+        <li><h3>Czym jest Motoseyir?</h3><p>Motoseyir to aplikacja do nawigacji motocyklowej i planowania tras. Liczy dystans zamiast minut, ma tryby bocznych dróg i wybrzeża oraz układa wycieczkę w wybranym przez Ciebie kierunku i na wybraną liczbę godzin.</p></li>
+        <li><h3>Czy Motoseyir jest bezpłatny?</h3><p>Planowanie tras i nawigacja zakręt po zakręcie są w Turcji, Europie i USA bezpłatne i bez limitu, bez konta. W wersji bezpłatnej zapiszesz 1 wycieczkę. AI CoRider, CarPlay, tworzenie grup, Discover i nieograniczone wycieczki są w Pro.</p></li>
+        <li><h3>Czym Motoseyir różni się od innych nawigacji?</h3><p>Liczy dystans, nie minuty: porównuje warianty między tymi samymi dwoma punktami i proponuje najkrótszy. W wycieczce z wieloma przystankami sam ustawia też ich kolejność.</p></li>
+        <li><h3>Gdzie działa?</h3><p>Wyznaczanie tras i nawigacja działają w Turcji, Europie i USA. Mapa przełęczy zawiera ponad 1 600 przełęczy w 36 krajach.</p></li>
+        <li><h3>Czy działa z CarPlay?</h3><p>Tak. Apple CarPlay jest częścią Pro; Twoja trasa wyświetla się na pełnym ekranie samochodu.</p></li>
+        <li><h3>Czy mogę jechać ze znajomymi?</h3><p>Tak. Jedziecie tą samą trasą, widzicie wszystkich na mapie i rozmawiacie przez interkom grupowy. Dołączenie do grupy z zaproszenia albo kodem jest bezpłatne; tworzenie grup jest w Pro.</p></li>
+        </ul>
+      </div>
     </div>
   </section>
 </div>

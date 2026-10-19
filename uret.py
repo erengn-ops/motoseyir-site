@@ -35,7 +35,7 @@ ALAN = "https://motoseyir-app.com"
 UYGULAMA_ID = "6792549131"
 SAGLAYICI = "128439797"  # App Store Connect kampanya sağlayıcı kimliği (pt)
 YIL = "2026"
-GUNCELLEME = "2026-10-19"  # sitemap lastmod
+GUNCELLEME = "2026-10-20"  # sitemap lastmod + JSON-LD dateModified
 
 # Şablon adı -> (çıktı dosya adı, sitemap changefreq, sitemap priority)
 SAYFALAR = {
@@ -123,8 +123,9 @@ def demolari_yerlestir(html: str, kod: str) -> str:
 VARSAYILAN = "tr"  # köke yazılan dil
 X_DEFAULT = "en"
 
-ROBOTS = f"""# Motoseyir tanıtım sitesi.
-# Kök alan adı {ALAN}/ varsayılmıştır — bkz. README.md.
+# /indir/ ve /get/ reklam yönlendirme sayfaları `noindex`; robots.txt ile ENGELLENMEZ (engellenirse
+# arama motoru noindex etiketini göremez). Sitemap'te de yoklar.
+ROBOTS = f"""# Motoseyir tanıtım sitesi — {ALAN}/
 User-agent: *
 Allow: /
 
@@ -348,6 +349,133 @@ def varliklari_surumle(html: str) -> str:
     return _VARLIK.sub(degistir, html)
 
 
+# ---------------------------------------------------------------------------------------------------------------------
+# SEO ÜRETİMİ (20 Eki 2026): paylaşım/arama meta etiketleri ve JSON-LD tek yerden üretilir; şablonlarda yalnız
+# `{{seo_head}}` ve `{{json_ld}}` yer tutucuları var. Başlık/açıklama dil dosyalarından gelir; og: ve twitter: etiketleri
+# başlık/açıklamayla BİREBİR aynıdır. Anahtar kelime haritası ve gerekçe: SEO.md.
+# ---------------------------------------------------------------------------------------------------------------------
+import html as _html
+
+SOSYAL_GORSEL = f"{ALAN}/img/og-kapak.jpg"  # 1200×630
+LOGO = f"{ALAN}/img/uygulama-simgesi-512.png"  # 512×512, uygulama simgesi
+# Sayfa -> (başlık anahtarı, açıklama anahtarı). Başlık ≤ 60, açıklama 140–160 karakter olmalı (denetim: SEO.md).
+SEO_ANAHTAR = {
+    "index.html": ("baslik", "aciklama"),
+    "ozellikler.html": ("oz_baslik", "oz_aciklama"),
+    "nasil-yapilir.html": ("ny_baslik", "ny_aciklama"),
+    "corider.html": ("cr_baslik", "cr_aciklama"),
+}
+# Breadcrumb'ta sayfanın adı: (dil anahtarı veya sabit metin)
+SEO_AD = {"ozellikler.html": "nav_ozellikler", "nasil-yapilir.html": "nav_nasil", "corider.html": "AI CoRider"}
+SAMEAS = ["https://www.instagram.com/motoseyir.app/", "https://www.instagram.com/motoseyir.app.en/"]
+# Arama motoru sahiplik doğrulaması (HTML etiketi yöntemi). Search Console / Bing "URL öneki" mülkü için sahibi etiketin
+# `content` değerini verince buraya yazılır; yalnız Türkçe anasayfaya (https://motoseyir-app.com/) konur. Alan adı (DNS)
+# yöntemi kullanılıyorsa boş kalır. Bkz. SEO.md.
+DOGRULAMA = {"google-site-verification": "", "msvalidate.01": ""}
+
+
+def duz(deger) -> str:
+    """Dil dosyasındaki satır içi HTML'i düz metne çevir (meta ve JSON-LD için)."""
+    s = re.sub(r"<br\s*/?>", " ", str(deger))
+    s = re.sub(r"<[^>]+>", "", s)
+    s = _html.unescape(s).replace("\xa0", " ")
+    return re.sub(r"\s+", " ", s).strip()
+
+
+def nitelik(deger) -> str:
+    return _html.escape(duz(deger), quote=True)
+
+
+def seo_head(dosya: str, v: dict) -> str:
+    """robots + Open Graph + Twitter + dokunmatik simge. Başlık/açıklama sayfanın kendi <title>/description'ıyla aynı."""
+    ba, ac = SEO_ANAHTAR[dosya]
+    baslik, acik, url = nitelik(v[ba]), nitelik(v[ac]), v["kanonik"]
+    satir = [
+        '<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">',
+        '<meta property="og:type" content="website">',
+        '<meta property="og:site_name" content="Motoseyir">',
+        f'<meta property="og:locale" content="{v["og_locale"]}">',
+        f'<meta property="og:title" content="{baslik}">',
+        f'<meta property="og:description" content="{acik}">',
+        f'<meta property="og:url" content="{url}">',
+        f'<meta property="og:image" content="{SOSYAL_GORSEL}">',
+        '<meta property="og:image:type" content="image/jpeg">',
+        '<meta property="og:image:width" content="1200">',
+        '<meta property="og:image:height" content="630">',
+        '<meta name="twitter:card" content="summary_large_image">',
+        f'<meta name="twitter:title" content="{baslik}">',
+        f'<meta name="twitter:description" content="{acik}">',
+        f'<meta name="twitter:image" content="{SOSYAL_GORSEL}">',
+        '<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">',
+    ]
+    if dosya == "index.html" and v["dil_kodu"] == VARSAYILAN:
+        satir += [f'<meta name="{ad}" content="{deger}">' for ad, deger in DOGRULAMA.items() if deger]
+    return "\n".join(satir)
+
+
+def m_gorsel(ad: str, kod: str) -> str:
+    """/m/ekran-<ad>-<kod>.webp; o dilin dosyası yoksa İngilizcesi (sayfadaki görselle aynı kural)."""
+    k = kod if (KOK / f"m/ekran-{ad}-{kod}.webp").exists() else "en"
+    return f"{ALAN}/m/ekran-{ad}-{k}.webp"
+
+
+def sorular(v: dict, soru: str, cevap: str) -> list:
+    """Görünür SSS anahtarlarından FAQPage soruları. `soru`/`cevap` biçim dizgisi: "faq_q{}" / "cr_f{}_q" gibi.
+    Yalnız sayfada görünen sorular girer (seo-denetim.py görünür metinle eşitliği doğrular)."""
+    cikti = []
+    for i in range(1, 30):
+        if not v.get(soru.format(i)):
+            break
+        cikti.append({"@type": "Question", "name": duz(v[soru.format(i)]),
+                      "acceptedAnswer": {"@type": "Answer", "text": duz(v[cevap.format(i)])}})
+    return cikti
+
+
+def json_ld(dosya: str, v: dict, kod: str) -> str:
+    """JSON-LD @graph: Organization + WebSite + WebPage (+ BreadcrumbList alt sayfalarda) + MobileApplication
+    (+ FAQPage: yalnız sayfada görünür SSS varsa — anasayfa ve AI CoRider). aggregateRating / review YOK."""
+    ba, ac = SEO_ANAHTAR[dosya]
+    url, lang = v["kanonik"], v["lang"]
+    ana = f"{ALAN}/"
+    anasayfa_url = f"{ALAN}{sayfa_yolu(kod, 'index.html')}"
+    org = {"@type": "Organization", "@id": f"{ALAN}/#organization", "name": "Motoseyir", "url": ana,
+           "logo": {"@type": "ImageObject", "url": LOGO, "width": 512, "height": 512}, "sameAs": SAMEAS}
+    site = {"@type": "WebSite", "@id": f"{ALAN}/#website", "url": ana, "name": "Motoseyir", "inLanguage": lang,
+            "publisher": {"@id": f"{ALAN}/#organization"}}
+    uyg = {"@type": "MobileApplication", "@id": f"{ALAN}/#uygulama", "name": "Motoseyir", "operatingSystem": "iOS",
+           "applicationCategory": "NavigationApplication", "inLanguage": lang, "url": anasayfa_url,
+           "image": SOSYAL_GORSEL, "description": duz(v["jsonld_aciklama"]),
+           "screenshot": [m_gorsel(a, kod) for a in ("nav", "tur", "gecit", "corider")],
+           "offers": [
+               {"@type": "Offer", "name": duz(v["plan_ucretsiz_ad"]), "price": "0", "priceCurrency": "EUR",
+                "description": duz(v["jsonld_ucretsiz"])},
+               {"@type": "Offer", "name": "Motoseyir Pro", "category": "subscription", "description": duz(v["jsonld_pro"])},
+           ],
+           "downloadUrl": _html.unescape(v["store"]), "publisher": {"@id": f"{ALAN}/#organization"}}
+    sayfa = {"@type": "WebPage", "@id": f"{url}#sayfa", "url": url, "name": duz(v[ba]), "description": duz(v[ac]),
+             "inLanguage": lang, "isPartOf": {"@id": f"{ALAN}/#website"}, "about": {"@id": f"{ALAN}/#uygulama"},
+             "primaryImageOfPage": {"@type": "ImageObject", "url": SOSYAL_GORSEL, "width": 1200, "height": 630},
+             "dateModified": GUNCELLEME}
+    graf = [org, site, sayfa]
+    if dosya != "index.html":
+        ad = SEO_AD[dosya]
+        sayfa["breadcrumb"] = {"@id": f"{url}#ekmek"}
+        graf.append({"@type": "BreadcrumbList", "@id": f"{url}#ekmek", "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": duz(v["nav_anasayfa"]), "item": anasayfa_url},
+            {"@type": "ListItem", "position": 2, "name": duz(v.get(ad, ad)), "item": url}]})
+    graf.append(uyg)
+    soru = []
+    if dosya == "corider.html":
+        soru = sorular(v, "cr_f{}_q", "cr_f{}_a")
+    elif dosya == "index.html" and v.get("faq_q1"):
+        soru = sorular(v, "faq_q{}", "faq_a{}")
+    if soru:
+        graf.append({"@type": "FAQPage", "@id": f"{url}#sss", "inLanguage": lang, "mainEntity": soru})
+        sayfa["mainEntity"] = {"@id": f"{url}#sss"}
+    govde = json.dumps({"@context": "https://schema.org", "@graph": graf}, ensure_ascii=False, indent=2)
+    return '<script type="application/ld+json">\n' + govde.replace("</", "<\\/") + "\n</script>"
+
+
 def main() -> None:
     sablonlar = {}
     for ad in SAYFALAR:
@@ -383,6 +511,8 @@ def main() -> None:
                 "gizlilik_url": gizlilik_url(kod),
                 "anasayfa_url": sayfa_yolu(kod, "index.html"),
                 "corider_url": sayfa_yolu(kod, "corider.html"),
+                "ozellikler_url": sayfa_yolu(kod, "ozellikler.html"),
+                "nasil_url": sayfa_yolu(kod, "nasil-yapilir.html"),
                 "uygulama_id": UYGULAMA_ID,
                 "yil": YIL,
             }
@@ -397,6 +527,8 @@ def main() -> None:
             else:
                 metin_d = metin
             degerler = {**metin_d, **ortak}
+            degerler["seo_head"] = seo_head(dosya, degerler)
+            degerler["json_ld"] = json_ld(dosya, degerler, kod)
             html = doldur(sablon_metni, degerler, f"{kod}/{dosya}")
             html = varliklari_surumle(html)
             html = gorselleri_yerelle(html, kod)

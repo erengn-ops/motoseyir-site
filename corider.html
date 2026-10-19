@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>AI CoRider — Kaskında konuşan yol arkadaşı | Motoseyir</title>
-<meta name="description" content="AI CoRider, Motoseyir’in sesli yol arkadaşı: durak ekler, yol üstünde yer arar, hava ve yakıt menzilini söyler, rotayı senin yerine değiştirir. Eller gidonda kalır.">
+<title>AI CoRider: Motosiklet İçin Sesli Yol Arkadaşı — Motoseyir</title>
+<meta name="description" content="AI CoRider, Motoseyir’in sesli yol arkadaşı: durak ekler, yol üstünde yer arar, hava ve yakıt menzilini söyler, rotayı değiştirir. Eller gidonda kalır.">
 <link rel="canonical" href="https://motoseyir-app.com/corider.html">
 <link rel="alternate" hreflang="tr" href="https://motoseyir-app.com/corider.html">
 <link rel="alternate" hreflang="en" href="https://motoseyir-app.com/en/corider.html">
@@ -22,15 +22,22 @@
 <link rel="alternate" hreflang="el" href="https://motoseyir-app.com/el/corider.html">
 <link rel="alternate" hreflang="x-default" href="https://motoseyir-app.com/en/corider.html">
 
-<!-- Open Graph -->
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Motoseyir">
 <meta property="og:locale" content="tr_TR">
-<meta property="og:title" content="AI CoRider: gözün yolda kalsın, o dinlesin">
-<meta property="og:description" content="AI CoRider, Motoseyir’in sesli yol arkadaşı: durak ekler, yol üstünde yer arar, hava ve yakıt menzilini söyler, rotayı senin yerine değiştirir. Eller gidonda kalır.">
+<meta property="og:title" content="AI CoRider: Motosiklet İçin Sesli Yol Arkadaşı — Motoseyir">
+<meta property="og:description" content="AI CoRider, Motoseyir’in sesli yol arkadaşı: durak ekler, yol üstünde yer arar, hava ve yakıt menzilini söyler, rotayı değiştirir. Eller gidonda kalır.">
 <meta property="og:url" content="https://motoseyir-app.com/corider.html">
 <meta property="og:image" content="https://motoseyir-app.com/img/og-kapak.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI CoRider: Motosiklet İçin Sesli Yol Arkadaşı — Motoseyir">
+<meta name="twitter:description" content="AI CoRider, Motoseyir’in sesli yol arkadaşı: durak ekler, yol üstünde yer arar, hava ve yakıt menzilini söyler, rotayı değiştirir. Eller gidonda kalır.">
+<meta name="twitter:image" content="https://motoseyir-app.com/img/og-kapak.jpg">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 <meta name="apple-itunes-app" content="app-id=6792549131">
 <meta name="theme-color" content="#050B13">
 <link rel="icon" href="/img/favicon.png">
@@ -52,25 +59,181 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "WebPage",
-      "name": "AI CoRider — Kaskında konuşan yol arkadaşı | Motoseyir",
-      "url": "https://motoseyir-app.com/corider.html",
+      "@type": "Organization",
+      "@id": "https://motoseyir-app.com/#organization",
+      "name": "Motoseyir",
+      "url": "https://motoseyir-app.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://motoseyir-app.com/img/uygulama-simgesi-512.png",
+        "width": 512,
+        "height": 512
+      },
+      "sameAs": [
+        "https://www.instagram.com/motoseyir.app/",
+        "https://www.instagram.com/motoseyir.app.en/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://motoseyir-app.com/#website",
+      "url": "https://motoseyir-app.com/",
+      "name": "Motoseyir",
       "inLanguage": "tr",
-      "description": "AI CoRider, Motoseyir’in sesli yol arkadaşı: durak ekler, yol üstünde yer arar, hava ve yakıt menzilini söyler, rotayı senin yerine değiştirir. Eller gidonda kalır.",
-      "isPartOf": {"@type": "WebSite", "name": "Motoseyir", "url": "https://motoseyir-app.com/"}
+      "publisher": {
+        "@id": "https://motoseyir-app.com/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://motoseyir-app.com/corider.html#sayfa",
+      "url": "https://motoseyir-app.com/corider.html",
+      "name": "AI CoRider: Motosiklet İçin Sesli Yol Arkadaşı — Motoseyir",
+      "description": "AI CoRider, Motoseyir’in sesli yol arkadaşı: durak ekler, yol üstünde yer arar, hava ve yakıt menzilini söyler, rotayı değiştirir. Eller gidonda kalır.",
+      "inLanguage": "tr",
+      "isPartOf": {
+        "@id": "https://motoseyir-app.com/#website"
+      },
+      "about": {
+        "@id": "https://motoseyir-app.com/#uygulama"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://motoseyir-app.com/img/og-kapak.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "dateModified": "2026-10-20",
+      "breadcrumb": {
+        "@id": "https://motoseyir-app.com/corider.html#ekmek"
+      },
+      "mainEntity": {
+        "@id": "https://motoseyir-app.com/corider.html#sss"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://motoseyir-app.com/corider.html#ekmek",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Anasayfa",
+          "item": "https://motoseyir-app.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "AI CoRider",
+          "item": "https://motoseyir-app.com/corider.html"
+        }
+      ]
+    },
+    {
+      "@type": "MobileApplication",
+      "@id": "https://motoseyir-app.com/#uygulama",
+      "name": "Motoseyir",
+      "operatingSystem": "iOS",
+      "applicationCategory": "NavigationApplication",
+      "inLanguage": "tr",
+      "url": "https://motoseyir-app.com/",
+      "image": "https://motoseyir-app.com/img/og-kapak.jpg",
+      "description": "Motosiklet sürücüleri için mesafe odaklı navigasyon uygulaması: en kısa rota, köy yolları, tur üretici, dağ geçitleri, grup sürüşü, interkom, CarPlay ve efsane rotalar.",
+      "screenshot": [
+        "https://motoseyir-app.com/m/ekran-nav-tr.webp",
+        "https://motoseyir-app.com/m/ekran-tur-tr.webp",
+        "https://motoseyir-app.com/m/ekran-gecit-tr.webp",
+        "https://motoseyir-app.com/m/ekran-corider-tr.webp"
+      ],
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Ücretsiz",
+          "price": "0",
+          "priceCurrency": "EUR",
+          "description": "Türkiye, Avrupa ve ABD’de sınırsız rota ve navigasyon, 1 kayıtlı tur; Pro’nun 3 aylık ve yıllık planlarında yeni abonelere 7 günlük ücretsiz deneme sunulabilir."
+        },
+        {
+          "@type": "Offer",
+          "name": "Motoseyir Pro",
+          "category": "subscription",
+          "description": "AI CoRider, CarPlay, grup kurma, Keşfet, sınırsız tur ve parkur, tur modları ve virajlı ya da otoyolsuz tur kurma."
+        }
+      ],
+      "downloadUrl": "https://apps.apple.com/tr/app/id6792549131?pt=128439797&ct=site-tr&mt=8",
+      "publisher": {
+        "@id": "https://motoseyir-app.com/#organization"
+      }
     },
     {
       "@type": "FAQPage",
+      "@id": "https://motoseyir-app.com/corider.html#sss",
       "inLanguage": "tr",
       "mainEntity": [
-        {"@type": "Question", "name": "AI CoRider sürekli beni dinliyor mu?", "acceptedAnswer": {"@type": "Answer", "text": "Hayır. “Hey” gibi bir çağrı sözcüğü yok. Mikrofon yalnız sen haritadaki AI CoRider düğmesine basınca açılır. Oturum sen kapatınca, bir süre konuşmayınca ya da navigasyon bitince kendiliğinden kapanır."}},
-        {"@type": "Question", "name": "İnternet olmadan çalışır mı?", "acceptedAnswer": {"@type": "Answer", "text": "Hayır. Söylediklerin cevabı üretmek için bulut tabanlı bir ses servisine gittiği için AI CoRider internet ister. Bağlantı yokken oturum açılamaz."}},
-        {"@type": "Question", "name": "Hangi dilde konuşabilirim?", "acceptedAnswer": {"@type": "Answer", "text": "Hangi dilde konuşursan o dilde cevap verir. Ezberlenecek komut yok, kendi cümlenle söylemen yeter."}},
-        {"@type": "Question", "name": "Konuşma süresi bitince ne olur?", "acceptedAnswer": {"@type": "Answer", "text": "Pro’da her 30 günde 10 dakika yenilenir, ücretsiz denemede 5 dakika verilir. Yetmezse süresi dolmayan 30, 60 ya da 180 dakikalık paket alırsın."}},
-        {"@type": "Question", "name": "Planlayıcı ile Sohbet arasındaki fark ne?", "acceptedAnswer": {"@type": "Answer", "text": "Planlayıcı rotanı bilir ve işini yapar: durak ekler, yer arar, rotayı değiştirir. Pro’ya dahildir. Sohbet’te konuyu sen seçersin, önceki sohbetleri hatırlar; dakika paketiyle açılır."}},
-        {"@type": "Question", "name": "Grupta herkes duyar mı, dakika kimden düşer?", "acceptedAnswer": {"@type": "Answer", "text": "Grup interkomunda AI CoRider’ı çağırırsan odadaki herkes duyar. Dakika, onu çağıranın hesabından düşer."}},
-        {"@type": "Question", "name": "Benzinim yeter mi diye soruyorum, menzil söylemiyor. Neden?", "acceptedAnswer": {"@type": "Answer", "text": "Menzil için Ayarlar’a dolu depoyla gittiğin yolu bir kez yazman gerekir. Bu yazılmadıysa AI CoRider tahmin yürütmez, bunu söyler."}},
-        {"@type": "Question", "name": "Kaskta duymak için Bluetooth şart mı?", "acceptedAnswer": {"@type": "Answer", "text": "Kask telefona Bluetooth ile bağlıysa ses oradan gelir, değilse telefondan çıkar. Rüzgârda duyamazsan “sesini aç” demen yeter."}}
+        {
+          "@type": "Question",
+          "name": "AI CoRider sürekli beni dinliyor mu?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Hayır. “Hey” gibi bir çağrı sözcüğü yok. Mikrofon yalnız sen haritadaki AI CoRider düğmesine basınca açılır. Oturum sen kapatınca, bir süre konuşmayınca ya da navigasyon bitince kendiliğinden kapanır."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "İnternet olmadan çalışır mı?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Hayır. Söylediklerin cevabı üretmek için bulut tabanlı bir ses servisine gittiği için AI CoRider internet ister. Bağlantı yokken oturum açılamaz."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Hangi dilde konuşabilirim?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Hangi dilde konuşursan o dilde cevap verir. Ezberlenecek komut yok, kendi cümlenle söylemen yeter."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Konuşma süresi bitince ne olur?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pro’da her 30 günde 10 dakika yenilenir, ücretsiz denemede 5 dakika verilir. Yetmezse süresi dolmayan 30, 60 ya da 180 dakikalık paket alırsın."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Planlayıcı ile Sohbet arasındaki fark ne?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Planlayıcı rotanı bilir ve işini yapar: durak ekler, yer arar, rotayı değiştirir. Pro’ya dahildir. Sohbet’te konuyu sen seçersin, önceki sohbetleri hatırlar; dakika paketiyle açılır."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Grupta herkes duyar mı, dakika kimden düşer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Grup interkomunda AI CoRider’ı çağırırsan odadaki herkes duyar. Dakika, onu çağıranın hesabından düşer."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Benzinim yeter mi diye soruyorum, menzil söylemiyor. Neden?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Menzil için Ayarlar’a dolu depoyla gittiğin yolu bir kez yazman gerekir. Bu yazılmadıysa AI CoRider tahmin yürütmez, bunu söyler."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kaskta duymak için Bluetooth şart mı?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kask telefona Bluetooth ile bağlıysa ses oradan gelir, değilse telefondan çıkar. Rüzgârda duyamazsan “sesini aç” demen yeter."
+          }
+        }
       ]
     }
   ]

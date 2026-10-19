@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Motoseyir — de motornavigatie voor bochtige wegen</title>
-<meta name="description" content="Motoseyir is een motornavigatie die op afstand plant, niet op minuten. Binnenwegen- en kustmodus, toergenerator, 1.600+ bergpassen, groepsritten en CarPlay.">
+<title>Motor GPS en motornavigatie, routeplanner — Motoseyir</title>
+<meta name="description" content="Motoseyir is een motornavigatie die op afstand plant, niet op minuten. Binnenwegen, toertochten, 1.600+ bergpassen, groepsritten, intercom en CarPlay.">
 <link rel="canonical" href="https://motoseyir-app.com/nl/">
 <link rel="alternate" hreflang="tr" href="https://motoseyir-app.com/">
 <link rel="alternate" hreflang="en" href="https://motoseyir-app.com/en/">
@@ -22,15 +22,22 @@
 <link rel="alternate" hreflang="el" href="https://motoseyir-app.com/el/">
 <link rel="alternate" hreflang="x-default" href="https://motoseyir-app.com/en/">
 
-<!-- Open Graph -->
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Motoseyir">
 <meta property="og:locale" content="nl_NL">
-<meta property="og:title" content="Motoseyir — de motornavigatie voor bochtige wegen">
-<meta property="og:description" content="Eerst afstand, dan tijd: binnenwegen, toergenerator, 1.600+ bergpassen, groepsritten, intercom en CarPlay — in één app.">
+<meta property="og:title" content="Motor GPS en motornavigatie, routeplanner — Motoseyir">
+<meta property="og:description" content="Motoseyir is een motornavigatie die op afstand plant, niet op minuten. Binnenwegen, toertochten, 1.600+ bergpassen, groepsritten, intercom en CarPlay.">
 <meta property="og:url" content="https://motoseyir-app.com/nl/">
 <meta property="og:image" content="https://motoseyir-app.com/img/og-kapak.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Motor GPS en motornavigatie, routeplanner — Motoseyir">
+<meta name="twitter:description" content="Motoseyir is een motornavigatie die op afstand plant, niet op minuten. Binnenwegen, toertochten, 1.600+ bergpassen, groepsritten, intercom en CarPlay.">
+<meta name="twitter:image" content="https://motoseyir-app.com/img/og-kapak.jpg">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 
 <!-- Apple akıllı afiş: iOS Safari'de sayfanın üstünde "App Store'da aç" şeridi. -->
 <meta name="apple-itunes-app" content="app-id=6792549131">
@@ -68,30 +75,149 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "Motoseyir",
-  "operatingSystem": "iOS",
-  "applicationCategory": "NavigationApplication",
-  "inLanguage": "nl",
-  "url": "https://motoseyir-app.com/nl/",
-  "image": "https://motoseyir-app.com/img/og-kapak.jpg",
-  "description": "Motornavigatie die op afstand plant: kortste route, binnenwegen, toergenerator, bergpassen, groepsritten, intercom, CarPlay en legendarische wegen.",
-  "offers": [
+  "@graph": [
     {
-      "@type": "Offer",
-      "name": "Gratis",
-      "price": "0",
-      "priceCurrency": "EUR",
-      "description": "Onbeperkt routeren en navigeren in Turkije, Europa en de VS, 1 opgeslagen tocht; bij de 3-maands- en jaarabonnementen van Pro kunnen nieuwe abonnees 7 dagen gratis proberen."
+      "@type": "Organization",
+      "@id": "https://motoseyir-app.com/#organization",
+      "name": "Motoseyir",
+      "url": "https://motoseyir-app.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://motoseyir-app.com/img/uygulama-simgesi-512.png",
+        "width": 512,
+        "height": 512
+      },
+      "sameAs": [
+        "https://www.instagram.com/motoseyir.app/",
+        "https://www.instagram.com/motoseyir.app.en/"
+      ]
     },
     {
-      "@type": "Offer",
-      "name": "Motoseyir Pro",
-      "category": "subscription",
-      "description": "AI CoRider, CarPlay, groepen maken, Discover, onbeperkte tochten en tracks, toermodi en bochtige of snelwegvrije tochten bouwen."
+      "@type": "WebSite",
+      "@id": "https://motoseyir-app.com/#website",
+      "url": "https://motoseyir-app.com/",
+      "name": "Motoseyir",
+      "inLanguage": "nl",
+      "publisher": {
+        "@id": "https://motoseyir-app.com/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://motoseyir-app.com/nl/#sayfa",
+      "url": "https://motoseyir-app.com/nl/",
+      "name": "Motor GPS en motornavigatie, routeplanner — Motoseyir",
+      "description": "Motoseyir is een motornavigatie die op afstand plant, niet op minuten. Binnenwegen, toertochten, 1.600+ bergpassen, groepsritten, intercom en CarPlay.",
+      "inLanguage": "nl",
+      "isPartOf": {
+        "@id": "https://motoseyir-app.com/#website"
+      },
+      "about": {
+        "@id": "https://motoseyir-app.com/#uygulama"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://motoseyir-app.com/img/og-kapak.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "dateModified": "2026-10-20",
+      "mainEntity": {
+        "@id": "https://motoseyir-app.com/nl/#sss"
+      }
+    },
+    {
+      "@type": "MobileApplication",
+      "@id": "https://motoseyir-app.com/#uygulama",
+      "name": "Motoseyir",
+      "operatingSystem": "iOS",
+      "applicationCategory": "NavigationApplication",
+      "inLanguage": "nl",
+      "url": "https://motoseyir-app.com/nl/",
+      "image": "https://motoseyir-app.com/img/og-kapak.jpg",
+      "description": "Motornavigatie die op afstand plant: kortste route, binnenwegen, toergenerator, bergpassen, groepsritten, intercom, CarPlay en legendarische wegen.",
+      "screenshot": [
+        "https://motoseyir-app.com/m/ekran-nav-en.webp",
+        "https://motoseyir-app.com/m/ekran-tur-en.webp",
+        "https://motoseyir-app.com/m/ekran-gecit-en.webp",
+        "https://motoseyir-app.com/m/ekran-corider-en.webp"
+      ],
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Gratis",
+          "price": "0",
+          "priceCurrency": "EUR",
+          "description": "Onbeperkt routeren en navigeren in Turkije, Europa en de VS, 1 opgeslagen tocht; bij de 3-maands- en jaarabonnementen van Pro kunnen nieuwe abonnees 7 dagen gratis proberen."
+        },
+        {
+          "@type": "Offer",
+          "name": "Motoseyir Pro",
+          "category": "subscription",
+          "description": "AI CoRider, CarPlay, groepen maken, Discover, onbeperkte tochten en tracks, toermodi en bochtige of snelwegvrije tochten bouwen."
+        }
+      ],
+      "downloadUrl": "https://apps.apple.com/nl/app/id6792549131?pt=128439797&ct=site-nl&mt=8",
+      "publisher": {
+        "@id": "https://motoseyir-app.com/#organization"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://motoseyir-app.com/nl/#sss",
+      "inLanguage": "nl",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Wat is Motoseyir?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Motoseyir is een navigatie- en routeplanner-app voor motorrijders. Hij plant op afstand in plaats van op minuten, heeft een binnenwegen- en een kustmodus en bouwt een tocht in de richting en voor de uren die jij kiest."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Motoseyir gratis?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Routeplanning en navigatie met afslaginstructies zijn gratis en onbeperkt in Turkije, Europa en de VS, zonder account. In de gratis versie bewaar je 1 tocht. AI CoRider, CarPlay, groepen maken, Discover en onbeperkte tochten horen bij Pro."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wat is het verschil met andere navigatie?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Motoseyir plant op afstand, niet op minuten: hij vergelijkt de alternatieven tussen dezelfde twee punten en stelt de kortste voor. Bij een tocht met meerdere stops bepaalt hij ook de volgorde van de stops."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Waar werkt het?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Routeplanning en navigatie werken in Turkije, Europa en de VS. De bergpassenkaart telt meer dan 1.600 bergpassen in 36 landen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Werkt het met CarPlay?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. Apple CarPlay hoort bij Pro; je route vult het hele autoscherm."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kan ik met vrienden rijden?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. Jullie rijden dezelfde route, zien iedereen op de kaart en praten via de groepsintercom. Aansluiten bij een groep met een uitnodiging of code is gratis; een groep maken hoort bij Pro."
+          }
+        }
+      ]
     }
-  ],
-  "downloadUrl": "https://apps.apple.com/nl/app/id6792549131?pt=128439797&amp;ct=site-nl&amp;mt=8"
+  ]
 }
 </script>
 </head>
@@ -143,7 +269,7 @@
   </div>
   <div class="k-ic">
     <div class="k-metin">
-      <p class="ust-yazi">Motoseyir · De navigatie voor motorrijders</p>
+      <p class="ust-yazi">Motoseyir · Motornavigatie</p>
       <h1>Voor rijders die <i>van bochten houden.</i></h1>
       <p class="giris">Motoseyir plant op afstand, niet op minuten. Binnenwegen of de kust: jij kiest. Of zeg welke kant je op wilt en laat hem de tocht bouwen. Of kies een bergpas en ga.</p>
       <div class="cta-satir">
@@ -583,6 +709,8 @@
         <li><h3>Liggend gebruik</h3><p>Draai je telefoon op zijn kant en de kaartjes schuiven naar links terwijl de kaart de rest van het scherm krijgt; My Tours gaat naar twee kolommen.</p></li>
         <li><h3>Eenheden en taal</h3><p>De eenheden volgen waar je bent: mijlen, mph en voet in de VS, mijlen en yards in het VK, kilometers overal elders. De app spreekt Turks, Engels, Duits, Frans en Italiaans en volgt de taal van je telefoon.</p></li>
         </ul>
+        <p class="cr-daha"><a href="/nl/ozellikler.html">Alle functies in detail →</a></p>
+        <p class="cr-daha"><a href="/nl/nasil-yapilir.html">Open je de app voor het eerst? Begin hier →</a></p>
       </div>
     </div>
   </section>
@@ -612,6 +740,27 @@
         </div>
       </div>
       <p class="fiyat-not">De actuele prijzen verschillen per regio; je ziet ze op het abonnementsscherm in de App Store. Opzeggen kan altijd in je App Store-account.</p>
+    </div>
+  </section>
+
+  <!-- SSS (20 Eki 2026): arama niyeti için kısa, GÖRÜNÜR soru-cevaplar (yalnız sitede zaten yazan olgular). FAQPage yapısal verisi aynı
+       anahtarlardan (faq_q1/faq_a1 …) uret.py json_ld() ile üretilir; buraya soru eklerken dil dosyalarına da ekle, görünür metin = JSON-LD. -->
+  <section class="bolum" id="sss" aria-labelledby="sss-h">
+    <div class="kap">
+      <div data-r>
+        <p class="km">Veelgestelde vragen</p>
+        <h2 id="sss-h">Motornavigatie, <i>veelgestelde vragen.</i></h2>
+      </div>
+      <div class="ayrinti" data-r>
+        <ul class="izgara">
+        <li><h3>Wat is Motoseyir?</h3><p>Motoseyir is een navigatie- en routeplanner-app voor motorrijders. Hij plant op afstand in plaats van op minuten, heeft een binnenwegen- en een kustmodus en bouwt een tocht in de richting en voor de uren die jij kiest.</p></li>
+        <li><h3>Is Motoseyir gratis?</h3><p>Routeplanning en navigatie met afslaginstructies zijn gratis en onbeperkt in Turkije, Europa en de VS, zonder account. In de gratis versie bewaar je 1 tocht. AI CoRider, CarPlay, groepen maken, Discover en onbeperkte tochten horen bij Pro.</p></li>
+        <li><h3>Wat is het verschil met andere navigatie?</h3><p>Motoseyir plant op afstand, niet op minuten: hij vergelijkt de alternatieven tussen dezelfde twee punten en stelt de kortste voor. Bij een tocht met meerdere stops bepaalt hij ook de volgorde van de stops.</p></li>
+        <li><h3>Waar werkt het?</h3><p>Routeplanning en navigatie werken in Turkije, Europa en de VS. De bergpassenkaart telt meer dan 1.600 bergpassen in 36 landen.</p></li>
+        <li><h3>Werkt het met CarPlay?</h3><p>Ja. Apple CarPlay hoort bij Pro; je route vult het hele autoscherm.</p></li>
+        <li><h3>Kan ik met vrienden rijden?</h3><p>Ja. Jullie rijden dezelfde route, zien iedereen op de kaart en praten via de groepsintercom. Aansluiten bij een groep met een uitnodiging of code is gratis; een groep maken hoort bij Pro.</p></li>
+        </ul>
+      </div>
     </div>
   </section>
 </div>

@@ -10,9 +10,9 @@ kütüphanesi.
 python3 uret.py
 ```
 
-Bu komut `sablon/` + `dil/` ikilisinden 14 dilde 3 sayfa (42 dosya), ayrıca
-`sitemap.xml` ve `robots.txt` üretir. Türkçe **köke** yazılır
-(`index.html`, `ozellikler.html`, `nasil-yapilir.html`) — eski adresler
+Bu komut `sablon/` + `dil/` ikilisinden 14 dilde 4 sayfa (56 dosya: anasayfa, özellikler,
+nasıl yapılır, AI CoRider), ayrıca `sitemap.xml` ve `robots.txt` üretir. Türkçe **köke** yazılır
+(`index.html`, `ozellikler.html`, `nasil-yapilir.html`, `corider.html`) — eski adresler
 bozulmasın diye; diğer diller `/<kod>/` altına.
 
 Çıktı dosyaları **elle düzenlenmez**: bir sonraki koşuda üzerine yazılır.
@@ -50,7 +50,10 @@ Arka plan videosu yapay zekâ ile üretildi (Higgsfield Wan 3.0); gerçek çekim
 | `img/` | ortak görseller; `img/<kod>/` varsa o dilde onlar kullanılır |
 | `gizlilik/index.html` | Türkçe tam gizlilik politikası — **elle** tutuluyor |
 | `gizlilik/en/index.html` | İngilizce gizlilik metni — **elle** tutuluyor |
-| `indir/index.html` | kısa yönlendirme sayfası (`noindex`) — **elle** tutuluyor |
+| `indir/index.html`, `get/index.html` | Instagram reklamı yönlendirme sayfaları (`noindex`, ölçüm işareti var; **dokunma**) — **elle** tutuluyor |
+| `404.html` | bulunamayan adres sayfası (`noindex`) — **elle** tutuluyor |
+| `seo-denetim.py` | yayın öncesi SEO denetimi (aşağıda) |
+| `SEO.md` | anahtar kelime haritası, yapılan SEO işleri, sahibinin yapacakları |
 
 `uret.py` yalnız yukarıdaki üç şablondan üretilen sayfalara, `sitemap.xml` ve
 `robots.txt`'ye dokunur. Gizlilik ve indir sayfaları ile `style.css` ondan
@@ -112,10 +115,19 @@ Yeni sürüm çıktığında `sablon/index.html` içindeki "YENİLİKLER" bölü
 dosyasına yaz. Mağaza notları hazır çeviri kaynağıdır:
 `moto-rota/store/metin/<build>/yenilikler-<locale>.txt`.
 
+## SEO
+
+Başlık/açıklama/H1 metinleri dil dosyalarında (`baslik`/`aciklama`, `oz_*`, `ny_*`, `cr_*`). `og:*` ve `twitter:*` etiketleri ile
+JSON-LD (`@graph`: Organization, WebSite, WebPage, BreadcrumbList, MobileApplication, FAQPage) şablonlarda DEĞİL, `uret.py`
+içinde üretilir: şablonlarda yalnız `{{seo_head}}` ve `{{json_ld}}` var. Sınırlar: başlık ≤ 60, açıklama 140–160 karakter.
+Anasayfadaki SSS (`#sss`) `faq_q1…faq_a6` anahtarlarından gelir; FAQPage yapısal verisi aynı anahtarlardan çıkar, yani
+görünür metinle birebir. Yeni soru eklenirse 14 dil dosyasına da eklenmeli. Ayrıntı: `SEO.md`.
+
 ## Yayına almadan önce
 
 ```sh
 python3 uret.py
+python3 seo-denetim.py        # SEO + bağlantı + sitemap denetimi; sorun varsa çıkış kodu 1
 python3 -m http.server 8099   # http://127.0.0.1:8099/
 ```
 
