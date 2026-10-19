@@ -86,9 +86,10 @@ h1 i,h2 i,.plan h3 i{font-style:normal}
 .mikro{font-size:.86rem;color:rgba(255,255,255,.86);max-width:24rem}
 
 /* iki telefon; mobilde yalnız öndeki, alt kenardan göz ucuyla */
-.k-tel{position:relative;height:clamp(150px,38vw,230px);width:min(100%,380px);margin:0 auto;overflow:hidden}
+/* Telefonda açılış telefonu TAM görünür (19 Eki 2026, sahip: "en üstteki telefon hiç tam boyuta geçemiyor"); eskiden 150–230 px'te kırpılıyordu. */
+.k-tel{position:relative;width:min(100%,380px);margin:0 auto 8px;overflow:visible;display:flex;justify-content:center}
 .kt{position:absolute}
-.kt-on{left:50%;top:0;width:min(62vw,250px);margin-left:calc(min(62vw,250px) / -2)}
+.kt-on{position:relative;width:min(50vw,220px)}
 .kt-arka{display:none}
 .js .kt{opacity:0;transition:opacity .8s ease}
 .js.hazir .kt{opacity:1}
