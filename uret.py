@@ -35,7 +35,7 @@ ALAN = "https://motoseyir-app.com"
 UYGULAMA_ID = "6792549131"
 SAGLAYICI = "128439797"  # App Store Connect kampanya sağlayıcı kimliği (pt)
 YIL = "2026"
-GUNCELLEME = "2026-10-18"  # sitemap lastmod
+GUNCELLEME = "2026-10-19"  # sitemap lastmod
 
 # Şablon adı -> (çıktı dosya adı, sitemap changefreq, sitemap priority)
 SAYFALAR = {

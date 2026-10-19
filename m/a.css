@@ -177,6 +177,14 @@ h2{font:800 clamp(1.9rem,5.6vw,3rem)/1.1 var(--sans);letter-spacing:-.025em;text
 .izgara p{margin:0;color:var(--yazi-2);font-size:.95rem;line-height:1.55}
 @media(min-width:700px){.izgara{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(min-width:900px){.veri-say.uc{grid-template-columns:repeat(3,minmax(0,1fr))}.izgara{grid-template-columns:repeat(3,minmax(0,1fr))}}
+/* Haritada sen: altı işaretçi (uygulamadaki ızgaranın aynısı) */
+.isaretler{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:0 0 44px}
+.isaretler li{display:grid;justify-items:center;gap:4px;padding:16px 8px 14px;background:var(--yuzey);border:1px solid var(--cizgi);border-radius:16px;text-align:center}
+.isaretler .ic{display:grid;place-items:center;width:min(96px,100%);aspect-ratio:1}
+.isaretler .ic img,.isaretler .ic svg{width:100%;height:auto}
+.isaretler b{font:700 .95rem/1.25 var(--sans);overflow-wrap:anywhere}
+@media(min-width:700px){.isaretler{grid-template-columns:repeat(6,minmax(0,1fr));gap:16px}}
+@media(hover:hover){.hm .isaretler li{transition:opacity .7s ease,translate .9s cubic-bezier(.2,.8,.2,1),box-shadow .3s,border-color .3s}.hm .isaretler li:hover{box-shadow:0 14px 28px -18px rgba(22,34,31,.45);border-color:var(--vurgu)}}
 .liste{list-style:none;margin-top:28px;max-width:34rem}
 .liste li{padding:15px 0;border-top:1px solid var(--cizgi)}
 .liste li:last-child{border-bottom:1px solid var(--cizgi)}
@@ -311,14 +319,14 @@ footer{background:var(--yuksek);border-top:1px solid var(--cizgi);padding:34px 0
 .hm [data-r]{transform:translate3d(0,30px,0);transition:opacity .8s ease,transform 1s cubic-bezier(.2,.8,.2,1)}
 .hm [data-r].gor{transform:none}
 /* kardeş listeler sırayla gelir */
-.hm [data-r] :is(.liste,.izgara,.pinler,.cr-soz,.cr-adim)>li,.hm [data-r] .veri-say>div,.hm [data-r] .kartlar>.kart,.hm .fiyat>.plan,.hm .ayr .surum{opacity:0;translate:0 22px;transition:opacity .7s ease,translate .9s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--i,0)*70ms + 160ms)}
-.hm [data-r].gor :is(.liste,.izgara,.pinler,.cr-soz,.cr-adim)>li,.hm [data-r].gor .veri-say>div,.hm [data-r].gor .kartlar>.kart,.hm [data-r].gor .fiyat>.plan,.hm .ayr .surum.gor{opacity:1;translate:none}
-.hm :is(.liste,.izgara,.pinler,.cr-soz,.cr-adim)>li:nth-child(1),.hm .veri-say>div:nth-child(1),.hm .fiyat>.plan:nth-child(1){--i:0}
-.hm :is(.liste,.izgara,.pinler,.cr-soz,.cr-adim)>li:nth-child(2),.hm .veri-say>div:nth-child(2),.hm .fiyat>.plan:nth-child(2){--i:1}
-.hm :is(.liste,.izgara,.pinler,.cr-soz,.cr-adim)>li:nth-child(3),.hm .veri-say>div:nth-child(3){--i:2}
-.hm :is(.liste,.izgara,.pinler,.cr-soz,.cr-adim)>li:nth-child(4),.hm .veri-say>div:nth-child(4){--i:3}
-.hm :is(.liste,.izgara,.pinler,.cr-soz,.cr-adim)>li:nth-child(5){--i:4}
-.hm :is(.liste,.izgara,.pinler,.cr-soz,.cr-adim)>li:nth-child(6){--i:5}
+.hm [data-r] :is(.liste,.izgara,.pinler,.cr-soz,.cr-adim,.isaretler)>li,.hm [data-r] .veri-say>div,.hm [data-r] .kartlar>.kart,.hm .fiyat>.plan,.hm .ayr .surum{opacity:0;translate:0 22px;transition:opacity .7s ease,translate .9s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--i,0)*70ms + 160ms)}
+.hm [data-r].gor :is(.liste,.izgara,.pinler,.cr-soz,.cr-adim,.isaretler)>li,.hm [data-r].gor .veri-say>div,.hm [data-r].gor .kartlar>.kart,.hm [data-r].gor .fiyat>.plan,.hm .ayr .surum.gor{opacity:1;translate:none}
+.hm :is(.liste,.izgara,.pinler,.cr-soz,.cr-adim,.isaretler)>li:nth-child(1),.hm .veri-say>div:nth-child(1),.hm .fiyat>.plan:nth-child(1){--i:0}
+.hm :is(.liste,.izgara,.pinler,.cr-soz,.cr-adim,.isaretler)>li:nth-child(2),.hm .veri-say>div:nth-child(2),.hm .fiyat>.plan:nth-child(2){--i:1}
+.hm :is(.liste,.izgara,.pinler,.cr-soz,.cr-adim,.isaretler)>li:nth-child(3),.hm .veri-say>div:nth-child(3){--i:2}
+.hm :is(.liste,.izgara,.pinler,.cr-soz,.cr-adim,.isaretler)>li:nth-child(4),.hm .veri-say>div:nth-child(4){--i:3}
+.hm :is(.liste,.izgara,.pinler,.cr-soz,.cr-adim,.isaretler)>li:nth-child(5){--i:4}
+.hm :is(.liste,.izgara,.pinler,.cr-soz,.cr-adim,.isaretler)>li:nth-child(6){--i:5}
 .hm :is(.liste,.izgara,.pinler,.cr-soz,.cr-adim)>li:nth-child(n+7){--i:6}
 
 /* --- bölge çubukları: görününce soldan dolar --- */

@@ -141,7 +141,7 @@
       </div>
       <ol class="hk-adimlar">
         <li class="hk-adim on" data-i="0"><p class="km">{{k1_ad}}</p><h3>{{k1_h2}}</h3><p class="metin">{{k1_p}}</p><a class="hk-link" href="#rota">{{btn_ozellikleri_gor}}</a></li>
-        <li class="hk-adim" data-i="1"><p class="km">{{k2_ad}} <span class="etiket">Pro</span></p><h3>{{k2_h2}}</h3><p class="metin">{{k2_p}}</p><a class="hk-link" href="#tur">{{btn_ozellikleri_gor}}</a></li>
+        <li class="hk-adim" data-i="1"><p class="km">{{k2_ad}}</p><h3>{{k2_h2}}</h3><p class="metin">{{k2_p}}</p><a class="hk-link" href="#tur">{{btn_ozellikleri_gor}}</a></li>
         <li class="hk-adim" data-i="2"><p class="km">{{k3_ad}}</p><h3>{{k3_h2}}</h3><p class="metin">{{k3_p}}</p><a class="hk-link" href="#gecit">{{btn_ozellikleri_gor}}</a></li>
         <li class="hk-adim" data-i="3"><p class="km">{{k6_ad}} <span class="etiket">Pro</span></p><h3>{{k6_h2}}</h3><p class="metin">{{k6_p}}</p><a class="hk-link" href="#kesfet">{{btn_ozellikleri_gor}}</a></li>
       </ol>
@@ -159,8 +159,8 @@
         <p class="metin">{{k1_p}}</p>
         <ul class="liste">
           <li><strong>{{k1_a_t}}</strong><span class="a">{{k1_a_d}}</span></li>
-          <li><strong>{{k1_b_t}} <span class="etiket">Pro</span></strong><span class="a">{{k1_b_d}}</span></li>
-          <li><strong>{{k1_c_t}}</strong><span class="a">{{k1_c_d}}</span></li>
+          <li><strong>{{k1_b_t}}</strong><span class="a">{{k1_b_d}}</span></li>
+          <li><strong>{{k1_c_t}} <span class="etiket">Pro</span></strong><span class="a">{{k1_c_d}}</span></li>
         </ul>
       </div>
     </div>
@@ -188,7 +188,7 @@
       <div data-r class="tel-alan"><div class="tel"><img src="/m/ekran-tur-{{dil_kodu}}.webp" alt="{{k2_alt}}" width="540" height="1174" loading="lazy"></div></div>
       <div data-r>
         <p class="km">{{k2_ad}}</p>
-        <h2>{{k2_h2}} <span class="etiket">Pro</span></h2>
+        <h2>{{k2_h2}}</h2>
         <p class="metin">{{k2_p}}</p>
       </div>
     </div>
@@ -356,7 +356,7 @@
         <p class="metin">{{k5_p}}</p>
         <ul class="liste">
           <li><strong>{{k5_a_t}} <span class="etiket">Pro</span></strong><span class="a">{{k5_a_d}}</span></li>
-          <li><strong>{{k5_b_t}} <span class="etiket">Pro</span></strong><span class="a">{{k5_b_d}}</span></li>
+          <li><strong>{{k5_b_t}}</strong><span class="a">{{k5_b_d}}</span></li>
           <li><strong>CarPlay <span class="etiket">Pro</span></strong><span class="a">{{k5_c_d}}</span></li>
         </ul>
       </div>
@@ -374,6 +374,9 @@
         <li><h3>{{a5_4_t}}</h3><p>{{a5_4_d}}</p></li>
         <li><h3>{{a5_5_t}}</h3><p>{{a5_5_d}}</p></li>
         <li><h3>{{a5_6_t}}</h3><p>{{a5_6_d}}</p></li>
+        <li><h3>{{a5_7_t}}</h3><p>{{a5_7_d}}</p></li>
+        <li><h3>{{a5_8_t}}</h3><p>{{a5_8_d}}</p></li>
+        <li><h3>{{a5_9_t}}</h3><p>{{a5_9_d}}</p></li>
       </ul>
     </div>
     </div>
@@ -452,7 +455,32 @@
         <div class="motor" id="motor" role="img" aria-label="{{k8_alt}}"><img id="motorimg" src="/m/bike/090.webp" alt="" width="760" height="699" loading="lazy" decoding="async"></div>
         <p class="motor-not">{{k8_not}}</p>
       </div>
-    </div></div>
+    </div>
+    <!-- Altı işaretçi: ilk dördü uygulamadaki üç boyutlu sürücülü kareler (assets/puck, 090° gövde katmanı), Ok ve Kask uygulamadaki sade çizimlerin (VehicleMarker.tsx) aynısı. -->
+    <div class="ayrinti" data-r aria-label="{{a8_etiket}}">
+      <ul class="isaretler">
+        <li><span class="ic"><img src="/m/isaret-supersport.webp" alt="" width="96" height="96" loading="lazy" decoding="async"></span><b>{{k8_m1}}</b></li>
+        <li><span class="ic"><img src="/m/isaret-chopper.webp" alt="" width="96" height="96" loading="lazy" decoding="async"></span><b>{{k8_m2}}</b></li>
+        <li><span class="ic"><img src="/m/isaret-scooter.webp" alt="" width="96" height="96" loading="lazy" decoding="async"></span><b>{{k8_m3}}</b></li>
+        <li><span class="ic"><img src="/m/isaret-touring.webp" alt="" width="96" height="96" loading="lazy" decoding="async"></span><b>{{k8_m4}}</b></li>
+        <li><span class="ic"><svg viewBox="0 0 100 100" width="96" height="96" aria-hidden="true"><ellipse cx="50" cy="84" rx="24" ry="6" fill="#16221F" opacity=".16"/><path d="M 50 14 L 76 80 L 50 66 L 24 80 Z" fill="#0E6E73" stroke="#fff" stroke-width="9" stroke-linejoin="round"/><path d="M 50 14 L 76 80 L 50 66 L 24 80 Z" fill="#0E6E73" stroke-linejoin="round"/></svg></span><b>{{k8_m5}}</b></li>
+        <li><span class="ic"><svg viewBox="0 0 100 100" width="96" height="96" aria-hidden="true"><ellipse cx="50" cy="84" rx="26" ry="6" fill="#16221F" opacity=".16"/><circle cx="50" cy="50" r="32" fill="#fff"/><circle cx="50" cy="50" r="27" fill="#0E6E73"/><path d="M 26 44 A 27 27 0 0 1 74 44 L 66 50 A 19 19 0 0 0 34 50 Z" fill="#FCFDFD" opacity=".92"/><path d="M 34 66 A 19 19 0 0 0 66 66 L 60 72 A 13 13 0 0 1 40 72 Z" fill="#0B4A4D" opacity=".55"/></svg></span><b>{{k8_m6}}</b></li>
+      </ul>
+      <dl class="veri-say uc">
+        <div><dt>{{a8_s1_b}}</dt><dd>{{a8_s1_t}}</dd></div>
+        <div><dt>{{a8_s2_b}}</dt><dd>{{a8_s2_t}}</dd></div>
+        <div><dt>{{a8_s3_b}}</dt><dd>{{a8_s3_t}}</dd></div>
+      </dl>
+      <ul class="izgara">
+        <li><h3>{{a8_1_t}}</h3><p>{{a8_1_d}}</p></li>
+        <li><h3>{{a8_2_t}}</h3><p>{{a8_2_d}}</p></li>
+        <li><h3>{{a8_3_t}}</h3><p>{{a8_3_d}}</p></li>
+        <li><h3>{{a8_4_t}}</h3><p>{{a8_4_d}}</p></li>
+        <li><h3>{{a8_5_t}}</h3><p>{{a8_5_d}}</p></li>
+        <li><h3>{{a8_6_t}}</h3><p>{{a8_6_d}}</p></li>
+      </ul>
+    </div>
+    </div>
   </section>
 
   <section class="bolum ters" id="efsane">
@@ -479,6 +507,42 @@
         <li><h3>{{a9_6_t}}</h3><p>{{a9_6_d}}</p></li>
       </ul>
     </div>
+    </div>
+  </section>
+
+  <!-- Diğer özellikler (19 Eki 2026): başka bölümlere sığmayan, App Store'daki 1.1.8'de bulunan özellikler. 1.1.9'a özgü olanlar (Duraklar net, Nerede ara, CarPlay'de devam ediyor...) bilerek yok. -->
+  <section class="bolum" id="diger" aria-labelledby="diger-h">
+    <div class="kap">
+      <div data-r>
+        <p class="km">{{dg_km}}</p>
+        <h2 id="diger-h">{{dg_h2}}</h2>
+        <p class="metin">{{dg_p}}</p>
+      </div>
+      <div class="ayrinti" data-r aria-label="{{dg_etiket}}">
+        <ul class="izgara">
+        <li><h3>{{dg_1_t}}</h3><p>{{dg_1_d}}</p></li>
+        <li><h3>{{dg_2_t}}</h3><p>{{dg_2_d}}</p></li>
+        <li><h3>{{dg_3_t}}</h3><p>{{dg_3_d}}</p></li>
+        <li><h3>{{dg_4_t}}</h3><p>{{dg_4_d}}</p></li>
+        <li><h3>{{dg_5_t}}</h3><p>{{dg_5_d}}</p></li>
+        <li><h3>{{dg_6_t}}</h3><p>{{dg_6_d}}</p></li>
+        <li><h3>{{dg_7_t}}</h3><p>{{dg_7_d}}</p></li>
+        <li><h3>{{dg_8_t}}</h3><p>{{dg_8_d}}</p></li>
+        <li><h3>{{dg_9_t}}</h3><p>{{dg_9_d}}</p></li>
+        <li><h3>{{dg_10_t}}</h3><p>{{dg_10_d}}</p></li>
+        <li><h3>{{dg_11_t}}</h3><p>{{dg_11_d}}</p></li>
+        <li><h3>{{dg_12_t}}</h3><p>{{dg_12_d}}</p></li>
+        <li><h3>{{dg_13_t}}</h3><p>{{dg_13_d}}</p></li>
+        <li><h3>{{dg_14_t}}</h3><p>{{dg_14_d}}</p></li>
+        <li><h3>{{dg_15_t}}</h3><p>{{dg_15_d}}</p></li>
+        <li><h3>{{dg_16_t}}</h3><p>{{dg_16_d}}</p></li>
+        <li><h3>{{dg_17_t}}</h3><p>{{dg_17_d}}</p></li>
+        <li><h3>{{dg_18_t}}</h3><p>{{dg_18_d}}</p></li>
+        <li><h3>{{dg_19_t}}</h3><p>{{dg_19_d}}</p></li>
+        <li><h3>{{dg_20_t}}</h3><p>{{dg_20_d}}</p></li>
+        <li><h3>{{dg_21_t}}</h3><p>{{dg_21_d}}</p></li>
+        </ul>
+      </div>
     </div>
   </section>
 
