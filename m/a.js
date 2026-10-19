@@ -54,11 +54,11 @@
 
   /* ---------- kahraman videosu: yükleme bittikten sonra ----------
      Çözünürlük HER cihazda ve bağlantıda tam: geniş ekran sahne-hd (1920×1080), dar ekran sahne-dikey-hd (608×1080 = kaynağın
-     kendi pikselleri, büyütme yok). 720p yedekler kaldırıldı. HEVC (hvc1) çözebilen cihaz (Safari/iPhone, donanım desteği olan
-     Chrome/Edge) aynı kaliteyi ~%60 boyutla alıyor; yoksa H.264. Yalnız veri tasarrufu ya da 2G'de video hiç yüklenmez
+     kendi pikselleri, büyütme yok). 720p yedekler kaldırıldı. HEVC (hvc1, Main tier L5.0) çözebilen cihaz (Safari/iPhone, donanım desteği olan
+     Chrome/Edge) aynı kaliteyi ~%22 daha az veriyle alıyor; yoksa H.264. Yalnız veri tasarrufu ya da 2G'de video hiç yüklenmez
      (durağan poster kalır): oraya 30 MB'lık bir dosya göndermek çözünürlük değil, kullanıcıyı kaybettirir. */
   function hevcVar() {
-    try { var t = D.createElement("video"); return !!(t.canPlayType && t.canPlayType('video/mp4; codecs="hvc1.1.6.L120.B0"') === "probably"); } catch (e) { return false; }
+    try { var t = D.createElement("video"); return !!(t.canPlayType && t.canPlayType('video/mp4; codecs="hvc1.1.6.L150.B0"') === "probably"); } catch (e) { return false; }
   }
   var hv = $("#hv");
   function videoBaslat() {
