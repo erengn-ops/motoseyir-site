@@ -50,11 +50,12 @@
   Ham dosyalar: motoseyir-social/02-kaynak/higgsfield/site-sahneler/
   Bu sayfa sablon/anasayfa.html + dil/anasayfa.<kod>.json'dan üretilir (python3 uret.py); stil m/a.css, hareket m/a.js.
 -->
-<script>document.documentElement.className+=" js"</script>
+<script>!function(d,c){c=" js";if(!matchMedia("(prefers-reduced-motion: reduce)").matches){c+=" hm";if(self.CSS&&CSS.supports&&CSS.supports("animation-timeline:view()"))c+=" sd"}d.className+=c}(document.documentElement)</script>
 <link rel="preload" as="image" type="image/webp" href="/m/sahne-dikey-poster.webp" media="(max-width:700px)" fetchpriority="high">
 <link rel="preload" as="image" type="image/webp" href="/m/sahne-poster.webp" media="(min-width:701px)" fetchpriority="high">
 <link rel="preload" as="font" type="font/woff" href="/m/font/Manrope.woff" crossorigin>
 <link rel="stylesheet" href="/m/a.css">
+<script defer src="/m/h.js"></script>
 <script defer src="/m/a.js"></script>
 
 <script type="application/ld+json">
@@ -89,6 +90,7 @@
 </head>
 <body id="top">
 <a class="skip" href="#icerik">Přejít na obsah</a>
+<div class="ilerle" aria-hidden="true"></div>
 
 <header class="ust" id="ustbar">
   <div class="ust-ic">
@@ -153,6 +155,31 @@
   <div class="sayi"><b>CarPlay</b><span>tvoje trasa na displeji auta, na celou obrazovku</span></div>
   <div class="sayi"><b>Skupina + intercom</b><span>stejná trasa, povídání za jízdy</span></div>
 </div></div>
+
+
+<!-- Sticky anlatı (19 Eki 2026): telefon ekranı sağda sabit, soldaki adımlar kayarken gerçek ekranlar değişir; rota çizgisi sayfayla birlikte çizilir.
+     Metinler aşağıdaki bölümlerin başlıklarından gelir (yeni çeviri yok); ayrıntılar bölümlerde. Ekranlar süs (alt boş), gerçek alt metinler bölümlerde. -->
+<section class="hikaye" id="hikaye" aria-labelledby="hk-h">
+  <div class="kap">
+    <h2 id="hk-h" class="hk-baslik">Motoseyir <i>ve zkratce.</i></h2>
+    <div class="hk-sahne" id="hk-sahne" data-a="0">
+      <div class="hk-yapis" aria-hidden="true">
+        <div class="hk-tel"><div class="tel"><div class="ekr">
+          <img class="e e0" src="/m/ekran-nav-en.webp" alt="" width="540" height="1174" decoding="async">
+          <img class="e e1" src="/m/ekran-tur-en.webp" alt="" width="540" height="1174" loading="lazy" decoding="async">
+          <img class="e e2" src="/m/ekran-gecit-en.webp" alt="" width="540" height="1174" loading="lazy" decoding="async">
+          <img class="e e3" src="/m/ekran-kesfet-en.webp" alt="" width="540" height="1174" loading="lazy" decoding="async">
+        </div></div></div>
+      </div>
+      <ol class="hk-adimlar">
+        <li class="hk-adim on" data-i="0"><p class="km">Trasa</p><h3>Nejdřív kilometry, <i>potom radost z jízdy.</i></h3><p class="metin">Porovná alternativy mezi stejnými dvěma body a nabídne tu nejkratší. U výletu s více zastávkami určí i jejich pořadí. Zbytek je na tobě.</p><a class="hk-link" href="#rota">Prohlédnout funkce</a></li>
+        <li class="hk-adim" data-i="1"><p class="km">Generátor výletů <span class="etiket">Pro</span></p><h3>Zvol směr a čas, <i>výlet je hotový.</i></h3><p class="metin">Natoč ciferník na stranu, kam chceš jet, a vyber, kolik máš hodin. Motoseyir nakreslí výlet tím směrem; uvidíš ho na mapě a vyrazíš, když se ti zalíbí.</p><a class="hk-link" href="#tur">Prohlédnout funkce</a></li>
+        <li class="hk-adim" data-i="2"><p class="km">Průsmyky</p><h3>1 600+ průsmyků, <i>na jedné mapě.</i></h3><p class="metin">Každý průsmyk má nadmořskou výšku a přesnou polohu, většina i fotky. Průsmyky, které se v zimě zavírají, ukazují měsíce uzavírky a nezpevněné cesty jsou zvlášť označené. Přidej si ty, které se ti líbí, do výletu a jeď.</p><a class="hk-link" href="#gecit">Prohlédnout funkce</a></li>
+        <li class="hk-adim" data-i="3"><p class="km">Discover <span class="etiket">Pro</span></p><h3>Objevuj, co je <i>cestou.</i></h3><p class="metin">V kartě „Discover“ uvidíš vedlejší cesty, cesty podél pláží, kempy a místa k jídlu u své trasy a přidáš si ty, které se ti líbí.</p><a class="hk-link" href="#kesfet">Prohlédnout funkce</a></li>
+      </ol>
+    </div>
+  </div>
+</section>
 
 <div class="ana" id="ozellikler">
   <section class="bolum" id="rota">
@@ -229,6 +256,12 @@
         </ul>
       </div>
     </div>
+
+    <!-- Kayan geçit şeridi: süs (altı çizili listeler zaten sayfada); gerçek geçit adları ve rakımları -->
+    <div class="hat" aria-hidden="true" data-ak>
+      <div class="hat-sira"><ul class="hat-yol"><li><b>2 764 m</b><span>Col de l’Iseran</span></li><li><b>2 758 m</b><span>Passo dello Stelvio</span></li><li><b>2 744 m</b><span>Col Agnel</span></li><li><b>3 696 m</b><span>Cottonwood Pass</span></li><li><b>3 689 m</b><span>Independence Pass</span></li><li><b>3 662 m</b><span>Cumberland Pass</span></li><li><b>3 655 m</b><span>Loveland Pass</span></li><li><b>3 635 m</b><span>Hagerman Pass</span></li></ul><ul class="hat-yol"><li><b>2 764 m</b><span>Col de l’Iseran</span></li><li><b>2 758 m</b><span>Passo dello Stelvio</span></li><li><b>2 744 m</b><span>Col Agnel</span></li><li><b>3 696 m</b><span>Cottonwood Pass</span></li><li><b>3 689 m</b><span>Independence Pass</span></li><li><b>3 662 m</b><span>Cumberland Pass</span></li><li><b>3 655 m</b><span>Loveland Pass</span></li><li><b>3 635 m</b><span>Hagerman Pass</span></li></ul></div>
+      <div class="hat-sira ters"><ul class="hat-yol"><li><b>3 635 m</b><span>Hagerman Pass</span></li><li><b>3 655 m</b><span>Loveland Pass</span></li><li><b>3 662 m</b><span>Cumberland Pass</span></li><li><b>3 689 m</b><span>Independence Pass</span></li><li><b>3 696 m</b><span>Cottonwood Pass</span></li><li><b>2 744 m</b><span>Col Agnel</span></li><li><b>2 758 m</b><span>Passo dello Stelvio</span></li><li><b>2 764 m</b><span>Col de l’Iseran</span></li></ul><ul class="hat-yol"><li><b>3 635 m</b><span>Hagerman Pass</span></li><li><b>3 655 m</b><span>Loveland Pass</span></li><li><b>3 662 m</b><span>Cumberland Pass</span></li><li><b>3 689 m</b><span>Independence Pass</span></li><li><b>3 696 m</b><span>Cottonwood Pass</span></li><li><b>2 744 m</b><span>Col Agnel</span></li><li><b>2 758 m</b><span>Passo dello Stelvio</span></li><li><b>2 764 m</b><span>Col de l’Iseran</span></li></ul></div>
+    </div>
     <div class="veri" data-r aria-label="Data o průsmycích">
       <dl class="veri-say">
         <div><dt>1 638</dt><dd>průsmyků ve 36 zemích</dd></div>
@@ -239,7 +272,7 @@
       <div class="veri-ik">
         <div>
           <h3>Podle oblasti</h3>
-          <ul class="bolgeler">
+          <ul class="bolgeler" data-g>
             <li style="--o:100%"><span class="ad">Alpy a Dolomity</span><span class="n">535</span></li>
             <li style="--o:76%"><span class="ad">Zbytek Evropy</span><span class="n">407</span></li>
             <li style="--o:56%"><span class="ad">Spojené státy</span><span class="n">298</span></li>
@@ -274,7 +307,7 @@
     </div></div>
   </section>
 
-  <section class="bolum ters" id="corider">
+  <section class="bolum ters" id="corider" data-ton>
     <div class="kap"><div class="bolum-ik">
       <div data-r class="tel-alan"><div class="tel"><img src="/m/ekran-corider-en.webp" alt="Obrazovka AI CoRider: plánovač a možnosti chatu" width="540" height="1174" loading="lazy"></div></div>
       <div data-r>
@@ -488,7 +521,7 @@
         <h2>Poznej ji <i>blíž.</i></h2>
         <p class="metin">Co v aplikaci najdeš, za dvě minuty.</p>
       </div>
-      <div data-r class="tel-alan"><div class="tani-kutu" id="tani-kutu">
+      <div data-r class="tel-alan"><div class="tani-kutu" id="tani-kutu" data-ak>
         <button type="button" id="tani-btn" aria-label="Přehrát úvodní video"><img src="/m/tani-en.jpg" alt="" loading="lazy" width="1080" height="1920"><span class="oynat"></span></button>
       </div></div>
     </div></div>
@@ -510,7 +543,7 @@
   </section>
 </div>
 
-<section class="varis">
+<section class="varis" data-ton>
   <div class="kap" data-r>
     <h2>Cesta je <i>připravená.</i></h2>
     <div class="cta-satir">
@@ -533,11 +566,11 @@
       <p class="km">Poznámky k verzi</p>
       <h2>Co se změnilo</h2>
       <p class="metin">Poslední aktualizace, nejnovější nahoře.</p>
-      <article class="surum"><header><b>1.1.8</b><time>říjen 2026</time></header>
+      <article class="surum" data-g><header><b>1.1.8</b><time>říjen 2026</time></header>
         <ul class="d"><li>Opraven pád při přepnutí z Blogu na Feed v Community.</li><li>Nahrávání videa z 3D přehrávání jízdy se spouští spolehlivěji.</li><li>„Připraveno“ se už neukazuje dřív, než se načte mapa, a kamera neskáče, když přestaneš přibližovat dvěma prsty.</li></ul></article>
-      <article class="surum"><header><b>1.1.7</b><time>říjen 2026</time></header>
+      <article class="surum" data-g><header><b>1.1.7</b><time>říjen 2026</time></header>
         <ul class="d"><li>Mapa cesty: sleduj dlouhý výlet nebo jízdu jako video na čisté mapě. Jak se trasa kreslí, postupně se objevují projetá města a tvoje fotky.</li><li>Nové zkratky na úvodní obrazovce: domov a práce, záznam jízdy, hodinový okruh odsud, legendární silnice poblíž.</li><li>298 průsmyků a šest nových legendárních silnic v USA a režim pobřeží teď funguje i v celé Evropě.</li><li>„Poznej Motoseyir“ v Nastavení je krátká videoprohlídka aplikace, záložku po záložce.</li></ul></article>
-      <article class="surum"><header><b>1.1.6</b><time>říjen 2026</time></header>
+      <article class="surum" data-g><header><b>1.1.6</b><time>říjen 2026</time></header>
         <ul class="d"><li>Sleduj ve 3D: přehraj si zaznamenanou jízdu jako z helikoptery; fotky se objeví tam, kde byly pořízeny.</li><li>Sdílej jako video: udělej svislé video na 15, 30 nebo 60 sekund, hotové pro Instagram. Pro nepotřebuješ.</li><li>Rozbor jízdy: doba v pohybu, skutečné pauzy, ostré zatáčky, celkové převýšení a kolik cesty pro tebe bylo nové.</li><li>V generátoru výletů přináší „Another one“ tři nové okruhy po jiných cestách a můžeš zapnout „No motorways“, „No tolls“ a „No dirt“.</li></ul></article>
     </div>
     <div id="iletisim">

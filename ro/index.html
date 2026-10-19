@@ -50,11 +50,12 @@
   Ham dosyalar: motoseyir-social/02-kaynak/higgsfield/site-sahneler/
   Bu sayfa sablon/anasayfa.html + dil/anasayfa.<kod>.json'dan üretilir (python3 uret.py); stil m/a.css, hareket m/a.js.
 -->
-<script>document.documentElement.className+=" js"</script>
+<script>!function(d,c){c=" js";if(!matchMedia("(prefers-reduced-motion: reduce)").matches){c+=" hm";if(self.CSS&&CSS.supports&&CSS.supports("animation-timeline:view()"))c+=" sd"}d.className+=c}(document.documentElement)</script>
 <link rel="preload" as="image" type="image/webp" href="/m/sahne-dikey-poster.webp" media="(max-width:700px)" fetchpriority="high">
 <link rel="preload" as="image" type="image/webp" href="/m/sahne-poster.webp" media="(min-width:701px)" fetchpriority="high">
 <link rel="preload" as="font" type="font/woff" href="/m/font/Manrope.woff" crossorigin>
 <link rel="stylesheet" href="/m/a.css">
+<script defer src="/m/h.js"></script>
 <script defer src="/m/a.js"></script>
 
 <script type="application/ld+json">
@@ -89,6 +90,7 @@
 </head>
 <body id="top">
 <a class="skip" href="#icerik">Sari la conținut</a>
+<div class="ilerle" aria-hidden="true"></div>
 
 <header class="ust" id="ustbar">
   <div class="ust-ic">
@@ -153,6 +155,31 @@
   <div class="sayi"><b>CarPlay</b><span>traseul tău pe ecranul mașinii, pe tot ecranul</span></div>
   <div class="sayi"><b>Grup + Interfon</b><span>același traseu, vorbind din mers</span></div>
 </div></div>
+
+
+<!-- Sticky anlatı (19 Eki 2026): telefon ekranı sağda sabit, soldaki adımlar kayarken gerçek ekranlar değişir; rota çizgisi sayfayla birlikte çizilir.
+     Metinler aşağıdaki bölümlerin başlıklarından gelir (yeni çeviri yok); ayrıntılar bölümlerde. Ekranlar süs (alt boş), gerçek alt metinler bölümlerde. -->
+<section class="hikaye" id="hikaye" aria-labelledby="hk-h">
+  <div class="kap">
+    <h2 id="hk-h" class="hk-baslik">Motoseyir <i>pe scurt.</i></h2>
+    <div class="hk-sahne" id="hk-sahne" data-a="0">
+      <div class="hk-yapis" aria-hidden="true">
+        <div class="hk-tel"><div class="tel"><div class="ekr">
+          <img class="e e0" src="/m/ekran-nav-en.webp" alt="" width="540" height="1174" decoding="async">
+          <img class="e e1" src="/m/ekran-tur-en.webp" alt="" width="540" height="1174" loading="lazy" decoding="async">
+          <img class="e e2" src="/m/ekran-gecit-en.webp" alt="" width="540" height="1174" loading="lazy" decoding="async">
+          <img class="e e3" src="/m/ekran-kesfet-en.webp" alt="" width="540" height="1174" loading="lazy" decoding="async">
+        </div></div></div>
+      </div>
+      <ol class="hk-adimlar">
+        <li class="hk-adim on" data-i="0"><p class="km">Traseu</p><h3>Mai întâi kilometrii, <i>apoi distracția.</i></h3><p class="metin">Compară variantele dintre aceleași două puncte și o propune pe cea mai scurtă. Într-un tur cu mai multe opriri stabilește și ordinea opririlor. Restul îți aparține.</p><a class="hk-link" href="#rota">Vezi funcțiile</a></li>
+        <li class="hk-adim" data-i="1"><p class="km">Generator de tururi <span class="etiket">Pro</span></p><h3>Alege o direcție și un timp, <i>turul e gata.</i></h3><p class="metin">Rotește cadranul spre direcția în care vrei să mergi și alege câte ore ai. Motoseyir trasează un tur în direcția aceea; îl vezi pe hartă și pornești dacă îți place.</p><a class="hk-link" href="#tur">Vezi funcțiile</a></li>
+        <li class="hk-adim" data-i="2"><p class="km">Pasuri montane</p><h3>Peste 1.600 de pasuri, <i>pe o singură hartă.</i></h3><p class="metin">Fiecare pas are altitudinea și locul exact, iar cele mai multe au și fotografii. La pasurile care se închid iarna vezi în ce luni sunt închise, iar drumurile de pământ sunt marcate ca atare. Adaugă-le pe cele care îți plac în tur și pornește.</p><a class="hk-link" href="#gecit">Vezi funcțiile</a></li>
+        <li class="hk-adim" data-i="3"><p class="km">Discover <span class="etiket">Pro</span></p><h3>Descoperă ce găsești <i>pe drum.</i></h3><p class="metin">Vezi drumurile secundare, drumurile de pe litoral, campingurile și locurile de mâncat de pe traseu și adaugi ce îți place.</p><a class="hk-link" href="#kesfet">Vezi funcțiile</a></li>
+      </ol>
+    </div>
+  </div>
+</section>
 
 <div class="ana" id="ozellikler">
   <section class="bolum" id="rota">
@@ -229,6 +256,12 @@
         </ul>
       </div>
     </div>
+
+    <!-- Kayan geçit şeridi: süs (altı çizili listeler zaten sayfada); gerçek geçit adları ve rakımları -->
+    <div class="hat" aria-hidden="true" data-ak>
+      <div class="hat-sira"><ul class="hat-yol"><li><b>2.764 m</b><span>Col de l’Iseran</span></li><li><b>2.758 m</b><span>Passo dello Stelvio</span></li><li><b>2.744 m</b><span>Col Agnel</span></li><li><b>3.696 m</b><span>Cottonwood Pass</span></li><li><b>3.689 m</b><span>Independence Pass</span></li><li><b>3.662 m</b><span>Cumberland Pass</span></li><li><b>3.655 m</b><span>Loveland Pass</span></li><li><b>3.635 m</b><span>Hagerman Pass</span></li></ul><ul class="hat-yol"><li><b>2.764 m</b><span>Col de l’Iseran</span></li><li><b>2.758 m</b><span>Passo dello Stelvio</span></li><li><b>2.744 m</b><span>Col Agnel</span></li><li><b>3.696 m</b><span>Cottonwood Pass</span></li><li><b>3.689 m</b><span>Independence Pass</span></li><li><b>3.662 m</b><span>Cumberland Pass</span></li><li><b>3.655 m</b><span>Loveland Pass</span></li><li><b>3.635 m</b><span>Hagerman Pass</span></li></ul></div>
+      <div class="hat-sira ters"><ul class="hat-yol"><li><b>3.635 m</b><span>Hagerman Pass</span></li><li><b>3.655 m</b><span>Loveland Pass</span></li><li><b>3.662 m</b><span>Cumberland Pass</span></li><li><b>3.689 m</b><span>Independence Pass</span></li><li><b>3.696 m</b><span>Cottonwood Pass</span></li><li><b>2.744 m</b><span>Col Agnel</span></li><li><b>2.758 m</b><span>Passo dello Stelvio</span></li><li><b>2.764 m</b><span>Col de l’Iseran</span></li></ul><ul class="hat-yol"><li><b>3.635 m</b><span>Hagerman Pass</span></li><li><b>3.655 m</b><span>Loveland Pass</span></li><li><b>3.662 m</b><span>Cumberland Pass</span></li><li><b>3.689 m</b><span>Independence Pass</span></li><li><b>3.696 m</b><span>Cottonwood Pass</span></li><li><b>2.744 m</b><span>Col Agnel</span></li><li><b>2.758 m</b><span>Passo dello Stelvio</span></li><li><b>2.764 m</b><span>Col de l’Iseran</span></li></ul></div>
+    </div>
     <div class="veri" data-r aria-label="Date despre pasuri">
       <dl class="veri-say">
         <div><dt>1.638</dt><dd>pasuri în 36 de țări</dd></div>
@@ -239,7 +272,7 @@
       <div class="veri-ik">
         <div>
           <h3>Pe regiuni</h3>
-          <ul class="bolgeler">
+          <ul class="bolgeler" data-g>
             <li style="--o:100%"><span class="ad">Alpi și Dolomiți</span><span class="n">535</span></li>
             <li style="--o:76%"><span class="ad">Restul Europei</span><span class="n">407</span></li>
             <li style="--o:56%"><span class="ad">Statele Unite</span><span class="n">298</span></li>
@@ -274,7 +307,7 @@
     </div></div>
   </section>
 
-  <section class="bolum ters" id="corider">
+  <section class="bolum ters" id="corider" data-ton>
     <div class="kap"><div class="bolum-ik">
       <div data-r class="tel-alan"><div class="tel"><img src="/m/ekran-corider-en.webp" alt="Ecranul AI CoRider: planificator și opțiuni de chat" width="540" height="1174" loading="lazy"></div></div>
       <div data-r>
@@ -488,7 +521,7 @@
         <h2>Fă cunoștință cu <i>aplicația.</i></h2>
         <p class="metin">Ce găsești în aplicație, în două minute.</p>
       </div>
-      <div data-r class="tel-alan"><div class="tani-kutu" id="tani-kutu">
+      <div data-r class="tel-alan"><div class="tani-kutu" id="tani-kutu" data-ak>
         <button type="button" id="tani-btn" aria-label="Redă videoclipul de prezentare"><img src="/m/tani-en.jpg" alt="" loading="lazy" width="1080" height="1920"><span class="oynat"></span></button>
       </div></div>
     </div></div>
@@ -510,7 +543,7 @@
   </section>
 </div>
 
-<section class="varis">
+<section class="varis" data-ton>
   <div class="kap" data-r>
     <h2>Drumul e <i>gata.</i></h2>
     <div class="cta-satir">
@@ -533,11 +566,11 @@
       <p class="km">Note de versiune</p>
       <h2>Ce s-a schimbat</h2>
       <p class="metin">Ultimele actualizări, cea mai nouă prima.</p>
-      <article class="surum"><header><b>1.1.8</b><time>octombrie 2026</time></header>
+      <article class="surum" data-g><header><b>1.1.8</b><time>octombrie 2026</time></header>
         <ul class="d"><li>Am rezolvat o închidere bruscă a aplicației la trecerea de la Blog la Feed în Community.</li><li>Înregistrarea video a reluării 3D a cursei pornește mai sigur.</li><li>„Ready” nu mai apare înainte să se încarce harta, iar camera nu mai sare când termini un zoom cu două degete.</li></ul></article>
-      <article class="surum"><header><b>1.1.7</b><time>octombrie 2026</time></header>
+      <article class="surum" data-g><header><b>1.1.7</b><time>octombrie 2026</time></header>
         <ul class="d"><li>Harta turului: vezi un tur lung sau o cursă ca videoclip, pe o hartă curată. Pe măsură ce traseul se desenează singur, apar pe rând localitățile prin care ai trecut și pozele tale.</li><li>Scurtături noi pe ecranul Start: acasă și serviciu, înregistrarea unei curse, o buclă de o oră de aici, un drum legendar din apropiere.</li><li>298 de pasuri montane și șase drumuri legendare noi în SUA, iar modul Coastă funcționează acum în toată Europa.</li><li>„Get to know Motoseyir” din „Settings” este un tur video scurt al aplicației, filă cu filă.</li></ul></article>
-      <article class="surum"><header><b>1.1.6</b><time>octombrie 2026</time></header>
+      <article class="surum" data-g><header><b>1.1.6</b><time>octombrie 2026</time></header>
         <ul class="d"><li>Vezi în 3D: reia o cursă înregistrată ca și cum ai urmări-o dintr-un elicopter; pozele tale apar acolo unde le-ai făcut.</li><li>Distribuie ca videoclip: fă un videoclip vertical de 15, 30 sau 60 de secunde, gata pentru Instagram. Nu ai nevoie de Pro.</li><li>Analiza cursei: timp în mișcare, pauze reale, curbe strânse, urcare totală și cât din drum a fost nou pentru tine.</li><li>În „Generate a tour”, „Another one” aduce trei bucle noi pe alte drumuri și poți evita autostrăzile, drumurile cu taxă și drumurile de pământ.</li></ul></article>
     </div>
     <div id="iletisim">

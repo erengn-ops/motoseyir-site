@@ -73,7 +73,7 @@ DILLER = [
 ]
 
 # Hareketli anasayfa (14 Eki 2026): yalnız TR ve EN anasayfası yeni tasarımda —
-# `sablon/anasayfa.html` + `dil/anasayfa.<kod>.json`; stil/hareket `m/a.css`, `m/a.js`.
+# `sablon/anasayfa.html` + `dil/anasayfa.<kod>.json`; stil/hareket `m/a.css`, `m/a.js` (+ ortak `m/h.js`).
 # 18 Eki 2026: `dil/anasayfa.<kod>.json`u olan her dil yeni tasarıma geçer; olmayan eski şablonla
 # (`sablon/index.html`) üretilmeye devam eder.
 HAREKETLI_ANASAYFA = tuple(sorted(y.stem.split(".")[1] for y in (Path(__file__).resolve().parent / "dil").glob("anasayfa.*.json")))

@@ -41,9 +41,10 @@
   (m/corider-*.mp4) ve uygulamanın AI CoRider yüzü (img/ai-corider.png'nin saydamlaştırılmış hâli, m/corider-yuz.webp).
   Konuşma örnekleri tasarım örneğidir; uygulamadaki gerçek durum etiketleriyle (Köy yolları, rotaya eklendi...) eşleşir.
 -->
-<script>document.documentElement.className+=" cjs"</script>
+<script>!function(d,c){c=" cjs";if(!matchMedia("(prefers-reduced-motion: reduce)").matches){c+=" hm";if(self.CSS&&CSS.supports&&CSS.supports("animation-timeline:view()"))c+=" sd"}d.className+=c}(document.documentElement)</script>
 <link rel="preload" as="font" type="font/woff" href="/m/font/Manrope.woff" crossorigin>
 <link rel="stylesheet" href="/m/corider.css">
+<script defer src="/m/h.js"></script>
 <script defer src="/m/corider.js"></script>
 
 <script type="application/ld+json">
@@ -78,6 +79,7 @@
 </head>
 <body id="top">
 <a class="skip" href="#icerik">Vai al contenuto</a>
+<div class="ilerle" aria-hidden="true"></div>
 
 <header class="ust">
   <div class="ust-ic">
@@ -140,11 +142,11 @@
 
 <section class="bl" id="nasil" aria-labelledby="nasil-h">
   <div class="kap">
-    <div class="bl-ust">
+    <div class="bl-ust" data-r>
       <p class="km">Uso</p>
       <h2 id="nasil-h">Premi, parla, <i>ascolta nel casco.</i></h2>
     </div>
-    <ol class="adimlar">
+    <ol class="adimlar" data-r>
       <li><span class="n" aria-hidden="true">1</span><h3>Premi il pulsante</h3><p>Tocca il pulsante AI CoRider sulla mappa e parla.</p></li>
       <li><span class="n" aria-hidden="true">2</span><h3>Parla normalmente</h3><p>Nessun comando da ricordare. Risponde nella lingua in cui parli.</p></li>
       <li><span class="n" aria-hidden="true">3</span><h3>Ascolta nel casco</h3><p>Se il casco è collegato al telefono via Bluetooth, la voce arriva da lì. Con il vento non senti? Di’ semplicemente «alza la voce».</p></li>
@@ -154,12 +156,12 @@
 
 <section class="bl z1" id="konusma" aria-labelledby="konusma-h">
   <div class="kap">
-    <div class="bl-ust">
+    <div class="bl-ust" data-r>
       <p class="km">Conversazioni di esempio</p>
       <h2 id="konusma-h">Ecco <i>come gli si parla.</i></h2>
       <p class="lead">Sono esempi. Non ci sono comandi da imparare, dillo con parole tue.</p>
     </div>
-    <div class="konusmalar">
+    <div class="konusmalar" data-r>
       <article class="soh">
         <p class="soh-t">Percorso e meteo</p>
         <div class="satir sen"><span class="kim">Tu</span><p>Quanto manca? Pioverà lungo la strada?</p></div>
@@ -206,7 +208,7 @@
 </section>
 
 <section class="bl" id="kayit" aria-labelledby="kayit-h">
-  <div class="kap video-ik">
+  <div class="kap video-ik" data-r>
     <div class="tel-kap">
       <div class="tel"><video id="cr-video" data-src="/m/corider-en.mp4" data-kucuk="/m/corider-kucuk-en.mp4" poster="/m/corider-en.webp" muted loop playsinline preload="none" width="540" height="1106" aria-label="AI CoRider a voce: il pilota chiede il tempo rimasto e la pioggia, trova un posto dove fermarsi e lo aggiunge al percorso"></video></div>
       <button class="ses-btn" id="cr-ses" type="button" aria-pressed="false" data-ac="Attiva l’audio" data-kapat="Disattiva l’audio"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path class="h" d="M4 9.5v5h3.6L12 18.5v-13L7.6 9.5H4z" fill="currentColor"/><path class="d" d="M15.5 9a4.2 4.2 0 0 1 0 6M17.8 6.6a7.5 7.5 0 0 1 0 10.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Attiva l’audio</span></button>
@@ -222,19 +224,19 @@
 
 <section class="bl z1" id="yetenek" aria-labelledby="yetenek-h">
   <div class="kap">
-    <div class="bl-ust">
+    <div class="bl-ust" data-r>
       <p class="km">Cosa fa</p>
       <h2 id="yetenek-h">Circa 30 azioni <i>a voce.</i></h2>
       <p class="lead">Raccolte in cinque gruppi. Non devi impararne nessuna a memoria: di’ cosa vuoi con parole tue.</p>
     </div>
-    <div class="yetenek">
+    <div class="yetenek" data-r>
       <section class="grup" aria-labelledby="g1-h"><span class="no" aria-hidden="true">01</span><h3 id="g1-h">Percorso</h3><p>Corregge il percorso al posto tuo.</p><ul><li>Aggiunge una tappa, la toglie o salta la prossima</li><li>Cambia la destinazione e rimette le tappe in ordine</li><li>Passa dalle strade secondarie al percorso più breve e viceversa</li><li>Mostra il percorso sulla mappa e ti porta a casa</li></ul></section>
       <section class="grup" aria-labelledby="g2-h"><span class="no" aria-hidden="true">02</span><h3 id="g2-h">Per strada</h3><p>Cerca lungo il percorso e intorno a te.</p><ul><li>Trova un distributore, un posto dove mangiare o un caffè più avanti, citando per primo il meglio valutato</li><li>Cerca dove dormire stanotte</li><li>Ti dice il tempo rimasto, la prossima svolta e dove ti trovi</li><li>Ti dice se più avanti ci sono curve strette o salite</li></ul></section>
       <section class="grup" aria-labelledby="g3-h"><span class="no" aria-hidden="true">03</span><h3 id="g3-h">Meteo e autonomia</h3><p>Quello che chiedi prima e durante il giro.</p><ul><li>Che tempo farà, se piove sul tuo percorso</li><li>Guarda il radar della pioggia e lo apre sulla mappa</li><li>Fin dove arriva il serbatoio, se c’è un distributore lungo la strada</li><li class="r">Il radar della pioggia funziona solo negli Stati Uniti e in Germania. Per l’autonomia, indica una volta nelle Impostazioni quanta strada hai fatto con il pieno.</li></ul></section>
       <section class="grup" aria-labelledby="g4-h"><span class="no" aria-hidden="true">04</span><h3 id="g4-h">Gruppo</h3><p>Quando è attivo un giro di gruppo.</p><ul><li>Ti dice dov’è ciascuno e chi è rimasto indietro</li><li>Manda al gruppo un avviso già pronto: sono indietro, pausa, pericolo, benzina</li><li>Se hai condiviso il percorso con il gruppo, chiede a chi vale la modifica</li></ul></section>
       <section class="grup" aria-labelledby="g5-h"><span class="no" aria-hidden="true">05</span><h3 id="g5-h">Giro</h3><p>Mentre le mani restano sul manubrio.</p><ul><li>Avvia e termina la navigazione</li><li>Avvia e ferma la registrazione del giro</li><li>Trova qualcuno nella rubrica; basta un tocco sullo schermo per chiamare</li><li>Tiene una nota se glielo chiedi e la cancella se dici «dimentica»</li><li>Alza o abbassa la propria voce: «alza la voce»</li></ul></section>
     </div>
-    <div class="cagri-kutu">
+    <div class="cagri-kutu" data-r>
       <h3>Nella stanza del gruppo</h3>
       <p>Chiama AI CoRider nell’interfono del gruppo e lo sentono tutti. I minuti vengono scalati dall’account di chi l’ha chiamato.</p>
     </div>
@@ -243,18 +245,18 @@
 
 <section class="bl" id="kipler" aria-labelledby="kip-h">
   <div class="kap">
-    <div class="bl-ust">
+    <div class="bl-ust" data-r>
       <p class="km">Due modalità</p>
       <h2 id="kip-h">Una fa il lavoro, <i>l’altra chiacchiera.</i></h2>
       <p class="lead">Basta dire «attiva la modalità chat» mentre parli.</p>
     </div>
-    <div class="kipler">
+    <div class="kipler" data-r>
       <article class="kip"><h3>Pianificatore</h3><p>Conosce il tuo percorso e sbriga le cose.</p><ul><li>C’è un distributore lungo la strada?</li><li>Dove sono gli altri?</li><li>Prendiamo le strade secondarie.</li><li>Che tempo farà?</li><li>Portami a casa.</li></ul><span class="rozet">Incluso in Pro</span></article>
       <article class="kip"><h3>Chat</h3><p>Scegli tu l’argomento, ricorda le chiacchierate precedenti.</p><ul><li>Facciamo pratica di inglese.</li><li>Pianifichiamo la giornata insieme.</li><li>Raccontami una storia.</li><li>Ieri dove eravamo rimasti?</li></ul><span class="rozet">Si apre con un pacchetto di minuti</span></article>
     </div>
-    <div class="sesler">
+    <div class="sesler" data-r>
       <div><h3>Quattro voci</h3><p>Le ascolti nelle Impostazioni e scegli: Quartz, Tempo, Stone o Willow.</p></div>
-      <ul class="ses-liste" aria-label="Quattro voci">
+      <ul class="ses-liste" aria-label="Quattro voci" data-ak>
         <li><i aria-hidden="true"><b></b><b></b><b></b><b></b><b></b></i>Quartz</li><li><i aria-hidden="true"><b></b><b></b><b></b><b></b><b></b></i>Tempo</li><li><i aria-hidden="true"><b></b><b></b><b></b><b></b><b></b></i>Stone</li><li><i aria-hidden="true"><b></b><b></b><b></b><b></b><b></b></i>Willow</li>
       </ul>
     </div>
@@ -263,12 +265,12 @@
 
 <section class="bl z1" id="dakika" aria-labelledby="dakika-h">
   <div class="kap">
-    <div class="bl-ust">
+    <div class="bl-ust" data-r>
       <p class="km">Minuti e pacchetti</p>
       <h2 id="dakika-h">Il tempo di conversazione, <i>spiegato semplice.</i></h2>
       <p class="lead">I minuti che passi con AI CoRider escono dal tempo che Pro rinnova e dai pacchetti che non scadono mai.</p>
     </div>
-    <div class="sureler">
+    <div class="sureler" data-r>
       <div class="sure"><b>10 min</b><h3>Con Pro, ogni 30 giorni</h3><p>Il tuo tempo di conversazione torna a 10 minuti ogni 30 giorni.</p></div>
       <div class="sure"><b>5 min</b><h3>Nella prova gratuita</h3><p>Durante la prova puoi parlare per 5 minuti.</p></div>
       <div class="sure"><b>30 · 60 · 180</b><h3>Pacchetti di minuti</h3><p>30, 60 o 180 minuti. Non scadono e non spariscono a fine mese; con questi si apre anche la modalità chat.</p></div>
@@ -279,11 +281,11 @@
 
 <section class="bl" id="gizlilik" aria-labelledby="gizlilik-h">
   <div class="kap">
-    <div class="bl-ust">
+    <div class="bl-ust" data-r>
       <p class="km">Privacy</p>
       <h2 id="gizlilik-h">La tua voce <i>resta tua.</i></h2>
     </div>
-    <ul class="gizlilik">
+    <ul class="gizlilik" data-r>
       <li><h3>Funziona solo se lo avvii tu</h3><p>Il microfono si apre solo quando tocchi il pulsante AI CoRider sulla mappa.</p></li>
       <li><h3>La voce non viene conservata</h3><p>La tua voce non viene registrata da noi. Per produrre la risposta va a un servizio vocale cloud di terze parti.</p></li>
       <li><h3>Niente posizione esatta</h3><p>Dal percorso esce solo testo, come la distanza rimasta e la prossima manovra.</p></li>
@@ -295,11 +297,11 @@
 
 <section class="bl z1" id="sss" aria-labelledby="sss-h">
   <div class="kap">
-    <div class="bl-ust">
+    <div class="bl-ust" data-r>
       <p class="km">Domande frequenti</p>
       <h2 id="sss-h">Quello che ti chiedi</h2>
     </div>
-    <div class="sss-liste">
+    <div class="sss-liste" data-r>
       <details class="sss" name="sss"><summary>AI CoRider mi ascolta sempre?</summary><div class="cevap"><p>No. Non esiste una parola di attivazione. Il microfono si apre solo quando tocchi il pulsante AI CoRider sulla mappa. La sessione si chiude quando la termini, dopo un po’ di silenzio o quando finisce la navigazione.</p></div></details>
       <details class="sss" name="sss"><summary>Funziona senza internet?</summary><div class="cevap"><p>No. Quello che dici va a un servizio vocale cloud per produrre la risposta, quindi AI CoRider richiede una connessione internet. Senza, la sessione non può partire.</p></div></details>
       <details class="sss" name="sss"><summary>In che lingua posso parlare?</summary><div class="cevap"><p>Risponde nella lingua in cui parli. Nessun comando da ricordare, dillo con parole tue.</p></div></details>
@@ -312,7 +314,7 @@
   </div>
 </section>
 
-<section class="varis" aria-labelledby="varis-h">
+<section class="varis" aria-labelledby="varis-h" data-ton>
   <div class="kap">
     <h2 id="varis-h">Premi il pulsante, <i>continua a guidare.</i></h2>
     <div class="cta-satir">

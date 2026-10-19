@@ -41,9 +41,10 @@
   (m/corider-*.mp4) ve uygulamanın AI CoRider yüzü (img/ai-corider.png'nin saydamlaştırılmış hâli, m/corider-yuz.webp).
   Konuşma örnekleri tasarım örneğidir; uygulamadaki gerçek durum etiketleriyle (Köy yolları, rotaya eklendi...) eşleşir.
 -->
-<script>document.documentElement.className+=" cjs"</script>
+<script>!function(d,c){c=" cjs";if(!matchMedia("(prefers-reduced-motion: reduce)").matches){c+=" hm";if(self.CSS&&CSS.supports&&CSS.supports("animation-timeline:view()"))c+=" sd"}d.className+=c}(document.documentElement)</script>
 <link rel="preload" as="font" type="font/woff" href="/m/font/Manrope.woff" crossorigin>
 <link rel="stylesheet" href="/m/corider.css">
+<script defer src="/m/h.js"></script>
 <script defer src="/m/corider.js"></script>
 
 <script type="application/ld+json">
@@ -78,6 +79,7 @@
 </head>
 <body id="top">
 <a class="skip" href="#icerik">Sari la conținut</a>
+<div class="ilerle" aria-hidden="true"></div>
 
 <header class="ust">
   <div class="ust-ic">
@@ -140,11 +142,11 @@
 
 <section class="bl" id="nasil" aria-labelledby="nasil-h">
   <div class="kap">
-    <div class="bl-ust">
+    <div class="bl-ust" data-r>
       <p class="km">Utilizare</p>
       <h2 id="nasil-h">Apasă, vorbește, <i>ascultă în cască.</i></h2>
     </div>
-    <ol class="adimlar">
+    <ol class="adimlar" data-r>
       <li><span class="n" aria-hidden="true">1</span><h3>Apasă butonul</h3><p>Atinge pe hartă butonul AI CoRider și vorbește.</p></li>
       <li><span class="n" aria-hidden="true">2</span><h3>Vorbește firesc</h3><p>Nu ai comenzi de ținut minte. Răspunde în limba în care vorbești.</p></li>
       <li><span class="n" aria-hidden="true">3</span><h3>Ascultă în cască</h3><p>Dacă casca e conectată la telefon prin Bluetooth, vocea vine prin ea. Nu auzi în vânt? Spune pur și simplu „mai tare”.</p></li>
@@ -154,12 +156,12 @@
 
 <section class="bl z1" id="konusma" aria-labelledby="konusma-h">
   <div class="kap">
-    <div class="bl-ust">
+    <div class="bl-ust" data-r>
       <p class="km">Conversații exemplu</p>
       <h2 id="konusma-h">Așa <i>se vorbește cu el.</i></h2>
       <p class="lead">Sunt doar exemple. Nu ai comenzi de învățat, spune-o cu cuvintele tale.</p>
     </div>
-    <div class="konusmalar">
+    <div class="konusmalar" data-r>
       <article class="soh">
         <p class="soh-t">Traseu și vreme</p>
         <div class="satir sen"><span class="kim">Tu</span><p>Cât mai e? Plouă pe drum?</p></div>
@@ -206,7 +208,7 @@
 </section>
 
 <section class="bl" id="kayit" aria-labelledby="kayit-h">
-  <div class="kap video-ik">
+  <div class="kap video-ik" data-r>
     <div class="tel-kap">
       <div class="tel"><video id="cr-video" data-src="/m/corider-en.mp4" data-kucuk="/m/corider-kucuk-en.mp4" poster="/m/corider-en.webp" muted loop playsinline preload="none" width="540" height="1106" aria-label="AI CoRider cu vocea: motociclistul întreabă despre timpul rămas și ploaie, găsește un loc de oprire și îl adaugă în rută"></video></div>
       <button class="ses-btn" id="cr-ses" type="button" aria-pressed="false" data-ac="Pornește sunetul" data-kapat="Oprește sunetul"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path class="h" d="M4 9.5v5h3.6L12 18.5v-13L7.6 9.5H4z" fill="currentColor"/><path class="d" d="M15.5 9a4.2 4.2 0 0 1 0 6M17.8 6.6a7.5 7.5 0 0 1 0 10.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Pornește sunetul</span></button>
@@ -222,19 +224,19 @@
 
 <section class="bl z1" id="yetenek" aria-labelledby="yetenek-h">
   <div class="kap">
-    <div class="bl-ust">
+    <div class="bl-ust" data-r>
       <p class="km">Ce poate</p>
       <h2 id="yetenek-h">Aproximativ 30 de acțiuni <i>cu vocea.</i></h2>
       <p class="lead">Adunate în cinci grupuri. Nu trebuie să înveți nimic pe de rost: spune cu cuvintele tale ce vrei.</p>
     </div>
-    <div class="yetenek">
+    <div class="yetenek" data-r>
       <section class="grup" aria-labelledby="g1-h"><span class="no" aria-hidden="true">01</span><h3 id="g1-h">Traseu</h3><p>Îți corectează traseul în locul tău.</p><ul><li>Adaugă o oprire, o scoate sau o sare pe următoarea</li><li>Schimbă destinația și pune opririle în ordine</li><li>Trece de la drumuri secundare la traseul cel mai scurt și invers</li><li>Arată traseul pe hartă și te duce acasă</li></ul></section>
       <section class="grup" aria-labelledby="g2-h"><span class="no" aria-hidden="true">02</span><h3 id="g2-h">Pe drum</h3><p>Caută pe traseu și în jurul tău.</p><ul><li>Găsește o benzinărie, mâncare sau cafea înainte și o spune întâi pe cea mai bine cotată</li><li>Caută unde să dormi în noaptea asta</li><li>Îți spune timpul rămas, următoarea cotitură și unde te afli</li><li>Îți spune dacă urmează curbe strânse sau urcușuri</li></ul></section>
       <section class="grup" aria-labelledby="g3-h"><span class="no" aria-hidden="true">03</span><h3 id="g3-h">Vreme și autonomie</h3><p>Ce întrebi înainte și în timpul drumului.</p><ul><li>Cum va fi vremea și dacă plouă pe traseu</li><li>Se uită la radarul de ploaie și îl deschide pe hartă</li><li>Până unde ajunge rezervorul și dacă e o benzinărie pe drum</li><li class="r">Radarul de ploaie funcționează doar în SUA și în Germania. Pentru autonomie, trece o dată în Setări cât parcurgi cu rezervorul plin.</li></ul></section>
       <section class="grup" aria-labelledby="g4-h"><span class="no" aria-hidden="true">04</span><h3 id="g4-h">Grup</h3><p>Când are loc o ieșire în grup.</p><ul><li>Îți spune unde e fiecare și cine a rămas în urmă</li><li>Trimite grupului o alertă gata făcută: am rămas în urmă, pauză, pericol, benzină</li><li>Dacă împarți traseul cu grupul, te întreabă cui i se aplică schimbarea</li></ul></section>
       <section class="grup" aria-labelledby="g5-h"><span class="no" aria-hidden="true">05</span><h3 id="g5-h">Ieșire</h3><p>Cât timp mâinile rămân pe ghidon.</p><ul><li>Pornește și încheie navigația</li><li>Pornește și oprește înregistrarea ieșirii</li><li>Găsește pe cineva în contacte; o singură atingere pe ecran dă apelul</li><li>Păstrează o notiță la cererea ta și o șterge dacă spui „uită”</li><li>Își ridică sau își coboară propria voce: „mai tare”</li></ul></section>
     </div>
-    <div class="cagri-kutu">
+    <div class="cagri-kutu" data-r>
       <h3>În camera grupului</h3>
       <p>Cheamă AI CoRider în interfonul grupului și îl aud toți cei din cameră. Minutele se scad din contul celui care l-a chemat.</p>
     </div>
@@ -243,18 +245,18 @@
 
 <section class="bl" id="kipler" aria-labelledby="kip-h">
   <div class="kap">
-    <div class="bl-ust">
+    <div class="bl-ust" data-r>
       <p class="km">Două moduri</p>
       <h2 id="kip-h">Unul rezolvă, <i>celălalt stă de vorbă.</i></h2>
       <p class="lead">E de ajuns să spui „pornește modul chat” în timp ce vorbești.</p>
     </div>
-    <div class="kipler">
+    <div class="kipler" data-r>
       <article class="kip"><h3>Planificator</h3><p>Îți cunoaște traseul și rezolvă lucrurile.</p><ul><li>Există o benzinărie pe drum?</li><li>Unde sunt ceilalți?</li><li>Hai pe drumuri secundare.</li><li>Cum va fi vremea?</li><li>Du-mă acasă.</li></ul><span class="rozet">Inclus în Pro</span></article>
       <article class="kip"><h3>Chat</h3><p>Subiectul îl alegi tu; își amintește conversațiile anterioare.</p><ul><li>Hai să exersăm engleza.</li><li>Să planificăm ziua împreună.</li><li>Spune-mi o poveste.</li><li>Unde ne-am oprit ieri?</li></ul><span class="rozet">Se deschide cu un pachet de minute</span></article>
     </div>
-    <div class="sesler">
+    <div class="sesler" data-r>
       <div><h3>Patru voci</h3><p>Le asculți în Setări și alegi: Quartz, Tempo, Stone sau Willow.</p></div>
-      <ul class="ses-liste" aria-label="Patru voci">
+      <ul class="ses-liste" aria-label="Patru voci" data-ak>
         <li><i aria-hidden="true"><b></b><b></b><b></b><b></b><b></b></i>Quartz</li><li><i aria-hidden="true"><b></b><b></b><b></b><b></b><b></b></i>Tempo</li><li><i aria-hidden="true"><b></b><b></b><b></b><b></b><b></b></i>Stone</li><li><i aria-hidden="true"><b></b><b></b><b></b><b></b><b></b></i>Willow</li>
       </ul>
     </div>
@@ -263,12 +265,12 @@
 
 <section class="bl z1" id="dakika" aria-labelledby="dakika-h">
   <div class="kap">
-    <div class="bl-ust">
+    <div class="bl-ust" data-r>
       <p class="km">Minute și pachete</p>
       <h2 id="dakika-h">Timpul de vorbit, <i>pe înțelesul tuturor.</i></h2>
       <p class="lead">Minutele petrecute cu AI CoRider se scad din timpul pe care îl reînnoiește Pro și din pachetele care nu expiră.</p>
     </div>
-    <div class="sureler">
+    <div class="sureler" data-r>
       <div class="sure"><b>10 min</b><h3>În Pro, la fiecare 30 de zile</h3><p>Timpul tău de vorbit revine la 10 minute la fiecare 30 de zile.</p></div>
       <div class="sure"><b>5 min</b><h3>În perioada de probă gratuită</h3><p>În perioada de probă poți vorbi 5 minute.</p></div>
       <div class="sure"><b>30 · 60 · 180</b><h3>Pachete de minute</h3><p>30, 60 sau 180 de minute. Nu expiră și nu dispar la sfârșit de lună; și modul chat se deschide cu ele.</p></div>
@@ -279,11 +281,11 @@
 
 <section class="bl" id="gizlilik" aria-labelledby="gizlilik-h">
   <div class="kap">
-    <div class="bl-ust">
+    <div class="bl-ust" data-r>
       <p class="km">Confidențialitate</p>
       <h2 id="gizlilik-h">Vocea ta <i>rămâne a ta.</i></h2>
     </div>
-    <ul class="gizlilik">
+    <ul class="gizlilik" data-r>
       <li><h3>Funcționează doar când îl pornești tu</h3><p>Microfonul se deschide numai când atingi pe hartă butonul AI CoRider.</p></li>
       <li><h3>Vocea nu se stochează</h3><p>Vocea ta nu e înregistrată și nici păstrată la noi. Ca să apară răspunsul, ajunge la un serviciu vocal cloud al unui terț.</p></li>
       <li><h3>Fără locația exactă</h3><p>Din traseu pleacă doar text, de exemplu distanța rămasă și următoarea manevră.</p></li>
@@ -295,11 +297,11 @@
 
 <section class="bl z1" id="sss" aria-labelledby="sss-h">
   <div class="kap">
-    <div class="bl-ust">
+    <div class="bl-ust" data-r>
       <p class="km">Întrebări frecvente</p>
       <h2 id="sss-h">Ce te poți întreba</h2>
     </div>
-    <div class="sss-liste">
+    <div class="sss-liste" data-r>
       <details class="sss" name="sss"><summary>AI CoRider mă ascultă tot timpul?</summary><div class="cevap"><p>Nu. Nu există un cuvânt de activare. Microfonul se deschide numai când atingi pe hartă butonul AI CoRider. Sesiunea se închide când o încheiezi, după o perioadă de liniște sau când se termină navigația.</p></div></details>
       <details class="sss" name="sss"><summary>Funcționează fără internet?</summary><div class="cevap"><p>Nu. Ce spui ajunge, pentru răspuns, la un serviciu vocal cloud, deci AI CoRider are nevoie de internet. Fără conexiune nu se poate porni o sesiune.</p></div></details>
       <details class="sss" name="sss"><summary>În ce limbă pot vorbi?</summary><div class="cevap"><p>Răspunde în limba în care vorbești. Nu ai comenzi de învățat, spune-o cu cuvintele tale.</p></div></details>
@@ -312,7 +314,7 @@
   </div>
 </section>
 
-<section class="varis" aria-labelledby="varis-h">
+<section class="varis" aria-labelledby="varis-h" data-ton>
   <div class="kap">
     <h2 id="varis-h">Apasă butonul, <i>continuă drumul.</i></h2>
     <div class="cta-satir">

@@ -41,9 +41,10 @@
   (m/corider-*.mp4) ve uygulamanın AI CoRider yüzü (img/ai-corider.png'nin saydamlaştırılmış hâli, m/corider-yuz.webp).
   Konuşma örnekleri tasarım örneğidir; uygulamadaki gerçek durum etiketleriyle (Köy yolları, rotaya eklendi...) eşleşir.
 -->
-<script>document.documentElement.className+=" cjs"</script>
+<script>!function(d,c){c=" cjs";if(!matchMedia("(prefers-reduced-motion: reduce)").matches){c+=" hm";if(self.CSS&&CSS.supports&&CSS.supports("animation-timeline:view()"))c+=" sd"}d.className+=c}(document.documentElement)</script>
 <link rel="preload" as="font" type="font/woff" href="/m/font/Manrope.woff" crossorigin>
 <link rel="stylesheet" href="/m/corider.css">
+<script defer src="/m/h.js"></script>
 <script defer src="/m/corider.js"></script>
 
 <script type="application/ld+json">
@@ -78,6 +79,7 @@
 </head>
 <body id="top">
 <a class="skip" href="#icerik">Preskoči na sadržaj</a>
+<div class="ilerle" aria-hidden="true"></div>
 
 <header class="ust">
   <div class="ust-ic">
@@ -140,11 +142,11 @@
 
 <section class="bl" id="nasil" aria-labelledby="nasil-h">
   <div class="kap">
-    <div class="bl-ust">
+    <div class="bl-ust" data-r>
       <p class="km">Korištenje</p>
       <h2 id="nasil-h">Pritisni, govori, <i>slušaj u kacigi.</i></h2>
     </div>
-    <ol class="adimlar">
+    <ol class="adimlar" data-r>
       <li><span class="n" aria-hidden="true">1</span><h3>Pritisni tipku</h3><p>Dodirni tipku AI CoRider na karti i govori.</p></li>
       <li><span class="n" aria-hidden="true">2</span><h3>Govori normalno</h3><p>Ne treba pamtiti naredbe. Odgovara na jeziku na kojem govoriš.</p></li>
       <li><span class="n" aria-hidden="true">3</span><h3>Slušaj u kacigi</h3><p>Ako je kaciga preko Bluetootha spojena s telefonom, glas dolazi kroz nju. Ne čuješ na vjetru? Reci jednostavno „glasnije“.</p></li>
@@ -154,12 +156,12 @@
 
 <section class="bl z1" id="konusma" aria-labelledby="konusma-h">
   <div class="kap">
-    <div class="bl-ust">
+    <div class="bl-ust" data-r>
       <p class="km">Primjeri razgovora</p>
       <h2 id="konusma-h">Ovako <i>se s njim razgovara.</i></h2>
       <p class="lead">Ovo su samo primjeri. Ne treba učiti naredbe, reci to svojim riječima.</p>
     </div>
-    <div class="konusmalar">
+    <div class="konusmalar" data-r>
       <article class="soh">
         <p class="soh-t">Ruta i vrijeme</p>
         <div class="satir sen"><span class="kim">Ti</span><p>Koliko je još ostalo? Hoće li kišiti usput?</p></div>
@@ -206,7 +208,7 @@
 </section>
 
 <section class="bl" id="kayit" aria-labelledby="kayit-h">
-  <div class="kap video-ik">
+  <div class="kap video-ik" data-r>
     <div class="tel-kap">
       <div class="tel"><video id="cr-video" data-src="/m/corider-en.mp4" data-kucuk="/m/corider-kucuk-en.mp4" poster="/m/corider-en.webp" muted loop playsinline preload="none" width="540" height="1106" aria-label="AI CoRider glasom: vozač pita za preostalo vrijeme i kišu, nalazi mjesto za zaustavljanje i dodaje ga u rutu"></video></div>
       <button class="ses-btn" id="cr-ses" type="button" aria-pressed="false" data-ac="Uključi zvuk" data-kapat="Isključi zvuk"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path class="h" d="M4 9.5v5h3.6L12 18.5v-13L7.6 9.5H4z" fill="currentColor"/><path class="d" d="M15.5 9a4.2 4.2 0 0 1 0 6M17.8 6.6a7.5 7.5 0 0 1 0 10.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Uključi zvuk</span></button>
@@ -222,19 +224,19 @@
 
 <section class="bl z1" id="yetenek" aria-labelledby="yetenek-h">
   <div class="kap">
-    <div class="bl-ust">
+    <div class="bl-ust" data-r>
       <p class="km">Što zna</p>
       <h2 id="yetenek-h">Oko 30 radnji <i>glasom.</i></h2>
       <p class="lead">Skupljene u pet cjelina. Ne moraš ih učiti napamet: reci svojim riječima što želiš.</p>
     </div>
-    <div class="yetenek">
+    <div class="yetenek" data-r>
       <section class="grup" aria-labelledby="g1-h"><span class="no" aria-hidden="true">01</span><h3 id="g1-h">Ruta</h3><p>Umjesto tebe ispravlja rutu.</p><ul><li>Dodaje stanku, uklanja je ili preskače sljedeću</li><li>Mijenja odredište i slaže stanke po redu</li><li>Prebacuje između sporednih cesta i najkraće rute</li><li>Prikazuje rutu na karti i vodi te kući</li></ul></section>
       <section class="grup" aria-labelledby="g2-h"><span class="no" aria-hidden="true">02</span><h3 id="g2-h">Na cesti</h3><p>Traži uz rutu i oko tebe.</p><ul><li>Nalazi benzinsku, hranu ili kavu ispred tebe i prvo spominje najbolje ocijenjeno mjesto</li><li>Traži gdje možeš prenoćiti</li><li>Kaže ti preostalo vrijeme, sljedeće skretanje i gdje si</li><li>Kaže ti ima li ispred oštrih zavoja ili uspona</li></ul></section>
       <section class="grup" aria-labelledby="g3-h"><span class="no" aria-hidden="true">03</span><h3 id="g3-h">Vrijeme i domet</h3><p>Što pitaš prije vožnje i tijekom nje.</p><ul><li>Kakvo će biti vrijeme i pada li kiša na ruti</li><li>Pogleda radar oborina i otvori ga na karti</li><li>Dokle ti stiže spremnik i ima li usput benzinske</li><li class="r">Radar oborina radi samo u SAD-u i Njemačkoj. Za domet jednom upiši u Postavkama koliko prijeđeš s punim spremnikom.</li></ul></section>
       <section class="grup" aria-labelledby="g4-h"><span class="no" aria-hidden="true">04</span><h3 id="g4-h">Grupa</h3><p>Kad traje vožnja u grupi.</p><ul><li>Kaže ti gdje je tko i tko je zaostao</li><li>Šalje grupi gotovu poruku: zaostajem, pauza, opasnost, gorivo</li><li>Ako rutu dijeliš s grupom, pita na koga se promjena odnosi</li></ul></section>
       <section class="grup" aria-labelledby="g5-h"><span class="no" aria-hidden="true">05</span><h3 id="g5-h">Vožnja</h3><p>Dok ruke ostaju na upravljaču.</p><ul><li>Pokreće i završava navigaciju</li><li>Pokreće i zaustavlja snimanje vožnje</li><li>Pronalazi nekoga u kontaktima; za poziv je dovoljan jedan dodir na zaslon</li><li>Pamti bilješku kad to zatražiš i briše je kad kažeš „zaboravi“</li><li>Pojačava ili stišava vlastiti glas: „glasnije“</li></ul></section>
     </div>
-    <div class="cagri-kutu">
+    <div class="cagri-kutu" data-r>
       <h3>U sobi grupe</h3>
       <p>Pozovi AI CoRider u interfon grupe i čuju ga svi u sobi. Minute skida s računa onoga tko ga je pozvao.</p>
     </div>
@@ -243,18 +245,18 @@
 
 <section class="bl" id="kipler" aria-labelledby="kip-h">
   <div class="kap">
-    <div class="bl-ust">
+    <div class="bl-ust" data-r>
       <p class="km">Dva načina</p>
       <h2 id="kip-h">Jedan obavlja posao, <i>drugi razgovara.</i></h2>
       <p class="lead">Dovoljno je usred razgovora reći „uključi chat“.</p>
     </div>
-    <div class="kipler">
+    <div class="kipler" data-r>
       <article class="kip"><h3>Planer</h3><p>Poznaje tvoju rutu i sređuje stvari.</p><ul><li>Ima li usput benzinske?</li><li>Gdje su ostali?</li><li>Idemo sporednim cestama.</li><li>Kakvo će biti vrijeme?</li><li>Vodi me kući.</li></ul><span class="rozet">Uključeno u Pro</span></article>
       <article class="kip"><h3>Chat</h3><p>Temu biraš ti; pamti prijašnje razgovore.</p><ul><li>Vježbajmo engleski.</li><li>Isplanirajmo zajedno dan.</li><li>Ispričaj mi priču.</li><li>Gdje smo jučer stali?</li></ul><span class="rozet">Otvara se paketom minuta</span></article>
     </div>
-    <div class="sesler">
+    <div class="sesler" data-r>
       <div><h3>Četiri glasa</h3><p>Svaki poslušaš u Postavkama i odabereš: Quartz, Tempo, Stone ili Willow.</p></div>
-      <ul class="ses-liste" aria-label="Četiri glasa">
+      <ul class="ses-liste" aria-label="Četiri glasa" data-ak>
         <li><i aria-hidden="true"><b></b><b></b><b></b><b></b><b></b></i>Quartz</li><li><i aria-hidden="true"><b></b><b></b><b></b><b></b><b></b></i>Tempo</li><li><i aria-hidden="true"><b></b><b></b><b></b><b></b><b></b></i>Stone</li><li><i aria-hidden="true"><b></b><b></b><b></b><b></b><b></b></i>Willow</li>
       </ul>
     </div>
@@ -263,12 +265,12 @@
 
 <section class="bl z1" id="dakika" aria-labelledby="dakika-h">
   <div class="kap">
-    <div class="bl-ust">
+    <div class="bl-ust" data-r>
       <p class="km">Minute i paketi</p>
       <h2 id="dakika-h">Vrijeme razgovora, <i>jednostavno.</i></h2>
       <p class="lead">Minute provedene s AI CoRiderom skidaju se s vremena koje Pro obnavlja i iz paketa koji ne istječu.</p>
     </div>
-    <div class="sureler">
+    <div class="sureler" data-r>
       <div class="sure"><b>10 min</b><h3>U Pro, svakih 30 dana</h3><p>Tvoje vrijeme razgovora svakih 30 dana opet postaje 10 minuta.</p></div>
       <div class="sure"><b>5 min</b><h3>U besplatnom probnom razdoblju</h3><p>Tijekom probnog razdoblja možeš govoriti 5 minuta.</p></div>
       <div class="sure"><b>30 · 60 · 180</b><h3>Paketi minuta</h3><p>30, 60 ili 180 minuta. Ne istječu i ne propadaju krajem mjeseca; njima se otvara i chat.</p></div>
@@ -279,11 +281,11 @@
 
 <section class="bl" id="gizlilik" aria-labelledby="gizlilik-h">
   <div class="kap">
-    <div class="bl-ust">
+    <div class="bl-ust" data-r>
       <p class="km">Privatnost</p>
       <h2 id="gizlilik-h">Tvoj glas <i>ostaje tvoj.</i></h2>
     </div>
-    <ul class="gizlilik">
+    <ul class="gizlilik" data-r>
       <li><h3>Radi samo kad ga ti pokreneš</h3><p>Mikrofon se otvara tek kad na karti dodirneš tipku AI CoRider.</p></li>
       <li><h3>Glas se ne pohranjuje</h3><p>Tvoj glas kod nas se ne snima i ne pohranjuje. Da bi nastao odgovor, odlazi u oblačnu glasovnu uslugu treće strane.</p></li>
       <li><h3>Bez točne lokacije</h3><p>S rute odlazi samo tekst, na primjer preostala udaljenost i sljedeći manevar.</p></li>
@@ -295,11 +297,11 @@
 
 <section class="bl z1" id="sss" aria-labelledby="sss-h">
   <div class="kap">
-    <div class="bl-ust">
+    <div class="bl-ust" data-r>
       <p class="km">Česta pitanja</p>
       <h2 id="sss-h">Što te zanima</h2>
     </div>
-    <div class="sss-liste">
+    <div class="sss-liste" data-r>
       <details class="sss" name="sss"><summary>Sluša li me AI CoRider cijelo vrijeme?</summary><div class="cevap"><p>Ne. Nema riječi za buđenje. Mikrofon se otvara samo kad na karti dodirneš tipku AI CoRider. Sesija se zatvara kad je ti završiš, nakon duže tišine ili kad završi navigacija.</p></div></details>
       <details class="sss" name="sss"><summary>Radi li bez interneta?</summary><div class="cevap"><p>Ne. Ono što kažeš ide za odgovor u oblačnu glasovnu uslugu, pa AI CoRider treba internet. Bez veze sesija se ne može pokrenuti.</p></div></details>
       <details class="sss" name="sss"><summary>Na kojem jeziku mogu govoriti?</summary><div class="cevap"><p>Odgovara na jeziku na kojem govoriš. Ne treba učiti naredbe, reci svojim riječima.</p></div></details>
@@ -312,7 +314,7 @@
   </div>
 </section>
 
-<section class="varis" aria-labelledby="varis-h">
+<section class="varis" aria-labelledby="varis-h" data-ton>
   <div class="kap">
     <h2 id="varis-h">Pritisni tipku, <i>vozi dalje.</i></h2>
     <div class="cta-satir">

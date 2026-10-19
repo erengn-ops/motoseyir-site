@@ -36,11 +36,12 @@
   Ham dosyalar: motoseyir-social/02-kaynak/higgsfield/site-sahneler/
   Bu sayfa sablon/anasayfa.html + dil/anasayfa.<kod>.json'dan üretilir (python3 uret.py); stil m/a.css, hareket m/a.js.
 -->
-<script>document.documentElement.className+=" js"</script>
+<script>!function(d,c){c=" js";if(!matchMedia("(prefers-reduced-motion: reduce)").matches){c+=" hm";if(self.CSS&&CSS.supports&&CSS.supports("animation-timeline:view()"))c+=" sd"}d.className+=c}(document.documentElement)</script>
 <link rel="preload" as="image" type="image/webp" href="/m/sahne-dikey-poster.webp" media="(max-width:700px)" fetchpriority="high">
 <link rel="preload" as="image" type="image/webp" href="/m/sahne-poster.webp" media="(min-width:701px)" fetchpriority="high">
 <link rel="preload" as="font" type="font/woff" href="/m/font/Manrope.woff" crossorigin>
 <link rel="stylesheet" href="/m/a.css">
+<script defer src="/m/h.js"></script>
 <script defer src="/m/a.js"></script>
 
 <script type="application/ld+json">
@@ -75,6 +76,7 @@
 </head>
 <body id="top">
 <a class="skip" href="#icerik">{{skip}}</a>
+<div class="ilerle" aria-hidden="true"></div>
 
 <header class="ust" id="ustbar">
   <div class="ust-ic">
@@ -121,6 +123,31 @@
   <div class="sayi"><b>CarPlay</b><span>{{s3_t}}</span></div>
   <div class="sayi"><b>{{s4_b}}</b><span>{{s4_t}}</span></div>
 </div></div>
+
+
+<!-- Sticky anlatı (19 Eki 2026): telefon ekranı sağda sabit, soldaki adımlar kayarken gerçek ekranlar değişir; rota çizgisi sayfayla birlikte çizilir.
+     Metinler aşağıdaki bölümlerin başlıklarından gelir (yeni çeviri yok); ayrıntılar bölümlerde. Ekranlar süs (alt boş), gerçek alt metinler bölümlerde. -->
+<section class="hikaye" id="hikaye" aria-labelledby="hk-h">
+  <div class="kap">
+    <h2 id="hk-h" class="hk-baslik">{{st_h2}}</h2>
+    <div class="hk-sahne" id="hk-sahne" data-a="0">
+      <div class="hk-yapis" aria-hidden="true">
+        <div class="hk-tel"><div class="tel"><div class="ekr">
+          <img class="e e0" src="/m/ekran-nav-{{dil_kodu}}.webp" alt="" width="540" height="1174" decoding="async">
+          <img class="e e1" src="/m/ekran-tur-{{dil_kodu}}.webp" alt="" width="540" height="1174" loading="lazy" decoding="async">
+          <img class="e e2" src="/m/ekran-gecit-{{dil_kodu}}.webp" alt="" width="540" height="1174" loading="lazy" decoding="async">
+          <img class="e e3" src="/m/ekran-kesfet-{{dil_kodu}}.webp" alt="" width="540" height="1174" loading="lazy" decoding="async">
+        </div></div></div>
+      </div>
+      <ol class="hk-adimlar">
+        <li class="hk-adim on" data-i="0"><p class="km">{{k1_ad}}</p><h3>{{k1_h2}}</h3><p class="metin">{{k1_p}}</p><a class="hk-link" href="#rota">{{btn_ozellikleri_gor}}</a></li>
+        <li class="hk-adim" data-i="1"><p class="km">{{k2_ad}} <span class="etiket">Pro</span></p><h3>{{k2_h2}}</h3><p class="metin">{{k2_p}}</p><a class="hk-link" href="#tur">{{btn_ozellikleri_gor}}</a></li>
+        <li class="hk-adim" data-i="2"><p class="km">{{k3_ad}}</p><h3>{{k3_h2}}</h3><p class="metin">{{k3_p}}</p><a class="hk-link" href="#gecit">{{btn_ozellikleri_gor}}</a></li>
+        <li class="hk-adim" data-i="3"><p class="km">{{k6_ad}} <span class="etiket">Pro</span></p><h3>{{k6_h2}}</h3><p class="metin">{{k6_p}}</p><a class="hk-link" href="#kesfet">{{btn_ozellikleri_gor}}</a></li>
+      </ol>
+    </div>
+  </div>
+</section>
 
 <div class="ana" id="ozellikler">
   <section class="bolum" id="rota">
@@ -197,6 +224,12 @@
         </ul>
       </div>
     </div>
+
+    <!-- Kayan geçit şeridi: süs (altı çizili listeler zaten sayfada); gerçek geçit adları ve rakımları -->
+    <div class="hat" aria-hidden="true" data-ak>
+      <div class="hat-sira"><ul class="hat-yol"><li><b>{{k3_m1}} m</b><span>Col de l’Iseran</span></li><li><b>{{k3_m2}} m</b><span>Passo dello Stelvio</span></li><li><b>{{k3_m3}} m</b><span>Col Agnel</span></li><li><b>{{v_y1_m}} m</b><span>{{v_y1}}</span></li><li><b>{{v_y2_m}} m</b><span>{{v_y2}}</span></li><li><b>{{v_y3_m}} m</b><span>{{v_y3}}</span></li><li><b>{{v_y4_m}} m</b><span>{{v_y4}}</span></li><li><b>{{v_y5_m}} m</b><span>{{v_y5}}</span></li></ul><ul class="hat-yol"><li><b>{{k3_m1}} m</b><span>Col de l’Iseran</span></li><li><b>{{k3_m2}} m</b><span>Passo dello Stelvio</span></li><li><b>{{k3_m3}} m</b><span>Col Agnel</span></li><li><b>{{v_y1_m}} m</b><span>{{v_y1}}</span></li><li><b>{{v_y2_m}} m</b><span>{{v_y2}}</span></li><li><b>{{v_y3_m}} m</b><span>{{v_y3}}</span></li><li><b>{{v_y4_m}} m</b><span>{{v_y4}}</span></li><li><b>{{v_y5_m}} m</b><span>{{v_y5}}</span></li></ul></div>
+      <div class="hat-sira ters"><ul class="hat-yol"><li><b>{{v_y5_m}} m</b><span>{{v_y5}}</span></li><li><b>{{v_y4_m}} m</b><span>{{v_y4}}</span></li><li><b>{{v_y3_m}} m</b><span>{{v_y3}}</span></li><li><b>{{v_y2_m}} m</b><span>{{v_y2}}</span></li><li><b>{{v_y1_m}} m</b><span>{{v_y1}}</span></li><li><b>{{k3_m3}} m</b><span>Col Agnel</span></li><li><b>{{k3_m2}} m</b><span>Passo dello Stelvio</span></li><li><b>{{k3_m1}} m</b><span>Col de l’Iseran</span></li></ul><ul class="hat-yol"><li><b>{{v_y5_m}} m</b><span>{{v_y5}}</span></li><li><b>{{v_y4_m}} m</b><span>{{v_y4}}</span></li><li><b>{{v_y3_m}} m</b><span>{{v_y3}}</span></li><li><b>{{v_y2_m}} m</b><span>{{v_y2}}</span></li><li><b>{{v_y1_m}} m</b><span>{{v_y1}}</span></li><li><b>{{k3_m3}} m</b><span>Col Agnel</span></li><li><b>{{k3_m2}} m</b><span>Passo dello Stelvio</span></li><li><b>{{k3_m1}} m</b><span>Col de l’Iseran</span></li></ul></div>
+    </div>
     <div class="veri" data-r aria-label="{{v_etiket}}">
       <dl class="veri-say">
         <div><dt>{{v_s1_b}}</dt><dd>{{v_s1_t}}</dd></div>
@@ -207,7 +240,7 @@
       <div class="veri-ik">
         <div>
           <h3>{{v_bolge_h}}</h3>
-          <ul class="bolgeler">
+          <ul class="bolgeler" data-g>
             <li style="--o:100%"><span class="ad">{{v_b1}}</span><span class="n">{{v_b1_n}}</span></li>
             <li style="--o:76%"><span class="ad">{{v_b2}}</span><span class="n">{{v_b2_n}}</span></li>
             <li style="--o:56%"><span class="ad">{{v_b3}}</span><span class="n">{{v_b3_n}}</span></li>
@@ -242,7 +275,7 @@
     </div></div>
   </section>
 
-  <section class="bolum ters" id="corider">
+  <section class="bolum ters" id="corider" data-ton>
     <div class="kap"><div class="bolum-ik">
       <div data-r class="tel-alan"><div class="tel"><img src="/m/ekran-corider-{{dil_kodu}}.webp" alt="{{k4_alt}}" width="540" height="1174" loading="lazy"></div></div>
       <div data-r>
@@ -456,7 +489,7 @@
         <h2>{{k10_h2}}</h2>
         <p class="metin">{{k10_p}}</p>
       </div>
-      <div data-r class="tel-alan"><div class="tani-kutu" id="tani-kutu">
+      <div data-r class="tel-alan"><div class="tani-kutu" id="tani-kutu" data-ak>
         <button type="button" id="tani-btn" aria-label="{{k10_btn}}"><img src="/m/tani-{{dil_kodu}}.jpg" alt="" loading="lazy" width="1080" height="1920"><span class="oynat"></span></button>
       </div></div>
     </div></div>
@@ -478,7 +511,7 @@
   </section>
 </div>
 
-<section class="varis">
+<section class="varis" data-ton>
   <div class="kap" data-r>
     <h2>{{varis_h2}}</h2>
     <div class="cta-satir">
@@ -501,11 +534,11 @@
       <p class="km">{{yeni_eyebrow}}</p>
       <h2>{{yeni_h2}}</h2>
       <p class="metin">{{yeni_lead}}</p>
-      <article class="surum"><header><b>1.1.8</b><time>{{y118_tarih}}</time></header>
+      <article class="surum" data-g><header><b>1.1.8</b><time>{{y118_tarih}}</time></header>
         <ul class="d"><li>{{y118_1}}</li><li>{{y118_2}}</li><li>{{y118_3}}</li></ul></article>
-      <article class="surum"><header><b>1.1.7</b><time>{{y117_tarih}}</time></header>
+      <article class="surum" data-g><header><b>1.1.7</b><time>{{y117_tarih}}</time></header>
         <ul class="d"><li>{{y117_1}}</li><li>{{y117_2}}</li><li>{{y117_3}}</li><li>{{y117_4}}</li></ul></article>
-      <article class="surum"><header><b>1.1.6</b><time>{{y116_tarih}}</time></header>
+      <article class="surum" data-g><header><b>1.1.6</b><time>{{y116_tarih}}</time></header>
         <ul class="d"><li>{{y116_1}}</li><li>{{y116_2}}</li><li>{{y116_3}}</li><li>{{y116_4}}</li></ul></article>
     </div>
     <div id="iletisim">

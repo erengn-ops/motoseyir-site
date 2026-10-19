@@ -41,9 +41,10 @@
   (m/corider-*.mp4) ve uygulamanın AI CoRider yüzü (img/ai-corider.png'nin saydamlaştırılmış hâli, m/corider-yuz.webp).
   Konuşma örnekleri tasarım örneğidir; uygulamadaki gerçek durum etiketleriyle (Köy yolları, rotaya eklendi...) eşleşir.
 -->
-<script>document.documentElement.className+=" cjs"</script>
+<script>!function(d,c){c=" cjs";if(!matchMedia("(prefers-reduced-motion: reduce)").matches){c+=" hm";if(self.CSS&&CSS.supports&&CSS.supports("animation-timeline:view()"))c+=" sd"}d.className+=c}(document.documentElement)</script>
 <link rel="preload" as="font" type="font/woff" href="/m/font/Manrope.woff" crossorigin>
 <link rel="stylesheet" href="/m/corider.css">
+<script defer src="/m/h.js"></script>
 <script defer src="/m/corider.js"></script>
 
 <script type="application/ld+json">
@@ -78,6 +79,7 @@
 </head>
 <body id="top">
 <a class="skip" href="#icerik">Přejít na obsah</a>
+<div class="ilerle" aria-hidden="true"></div>
 
 <header class="ust">
   <div class="ust-ic">
@@ -140,11 +142,11 @@
 
 <section class="bl" id="nasil" aria-labelledby="nasil-h">
   <div class="kap">
-    <div class="bl-ust">
+    <div class="bl-ust" data-r>
       <p class="km">Použití</p>
       <h2 id="nasil-h">Stiskni, mluv, <i>poslouchej v helmě.</i></h2>
     </div>
-    <ol class="adimlar">
+    <ol class="adimlar" data-r>
       <li><span class="n" aria-hidden="true">1</span><h3>Stiskni tlačítko</h3><p>Klepni na mapě na tlačítko AI CoRider a mluv.</p></li>
       <li><span class="n" aria-hidden="true">2</span><h3>Mluv normálně</h3><p>Žádné příkazy si pamatovat nemusíš. Odpovídá v jazyce, ve kterém mluvíš.</p></li>
       <li><span class="n" aria-hidden="true">3</span><h3>Poslouchej v helmě</h3><p>Pokud je helma s telefonem spojená přes Bluetooth, hlas jde právě přes ni. Ve větru neslyšíš? Řekni prostě „hlasitěji“.</p></li>
@@ -154,12 +156,12 @@
 
 <section class="bl z1" id="konusma" aria-labelledby="konusma-h">
   <div class="kap">
-    <div class="bl-ust">
+    <div class="bl-ust" data-r>
       <p class="km">Ukázkové rozhovory</p>
       <h2 id="konusma-h">Takhle <i>se s ním mluví.</i></h2>
       <p class="lead">Jsou to jen příklady. Žádné příkazy se učit nemusíš, řekni to po svém.</p>
     </div>
-    <div class="konusmalar">
+    <div class="konusmalar" data-r>
       <article class="soh">
         <p class="soh-t">Trasa a počasí</p>
         <div class="satir sen"><span class="kim">Ty</span><p>Kolik zbývá? Bude cestou pršet?</p></div>
@@ -206,7 +208,7 @@
 </section>
 
 <section class="bl" id="kayit" aria-labelledby="kayit-h">
-  <div class="kap video-ik">
+  <div class="kap video-ik" data-r>
     <div class="tel-kap">
       <div class="tel"><video id="cr-video" data-src="/m/corider-en.mp4" data-kucuk="/m/corider-kucuk-en.mp4" poster="/m/corider-en.webp" muted loop playsinline preload="none" width="540" height="1106" aria-label="AI CoRider hlasem: jezdec se ptá na zbývající čas a déšť, najde místo na zastávku a přidá ho do trasy"></video></div>
       <button class="ses-btn" id="cr-ses" type="button" aria-pressed="false" data-ac="Zapnout zvuk" data-kapat="Vypnout zvuk"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path class="h" d="M4 9.5v5h3.6L12 18.5v-13L7.6 9.5H4z" fill="currentColor"/><path class="d" d="M15.5 9a4.2 4.2 0 0 1 0 6M17.8 6.6a7.5 7.5 0 0 1 0 10.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Zapnout zvuk</span></button>
@@ -222,19 +224,19 @@
 
 <section class="bl z1" id="yetenek" aria-labelledby="yetenek-h">
   <div class="kap">
-    <div class="bl-ust">
+    <div class="bl-ust" data-r>
       <p class="km">Co umí</p>
       <h2 id="yetenek-h">Kolem 30 akcí <i>hlasem.</i></h2>
       <p class="lead">Shrnuté do pěti skupin. Nemusíš se je učit zpaměti: řekni po svém, co chceš.</p>
     </div>
-    <div class="yetenek">
+    <div class="yetenek" data-r>
       <section class="grup" aria-labelledby="g1-h"><span class="no" aria-hidden="true">01</span><h3 id="g1-h">Trasa</h3><p>Opraví trasu za tebe.</p><ul><li>Přidá zastávku, odebere ji nebo přeskočí další</li><li>Změní cíl a seřadí zastávky</li><li>Přepíná mezi vedlejšími silnicemi a nejkratší trasou</li><li>Ukáže trasu na mapě a odvede tě domů</li></ul></section>
       <section class="grup" aria-labelledby="g2-h"><span class="no" aria-hidden="true">02</span><h3 id="g2-h">Na cestě</h3><p>Hledá na trase i kolem tebe.</p><ul><li>Najde pumpu, jídlo nebo kávu před tebou a nejdřív jmenuje nejlépe hodnocené místo</li><li>Hledá, kde dnes přespat</li><li>Řekne ti zbývající čas, další odbočku a kde právě jsi</li><li>Řekne, jestli před tebou jsou ostré zatáčky nebo stoupání</li></ul></section>
       <section class="grup" aria-labelledby="g3-h"><span class="no" aria-hidden="true">03</span><h3 id="g3-h">Počasí a dojezd</h3><p>Na co se ptáš před jízdou i za jízdy.</p><ul><li>Jaké bude počasí a jestli na trase prší</li><li>Podívá se na srážkový radar a otevře ho na mapě</li><li>Kam dojedeš na nádrž a jestli je cestou pumpa</li><li class="r">Srážkový radar funguje jen v USA a v Německu. Pro dojezd zadej jednou v Nastavení, kolik ujedeš na plnou nádrž.</li></ul></section>
       <section class="grup" aria-labelledby="g4-h"><span class="no" aria-hidden="true">04</span><h3 id="g4-h">Skupina</h3><p>Když běží jízda ve skupině.</p><ul><li>Řekne, kde je kdo a kdo zůstal pozadu</li><li>Pošle skupině hotové upozornění: zůstávám pozadu, pauza, nebezpečí, benzín</li><li>Pokud trasu se skupinou sdílíš, zeptá se, koho se změna týká</li></ul></section>
       <section class="grup" aria-labelledby="g5-h"><span class="no" aria-hidden="true">05</span><h3 id="g5-h">Jízda</h3><p>Když ruce zůstávají na řídítkách.</p><ul><li>Spustí a ukončí navigaci</li><li>Zapne a zastaví záznam jízdy</li><li>Najde někoho v kontaktech; k zavolání stačí jedno klepnutí na displej</li><li>Uloží poznámku, když o to požádáš, a smaže ji, když řekneš „zapomeň“</li><li>Zesílí nebo ztlumí vlastní hlas: „hlasitěji“</li></ul></section>
     </div>
-    <div class="cagri-kutu">
+    <div class="cagri-kutu" data-r>
       <h3>V místnosti skupiny</h3>
       <p>Zavolej AI CoRider do interkomu skupiny a uslyší ho všichni v místnosti. Minuty se strhávají z účtu toho, kdo ho zavolal.</p>
     </div>
@@ -243,18 +245,18 @@
 
 <section class="bl" id="kipler" aria-labelledby="kip-h">
   <div class="kap">
-    <div class="bl-ust">
+    <div class="bl-ust" data-r>
       <p class="km">Dva režimy</p>
       <h2 id="kip-h">Jeden vyřizuje, <i>druhý si povídá.</i></h2>
       <p class="lead">Stačí během hovoru říct „zapni režim chatu“.</p>
     </div>
-    <div class="kipler">
+    <div class="kipler" data-r>
       <article class="kip"><h3>Plánovač</h3><p>Zná tvou trasu a vyřídí, co je třeba.</p><ul><li>Je cestou nějaká pumpa?</li><li>Kde jsou ostatní?</li><li>Pojedeme po vedlejších silnicích.</li><li>Jaké bude počasí?</li><li>Odvez mě domů.</li></ul><span class="rozet">Součást Pro</span></article>
       <article class="kip"><h3>Chat</h3><p>Téma volíš ty, pamatuje si dřívější rozhovory.</p><ul><li>Procvičme angličtinu.</li><li>Naplánujme si spolu den.</li><li>Vyprávěj mi příběh.</li><li>Kde jsme včera skončili?</li></ul><span class="rozet">Otevírá se balíčkem minut</span></article>
     </div>
-    <div class="sesler">
+    <div class="sesler" data-r>
       <div><h3>Čtyři hlasy</h3><p>Každý si poslechneš v Nastavení a vybereš: Quartz, Tempo, Stone nebo Willow.</p></div>
-      <ul class="ses-liste" aria-label="Čtyři hlasy">
+      <ul class="ses-liste" aria-label="Čtyři hlasy" data-ak>
         <li><i aria-hidden="true"><b></b><b></b><b></b><b></b><b></b></i>Quartz</li><li><i aria-hidden="true"><b></b><b></b><b></b><b></b><b></b></i>Tempo</li><li><i aria-hidden="true"><b></b><b></b><b></b><b></b><b></b></i>Stone</li><li><i aria-hidden="true"><b></b><b></b><b></b><b></b><b></b></i>Willow</li>
       </ul>
     </div>
@@ -263,12 +265,12 @@
 
 <section class="bl z1" id="dakika" aria-labelledby="dakika-h">
   <div class="kap">
-    <div class="bl-ust">
+    <div class="bl-ust" data-r>
       <p class="km">Minuty a balíčky</p>
       <h2 id="dakika-h">Hovorový čas, <i>jednoduše.</i></h2>
       <p class="lead">Minuty strávené s AI CoRider se odečítají z času, který Pro obnovuje, a z balíčků, které nevyprší.</p>
     </div>
-    <div class="sureler">
+    <div class="sureler" data-r>
       <div class="sure"><b>10 min</b><h3>V Pro, každých 30 dní</h3><p>Tvůj hovorový čas se každých 30 dní vrací na 10 minut.</p></div>
       <div class="sure"><b>5 min</b><h3>V bezplatné zkušební době</h3><p>Během zkušební doby můžeš mluvit 5 minut.</p></div>
       <div class="sure"><b>30 · 60 · 180</b><h3>Balíčky minut</h3><p>30, 60 nebo 180 minut. Nevyprší a s koncem měsíce nepropadnou; otevírá se jimi i režim chatu.</p></div>
@@ -279,11 +281,11 @@
 
 <section class="bl" id="gizlilik" aria-labelledby="gizlilik-h">
   <div class="kap">
-    <div class="bl-ust">
+    <div class="bl-ust" data-r>
       <p class="km">Soukromí</p>
       <h2 id="gizlilik-h">Tvůj hlas <i>zůstává tvůj.</i></h2>
     </div>
-    <ul class="gizlilik">
+    <ul class="gizlilik" data-r>
       <li><h3>Funguje, jen když ho spustíš</h3><p>Mikrofon se otevře, až když na mapě klepneš na tlačítko AI CoRider.</p></li>
       <li><h3>Hlas se neukládá</h3><p>Tvůj hlas u nás nenahráváme ani neukládáme. Aby vznikla odpověď, odchází do cloudové hlasové služby třetí strany.</p></li>
       <li><h3>Žádná přesná poloha</h3><p>Z trasy odchází jen text, třeba zbývající vzdálenost a další manévr.</p></li>
@@ -295,11 +297,11 @@
 
 <section class="bl z1" id="sss" aria-labelledby="sss-h">
   <div class="kap">
-    <div class="bl-ust">
+    <div class="bl-ust" data-r>
       <p class="km">Časté dotazy</p>
       <h2 id="sss-h">Na co se můžeš ptát</h2>
     </div>
-    <div class="sss-liste">
+    <div class="sss-liste" data-r>
       <details class="sss" name="sss"><summary>Poslouchá mě AI CoRider pořád?</summary><div class="cevap"><p>Ne. Žádné probouzecí slovo neexistuje. Mikrofon se otevře, jen když na mapě klepneš na tlačítko AI CoRider. Relace se zavře, když ji ukončíš, po delším tichu nebo s koncem navigace.</p></div></details>
       <details class="sss" name="sss"><summary>Funguje to bez internetu?</summary><div class="cevap"><p>Ne. To, co řekneš, jde pro odpověď do cloudové hlasové služby, takže AI CoRider potřebuje internet. Bez připojení se relace nespustí.</p></div></details>
       <details class="sss" name="sss"><summary>V jakém jazyce můžu mluvit?</summary><div class="cevap"><p>Odpovídá v jazyce, ve kterém mluvíš. Žádné příkazy se učit nemusíš, řekni to po svém.</p></div></details>
@@ -312,7 +314,7 @@
   </div>
 </section>
 
-<section class="varis" aria-labelledby="varis-h">
+<section class="varis" aria-labelledby="varis-h" data-ton>
   <div class="kap">
     <h2 id="varis-h">Stiskni tlačítko, <i>jeď dál.</i></h2>
     <div class="cta-satir">

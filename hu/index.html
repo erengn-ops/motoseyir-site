@@ -50,11 +50,12 @@
   Ham dosyalar: motoseyir-social/02-kaynak/higgsfield/site-sahneler/
   Bu sayfa sablon/anasayfa.html + dil/anasayfa.<kod>.json'dan üretilir (python3 uret.py); stil m/a.css, hareket m/a.js.
 -->
-<script>document.documentElement.className+=" js"</script>
+<script>!function(d,c){c=" js";if(!matchMedia("(prefers-reduced-motion: reduce)").matches){c+=" hm";if(self.CSS&&CSS.supports&&CSS.supports("animation-timeline:view()"))c+=" sd"}d.className+=c}(document.documentElement)</script>
 <link rel="preload" as="image" type="image/webp" href="/m/sahne-dikey-poster.webp" media="(max-width:700px)" fetchpriority="high">
 <link rel="preload" as="image" type="image/webp" href="/m/sahne-poster.webp" media="(min-width:701px)" fetchpriority="high">
 <link rel="preload" as="font" type="font/woff" href="/m/font/Manrope.woff" crossorigin>
 <link rel="stylesheet" href="/m/a.css">
+<script defer src="/m/h.js"></script>
 <script defer src="/m/a.js"></script>
 
 <script type="application/ld+json">
@@ -89,6 +90,7 @@
 </head>
 <body id="top">
 <a class="skip" href="#icerik">Ugrás a tartalomra</a>
+<div class="ilerle" aria-hidden="true"></div>
 
 <header class="ust" id="ustbar">
   <div class="ust-ic">
@@ -153,6 +155,31 @@
   <div class="sayi"><b>CarPlay</b><span>az útvonalad az autó kijelzőjén, teljes képernyőn</span></div>
   <div class="sayi"><b>Csoport + Intercom</b><span>ugyanaz az útvonal, motorozás közben beszélgetve</span></div>
 </div></div>
+
+
+<!-- Sticky anlatı (19 Eki 2026): telefon ekranı sağda sabit, soldaki adımlar kayarken gerçek ekranlar değişir; rota çizgisi sayfayla birlikte çizilir.
+     Metinler aşağıdaki bölümlerin başlıklarından gelir (yeni çeviri yok); ayrıntılar bölümlerde. Ekranlar süs (alt boş), gerçek alt metinler bölümlerde. -->
+<section class="hikaye" id="hikaye" aria-labelledby="hk-h">
+  <div class="kap">
+    <h2 id="hk-h" class="hk-baslik">A Motoseyir <i>dióhéjban.</i></h2>
+    <div class="hk-sahne" id="hk-sahne" data-a="0">
+      <div class="hk-yapis" aria-hidden="true">
+        <div class="hk-tel"><div class="tel"><div class="ekr">
+          <img class="e e0" src="/m/ekran-nav-en.webp" alt="" width="540" height="1174" decoding="async">
+          <img class="e e1" src="/m/ekran-tur-en.webp" alt="" width="540" height="1174" loading="lazy" decoding="async">
+          <img class="e e2" src="/m/ekran-gecit-en.webp" alt="" width="540" height="1174" loading="lazy" decoding="async">
+          <img class="e e3" src="/m/ekran-kesfet-en.webp" alt="" width="540" height="1174" loading="lazy" decoding="async">
+        </div></div></div>
+      </div>
+      <ol class="hk-adimlar">
+        <li class="hk-adim on" data-i="0"><p class="km">Útvonaltervezés</p><h3>Először a kilométerek, <i>aztán a móka.</i></h3><p class="metin">Ugyanazon két pont között összehasonlítja a változatokat, és a legrövidebbet ajánlja. Több megállós túrán a megállók sorrendjét is kiszámolja. A többi rád van bízva.</p><a class="hk-link" href="#rota">Funkciók megtekintése</a></li>
+        <li class="hk-adim" data-i="1"><p class="km">Túragenerátor <span class="etiket">Pro</span></p><h3>Válassz irányt és időt, <i>kész a túra.</i></h3><p class="metin">Fordítsd a tárcsát arra, amerre menni szeretnél, és add meg, hány órád van. A Motoseyir arra rajzol egy túrát; a térképen látod, és ha tetszik, indulhatsz.</p><a class="hk-link" href="#tur">Funkciók megtekintése</a></li>
+        <li class="hk-adim" data-i="2"><p class="km">Hágók</p><h3>1 600+ hágó, <i>egyetlen térképen.</i></h3><p class="metin">Minden hágónál ott a magasság és a pontos hely, a legtöbbnél fotó is. A télen lezáruló hágóknál látod, mely hónapokban zárva vannak, a földutakat pedig földútként jelöli. Add hozzá a kedvenceidet a túrádhoz, és indulj.</p><a class="hk-link" href="#gecit">Funkciók megtekintése</a></li>
+        <li class="hk-adim" data-i="3"><p class="km">Discover <span class="etiket">Pro</span></p><h3>Fedezd fel, <i>ami útba esik.</i></h3><p class="metin">Nézd meg az útvonalad mentén a mellékutakat, a tengerparti utakat, a kempingeket és az étkezőhelyeket, és add hozzá, ami tetszik.</p><a class="hk-link" href="#kesfet">Funkciók megtekintése</a></li>
+      </ol>
+    </div>
+  </div>
+</section>
 
 <div class="ana" id="ozellikler">
   <section class="bolum" id="rota">
@@ -229,6 +256,12 @@
         </ul>
       </div>
     </div>
+
+    <!-- Kayan geçit şeridi: süs (altı çizili listeler zaten sayfada); gerçek geçit adları ve rakımları -->
+    <div class="hat" aria-hidden="true" data-ak>
+      <div class="hat-sira"><ul class="hat-yol"><li><b>2 764 m</b><span>Col de l’Iseran</span></li><li><b>2 758 m</b><span>Passo dello Stelvio</span></li><li><b>2 744 m</b><span>Col Agnel</span></li><li><b>3 696 m</b><span>Cottonwood Pass</span></li><li><b>3 689 m</b><span>Independence Pass</span></li><li><b>3 662 m</b><span>Cumberland Pass</span></li><li><b>3 655 m</b><span>Loveland Pass</span></li><li><b>3 635 m</b><span>Hagerman Pass</span></li></ul><ul class="hat-yol"><li><b>2 764 m</b><span>Col de l’Iseran</span></li><li><b>2 758 m</b><span>Passo dello Stelvio</span></li><li><b>2 744 m</b><span>Col Agnel</span></li><li><b>3 696 m</b><span>Cottonwood Pass</span></li><li><b>3 689 m</b><span>Independence Pass</span></li><li><b>3 662 m</b><span>Cumberland Pass</span></li><li><b>3 655 m</b><span>Loveland Pass</span></li><li><b>3 635 m</b><span>Hagerman Pass</span></li></ul></div>
+      <div class="hat-sira ters"><ul class="hat-yol"><li><b>3 635 m</b><span>Hagerman Pass</span></li><li><b>3 655 m</b><span>Loveland Pass</span></li><li><b>3 662 m</b><span>Cumberland Pass</span></li><li><b>3 689 m</b><span>Independence Pass</span></li><li><b>3 696 m</b><span>Cottonwood Pass</span></li><li><b>2 744 m</b><span>Col Agnel</span></li><li><b>2 758 m</b><span>Passo dello Stelvio</span></li><li><b>2 764 m</b><span>Col de l’Iseran</span></li></ul><ul class="hat-yol"><li><b>3 635 m</b><span>Hagerman Pass</span></li><li><b>3 655 m</b><span>Loveland Pass</span></li><li><b>3 662 m</b><span>Cumberland Pass</span></li><li><b>3 689 m</b><span>Independence Pass</span></li><li><b>3 696 m</b><span>Cottonwood Pass</span></li><li><b>2 744 m</b><span>Col Agnel</span></li><li><b>2 758 m</b><span>Passo dello Stelvio</span></li><li><b>2 764 m</b><span>Col de l’Iseran</span></li></ul></div>
+    </div>
     <div class="veri" data-r aria-label="Hágóadatok">
       <dl class="veri-say">
         <div><dt>1 638</dt><dd>hágó 36 országban</dd></div>
@@ -239,7 +272,7 @@
       <div class="veri-ik">
         <div>
           <h3>Régiók szerint</h3>
-          <ul class="bolgeler">
+          <ul class="bolgeler" data-g>
             <li style="--o:100%"><span class="ad">Alpok és Dolomitok</span><span class="n">535</span></li>
             <li style="--o:76%"><span class="ad">Európa többi része</span><span class="n">407</span></li>
             <li style="--o:56%"><span class="ad">Egyesült Államok</span><span class="n">298</span></li>
@@ -274,7 +307,7 @@
     </div></div>
   </section>
 
-  <section class="bolum ters" id="corider">
+  <section class="bolum ters" id="corider" data-ton>
     <div class="kap"><div class="bolum-ik">
       <div data-r class="tel-alan"><div class="tel"><img src="/m/ekran-corider-en.webp" alt="Az AI CoRider képernyője: tervező és csevegési lehetőségek" width="540" height="1174" loading="lazy"></div></div>
       <div data-r>
@@ -488,7 +521,7 @@
         <h2>Ismerd meg <i>az appot.</i></h2>
         <p class="metin">Mi van az appban, két percben.</p>
       </div>
-      <div data-r class="tel-alan"><div class="tani-kutu" id="tani-kutu">
+      <div data-r class="tel-alan"><div class="tani-kutu" id="tani-kutu" data-ak>
         <button type="button" id="tani-btn" aria-label="Bemutatkozó videó lejátszása"><img src="/m/tani-en.jpg" alt="" loading="lazy" width="1080" height="1920"><span class="oynat"></span></button>
       </div></div>
     </div></div>
@@ -510,7 +543,7 @@
   </section>
 </div>
 
-<section class="varis">
+<section class="varis" data-ton>
   <div class="kap" data-r>
     <h2>Az út <i>készen áll.</i></h2>
     <div class="cta-satir">
@@ -533,11 +566,11 @@
       <p class="km">Verziójegyzetek</p>
       <h2>Mi változott</h2>
       <p class="metin">A legutóbbi frissítések, legújabb elöl.</p>
-      <article class="surum"><header><b>1.1.8</b><time>2026. október</time></header>
+      <article class="surum" data-g><header><b>1.1.8</b><time>2026. október</time></header>
         <ul class="d"><li>Javítottuk az összeomlást, amely a Communityben a Blogról a Feedre váltáskor jelentkezett.</li><li>A 3D-s visszajátszásról készülő videófelvétel megbízhatóbban indul.</li><li>Már nem jelenik meg a „Ready” felirat, mielőtt a térkép betöltődne, és a kamera sem ugrik el, ha befejezed a csípéssel nagyítást.</li></ul></article>
-      <article class="surum"><header><b>1.1.7</b><time>2026. október</time></header>
+      <article class="surum" data-g><header><b>1.1.7</b><time>2026. október</time></header>
         <ul class="d"><li>Túratérkép: nézz meg egy hosszú túrát vagy menetet videóként, letisztult térképen. Ahogy az útvonalad kirajzolja magát, egyenként jelennek meg az érintett települések és a fotóid.</li><li>Új gyorsgombok a Start képernyőn: otthon és munkahely, menetrögzítés, egyórás kör innen, legendás út a közelben.</li><li>298 hágó és hat új legendás út az USA-ban, a Tengerpart mód pedig már egész Európában működik.</li><li>A „Settings” képernyőn a „Get to know Motoseyir” egy rövid videós körút az appról, fülenként.</li></ul></article>
-      <article class="surum"><header><b>1.1.6</b><time>2026. október</time></header>
+      <article class="surum" data-g><header><b>1.1.6</b><time>2026. október</time></header>
         <ul class="d"><li>Nézd 3D-ben: játszd vissza a rögzített menetet, mintha helikopterből követnéd; a fotóid ott bukkannak fel, ahol készítetted őket.</li><li>Megosztás videóként: készíts 15, 30 vagy 60 másodperces álló videót, Instagramra készen. Pro nem kell hozzá.</li><li>Menetelemzés: mozgásidő, valódi szünetek, éles kanyarok, összes emelkedés, és hogy az út mekkora része volt új neked.</li><li>A „Generate a tour” fülön az „Another one” három új kört hoz más utakon, és kerülheted az autópályákat, az útdíjas és a földutakat.</li></ul></article>
     </div>
     <div id="iletisim">

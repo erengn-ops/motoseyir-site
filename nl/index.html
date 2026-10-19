@@ -50,11 +50,12 @@
   Ham dosyalar: motoseyir-social/02-kaynak/higgsfield/site-sahneler/
   Bu sayfa sablon/anasayfa.html + dil/anasayfa.<kod>.json'dan üretilir (python3 uret.py); stil m/a.css, hareket m/a.js.
 -->
-<script>document.documentElement.className+=" js"</script>
+<script>!function(d,c){c=" js";if(!matchMedia("(prefers-reduced-motion: reduce)").matches){c+=" hm";if(self.CSS&&CSS.supports&&CSS.supports("animation-timeline:view()"))c+=" sd"}d.className+=c}(document.documentElement)</script>
 <link rel="preload" as="image" type="image/webp" href="/m/sahne-dikey-poster.webp" media="(max-width:700px)" fetchpriority="high">
 <link rel="preload" as="image" type="image/webp" href="/m/sahne-poster.webp" media="(min-width:701px)" fetchpriority="high">
 <link rel="preload" as="font" type="font/woff" href="/m/font/Manrope.woff" crossorigin>
 <link rel="stylesheet" href="/m/a.css">
+<script defer src="/m/h.js"></script>
 <script defer src="/m/a.js"></script>
 
 <script type="application/ld+json">
@@ -89,6 +90,7 @@
 </head>
 <body id="top">
 <a class="skip" href="#icerik">Naar de inhoud</a>
+<div class="ilerle" aria-hidden="true"></div>
 
 <header class="ust" id="ustbar">
   <div class="ust-ic">
@@ -153,6 +155,31 @@
   <div class="sayi"><b>CarPlay</b><span>je route op het autoscherm, schermvullend</span></div>
   <div class="sayi"><b>Groep + intercom</b><span>dezelfde route, pratend onderweg</span></div>
 </div></div>
+
+
+<!-- Sticky anlatı (19 Eki 2026): telefon ekranı sağda sabit, soldaki adımlar kayarken gerçek ekranlar değişir; rota çizgisi sayfayla birlikte çizilir.
+     Metinler aşağıdaki bölümlerin başlıklarından gelir (yeni çeviri yok); ayrıntılar bölümlerde. Ekranlar süs (alt boş), gerçek alt metinler bölümlerde. -->
+<section class="hikaye" id="hikaye" aria-labelledby="hk-h">
+  <div class="kap">
+    <h2 id="hk-h" class="hk-baslik">Motoseyir <i>in één oogopslag.</i></h2>
+    <div class="hk-sahne" id="hk-sahne" data-a="0">
+      <div class="hk-yapis" aria-hidden="true">
+        <div class="hk-tel"><div class="tel"><div class="ekr">
+          <img class="e e0" src="/m/ekran-nav-en.webp" alt="" width="540" height="1174" decoding="async">
+          <img class="e e1" src="/m/ekran-tur-en.webp" alt="" width="540" height="1174" loading="lazy" decoding="async">
+          <img class="e e2" src="/m/ekran-gecit-en.webp" alt="" width="540" height="1174" loading="lazy" decoding="async">
+          <img class="e e3" src="/m/ekran-kesfet-en.webp" alt="" width="540" height="1174" loading="lazy" decoding="async">
+        </div></div></div>
+      </div>
+      <ol class="hk-adimlar">
+        <li class="hk-adim on" data-i="0"><p class="km">Route</p><h3>Eerst kilometers, <i>dan het plezier.</i></h3><p class="metin">Hij vergelijkt de alternatieven tussen dezelfde twee punten en stelt de kortste voor. Bij een tocht met meerdere stops bepaalt hij ook de volgorde van de stops. De rest kies je zelf.</p><a class="hk-link" href="#rota">Bekijk de functies</a></li>
+        <li class="hk-adim" data-i="1"><p class="km">Toergenerator <span class="etiket">Pro</span></p><h3>Kies een richting en een tijd, <i>de tocht is klaar.</i></h3><p class="metin">Draai de knop naar de kant waar je heen wilt en kies hoeveel uur je hebt. Motoseyir tekent een tocht in die richting; je ziet hem op de kaart en vertrekt als hij je bevalt.</p><a class="hk-link" href="#tur">Bekijk de functies</a></li>
+        <li class="hk-adim" data-i="2"><p class="km">Bergpassen</p><h3>1.600+ passen, <i>op één kaart.</i></h3><p class="metin">Elke pas heeft zijn hoogte en exacte ligging, en de meeste hebben foto’s. Passen die in de winter dichtgaan, tonen de maanden van sluiting, en onverharde wegen staan als onverhard aangegeven. Voeg je favorieten toe aan je tocht en rij.</p><a class="hk-link" href="#gecit">Bekijk de functies</a></li>
+        <li class="hk-adim" data-i="3"><p class="km">Discover <span class="etiket">Pro</span></p><h3>Ontdek wat er <i>onderweg is.</i></h3><p class="metin">Zie in het tabblad “Discover” de binnenwegen, strandwegen, campings en eetadressen langs je route en voeg toe wat je bevalt.</p><a class="hk-link" href="#kesfet">Bekijk de functies</a></li>
+      </ol>
+    </div>
+  </div>
+</section>
 
 <div class="ana" id="ozellikler">
   <section class="bolum" id="rota">
@@ -229,6 +256,12 @@
         </ul>
       </div>
     </div>
+
+    <!-- Kayan geçit şeridi: süs (altı çizili listeler zaten sayfada); gerçek geçit adları ve rakımları -->
+    <div class="hat" aria-hidden="true" data-ak>
+      <div class="hat-sira"><ul class="hat-yol"><li><b>2.764 m</b><span>Col de l’Iseran</span></li><li><b>2.758 m</b><span>Passo dello Stelvio</span></li><li><b>2.744 m</b><span>Col Agnel</span></li><li><b>3.696 m</b><span>Cottonwood Pass</span></li><li><b>3.689 m</b><span>Independence Pass</span></li><li><b>3.662 m</b><span>Cumberland Pass</span></li><li><b>3.655 m</b><span>Loveland Pass</span></li><li><b>3.635 m</b><span>Hagerman Pass</span></li></ul><ul class="hat-yol"><li><b>2.764 m</b><span>Col de l’Iseran</span></li><li><b>2.758 m</b><span>Passo dello Stelvio</span></li><li><b>2.744 m</b><span>Col Agnel</span></li><li><b>3.696 m</b><span>Cottonwood Pass</span></li><li><b>3.689 m</b><span>Independence Pass</span></li><li><b>3.662 m</b><span>Cumberland Pass</span></li><li><b>3.655 m</b><span>Loveland Pass</span></li><li><b>3.635 m</b><span>Hagerman Pass</span></li></ul></div>
+      <div class="hat-sira ters"><ul class="hat-yol"><li><b>3.635 m</b><span>Hagerman Pass</span></li><li><b>3.655 m</b><span>Loveland Pass</span></li><li><b>3.662 m</b><span>Cumberland Pass</span></li><li><b>3.689 m</b><span>Independence Pass</span></li><li><b>3.696 m</b><span>Cottonwood Pass</span></li><li><b>2.744 m</b><span>Col Agnel</span></li><li><b>2.758 m</b><span>Passo dello Stelvio</span></li><li><b>2.764 m</b><span>Col de l’Iseran</span></li></ul><ul class="hat-yol"><li><b>3.635 m</b><span>Hagerman Pass</span></li><li><b>3.655 m</b><span>Loveland Pass</span></li><li><b>3.662 m</b><span>Cumberland Pass</span></li><li><b>3.689 m</b><span>Independence Pass</span></li><li><b>3.696 m</b><span>Cottonwood Pass</span></li><li><b>2.744 m</b><span>Col Agnel</span></li><li><b>2.758 m</b><span>Passo dello Stelvio</span></li><li><b>2.764 m</b><span>Col de l’Iseran</span></li></ul></div>
+    </div>
     <div class="veri" data-r aria-label="Passendata">
       <dl class="veri-say">
         <div><dt>1.638</dt><dd>passen in 36 landen</dd></div>
@@ -239,7 +272,7 @@
       <div class="veri-ik">
         <div>
           <h3>Per regio</h3>
-          <ul class="bolgeler">
+          <ul class="bolgeler" data-g>
             <li style="--o:100%"><span class="ad">Alpen en Dolomieten</span><span class="n">535</span></li>
             <li style="--o:76%"><span class="ad">Rest van Europa</span><span class="n">407</span></li>
             <li style="--o:56%"><span class="ad">Verenigde Staten</span><span class="n">298</span></li>
@@ -274,7 +307,7 @@
     </div></div>
   </section>
 
-  <section class="bolum ters" id="corider">
+  <section class="bolum ters" id="corider" data-ton>
     <div class="kap"><div class="bolum-ik">
       <div data-r class="tel-alan"><div class="tel"><img src="/m/ekran-corider-en.webp" alt="Scherm van AI CoRider: planner en chatopties" width="540" height="1174" loading="lazy"></div></div>
       <div data-r>
@@ -488,7 +521,7 @@
         <h2>Leer hem <i>kennen.</i></h2>
         <p class="metin">Wat er in de app zit, in twee minuten.</p>
       </div>
-      <div data-r class="tel-alan"><div class="tani-kutu" id="tani-kutu">
+      <div data-r class="tel-alan"><div class="tani-kutu" id="tani-kutu" data-ak>
         <button type="button" id="tani-btn" aria-label="Speel de introvideo af"><img src="/m/tani-en.jpg" alt="" loading="lazy" width="1080" height="1920"><span class="oynat"></span></button>
       </div></div>
     </div></div>
@@ -510,7 +543,7 @@
   </section>
 </div>
 
-<section class="varis">
+<section class="varis" data-ton>
   <div class="kap" data-r>
     <h2>De weg is <i>klaar.</i></h2>
     <div class="cta-satir">
@@ -533,11 +566,11 @@
       <p class="km">Releasenotes</p>
       <h2>Wat er veranderd is</h2>
       <p class="metin">Recente updates, nieuwste eerst.</p>
-      <article class="surum"><header><b>1.1.8</b><time>oktober 2026</time></header>
+      <article class="surum" data-g><header><b>1.1.8</b><time>oktober 2026</time></header>
         <ul class="d"><li>Een crash opgelost bij het wisselen van Blog naar Feed in Community.</li><li>Een video opnemen van je 3D-replay start nu betrouwbaarder.</li><li>“Klaar” verschijnt niet meer voordat de kaart is geladen, en de camera springt niet meer als je na het zoomen met twee vingers loslaat.</li></ul></article>
-      <article class="surum"><header><b>1.1.7</b><time>oktober 2026</time></header>
+      <article class="surum" data-g><header><b>1.1.7</b><time>oktober 2026</time></header>
         <ul class="d"><li>Reiskaart: bekijk een lange tocht of rit als video op een schone kaart. Terwijl je route zich tekent, verschijnen de plaatsen die je passeerde en je foto’s een voor een.</li><li>Nieuwe snelkoppelingen op het startscherm: thuis en werk, een rit opnemen, een rondje van een uur vanaf hier, een legendarische weg in de buurt.</li><li>298 bergpassen en zes nieuwe legendarische wegen in de VS, en de kustmodus werkt nu ook in heel Europa.</li><li>“Maak kennis met Motoseyir” in Instellingen is een korte videotour door de app, tabblad voor tabblad.</li></ul></article>
-      <article class="surum"><header><b>1.1.6</b><time>oktober 2026</time></header>
+      <article class="surum" data-g><header><b>1.1.6</b><time>oktober 2026</time></header>
         <ul class="d"><li>Kijk in 3D: speel een opgenomen rit af alsof je in een helikopter meevliegt; je foto’s verschijnen waar je ze nam.</li><li>Delen als video: maak een verticale video van 15, 30 of 60 seconden, klaar voor Instagram. Geen Pro nodig.</li><li>Ritanalyse: rijtijd, echte pauzes, scherpe bochten, totale stijging en hoeveel van de weg nieuw voor je was.</li><li>In de toergenerator brengt “Another one” drie nieuwe rondjes over andere wegen, en je kunt “No motorways”, “No tolls” en “No dirt” kiezen.</li></ul></article>
     </div>
     <div id="iletisim">

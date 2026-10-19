@@ -50,11 +50,12 @@
   Ham dosyalar: motoseyir-social/02-kaynak/higgsfield/site-sahneler/
   Bu sayfa sablon/anasayfa.html + dil/anasayfa.<kod>.json'dan üretilir (python3 uret.py); stil m/a.css, hareket m/a.js.
 -->
-<script>document.documentElement.className+=" js"</script>
+<script>!function(d,c){c=" js";if(!matchMedia("(prefers-reduced-motion: reduce)").matches){c+=" hm";if(self.CSS&&CSS.supports&&CSS.supports("animation-timeline:view()"))c+=" sd"}d.className+=c}(document.documentElement)</script>
 <link rel="preload" as="image" type="image/webp" href="/m/sahne-dikey-poster.webp" media="(max-width:700px)" fetchpriority="high">
 <link rel="preload" as="image" type="image/webp" href="/m/sahne-poster.webp" media="(min-width:701px)" fetchpriority="high">
 <link rel="preload" as="font" type="font/woff" href="/m/font/Manrope.woff" crossorigin>
 <link rel="stylesheet" href="/m/a.css">
+<script defer src="/m/h.js"></script>
 <script defer src="/m/a.js"></script>
 
 <script type="application/ld+json">
@@ -89,6 +90,7 @@
 </head>
 <body id="top">
 <a class="skip" href="#icerik">Przejdź do treści</a>
+<div class="ilerle" aria-hidden="true"></div>
 
 <header class="ust" id="ustbar">
   <div class="ust-ic">
@@ -153,6 +155,31 @@
   <div class="sayi"><b>CarPlay</b><span>Twoja trasa na ekranie samochodu, na pełnym ekranie</span></div>
   <div class="sayi"><b>Grupa + interkom</b><span>ta sama trasa, rozmowa w czasie jazdy</span></div>
 </div></div>
+
+
+<!-- Sticky anlatı (19 Eki 2026): telefon ekranı sağda sabit, soldaki adımlar kayarken gerçek ekranlar değişir; rota çizgisi sayfayla birlikte çizilir.
+     Metinler aşağıdaki bölümlerin başlıklarından gelir (yeni çeviri yok); ayrıntılar bölümlerde. Ekranlar süs (alt boş), gerçek alt metinler bölümlerde. -->
+<section class="hikaye" id="hikaye" aria-labelledby="hk-h">
+  <div class="kap">
+    <h2 id="hk-h" class="hk-baslik">Motoseyir <i>w skrócie.</i></h2>
+    <div class="hk-sahne" id="hk-sahne" data-a="0">
+      <div class="hk-yapis" aria-hidden="true">
+        <div class="hk-tel"><div class="tel"><div class="ekr">
+          <img class="e e0" src="/m/ekran-nav-en.webp" alt="" width="540" height="1174" decoding="async">
+          <img class="e e1" src="/m/ekran-tur-en.webp" alt="" width="540" height="1174" loading="lazy" decoding="async">
+          <img class="e e2" src="/m/ekran-gecit-en.webp" alt="" width="540" height="1174" loading="lazy" decoding="async">
+          <img class="e e3" src="/m/ekran-kesfet-en.webp" alt="" width="540" height="1174" loading="lazy" decoding="async">
+        </div></div></div>
+      </div>
+      <ol class="hk-adimlar">
+        <li class="hk-adim on" data-i="0"><p class="km">Trasa</p><h3>Najpierw kilometry, <i>potem frajda.</i></h3><p class="metin">Porównuje warianty między tymi samymi dwoma punktami i proponuje najkrótszy. W wycieczce z wieloma przystankami sam ustawia też ich kolejność. Resztę wybierasz Ty.</p><a class="hk-link" href="#rota">Zobacz funkcje</a></li>
+        <li class="hk-adim" data-i="1"><p class="km">Generator wycieczek <span class="etiket">Pro</span></p><h3>Wybierz kierunek i czas, <i>wycieczka gotowa.</i></h3><p class="metin">Ustaw pokrętło w stronę, w którą chcesz jechać, i wybierz, ile masz godzin. Motoseyir rysuje wycieczkę w tym kierunku; widzisz ją na mapie i ruszasz, jeśli Ci się podoba.</p><a class="hk-link" href="#tur">Zobacz funkcje</a></li>
+        <li class="hk-adim" data-i="2"><p class="km">Przełęcze</p><h3>1 600+ przełęczy, <i>na jednej mapie.</i></h3><p class="metin">Każda przełęcz ma wysokość i dokładne położenie, a większość ma zdjęcia. Przełęcze zamykane zimą pokazują miesiące zamknięcia, a drogi szutrowe są oznaczone jako szutrowe. Dodaj te, które Ci się podobają, do wycieczki i ruszaj.</p><a class="hk-link" href="#gecit">Zobacz funkcje</a></li>
+        <li class="hk-adim" data-i="3"><p class="km">Discover <span class="etiket">Pro</span></p><h3>Odkrywaj to, co jest <i>po drodze.</i></h3><p class="metin">W zakładce „Discover” zobaczysz boczne drogi, drogi nad morzem, kempingi i miejsca na jedzenie przy trasie i dodasz te, które Ci się podobają.</p><a class="hk-link" href="#kesfet">Zobacz funkcje</a></li>
+      </ol>
+    </div>
+  </div>
+</section>
 
 <div class="ana" id="ozellikler">
   <section class="bolum" id="rota">
@@ -229,6 +256,12 @@
         </ul>
       </div>
     </div>
+
+    <!-- Kayan geçit şeridi: süs (altı çizili listeler zaten sayfada); gerçek geçit adları ve rakımları -->
+    <div class="hat" aria-hidden="true" data-ak>
+      <div class="hat-sira"><ul class="hat-yol"><li><b>2 764 m</b><span>Col de l’Iseran</span></li><li><b>2 758 m</b><span>Passo dello Stelvio</span></li><li><b>2 744 m</b><span>Col Agnel</span></li><li><b>3 696 m</b><span>Cottonwood Pass</span></li><li><b>3 689 m</b><span>Independence Pass</span></li><li><b>3 662 m</b><span>Cumberland Pass</span></li><li><b>3 655 m</b><span>Loveland Pass</span></li><li><b>3 635 m</b><span>Hagerman Pass</span></li></ul><ul class="hat-yol"><li><b>2 764 m</b><span>Col de l’Iseran</span></li><li><b>2 758 m</b><span>Passo dello Stelvio</span></li><li><b>2 744 m</b><span>Col Agnel</span></li><li><b>3 696 m</b><span>Cottonwood Pass</span></li><li><b>3 689 m</b><span>Independence Pass</span></li><li><b>3 662 m</b><span>Cumberland Pass</span></li><li><b>3 655 m</b><span>Loveland Pass</span></li><li><b>3 635 m</b><span>Hagerman Pass</span></li></ul></div>
+      <div class="hat-sira ters"><ul class="hat-yol"><li><b>3 635 m</b><span>Hagerman Pass</span></li><li><b>3 655 m</b><span>Loveland Pass</span></li><li><b>3 662 m</b><span>Cumberland Pass</span></li><li><b>3 689 m</b><span>Independence Pass</span></li><li><b>3 696 m</b><span>Cottonwood Pass</span></li><li><b>2 744 m</b><span>Col Agnel</span></li><li><b>2 758 m</b><span>Passo dello Stelvio</span></li><li><b>2 764 m</b><span>Col de l’Iseran</span></li></ul><ul class="hat-yol"><li><b>3 635 m</b><span>Hagerman Pass</span></li><li><b>3 655 m</b><span>Loveland Pass</span></li><li><b>3 662 m</b><span>Cumberland Pass</span></li><li><b>3 689 m</b><span>Independence Pass</span></li><li><b>3 696 m</b><span>Cottonwood Pass</span></li><li><b>2 744 m</b><span>Col Agnel</span></li><li><b>2 758 m</b><span>Passo dello Stelvio</span></li><li><b>2 764 m</b><span>Col de l’Iseran</span></li></ul></div>
+    </div>
     <div class="veri" data-r aria-label="Dane o przełęczach">
       <dl class="veri-say">
         <div><dt>1 638</dt><dd>przełęczy w 36 krajach</dd></div>
@@ -239,7 +272,7 @@
       <div class="veri-ik">
         <div>
           <h3>Według regionu</h3>
-          <ul class="bolgeler">
+          <ul class="bolgeler" data-g>
             <li style="--o:100%"><span class="ad">Alpy i Dolomity</span><span class="n">535</span></li>
             <li style="--o:76%"><span class="ad">Reszta Europy</span><span class="n">407</span></li>
             <li style="--o:56%"><span class="ad">Stany Zjednoczone</span><span class="n">298</span></li>
@@ -274,7 +307,7 @@
     </div></div>
   </section>
 
-  <section class="bolum ters" id="corider">
+  <section class="bolum ters" id="corider" data-ton>
     <div class="kap"><div class="bolum-ik">
       <div data-r class="tel-alan"><div class="tel"><img src="/m/ekran-corider-en.webp" alt="Ekran AI CoRider: planer i opcje czatu" width="540" height="1174" loading="lazy"></div></div>
       <div data-r>
@@ -488,7 +521,7 @@
         <h2>Poznaj ją <i>bliżej.</i></h2>
         <p class="metin">Co jest w aplikacji, w dwie minuty.</p>
       </div>
-      <div data-r class="tel-alan"><div class="tani-kutu" id="tani-kutu">
+      <div data-r class="tel-alan"><div class="tani-kutu" id="tani-kutu" data-ak>
         <button type="button" id="tani-btn" aria-label="Włącz film wprowadzający"><img src="/m/tani-en.jpg" alt="" loading="lazy" width="1080" height="1920"><span class="oynat"></span></button>
       </div></div>
     </div></div>
@@ -510,7 +543,7 @@
   </section>
 </div>
 
-<section class="varis">
+<section class="varis" data-ton>
   <div class="kap" data-r>
     <h2>Droga jest <i>gotowa.</i></h2>
     <div class="cta-satir">
@@ -533,11 +566,11 @@
       <p class="km">Historia wersji</p>
       <h2>Co się zmieniło</h2>
       <p class="metin">Ostatnie aktualizacje, najnowsze na górze.</p>
-      <article class="surum"><header><b>1.1.8</b><time>październik 2026</time></header>
+      <article class="surum" data-g><header><b>1.1.8</b><time>październik 2026</time></header>
         <ul class="d"><li>Naprawiono awarię przy przełączaniu z Bloga na Feed w Community.</li><li>Nagrywanie filmu z odtwarzania jazdy w 3D startuje pewniej.</li><li>„Gotowe” nie pojawia się już, zanim mapa się wczyta, a kamera nie skacze po zakończeniu powiększania dwoma palcami.</li></ul></article>
-      <article class="surum"><header><b>1.1.7</b><time>październik 2026</time></header>
+      <article class="surum" data-g><header><b>1.1.7</b><time>październik 2026</time></header>
         <ul class="d"><li>Mapa podróży: obejrzyj długą wycieczkę lub jazdę jako film na czystej mapie. Gdy trasa się rysuje, mijane miasta i Twoje zdjęcia pojawiają się po kolei.</li><li>Nowe skróty na ekranie startowym: dom i praca, nagranie jazdy, godzinna pętla stąd, legendarna droga w pobliżu.</li><li>298 przełęczy i sześć nowych legendarnych dróg w USA, a tryb wybrzeża działa teraz także w całej Europie.</li><li>„Poznaj Motoseyir” w Ustawieniach to krótki wideoprzewodnik po aplikacji, zakładka po zakładce.</li></ul></article>
-      <article class="surum"><header><b>1.1.6</b><time>październik 2026</time></header>
+      <article class="surum" data-g><header><b>1.1.6</b><time>październik 2026</time></header>
         <ul class="d"><li>Oglądaj w 3D: odtwórz nagraną jazdę tak, jakbyś śledził ją z helikoptera; zdjęcia pojawiają się tam, gdzie zostały zrobione.</li><li>Udostępnij jako film: zrób pionowy film na 15, 30 lub 60 sekund, gotowy na Instagram. Pro nie jest potrzebne.</li><li>Analiza jazdy: czas w ruchu, prawdziwe postoje, ostre zakręty, łączne podjazdy i to, ile drogi było dla Ciebie nowe.</li><li>W generatorze wycieczek „Another one” przynosi trzy nowe pętle innymi drogami, a możesz włączyć „No motorways”, „No tolls” i „No dirt”.</li></ul></article>
     </div>
     <div id="iletisim">

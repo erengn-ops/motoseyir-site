@@ -41,9 +41,10 @@
   (m/corider-*.mp4) ve uygulamanın AI CoRider yüzü (img/ai-corider.png'nin saydamlaştırılmış hâli, m/corider-yuz.webp).
   Konuşma örnekleri tasarım örneğidir; uygulamadaki gerçek durum etiketleriyle (Köy yolları, rotaya eklendi...) eşleşir.
 -->
-<script>document.documentElement.className+=" cjs"</script>
+<script>!function(d,c){c=" cjs";if(!matchMedia("(prefers-reduced-motion: reduce)").matches){c+=" hm";if(self.CSS&&CSS.supports&&CSS.supports("animation-timeline:view()"))c+=" sd"}d.className+=c}(document.documentElement)</script>
 <link rel="preload" as="font" type="font/woff" href="/m/font/Manrope.woff" crossorigin>
 <link rel="stylesheet" href="/m/corider.css">
+<script defer src="/m/h.js"></script>
 <script defer src="/m/corider.js"></script>
 
 <script type="application/ld+json">
@@ -78,6 +79,7 @@
 </head>
 <body id="top">
 <a class="skip" href="#icerik">Skip to content</a>
+<div class="ilerle" aria-hidden="true"></div>
 
 <header class="ust">
   <div class="ust-ic">
@@ -140,11 +142,11 @@
 
 <section class="bl" id="nasil" aria-labelledby="nasil-h">
   <div class="kap">
-    <div class="bl-ust">
+    <div class="bl-ust" data-r>
       <p class="km">How it works</p>
       <h2 id="nasil-h">Press, talk, <i>hear it in your helmet.</i></h2>
     </div>
-    <ol class="adimlar">
+    <ol class="adimlar" data-r>
       <li><span class="n" aria-hidden="true">1</span><h3>Press the button</h3><p>Tap the AI CoRider button on the map and start talking.</p></li>
       <li><span class="n" aria-hidden="true">2</span><h3>Talk normally</h3><p>No commands to learn. It answers in the language you speak.</p></li>
       <li><span class="n" aria-hidden="true">3</span><h3>Hear it in your helmet</h3><p>If your helmet is connected to the phone over Bluetooth, the voice comes through it. Can’t hear it in the wind? Just say “turn it up”.</p></li>
@@ -154,12 +156,12 @@
 
 <section class="bl z1" id="konusma" aria-labelledby="konusma-h">
   <div class="kap">
-    <div class="bl-ust">
+    <div class="bl-ust" data-r>
       <p class="km">Example conversations</p>
       <h2 id="konusma-h">This is how <i>you talk to it.</i></h2>
       <p class="lead">These are examples. There are no commands to memorise; say it in your own words.</p>
     </div>
-    <div class="konusmalar">
+    <div class="konusmalar" data-r>
       <article class="soh">
         <p class="soh-t">Route and weather</p>
         <div class="satir sen"><span class="kim">You</span><p>How far to go? Is it going to rain on the way?</p></div>
@@ -206,7 +208,7 @@
 </section>
 
 <section class="bl" id="kayit" aria-labelledby="kayit-h">
-  <div class="kap video-ik">
+  <div class="kap video-ik" data-r>
     <div class="tel-kap">
       <div class="tel"><video id="cr-video" data-src="/m/corider-en.mp4" data-kucuk="/m/corider-kucuk-en.mp4" poster="/m/corider-en.webp" muted loop playsinline preload="none" width="540" height="1106" aria-label="AI CoRider by voice: the rider asks about time left and rain, finds a place to stop and adds it to the route"></video></div>
       <button class="ses-btn" id="cr-ses" type="button" aria-pressed="false" data-ac="Turn sound on" data-kapat="Turn sound off"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path class="h" d="M4 9.5v5h3.6L12 18.5v-13L7.6 9.5H4z" fill="currentColor"/><path class="d" d="M15.5 9a4.2 4.2 0 0 1 0 6M17.8 6.6a7.5 7.5 0 0 1 0 10.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Turn sound on</span></button>
@@ -222,19 +224,19 @@
 
 <section class="bl z1" id="yetenek" aria-labelledby="yetenek-h">
   <div class="kap">
-    <div class="bl-ust">
+    <div class="bl-ust" data-r>
       <p class="km">What it does</p>
       <h2 id="yetenek-h">About 30 actions <i>by voice.</i></h2>
       <p class="lead">Grouped into five. You don’t have to memorise any of them; just say what you want in your own words.</p>
     </div>
-    <div class="yetenek">
+    <div class="yetenek" data-r>
       <section class="grup" aria-labelledby="g1-h"><span class="no" aria-hidden="true">01</span><h3 id="g1-h">Route</h3><p>It fixes the route for you.</p><ul><li>Adds a stop, removes one or skips the next</li><li>Changes the destination and puts the stops in order</li><li>Switches between back roads and the shortest route</li><li>Shows the route on the map, takes you home</li></ul></section>
       <section class="grup" aria-labelledby="g2-h"><span class="no" aria-hidden="true">02</span><h3 id="g2-h">On the road</h3><p>It searches along your route and around you.</p><ul><li>Finds fuel, food or coffee ahead and names the best rated first</li><li>Looks for somewhere to stay tonight</li><li>Tells you the time left, the next turn and where you are</li><li>Tells you if there are sharp bends or climbs ahead</li></ul></section>
       <section class="grup" aria-labelledby="g3-h"><span class="no" aria-hidden="true">03</span><h3 id="g3-h">Weather and range</h3><p>What you ask before and during the ride.</p><ul><li>What the weather will be like, whether it rains on your route</li><li>Checks the rain radar and opens it on the map</li><li>How far your tank will go, whether there’s fuel on the way</li><li class="r">The rain radar works only in the US and Germany. For range, enter once in Settings the distance you rode on a full tank.</li></ul></section>
       <section class="grup" aria-labelledby="g4-h"><span class="no" aria-hidden="true">04</span><h3 id="g4-h">Group</h3><p>When a group ride is on.</p><ul><li>Tells you where everyone is and who has fallen behind</li><li>Sends the group a ready-made alert: I’m behind, break, danger, fuel</li><li>If you shared the route with the group, it asks who a change applies to</li></ul></section>
       <section class="grup" aria-labelledby="g5-h"><span class="no" aria-hidden="true">05</span><h3 id="g5-h">Ride</h3><p>While your hands stay on the bars.</p><ul><li>Starts and ends navigation</li><li>Starts and stops ride recording</li><li>Finds someone in your contacts; one tap on the screen places the call</li><li>Keeps a note you ask for, deletes it if you say “forget”</li><li>Raises or lowers its own volume: “turn it up”</li></ul></section>
     </div>
-    <div class="cagri-kutu">
+    <div class="cagri-kutu" data-r>
       <h3>In the group room</h3>
       <p>Call AI CoRider into the group intercom and everyone in the room hears it. The minutes come from the account of whoever called it.</p>
     </div>
@@ -243,18 +245,18 @@
 
 <section class="bl" id="kipler" aria-labelledby="kip-h">
   <div class="kap">
-    <div class="bl-ust">
+    <div class="bl-ust" data-r>
       <p class="km">Two modes</p>
       <h2 id="kip-h">One does the job, <i>the other talks.</i></h2>
       <p class="lead">Just say “open chat mode” while you talk.</p>
     </div>
-    <div class="kipler">
+    <div class="kipler" data-r>
       <article class="kip"><h3>Planner</h3><p>It knows your route and gets things done.</p><ul><li>Any fuel on the way?</li><li>Where are the others?</li><li>Let’s take the back roads.</li><li>What will the weather be?</li><li>Take me home.</li></ul><span class="rozet">Included in Pro</span></article>
       <article class="kip"><h3>Chat</h3><p>You pick the topic; it remembers earlier chats.</p><ul><li>Let’s practise English.</li><li>Let’s plan the day together.</li><li>Tell me a story.</li><li>Where did we stop yesterday?</li></ul><span class="rozet">Opens with a minute pack</span></article>
     </div>
-    <div class="sesler">
+    <div class="sesler" data-r>
       <div><h3>Four voices</h3><p>Listen to each one in Settings and pick: Quartz, Tempo, Stone or Willow.</p></div>
-      <ul class="ses-liste" aria-label="Four voices">
+      <ul class="ses-liste" aria-label="Four voices" data-ak>
         <li><i aria-hidden="true"><b></b><b></b><b></b><b></b><b></b></i>Quartz</li><li><i aria-hidden="true"><b></b><b></b><b></b><b></b><b></b></i>Tempo</li><li><i aria-hidden="true"><b></b><b></b><b></b><b></b><b></b></i>Stone</li><li><i aria-hidden="true"><b></b><b></b><b></b><b></b><b></b></i>Willow</li>
       </ul>
     </div>
@@ -263,12 +265,12 @@
 
 <section class="bl z1" id="dakika" aria-labelledby="dakika-h">
   <div class="kap">
-    <div class="bl-ust">
+    <div class="bl-ust" data-r>
       <p class="km">Minutes and packs</p>
       <h2 id="dakika-h">Talk time, <i>simply.</i></h2>
       <p class="lead">The minutes you spend with AI CoRider come out of the time Pro renews and out of packs that never expire.</p>
     </div>
-    <div class="sureler">
+    <div class="sureler" data-r>
       <div class="sure"><b>10 min</b><h3>In Pro, every 30 days</h3><p>Your talk time resets to 10 minutes every 30 days.</p></div>
       <div class="sure"><b>5 min</b><h3>In the free trial</h3><p>You can talk for 5 minutes during the trial.</p></div>
       <div class="sure"><b>30 · 60 · 180</b><h3>Minute packs</h3><p>30, 60 or 180 minutes. They never expire and don’t vanish at month end; Chat mode opens with them too.</p></div>
@@ -279,11 +281,11 @@
 
 <section class="bl" id="gizlilik" aria-labelledby="gizlilik-h">
   <div class="kap">
-    <div class="bl-ust">
+    <div class="bl-ust" data-r>
       <p class="km">Privacy</p>
       <h2 id="gizlilik-h">Your voice <i>stays yours.</i></h2>
     </div>
-    <ul class="gizlilik">
+    <ul class="gizlilik" data-r>
       <li><h3>It works when you start it</h3><p>The microphone opens only when you tap the AI CoRider button on the map.</p></li>
       <li><h3>Voice isn’t stored</h3><p>Your voice isn’t recorded by us. It goes to a third-party cloud voice service to produce the answer.</p></li>
       <li><h3>Raw location stays out</h3><p>Only text, such as the distance left and the next manoeuvre, leaves the route.</p></li>
@@ -295,11 +297,11 @@
 
 <section class="bl z1" id="sss" aria-labelledby="sss-h">
   <div class="kap">
-    <div class="bl-ust">
+    <div class="bl-ust" data-r>
       <p class="km">FAQ</p>
       <h2 id="sss-h">Questions you might have</h2>
     </div>
-    <div class="sss-liste">
+    <div class="sss-liste" data-r>
       <details class="sss" name="sss"><summary>Is AI CoRider always listening?</summary><div class="cevap"><p>No. There’s no wake word. The microphone opens only when you tap the AI CoRider button on the map. The session closes when you end it, after a stretch of silence, or when navigation ends.</p></div></details>
       <details class="sss" name="sss"><summary>Does it work without internet?</summary><div class="cevap"><p>No. What you say goes to a cloud voice service to produce the answer, so AI CoRider needs an internet connection. Without one, a session can’t start.</p></div></details>
       <details class="sss" name="sss"><summary>Which languages can I speak?</summary><div class="cevap"><p>It answers in the language you speak. There are no commands to learn; say it in your own words.</p></div></details>
@@ -312,7 +314,7 @@
   </div>
 </section>
 
-<section class="varis" aria-labelledby="varis-h">
+<section class="varis" aria-labelledby="varis-h" data-ton>
   <div class="kap">
     <h2 id="varis-h">Press the button, <i>keep riding.</i></h2>
     <div class="cta-satir">

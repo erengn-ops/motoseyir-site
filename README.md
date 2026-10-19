@@ -29,7 +29,8 @@ eski `sablon/index.html` ile üretilmeye devam eder (`uret.py` içindeki
 | --- | --- |
 | `sablon/anasayfa.html` | yeni anasayfa şablonu |
 | `dil/anasayfa.tr.json`, `dil/anasayfa.en.json` | yeni anasayfanın metinleri (ortak anahtarlar `dil/<kod>.json`'dan gelir) |
-| `m/a.css`, `m/a.js` | paylaşılan stil ve hareket (bağımlılık yok; renkler uygulamanın kendi paleti, tek yazı ailesi Manrope) |
+| `m/a.css`, `m/a.js` | anasayfa stili ve sayfaya özgü hareket: kahraman, sticky anlatı + rota çizgisi, dönen motor (bağımlılık yok; renkler uygulamanın kendi paleti, tek yazı ailesi Manrope) |
+| `m/h.js` | ortak hareket kütüphanesi (anasayfa + AI CoRider sayfası): kelime kelime başlıklar, sayaçlar, eğim, mıknatıs düğmeler, paralaks yedeği. Hareket kuralları `m/a.css` / `m/corider.css` sonundaki «HAREKET» bloğunda; her şey `html.hm` (JS var + hareketi azalt kapalı) altında, yoksa içerik durağan ve görünür. `html.sd` = tarayıcı `animation-timeline` biliyor → kaydırma efektleri CSS'te, bilmiyorsa h.js `--p`/`--hp`/ilerleme çizgisini yazar |
 | `m/` | video, poster, ekran görüntüleri, motosiklet kareleri, yazı tipleri (OFL metinleriyle) |
 
 Arka plan videosu yapay zekâ ile üretildi (Higgsfield Wan 3.0); gerçek çekim değildir.

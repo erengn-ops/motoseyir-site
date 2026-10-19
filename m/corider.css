@@ -244,3 +244,99 @@ footer{background:var(--z0);border-top:1px solid var(--kenar-2);padding:34px 0 c
   .cjs .soh .satir,.cjs .soh .chip{opacity:1}
   html{scroll-behavior:auto}
 }
+
+/* =====================================================================
+   HAREKET (19 Eki 2026) — yalnız `html.hm` varken (JS var + "hareketi azalt" kapalı); yoksa her şey durağan ve görünür.
+   Yalnız transform/translate/scale/opacity (+ clip-path ile tek seferlik yazı silme). Sistem anasayfayla ortak: m/h.js.
+   `html.sd` = tarayıcı kaydırmaya bağlı CSS animasyonu biliyor; bilmiyorsa h.js yedek yazar.
+   ===================================================================== */
+@media(prefers-reduced-motion:no-preference){@view-transition{navigation:auto}}
+.hm{scroll-behavior:smooth}
+.ilerle{display:none}
+.hm .ilerle{display:block;position:fixed;left:0;right:0;top:0;height:3px;z-index:70;pointer-events:none;background:linear-gradient(90deg,var(--mavi),var(--cy),#BFEBFF);transform-origin:0 50%;transform:scaleX(0)}
+@keyframes ilerle{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.hm.sd .ilerle{animation:ilerle linear both;animation-timeline:scroll(root)}
+
+/* başlıklar kelime kelime maskeyle açılır */
+.hm .w{display:inline-block;overflow:hidden;vertical-align:top;padding:.14em .06em .2em;margin:-.14em -.06em -.2em}
+.hm .wi{display:inline-block;transform:translate3d(0,118%,0);transition:transform 1.05s cubic-bezier(.16,.84,.24,1);transition-delay:min(calc(var(--i,0)*55ms),700ms)}
+.hm [data-b].gor .wi,.hm.hazir .kh h1 .wi{transform:none}
+.hm.hazir .kh h1 .wi{transition-delay:calc(.12s + var(--i,0)*70ms)}
+
+/* bloklar: solma + yükselme; kart ızgaraları sırayla */
+.hm [data-r]{opacity:0;transform:translate3d(0,30px,0);transition:opacity .8s ease,transform 1s cubic-bezier(.2,.8,.2,1)}
+.hm [data-r].gor{opacity:1;transform:none}
+.hm [data-r] :is(.adimlar,.yetenek,.kipler,.sureler,.gizlilik)>*{opacity:0;translate:0 26px;transition:opacity .7s ease,translate .9s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--i,0)*90ms + 140ms)}
+.hm [data-r].gor :is(.adimlar,.yetenek,.kipler,.sureler,.gizlilik)>*{opacity:1;translate:none}
+.hm :is(.adimlar,.yetenek,.kipler,.sureler,.gizlilik)>*:nth-child(1){--i:0}.hm :is(.adimlar,.yetenek,.kipler,.sureler,.gizlilik)>*:nth-child(2){--i:1}
+.hm :is(.adimlar,.yetenek,.kipler,.sureler,.gizlilik)>*:nth-child(3){--i:2}.hm :is(.adimlar,.yetenek,.kipler,.sureler,.gizlilik)>*:nth-child(4){--i:3}
+.hm :is(.adimlar,.yetenek,.kipler,.sureler,.gizlilik)>*:nth-child(5){--i:4}
+.hm .km::before{transform:scaleX(0);transform-origin:0 50%;transition:transform 1s cubic-bezier(.2,.8,.2,1) .1s}
+.hm .gor .km::before,.hm .km.gor::before,.hm.hazir .kh .km::before{transform:none}
+/* adımları bağlayan çizgi soldan çizilir */
+.hm .adimlar li:not(:last-child)::after{transform-origin:0 50%;transform:scaleX(0);transition:transform 1.2s cubic-bezier(.2,.8,.2,1) .5s}
+.hm .adimlar.gor li:not(:last-child)::after{transform:none}
+.hm .adimlar .n{transition:box-shadow .9s ease .3s}
+.hm .adimlar.gor .n{box-shadow:0 0 28px rgba(62,201,255,.28)}
+
+/* kahraman: açılış + kaydırınca derinlik + işaretçiyle hafif paralaks */
+.hm:not(.hazir) .kh-ic>*{opacity:0}
+.hm .kh-metin>:not(h1){opacity:0;translate:0 26px;transition:opacity .9s ease,translate 1.1s cubic-bezier(.2,.8,.2,1)}
+.hm.hazir .kh-metin>:not(h1){opacity:1;translate:none}
+.hm.hazir .kh-metin>.giris{transition-delay:.5s}.hm.hazir .kh-metin>.cta-satir{transition-delay:.68s}
+.hm .orb{opacity:0;scale:.84;transition:opacity 1.3s ease .15s,scale 1.8s cubic-bezier(.16,.84,.24,1) .15s}
+.hm.hazir .orb{opacity:1;scale:1}
+.hm .orb-yuz{translate:var(--fx,0px) var(--fy,0px);transition:translate .6s cubic-bezier(.2,.8,.2,1)}
+.hm .orb canvas{translate:var(--ox,0px) var(--oy,0px);transition:translate .6s cubic-bezier(.2,.8,.2,1)}
+@keyframes k-metin{from{translate:0 0}to{translate:0 -60px}}
+@keyframes k-orb{from{translate:0 0}to{translate:0 -110px}}
+.hm.sd .kh-metin{animation:k-metin linear both;animation-timeline:scroll(root);animation-range:0px 80vh}
+.hm.sd .orb{animation:k-orb linear both;animation-timeline:scroll(root);animation-range:0px 80vh}
+.hm:not(.sd) .kh-metin{translate:0 calc(var(--hp,0)*-60px)}
+.hm:not(.sd) .orb{translate:0 calc(var(--hp,0)*-110px)}
+
+/* konuşmalar: yapay zekânın cümlesi soldan sağa "söylenir" */
+.hm .soh .satir.ai p{clip-path:inset(0 100% 0 0);transition:clip-path 1.2s cubic-bezier(.3,.7,.2,1)}
+.hm .soh.on .satir.ai p{clip-path:inset(0 -3px 0 0)}
+.hm .soh.on .satir:nth-of-type(2).ai p{transition-delay:.5s}.hm .soh.on .satir:nth-of-type(4).ai p{transition-delay:1.2s}
+.hm .soh.on .satir:nth-of-type(1).ai p{transition-delay:.5s}
+.hm .soh .chip svg{scale:0;transition:scale .5s cubic-bezier(.3,1.4,.4,1)}
+.hm .soh.on .chip svg{scale:1;transition-delay:1.6s}
+
+/* ses çubukları: görünürken yavaşça oynar */
+.hm .ses-liste i b{transform-origin:50% 50%;animation:eq 1.7s ease-in-out infinite;animation-play-state:paused}
+.hm .ses-liste.ak i b{animation-play-state:running}
+.hm .ses-liste i b:nth-child(2){animation-delay:-.35s}.hm .ses-liste i b:nth-child(3){animation-delay:-.7s}.hm .ses-liste i b:nth-child(4){animation-delay:-1.05s}.hm .ses-liste i b:nth-child(5){animation-delay:-1.4s}
+.hm .ses-liste li:nth-child(2) i b{animation-duration:2.1s}.hm .ses-liste li:nth-child(3) i b{animation-duration:1.4s}.hm .ses-liste li:nth-child(4) i b{animation-duration:2.4s}
+@keyframes eq{0%,100%{transform:scaleY(.42)}50%{transform:scaleY(1.3)}}
+
+/* telefon (video): eğim + paralaks; kart eğimi çok hafif */
+.hm .tel{transform:perspective(1000px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+.hm .tel.tilt,.hm .grup.tilt,.hm .kip.tilt,.hm .soh.tilt{transition:transform .12s linear}
+.hm .grup,.hm .kip,.hm .soh{transform:perspective(1100px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg))}
+.tel{position:relative}
+.tel::after,.grup::before,.kip::before,.soh::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:3;opacity:0;transition:opacity .4s;background:radial-gradient(300px circle at var(--gx,50%) var(--gy,0%),rgba(120,220,255,.14),transparent 62%)}
+.tel.tilt::after,.grup.tilt::before,.kip.tilt::before,.soh.tilt::before{opacity:1}
+.soh,.kip{position:relative}
+@keyframes par{from{translate:0 calc(var(--d,34px)*-1)}to{translate:0 var(--d,34px)}}
+.hm.sd .par{animation:par linear both;animation-timeline:view()}
+.hm:not(.sd) .par{translate:0 calc((var(--p,.5)*2 - 1)*var(--d,34px))}
+
+/* düğmeler: mıknatıs + basış */
+.hm .btn{translate:var(--mx,0px) var(--my,0px);transition:background-color .2s,translate .5s cubic-bezier(.2,.8,.2,1),scale .18s ease,box-shadow .2s}
+.hm .btn.mkn{transition:background-color .2s,translate .12s linear,scale .18s ease,box-shadow .2s}
+.hm .btn:active{scale:.955}
+
+/* bitiş çağrısı: görününce arkadaki ışık yükselir */
+.varis{position:relative;isolation:isolate}
+.varis::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(55% 90% at 50% 100%,rgba(62,201,255,.3),transparent 72%);opacity:0;transition:opacity 1.4s ease;pointer-events:none}
+.varis.ton::before{opacity:1}
+html:not(.hm) .varis::before{opacity:.5}
+
+/* SSS: yerli açılır animasyonu (destekleyen tarayıcılarda; yoksa anında açılır) */
+@supports(interpolate-size:allow-keywords){
+  .hm{interpolate-size:allow-keywords}
+  .hm .sss::details-content{block-size:0;overflow:clip;transition:block-size .45s cubic-bezier(.2,.8,.2,1),content-visibility .45s allow-discrete}
+  .hm .sss[open]::details-content{block-size:auto}
+}
+@media(max-width:899px){.hm .par{--d:18px}.hm .wi{transition-duration:.8s}}

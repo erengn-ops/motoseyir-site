@@ -1,9 +1,13 @@
-/* AI CoRider sayfası. Bağımlılık yok. Sakin hareket: yavaş nefes alan ses halkası (canvas), konuşmaların sade solması.
-   Hareket azaltmada halka tek durağan kare; video kendi başına oynamaz, düğme oynatıp sesi açar. */
+/* AI CoRider sayfası. Bağımlılık yok. Hareket: yavaş nefes alan ses halkası (canvas), konuşmaların satır satır belirmesi,
+   ortak hareket sistemi (m/h.js: kelime kelime başlıklar, sayaçlar, eğim, paralaks, mıknatıs düğmeler).
+   Hareket azaltmada halka tek durağan kare; video kendi başına oynamaz, düğme oynatıp sesi açar; her şey görünür. */
 (function () {
   "use strict";
   var D = document, W = window;
   var azalt = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var R = D.documentElement;
+  var MH = W.MH || { hm: false, hafif: false, ince: false, kanca: function () {}, basliklar: function () {}, sayaclar: function () {}, egim: function () {}, miknatis: function () {}, paralaks: function () {} };
+  var HM = !!MH.hm, SD = !!MH.sd;
   var $ = function (s, k) { return (k || D).querySelector(s); };
   var $$ = function (s, k) { return Array.prototype.slice.call((k || D).querySelectorAll(s)); };
 
@@ -85,6 +89,37 @@
           v.play().catch(function () {});
         } else { v.pause(); if (!v.muted) { v.muted = true; etiket(); } }
       }, { threshold: .3, rootMargin: "200px 0px" }).observe(v);
+    }
+  }
+
+  /* ---------- hareket sistemi: yazı tipi hazır olunca (en geç 0,9 sn) ---------- */
+  if (HM) {
+    var kh = $(".kh"), hp = 0, acildi = false;
+    var ac = function () {
+      if (acildi) return; acildi = true;
+      MH.basliklar($$(".kh h1"), false);
+      MH.basliklar($$("h2, .cr-h"));
+      R.classList.add("hazir");
+      MH.sayaclar($$(".serit dt, .sure b"));
+      MH.paralaks($$(".tel-kap"), "");
+      MH.egim($$(".tel, .grup, .kip, .soh"), 4.5);
+      MH.miknatis($$(".cta-satir .btn, .ust .btn-kucuk, .varis .btn"));
+    };
+    if (D.fonts && D.fonts.ready) { D.fonts.ready.then(ac); setTimeout(ac, 900); } else ac();
+    /* kahraman: sd yoksa --hp; orb işaretçiyi hafifçe izler (yalnız ince işaretçi) */
+    if (!SD && kh) MH.kanca(function () { kh.style.setProperty("--hp", Math.min(1, Math.max(0, (W.pageYOffset || R.scrollTop) / (W.innerHeight * .8))).toFixed(3)); });
+    var orb = $(".orb");
+    if (orb && MH.ince && !MH.hafif && kh) {
+      var raf = 0, px = 0, py = 0;
+      var yaz = function () {
+        raf = 0;
+        var r = orb.getBoundingClientRect(), dx = (px - (r.left + r.width / 2)) / W.innerWidth, dy = (py - (r.top + r.height / 2)) / W.innerHeight;
+        var cv = $("canvas", orb), yz = $(".orb-yuz", orb);
+        cv.style.setProperty("--ox", (dx * -16).toFixed(1) + "px"); cv.style.setProperty("--oy", (dy * -16).toFixed(1) + "px");
+        yz.style.setProperty("--fx", (dx * 26).toFixed(1) + "px"); yz.style.setProperty("--fy", (dy * 26).toFixed(1) + "px");
+      };
+      kh.addEventListener("pointermove", function (e) { if (e.pointerType === "touch") return; px = e.clientX; py = e.clientY; if (!raf) raf = requestAnimationFrame(yaz); });
+      kh.addEventListener("pointerleave", function () { var cv = $("canvas", orb), yz = $(".orb-yuz", orb); ["--ox", "--oy"].forEach(function (k) { cv.style.removeProperty(k); }); ["--fx", "--fy"].forEach(function (k) { yz.style.removeProperty(k); }); });
     }
   }
 })();

@@ -41,9 +41,10 @@
   (m/corider-*.mp4) ve uygulamanın AI CoRider yüzü (img/ai-corider.png'nin saydamlaştırılmış hâli, m/corider-yuz.webp).
   Konuşma örnekleri tasarım örneğidir; uygulamadaki gerçek durum etiketleriyle (Köy yolları, rotaya eklendi...) eşleşir.
 -->
-<script>document.documentElement.className+=" cjs"</script>
+<script>!function(d,c){c=" cjs";if(!matchMedia("(prefers-reduced-motion: reduce)").matches){c+=" hm";if(self.CSS&&CSS.supports&&CSS.supports("animation-timeline:view()"))c+=" sd"}d.className+=c}(document.documentElement)</script>
 <link rel="preload" as="font" type="font/woff" href="/m/font/Manrope.woff" crossorigin>
 <link rel="stylesheet" href="/m/corider.css">
+<script defer src="/m/h.js"></script>
 <script defer src="/m/corider.js"></script>
 
 <script type="application/ld+json">
@@ -78,6 +79,7 @@
 </head>
 <body id="top">
 <a class="skip" href="#icerik">Μετάβαση στο περιεχόμενο</a>
+<div class="ilerle" aria-hidden="true"></div>
 
 <header class="ust">
   <div class="ust-ic">
@@ -140,11 +142,11 @@
 
 <section class="bl" id="nasil" aria-labelledby="nasil-h">
   <div class="kap">
-    <div class="bl-ust">
+    <div class="bl-ust" data-r>
       <p class="km">Χρήση</p>
       <h2 id="nasil-h">Πάτα, μίλα, <i>άκου μέσα στο κράνος.</i></h2>
     </div>
-    <ol class="adimlar">
+    <ol class="adimlar" data-r>
       <li><span class="n" aria-hidden="true">1</span><h3>Πάτα το κουμπί</h3><p>Άγγιξε στον χάρτη το κουμπί του AI CoRider και μίλα.</p></li>
       <li><span class="n" aria-hidden="true">2</span><h3>Μίλα φυσικά</h3><p>Δεν χρειάζεται να μάθεις εντολές. Απαντά στη γλώσσα που μιλάς.</p></li>
       <li><span class="n" aria-hidden="true">3</span><h3>Άκου στο κράνος</h3><p>Αν το κράνος είναι συνδεδεμένο με το τηλέφωνο μέσω Bluetooth, η φωνή ακούγεται από εκεί. Δεν ακούς με τον αέρα; Πες απλά «πιο δυνατά».</p></li>
@@ -154,12 +156,12 @@
 
 <section class="bl z1" id="konusma" aria-labelledby="konusma-h">
   <div class="kap">
-    <div class="bl-ust">
+    <div class="bl-ust" data-r>
       <p class="km">Παραδείγματα συζητήσεων</p>
       <h2 id="konusma-h">Έτσι <i>του μιλάς.</i></h2>
       <p class="lead">Είναι απλώς παραδείγματα. Δεν υπάρχουν εντολές να απομνημονεύσεις, πες το με δικά σου λόγια.</p>
     </div>
-    <div class="konusmalar">
+    <div class="konusmalar" data-r>
       <article class="soh">
         <p class="soh-t">Διαδρομή και καιρός</p>
         <div class="satir sen"><span class="kim">Εσύ</span><p>Πόσο έμεινε; Θα βρέξει στη διαδρομή;</p></div>
@@ -206,7 +208,7 @@
 </section>
 
 <section class="bl" id="kayit" aria-labelledby="kayit-h">
-  <div class="kap video-ik">
+  <div class="kap video-ik" data-r>
     <div class="tel-kap">
       <div class="tel"><video id="cr-video" data-src="/m/corider-en.mp4" data-kucuk="/m/corider-kucuk-en.mp4" poster="/m/corider-en.webp" muted loop playsinline preload="none" width="540" height="1106" aria-label="AI CoRider με φωνή: ο αναβάτης ρωτά για τον χρόνο που απομένει και τη βροχή, βρίσκει μέρος για στάση και το προσθέτει στη διαδρομή"></video></div>
       <button class="ses-btn" id="cr-ses" type="button" aria-pressed="false" data-ac="Ενεργοποίηση ήχου" data-kapat="Σίγαση"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path class="h" d="M4 9.5v5h3.6L12 18.5v-13L7.6 9.5H4z" fill="currentColor"/><path class="d" d="M15.5 9a4.2 4.2 0 0 1 0 6M17.8 6.6a7.5 7.5 0 0 1 0 10.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Ενεργοποίηση ήχου</span></button>
@@ -222,19 +224,19 @@
 
 <section class="bl z1" id="yetenek" aria-labelledby="yetenek-h">
   <div class="kap">
-    <div class="bl-ust">
+    <div class="bl-ust" data-r>
       <p class="km">Τι κάνει</p>
       <h2 id="yetenek-h">Περίπου 30 ενέργειες <i>με τη φωνή σου.</i></h2>
       <p class="lead">Μαζεμένες σε πέντε ενότητες. Δεν χρειάζεται να τις απομνημονεύσεις: πες με δικά σου λόγια τι θέλεις.</p>
     </div>
-    <div class="yetenek">
+    <div class="yetenek" data-r>
       <section class="grup" aria-labelledby="g1-h"><span class="no" aria-hidden="true">01</span><h3 id="g1-h">Διαδρομή</h3><p>Διορθώνει τη διαδρομή για σένα.</p><ul><li>Προσθέτει στάση, τη βγάζει ή προσπερνά την επόμενη</li><li>Αλλάζει τον προορισμό και βάζει τις στάσεις σε σειρά</li><li>Αλλάζει ανάμεσα σε δευτερεύοντες δρόμους και συντομότερη διαδρομή</li><li>Δείχνει τη διαδρομή στον χάρτη και σε πάει σπίτι</li></ul></section>
       <section class="grup" aria-labelledby="g2-h"><span class="no" aria-hidden="true">02</span><h3 id="g2-h">Στον δρόμο</h3><p>Ψάχνει στη διαδρομή και γύρω σου.</p><ul><li>Βρίσκει βενζινάδικο, φαγητό ή καφέ μπροστά σου και λέει πρώτο το καλύτερα βαθμολογημένο</li><li>Ψάχνει πού να μείνεις απόψε</li><li>Σου λέει τον χρόνο που απομένει, την επόμενη στροφή και πού βρίσκεσαι</li><li>Σου λέει αν μπροστά υπάρχουν κλειστές στροφές ή ανηφόρες</li></ul></section>
       <section class="grup" aria-labelledby="g3-h"><span class="no" aria-hidden="true">03</span><h3 id="g3-h">Καιρός και αυτονομία</h3><p>Όσα ρωτάς πριν και κατά τη διαδρομή.</p><ul><li>Τι καιρό θα κάνει και αν βρέχει στη διαδρομή</li><li>Κοιτάζει το ραντάρ βροχής και το ανοίγει στον χάρτη</li><li>Μέχρι πού φτάνει το ρεζερβουάρ και αν υπάρχει βενζινάδικο στον δρόμο</li><li class="r">Το ραντάρ βροχής λειτουργεί μόνο στις ΗΠΑ και στη Γερμανία. Για την αυτονομία, γράψε μία φορά στις Ρυθμίσεις πόσο διανύεις με γεμάτο ρεζερβουάρ.</li></ul></section>
       <section class="grup" aria-labelledby="g4-h"><span class="no" aria-hidden="true">04</span><h3 id="g4-h">Ομάδα</h3><p>Όταν γίνεται βόλτα με παρέα.</p><ul><li>Σου λέει πού είναι ο καθένας και ποιος έμεινε πίσω</li><li>Στέλνει στην ομάδα έτοιμη ειδοποίηση: έμεινα πίσω, διάλειμμα, κίνδυνος, βενζίνη</li><li>Αν μοιράζεσαι τη διαδρομή με την ομάδα, ρωτά σε ποιον ισχύει η αλλαγή</li></ul></section>
       <section class="grup" aria-labelledby="g5-h"><span class="no" aria-hidden="true">05</span><h3 id="g5-h">Οδήγηση</h3><p>Όσο τα χέρια μένουν στο τιμόνι.</p><ul><li>Ξεκινά και τελειώνει την πλοήγηση</li><li>Ξεκινά και σταματά την καταγραφή της βόλτας</li><li>Βρίσκει κάποιον στις επαφές· ένα άγγιγμα στην οθόνη κάνει την κλήση</li><li>Κρατά μια σημείωση όταν το ζητήσεις και τη σβήνει αν πεις «ξέχνα το»</li><li>Ανεβάζει ή κατεβάζει τη δική του φωνή: «πιο δυνατά»</li></ul></section>
     </div>
-    <div class="cagri-kutu">
+    <div class="cagri-kutu" data-r>
       <h3>Στο δωμάτιο της ομάδας</h3>
       <p>Κάλεσε το AI CoRider στο ενδοεπικοινωνιακό της ομάδας και το ακούν όλοι στο δωμάτιο. Τα λεπτά αφαιρούνται από τον λογαριασμό όποιου το κάλεσε.</p>
     </div>
@@ -243,18 +245,18 @@
 
 <section class="bl" id="kipler" aria-labelledby="kip-h">
   <div class="kap">
-    <div class="bl-ust">
+    <div class="bl-ust" data-r>
       <p class="km">Δύο λειτουργίες</p>
       <h2 id="kip-h">Η μία κάνει τη δουλειά, <i>η άλλη τα λέει.</i></h2>
       <p class="lead">Αρκεί να πεις «άνοιξε τη λειτουργία συνομιλίας» την ώρα που μιλάς.</p>
     </div>
-    <div class="kipler">
+    <div class="kipler" data-r>
       <article class="kip"><h3>Σχεδιαστής διαδρομής</h3><p>Ξέρει τη διαδρομή σου και τακτοποιεί τα πράγματα.</p><ul><li>Υπάρχει βενζινάδικο στον δρόμο;</li><li>Πού είναι οι υπόλοιποι;</li><li>Πάμε από δευτερεύοντες δρόμους.</li><li>Τι καιρό θα κάνει;</li><li>Πήγαινέ με σπίτι.</li></ul><span class="rozet">Περιλαμβάνεται στο Pro</span></article>
       <article class="kip"><h3>Συνομιλία</h3><p>Το θέμα το διαλέγεις εσύ· θυμάται τις προηγούμενες κουβέντες.</p><ul><li>Να εξασκηθούμε στα αγγλικά.</li><li>Ας προγραμματίσουμε μαζί τη μέρα.</li><li>Πες μου μια ιστορία.</li><li>Πού είχαμε μείνει χθες;</li></ul><span class="rozet">Ανοίγει με πακέτο λεπτών</span></article>
     </div>
-    <div class="sesler">
+    <div class="sesler" data-r>
       <div><h3>Τέσσερις φωνές</h3><p>Ακούς την καθεμία στις Ρυθμίσεις και διαλέγεις: Quartz, Tempo, Stone ή Willow.</p></div>
-      <ul class="ses-liste" aria-label="Τέσσερις φωνές">
+      <ul class="ses-liste" aria-label="Τέσσερις φωνές" data-ak>
         <li><i aria-hidden="true"><b></b><b></b><b></b><b></b><b></b></i>Quartz</li><li><i aria-hidden="true"><b></b><b></b><b></b><b></b><b></b></i>Tempo</li><li><i aria-hidden="true"><b></b><b></b><b></b><b></b><b></b></i>Stone</li><li><i aria-hidden="true"><b></b><b></b><b></b><b></b><b></b></i>Willow</li>
       </ul>
     </div>
@@ -263,12 +265,12 @@
 
 <section class="bl z1" id="dakika" aria-labelledby="dakika-h">
   <div class="kap">
-    <div class="bl-ust">
+    <div class="bl-ust" data-r>
       <p class="km">Λεπτά και πακέτα</p>
       <h2 id="dakika-h">Χρόνος ομιλίας, <i>απλά.</i></h2>
       <p class="lead">Τα λεπτά που περνάς με το AI CoRider αφαιρούνται από τον χρόνο που ανανεώνει το Pro και από πακέτα που δεν λήγουν.</p>
     </div>
-    <div class="sureler">
+    <div class="sureler" data-r>
       <div class="sure"><b>10 λεπτά</b><h3>Στο Pro, κάθε 30 ημέρες</h3><p>Ο χρόνος ομιλίας σου γυρίζει στα 10 λεπτά κάθε 30 ημέρες.</p></div>
       <div class="sure"><b>5 λεπτά</b><h3>Στη δωρεάν δοκιμή</h3><p>Στη διάρκεια της δοκιμής μπορείς να μιλήσεις 5 λεπτά.</p></div>
       <div class="sure"><b>30 · 60 · 180</b><h3>Πακέτα λεπτών</h3><p>30, 60 ή 180 λεπτά. Δεν λήγουν ούτε χάνονται στο τέλος του μήνα· και η λειτουργία συνομιλίας ανοίγει με αυτά.</p></div>
@@ -279,11 +281,11 @@
 
 <section class="bl" id="gizlilik" aria-labelledby="gizlilik-h">
   <div class="kap">
-    <div class="bl-ust">
+    <div class="bl-ust" data-r>
       <p class="km">Απόρρητο</p>
       <h2 id="gizlilik-h">Η φωνή σου <i>μένει δική σου.</i></h2>
     </div>
-    <ul class="gizlilik">
+    <ul class="gizlilik" data-r>
       <li><h3>Λειτουργεί μόνο όταν το ξεκινάς</h3><p>Το μικρόφωνο ανοίγει μόνο όταν αγγίξεις στον χάρτη το κουμπί AI CoRider.</p></li>
       <li><h3>Η φωνή δεν αποθηκεύεται</h3><p>Η φωνή σου δεν ηχογραφείται ούτε αποθηκεύεται από εμάς. Για να παραχθεί η απάντηση, πηγαίνει σε υπηρεσία φωνής στο cloud τρίτου παρόχου.</p></li>
       <li><h3>Όχι ακριβής τοποθεσία</h3><p>Από τη διαδρομή φεύγει μόνο κείμενο, όπως η απόσταση που απομένει και ο επόμενος ελιγμός.</p></li>
@@ -295,11 +297,11 @@
 
 <section class="bl z1" id="sss" aria-labelledby="sss-h">
   <div class="kap">
-    <div class="bl-ust">
+    <div class="bl-ust" data-r>
       <p class="km">Συχνές ερωτήσεις</p>
       <h2 id="sss-h">Όσα αναρωτιέσαι</h2>
     </div>
-    <div class="sss-liste">
+    <div class="sss-liste" data-r>
       <details class="sss" name="sss"><summary>Με ακούει συνέχεια το AI CoRider;</summary><div class="cevap"><p>Όχι. Δεν υπάρχει λέξη ενεργοποίησης. Το μικρόφωνο ανοίγει μόνο όταν αγγίξεις στον χάρτη το κουμπί AI CoRider. Η συνεδρία κλείνει όταν τη σταματήσεις, μετά από παρατεταμένη σιωπή ή όταν τελειώσει η πλοήγηση.</p></div></details>
       <details class="sss" name="sss"><summary>Λειτουργεί χωρίς ίντερνετ;</summary><div class="cevap"><p>Όχι. Ό,τι λες πηγαίνει, για να παραχθεί η απάντηση, σε υπηρεσία φωνής στο cloud, γι’ αυτό το AI CoRider χρειάζεται σύνδεση στο ίντερνετ. Χωρίς σύνδεση δεν μπορεί να ξεκινήσει συνεδρία.</p></div></details>
       <details class="sss" name="sss"><summary>Σε ποια γλώσσα μπορώ να μιλήσω;</summary><div class="cevap"><p>Απαντά στη γλώσσα που μιλάς. Δεν χρειάζεται να μάθεις εντολές, πες το με δικά σου λόγια.</p></div></details>
@@ -312,7 +314,7 @@
   </div>
 </section>
 
-<section class="varis" aria-labelledby="varis-h">
+<section class="varis" aria-labelledby="varis-h" data-ton>
   <div class="kap">
     <h2 id="varis-h">Πάτα το κουμπί, <i>συνέχισε τη βόλτα.</i></h2>
     <div class="cta-satir">

@@ -50,11 +50,12 @@
   Ham dosyalar: motoseyir-social/02-kaynak/higgsfield/site-sahneler/
   Bu sayfa sablon/anasayfa.html + dil/anasayfa.<kod>.json'dan üretilir (python3 uret.py); stil m/a.css, hareket m/a.js.
 -->
-<script>document.documentElement.className+=" js"</script>
+<script>!function(d,c){c=" js";if(!matchMedia("(prefers-reduced-motion: reduce)").matches){c+=" hm";if(self.CSS&&CSS.supports&&CSS.supports("animation-timeline:view()"))c+=" sd"}d.className+=c}(document.documentElement)</script>
 <link rel="preload" as="image" type="image/webp" href="/m/sahne-dikey-poster.webp" media="(max-width:700px)" fetchpriority="high">
 <link rel="preload" as="image" type="image/webp" href="/m/sahne-poster.webp" media="(min-width:701px)" fetchpriority="high">
 <link rel="preload" as="font" type="font/woff" href="/m/font/Manrope.woff" crossorigin>
 <link rel="stylesheet" href="/m/a.css">
+<script defer src="/m/h.js"></script>
 <script defer src="/m/a.js"></script>
 
 <script type="application/ld+json">
@@ -89,6 +90,7 @@
 </head>
 <body id="top">
 <a class="skip" href="#icerik">Μετάβαση στο περιεχόμενο</a>
+<div class="ilerle" aria-hidden="true"></div>
 
 <header class="ust" id="ustbar">
   <div class="ust-ic">
@@ -153,6 +155,31 @@
   <div class="sayi"><b>CarPlay</b><span>η διαδρομή σου στην οθόνη του αυτοκινήτου, σε πλήρη οθόνη</span></div>
   <div class="sayi"><b>Ομάδα + Ενδοεπικοινωνία</b><span>ίδια διαδρομή, κουβέντα εν κινήσει</span></div>
 </div></div>
+
+
+<!-- Sticky anlatı (19 Eki 2026): telefon ekranı sağda sabit, soldaki adımlar kayarken gerçek ekranlar değişir; rota çizgisi sayfayla birlikte çizilir.
+     Metinler aşağıdaki bölümlerin başlıklarından gelir (yeni çeviri yok); ayrıntılar bölümlerde. Ekranlar süs (alt boş), gerçek alt metinler bölümlerde. -->
+<section class="hikaye" id="hikaye" aria-labelledby="hk-h">
+  <div class="kap">
+    <h2 id="hk-h" class="hk-baslik">Το Motoseyir <i>με μια ματιά.</i></h2>
+    <div class="hk-sahne" id="hk-sahne" data-a="0">
+      <div class="hk-yapis" aria-hidden="true">
+        <div class="hk-tel"><div class="tel"><div class="ekr">
+          <img class="e e0" src="/m/ekran-nav-en.webp" alt="" width="540" height="1174" decoding="async">
+          <img class="e e1" src="/m/ekran-tur-en.webp" alt="" width="540" height="1174" loading="lazy" decoding="async">
+          <img class="e e2" src="/m/ekran-gecit-en.webp" alt="" width="540" height="1174" loading="lazy" decoding="async">
+          <img class="e e3" src="/m/ekran-kesfet-en.webp" alt="" width="540" height="1174" loading="lazy" decoding="async">
+        </div></div></div>
+      </div>
+      <ol class="hk-adimlar">
+        <li class="hk-adim on" data-i="0"><p class="km">Διαδρομή</p><h3>Πρώτα τα χιλιόμετρα, <i>μετά η διασκέδαση.</i></h3><p class="metin">Συγκρίνει τις εναλλακτικές ανάμεσα στα ίδια δύο σημεία και προτείνει τη συντομότερη. Σε εκδρομή με πολλές στάσεις υπολογίζει και τη σειρά των στάσεων. Τα υπόλοιπα είναι δικά σου.</p><a class="hk-link" href="#rota">Δες τις λειτουργίες</a></li>
+        <li class="hk-adim" data-i="1"><p class="km">Γεννήτρια εκδρομών <span class="etiket">Pro</span></p><h3>Διάλεξε κατεύθυνση και χρόνο, <i>η εκδρομή είναι έτοιμη.</i></h3><p class="metin">Γύρνα το καντράν προς τα εκεί που θέλεις να πας και διάλεξε πόσες ώρες έχεις. Το Motoseyir σχεδιάζει μια εκδρομή προς αυτή την κατεύθυνση· τη βλέπεις στον χάρτη και ξεκινάς, αν σου αρέσει.</p><a class="hk-link" href="#tur">Δες τις λειτουργίες</a></li>
+        <li class="hk-adim" data-i="2"><p class="km">Περάσματα</p><h3>1.600+ περάσματα, <i>σε έναν χάρτη.</i></h3><p class="metin">Κάθε πέρασμα έχει το υψόμετρο και την ακριβή θέση του, και τα περισσότερα φωτογραφίες. Στα περάσματα που κλείνουν τον χειμώνα φαίνεται σε ποιους μήνες είναι κλειστά, και οι χωματόδρομοι σημειώνονται ως χωματόδρομοι. Πρόσθεσε στην εκδρομή σου όσα σου αρέσουν και φύγε.</p><a class="hk-link" href="#gecit">Δες τις λειτουργίες</a></li>
+        <li class="hk-adim" data-i="3"><p class="km">Discover <span class="etiket">Pro</span></p><h3>Ανακάλυψε ό,τι βρίσκεται <i>στον δρόμο σου.</i></h3><p class="metin">Δες επαρχιακούς δρόμους, παραλιακούς δρόμους, κάμπινγκ και μέρη για φαγητό κατά μήκος της διαδρομής σου και πρόσθεσε όσα σου αρέσουν.</p><a class="hk-link" href="#kesfet">Δες τις λειτουργίες</a></li>
+      </ol>
+    </div>
+  </div>
+</section>
 
 <div class="ana" id="ozellikler">
   <section class="bolum" id="rota">
@@ -229,6 +256,12 @@
         </ul>
       </div>
     </div>
+
+    <!-- Kayan geçit şeridi: süs (altı çizili listeler zaten sayfada); gerçek geçit adları ve rakımları -->
+    <div class="hat" aria-hidden="true" data-ak>
+      <div class="hat-sira"><ul class="hat-yol"><li><b>2.764 m</b><span>Col de l’Iseran</span></li><li><b>2.758 m</b><span>Passo dello Stelvio</span></li><li><b>2.744 m</b><span>Col Agnel</span></li><li><b>3.696 m</b><span>Cottonwood Pass</span></li><li><b>3.689 m</b><span>Independence Pass</span></li><li><b>3.662 m</b><span>Cumberland Pass</span></li><li><b>3.655 m</b><span>Loveland Pass</span></li><li><b>3.635 m</b><span>Hagerman Pass</span></li></ul><ul class="hat-yol"><li><b>2.764 m</b><span>Col de l’Iseran</span></li><li><b>2.758 m</b><span>Passo dello Stelvio</span></li><li><b>2.744 m</b><span>Col Agnel</span></li><li><b>3.696 m</b><span>Cottonwood Pass</span></li><li><b>3.689 m</b><span>Independence Pass</span></li><li><b>3.662 m</b><span>Cumberland Pass</span></li><li><b>3.655 m</b><span>Loveland Pass</span></li><li><b>3.635 m</b><span>Hagerman Pass</span></li></ul></div>
+      <div class="hat-sira ters"><ul class="hat-yol"><li><b>3.635 m</b><span>Hagerman Pass</span></li><li><b>3.655 m</b><span>Loveland Pass</span></li><li><b>3.662 m</b><span>Cumberland Pass</span></li><li><b>3.689 m</b><span>Independence Pass</span></li><li><b>3.696 m</b><span>Cottonwood Pass</span></li><li><b>2.744 m</b><span>Col Agnel</span></li><li><b>2.758 m</b><span>Passo dello Stelvio</span></li><li><b>2.764 m</b><span>Col de l’Iseran</span></li></ul><ul class="hat-yol"><li><b>3.635 m</b><span>Hagerman Pass</span></li><li><b>3.655 m</b><span>Loveland Pass</span></li><li><b>3.662 m</b><span>Cumberland Pass</span></li><li><b>3.689 m</b><span>Independence Pass</span></li><li><b>3.696 m</b><span>Cottonwood Pass</span></li><li><b>2.744 m</b><span>Col Agnel</span></li><li><b>2.758 m</b><span>Passo dello Stelvio</span></li><li><b>2.764 m</b><span>Col de l’Iseran</span></li></ul></div>
+    </div>
     <div class="veri" data-r aria-label="Δεδομένα περασμάτων">
       <dl class="veri-say">
         <div><dt>1.638</dt><dd>περάσματα σε 36 χώρες</dd></div>
@@ -239,7 +272,7 @@
       <div class="veri-ik">
         <div>
           <h3>Ανά περιοχή</h3>
-          <ul class="bolgeler">
+          <ul class="bolgeler" data-g>
             <li style="--o:100%"><span class="ad">Άλπεις και Δολομίτες</span><span class="n">535</span></li>
             <li style="--o:76%"><span class="ad">Υπόλοιπη Ευρώπη</span><span class="n">407</span></li>
             <li style="--o:56%"><span class="ad">Ηνωμένες Πολιτείες</span><span class="n">298</span></li>
@@ -274,7 +307,7 @@
     </div></div>
   </section>
 
-  <section class="bolum ters" id="corider">
+  <section class="bolum ters" id="corider" data-ton>
     <div class="kap"><div class="bolum-ik">
       <div data-r class="tel-alan"><div class="tel"><img src="/m/ekran-corider-en.webp" alt="Οθόνη AI CoRider: σχεδιασμός και επιλογές συνομιλίας" width="540" height="1174" loading="lazy"></div></div>
       <div data-r>
@@ -488,7 +521,7 @@
         <h2>Γνώρισε <i>την εφαρμογή.</i></h2>
         <p class="metin">Τι έχει μέσα η εφαρμογή, σε δύο λεπτά.</p>
       </div>
-      <div data-r class="tel-alan"><div class="tani-kutu" id="tani-kutu">
+      <div data-r class="tel-alan"><div class="tani-kutu" id="tani-kutu" data-ak>
         <button type="button" id="tani-btn" aria-label="Αναπαραγωγή βίντεο γνωριμίας"><img src="/m/tani-en.jpg" alt="" loading="lazy" width="1080" height="1920"><span class="oynat"></span></button>
       </div></div>
     </div></div>
@@ -510,7 +543,7 @@
   </section>
 </div>
 
-<section class="varis">
+<section class="varis" data-ton>
   <div class="kap" data-r>
     <h2>Ο δρόμος είναι <i>έτοιμος.</i></h2>
     <div class="cta-satir">
@@ -533,11 +566,11 @@
       <p class="km">Σημειώσεις έκδοσης</p>
       <h2>Τι άλλαξε</h2>
       <p class="metin">Οι πρόσφατες ενημερώσεις, η πιο νέα πρώτη.</p>
-      <article class="surum"><header><b>1.1.8</b><time>Οκτώβριος 2026</time></header>
+      <article class="surum" data-g><header><b>1.1.8</b><time>Οκτώβριος 2026</time></header>
         <ul class="d"><li>Διορθώθηκε ένα κράσαρισμα κατά την εναλλαγή από το Blog στο Feed στο Community.</li><li>Η εγγραφή βίντεο της αναπαραγωγής 3D της βόλτας ξεκινά πιο αξιόπιστα.</li><li>Το «Ready» δεν εμφανίζεται πια πριν φορτώσει ο χάρτης και η κάμερα δεν πηδά όταν τελειώνεις ένα ζουμ με τα δάχτυλα.</li></ul></article>
-      <article class="surum"><header><b>1.1.7</b><time>Οκτώβριος 2026</time></header>
+      <article class="surum" data-g><header><b>1.1.7</b><time>Οκτώβριος 2026</time></header>
         <ul class="d"><li>Χάρτης εκδρομής: δες μια μεγάλη εκδρομή ή βόλτα ως βίντεο σε καθαρό χάρτη. Καθώς η διαδρομή σχεδιάζεται μόνη της, εμφανίζονται ένα ένα τα μέρη που πέρασες και οι φωτογραφίες σου.</li><li>Νέες συντομεύσεις στην οθόνη Έναρξης: σπίτι και δουλειά, καταγραφή βόλτας, ένας κύκλος μίας ώρας από εδώ, ένας θρυλικός δρόμος κοντά.</li><li>298 ορεινά περάσματα και έξι νέοι θρυλικοί δρόμοι στις ΗΠΑ, ενώ η λειτουργία Ακτή δουλεύει πλέον σε όλη την Ευρώπη.</li><li>Το «Get to know Motoseyir» στις «Settings» είναι μια σύντομη ξενάγηση σε βίντεο στην εφαρμογή, καρτέλα καρτέλα.</li></ul></article>
-      <article class="surum"><header><b>1.1.6</b><time>Οκτώβριος 2026</time></header>
+      <article class="surum" data-g><header><b>1.1.6</b><time>Οκτώβριος 2026</time></header>
         <ul class="d"><li>Δες το σε 3D: ξαναπαίξε μια καταγεγραμμένη βόλτα σαν να την ακολουθείς από ελικόπτερο· οι φωτογραφίες σου εμφανίζονται εκεί που τις τράβηξες.</li><li>Μοιράσου ως βίντεο: φτιάξε κάθετο βίντεο 15, 30 ή 60 δευτερολέπτων, έτοιμο για Instagram. Δεν χρειάζεται Pro.</li><li>Ανάλυση βόλτας: χρόνος κίνησης, πραγματικές στάσεις, κλειστές στροφές, συνολική ανάβαση και πόσο από τον δρόμο ήταν καινούργιο για σένα.</li><li>Στο «Generate a tour» το «Another one» φέρνει τρεις νέους κύκλους από άλλους δρόμους, και μπορείς να αποφύγεις αυτοκινητόδρομους, διόδια και χωματόδρομους.</li></ul></article>
     </div>
     <div id="iletisim">

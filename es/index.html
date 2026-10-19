@@ -50,11 +50,12 @@
   Ham dosyalar: motoseyir-social/02-kaynak/higgsfield/site-sahneler/
   Bu sayfa sablon/anasayfa.html + dil/anasayfa.<kod>.json'dan üretilir (python3 uret.py); stil m/a.css, hareket m/a.js.
 -->
-<script>document.documentElement.className+=" js"</script>
+<script>!function(d,c){c=" js";if(!matchMedia("(prefers-reduced-motion: reduce)").matches){c+=" hm";if(self.CSS&&CSS.supports&&CSS.supports("animation-timeline:view()"))c+=" sd"}d.className+=c}(document.documentElement)</script>
 <link rel="preload" as="image" type="image/webp" href="/m/sahne-dikey-poster.webp" media="(max-width:700px)" fetchpriority="high">
 <link rel="preload" as="image" type="image/webp" href="/m/sahne-poster.webp" media="(min-width:701px)" fetchpriority="high">
 <link rel="preload" as="font" type="font/woff" href="/m/font/Manrope.woff" crossorigin>
 <link rel="stylesheet" href="/m/a.css">
+<script defer src="/m/h.js"></script>
 <script defer src="/m/a.js"></script>
 
 <script type="application/ld+json">
@@ -89,6 +90,7 @@
 </head>
 <body id="top">
 <a class="skip" href="#icerik">Ir al contenido</a>
+<div class="ilerle" aria-hidden="true"></div>
 
 <header class="ust" id="ustbar">
   <div class="ust-ic">
@@ -153,6 +155,31 @@
   <div class="sayi"><b>CarPlay</b><span>tu ruta en la pantalla del coche, a pantalla completa</span></div>
   <div class="sayi"><b>Grupo + Intercom</b><span>la misma ruta, y charla mientras se rueda</span></div>
 </div></div>
+
+
+<!-- Sticky anlatı (19 Eki 2026): telefon ekranı sağda sabit, soldaki adımlar kayarken gerçek ekranlar değişir; rota çizgisi sayfayla birlikte çizilir.
+     Metinler aşağıdaki bölümlerin başlıklarından gelir (yeni çeviri yok); ayrıntılar bölümlerde. Ekranlar süs (alt boş), gerçek alt metinler bölümlerde. -->
+<section class="hikaye" id="hikaye" aria-labelledby="hk-h">
+  <div class="kap">
+    <h2 id="hk-h" class="hk-baslik">Motoseyir <i>de un vistazo.</i></h2>
+    <div class="hk-sahne" id="hk-sahne" data-a="0">
+      <div class="hk-yapis" aria-hidden="true">
+        <div class="hk-tel"><div class="tel"><div class="ekr">
+          <img class="e e0" src="/m/ekran-nav-en.webp" alt="" width="540" height="1174" decoding="async">
+          <img class="e e1" src="/m/ekran-tur-en.webp" alt="" width="540" height="1174" loading="lazy" decoding="async">
+          <img class="e e2" src="/m/ekran-gecit-en.webp" alt="" width="540" height="1174" loading="lazy" decoding="async">
+          <img class="e e3" src="/m/ekran-kesfet-en.webp" alt="" width="540" height="1174" loading="lazy" decoding="async">
+        </div></div></div>
+      </div>
+      <ol class="hk-adimlar">
+        <li class="hk-adim on" data-i="0"><p class="km">Ruta</p><h3>Primero los kilómetros, <i>después la diversión.</i></h3><p class="metin">Motoseyir compara las alternativas entre los mismos dos puntos y propone la más corta. En un tour con varias paradas, también decide el orden de las paradas. Lo demás lo decides tú.</p><a class="hk-link" href="#rota">Ver las funciones</a></li>
+        <li class="hk-adim" data-i="1"><p class="km">Generador de tours <span class="etiket">Pro</span></p><h3>Elige dirección y tiempo, <i>el tour está listo.</i></h3><p class="metin">Gira el dial hacia donde quieres ir y elige cuántas horas tienes. Motoseyir dibuja un tour en esa dirección; lo ves en el mapa y sales si te gusta.</p><a class="hk-link" href="#tur">Ver las funciones</a></li>
+        <li class="hk-adim" data-i="2"><p class="km">Puertos de montaña</p><h3>1.600+ puertos, <i>en un solo mapa.</i></h3><p class="metin">Cada puerto tiene su altitud y su ubicación exacta, y la mayoría tiene fotos. Los que cierran en invierno muestran los meses de cierre, y los caminos de tierra aparecen marcados como tales. Añade los que te gusten a tu tour y sal.</p><a class="hk-link" href="#gecit">Ver las funciones</a></li>
+        <li class="hk-adim" data-i="3"><p class="km">Descubrir <span class="etiket">Pro</span></p><h3>Descubre lo que hay <i>por el camino.</i></h3><p class="metin">Mira las carreteras secundarias, las carreteras de playa, los campings y los sitios para comer a lo largo de tu ruta, y añade los que te gusten.</p><a class="hk-link" href="#kesfet">Ver las funciones</a></li>
+      </ol>
+    </div>
+  </div>
+</section>
 
 <div class="ana" id="ozellikler">
   <section class="bolum" id="rota">
@@ -229,6 +256,12 @@
         </ul>
       </div>
     </div>
+
+    <!-- Kayan geçit şeridi: süs (altı çizili listeler zaten sayfada); gerçek geçit adları ve rakımları -->
+    <div class="hat" aria-hidden="true" data-ak>
+      <div class="hat-sira"><ul class="hat-yol"><li><b>2.764 m</b><span>Col de l’Iseran</span></li><li><b>2.758 m</b><span>Passo dello Stelvio</span></li><li><b>2.744 m</b><span>Col Agnel</span></li><li><b>3.696 m</b><span>Cottonwood Pass</span></li><li><b>3.689 m</b><span>Independence Pass</span></li><li><b>3.662 m</b><span>Cumberland Pass</span></li><li><b>3.655 m</b><span>Loveland Pass</span></li><li><b>3.635 m</b><span>Hagerman Pass</span></li></ul><ul class="hat-yol"><li><b>2.764 m</b><span>Col de l’Iseran</span></li><li><b>2.758 m</b><span>Passo dello Stelvio</span></li><li><b>2.744 m</b><span>Col Agnel</span></li><li><b>3.696 m</b><span>Cottonwood Pass</span></li><li><b>3.689 m</b><span>Independence Pass</span></li><li><b>3.662 m</b><span>Cumberland Pass</span></li><li><b>3.655 m</b><span>Loveland Pass</span></li><li><b>3.635 m</b><span>Hagerman Pass</span></li></ul></div>
+      <div class="hat-sira ters"><ul class="hat-yol"><li><b>3.635 m</b><span>Hagerman Pass</span></li><li><b>3.655 m</b><span>Loveland Pass</span></li><li><b>3.662 m</b><span>Cumberland Pass</span></li><li><b>3.689 m</b><span>Independence Pass</span></li><li><b>3.696 m</b><span>Cottonwood Pass</span></li><li><b>2.744 m</b><span>Col Agnel</span></li><li><b>2.758 m</b><span>Passo dello Stelvio</span></li><li><b>2.764 m</b><span>Col de l’Iseran</span></li></ul><ul class="hat-yol"><li><b>3.635 m</b><span>Hagerman Pass</span></li><li><b>3.655 m</b><span>Loveland Pass</span></li><li><b>3.662 m</b><span>Cumberland Pass</span></li><li><b>3.689 m</b><span>Independence Pass</span></li><li><b>3.696 m</b><span>Cottonwood Pass</span></li><li><b>2.744 m</b><span>Col Agnel</span></li><li><b>2.758 m</b><span>Passo dello Stelvio</span></li><li><b>2.764 m</b><span>Col de l’Iseran</span></li></ul></div>
+    </div>
     <div class="veri" data-r aria-label="Datos de los puertos">
       <dl class="veri-say">
         <div><dt>1.638</dt><dd>puertos en 36 países</dd></div>
@@ -239,7 +272,7 @@
       <div class="veri-ik">
         <div>
           <h3>Por región</h3>
-          <ul class="bolgeler">
+          <ul class="bolgeler" data-g>
             <li style="--o:100%"><span class="ad">Alpes y Dolomitas</span><span class="n">535</span></li>
             <li style="--o:76%"><span class="ad">Resto de Europa</span><span class="n">407</span></li>
             <li style="--o:56%"><span class="ad">Estados Unidos</span><span class="n">298</span></li>
@@ -274,7 +307,7 @@
     </div></div>
   </section>
 
-  <section class="bolum ters" id="corider">
+  <section class="bolum ters" id="corider" data-ton>
     <div class="kap"><div class="bolum-ik">
       <div data-r class="tel-alan"><div class="tel"><img src="/m/ekran-corider-en.webp" alt="Pantalla de AI CoRider: planificador y opciones de chat" width="540" height="1174" loading="lazy"></div></div>
       <div data-r>
@@ -488,7 +521,7 @@
         <h2>Conoce <i>Motoseyir.</i></h2>
         <p class="metin">Lo que hay dentro de la app, en dos minutos.</p>
       </div>
-      <div data-r class="tel-alan"><div class="tani-kutu" id="tani-kutu">
+      <div data-r class="tel-alan"><div class="tani-kutu" id="tani-kutu" data-ak>
         <button type="button" id="tani-btn" aria-label="Reproducir el vídeo de presentación"><img src="/m/tani-en.jpg" alt="" loading="lazy" width="1080" height="1920"><span class="oynat"></span></button>
       </div></div>
     </div></div>
@@ -510,7 +543,7 @@
   </section>
 </div>
 
-<section class="varis">
+<section class="varis" data-ton>
   <div class="kap" data-r>
     <h2>La carretera <i>está lista.</i></h2>
     <div class="cta-satir">
@@ -533,11 +566,11 @@
       <p class="km">Notas de versión</p>
       <h2>Qué ha cambiado</h2>
       <p class="metin">Las últimas actualizaciones, de la más reciente a la más antigua.</p>
-      <article class="surum"><header><b>1.1.8</b><time>octubre de 2026</time></header>
+      <article class="surum" data-g><header><b>1.1.8</b><time>octubre de 2026</time></header>
         <ul class="d"><li>Corregido un cierre inesperado al pasar de «Blog» a «Feed» en «Community».</li><li>La grabación en vídeo de tu 3D replay arranca con más fiabilidad.</li><li>«Ready» ya no aparece antes de que el mapa termine de cargar, y la cámara ya no da un salto cuando sueltas un zoom con dos dedos.</li></ul></article>
-      <article class="surum"><header><b>1.1.7</b><time>octubre de 2026</time></header>
+      <article class="surum" data-g><header><b>1.1.7</b><time>octubre de 2026</time></header>
         <ul class="d"><li>«Trip map»: mira un tour largo o una salida en vídeo sobre un mapa limpio. Mientras se dibuja tu ruta, van apareciendo los pueblos por los que pasaste y tus fotos.</li><li>Nuevos atajos en la pantalla «Start»: «Home» y «Work», «Record ride», un circuito de una hora desde donde estás, una ruta legendaria cercana.</li><li>298 puertos de montaña y seis rutas legendarias nuevas en EE. UU., y el modo «Coast» ya funciona también en toda Europa.</li><li>«Get to know Motoseyir», en «Settings», es una visita guiada en vídeo por la app, pestaña por pestaña.</li></ul></article>
-      <article class="surum"><header><b>1.1.6</b><time>octubre de 2026</time></header>
+      <article class="surum" data-g><header><b>1.1.6</b><time>octubre de 2026</time></header>
         <ul class="d"><li>«Watch in 3D»: repite una salida grabada como si la siguieras desde un helicóptero; tus fotos aparecen donde las hiciste.</li><li>«Share as video»: crea un vídeo vertical de 15, 30 o 60 segundos, listo para Instagram. No hace falta Pro.</li><li>Análisis de la salida: tiempo en movimiento, paradas reales, curvas cerradas, desnivel total y qué parte de la carretera era nueva para ti.</li><li>En el generador de tours, «Another one» trae tres circuitos nuevos por carreteras distintas, y puedes evitar autopistas, peajes y caminos de tierra.</li></ul></article>
     </div>
     <div id="iletisim">
