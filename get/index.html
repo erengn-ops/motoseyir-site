@@ -39,7 +39,8 @@
     // indirmelerin sayfa tipi "Store sheet"); ABD'de ziyaretlerin çoğu 3 sn içinde Instagram'dan çıkıyor, ~45 tıklamada 0 indirme.
     // Yarı ziyaretçi bugünkü /us/ linkine (a), yarısı ülke kodsuz linke (b) gider; ct'ye varyant eklenir, böylece hem
     // ölçüm (olcum-oku.py) hem App Store Connect'in kampanya kırılımı iki biçimi ayrı sayar.
-    var varyant = Math.random() < 0.5 ? "a" : "b";
+    // AB reklamı (20 Eki 2026): /us/ linki Avrupa'daki iPhone'da başka ülkenin mağazasını açar → meta-eu-* hep ülke kodsuz (b).
+    var varyant = /^meta-eu-/.test(ct) ? "b" : Math.random() < 0.5 ? "a" : "b";
     ct = (ct + "-" + varyant).slice(0, 40);
     var link = varyant === "a"
       ? "https://apps.apple.com/us/app/apple-store/id6792549131?pt=128439797&ct=" + ct + "&mt=8"
