@@ -1188,6 +1188,7 @@
     <priority>0.3</priority>
     <xhtml:link rel="alternate" hreflang="tr" href="https://motoseyir-app.com/gizlilik/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://motoseyir-app.com/gizlilik/en/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://motoseyir-app.com/gizlilik/de/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://motoseyir-app.com/gizlilik/en/"/>
   </url>
   <url>
@@ -1197,6 +1198,35 @@
     <priority>0.3</priority>
     <xhtml:link rel="alternate" hreflang="tr" href="https://motoseyir-app.com/gizlilik/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://motoseyir-app.com/gizlilik/en/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://motoseyir-app.com/gizlilik/de/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://motoseyir-app.com/gizlilik/en/"/>
+  </url>
+  <url>
+    <loc>https://motoseyir-app.com/gizlilik/de/</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://motoseyir-app.com/gizlilik/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://motoseyir-app.com/gizlilik/en/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://motoseyir-app.com/gizlilik/de/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://motoseyir-app.com/gizlilik/en/"/>
+  </url>
+  <url>
+    <loc>https://motoseyir-app.com/impressum/</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://motoseyir-app.com/impressum/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://motoseyir-app.com/impressum/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://motoseyir-app.com/impressum/en/"/>
+  </url>
+  <url>
+    <loc>https://motoseyir-app.com/impressum/en/</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://motoseyir-app.com/impressum/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://motoseyir-app.com/impressum/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://motoseyir-app.com/impressum/en/"/>
   </url>
 </urlset>

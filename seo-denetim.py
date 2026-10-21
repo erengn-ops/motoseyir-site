@@ -207,14 +207,18 @@ def main() -> int:
         if not getattr(p, "lang", None):
             hatalar.append(f"{rel}: <html lang> yok")
         dil = rel.split("/")[0] if rel.split("/")[0] in DILLER else "tr"
-        if rel.startswith("gizlilik/en/"):
+        if rel.startswith(("gizlilik/en/", "impressum/en/")):
             dil = "en"
+        elif rel.startswith(("gizlilik/de/", "impressum/")):
+            dil = "de"
         basliklar.setdefault((dil, title), []).append(rel)
         aciklamalar.setdefault((dil, desc), []).append(rel)
         # hreflang
         hl = {l["hreflang"]: l["href"] for l in p.links if l.get("rel") == "alternate" and "hreflang" in l}
         if rel.startswith("gizlilik/"):
-            beklenen = {"tr", "en", "x-default"}
+            beklenen = {"tr", "en", "de", "x-default"}
+        elif rel.startswith("impressum/"):
+            beklenen = {"de", "en", "x-default"}
         else:
             beklenen = set(DILLER) | {"x-default"}
         if set(hl) != beklenen:
@@ -251,9 +255,9 @@ def main() -> int:
             hatalar.append(f"{rel}: JSON-LD yok")
         elif "WebPage" not in tipler:
             hatalar.append(f"{rel}: JSON-LD'de WebPage yok")
-        if not rel.startswith("gizlilik/") and not {"Organization", "WebSite", "MobileApplication"} <= set(tipler):
+        if not rel.startswith(("gizlilik/", "impressum/")) and not {"Organization", "WebSite", "MobileApplication"} <= set(tipler):
             hatalar.append(f"{rel}: JSON-LD türleri eksik: {tipler}")
-        if rel not in ("index.html",) and not rel.endswith("/index.html") and not rel.startswith("gizlilik/") and "BreadcrumbList" not in tipler:
+        if rel not in ("index.html",) and not rel.endswith("/index.html") and not rel.startswith(("gizlilik/", "impressum/")) and "BreadcrumbList" not in tipler:
             hatalar.append(f"{rel}: BreadcrumbList yok")
         # görseller
         for im in p.imgs:
