@@ -18,7 +18,8 @@ ELLE DÜZENLENMEZ: kökteki ve dil klasörlerindeki sayfalar bu betiğin
 içine yazılır, sonra betik yeniden koşturulur.
 
 ELLE TUTULANLAR (betik dokunmaz): gizlilik/index.html (TR tam politika),
-gizlilik/en/index.html (İngilizce özet), indir/index.html, style.css, img/,
+gizlilik/en/index.html (İngilizce özet), gizlilik/de/index.html (Almanca),
+impressum/index.html (Almanca) ve impressum/en/index.html (Legal notice) — sitemap'e yine bu betik yazar, indir/index.html, style.css, img/,
 CNAME.
 """
 
@@ -164,8 +165,13 @@ def magaza_baglantisi(kod: str) -> str:
 
 
 def gizlilik_url(kod: str) -> str:
-    """Gizlilik politikası TR; İngilizce özeti ayrı sayfada."""
-    return "/gizlilik/en/" if kod == "en" else "/gizlilik/"
+    """Gizlilik politikası TR; İngilizce ve Almanca (21 Eki 2026) ayrı sayfalarda."""
+    return {"en": "/gizlilik/en/", "de": "/gizlilik/de/"}.get(kod, "/gizlilik/")
+
+
+def impressum_url(kod: str) -> str:
+    """Impressum / Legal notice (21 Eki 2026): Almanca asıl metin, İngilizce sayfalar İngilizcesine gider."""
+    return "/impressum/en/" if kod == "en" else "/impressum/"
 
 
 def alternatifler(dosya: str) -> str:
@@ -308,10 +314,15 @@ def sitemap() -> str:
             parca.extend(alt)
             parca.append("  </url>")
 
-    # Elle tutulan gizlilik sayfaları: TR tam metin + İngilizce özet.
-    for yol, esler in (
-        ("/gizlilik/", [("tr", "/gizlilik/"), ("en", "/gizlilik/en/")]),
-        ("/gizlilik/en/", [("tr", "/gizlilik/"), ("en", "/gizlilik/en/")]),
+    # Elle tutulan sayfalar: gizlilik (TR tam metin + EN + DE) ve Impressum (DE + EN).
+    GZ = [("tr", "/gizlilik/"), ("en", "/gizlilik/en/"), ("de", "/gizlilik/de/")]
+    IM = [("de", "/impressum/"), ("en", "/impressum/en/")]
+    for yol, esler, varsayilan in (
+        ("/gizlilik/", GZ, "/gizlilik/en/"),
+        ("/gizlilik/en/", GZ, "/gizlilik/en/"),
+        ("/gizlilik/de/", GZ, "/gizlilik/en/"),
+        ("/impressum/", IM, "/impressum/en/"),
+        ("/impressum/en/", IM, "/impressum/en/"),
     ):
         parca.append("  <url>")
         parca.append(f"    <loc>{ALAN}{yol}</loc>")
@@ -323,7 +334,7 @@ def sitemap() -> str:
                 f'    <xhtml:link rel="alternate" hreflang="{lang}" href="{ALAN}{hedef}"/>'
             )
         parca.append(
-            f'    <xhtml:link rel="alternate" hreflang="x-default" href="{ALAN}/gizlilik/en/"/>'
+            f'    <xhtml:link rel="alternate" hreflang="x-default" href="{ALAN}{varsayilan}"/>'
         )
         parca.append("  </url>")
 
@@ -509,6 +520,7 @@ def main() -> None:
                 "dil_altbilgi": dil_altbilgi(kod, dosya),
                 "store": magaza_baglantisi(kod),
                 "gizlilik_url": gizlilik_url(kod),
+                "impressum_url": impressum_url(kod),
                 "anasayfa_url": sayfa_yolu(kod, "index.html"),
                 "corider_url": sayfa_yolu(kod, "corider.html"),
                 "ozellikler_url": sayfa_yolu(kod, "ozellikler.html"),

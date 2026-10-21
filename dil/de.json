@@ -8,6 +8,7 @@
   "nav_nasil": "So geht’s",
   "nav_fiyat": "Preise",
   "nav_gizlilik": "Datenschutz",
+  "nav_impressum": "Impressum",
   "nav_yenilikler": "Neu",
   "nav_iletisim": "Kontakt",
   "dil_sec_etiket": "Sprache wählen",
@@ -20,7 +21,7 @@
   "footer_tum_ozellikler": "Alle Funktionen",
   "footer_haklar": "Alle Rechte vorbehalten.",
   "footer_diller": "Sprachen",
-  "gizlilik_tr_notu": " (TR)",
+  "gizlilik_tr_notu": "",
 
   "baslik": "Motorrad-Navigation und Routenplaner — Motoseyir",
   "aciklama": "Navigation für Motorradfahrer, die nach Kilometern rechnet: kürzeste Route, Nebenstraßen, Touren mit mehreren Stopps, Gruppenfahrt, Intercom und legendäre Routen. Motoseyir im App Store.",
@@ -131,7 +132,7 @@
   "g4": "Damit Test- und Aktionszeiträume nicht missbraucht werden, geht ein nicht umkehrbarer, anonymer Identitäts-Hash deines Geräts an unseren Server; dieser Hash identifiziert dich nicht.",
   "g5": "Schaltest du die Gruppenfahrt ein, wird dein letzter Standort nur während der Fahrt geteilt und danach gelöscht. Intercom-Ton wird nicht aufgezeichnet, sondern nur an die im Raum Anwesenden weitergegeben.",
   "g6": "Keine Werbung; mit keinem Werbenetzwerk werden Daten geteilt.",
-  "gizlilik_baglanti": "Vollständige Datenschutzerklärung online lesen (Türkisch) →",
+  "gizlilik_baglanti": "Vollständige Datenschutzerklärung online lesen →",
 
   "yeni_eyebrow": "Versionshinweise",
   "yeni_h2": "Was sich geändert hat",
