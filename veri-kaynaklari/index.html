@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Veri kaynakları ve atıflar — Motoseyir</title>
+<meta name="description" content="Motoseyir'in kullandığı harita, kabartma ve yer verilerinin kaynakları ve lisans atıfları.">
+<link rel="canonical" href="https://motoseyir-app.com/veri-kaynaklari/">
+<meta name="robots" content="index,follow">
+<link rel="icon" href="/img/favicon.png">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<style>body{margin:0;font:16px ui-sans-serif,-apple-system,sans-serif}</style>
+</head>
+<body>
+<style>
+  :root {
+    --paper: #F3F6F6;
+    --surface: #FFFFFF;
+    --line: #DCE4E5;
+    --ink: #13252C;
+    --ink-dim: #5C7078;
+    --accent: #0B6E7F;
+    --accent-soft: #E3F0F2;
+    --sans: ui-sans-serif, -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #0C1A20; --surface: #13272F; --line: #23414B;
+      --ink: #E6EFF0; --ink-dim: #93A9B1; --accent: #4BB3C7; --accent-soft: #123039;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #0C1A20; --surface: #13272F; --line: #23414B;
+    --ink: #E6EFF0; --ink-dim: #93A9B1; --accent: #4BB3C7; --accent-soft: #123039;
+  }
+
+  * { box-sizing: border-box; }
+  body { background: var(--paper); }
+
+  .page {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.65;
+    padding: clamp(28px, 6vw, 72px) clamp(20px, 6vw, 48px) 80px;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+  }
+  h1 { font-size: clamp(28px, 5vw, 40px); letter-spacing: -.025em; margin: 10px 0 4px; text-wrap: balance; }
+  h2 { font-size: 20px; letter-spacing: -.015em; margin: 0; text-wrap: balance; }
+  h3 { font-size: 16px; margin: 0; }
+  p, li { color: var(--ink-dim); margin: 0; }
+  p.lead { color: var(--ink); }
+  a { color: var(--accent); }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  .updated { font-family: var(--mono); font-size: 12px; color: var(--ink-dim); }
+
+  section {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: clamp(18px, 3vw, 26px);
+    margin-top: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  ul { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 7px; }
+
+  .summary { background: var(--accent-soft); border-color: transparent; }
+  .summary li { color: var(--ink); }
+
+  table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+  th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { font-family: var(--mono); font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-dim); font-weight: 600; }
+  td { color: var(--ink-dim); }
+  .tablewrap { overflow-x: auto; }
+
+  .contact { font-family: var(--mono); font-size: 15px; color: var(--ink); }
+  footer { margin-top: 26px; font-family: var(--mono); font-size: 12px; color: var(--ink-dim); }
+</style>
+<div class="page">
+  <div class="wrap">
+    <div class="eyebrow">Motoseyir · Motorcunun navigasyonu</div>
+    <h1>Veri kaynakları ve atıflar</h1>
+    <p class="updated">Son güncelleme: 23 Ekim 2026 · iOS ve Android · <span lang="en">Data sources and attributions (English below each section)</span></p>
+
+    <section>
+      <h2>Rota, arama ve hız kameraları</h2>
+      <p>© OpenStreetMap katkıcıları (ODbL) · Stadia Maps · Foursquare</p>
+      <p lang="en"><em>Routing, search and speed cameras:</em> © OpenStreetMap contributors (ODbL) · Stadia Maps · Foursquare</p>
+      <p><a href="https://www.openstreetmap.org/copyright">openstreetmap.org/copyright</a></p>
+    </section>
+
+    <section>
+      <h2>Çevrimdışı harita</h2>
+      <p>Harita verisi © OpenStreetMap katkıcıları (ODbL) · Protomaps · Yazı tipi: Noto Sans (SIL OFL 1.1) · Simgeler: Protomaps, tangrams/icons © 2017 Mapzen (MIT)</p>
+      <p lang="en"><em>Offline map:</em> Map data © OpenStreetMap contributors (ODbL) · Protomaps · Font: Noto Sans (SIL OFL 1.1) · Icons: Protomaps, tangrams/icons © 2017 Mapzen (MIT)</p>
+    </section>
+
+    <section>
+      <h2>Gezi haritası (video)</h2>
+      <p>Harita verisi © OpenStreetMap katkıcıları (ODbL) · Protomaps · Natural Earth (kamu malı) · Yazı tipi: Noto Sans (SIL OFL 1.1)</p>
+      <p>Kabartma (Mapzen, AWS Terrain Tiles): ArcticDEM (DigitalGlobe, Inc. imagery; NSF awards 1043681, 1559691, 1542736) · © Commonwealth of Australia (Geoscience Australia) 2017 · © offene Daten Österreichs – Digitales Geländemodell (DGM) Österreich · Contains information licensed under the Open Government Licence – Canada · Produced using Copernicus data and information funded by the European Union - EU-DEM layers · ETOPO1: DOC/NOAA/NESDIS/NCEI &gt; National Centers for Environmental Information, NESDIS, NOAA, U.S. Department of Commerce · Source: INEGI, Continental relief, 2016 · Copyright 2011 Crown copyright (c) Land Information New Zealand and the New Zealand Government (All rights reserved), CC BY 4.0 · © Kartverket · © Environment Agency copyright and/or database right 2015. All rights reserved. · 3DEP, GMTED2010 and SRTM data courtesy of the U.S. Geological Survey · Mapzen</p>
+      <p lang="en"><em>Trip map video:</em> map data © OpenStreetMap contributors (ODbL) · Protomaps · Natural Earth (public domain) · Font: Noto Sans (SIL OFL 1.1) · Terrain: the sources listed above (Mapzen, AWS Terrain Tiles).</p>
+    </section>
+
+    <section>
+      <h2>Yer listeleri ve fotoğraflar</h2>
+      <p>Keşfet ve rota üzerinde ara: OpenStreetMap (ODbL) · Foursquare Open Source Places, © 2024 Foursquare Labs, Inc., Apache 2.0 · Overture Maps Foundation (CDLA-Permissive-2.0) · Fotoğraflar: Wikimedia Commons katkıcıları (her fotoğrafın sahibi ve lisansı uygulamadaki kartta)</p>
+      <p lang="en"><em>Place lists and photos:</em> OpenStreetMap (ODbL) · Foursquare Open Source Places, © 2024 Foursquare Labs, Inc., Apache 2.0 · Overture Maps Foundation (CDLA-Permissive-2.0) · Photos: Wikimedia Commons contributors (author and licence shown on each card in the app)</p>
+      <p><a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a></p>
+    </section>
+
+    <footer>Motoseyir · Batuhan Eren Engin · İstanbul, Türkiye · <a href="/impressum/">Impressum</a> · <a href="/gizlilik/">Gizlilik</a></footer>
+  </div>
+</div>
+</body>
+</html>
