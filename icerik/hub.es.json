@@ -1,0 +1,34 @@
+{
+  "baslik": "Guías de moto: rutas, puertos y planificación",
+  "aciklama": "Guías para rutas en moto: puertos de montaña y planificación del viaje, con altitudes, distancias y fuentes citadas. Por el equipo de Motoseyir.",
+  "h1": "Guías de moto: rutas, puertos y planificación del viaje",
+  "eyebrow": "Guías",
+  "lead": "Adónde ir, cuándo está abierto un puerto y cómo montar el viaje. Las cifras salen de fuentes oficiales y de los datos de la app; lo que no hemos podido comprobar no se escribe.",
+  "guncelleme": "2026-10-25",
+  "ui": {
+    "rehber": "Guías",
+    "icindekiler": "En esta guía",
+    "yayin": "Publicado",
+    "guncelleme": "Actualizado",
+    "kaynaklar": "Fuentes",
+    "kaynaklar_not": "Las cifras proceden de las páginas siguientes y de los datos de Motoseyir. Las fechas de apertura y cierre de los puertos cambian cada año con la nieve; antes de salir, consulta el aviso vigente del gestor o de la administración de carreteras.",
+    "sss": "Preguntas frecuentes",
+    "ilgili": "Más guías",
+    "oku": "Leer la guía →",
+    "ekmek": "Ruta de navegación",
+    "tum_yazilar": "Todas las guías →",
+    "aylar": ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"],
+    "anasayfa_baglanti": "Guías: rutas, puertos y planificación del viaje →",
+    "tablo_etiket": "Tabla comparativa"
+  },
+  "urun": {
+    "h2": "Traza tu propia ruta",
+    "p": [
+      "En Motoseyir un viaje empieza con un punto de salida y otro de llegada, y las paradas intermedias las pones tú. Se añade una parada desde el buscador o con una pulsación larga en un punto libre del mapa, así que hasta un lugar sin nombre puede serlo. El orden lo cambias como quieras.",
+      "La app calcula por distancia más que por tiempo. El cálculo de ruta y la navegación son gratuitos e ilimitados en Turquía, Europa y Estados Unidos, y no hace falta cuenta. La interfaz de la app está en turco, inglés, alemán, francés e italiano; aquí damos los nombres de los botones en inglés."
+    ],
+    "ikincil": "Como punto de partida hay rutas ya preparadas en la pestaña Legendary: un toque y sus paradas se copian a tus tours, donde puedes cambiarlo todo.",
+    "gorsel": "tur",
+    "gorsel_alt": "Pantalla Generate a tour de Motoseyir: dial de dirección, longitud y nivel de curvas"
+  }
+}

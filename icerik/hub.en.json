@@ -1,0 +1,34 @@
+{
+  "baslik": "Motorcycle Guides: Routes, Passes, Trip Planning",
+  "aciklama": "Motorcycle route planning and mountain pass guides: heights, seasons, tolls and road notes for the Alps and beyond, with sources. From the Motoseyir team.",
+  "h1": "Motorcycle guides: routes, passes and trip planning",
+  "eyebrow": "Guides",
+  "lead": "Where to ride, when a pass is open and how to build the trip. Figures come from official sources and from the app’s own data; anything we could not verify is left out.",
+  "guncelleme": "2026-10-25",
+  "ui": {
+    "rehber": "Guides",
+    "icindekiler": "In this guide",
+    "yayin": "Published",
+    "guncelleme": "Updated",
+    "kaynaklar": "Sources",
+    "kaynaklar_not": "Figures were taken from the pages below and from Motoseyir’s own data. Opening and closing dates change every year with the snow, so check the operator’s or road authority’s current notice before you go.",
+    "sss": "Frequently asked questions",
+    "ilgili": "More guides",
+    "oku": "Read the guide →",
+    "ekmek": "Breadcrumb",
+    "tum_yazilar": "All guides →",
+    "aylar": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+    "anasayfa_baglanti": "Guides: routes, passes and trip planning →",
+    "tablo_etiket": "Comparison table"
+  },
+  "urun": {
+    "h2": "Draw your own trip",
+    "p": [
+      "In Motoseyir a trip starts with a start and an end point, and you place the stops in between yourself. Add a stop from the search box or by long-pressing an empty spot on the map, so even a place without a name can be a stop. Reorder the stops however you like.",
+      "The app plans by distance rather than time. Route calculation and navigation are free and unlimited in Turkey, Europe and the US, and you do not need an account."
+    ],
+    "ikincil": "If you want a starting point, ready-made routes are in the Legendary tab: tap one and its stops are copied into your trips, ready to edit.",
+    "gorsel": "tur",
+    "gorsel_alt": "Motoseyir’s Generate a tour screen: direction dial, tour length and curviness level"
+  }
+}

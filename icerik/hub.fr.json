@@ -1,0 +1,34 @@
+{
+  "baslik": "Guides moto : itinéraires, cols, préparation",
+  "aciklama": "Guides pour la balade moto : itinéraires, grands cols et préparation du circuit, avec altitudes, périodes d’ouverture et sources. Par l’équipe Motoseyir.",
+  "h1": "Guides moto : itinéraires, cols et préparation du circuit",
+  "eyebrow": "Guides",
+  "lead": "Où rouler, quand un col est ouvert et comment construire le circuit. Les chiffres viennent de sources officielles et des données de l’application ; ce que nous n’avons pas pu vérifier n’est pas écrit.",
+  "guncelleme": "2026-10-25",
+  "ui": {
+    "rehber": "Guides",
+    "icindekiler": "Dans ce guide",
+    "yayin": "Publié",
+    "guncelleme": "Mis à jour",
+    "kaynaklar": "Sources",
+    "kaynaklar_not": "Les chiffres viennent des pages ci-dessous et des données de Motoseyir. Les dates d’ouverture et de fermeture des cols changent chaque année avec la neige ; avant de partir, consultez l’avis en cours de l’exploitant ou du gestionnaire de la route.",
+    "sss": "Questions fréquentes",
+    "ilgili": "Autres guides",
+    "oku": "Lire le guide →",
+    "ekmek": "Fil d’Ariane",
+    "tum_yazilar": "Tous les guides →",
+    "aylar": ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"],
+    "anasayfa_baglanti": "Guides : itinéraires, cols et préparation du circuit →",
+    "tablo_etiket": "Tableau comparatif"
+  },
+  "urun": {
+    "h2": "Tracez votre circuit vous-même",
+    "p": [
+      "Dans Motoseyir, un circuit commence par un départ et une arrivée, et vous placez vous-même les étapes entre les deux. On ajoute une étape depuis la recherche ou par un appui long sur un point libre de la carte, même un lieu sans nom peut en être une. L’ordre se modifie comme vous voulez.",
+      "L’application calcule selon la distance plutôt que le temps. Le calcul d’itinéraire et la navigation sont gratuits et illimités en Turquie, en Europe et aux États-Unis, sans compte."
+    ],
+    "ikincil": "Pour un point de départ, des itinéraires prêts à l’emploi sont dans l’onglet Légendaires : un appui, et les étapes sont copiées dans vos tours, où vous pouvez tout changer.",
+    "gorsel": "tur",
+    "gorsel_alt": "L’écran Générer un circuit de Motoseyir : cadran de direction, longueur et niveau de virages"
+  }
+}

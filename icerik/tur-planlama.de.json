@@ -1,0 +1,105 @@
+{
+  "slug": "motorradtour-planen",
+  "sira": 1,
+  "baslik": "Motorradtour planen: Schritt für Schritt zur Route",
+  "aciklama": "Motorradtour planen: Tagesstrecke, Straßenart, Stopps, Tanken und Wetter. So baust du die Route im Motorrad-Routenplaner Motoseyir selbst auf.",
+  "h1": "Motorradtour planen: so gehst du Schritt für Schritt vor",
+  "eyebrow": "Tourenplanung",
+  "lead": "Eine gute Tour beginnt mit drei Fragen, noch bevor eine Linie auf der Karte liegt: Wie weit, auf welcher Straße, wo wird angehalten. Dieser Beitrag geht sie der Reihe nach durch und zeigt, wo jeder Schritt in der Motoseyir-App sitzt.",
+  "yayin": "2026-10-25",
+  "guncelleme": "2026-10-25",
+  "ozet": "Tagesstrecke, Straßenart, Stopps, Sprit und Wetter: die Schritte, mit denen du eine Motorradtour vor der Abfahrt aufbaust.",
+  "bolumler": [
+    {
+      "id": "ziel",
+      "h2": "Halte zuerst fest, wofür die Tour da ist",
+      "icerik": [
+        {"p": "Ein Nachmittag auf kurvigen Straßen und eine Passtour über drei Tage plant man nicht gleich. Bevor du die Karte öffnest, notiere drei Dinge: Wie viele Tage hast du, wie viele fahren mit, und was suchst du auf der Straße. Kurven, Küste und Alpenpässe sind drei verschiedene Ziele; alle in einen Tag zu pressen, macht die Tour meistens eher anstrengend als schön."},
+        {"p": "Entscheide früh, ob du allein oder in der Gruppe fährst. In der Gruppe bestimmt der langsamste Fahrer das Tempo, die Pausen werden länger, und der Plan braucht Luft."}
+      ]
+    },
+    {
+      "id": "strecke",
+      "h2": "Leite die Tagesstrecke aus der Fahrzeit ab",
+      "icerik": [
+        {"p": "Mit Kilometern anzufangen kann täuschen: Dieselben hundert Kilometer dauern auf der Autobahn eine Stunde und auf einer Bergstraße drei. Verlässlicher ist es, zuerst zu entscheiden, wie viele Stunden du an dem Tag fahren möchtest, und die Strecke daraus zu ermitteln."},
+        {"p": "Der Bildschirm Tour generieren in Motoseyir arbeitet so. Du wählst eine Tourlänge zwischen 30 und 300 km oder stattdessen eine Zeit, und die App rechnet die Stunden in Schritten von einer halben Stunde in eine Strecke um. Fahrzeit und Pausen sind getrennte Posten. Auch die Fahrtaufzeichnung trennt Bewegungszeit und echte Pausen, sodass die nächste Planung realistischer ausfällt."}
+      ]
+    },
+    {
+      "id": "strassenart",
+      "h2": "Wähle die Art der Straße",
+      "icerik": [
+        {"p": "Eine Route lässt sich in Motoseyir auf drei Arten aufbauen:"},
+        {"liste": [
+          "Kürzeste: der Standard. Die App vergleicht mehrere Alternativen zwischen denselben zwei Punkten und empfiehlt die mit den wenigsten Kilometern, auch wenn sie etwas länger dauert.",
+          "Nebenstraßen: meidet Autobahn und Mautstraßen und nutzt kleine Straßen. In der Türkei und in Griechenland wird die Route auf Motoseyirs eigenem Server berechnet (Pro).",
+          "Küste: sucht auf Touren Straßen entlang der Küstenlinie (Pro)."
+        ]},
+        {"p": "Auf großen Passstraßen wie in den Alpen ist die Hauptstraße ohnehin die Strecke, die du fahren willst; kleine Straßen zu suchen bringt dort meist wenig. Nebenstraßen lohnen sich dort, wo die Hauptstraßen voll und langweilig sind."}
+      ]
+    },
+    {
+      "id": "stopps",
+      "h2": "Setze die Stopps und prüfe die Reihenfolge",
+      "icerik": [
+        {"p": "Öffne die Tour mit Start und Ziel und füge die Stopps dazwischen hinzu. In Motoseyir gibt es dafür zwei Wege: ins Suchfeld oben tippen oder einen freien Punkt auf der Karte lange gedrückt halten. Auch eine Kurve, ein Aussichtspunkt oder eine Dorfkreuzung ohne Namen kann ein Stopp sein."},
+        {"p": "Bei einer Route mit mehreren Stopps ordnet die Schaltfläche Beste Reihenfolge (Pro) die Stopps nach der kürzesten Gesamtstrecke neu. Im Beispiel der App kommen dieselben vier Stopps in deiner Reihenfolge auf 57,1 km und in der gefundenen Reihenfolge auf 46,9 km; in einer Tour sind bis zu 26 Stopps möglich. Hat die Reihenfolge für dich einen Sinn, etwa wegen Mittagessen oder Sonnenuntergang, vergleiche sie mit deiner eigenen, bevor du den Vorschlag übernimmst."},
+        {"p": "Im Tab Entdecken stehen Buchten, Campingplätze, Essensorte, Tankstellen und Pässe rund um die Tour, jeweils mit Bewertung und dem nächsten Stopp. Ein Tipp macht den Eintrag zum Stopp (Pro)."}
+      ]
+    },
+    {
+      "id": "sprit-wetter",
+      "h2": "Sprit und Wetter",
+      "icerik": [
+        {"p": "Die Routenkarte zeigt den geschätzten Verbrauch schon vor der Abfahrt, in der Türkei in Litern, in den USA in Gallonen. Tippe auf den Verbrauchswert und gib den echten Wert deines Motorrads ein, dann passt sich die Schätzung an. Vor Berg- und abgelegenen Straßen lohnt es sich, den Tank zu füllen."},
+        {"p": "Fürs Wetter prüft die App vier Punkte der Route. Wird zu der Zeit, zu der du dort ankommst, Regen erwartet, warnt Motoseyir vorher; bei trockenem Wetter erscheint nichts auf dem Bildschirm. Kommt eine Warnung, kann es sinnvoll sein, die Abfahrtszeit zu verschieben."}
+      ]
+    },
+    {
+      "id": "gruppe",
+      "h2": "Wenn du in der Gruppe fährst",
+      "icerik": [
+        {"p": "Legt eine Person eine Gruppe an, entsteht ein einziger Code; alle treten damit bei und sehen einander auf der Route. Der Standort wird nur geteilt, solange eine Fahrtaufzeichnung oder Navigation läuft, und danach vom Server gelöscht. Einer Gruppe per Einladung oder Code beizutreten ist kostenlos, eine Gruppe anzulegen ist Pro."},
+        {"p": "Während eine Gruppenroute gefahren wird, fragt die Gegensprechfunktion einmal nach; stimmst du zu, geht deine Stimme nur an deine Gruppe und wird nicht aufgezeichnet. Ein Bluetooth-Helm lässt sich direkt verbinden."}
+      ]
+    },
+    {
+      "id": "checks",
+      "h2": "Fünf Kontrollen vor der Abfahrt",
+      "icerik": [
+        {"adimlar": [
+          "Speichere die Tour auf dem Telefon. Ein Online-Konto ist nicht nötig, die Touren bleiben auf dem Gerät.",
+          "Prüfe auf der Routenkarte die Spritschätzung für die längste Etappe.",
+          "Liegt ein hoher Pass auf der Route, finde heraus, in welchen Monaten er gesperrt ist. Die Passliste der App zeigt die Sperrmonate, wo sie bekannt sind.",
+          "Lies die Wetterwarnung und verschiebe bei Bedarf die Abfahrt.",
+          "Fährst du mit Freunden, teile die Tour per Code; der Empfänger öffnet ihn unter Mit Code und hat die Tour auf dem eigenen Telefon."
+        ]}
+      ]
+    }
+  ],
+  "sss": [
+    {"s": "Wie viele Kilometer pro Tag sollte ich für eine Motorradtour planen?", "c": "Eine feste Zahl gibt es nicht, denn dieselbe Strecke dauert je nach Straße sehr unterschiedlich. Lege zuerst fest, wie viele Stunden du fahren möchtest. In Motoseyir wählst du die Tourlänge in Kilometern oder in Stunden; bei Stunden rechnet die App in Schritten von einer halben Stunde in eine Strecke um."},
+    {"s": "Brauche ich ein Konto, um eine Tour zu planen?", "c": "Nein. Motoseyir fragt weder nach Name noch nach E-Mail oder Telefonnummer. Routenberechnung und Navigation sind in der Türkei, in Europa und in den USA kostenlos und unbegrenzt; im kostenlosen Tarif bleibt 1 gespeicherte Tour, unbegrenzte Touren gibt es mit Pro."},
+    {"s": "Wie viele Stopps passen in eine Tour?", "c": "Bis zu 26 Stopps in einer einzigen Tour. Bei einer Route mit mehreren Stopps ordnet Beste Reihenfolge (Pro) die Stopps nach der kürzesten Gesamtstrecke neu."}
+  ],
+  "kaynaklar": [
+    {"ad": "Motoseyir-Funktionsseite (Tour generieren, Beste Reihenfolge, Gruppenfahrt)", "url": "https://motoseyir-app.com/de/ozellikler.html"},
+    {"ad": "Motoseyir-Anleitung (Tour aufbauen)", "url": "https://motoseyir-app.com/de/nasil-yapilir.html"}
+  ],
+  "urun": {
+    "h2": "Zeichne die Tour in Motoseyir selbst",
+    "p": [
+      "In Motoseyir liegt der Plan bei dir: Du wählst Start und Ziel, setzt die Stopps selbst und änderst die Reihenfolge nach Belieben. Du kannst der App auch eine Richtung und eine Zeit nennen und eine Tour zeichnen lassen; es kommen drei Vorschläge, und gefallen sie dir nicht, fragst du nach einem anderen."
+    ],
+    "adimlar": [
+      "Gib in Meine Touren einen Namen ein und tippe auf Erstellen.",
+      "Füge Start, Ziel und die Stopps dazwischen hinzu, per Suche oder langem Druck auf die Karte.",
+      "Probiere bei mehreren Stopps Beste Reihenfolge (Pro); passt sie nicht, ordne von Hand um.",
+      "Tippe auf Starten; die Stopps gehen nacheinander an die Navigation."
+    ],
+    "ikincil": "Wenn du eine Idee brauchst: Im Tab Legendär liegen fertige Routen; ein Tipp, und die Stopps werden in deine Touren kopiert, wo du sie ändern kannst.",
+    "gorsel": "tur",
+    "gorsel_alt": "Der Bildschirm Tour generieren in Motoseyir: Richtungskreis, Tourlänge und Kurvigkeit"
+  }
+}

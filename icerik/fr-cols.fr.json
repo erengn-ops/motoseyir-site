@@ -1,0 +1,97 @@
+{
+  "slug": "balade-moto-grands-cols-france",
+  "sira": 7,
+  "baslik": "Balade moto : 4 grands cols de France, altitude et saison",
+  "aciklama": "Balade moto en France : Iseran, Galibier, Turini et Tourmalet avec altitude, période d’ouverture habituelle et repères de route. À tracer avec Motoseyir.",
+  "h1": "Balade moto : quatre grands cols de France",
+  "eyebrow": "Cols · France",
+  "lead": "L’Iseran et le Galibier dans les Alpes, le Turini au-dessus de Sospel, le Tourmalet dans les Pyrénées : leur altitude, la période où ils sont généralement ouverts et ce qu’il faut savoir avant de s’y engager. Chaque chiffre vient d’un office de tourisme, d’un exploitant ou de la Route des Grandes Alpes.",
+  "yayin": "2026-10-25",
+  "guncelleme": "2026-10-25",
+  "ozet": "Iseran, Galibier, Turini et Tourmalet : altitude, ouverture habituelle et repères pour préparer une balade moto sur les grands cols français.",
+  "bolumler": [
+    {
+      "id": "tableau",
+      "h2": "Quatre cols en un coup d’œil",
+      "icerik": [
+        {"p": "Les mois du tableau sont la période habituelle, telle que la donnent les offices de tourisme et les exploitants. Ce ne sont pas des promesses : la neige décide chaque année des dates réelles, et un orage de début d’été peut fermer un col un jour ou deux."},
+        {"tablo": {
+          "baslik_metni": "Quatre grands cols français à moto",
+          "baslik": ["Col", "Département", "Altitude", "Ouverture habituelle"],
+          "satirlar": [
+            ["Col de l’Iseran", "Savoie", "2 764 m (panneau au sommet : 2 770 m)", "Début juin à fin octobre"],
+            ["Col du Galibier", "Savoie / Hautes-Alpes", "2 642 m", "Juin à début octobre (Route des Grandes Alpes) ; fin mai à début novembre (Valloire Tourisme)"],
+            ["Col du Tourmalet", "Hautes-Pyrénées", "2 115 m", "Fermé généralement du 1er novembre au 31 mai"],
+            ["Col de Turini", "Alpes-Maritimes", "environ 1 600 m", "Aucune période de fermeture indiquée par la source"]
+          ],
+          "not": "Sources : Route des Grandes Alpes (Iseran, Galibier), Tourmalet Pic du Midi, Côte d’Azur France. L’office de tourisme du Turini donne 1 607 m dans le texte et 1 600 m dans l’en-tête de la fiche."
+        }}
+      ]
+    },
+    {
+      "id": "grandes-alpes",
+      "h2": "Route des Grandes Alpes : Iseran et Galibier",
+      "icerik": [
+        {"h3": "Col de l’Iseran"},
+        {"p": "Val d’Isère Tourisme le présente comme le plus haut col routier des Alpes. La Route des Grandes Alpes donne 2 764 m et précise que le panneau du sommet indique 2 770 m. Le col est généralement praticable de début juin à fin octobre. En 2026, il a ouvert peu avant midi le vendredi 12 juin, d’après Val d’Isère Tourisme."},
+        {"h3": "Col du Galibier"},
+        {"p": "Le Galibier culmine à 2 642 m, entre la Savoie et les Hautes-Alpes. Depuis Saint-Michel-de-Maurienne, il y a 34,8 km jusqu’au col et 2 085 m de dénivelé, par le col du Télégraphe et Valloire, selon Valloire Tourisme. La Route des Grandes Alpes parle d’une ouverture généralement de juin à début octobre, Valloire Tourisme de fin mai à début novembre, avec une fermeture possible plus tôt par mauvais temps. Pour 2026, l’ouverture du tunnel était attendue le 29 mai et celle de la section sommitale le 5 juin. Le Tour de France l’a franchi pour la première fois en 1911."},
+        {"p": "Deux cols des Alpes françaises, et pourtant une à deux semaines d’écart dans les dates d’ouverture 2026 : c’est une raison de plus de vérifier l’état de la route le matin même."}
+      ]
+    },
+    {
+      "id": "turini",
+      "h2": "Col de Turini, au-dessus de Sospel",
+      "icerik": [
+        {"p": "Le col de Turini, dans les Alpes-Maritimes, culmine autour de 1 600 m. La fiche de Côte d’Azur France note les nombreux lacets en épingle à cheveux et rappelle que le Rallye Monte-Carlo l’emprunte à chaque édition ou presque. Les concurrents le montent en général depuis Sospel avant de terminer vers La Bollène-Vésubie ; le Tour de France l’a aussi franchi à plusieurs reprises. La fiche ne donne pas le nombre de lacets ni de période de fermeture : vérifiez l’état de la route avant de partir."}
+      ]
+    },
+    {
+      "id": "tourmalet",
+      "h2": "Col du Tourmalet, dans les Pyrénées",
+      "icerik": [
+        {"p": "Avec 2 115 m, le Tourmalet est le plus haut col routier des Pyrénées françaises, selon Tourmalet Pic du Midi. La D918 le franchit entre Sainte-Marie-de-Campan à l’est et Luz-Saint-Sauveur à l’ouest : environ 17 km de montée côté est et environ 19 km côté ouest, avec une pente moyenne de 7,4 % des deux côtés. Le col est généralement fermé du 1er novembre au 31 mai ; l’hiver, la route fait partie du domaine skiable du Grand Tourmalet. C’est le col pyrénéen que le Tour de France emprunte le plus souvent, et la statue d’Octave Lapize, premier coureur à l’avoir franchi en 1910, se dresse au sommet. L’itinéraire prêt à l’emploi de Motoseyir va de Luz-Saint-Sauveur à Sainte-Marie-de-Campan par Barèges, le col et La Mongie, soit environ 36 km."}
+      ]
+    },
+    {
+      "id": "preparer",
+      "h2": "Préparer la journée",
+      "icerik": [
+        {"liste": [
+          "Vérifiez l’ouverture la veille et le matin même : les dates changent chaque année et un col peut fermer un jour de mauvais temps.",
+          "Prévoyez un itinéraire de repli au cas où le col serait fermé.",
+          "Faites le plein avant la montée.",
+          "Habillez-vous pour le sommet, pas pour la vallée : il fait nettement plus frais à 2 000 m qu’au départ."
+        ]}
+      ]
+    }
+  ],
+  "sss": [
+    {"s": "Quel est le plus haut col routier de France ?", "c": "Le col de l’Iseran. La Route des Grandes Alpes donne 2 764 m et précise que le panneau du sommet indique 2 770 m."},
+    {"s": "Quand le col du Tourmalet est-il ouvert ?", "c": "Il est généralement fermé du 1er novembre au 31 mai, les dates variant avec la météo, d’après Tourmalet Pic du Midi. En hiver, la route sert de piste au domaine du Grand Tourmalet."},
+    {"s": "Peut-on faire l’Iseran et le Galibier dans la même balade ?", "c": "Les deux cols se trouvent sur la Route des Grandes Alpes. L’Iseran est le plus haut des deux, 2 764 m contre 2 642 m. Comme leurs dates d’ouverture peuvent différer d’une à deux semaines, vérifiez les deux avant de partir."}
+  ],
+  "kaynaklar": [
+    {"ad": "Route des Grandes Alpes : col de l’Iseran", "url": "https://www.routedesgrandesalpes.com/grands-cols/iseran"},
+    {"ad": "Route des Grandes Alpes : col du Galibier", "url": "https://www.routedesgrandesalpes.com/grands-cols/col-du-galibier"},
+    {"ad": "Val d’Isère Tourisme : ouverture du col de l’Iseran", "url": "https://www.valdisere.com/en/press/press-releases/opening-of-the-col-de-liseran/"},
+    {"ad": "Valloire Tourisme : le col du Galibier", "url": "https://www.valloire.net/en/discover-Valloire/unavoidable/the-Galibier-pass/"},
+    {"ad": "Côte d’Azur France : col de Turini", "url": "https://cotedazurfrance.fr/offres/col-de-turini-moulinet-fr-3576714/"},
+    {"ad": "Tourmalet Pic du Midi : le col du Tourmalet", "url": "https://www.tourmaletpicdumidi.com/decouvrir/col-du-tourmalet/"}
+  ],
+  "urun": {
+    "h2": "Tracez la balade vous-même",
+    "p": [
+      "Dans Motoseyir, vous choisissez le départ et l’arrivée, vous placez les cols en étapes et vous réglez l’ordre. La carte des cols de montagne compte plus de 1 600 cols dans 36 pays, chacun avec son altitude, sa position et, quand elle est connue, sa période de fermeture."
+    ],
+    "adimlar": [
+      "Dans Mes tours, saisissez un nom et touchez Créer.",
+      "Ouvrez Mes tours → Légendaires → Cols de montagne, filtrez par région et ajoutez un col à votre tour.",
+      "Ajoutez le départ, l’arrivée et les étapes entre les deux, par la recherche ou un appui long sur la carte.",
+      "Touchez Démarrer ; les étapes sont transmises à la navigation dans l’ordre."
+    ],
+    "ikincil": "Quelques-unes de ces routes existent aussi en itinéraires prêts à l’emploi dans l’onglet Légendaires, par exemple le Galibier et l’Iseran, ainsi que le Turini et le Tourmalet : un appui, et les étapes sont copiées dans vos tours.",
+    "gorsel": "efsane",
+    "gorsel_alt": "L’onglet Légendaires de Motoseyir avec des itinéraires prêts à l’emploi et un aperçu de carte"
+  }
+}

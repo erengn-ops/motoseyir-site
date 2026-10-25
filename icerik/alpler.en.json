@@ -1,0 +1,142 @@
+{
+  "slug": "alpine-passes-motorcycle",
+  "sira": 2,
+  "baslik": "Alpine Passes by Motorcycle: Heights, Seasons, Tolls",
+  "aciklama": "Alpine passes by motorcycle: Iseran, Stelvio, Galibier, Gavia, Großglockner and more, with heights, usual open months, tolls and riding notes, all sourced.",
+  "h1": "Alpine passes by motorcycle: heights, seasons and tolls",
+  "eyebrow": "Passes · Alps",
+  "lead": "Ten of the Alps’ best-known pass roads side by side: how high they are, in which months they are usually open, what a motorcycle pays and what to watch for on the road. Every figure comes from the operator, a tourist board or an encyclopaedia, and each is listed under sources.",
+  "yayin": "2026-10-25",
+  "guncelleme": "2026-10-25",
+  "ozet": "Ten pass roads compared: height, usual open months, tolls and riding notes for Iseran, Stelvio, Galibier, Gavia, Großglockner and others.",
+  "bolumler": [
+    {
+      "id": "table",
+      "h2": "Ten Alpine passes at a glance",
+      "icerik": [
+        {"p": "The months in the table are the usual window, quoted from each operator or tourist board. They are not promises: snow decides the real dates every year, and early summer storms can close a pass for a day or two. The next section shows how much the dates move."},
+        {"tablo": {
+          "baslik_metni": "Ten Alpine passes by motorcycle",
+          "baslik": ["Pass", "Country", "Height", "Usual open months"],
+          "satirlar": [
+            ["Col de l’Iseran", "France", "2,764 m (summit sign: 2,770 m)", "Early June to late October"],
+            ["Stelvio Pass", "Italy", "2,758 m", "Late May to early November"],
+            ["Col du Galibier", "France", "2,642 m", "June to early October (Route des Grandes Alpes); late May to early November (Valloire Tourisme)"],
+            ["Passo di Gavia", "Italy", "2,621 m", "Early June to mid or late October"],
+            ["Großglockner High Alpine Road (Hochtor)", "Austria", "2,504 m", "Early May to early November"],
+            ["Nufenenpass", "Switzerland", "2,478 m", "Check the current notice"],
+            ["Timmelsjoch High Alpine Road", "Austria / Italy", "2,474 m", "Daily 07:00 to 20:00 while open"],
+            ["Furkapass", "Switzerland", "2,429 m", "June to October"],
+            ["Passo Pordoi (Dolomites)", "Italy", "2,239 m", "Open all year, but winter rules apply"],
+            ["Gotthardpass (Tremola)", "Switzerland", "2,106 m", "May to October"]
+          ],
+          "not": "Sources: Route des Grandes Alpes, Bormio Turismo, Valloire Tourisme, Grossglockner Hochalpenstraßen AG, Goms Tourismus, Timmelsjoch Hochalpenstraße, Switzerland Tourism, IDM Südtirol. Open months can differ by several weeks from year to year."
+        }}
+      ]
+    },
+    {
+      "id": "dates",
+      "h2": "When are the passes actually open?",
+      "icerik": [
+        {"p": "The usual window and the real date are different things. In 2026 the Col de l’Iseran opened shortly before midday on Friday 12 June, according to Val d’Isère Tourisme, while Valloire Tourisme expected the Galibier tunnel to open on 29 May and its summit section on 5 June. Two passes in the same part of the French Alps, with opening dates one to two weeks apart."},
+        {"p": "In the Dolomites the passes can close temporarily without warning when the weather turns, according to Arabba Fodom Turismo, and from 15 November to 15 April cars on the pass network must carry winter tyres or chains. IDM Südtirol says Passo Pordoi can be visited all year, though the winter rules above apply from mid-November."},
+        {"p": "In practice: pick a pass for midsummer or early autumn, keep one alternative route ready, and check the operator’s current notice on the morning you ride. The operator sites are listed under sources."}
+      ]
+    },
+    {
+      "id": "highest",
+      "h2": "The highest roads: Iseran and Stelvio",
+      "icerik": [
+        {"h3": "Col de l’Iseran (France)"},
+        {"p": "Val d’Isère Tourisme calls the Iseran the highest road pass in the Alps, and it is the high point of the Route des Grandes Alpes. The route association gives its height as 2,764 m and notes that the sign at the summit reads 2,770 m. It is usually passable from early June to late October. The route in Motoseyir’s Legendary list runs from Tarentaise through Val d’Isère into the Maurienne, about 79.5 km."},
+        {"h3": "Stelvio Pass (Italy)"},
+        {"p": "The Stelvio rises to 2,758 m according to Bormio Turismo. It is free to use and usually opens in late May and closes in early November, depending on snow. On the Prad side the road has 48 hairpin bends over 25 km, according to IDM Südtirol; Bormio Turismo counts 41 turns on the Lombard side from Bormio. Wikipedia describes it as the highest paved pass in the Eastern Alps."}
+      ]
+    },
+    {
+      "id": "france-italy",
+      "h2": "Galibier and Gavia",
+      "icerik": [
+        {"h3": "Col du Galibier (France)"},
+        {"p": "The Galibier stands at 2,642 m. From Saint-Michel-de-Maurienne it is 34.8 km to the pass, with 2,085 m of climbing, according to Valloire Tourisme; the road goes through the Col du Télégraphe and Valloire. The Tour de France first crossed it in 1911. On the south side the road continues over the Col du Lautaret towards Briançon."},
+        {"h3": "Passo di Gavia (Italy)"},
+        {"p": "At 2,621 m the Gavia connects Bormio and Ponte di Legno. Bormio Turismo warns that on the Valcamonica side the road narrows for about ten kilometres so that two oncoming cars cannot pass each other, and that there is an unlit tunnel after three hairpins. Take a clear visor, slow down for the tunnel and expect to give way to oncoming traffic."}
+      ]
+    },
+    {
+      "id": "austria",
+      "h2": "Austria: Großglockner and Timmelsjoch",
+      "icerik": [
+        {"h3": "Großglockner High Alpine Road"},
+        {"p": "The road runs 48 km from Fusch in Salzburg to Heiligenblut in Carinthia, with 36 hairpin bends. The Hochtor pass is at 2,504 m, and a spur road leads to the Edelweiß-Spitze at 2,571 m, the highest point you can drive to. The road is open from early May to early November. A motorcycle day ticket costs €36.50 in 2026 (€30 after 6 p.m.); from 15 October 2026 an autumn rate of €30 applies until the winter closure. Opening hours change through the season: for example 05:30 to 21:00 from 1 June to 31 August and 08:00 to 17:00 from 27 October."},
+        {"h3": "Timmelsjoch High Alpine Road"},
+        {"p": "The Timmelsjoch crosses the Austrian-Italian border at 2,474 m. The road is 11.9 km from Untergurgl to the summit and 22.7 km from the summit to Moos in Passeier. It is open daily from 07:00 to 20:00. For motorcycles a one-way ticket costs €18 and a return ticket €25 in 2026, valid on both the Austrian and the Italian side; the return is valid for the whole season."}
+      ]
+    },
+    {
+      "id": "switzerland",
+      "h2": "Switzerland: Nufenen, Furka and Gotthard",
+      "icerik": [
+        {"p": "The Nufenenpass is, at 2,478 m, the highest mountain pass lying entirely within Switzerland, according to Goms Tourismus; it connects Valais and Ticino and opened in 1969. The Furkapass reaches 2,429 m, connects Realp in Uri with Oberwald in Valais, and is usually open from June to October according to Switzerland Tourism. The Rhône Glacier ice grotto next to the road is open from June to mid-October, weather permitting."},
+        {"p": "The Gotthardpass is at 2,106 m, generally open from May to October. On its southern side the historic Tremola has 24 hairpin bends on cobblestones. Furka and Gotthard are two of the three passes you can join in one loop with Susten and Grimsel; see the <a href=\"{@uc-gecit}\">Furka, Grimsel and Susten loop guide</a>."}
+      ]
+    },
+    {
+      "id": "dolomites",
+      "h2": "The Dolomites: Sellaronda and Pordoi",
+      "icerik": [
+        {"p": "The Sellaronda circles the Sella massif over four passes, Gardena, Sella, Pordoi and Campolongo. Alta Badia lists the loop at 50.7 km, ridden anti-clockwise from Corvara. Passo Pordoi, at 2,239 m, links the Val di Fassa in Trentino with Buchenstein in Belluno. In summer the road is busiest between 9 a.m. and 12 noon, so IDM Südtirol suggests visiting outside those hours."}
+      ]
+    },
+    {
+      "id": "plan",
+      "h2": "Putting passes into a ride",
+      "icerik": [
+        {"liste": [
+          "Stelvio, Gavia and Bormio sit close together; Bormio is a natural base for both.",
+          "Furka, Grimsel and Susten make a single 120 km loop from Andermatt; see the <a href=\"{@uc-gecit}\">loop guide</a>.",
+          "Galibier and Iseran are both on the Route des Grandes Alpes; the Iseran is the higher one.",
+          "Leave a day open for weather. A forecast that is clean in the valley can still mean snow on a pass at 2,500 m."
+        ]}
+      ]
+    }
+  ],
+  "sss": [
+    {"s": "Which is the highest Alpine pass for motorcycles?", "c": "The Col de l’Iseran in France: Route des Grandes Alpes gives 2,764 m, and the sign at the summit reads 2,770 m. The Stelvio is a few metres lower at 2,758 m according to Bormio Turismo, and it is the highest paved pass in the Eastern Alps."},
+    {"s": "When are the Alpine passes open?", "c": "Most of the high passes are usually open from late May or June to October, but the exact dates change every year with the snow. In 2026 the Iseran opened on 12 June. Check the operator’s current notice before you ride."},
+    {"s": "Do motorcycles pay tolls on Alpine passes?", "c": "On some. In 2026 the Großglockner High Alpine Road charges €36.50 for a motorcycle day ticket, and the Timmelsjoch charges €18 one way or €25 return. The Stelvio is free to use."}
+  ],
+  "kaynaklar": [
+    {"ad": "Route des Grandes Alpes: Col de l’Iseran", "url": "https://www.routedesgrandesalpes.com/grands-cols/iseran"},
+    {"ad": "Val d’Isère Tourisme: opening of the Col de l’Iseran", "url": "https://www.valdisere.com/en/press/press-releases/opening-of-the-col-de-liseran/"},
+    {"ad": "Bormio Turismo: Stelvio Pass, Bormio side", "url": "https://www.bormio.eu/en/pois/stelvio-pass-bormio-mountainside"},
+    {"ad": "Bormio Turismo: Gavia Pass", "url": "https://www.bormio.eu/en/pois/gavia-pass"},
+    {"ad": "IDM Südtirol: Stelvio tour from Prad", "url": "https://www.suedtirol.info/en/en/experiences-and-events/plp-experiences/experiences-south-tyrol/pdp-experience.smgpoie5a44a21ea25eb190b69ada46443f3c2.stelvio-tour.prato--prad"},
+    {"ad": "Valloire Tourisme: the Galibier pass", "url": "https://www.valloire.net/en/discover-Valloire/unavoidable/the-Galibier-pass/"},
+    {"ad": "Grossglockner Hochalpenstraßen AG: prices and opening times", "url": "https://www.grossglockner.at/en/for-your-visit/prices-opening-times"},
+    {"ad": "Timmelsjoch Hochalpenstraße: road and tariffs", "url": "https://www.timmelsjoch.com/de/timmelsjoch-hochalpenstrasse/"},
+    {"ad": "Timmelsjoch Hochalpenstraße: tariffs", "url": "https://www.timmelsjoch.com/de/timmelsjoch-tarife/"},
+    {"ad": "Switzerland Tourism: Furka Pass", "url": "https://www.myswitzerland.com/en/experiences/furka-pass/"},
+    {"ad": "Goms Tourismus: Nufenen", "url": "https://www.goms.ch/en/nufenen"},
+    {"ad": "Switzerland Tourism: Gotthard Pass and the Tremola", "url": "https://www.myswitzerland.com/de/erlebnisse/st-gotthard-pass-nostalgie-tremola/"},
+    {"ad": "Alta Badia: Sellaronda tour", "url": "https://www.altabadia.org/en/bike/cycling-tours-dolomites/detail/oa/sellaronda-road-bike-tour"},
+    {"ad": "IDM Südtirol: Pordoijoch", "url": "https://www.suedtirol.info/en/en/information/mobility/mountain-passes-in-south-tyrol/pordoijoch-pass"},
+    {"ad": "Arabba Fodom Turismo: Dolomite passes traffic information", "url": "https://www.arabba.it/en/info-events/infrastructure-useful-information/traffic-mountain-passes/80-0.html"},
+    {"ad": "Stelvio Pass, Wikipedia", "url": "https://en.wikipedia.org/wiki/Stelvio_Pass"}
+  ],
+  "urun": {
+    "h2": "Pick the passes, draw the ride yourself",
+    "p": [
+      "Motoseyir’s pass map holds more than 1,600 mountain passes in 36 countries, each with its height and location, and the closing months where they are known. You choose your start and end, add the passes you want as stops, and set the order yourself. A long press on the map also lets you add a place without a name."
+    ],
+    "adimlar": [
+      "Open My Tours → Legendary → Mountain passes and filter by region, for example the Alps.",
+      "Look at the height and the closed months, and add a pass to your tour.",
+      "Add your start, your end and the stops in between.",
+      "Tap Start; the stops are handed to navigation in order."
+    ],
+    "ikincil": "Several of the roads above also exist as ready-made routes in the Legendary tab, including Stelvio, Großglockner and Galibier. Tap one and it is copied into your tours, where you can change it.",
+    "gorsel": "efsane",
+    "gorsel_alt": "Motoseyir’s Legendary tab with ready-made routes and a map preview for each"
+  }
+}

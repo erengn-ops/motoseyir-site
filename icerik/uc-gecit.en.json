@@ -1,0 +1,90 @@
+{
+  "slug": "furka-grimsel-susten-loop",
+  "sira": 3,
+  "baslik": "Furka, Grimsel, Susten: the Swiss Three-Pass Loop",
+  "aciklama": "The Furka, Grimsel and Susten loop by motorcycle: 120 km from Andermatt, pass heights, the order of the climbs, season and what to see on the way.",
+  "h1": "Furka, Grimsel and Susten: the Swiss three-pass loop by motorcycle",
+  "eyebrow": "Loop · Switzerland",
+  "lead": "Three passes in one loop of about 120 km from Andermatt: Susten, Grimsel and Furka. Here is the order of the climbs, how high each one goes, when the roads are open and which stops are worth the time.",
+  "yayin": "2026-10-25",
+  "guncelleme": "2026-10-25",
+  "ozet": "The loop from Andermatt in order: Susten, Grimsel and Furka with heights, season and the stops along the way.",
+  "bolumler": [
+    {
+      "id": "loop",
+      "h2": "The loop at a glance",
+      "icerik": [
+        {"p": "Luzern Tourismus lists the loop from Andermatt at 120.16 km, ridden clockwise, with the route file also offered in the reverse direction. The roads are closed in winter, and the page marks the loop as weather dependent."},
+        {"tablo": {
+          "baslik_metni": "The three passes of the loop",
+          "baslik": ["Pass", "Height", "Connects", "Note"],
+          "satirlar": [
+            ["Sustenpass", "2,224 m at the road’s high point", "Wassen (Uri) and Innertkirchen (Bern)", "Short summit tunnel; often closed from early November to June"],
+            ["Grimselpass", "2,164 m", "Bern and Valais", "Watershed between the North Sea and the Mediterranean"],
+            ["Furkapass", "2,429 m", "Realp (Uri) and Oberwald (Valais)", "Usually open June to October; Rhône Glacier ice grotto"]
+          ],
+          "not": "Sources: Luzern Tourismus (length, order), Switzerland Tourism (Furka, Susten), Wikipedia (heights of Susten and Grimsel, watershed). Wikipedia gives 2,260 m for the Susten pass itself and 2,224 m for the road, which passes through a 300 m tunnel."
+        }}
+      ]
+    },
+    {
+      "id": "order",
+      "h2": "The order of the climbs",
+      "icerik": [
+        {"p": "Clockwise, the loop begins in Andermatt, drops through the Schöllenen gorge past the Devil’s Bridge to Wassen, and climbs through the Meiental to the Sustenpass. It then descends to Innertkirchen, climbs to the Grimselpass, passes Gletsch and climbs the Furkapass. It ends with a fast descent through Realp and the Urserntal back to Andermatt, according to Luzern Tourismus."},
+        {"h3": "Susten"},
+        {"p": "The Susten road is 46 km long, with a 27 km climb on the Innertkirchen side and 17.7 km on the Wassen side, according to Wikipedia. Switzerland Tourism calls it the first pass road purpose-built for vehicular traffic. It ends in a short tunnel at the top, and it is one of the last Swiss roads cleared of snow."},
+        {"h3": "Grimsel"},
+        {"p": "At 2,164 m the Grimsel crosses the continental divide: water north of it reaches the North Sea via the Aare and Rhine, water south of it reaches the Mediterranean via the Rhône. The route page names the Grimselsee near the pass."},
+        {"h3": "Furka"},
+        {"p": "The Furka is the highest of the three at 2,429 m. The route page names the Hotel Belvédère just before the summit and the James Bond curve, known from the film Goldfinger. On the Furka, the Rhône Glacier ice grotto is open from June to mid-October, weather permitting, according to Switzerland Tourism."}
+      ]
+    },
+    {
+      "id": "season",
+      "h2": "Season and planning",
+      "icerik": [
+        {"p": "Luzern Tourismus says the passes are closed in winter and the loop depends on the weather. Furka is usually open from June to October; Susten is often closed from early November until June. Plan the loop for summer or early autumn and check the current road notices on the morning you ride."},
+        {"liste": [
+          "Direction: the suggested direction is clockwise from Andermatt. Reverse is also possible, with the same roads.",
+          "Food and drink: there are food stops on the way. Carry water for the climbs anyway.",
+          "Weather: conditions change quickly in the Alps. Look at the forecast the evening before and again at breakfast."
+        ]}
+      ]
+    },
+    {
+      "id": "more",
+      "h2": "Where this loop fits",
+      "icerik": [
+        {"p": "Furka is also one of the ten roads in our comparison of <a href=\"{@alpler}\">Alpine passes by motorcycle</a>, with heights, tolls and usual open months for the others."}
+      ]
+    }
+  ],
+  "sss": [
+    {"s": "How long is the Furka, Grimsel and Susten loop?", "c": "Luzern Tourismus lists the loop from Andermatt at 120.16 km. It is a clockwise circle: Andermatt, Susten, Innertkirchen, Grimsel, Gletsch, Furka, back to Andermatt."},
+    {"s": "In which months is the three-pass loop open?", "c": "The passes are closed in winter. Switzerland Tourism says Furka is usually open from June to October and that Susten is often closed from early November until June. Exact dates depend on the snow, so check the current notice."},
+    {"s": "Which of the three passes is the highest?", "c": "The Furka, at 2,429 m. The Grimsel is at 2,164 m, and the Susten road reaches 2,224 m at its high point."}
+  ],
+  "kaynaklar": [
+    {"ad": "Luzern Tourismus: The High Triple, Susten, Grimsel, Furka", "url": "https://www.luzern.com/de/tour/the-high-triple-susten-grimsel-furka"},
+    {"ad": "Switzerland Tourism: Furka Pass", "url": "https://www.myswitzerland.com/en/experiences/furka-pass/"},
+    {"ad": "Switzerland Tourism: Susten Pass", "url": "https://www.myswitzerland.com/en-us/destinations/susten-pass/"},
+    {"ad": "Grimsel Pass, Wikipedia", "url": "https://en.wikipedia.org/wiki/Grimsel_Pass"},
+    {"ad": "Susten Pass, Wikipedia", "url": "https://en.wikipedia.org/wiki/Susten_Pass"}
+  ],
+  "urun": {
+    "h2": "Draw the loop yourself",
+    "p": [
+      "In Motoseyir you set the start and the end and add the stops yourself. For this loop that means Andermatt as both start and end, with Wassen, Innertkirchen and Gletsch as stops in between to keep the route on the pass roads. Reorder the stops if you want to ride it the other way round."
+    ],
+    "adimlar": [
+      "On My Tours, type a name and tap Create.",
+      "Add Andermatt as start and end, then Wassen, Innertkirchen and Gletsch as stops.",
+      "Look at the pass list for the heights and closed months of Susten, Grimsel and Furka.",
+      "Tap Start; the stops are handed to navigation in order."
+    ],
+    "ikincil": "A ready-made route for this loop sits in the Legendary tab under Furka · Grimsel · Susten; tap it and its stops are copied into your tours.",
+    "gorsel": "efsane",
+    "gorsel_alt": "Motoseyir’s Legendary tab with ready-made routes and a map preview for each"
+  }
+}

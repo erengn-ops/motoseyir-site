@@ -1,0 +1,34 @@
+{
+  "baslik": "Guide moto: percorsi, passi, pianificazione",
+  "aciklama": "Guide per i percorsi in moto: passi alpini e pianificazione del giro, con quote, periodi di apertura e fonti citate. A cura del team Motoseyir.",
+  "h1": "Guide moto: percorsi, passi e pianificazione del giro",
+  "eyebrow": "Guide",
+  "lead": "Dove andare, quando un passo è aperto e come costruire il giro. I numeri vengono da fonti ufficiali e dai dati dell’app; ciò che non abbiamo potuto verificare non è scritto.",
+  "guncelleme": "2026-10-25",
+  "ui": {
+    "rehber": "Guide",
+    "icindekiler": "In questa guida",
+    "yayin": "Pubblicato",
+    "guncelleme": "Aggiornato",
+    "kaynaklar": "Fonti",
+    "kaynaklar_not": "I numeri vengono dalle pagine qui sotto e dai dati di Motoseyir. Le date di apertura e chiusura dei passi cambiano ogni anno con la neve: prima di partire controlla l’avviso aggiornato del gestore o dell’ente stradale.",
+    "sss": "Domande frequenti",
+    "ilgili": "Altre guide",
+    "oku": "Leggi la guida →",
+    "ekmek": "Percorso di navigazione",
+    "tum_yazilar": "Tutte le guide →",
+    "aylar": ["gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno", "luglio", "agosto", "settembre", "ottobre", "novembre", "dicembre"],
+    "anasayfa_baglanti": "Guide: percorsi, passi e pianificazione del giro →",
+    "tablo_etiket": "Tabella di confronto"
+  },
+  "urun": {
+    "h2": "Traccia il giro da solo",
+    "p": [
+      "In Motoseyir un giro parte da un punto di partenza e uno di arrivo, e le tappe in mezzo le metti tu. Una tappa si aggiunge dalla ricerca o con una pressione lunga su un punto libero della mappa, anche un luogo senza nome può esserlo. L’ordine lo cambi come vuoi.",
+      "L’app calcola in base alla distanza più che al tempo. Calcolo del percorso e navigazione sono gratuiti e illimitati in Turchia, in Europa e negli Stati Uniti, senza account."
+    ],
+    "ikincil": "Come punto di partenza ci sono anche percorsi già pronti nella scheda Leggendarie: un tocco, e le tappe vengono copiate nei tuoi tour, dove puoi modificare tutto.",
+    "gorsel": "tur",
+    "gorsel_alt": "La schermata Genera un giro di Motoseyir: quadrante della direzione, lunghezza e livello di curve"
+  }
+}

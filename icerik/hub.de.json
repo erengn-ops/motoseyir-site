@@ -1,0 +1,34 @@
+{
+  "baslik": "Motorrad-Ratgeber: Routen, Pässe, Tourenplanung",
+  "aciklama": "Motorrad-Ratgeber zu Routen, Alpenpässen und Tourenplanung: Höhen, Saison, Maut und Streckenhinweise, jeweils mit Quelle belegt. Vom Motoseyir-Team.",
+  "h1": "Motorrad-Ratgeber: Routen, Pässe und Tourenplanung",
+  "eyebrow": "Ratgeber",
+  "lead": "Wohin die Fahrt geht, wann ein Pass offen ist und wie du die Tour aufbaust. Die Zahlen stammen aus offiziellen Quellen und aus den Daten der App; was wir nicht prüfen konnten, steht nicht drin.",
+  "guncelleme": "2026-10-25",
+  "ui": {
+    "rehber": "Ratgeber",
+    "icindekiler": "In diesem Beitrag",
+    "yayin": "Veröffentlicht",
+    "guncelleme": "Aktualisiert",
+    "kaynaklar": "Quellen",
+    "kaynaklar_not": "Die Angaben stammen von den folgenden Seiten und aus den Daten von Motoseyir. Öffnungs- und Schließtermine der Pässe ändern sich jedes Jahr mit dem Schnee; prüfe vor der Abfahrt die aktuelle Meldung des Betreibers oder der Straßenverwaltung.",
+    "sss": "Häufige Fragen",
+    "ilgili": "Weitere Beiträge",
+    "oku": "Beitrag lesen →",
+    "ekmek": "Seitenpfad",
+    "tum_yazilar": "Alle Beiträge →",
+    "aylar": ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"],
+    "anasayfa_baglanti": "Ratgeber: Routen, Pässe und Tourenplanung →",
+    "tablo_etiket": "Vergleichstabelle"
+  },
+  "urun": {
+    "h2": "Zeichne deine Tour selbst",
+    "p": [
+      "In Motoseyir beginnt eine Tour mit Start und Ziel, und die Stopps dazwischen setzt du selbst. Einen Stopp fügst du über die Suche oder per langem Druck auf einen freien Punkt der Karte hinzu, auch ein Ort ohne Namen kann Stopp sein. Die Reihenfolge änderst du, wie du willst.",
+      "Die App rechnet nach Strecke statt nach Zeit. Routenberechnung und Navigation sind in der Türkei, in Europa und in den USA kostenlos und unbegrenzt; ein Konto brauchst du nicht."
+    ],
+    "ikincil": "Als Startpunkt gibt es auch fertige Routen im Tab Legendär: Ein Tipp, und die Stopps landen in deinen Touren, wo du alles ändern kannst.",
+    "gorsel": "tur",
+    "gorsel_alt": "Der Bildschirm Tour generieren in Motoseyir: Richtungskreis, Tourlänge und Kurvigkeit"
+  }
+}

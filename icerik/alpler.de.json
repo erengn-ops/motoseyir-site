@@ -1,0 +1,142 @@
+{
+  "slug": "alpenpaesse-motorrad",
+  "sira": 2,
+  "baslik": "Alpenpässe mit dem Motorrad: Höhe, Saison, Maut",
+  "aciklama": "Alpenpässe mit dem Motorrad: Iseran, Stilfser Joch, Galibier, Gavia, Großglockner und mehr mit Höhe, üblicher Saison, Maut und Fahrhinweisen, alles belegt.",
+  "h1": "Alpenpässe mit dem Motorrad: Höhe, Saison und Maut",
+  "eyebrow": "Pässe · Alpen",
+  "lead": "Zehn bekannte Passstraßen der Alpen nebeneinander: wie hoch sie sind, in welchen Monaten sie üblicherweise offen sind, was ein Motorrad zahlt und worauf du auf der Straße achten solltest. Jede Zahl stammt vom Betreiber, von einer Tourismusorganisation oder aus einer Enzyklopädie und steht unter den Quellen.",
+  "yayin": "2026-10-25",
+  "guncelleme": "2026-10-25",
+  "ozet": "Zehn Passstraßen im Vergleich: Höhe, übliche Öffnungsmonate, Maut und Fahrhinweise zu Iseran, Stilfser Joch, Galibier, Gavia, Großglockner und weiteren.",
+  "bolumler": [
+    {
+      "id": "tabelle",
+      "h2": "Zehn Alpenpässe auf einen Blick",
+      "icerik": [
+        {"p": "Die Monate in der Tabelle sind das übliche Fenster, so wie Betreiber und Tourismusorganisationen es nennen. Versprechen sind sie nicht: Der Schnee bestimmt jedes Jahr die tatsächlichen Termine, und Unwetter im Frühsommer können einen Pass für ein oder zwei Tage sperren. Wie stark die Termine schwanken, zeigt der nächste Abschnitt."},
+        {"tablo": {
+          "baslik_metni": "Zehn Alpenpässe für Motorradfahrer",
+          "baslik": ["Pass", "Land", "Höhe", "Übliche Öffnungsmonate"],
+          "satirlar": [
+            ["Col de l’Iseran", "Frankreich", "2.764 m (Schild am Gipfel: 2.770 m)", "Anfang Juni bis Ende Oktober"],
+            ["Stilfser Joch (Passo dello Stelvio)", "Italien", "2.758 m", "Ende Mai bis Anfang November"],
+            ["Col du Galibier", "Frankreich", "2.642 m", "Juni bis Anfang Oktober (Route des Grandes Alpes); Ende Mai bis Anfang November (Valloire Tourisme)"],
+            ["Gaviapass (Passo di Gavia)", "Italien", "2.621 m", "Anfang Juni bis Mitte oder Ende Oktober"],
+            ["Großglockner-Hochalpenstraße (Hochtor)", "Österreich", "2.504 m", "Anfang Mai bis Anfang November"],
+            ["Nufenenpass", "Schweiz", "2.478 m", "Aktuelle Meldung prüfen"],
+            ["Timmelsjoch-Hochalpenstraße", "Österreich / Italien", "2.474 m", "Täglich 7:00 bis 20:00 Uhr, solange geöffnet"],
+            ["Furkapass", "Schweiz", "2.429 m", "Juni bis Oktober"],
+            ["Pordoijoch (Dolomiten)", "Italien", "2.239 m", "Ganzjährig befahrbar, im Winter gelten Regeln"],
+            ["Gotthardpass (Tremola)", "Schweiz", "2.106 m", "Mai bis Oktober"]
+          ],
+          "not": "Quellen: Route des Grandes Alpes, Bormio Turismo, Valloire Tourisme, Grossglockner Hochalpenstraßen AG, Goms Tourismus, Timmelsjoch Hochalpenstraße, Schweiz Tourismus, IDM Südtirol. Die Öffnungsmonate können von Jahr zu Jahr um mehrere Wochen abweichen."
+        }}
+      ]
+    },
+    {
+      "id": "termine",
+      "h2": "Wann sind die Pässe wirklich offen?",
+      "icerik": [
+        {"p": "Das übliche Fenster und das tatsächliche Datum sind zwei verschiedene Dinge. Der Col de l’Iseran öffnete 2026 laut Val d’Isère Tourisme kurz vor Mittag am Freitag, dem 12. Juni, während Valloire Tourisme den Galibier-Tunnel für den 29. Mai und den Gipfelabschnitt für den 5. Juni erwartete. Zwei Pässe im selben Teil der französischen Alpen, mit ein bis zwei Wochen Abstand beim Öffnungstermin."},
+        {"p": "In den Dolomiten können die Pässe bei Wetterumschwung vorübergehend und ohne Vorwarnung gesperrt werden, so Arabba Fodom Turismo; vom 15. November bis 15. April müssen Autos im Passnetz Winterreifen oder Schneeketten haben. Das Pordoijoch ist laut IDM Südtirol ganzjährig zu besuchen, wobei ab Mitte November die genannten Winterregeln gelten."},
+        {"p": "Praktisch heißt das: Wähle einen Pass für Hochsommer oder Frühherbst, halte eine Ausweichroute bereit und prüfe am Morgen der Fahrt die aktuelle Meldung des Betreibers. Die Betreiberseiten stehen unter den Quellen."}
+      ]
+    },
+    {
+      "id": "hoechste",
+      "h2": "Die höchsten Straßen: Iseran und Stilfser Joch",
+      "icerik": [
+        {"h3": "Col de l’Iseran (Frankreich)"},
+        {"p": "Val d’Isère Tourisme nennt den Iseran den höchsten Straßenpass der Alpen; er ist der höchste Punkt der Route des Grandes Alpes. Der Routenverband gibt die Höhe mit 2.764 m an und weist darauf hin, dass das Schild am Gipfel 2.770 m zeigt. Üblicherweise ist der Pass von Anfang Juni bis Ende Oktober befahrbar. Die Route in Motoseyirs Liste Legendär führt von der Tarentaise über Val d’Isère in die Maurienne, rund 79,5 km."},
+        {"h3": "Stilfser Joch (Italien)"},
+        {"p": "Das Stilfser Joch steigt laut Bormio Turismo auf 2.758 m. Es ist gebührenfrei und öffnet üblicherweise Ende Mai und schließt Anfang November, je nach Schnee. Auf der Prader Seite hat die Straße 48 Kehren auf 25 km, so IDM Südtirol; Bormio Turismo zählt auf der lombardischen Seite ab Bormio 41 Kehren. Die Wikipedia beschreibt es als höchsten befestigten Pass der Ostalpen."}
+      ]
+    },
+    {
+      "id": "frankreich-italien",
+      "h2": "Galibier und Gavia",
+      "icerik": [
+        {"h3": "Col du Galibier (Frankreich)"},
+        {"p": "Der Galibier liegt auf 2.642 m. Von Saint-Michel-de-Maurienne sind es laut Valloire Tourisme 34,8 km bis zum Pass mit 2.085 m Anstieg; die Straße führt über den Col du Télégraphe und durch Valloire. Die Tour de France überquerte ihn erstmals 1911. Auf der Südseite geht die Straße über den Col du Lautaret weiter Richtung Briançon."},
+        {"h3": "Gaviapass (Italien)"},
+        {"p": "Der Gaviapass verbindet auf 2.621 m Bormio und Ponte di Legno. Bormio Turismo weist darauf hin, dass die Straße auf der Seite zum Val Camonica auf etwa zehn Kilometern so schmal wird, dass zwei entgegenkommende Autos nicht aneinander vorbeikommen, und dass nach drei Kehren ein unbeleuchteter Tunnel folgt. Fahre mit klarem Visier, nimm im Tunnel Tempo heraus und rechne damit, Gegenverkehr durchzulassen."}
+      ]
+    },
+    {
+      "id": "oesterreich",
+      "h2": "Österreich: Großglockner und Timmelsjoch",
+      "icerik": [
+        {"h3": "Großglockner-Hochalpenstraße"},
+        {"p": "Die Straße führt 48 km von Fusch in Salzburg nach Heiligenblut in Kärnten und hat 36 Kehren. Das Hochtor liegt auf 2.504 m; eine Stichstraße führt zur Edelweiß-Spitze auf 2.571 m, dem höchsten befahrbaren Punkt. Die Straße ist von Anfang Mai bis Anfang November geöffnet. Das Motorrad-Tagesticket kostet 2026 36,50 € (30 € nach 18 Uhr); ab dem 15. Oktober 2026 gilt bis zur Wintersperre ein Herbsttarif von 30 €. Die Öffnungszeiten wechseln im Lauf der Saison: zum Beispiel 5:30 bis 21:00 Uhr vom 1. Juni bis 31. August und 8:00 bis 17:00 Uhr ab dem 27. Oktober."},
+        {"h3": "Timmelsjoch-Hochalpenstraße"},
+        {"p": "Das Timmelsjoch überquert auf 2.474 m die Grenze zwischen Österreich und Italien. Die Straße misst 11,9 km von Untergurgl zum Gipfel und 22,7 km vom Gipfel nach Moos in Passeier. Geöffnet ist täglich von 7:00 bis 20:00 Uhr. Für Motorräder kostet die einfache Fahrt 2026 18 €, Hin- und Rückfahrt 25 €; die Tarife gelten für die österreichische und die italienische Seite, und die Rückfahrt ist für die ganze Saison gültig."}
+      ]
+    },
+    {
+      "id": "schweiz",
+      "h2": "Schweiz: Nufenen, Furka und Gotthard",
+      "icerik": [
+        {"p": "Der Nufenenpass ist mit 2.478 m laut Goms Tourismus der höchste Pass, der vollständig in der Schweiz liegt; er verbindet das Wallis mit dem Tessin und wurde 1969 eröffnet. Der Furkapass erreicht 2.429 m, verbindet Realp im Kanton Uri mit Oberwald im Wallis und ist laut Schweiz Tourismus üblicherweise von Juni bis Oktober offen. Die Eisgrotte im Rhonegletscher an der Straße ist von Juni bis Mitte Oktober geöffnet, wenn das Wetter es erlaubt."},
+        {"p": "Der Gotthardpass liegt auf 2.106 m und ist im Allgemeinen von Mai bis Oktober offen. Auf der Südseite hat die historische Tremola 24 Kehren auf Kopfsteinpflaster. Furka und Gotthard gehören zu den Pässen, die sich mit Susten und Grimsel zu einer Runde verbinden lassen; siehe den Beitrag <a href=\"{@uc-gecit}\">Furka, Grimsel, Susten: die Drei-Pässe-Runde</a>."}
+      ]
+    },
+    {
+      "id": "dolomiten",
+      "h2": "Die Dolomiten: Sellaronda und Pordoijoch",
+      "icerik": [
+        {"p": "Die Sellaronda umrundet die Sellagruppe über vier Pässe: Grödner Joch, Sellajoch, Pordoijoch und Campolongo. Alta Badia gibt die Runde mit 50,7 km an, gefahren gegen den Uhrzeigersinn ab Corvara. Das Pordoijoch auf 2.239 m verbindet das Fassatal im Trentino mit dem Buchensteintal in Belluno. Im Sommer ist die Straße zwischen 9 und 12 Uhr am vollsten; IDM Südtirol rät deshalb zu Besuchen außerhalb dieser Zeit."}
+      ]
+    },
+    {
+      "id": "planung",
+      "h2": "Pässe zu einer Tour verbinden",
+      "icerik": [
+        {"liste": [
+          "Stilfser Joch, Gavia und Bormio liegen nah beieinander; Bormio ist ein naheliegender Ausgangspunkt für beide.",
+          "Furka, Grimsel und Susten ergeben ab Andermatt eine Runde von 120 km; siehe den <a href=\"{@uc-gecit}\">Beitrag zur Runde</a>.",
+          "Galibier und Iseran liegen beide an der Route des Grandes Alpes; der Iseran ist der höhere.",
+          "Plane einen Tag Spielraum für das Wetter ein. Eine Vorhersage, die im Tal sauber aussieht, kann auf einem Pass in 2.500 m trotzdem Schnee bedeuten."
+        ]}
+      ]
+    }
+  ],
+  "sss": [
+    {"s": "Welcher ist der höchste Alpenpass für Motorräder?", "c": "Der Col de l’Iseran in Frankreich: Die Route des Grandes Alpes gibt 2.764 m an, das Schild am Gipfel zeigt 2.770 m. Das Stilfser Joch liegt laut Bormio Turismo mit 2.758 m ein paar Meter darunter und ist der höchste befestigte Pass der Ostalpen."},
+    {"s": "Wann sind die Alpenpässe geöffnet?", "c": "Die meisten hohen Pässe sind üblicherweise von Ende Mai oder Juni bis Oktober offen, die genauen Termine ändern sich aber jedes Jahr mit dem Schnee. 2026 öffnete der Iseran am 12. Juni. Prüfe vor der Fahrt die aktuelle Meldung des Betreibers."},
+    {"s": "Zahlt man mit dem Motorrad Maut auf Alpenpässen?", "c": "Auf manchen schon. 2026 kostet das Motorrad-Tagesticket auf der Großglockner-Hochalpenstraße 36,50 €, das Timmelsjoch kostet 18 € einfach oder 25 € hin und zurück. Das Stilfser Joch ist gebührenfrei."}
+  ],
+  "kaynaklar": [
+    {"ad": "Route des Grandes Alpes: Col de l’Iseran", "url": "https://www.routedesgrandesalpes.com/grands-cols/iseran"},
+    {"ad": "Val d’Isère Tourisme: Öffnung des Col de l’Iseran", "url": "https://www.valdisere.com/en/press/press-releases/opening-of-the-col-de-liseran/"},
+    {"ad": "Bormio Turismo: Stilfser Joch, Seite Bormio", "url": "https://www.bormio.eu/en/pois/stelvio-pass-bormio-mountainside"},
+    {"ad": "Bormio Turismo: Gaviapass", "url": "https://www.bormio.eu/en/pois/gavia-pass"},
+    {"ad": "IDM Südtirol: Stilfser-Joch-Tour ab Prad", "url": "https://www.suedtirol.info/en/en/experiences-and-events/plp-experiences/experiences-south-tyrol/pdp-experience.smgpoie5a44a21ea25eb190b69ada46443f3c2.stelvio-tour.prato--prad"},
+    {"ad": "Valloire Tourisme: der Galibier", "url": "https://www.valloire.net/en/discover-Valloire/unavoidable/the-Galibier-pass/"},
+    {"ad": "Grossglockner Hochalpenstraßen AG: Preise und Öffnungszeiten", "url": "https://www.grossglockner.at/en/for-your-visit/prices-opening-times"},
+    {"ad": "Timmelsjoch Hochalpenstraße: Straße", "url": "https://www.timmelsjoch.com/de/timmelsjoch-hochalpenstrasse/"},
+    {"ad": "Timmelsjoch Hochalpenstraße: Tarife", "url": "https://www.timmelsjoch.com/de/timmelsjoch-tarife/"},
+    {"ad": "Schweiz Tourismus: Furkapass", "url": "https://www.myswitzerland.com/en/experiences/furka-pass/"},
+    {"ad": "Goms Tourismus: Nufenen", "url": "https://www.goms.ch/en/nufenen"},
+    {"ad": "Schweiz Tourismus: Gotthardpass und Tremola", "url": "https://www.myswitzerland.com/de/erlebnisse/st-gotthard-pass-nostalgie-tremola/"},
+    {"ad": "Alta Badia: Sellaronda", "url": "https://www.altabadia.org/en/bike/cycling-tours-dolomites/detail/oa/sellaronda-road-bike-tour"},
+    {"ad": "IDM Südtirol: Pordoijoch", "url": "https://www.suedtirol.info/en/en/information/mobility/mountain-passes-in-south-tyrol/pordoijoch-pass"},
+    {"ad": "Arabba Fodom Turismo: Verkehr auf den Dolomitenpässen", "url": "https://www.arabba.it/en/info-events/infrastructure-useful-information/traffic-mountain-passes/80-0.html"},
+    {"ad": "Stilfser Joch, Wikipedia (Englisch)", "url": "https://en.wikipedia.org/wiki/Stelvio_Pass"}
+  ],
+  "urun": {
+    "h2": "Wähle die Pässe, zeichne die Tour selbst",
+    "p": [
+      "Die Passkarte von Motoseyir enthält mehr als 1.600 Bergpässe in 36 Ländern, jeweils mit Höhe und Lage und, wo bekannt, den Sperrmonaten. Du wählst Start und Ziel, fügst die gewünschten Pässe als Stopps hinzu und legst die Reihenfolge selbst fest. Mit langem Druck auf die Karte lässt sich auch ein Ort ohne Namen hinzufügen."
+    ],
+    "adimlar": [
+      "Öffne Meine Touren → Legendär → Bergpässe und filtere nach Region, zum Beispiel Alpen.",
+      "Sieh dir Höhe und Sperrmonate an und füge einen Pass deiner Tour hinzu.",
+      "Füge Start, Ziel und die Stopps dazwischen hinzu.",
+      "Tippe auf Starten; die Stopps gehen der Reihe nach an die Navigation."
+    ],
+    "ikincil": "Mehrere der genannten Straßen gibt es auch als fertige Routen im Tab Legendär, darunter Stilfser Joch, Großglockner und Galibier. Ein Tipp, und die Route wird in deine Touren kopiert, wo du sie ändern kannst.",
+    "gorsel": "efsane",
+    "gorsel_alt": "Der Tab Legendär in Motoseyir mit fertigen Routen und Kartenvorschau"
+  }
+}

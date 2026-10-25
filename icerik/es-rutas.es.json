@@ -1,0 +1,97 @@
+{
+  "slug": "rutas-en-moto-picos-de-europa",
+  "sira": 9,
+  "baslik": "Rutas en moto por Picos de Europa: La Hermida y Los Beyos",
+  "aciklama": "Rutas en moto por los Picos de Europa: La Hermida, San Glorio, el Pontón y Los Beyos, con distancias, puertos y consejos. Traza la tuya con Motoseyir.",
+  "h1": "Rutas en moto por los Picos de Europa: La Hermida, San Glorio y Los Beyos",
+  "eyebrow": "Rutas · España",
+  "lead": "Dos desfiladeros, dos puertos y tres comunidades en una sola ruta de unos 146 km: de Panes a Cangas de Onís pasando por La Hermida, Potes, San Glorio, el Pontón y Los Beyos. Las distancias y alturas salen de fuentes oficiales y de los datos de Motoseyir.",
+  "yayin": "2026-10-25",
+  "guncelleme": "2026-10-25",
+  "ozet": "La ruta de Panes a Cangas de Onís por La Hermida, San Glorio, el Pontón y Los Beyos: paradas, distancias y consejos de carretera.",
+  "bolumler": [
+    {
+      "id": "resumen",
+      "h2": "La ruta en una tabla",
+      "icerik": [
+        {"p": "La ruta de Motoseyir va de Panes, en Asturias, a Cangas de Onís, atravesando Cantabria y el norte de León. Estas son las paradas, en orden, con lo que la fuente dice de cada tramo."},
+        {"tablo": {
+          "baslik_metni": "Paradas de la ruta por los Picos de Europa",
+          "baslik": ["Parada", "Comunidad", "Qué hay"],
+          "satirlar": [
+            ["Panes", "Asturias", "Entrada al desfiladero de La Hermida por la N-621"],
+            ["La Hermida", "Cantabria", "Desfiladero de 22 km, el más largo de España"],
+            ["Potes", "Cantabria", "Capital de Liébana; de aquí sale la N-621 hacia San Glorio"],
+            ["Puerto de San Glorio", "Cantabria / León", "1.609 m"],
+            ["Portilla de la Reina", "León", "A 37 km de Potes por la N-621"],
+            ["Boca de Huérgano", "León", "Parada intermedia hacia el Pontón"],
+            ["Puerto del Pontón", "León / Asturias", "Puerta al Parque Nacional de los Picos de Europa"],
+            ["Oseja de Sajambre", "León", "Pueblo leonés junto al desfiladero de Los Beyos"],
+            ["Cangas de Onís", "Asturias", "Final de la ruta; el desfiladero de Los Beyos baja hasta aquí"]
+          ],
+          "not": "Distancia total de la ruta en Motoseyir: 146,1 km. Fuentes: Wikipedia (desfiladeros), Ayuntamiento de Posada de Valdeón (puertos y accesos), Turismo Asturias."
+        }}
+      ]
+    },
+    {
+      "id": "hermida",
+      "h2": "El desfiladero de La Hermida",
+      "icerik": [
+        {"p": "La Hermida mide 22 km y es el desfiladero más largo de España, según Wikipedia. La N-621 lo recorre entre Panes (Asturias) y Castro Cillórigo (Cantabria) y es la única entrada por carretera desde la costa cantábrica a la comarca de Liébana. Es una carretera de curvas continuas entre paredes de roca, de las que piden una conducción tranquila."}
+      ]
+    },
+    {
+      "id": "san-glorio",
+      "h2": "De Potes a San Glorio",
+      "icerik": [
+        {"p": "Desde Potes la N-621 sube al Puerto de San Glorio, a 1.609 m, y baja hacia Portilla de la Reina, ya en León. Entre Potes y Portilla de la Reina hay 37 km, según el Ayuntamiento de Posada de Valdeón. Desde Portilla se puede desviar por la LE-2703, 17 km hasta Santa Marina de Valdeón, pasando por el puerto de Pandetrave (1.562 m); el mismo ayuntamiento da la altura."}
+      ]
+    },
+    {
+      "id": "beyos",
+      "h2": "El Pontón y Los Beyos",
+      "icerik": [
+        {"p": "El Puerto del Pontón da entrada al Parque Nacional de los Picos de Europa, según Turismo Asturias. Desde Cangas de Onís hay 45 km por la N-625 a través del desfiladero de Los Beyos hasta el Pontón, según el Ayuntamiento de Posada de Valdeón; desde Riaño son 16 km."},
+        {"p": "Los Beyos mide unos 20 km, de los que el desfiladero propiamente dicho, entre Ceneya y Cobarcil, ocupa unos 11 km. Lo ha excavado el río Sella y lo recorre la N-625, una carretera muy sinuosa entre Oseja de Sajambre (León) y Ponga y Amieva (Asturias), según Wikipedia."}
+      ]
+    },
+    {
+      "id": "preparar",
+      "h2": "Antes de salir",
+      "icerik": [
+        {"liste": [
+          "Los puertos de la ruta pueden cortarse por nieve en invierno; consulta el estado de la carretera la víspera y la mañana de la salida.",
+          "Llena el depósito antes de subir: entre Potes y Portilla de la Reina, y de allí al Pontón, el recorrido es de montaña.",
+          "Reserva tiempo para las paradas: son 146 km, pero con curvas continuas la media es baja.",
+          "Si quieres añadir el Valle de Valdeón, cuenta con el desvío de 17 km por la LE-2703 y con la vuelta."
+        ]}
+      ]
+    }
+  ],
+  "sss": [
+    {"s": "¿Cuánto mide la ruta por los Picos de Europa de Motoseyir?", "c": "La ruta de Panes a Cangas de Onís por La Hermida, Potes, San Glorio, el Pontón y Los Beyos mide 146,1 km según los datos de Motoseyir."},
+    {"s": "¿Cuál es el desfiladero más largo de España?", "c": "La Hermida, con 22 km, según Wikipedia. Lo recorre la N-621 entre Panes y Castro Cillórigo."},
+    {"s": "¿A qué altura está el puerto de San Glorio?", "c": "A 1.609 m, según el Ayuntamiento de Posada de Valdeón. La N-621 lo cruza entre Potes y Portilla de la Reina."}
+  ],
+  "kaynaklar": [
+    {"ad": "Desfiladero de la Hermida, Wikipedia", "url": "https://es.wikipedia.org/wiki/Desfiladero_de_la_Hermida"},
+    {"ad": "Desfiladero de los Beyos, Wikipedia", "url": "https://es.wikipedia.org/wiki/Desfiladero_de_los_Beyos"},
+    {"ad": "Ayuntamiento de Posada de Valdeón: situación y accesos", "url": "https://valdeon.org/en/municipality-of-posada-de-valdeon/location-and-access/"},
+    {"ad": "Turismo Asturias: Rioseco, Tarna, Pontón, Cangas de Onís", "url": "https://www.turismoasturias.es/cicloturismo/rutas/gran-recorrido/rioseco-tarna-ponton-cangas-de-onis"}
+  ],
+  "urun": {
+    "h2": "Traza la ruta tú mismo",
+    "p": [
+      "En Motoseyir eliges la salida y la llegada, pones las paradas y decides el orden. Puedes añadir Potes, San Glorio o Oseja de Sajambre como paradas, y con una pulsación larga en el mapa también un punto sin nombre. Los nombres de los botones, en inglés, son estos."
+    ],
+    "adimlar": [
+      "En My Tours, escribe un nombre y toca Create.",
+      "Añade la salida, la llegada y las paradas intermedias, desde el buscador o con una pulsación larga en el mapa.",
+      "Mira la lista de puertos (Mountain passes) para ver la altura y los meses de cierre del puerto.",
+      "Toca Start; las paradas pasan a la navegación en orden."
+    ],
+    "ikincil": "Esta ruta existe también ya preparada en la pestaña Legendary, como Picos de Europa · La Hermida – Los Beyos: un toque y sus paradas se copian a tus tours.",
+    "gorsel": "efsane",
+    "gorsel_alt": "Pestaña Legendary de Motoseyir con rutas ya preparadas y vista previa del mapa"
+  }
+}

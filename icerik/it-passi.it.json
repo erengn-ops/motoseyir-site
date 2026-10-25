@@ -1,0 +1,97 @@
+{
+  "slug": "passi-in-moto-stelvio-gavia-dolomiti",
+  "sira": 8,
+  "baslik": "Passi in moto: Stelvio, Gavia e Dolomiti, quote e stagione",
+  "aciklama": "Percorsi in moto sui passi italiani: Stelvio, Gavia e Sellaronda con quota, periodo di apertura abituale e note di guida. Da tracciare con Motoseyir.",
+  "h1": "Passi in moto: Stelvio, Gavia e Dolomiti",
+  "eyebrow": "Passi · Italia",
+  "lead": "Tre percorsi tra i più noti dell’arco alpino italiano: il Passo dello Stelvio, il Passo di Gavia e la Sellaronda nelle Dolomiti. Quota, periodo in cui di solito sono aperti e che cosa serve sapere prima di salire. Ogni numero viene da un ente turistico, da un gestore o da un’enciclopedia.",
+  "yayin": "2026-10-25",
+  "guncelleme": "2026-10-25",
+  "ozet": "Stelvio, Gavia e Sellaronda: quota, apertura abituale e note di guida per preparare un giro in moto sui passi italiani.",
+  "bolumler": [
+    {
+      "id": "tabella",
+      "h2": "Tre percorsi a colpo d’occhio",
+      "icerik": [
+        {"p": "I mesi in tabella sono il periodo abituale riportato da enti turistici e gestori. Non sono promesse: la neve decide ogni anno le date reali, e il maltempo può chiudere un passo senza preavviso."},
+        {"tablo": {
+          "baslik_metni": "Stelvio, Gavia e Passo Pordoi",
+          "baslik": ["Passo", "Zona", "Quota", "Apertura abituale"],
+          "satirlar": [
+            ["Passo dello Stelvio", "Lombardia / Alto Adige", "2.758 m", "Da fine maggio a inizio novembre"],
+            ["Passo di Gavia", "Valtellina / Valcamonica", "2.621 m", "Da inizio giugno a metà o fine ottobre"],
+            ["Passo Pordoi (Sellaronda)", "Trentino / Veneto", "2.239 m", "Aperto tutto l’anno, in inverno valgono regole particolari"]
+          ],
+          "not": "Fonti: Bormio Turismo, IDM Südtirol, Arabba Fodom Turismo, Alta Badia."
+        }}
+      ]
+    },
+    {
+      "id": "stelvio",
+      "h2": "Passo dello Stelvio",
+      "icerik": [
+        {"p": "Secondo Bormio Turismo lo Stelvio arriva a 2.758 m, l’accesso è gratuito e di solito apre a fine maggio e chiude a inizio novembre, a seconda della neve. Wikipedia lo descrive come il passo asfaltato più alto delle Alpi orientali; la strada originale fu costruita tra il 1820 e il 1825."},
+        {"p": "Sul versante di Prato allo Stelvio la strada ha 48 tornanti in 25 km, secondo IDM Südtirol. Bormio Turismo ne conta 41 sul versante lombardo, salendo da Bormio."}
+      ]
+    },
+    {
+      "id": "gavia",
+      "h2": "Passo di Gavia",
+      "icerik": [
+        {"p": "Il Gavia collega Bormio e Ponte di Legno a 2.621 m. Bormio Turismo indica che di solito è aperto da inizio giugno a metà o fine ottobre. Sul versante della Valcamonica la carreggiata, per una decina di chilometri, è così stretta da non far passare due auto che si incrociano, e dopo tre tornanti c’è una galleria non illuminata. Wikipedia aggiunge che la strada (SS 300) è a corsia unica per gran parte del tratto meridionale e che il Giro d’Italia lo include spesso."},
+        {"p": "Visiera pulita, velocità bassa in galleria e pazienza con il traffico contrario: sono le tre cose che servono qui."}
+      ]
+    },
+    {
+      "id": "sellaronda",
+      "h2": "Sellaronda e Passo Pordoi",
+      "icerik": [
+        {"p": "La Sellaronda gira attorno al gruppo del Sella su quattro passi: Gardena, Sella, Pordoi e Campolongo. Alta Badia indica 50,7 km, percorsi in senso antiorario con partenza da Corvara. Il Passo Pordoi, a 2.239 m, collega la Val di Fassa in Trentino con Livinallongo, nel bellunese."},
+        {"p": "In estate la strada è più affollata tra le 9 e le 12, e IDM Südtirol consiglia di salire fuori da quella fascia. Dal 15 novembre al 15 aprile le auto sulla rete dei passi dolomitici devono avere pneumatici invernali o catene, e i passi possono chiudere temporaneamente senza preavviso se il tempo cambia, secondo Arabba Fodom Turismo."}
+      ]
+    },
+    {
+      "id": "preparare",
+      "h2": "Preparare la giornata",
+      "icerik": [
+        {"liste": [
+          "Controlla l’apertura la sera prima e la mattina stessa: le date cambiano ogni anno.",
+          "Tieni un percorso di riserva nel caso il passo sia chiuso.",
+          "Fai rifornimento prima della salita.",
+          "Vestiti per la cima, non per la valle."
+        ]}
+      ]
+    }
+  ],
+  "sss": [
+    {"s": "Quando è aperto il Passo dello Stelvio?", "c": "Di solito da fine maggio a inizio novembre, a seconda della neve, secondo Bormio Turismo. L’accesso è gratuito."},
+    {"s": "Il Passo di Gavia è adatto alla moto?", "c": "Sì, ma ha un tratto di circa dieci chilometri sul versante della Valcamonica dove due auto che si incrociano non passano, e una galleria non illuminata dopo tre tornanti. Serve guidare con attenzione e dare la precedenza al traffico contrario."},
+    {"s": "Quanto è lunga la Sellaronda?", "c": "Alta Badia indica 50,7 km, percorsi in senso antiorario con partenza da Corvara, sui passi Gardena, Sella, Pordoi e Campolongo."}
+  ],
+  "kaynaklar": [
+    {"ad": "Bormio Turismo: Passo dello Stelvio, versante di Bormio", "url": "https://www.bormio.eu/en/pois/stelvio-pass-bormio-mountainside"},
+    {"ad": "Bormio Turismo: Passo di Gavia", "url": "https://www.bormio.eu/en/pois/gavia-pass"},
+    {"ad": "IDM Südtirol: giro dello Stelvio da Prato", "url": "https://www.suedtirol.info/en/en/experiences-and-events/plp-experiences/experiences-south-tyrol/pdp-experience.smgpoie5a44a21ea25eb190b69ada46443f3c2.stelvio-tour.prato--prad"},
+    {"ad": "IDM Südtirol: Passo Pordoi", "url": "https://www.suedtirol.info/en/en/information/mobility/mountain-passes-in-south-tyrol/pordoijoch-pass"},
+    {"ad": "Alta Badia: Sellaronda", "url": "https://www.altabadia.org/en/bike/cycling-tours-dolomites/detail/oa/sellaronda-road-bike-tour"},
+    {"ad": "Arabba Fodom Turismo: traffico sui passi dolomitici", "url": "https://www.arabba.it/en/info-events/infrastructure-useful-information/traffic-mountain-passes/80-0.html"},
+    {"ad": "Stelvio Pass, Wikipedia (inglese)", "url": "https://en.wikipedia.org/wiki/Stelvio_Pass"},
+    {"ad": "Gavia Pass, Wikipedia (inglese)", "url": "https://en.wikipedia.org/wiki/Gavia_Pass"}
+  ],
+  "urun": {
+    "h2": "Traccia il giro con Motoseyir",
+    "p": [
+      "In Motoseyir scegli partenza e arrivo, aggiungi i passi come tappe e decidi tu l’ordine. La mappa dei passi di montagna conta più di 1.600 passi in 36 paesi, ognuno con quota, posizione e, quando è noto, i mesi di chiusura."
+    ],
+    "adimlar": [
+      "In I miei tour scrivi un nome e tocca Crea.",
+      "Apri I miei tour → Leggendarie → Passi di montagna, filtra per regione e aggiungi un passo al tuo tour.",
+      "Aggiungi partenza, arrivo e le tappe in mezzo, dalla ricerca o con una pressione lunga sulla mappa.",
+      "Tocca Avvia; le tappe passano alla navigazione in ordine."
+    ],
+    "ikincil": "Alcune di queste strade ci sono anche come percorsi già pronti nella scheda Leggendarie, tra cui Stelvio, Gavia e Sellaronda: un tocco, e le tappe vengono copiate nei tuoi tour.",
+    "gorsel": "efsane",
+    "gorsel_alt": "La scheda Leggendarie di Motoseyir con percorsi già pronti e anteprima della mappa"
+  }
+}

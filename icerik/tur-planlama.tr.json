@@ -1,0 +1,105 @@
+{
+  "slug": "motor-turu-planlama",
+  "sira": 1,
+  "baslik": "Motor Turu Nasıl Planlanır? Adım Adım Rehber",
+  "aciklama": "Motor turu planlama rehberi: günlük mesafe, mola, yakıt, yol tipi ve duraklar. Motoseyir’de başlangıç ile bitişi seçip turu kendin kurmanın adımları.",
+  "h1": "Motor turu nasıl planlanır?",
+  "eyebrow": "Tur planlama",
+  "lead": "İyi bir motor turu, haritadaki çizgiden önce üç soruyla başlar: kaç kilometre, hangi yol tipi, nerede mola. Bu yazı soruları sırayla açıyor ve her adımın Motoseyir’de nereye denk geldiğini gösteriyor.",
+  "yayin": "2026-10-25",
+  "guncelleme": "2026-10-25",
+  "ozet": "Günlük mesafe, yol tipi, duraklar, yakıt ve hava: motor turunu yola çıkmadan kurmanın adımları.",
+  "bolumler": [
+    {
+      "id": "amac",
+      "h2": "Önce turun amacını yaz",
+      "icerik": [
+        {"p": "Tek günlük bir virajlı yol keyfi ile üç günlük bir geçit turu aynı planlanmaz. Başlamadan önce şu üçünü bir kâğıda ya da notlara yaz: kaç gün gidiyorsun, kaç kişisiniz, yolda ne arıyorsun. Virajlı yol, deniz manzarası ve dağ geçidi üç ayrı hedef; üçünü aynı güne sığdırmaya çalışmak turu yorucu kılar."},
+        {"p": "Yalnız mı yoksa grupla mı gidiyorsun, bunu da en baştan belirle. Grupta ritmi en yavaş sürücü belirler ve molalar uzar; plana buna göre pay bırakmak gerekir."}
+      ]
+    },
+    {
+      "id": "mesafe",
+      "h2": "Günlük mesafeyi süreden türet",
+      "icerik": [
+        {"p": "Kilometreyle başlamak yanıltıcı olabilir, çünkü aynı yüz kilometre otoyolda bir saat, dağ yolunda üç saat sürebilir. Daha sağlam yöntem, o gün kaç saat sürüş istediğini belirleyip mesafeyi buradan çıkarmak."},
+        {"p": "Motoseyir’in Tur üret ekranı bu mantıkla çalışıyor: tur uzunluğunu 30 ile 300 km arasında kilometre olarak ya da saat olarak seçiyorsun; saat seçersen yarım saatlik adımlarla mesafeye çeviriyor. Sürüş süresini ve molaları ayrı kalemler olarak düşün; sürüş kaydı da hareket süresiyle gerçek molaları ayrı tutuyor, böylece bir sonraki turu daha gerçekçi planlarsın."}
+      ]
+    },
+    {
+      "id": "yol-tipi",
+      "h2": "Yol tipini seç",
+      "icerik": [
+        {"p": "Motoseyir’de rota üç biçimde kurulabiliyor:"},
+        {"liste": [
+          "En kısa rota: varsayılan mod. Aynı iki nokta için birkaç alternatifi karşılaştırıyor ve süresi biraz uzasa bile kilometresi en az olanı öneriyor.",
+          "Köy yolları: otoyoldan ve ücretli yoldan kaçıp ara yolları kullanıyor. Türkiye’de ve Yunanistan’da rota Motoseyir’in kendi sunucusundan hesaplanıyor (Pro).",
+          "Sahil: turlarda kıyıyı izleyen yolları arıyor (Pro)."
+        ]},
+        {"p": "Alpler gibi büyük geçit yollarında asıl güzergâh zaten ana yol; oralarda küçük yol aramanın anlamı çoğu zaman yok. Köy yollarının işe yaradığı yer, ana yolların kalabalık ve sıkıcı olduğu Türkiye gibi bölgeler."}
+      ]
+    },
+    {
+      "id": "duraklar",
+      "h2": "Durakları koy, sırayı kontrol et",
+      "icerik": [
+        {"p": "Turu bir başlangıç ve bir bitiş noktasıyla aç, aradaki durakları sonra ekle. Motoseyir’de duraklar iki yoldan eklenir: üstteki arama alanına yazarak ya da haritada boş bir noktaya uzun basarak. Adı olmayan bir viraj, bir seyir tepesi ya da bir köy kavşağı da durak olabilir."},
+        {"p": "Çok duraklı rotada “En uygun sıra” düğmesi (Pro) durakları en kısa toplam sürüş mesafesine göre yeniden diziyor. Uygulamadaki örnekte aynı dört durak kendi sırasıyla 57,1 km, uygulamanın bulduğu sırayla 46,9 km çıkmış; tek turda 26 durağa kadar eklenebiliyor. Sıranın senin için bir anlamı varsa (öğle yemeği ya da gün batımı noktası gibi) önerilen sırayı kabul etmeden önce kendi sıranla karşılaştır."},
+        {"p": "Turun çevresindeki koyları, kamp alanlarını, yeme içme yerlerini, benzinlikleri ve geçitleri Keşfet sekmesi listeliyor; her satırda puanı ve hangi durağın yakınında olduğu yazıyor. Beğendiğini durak olarak eklersin (Pro)."}
+      ]
+    },
+    {
+      "id": "yakit-hava",
+      "h2": "Yakıt ve hava durumu",
+      "icerik": [
+        {"p": "Rota kartında tahmini yakıt miktarını yola çıkmadan görüyorsun: Türkiye’de litre, ABD’de galon. Karttaki tüketim değerine dokunup motorunun gerçek tüketimini yazarsan hesap ona göre güncelleniyor. Dağ ve yayla yollarına girmeden önce depoyu doldurmak iyi bir alışkanlık."},
+        {"p": "Hava için rota üzerindeki dört noktaya bakılıyor. Varacağın saatte yağış bekleniyorsa Motoseyir önceden uyarıyor, hava kuruysa ekranda hiçbir şey çıkmıyor. Uyarı çıkarsa çıkış saatini kaydırmayı düşünebilirsin."}
+      ]
+    },
+    {
+      "id": "grup",
+      "h2": "Grupla gidiyorsan",
+      "icerik": [
+        {"p": "Bir kişi grup kurduğunda tek bir kod üretiliyor; herkes o koda katılıyor ve rota üzerinde birbirini görüyor. Konum yalnız sürüş kaydı ya da navigasyon sürerken paylaşılıyor, sürüş bitince sunucudan siliniyor. Gruba davetle ya da kodla katılmak ücretsiz, grup kurmak Pro’da."},
+        {"p": "Grup rotası sürülürken interkom bir kez soruyor; kabul edersen ses yalnız grubuna gidiyor ve kaydedilmiyor. Bluetooth kaskı doğrudan bağlayabilirsin."}
+      ]
+    },
+    {
+      "id": "kontrol",
+      "h2": "Yola çıkmadan beş kontrol",
+      "icerik": [
+        {"adimlar": [
+          "Turu telefona kaydet; çevrimiçi hesap gerekmiyor, turlar cihazında duruyor.",
+          "En uzun etabın yakıt miktarını rota kartında kontrol et.",
+          "Yüksek geçit varsa açık olduğu ayları öğren. Motoseyir’in geçit listesinde kapanma ayları bilinen geçitlerde bu bilgi yazıyor.",
+          "Hava durumu uyarısına bak ve gerekiyorsa çıkış saatini kaydır.",
+          "Arkadaşınla gidiyorsanız turu kodla paylaşın; alıcı kodu Kod ile bölümünde açıp turu kendi telefonunda görür."
+        ]}
+      ]
+    }
+  ],
+  "sss": [
+    {"s": "Bir motor turu için günlük kaç kilometre planlamalı?", "c": "Sabit bir rakam yok; aynı mesafe yola göre çok farklı sürede biter. Bu yüzden önce kaç saat sürüş istediğini belirle. Motoseyir’de tur uzunluğunu kilometre ya da saat olarak seçebilirsin; saat seçersen yarım saatlik adımlarla mesafeye çevriliyor."},
+    {"s": "Motor turu planlamak için hesap açmam gerekir mi?", "c": "Hayır. Motoseyir’i kullanmak için ad, e-posta ya da telefon vermen gerekmiyor. Türkiye, Avrupa ve ABD’de rota hesaplama ve navigasyon ücretsiz ve sınırsız; ücretsiz kademede 1 kayıtlı tur tutabilirsin, sınırsız tur Pro ile açılıyor."},
+    {"s": "Bir turda en fazla kaç durak eklenebilir?", "c": "Tek turda 26 durağa kadar eklenebiliyor. Çok duraklı rotada “En uygun sıra” (Pro) durakları en kısa toplam mesafeye göre yeniden diziyor."}
+  ],
+  "kaynaklar": [
+    {"ad": "Motoseyir özellikler sayfası (tur üret, en uygun sıra, grup sürüşü)", "url": "https://motoseyir-app.com/ozellikler.html"},
+    {"ad": "Motoseyir nasıl yapılır sayfası (tur kurma adımları)", "url": "https://motoseyir-app.com/nasil-yapilir.html"}
+  ],
+  "urun": {
+    "h2": "Turu Motoseyir’de kendin çiz",
+    "p": [
+      "Planı Motoseyir’de iki yoldan kurabilirsin. Birinci yolda başlangıcı, bitişi ve durakları kendin koyuyor, sırayı da kendin düzenliyorsun. İkinci yolda bir yön ve süre veriyorsun, uygulama üç tur öneriyor; beğenmezsen başka bir tane isteyebiliyorsun."
+    ],
+    "adimlar": [
+      "Turlarım sekmesinde bir ad yaz ve Oluştur’a dokun.",
+      "Başlangıç, bitiş ve araya duraklarını ekle; arama kutusunu ya da haritada uzun basmayı kullan.",
+      "Çok duraklıysa En uygun sıra’yı dene (Pro), olmuyorsa sırayı elle düzelt.",
+      "Turu Başlat’a dokun; duraklar sırayla navigasyona verilir."
+    ],
+    "ikincil": "Fikir lazım olursa Efsane sekmesinde hazır rotalar da duruyor; birine dokununca durakları turlarına kopyalanıyor ve üstüne yazabiliyorsun.",
+    "gorsel": "tur",
+    "gorsel_alt": "Motoseyir’de Tur üret ekranı: yön kadranı, tur uzunluğu ve viraj seviyesi"
+  }
+}

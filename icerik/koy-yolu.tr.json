@@ -1,0 +1,90 @@
+{
+  "slug": "koy-yolu-motosiklet-rotasi",
+  "sira": 5,
+  "baslik": "Köy Yolu ile Motosiklet Rotası Nasıl Çıkarılır?",
+  "aciklama": "Köy yolu ile motosiklet rotası nasıl çıkarılır: otoyoldan kaçmanın yolları, ara noktalar, toprak yol uyarısı ve Motoseyir’in köy yolları modu.",
+  "h1": "Köy yoluyla motosiklet rotası nasıl çıkarılır?",
+  "eyebrow": "Köy yolları",
+  "lead": "Arabaya göre hesaplanan bir rota en hızlı yolu arar; motorcu çoğu zaman en keyifli ya da en kısa yolu ister. Köy yollarından geçen bir rotayı el ile ve uygulamayla kurmanın yollarını anlatıyor.",
+  "yayin": "2026-10-25",
+  "guncelleme": "2026-10-25",
+  "ozet": "Otoyoldan kaçan, ara yolları kullanan bir rotayı el ile ve Motoseyir’in köy yolları moduyla çıkarmanın adımları.",
+  "bolumler": [
+    {
+      "id": "neden",
+      "h2": "Genel haritalar neden köy yolunu atlıyor?",
+      "icerik": [
+        {"p": "Çoğu navigasyon rotayı süreye göre hesaplıyor. Süre ölçüt olunca otoyol ve ana yol kazanıyor, vadiler arasındaki ince asfalt bağlantılar ise çoğu zaman rotaya girmiyor. Motosikletli için bu fark gerçek bir fark: kilometre arttıkça yakıt tüketimi ve lastik aşınması da artıyor. Üstelik çoğu motorcu otoyolun düz şeridine girmek için yola çıkmıyor."},
+        {"p": "Motoseyir’in köy yolları modunda bu fark ölçülebiliyor. Uygulamanın kendi örneğinde Ayder’den Hemşin’e mesafe 24,1 km çıkıyor; aynı iki nokta için genel haritalar 49,9 km gösteriyor. Bu tek bir örnek, her rota için geçerli bir oran değil; ama köy yolunun bazen ne kadar kısalttığını gösteriyor."}
+      ]
+    },
+    {
+      "id": "elle",
+      "h2": "Rotayı el ile kurmak",
+      "icerik": [
+        {"p": "Uygulama kullanmadan da köy yoluyla rota çıkarmak mümkün, yöntem ise her zaman aynı: hedefe giden büyük yolu bırakıp aradaki küçük yerleşimleri ara nokta yapmak."},
+        {"adimlar": [
+          "Haritada başlangıç ile bitişi işaretle; aralarındaki ana yolu görmezden gel.",
+          "Haritayı yakınlaştırıp büyük yolun yanından geçen ince çizgilere bak. Köyleri birbirine bağlayan, numarasız ya da ince numaralı yollar aradığın şey.",
+          "Birkaç köyü ara nokta olarak sırala. Ara nokta ne kadar sık olursa navigasyonun seni yeniden ana yola çekme ihtimali o kadar azalır.",
+          "Rota çıktıktan sonra uydu görünümüne geç; yolun asfalt olup olmadığını, tarlaya ya da ormana girip girmediğini kontrol et."
+        ]},
+        {"p": "Bu yöntemin zayıf yanı emek: her ara nokta için haritayı gözle taramak gerekiyor ve navigasyon bazen ara noktalar arasında yine ana yolu seçiyor."}
+      ]
+    },
+    {
+      "id": "modu",
+      "h2": "Motoseyir’in köy yolları modu",
+      "icerik": [
+        {"p": "Bir turun sol üstündeki mod düğmesi Standart, Köy yolları ve Sahil arasında geçiş yapıyor. Köy yolları modu otoyoldan ve ücretli yoldan kaçıyor, klasik haritanın atladığı vadi bağlantılarını ve asfalt köy yollarını kullanıyor. Türkiye’de ve Yunanistan’da rota Motoseyir’in kendi sunucusundan hesaplanıyor; veri OpenStreetMap’e dayanıyor. Mod seçimi Pro’da."},
+        {"p": "Tekil bir rotada ise Başla ekranında sağdaki tabela düğmesi En kısa ile Köy yolları arasında geçiş yapıyor. En kısa, süresi biraz uzasa bile mesafesi en az olan alternatifi seçiyor."},
+        {"h3": "Tur üret: yön ve süre ver, viraj seviyesini seç"},
+        {"p": "Köy yolu aramak yerine uygulamaya tur çizdirmek de mümkün. Kadranı gitmek istediğin yöne çeviriyorsun (ya da Her yön diyorsun), 30 ile 300 km arasında bir uzunluk ya da saat seçiyorsun. Viraj seviyesi üç kademe: Rahat (akıcı yollar), Virajlı (köy yolları) ve Çok virajlı (saç tokaları). Otoyolu, gişeyi ve toprak yolu ayrı ayrı dışarıda bırakabiliyorsun. Her seferinde üç tur geliyor; beğenmezsen Başka bir tane yeni yollardan yenilerini getiriyor."}
+      ]
+    },
+    {
+      "id": "dikkat",
+      "h2": "Köy yolunda dikkat edilecekler",
+      "icerik": [
+        {"liste": [
+          "Yol kalitesi değişken olabilir: Yedigöller gibi bazı rotalarda yol dar ve yer yer stabilize. Toprak yol istemiyorsan Tur üret’te toprak yolu dışarıda bırak.",
+          "Süre uzar: köy yolunda ortalama hız düşer. Planı saate göre kur, kilometreyi ikinci ölçü say.",
+          "Yakıt: köy yolu rotasında benzinlik arası uzayabilir. Depoyu yola girmeden doldurmak iyi bir alışkanlık.",
+          "Veri sınırı: rota OpenStreetMap verisine dayanıyor; yolun o günkü durumunu, kapalı bir köprüyü ya da bozuk bir kesimi harita bilmeyebilir. Yerel yol durumunu ayrıca kontrol et.",
+          "Hava: yağışlı günde ince yollar kaygan olur. Motoseyir rotada yağış bekleniyorsa varacağın saate göre önceden uyarıyor."
+        ]}
+      ]
+    },
+    {
+      "id": "ornek",
+      "h2": "Hazır örnek: Ayder–Çamlıhemşin",
+      "icerik": [
+        {"p": "Köy yolları modunda açılan hazır rotalardan biri Ayder–Çamlıhemşin Yaylaları. Ardeşen’den başlayıp Çamlıhemşin üzerinden Ayder’e çıkıyor, uzunluğu yaklaşık 49 km. Fırtına Deresi boyunca ilerliyor; yolda kemer köprüler ve çay bahçeleri var. Kendi turunu kurarken bunu bir örnek olarak açıp durakları değiştirebilirsin. Türkiye’nin öbür rotaları için <a href=\"{@turkiye-rotalari}\">Türkiye’nin motosiklet rotaları</a> yazısına bak."}
+      ]
+    }
+  ],
+  "sss": [
+    {"s": "Köy yolları modu ücretsiz mi?", "c": "Hayır, tur modları Pro’da: Standart modu ücretsiz, Köy yolları ve Sahil modları Pro ile açılıyor. Türkiye, Avrupa ve ABD’de rota hesaplama ve navigasyon ise ücretsiz ve sınırsız."},
+    {"s": "Köy yolları modu hangi ülkelerde çalışıyor?", "c": "Türkiye ve Yunanistan’da rota Motoseyir’in kendi sunucusundan hesaplanıyor. Alpler gibi büyük geçit yollarında ise standart mod kullanılıyor; oralarda asıl güzergâh zaten ana yol."},
+    {"s": "Toprak yola girmeden köy yolu rotası çıkarabilir miyim?", "c": "Tur üret’te otoyolu, gişeyi ve toprak yolu ayrı ayrı dışarıda bırakabiliyorsun. Elle kurduğun turlarda yolun asfalt olup olmadığını uydu görünümünden kontrol etmek iyi olur."}
+  ],
+  "kaynaklar": [
+    {"ad": "Motoseyir özellikler sayfası (köy yolları modu, Ayder örneği, tur üret)", "url": "https://motoseyir-app.com/ozellikler.html"},
+    {"ad": "Motoseyir veri kaynakları ve atıflar (OpenStreetMap)", "url": "https://motoseyir-app.com/veri-kaynaklari/"}
+  ],
+  "urun": {
+    "h2": "Köy yolu turunu kendin çiz",
+    "p": [
+      "Köy yolu turunu kurarken ilk iş durakları köylerden vermek. Başlangıcı ve bitişi seçiyor, aradaki köyleri ekliyor, modu Köy yolları’na çeviriyorsun. Haritaya uzun basınca adı olmayan bir kavşak da durak oluyor."
+    ],
+    "adimlar": [
+      "Turlarım’da bir ad yaz ve Oluştur’a dokun.",
+      "Başlangıcı, köy duraklarını ve bitişi ekle.",
+      "Sol üstteki mod düğmesinden Köy yolları’nı seç (Pro).",
+      "Turu başlat; rota duraklar arasında ara yolları seçer."
+    ],
+    "ikincil": "Denemek için Efsane sekmesindeki Ayder–Çamlıhemşin gibi hazır rotalar da uygun; bunlar köy yolları modunda açılıyor.",
+    "gorsel": "tur",
+    "gorsel_alt": "Motoseyir’de Tur üret ekranı: yön kadranı ve Rahat, Virajlı, Çok virajlı seçenekleri"
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "slug": "turkiye-motosiklet-rotalari",
+  "sira": 4,
+  "baslik": "Türkiye’nin Motosiklet Rotaları: Bölge Bölge 11 Güzergâh",
+  "aciklama": "Marmara’dan Doğu Karadeniz’e, Ege kıyılarından Nemrut’a: Türkiye’de motosikletle sürülen 11 güzergâhın durakları, uzunlukları ve yol notları.",
+  "h1": "Türkiye’nin motosiklet rotaları, bölge bölge",
+  "eyebrow": "Rotalar · Türkiye",
+  "lead": "Marmara’dan Doğu Karadeniz’e, Ege kıyılarından Nemrut’a kadar on bir güzergâh sıralandı. Durakları ve uzunlukları Motoseyir’in hazır rotalarından alındı; her biri bir başlangıç noktası, yolu kendi zevkine göre değiştirebilirsin.",
+  "yayin": "2026-10-25",
+  "guncelleme": "2026-10-25",
+  "ozet": "On bir güzergâhın durakları, uzunlukları ve yol notları: Marmara, Ege–Akdeniz, Doğu Karadeniz ve İç Anadolu.",
+  "bolumler": [
+    {
+      "id": "bir-bakista",
+      "h2": "On bir rota bir bakışta",
+      "icerik": [
+        {"p": "Aşağıdaki mesafeler, Motoseyir’de köy yolları modunda hesaplanmış rotaların toplamı. Başka bir noktadan başlarsan ya da bir durağı atlarsan rakam değişir; tabloyu kaba bir ölçü olarak oku."},
+        {"tablo": {
+          "baslik_metni": "Türkiye’nin hazır motosiklet rotaları",
+          "baslik": ["Rota", "Bölge", "Duraklar", "Uzunluk"],
+          "satirlar": [
+            ["Sapanca–Maşukiye–Kartepe", "Sakarya / Kocaeli", "Sapanca, Maşukiye, Kartepe", "36,4 km"],
+            ["Ayder–Çamlıhemşin", "Rize", "Ardeşen, Çamlıhemşin, Ayder", "49,0 km"],
+            ["Assos–Kaz Dağları", "Çanakkale", "Küçükkuyu, Behramkale, Ayvacık", "56,2 km"],
+            ["Nemrut Dağı", "Adıyaman", "Kâhta, Karadut, Nemrut Dağı", "79,2 km"],
+            ["Şile–Ağva Sahili", "İstanbul", "Riva, Şile, Ağva", "85,6 km"],
+            ["Kapadokya–Ihlara", "Nevşehir / Aksaray", "Ürgüp, Uçhisar, Ihlara", "92,4 km"],
+            ["Datça Yarımadası", "Muğla", "Marmaris, Datça, Knidos", "107,7 km"],
+            ["Likya Sahili D400", "Antalya / Muğla", "Kaş, Kalkan, Patara, Fethiye", "113,9 km"],
+            ["Olympos–Kumluca Sahili", "Antalya", "Antalya, Kemer, Olympos, Kumluca", "115,9 km"],
+            ["Abant–Yedigöller", "Bolu", "Bolu, Abant, Yedigöller", "118,7 km"],
+            ["Trabzon–Zigana–Torul", "Trabzon / Gümüşhane", "Trabzon, Maçka, Zigana, Torul", "138,8 km"]
+          ],
+          "not": "Kaynak: Motoseyir hazır rotaları. Süre yazılmadı; tur kurulduğunda gerçek süre rotadan hesaplanıyor."
+        }}
+      ]
+    },
+    {
+      "id": "marmara",
+      "h2": "Marmara ve Batı Karadeniz",
+      "icerik": [
+        {"p": "Burada İstanbul’dan bir günde gidip dönülebilecek üç rota var. Hepsi şehre yakın olduğu için hafta sonu sabahı erken çıkıp trafiğin yoğunlaşmasından önce yolda olmak işi kolaylaştırır."},
+        {"h3": "Şile–Ağva Sahili (85,6 km)"},
+        {"p": "Riva ormanlarından başlayıp Şile üzerinden Ağva’ya iniyor. İlk bölümde yol ağaçların arasından geçiyor, Şile’den sonra Karadeniz kıyısı açılıyor. Ağva’da nehir kenarında balık yenebiliyor; dönüşte sahil yolunu seçmek rotayı farklı bir manzarayla tamamlar."},
+        {"h3": "Sapanca–Maşukiye–Kartepe (36,4 km)"},
+        {"p": "Bu rota listenin en kısası. Sapanca Gölü’nün kıyısında ısınıyor, Maşukiye’de şelale molası veriyor, Kartepe’ye tırmanıyorsun. Mesafe kısa ama yol boyunca viraj sürüyor; öğleden sonra çıkıp akşama dönmek için yetiyor."},
+        {"h3": "Abant–Yedigöller (118,7 km)"},
+        {"p": "Bolu’dan Abant Gölü’ne, oradan Yedigöller’in ormanına uzanıyor. Yedigöller yolu dar ve yer yer stabilize; lastiği ve hızı buna göre ayarlamak gerekiyor. Sonbaharda orman renk değiştirdiği için bu rota en çok o mevsimde tercih ediliyor."}
+      ]
+    },
+    {
+      "id": "ege-akdeniz",
+      "h2": "Ege ve Akdeniz kıyıları",
+      "icerik": [
+        {"p": "Dört rota da denize paralel ilerliyor. Yaz ortasında sıcak ve kıyı trafiği yorucu olabiliyor; ilkbahar ve sonbahar bu rotalar için daha rahat bir zaman."},
+        {"h3": "Assos–Kaz Dağları (56,2 km)"},
+        {"p": "Küçükkuyu’dan zeytinliklerin arasına giriyor, antik kent Behramkale’de (Assos) duruyor, Ayvacık üzerinden Kaz Dağları’nın gölgeli yollarına çıkıyor. Behramkale’ye çıkan taş yol dik ve kaygan olabilir; yavaş çıkmak yeter."},
+        {"h3": "Datça Yarımadası (107,7 km)"},
+        {"p": "Marmaris’ten çıkıp yarımadanın ince şeridi boyunca Datça’ya, oradan Knidos’a kadar gidiyor. Yol iki yandan denizi görüyor ve neredeyse hiç düzlenmiyor. Knidos’ta antik liman rotanın sonunu belirliyor."},
+        {"h3": "Likya Sahili D400 (113,9 km)"},
+        {"p": "Kaş’tan Fethiye’ye giden D400, Türkiye’nin en ünlü sahil yollarından biri. Rota Kaş’ta başlıyor, Kalkan ve Patara’dan geçiyor, Fethiye’de bitiyor. Patara’da antik kent ile plaj aynı durakta olduğu için uzun bir mola vermek mantıklı."},
+        {"h3": "Olympos–Kumluca Sahili (115,9 km)"},
+        {"p": "Antalya’dan güneye, Beldibi ve Kemer üzerinden Tahtalı Dağı’nın eteğine doğru gidiyor. Olympos sapağından sonra yol denizle birlikte kıvrılıyor ve Kumluca’da bitiyor."}
+      ]
+    },
+    {
+      "id": "dogu-karadeniz",
+      "h2": "Doğu Karadeniz",
+      "icerik": [
+        {"p": "Burada yol yükseliyor ve havanın değişkenliği rotanın bir parçası. Yağmurluk ve eldiven, bu iki rotada bavulun en işe yarayan kalemleri."},
+        {"h3": "Ayder–Çamlıhemşin Yaylaları (49,0 km)"},
+        {"p": "Ardeşen’den başlayıp Fırtına Deresi boyunca yukarı çıkıyor. Yolda kemer köprüler, sis ve çay bahçeleri var; Çamlıhemşin’den sonra Ayder’e varılıyor. Kısa bir rota ama tırmanış sürekli olduğu için yarım günden fazlasını ayırmak iyi olur."},
+        {"h3": "Trabzon–Zigana–Torul (138,8 km)"},
+        {"p": "Trabzon’dan Maçka’ya, oradan Zigana Geçidi’ne çıkıyor ve Torul’da bitiyor. Zigana Geçidi 2.032 m yükseklikte; trafik ağırlıkla geçidin altındaki tüneli kullanıyor, geçidin kendi yolu ise çok daha az araç görüyor. Kar yılda yaklaşık beş ay yerde kaldığı için bu rotayı yaz aylarına koymak gerekiyor."}
+      ]
+    },
+    {
+      "id": "ic-anadolu-guneydogu",
+      "h2": "İç Anadolu ve Güneydoğu",
+      "icerik": [
+        {"h3": "Kapadokya–Ihlara (92,4 km)"},
+        {"p": "Ürgüp’ten Uçhisar’a, oradan Ihlara Vadisi’ne gidiyor. Viraj sayısı bu listede en az olan rotalardan; asıl iş manzarada. Gün doğumunda balonlar gökyüzünde olduğu için sabah erken çıkmak bu rotanın bilinen avantajı."},
+        {"h3": "Nemrut Dağı (79,2 km)"},
+        {"p": "Rota Kâhta’dan başlayıp Karadut üzerinden Nemrut Dağı’na kesintisiz tırmanıyor; son kilometreler dik ve virajlı. Zirvede dev heykeller var; gün batımını yukarıda izleyeceksen dönüşü karanlıkta sürmeyi hesaba kat."}
+      ]
+    },
+    {
+      "id": "yola-cikmadan",
+      "h2": "Yola çıkmadan önce üç kontrol",
+      "icerik": [
+        {"liste": [
+          "Yükseklik: Zigana gibi geçitlerde kar uzun süre yerde kalıyor. Yola çıkmadan Karayolları Genel Müdürlüğü’nün güncel yol durumu bilgisine bak.",
+          "Yakıt: Dağ ve yayla yollarına girmeden önce depoyu doldurmak iyi bir alışkanlık; yükseldikçe istasyonlar arası uzayabiliyor.",
+          "Hava: Rota üzerinde yağış bekleniyorsa Motoseyir varacağın saate göre önceden uyarıyor; kuru günde ekranda hiçbir şey çıkmıyor."
+        ]}
+      ]
+    }
+  ],
+  "sss": [
+    {"s": "İstanbul’dan günübirlik hangi rotalar uygun?", "c": "Listedeki üç rota İstanbul’a yakın: Şile–Ağva Sahili 85,6 km, Sapanca–Maşukiye–Kartepe 36,4 km ve Bolu’dan başlayan Abant–Yedigöller 118,7 km. Sapanca–Kartepe en kısası, Abant–Yedigöller en uzunu."},
+    {"s": "Bu rotaları kendi başlangıç noktamdan sürebilir miyim?", "c": "Evet. Efsane sekmesinden bir rota açtığında durakları turlarına kopyalanıyor; sonra durak ekleyip çıkarabilir, başlangıcı değiştirebilirsin."},
+    {"s": "Kış aylarında hangi rotalar sorunlu?", "c": "Doğu Karadeniz’deki Zigana Geçidi’nde kar yılda yaklaşık beş ay yerde kalıyor; Trabzon–Zigana–Torul rotasını bu yüzden yaz aylarına koymak gerekiyor. Öteki rotalarda da yola çıkmadan güncel yol durumuna bakmak iyi olur."}
+  ],
+  "kaynaklar": [
+    {"ad": "Motoseyir hazır rotaları (durak sırası ve uzunluklar)", "url": "https://motoseyir-app.com/ozellikler.html"},
+    {"ad": "Zigana Geçidi, Vikipedi (yükseklik, kar süresi, tünel)", "url": "https://tr.wikipedia.org/wiki/Zigana_Ge%C3%A7idi"}
+  ],
+  "urun": {
+    "h2": "Bu rotaları kendi turuna çevir",
+    "p": [
+      "Hazır rotanın duraklarını olduğu gibi sürmek zorunda değilsin. Kopyayı Turlarım’da açıp durak ekleyebilir, çıkarabilir, sırayı değiştirebilirsin. Duraklar arama kutusundan eklenir; haritaya uzun basınca adı olmayan bir yer de durak olur.",
+      "Köy yolları modu Türkiye’de otoyolu ve ücretli yolu atlayıp ara yolları kullanıyor. Rotayı süreye göre değil mesafeye göre hesaplıyor, bu yüzden aynı iki nokta arasında genel haritaların gösterdiğinden daha kısa bir yol çıkabiliyor."
+    ],
+    "adimlar": [
+      "Turlarım sekmesinde bir ad yaz ve Oluştur’a dokun.",
+      "Durakları arayarak ya da haritaya uzun basarak ekle.",
+      "Sol üstteki mod düğmesinden Köy yolları’nı seç (Pro).",
+      "Turu başlat; navigasyon seni duraktan durağa götürür."
+    ],
+    "ikincil": "Bu sayfadaki on bir güzergâh Efsane sekmesinde hazır duruyor; birine dokununca durakları turlarına kopyalanıyor.",
+    "gorsel": "efsane",
+    "gorsel_alt": "Motoseyir Efsane sekmesi: Şile–Ağva Sahili ve Sapanca–Maşukiye–Kartepe hazır rotaları"
+  }
+}

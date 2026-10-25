@@ -1,0 +1,34 @@
+{
+  "baslik": "Motosiklet Rehberi: Rota, Geçit, Tur Planı",
+  "aciklama": "Motosiklet rotaları, dağ geçitleri ve tur planlama rehberleri: Türkiye ve Alpler için yükseklik, mevsim ve yol bilgisi, kaynaklarıyla. Motoseyir’den.",
+  "h1": "Motosiklet rehberi: rotalar, geçitler, tur planı",
+  "eyebrow": "Rehber",
+  "lead": "Nereye gideceğini, hangi geçidin ne zaman açık olduğunu ve turu nasıl kuracağını anlatan yazılar. Sayılar resmî kaynaklardan ve uygulamanın kendi verisinden alınır; doğrulanamayan bilgi yazıya girmez.",
+  "guncelleme": "2026-10-25",
+  "ui": {
+    "rehber": "Rehber",
+    "icindekiler": "Bu yazıda",
+    "yayin": "Yayın",
+    "guncelleme": "Güncelleme",
+    "kaynaklar": "Kaynaklar",
+    "kaynaklar_not": "Sayılar aşağıdaki sayfalardan ve Motoseyir’in kendi verisinden alındı. Geçitlerin açılış ve kapanış tarihleri her yıl kara göre değişir; yola çıkmadan işletmenin ya da karayolu idaresinin güncel duyurusuna bak.",
+    "sss": "Sık sorulanlar",
+    "ilgili": "Diğer rehberler",
+    "oku": "Yazıyı oku →",
+    "ekmek": "Sayfa yolu",
+    "tum_yazilar": "Bütün rehberler →",
+    "aylar": ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"],
+    "anasayfa_baglanti": "Rehber: rota, geçit ve tur planlama yazıları →",
+    "tablo_etiket": "Karşılaştırma tablosu"
+  },
+  "urun": {
+    "h2": "Turunu kendin çiz",
+    "p": [
+      "Motoseyir’de bir tur başlangıç ve bitiş noktasıyla açılıyor; aradaki durakları sen koyuyorsun. Duraklar arama kutusundan ya da haritaya uzun basarak eklenir, adı olmayan bir yer de durak olabilir. Sırayı istediğin gibi değiştirirsin.",
+      "Rotayı süreye göre değil mesafeye göre hesaplıyor, köy yolları ve sahil modları da var. Rota hesaplama ve navigasyon Türkiye, Avrupa ve ABD’de ücretsiz ve sınırsız; hesap açman gerekmiyor."
+    ],
+    "ikincil": "Başlamak için hazır rotalar da var: Efsane sekmesindeki bir rotaya dokunduğunda durakları turlarına kopyalanıyor, sonra istediğini değiştiriyorsun.",
+    "gorsel": "tur",
+    "gorsel_alt": "Motoseyir’de Tur üret ekranı: yön kadranı, uzunluk ve viraj seviyesi seçimi"
+  }
+}
