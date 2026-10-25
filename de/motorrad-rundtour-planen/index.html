@@ -31,21 +31,17 @@
 <link rel="icon" href="/img/favicon.png">
 
 <!--
-  Web tur üreticisi (26 Eki 2026 yeniden tasarım): anasayfanın hareket dili. Stil m/a.css (ortak) + m/tur/tur.css (araç), hareket m/h.js (ortak)
-  + m/a.js (kahraman, sticky anlatı, dönen motor, telefon klipleri — anasayfayla AYNI dosya) + m/tur/surus.js (motor seçimi, tur önizleme sürüşü).
-  Kahraman bandı: m/sahne-tur(-dikey).mp4 = anasayfa sahnesinin 8 sn'lik hafif döngüsü (sahne-hd'den, 720p, sessiz).
-  Telefon klibi: m/demo-tur-uret-tr.mp4 (klipte Türkçe arayüz var; EN/DE sayfada da aynı klip, çünkü başka dilde kayıt yok).
+  WEB UYGULAMASI (27 Eki 2026): uygulamadaki Tur üret + Keşfet'in tarayıcıdaki karşılığı; ekranı dolduran harita + yüzen panel/alttan sayfa.
+  Stil m/a.css (ortak site çerçevesi) + m/tur/tur.css, hareket m/h.js (ortak) + m/tur/{geometri,kadran,yerlesim,tur,surus}.js.
+  Telefondaki özelliği anlatan sayfa AYRI: sablon/tur-uret.html (/tur-uret/, /en/tour-generator/, /de/tourengenerator/).
 -->
-<script>!function(d,c){c=" js";if(!matchMedia("(prefers-reduced-motion: reduce)").matches){c+=" hm";if(self.CSS&&CSS.supports&&CSS.supports("animation-timeline:view()"))c+=" sd"}d.className+=c}(document.documentElement)</script>
-<link rel="preload" as="image" type="image/webp" href="/m/sahne-dikey-poster.webp" media="(max-width:700px)" fetchpriority="high">
-<link rel="preload" as="image" type="image/webp" href="/m/sahne-poster.webp" media="(min-width:701px)" fetchpriority="high">
+<script>!function(d,c){c=" js hazir";if(!matchMedia("(prefers-reduced-motion: reduce)").matches){c+=" hm";if(self.CSS&&CSS.supports&&CSS.supports("animation-timeline:view()"))c+=" sd"}d.className+=c}(document.documentElement)</script>
 <link rel="preload" as="font" type="font/woff" href="/m/font/Manrope.woff" crossorigin>
-<link rel="stylesheet" href="/m/a.css?v=6f3313af">
+<link rel="stylesheet" href="/m/a.css?v=a8529828">
 <link rel="stylesheet" href="/m/tur/lib/maplibre-gl-4.7.1.css?v=1fa5e619">
-<link rel="stylesheet" href="/m/tur/tur.css?v=f523f356">
+<link rel="stylesheet" href="/m/tur/tur.css?v=ce531421">
 <link rel="preconnect" href="https://motorota-rota.erengn.workers.dev" crossorigin>
 <script defer src="/m/h.js?v=1805b0f7"></script>
-<script defer src="/m/a.js?v=b1bd69cb"></script>
 
 <script type="application/ld+json">
 {
@@ -228,11 +224,11 @@
 <a class="skip" href="#icerik">Zum Inhalt springen</a>
 <div class="ilerle" aria-hidden="true"></div>
 
-<header class="ust" id="ustbar">
+<header class="ust acik" id="ustbar">
   <div class="ust-ic">
     <a class="logo" href="/de/" aria-label="Motoseyir"><img src="/img/favicon.png" alt="" width="28" height="28">MOTO<em>SEYİR</em></a>
     <nav aria-label="Hauptnavigation"><ul class="menu">
-      <li><a href="/de/">Start</a></li><li><a href="#arac-bolum">Tourengenerator</a></li><li><a href="/de/ozellikler.html">Alle Funktionen</a></li><li><a href="/de/corider.html">AI CoRider</a></li><li><a href="/de/ratgeber/">Ratgeber</a></li>
+      <li><a href="/de/">Start</a></li><li><a href="/de/motorrad-rundtour-planen/" aria-current="page">Tourengenerator</a></li><li><a href="/de/ozellikler.html">Alle Funktionen</a></li><li><a href="/de/corider.html">AI CoRider</a></li><li><a href="/de/ratgeber/">Ratgeber</a></li>
     </ul></nav>
     <div class="ust-sag">
       <details class="dil-sec">
@@ -260,44 +256,10 @@
 </header>
 
 <main id="icerik">
-<section class="kahraman tur-kahraman" aria-labelledby="tur-h1">
-  <div class="k-arka">
-    <picture>
-      <source media="(max-width:700px)" srcset="/m/sahne-dikey-poster.webp" type="image/webp">
-      <img src="/m/sahne-poster.webp" alt="" fetchpriority="high" width="1920" height="1080">
-    </picture>
-    <video id="hv" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1" data-src="/m/sahne-tur.mp4" data-src-dikey="/m/sahne-tur-dikey.mp4"></video>
-  </div>
-  <div class="k-ic">
-    <div class="k-metin">
-      <nav class="tur-ekmek" aria-label="Brotkrumen-Navigation"><a href="/de/">Start</a> <span aria-hidden="true">›</span> <span aria-current="page">Tourengenerator</span></nav>
-      <p class="ust-yazi">Tourengenerator</p>
-      <h1 id="tur-h1">Motorrad Rundtour planen</h1>
-      <p class="giris">Sag, wohin es gehen soll, und der Generator zeichnet die Runde zurück zu deinem Startpunkt.</p>
-      <div class="cta-satir">
-        <a class="btn" href="#arac-bolum"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v14m0 0-5.5-5.5M12 17l5.5-5.5M5 21h14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Rundtour generieren</a>
-        <a class="btn btn-hayalet" href="#kesfet">Touren in deiner Nähe</a>
-        <p class="mikro">Kostenlos. Ohne Konto.</p>
-      </div>
-    </div>
-    <div class="k-tel">
-      <div class="kt kt-arka"><i class="tu" aria-hidden="true"></i><img src="/m/ekran-kesfet-en.webp" alt="" width="540" height="1174" decoding="async"></div>
-      <div class="kt kt-on"><i class="tu" aria-hidden="true"></i><video data-demo data-demo-ilk muted loop playsinline preload="none" poster="/m/demo-tur-uret-tr.webp" width="1320" height="2868" aria-label="Aufnahme des Tourengenerators in der Motoseyir-App: Eine Runde entsteht aus Start, Richtung, Länge und Kurven (die App ist auf Türkisch)"><source data-src="/m/demo-tur-uret-tr-hevc.mp4" type='video/mp4; codecs="hvc1.1.6.L150.B0"'><source data-src="/m/demo-tur-uret-tr.mp4" type="video/mp4"></video><noscript><img src="/m/ekran-tur-en.webp" alt="Aufnahme des Tourengenerators in der Motoseyir-App: Eine Runde entsteht aus Start, Richtung, Länge und Kurven (die App ist auf Türkisch)" width="540" height="1174" decoding="async"></noscript></div>
-    </div>
-  </div>
-</section>
-
-<div class="serit" aria-label="Tourengenerator im Überblick"><div class="serit-ic">
-<div class="sayi"><b>3 Touren</b><span>Pro Suche, jede zurück zum Start</span></div>
-<div class="sayi"><b>8 Richtungen</b><span>Oder die Richtung zufällig lassen</span></div>
-<div class="sayi"><b>300 km</b><span>Längste wählbare Tour</span></div>
-<div class="sayi"><b>Kostenlos</b><span>Ohne Konto</span></div>
-</div></div>
-
-<section class="tur-sahne" id="arac-bolum" aria-labelledby="arac-baslik">
+<section class="tur-uygulama" id="arac-bolum" aria-labelledby="arac-baslik">
 <div class="kap">
   <h2 id="arac-baslik" class="gizli">Tourengenerator</h2>
-  <div class="tur-arac" id="arac" data-r data-evre="ayar">
+  <div class="tur-arac" id="arac" data-evre="ayar">
     <div class="tur-harita-kolon">
       <div class="tur-harita-sar">
         <div id="tur-harita" class="tur-harita" role="application" aria-label="Karte. Tippe darauf, um den Start deiner Rundtour zu setzen."></div>
@@ -334,6 +296,7 @@
     <div class="tur-panel" id="tur-panel" data-sheet="yarim">
       <button type="button" class="tur-tutamac" id="tur-tutamac" aria-expanded="true" aria-controls="tur-panel-ic" aria-label="Panel öffnen oder schließen"><i></i></button>
       <div class="tur-panel-ic" id="tur-panel-ic">
+      <div class="tur-baslik-kutu"><h1 class="tur-h1" id="tur-h1">Motorrad Rundtour planen</h1><a class="tur-nasil-mini" href="/de/tourengenerator/">So funktioniert es in der App</a></div>
       <p id="tur-durum" class="tur-durum" role="status" aria-live="polite" hidden></p>
       <div class="tur-kipler" id="kesfet" role="tablist" aria-label="Modus">
         <button type="button" role="tab" id="tur-kip-uret" class="tur-kip-dugme" aria-selected="true" aria-controls="tur-panel-uret">Tour generieren</button>
@@ -408,18 +371,13 @@
 
         <fieldset class="tur-grup tur-motor-grup">
           <legend><span class="no">6</span>Dein Motorrad</legend>
-          <div class="tur-motor-ic">
-            <div class="motor tur-motor" id="motor" data-tip="touring" role="img" aria-label="Das Motorrad, das dich auf der Karte darstellt; nach links oder rechts ziehen, um es zu drehen"><img id="motorimg" src="/m/bike/090.webp" alt="" width="760" height="699" decoding="async"></div>
-            <div class="tur-motor-sec">
-              <div class="tur-tipler" id="tur-tipler" role="radiogroup" aria-label="Motorradtyp">
+          <div class="tur-tipler" id="tur-tipler" role="radiogroup" aria-label="Motorradtyp">
                 <label><input type="radio" name="arac" value="supersport"><span class="tip"><img src="/m/isaret-supersport.webp" alt="" width="48" height="48" loading="lazy" decoding="async"><b>Supersport</b></span></label>
                 <label><input type="radio" name="arac" value="chopper"><span class="tip"><img src="/m/isaret-chopper.webp" alt="" width="48" height="48" loading="lazy" decoding="async"><b>Chopper</b></span></label>
                 <label><input type="radio" name="arac" value="scooter"><span class="tip"><img src="/m/isaret-scooter.webp" alt="" width="48" height="48" loading="lazy" decoding="async"><b>Maxi-Scooter</b></span></label>
                 <label><input type="radio" name="arac" value="touring" checked><span class="tip"><img src="/m/isaret-touring.webp" alt="" width="48" height="48" loading="lazy" decoding="async"><b>Touring</b></span></label>
               </div>
-              <p class="tur-motor-not">Gedrückt halten und ziehen, um das Motorrad zu drehen. Das gewählte fährt in der Vorschau deine Tour auf der Karte.</p>
-            </div>
-          </div>
+              <p class="tur-motor-not">Dieses Motorrad stellt dich in der Vorschaufahrt auf der Karte dar.</p>
         </fieldset>
 
         <button type="submit" id="tur-uret" class="btn btn-primary tur-uret"><svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><path d="M3 10a7 7 0 1 1 2.2 5.1M3 15v-4h4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Rundtour generieren</button>
@@ -467,30 +425,11 @@
 </div>
 </section>
 
-<section class="tur-ozet" aria-label="Über den Tourengenerator"><div class="kap"><p class="metin" data-r>Wähle einen Startpunkt, wie lange du fahren willst und wie kurvig die Straßen sein sollen. Der Generator zeichnet bis zu drei Rundtouren, die dich zum Start zurückbringen. Die Tour, die dir gefällt, schickst du per QR-Code aufs Handy und fährst sie in Motoseyir.</p></div></section>
-
-<!-- Sticky anlatı: anasayfadaki kalıp (m/a.js "sticky anlatı"). Metinler `adimlar`dan; ekranlar uygulamanın gerçek ekranları, 3. adımda gerçek ekran kaydı. -->
-<section class="hikaye" id="nasil" aria-labelledby="hk-h">
-  <div class="kap">
-    <h2 id="hk-h" class="hk-baslik">So funktioniert der Tourengenerator</h2>
-    <div class="hk-sahne" id="hk-sahne" data-a="0">
-      <div class="hk-yapis" aria-hidden="true">
-        <div class="hk-tel"><div class="tel"><i class="tu" aria-hidden="true"></i><div class="ekr">
-          <img class="e e0" src="/m/ekran-kesfet-en.webp" alt="" width="540" height="1174" loading="lazy" decoding="async">
-          <img class="e e1" src="/m/ekran-tur-en.webp" alt="" width="540" height="1174" loading="lazy" decoding="async">
-          <video class="e e2" data-demo data-demo-gec="2" muted loop playsinline preload="none" poster="/m/ekran-tur-en.webp" data-poster="/m/demo-tur-uret-tr.webp" width="1320" height="2868" aria-hidden="true" tabindex="-1"><source data-src="/m/demo-tur-uret-tr-hevc.mp4" type='video/mp4; codecs="hvc1.1.6.L150.B0"'><source data-src="/m/demo-tur-uret-tr.mp4" type="video/mp4"></video><noscript><img class="e e2" src="/m/ekran-tur-en.webp" alt="" width="540" height="1174"></noscript>
-          <img class="e e3" src="/m/ekran-nav-en.webp" alt="" width="540" height="1174" loading="lazy" decoding="async">
-        </div></div></div>
-      </div>
-      <ol class="hk-adimlar">
-        <li class="hk-adim on" data-i="0"><p class="km">Schritt 1</p><h3>Start setzen</h3><p class="metin">Suche einen Ort oder eine Adresse, tippe auf die Karte oder nutze deinen Standort. Den Pin kannst du danach verschieben.</p><a class="hk-link" href="#arac-bolum">Jetzt ausprobieren</a></li>
-        <li class="hk-adim" data-i="1"><p class="km">Schritt 2</p><h3>Richtung, Länge und Kurven wählen</h3><p class="metin">Wähle eine von acht Richtungen oder lass „Jede Richtung“ für eine zufällige Runde stehen. Stelle die Länge in Kilometern, Meilen oder Stunden ein und wähle Entspannt, Kurvig oder Sehr kurvig. Autobahn, Maut und Schotter kannst du ausschließen.</p><a class="hk-link" href="#arac-bolum">Jetzt ausprobieren</a></li>
-        <li class="hk-adim" data-i="2"><p class="km">Schritt 3</p><h3>Generieren</h3><p class="metin">Der Generator prüft viele Runden auf echten Straßen und behält die drei besten. Mit „Noch eine“ bekommst du andere Runden.</p><a class="hk-link" href="#arac-bolum">Jetzt ausprobieren</a></li>
-        <li class="hk-adim" data-i="3"><p class="km">Schritt 4</p><h3>Aufs Handy schicken</h3><p class="metin">Scanne den QR-Code oder öffne den Link. Die Tour erscheint in der Motoseyir-App unter „Meine Touren“ und ist bereit für die Navigation.</p><a class="hk-link" href="#arac-bolum">Jetzt ausprobieren</a></li>
-      </ol>
-    </div>
-  </div>
-</section>
+<section class="tur-ozet" aria-label="Über den Tourengenerator"><div class="kap">
+  <nav class="rehber-ekmek" aria-label="Brotkrumen-Navigation"><a href="/de/">Start</a> <span aria-hidden="true">›</span> <span aria-current="page">Tourengenerator</span></nav>
+  <p class="metin" data-r>Wähle einen Startpunkt, wie lange du fahren willst und wie kurvig die Straßen sein sollen. Der Generator zeichnet bis zu drei Rundtouren, die dich zum Start zurückbringen. Die Tour, die dir gefällt, schickst du per QR-Code aufs Handy und fährst sie in Motoseyir.</p>
+  <p class="tur-nasil" data-r><a href="/de/tourengenerator/">So funktioniert es in der App →</a></p>
+</div></section>
 
 <div class="ana tur-ana">
 <section class="bolum" id="nasil-yapilir"><div class="kap"><div class="tur-yazi" data-r><h2>So entstehen die Rundtouren</h2>
@@ -527,6 +466,7 @@
       <li><a href="/de/ozellikler.html">Alle Funktionen</a></li>
       <li><a href="/de/ratgeber/">Ratgeber</a></li>
       <li><a href="/de/motorrad-rundtour-planen/" aria-current="page">Tourengenerator</a></li>
+      <li><a href="/de/tourengenerator/">Tourengenerator</a></li>
       <li><a href="/de/corider.html">AI CoRider</a></li>
       <li><a href="/de/nasil-yapilir.html">So geht’s</a></li>
       <li><a href="/gizlilik/de/">Datenschutz</a></li>
@@ -556,7 +496,7 @@
   </div>
 </footer>
 
-<script type="application/json" id="arac-ayar">{"dil": "de", "ui": {"ekmek": "Brotkrumen-Navigation", "ekmek_son": "Tourengenerator", "arac_baslik": "Tourengenerator", "harita_etiket": "Karte. Tippe darauf, um den Start deiner Rundtour zu setzen.", "harita_ipucu": "Tippe auf die Karte, um den Start zu setzen, oder suche einen Ort.", "harita_hata": "Die Karte konnte nicht geladen werden. Du kannst trotzdem einen Ort suchen oder deinen Standort nutzen; Touren werden weiter berechnet.", "g1": "Start", "ara_etiket": "Ort suchen", "ara_yer": "Ort, Adresse oder Sehenswürdigkeit", "ara_dugme": "Suchen", "konum_dugme": "Meinen Standort nutzen", "baslangic_bos": "Noch kein Start gewählt", "g2": "Richtung", "g3": "Länge", "birim_mesafe": "Strecke", "birim_sure": "Zeit", "olcu_etiket": "Einheit", "g4": "Kurven", "v1": "Entspannt", "v1_alt": "Flüssige Straßen", "v2": "Kurvig", "v2_alt": "Nebenstraßen", "v3": "Sehr kurvig", "v3_alt": "Haarnadelkurven", "g5": "Optionen", "k_otoyol": "Keine Autobahn", "k_gise": "Keine Maut", "k_toprak": "Kein Schotter", "k_gecit": "Über einen Pass", "uret": "Rundtour generieren", "araniyor": "Touren werden gesucht …", "vazgec": "Abbrechen", "ilerleme_etiket": "Fortschritt der Suche", "sonuc_etiket": "Generierte Rundtouren", "baska": "Noch eine", "ayara_don": "Einstellungen ändern", "telefon": "Aufs Handy schicken", "sonuc_not": "Die Zeiten sind Schätzungen ohne Verkehr. Prüfe Straßenzustand, Sperrungen und Wetter, bevor du losfährst.", "js_gerekli": "Der Tourengenerator braucht JavaScript. Touren planen kannst du trotzdem in der Motoseyir-App.", "dk": "Min.", "sa": "Std.", "yonlar": ["Norden", "Nordosten", "Osten", "Südosten", "Süden", "Südwesten", "Westen", "Nordwesten"], "yon_kisa": ["N", "NO", "O", "SO", "S", "SW", "W", "NW"], "her_yon": "Jede Richtung", "her_yon_kisa": "Alle", "baslangic": "Start", "bitis": "Ende", "durak": "Stopp {n}", "baslangic_isaret": "Start der Rundtour", "hata_harita": "Die Karte konnte nicht geladen werden.", "araniyor_adim": "Touren werden geprüft: {b} von {t}", "ara_araniyor": "Suche läuft …", "ara_yok": "Nichts gefunden. Versuche eine andere Schreibweise.", "ara_hata": "Die Suche ist gerade nicht erreichbar. Tippe stattdessen auf die Karte.", "konum_yok": "Dein Standort ist nicht verfügbar. Suche einen Ort oder tippe auf die Karte.", "konumum": "Mein Standort", "baslangic_sec": "Wähle zuerst einen Start: Tippe auf die Karte, suche einen Ort oder nutze deinen Standort.", "hata_tavan": "Du hast das Tageslimit des Tourengenerators erreicht. Versuche es morgen wieder oder plane in der Motoseyir-App.", "hata_mesgul": "Der Routenserver ist gerade ausgelastet. Warte eine Minute und versuche es erneut.", "hata_ag": "Keine Verbindung zum Routenserver. Prüfe deine Verbindung und versuche es erneut.", "hata_genel": "Die Rundtour konnte nicht erzeugt werden. Versuche es gleich noch einmal.", "bos": "Mit diesen Einstellungen wurde keine Rundtour gefunden. Wähle eine andere Richtung oder Länge oder setze den Start näher an eine Straße.", "gecit_yok": "Für diesen Start und diese Länge liegt kein Pass in Reichweite. Wähle eine längere Tour oder eine andere Richtung oder schalte die Pass-Option aus.", "baska_yok": "Es kam keine weitere, andere Rundtour heraus. Ändere Richtung oder Länge für mehr.", "sonuc_n": "{n} Rundtouren gefunden", "sonuc_1": "1 Rundtour gefunden", "adlar_yukleniyor": "Ortsnamen werden geladen …", "not_feribot": "Fähre auf der Strecke", "not_toprak": "{v} unbefestigt", "not_gise": "Mautabschnitt", "not_otoyol": "{v} Autobahn", "not_ortusme": "Der Rückweg führt größtenteils über dieselbe Straße", "not_kacin": "Die gewählte Straßenart ließ sich nicht ganz vermeiden", "sert_viraj": "{v} scharfe Kurven/km", "tur_ad": "{v0}-Runde · {v1}", "tur_ad_yedek": "Tour {n}", "hazirlaniyor": "Wird vorbereitet …", "paylas_tavan": "Du hast das Tageslimit für das Verschicken von Touren erreicht. Versuche es morgen wieder.", "paylas_buyuk": "Diese Tour ist zu groß zum Verschicken.", "paylas_hata": "Die Tour konnte nicht gesendet werden. Prüfe deine Verbindung und versuche es erneut.", "uygulamada_ac": "In Motoseyir öffnen", "magaza_ios": "Motoseyir im App Store", "magaza_play": "Bei Google Play laden", "qr_etiket": "QR-Code der Tour. Scanne ihn mit der Handykamera.", "telefon_baslik": "Mit dem Handy scannen", "telefon_acikla": "Richte die Handykamera auf den Code. Ist Motoseyir installiert, öffnet sich die Tour unter „Meine Touren“; sonst landest du im App Store.", "telefon_baslik_mobil": "Tour in der App öffnen", "telefon_acikla_mobil": "Tippe auf den Button, dann öffnet sich die Tour unter „Meine Touren“. Du kannst den Code auch unter „Meine Touren“ → „Mit Code“ eingeben.", "kod_etiket": "Tourcode", "baglanti_kopyala": "Link kopieren", "kopyalandi": "Kopiert", "android_not": "Motoseyir gibt es vorerst im App Store für das iPhone. Die Android-Version ist noch nicht bei Google Play.", "uygulama_yok": "Hat sich nichts geöffnet? Installiere zuerst Motoseyir und tippe dann noch einmal auf den Button.", "kod_gecerlilik": "Der Code gilt {gun} Tage. Beim Öffnen wird die Tour auf dein Handy kopiert.", "asama_1": "Routen werden gesucht", "asama_2": "Stopps werden auf Straßen gelegt", "asama_3": "Kurven werden gemessen", "asama_4": "Die drei besten werden gewählt", "sert_viraj_on": "", "sert_viraj_son": "scharfe Kurven/km", "pusula_etiket": "Gewählte Richtung", "kip_etiket": "Modus", "kip_uret": "Tour generieren", "kip_rotalar": "Touren in deiner Nähe", "rot_ipucu": "Legendäre Strecken und Pässe auf der Karte. Tippe auf eine Linie oder einen Pin oder wähle eine Karte.", "rot_sayi": "In diesem Kartenausschnitt: {r} Touren · {g} Pässe", "rot_filtre_rotalar": "Touren", "rot_filtre_gecitler": "Pässe", "rot_filtre_etiket": "Auf der Karte zeigen", "rot_yok": "In diesem Kartenausschnitt gibt es nichts. Zoome heraus oder verschiebe die Karte.", "rot_ac": "Diese Tour öffnen", "rot_gecit_buradan": "Von hier aus planen", "rot_aciliyor": "Route wird berechnet …", "rot_ac_hata": "Die Route konnte nicht berechnet werden. Versuche es gleich noch einmal.", "rot_efsane": "Legendäre Strecke", "rot_zirve": "Höchster Punkt {v}", "rot_zirve_ad": "{ad} {v}", "rot_kis": "Im Winter gesperrt", "rot_kaynak": "Quelle: {site}", "rot_gecit": "Pass", "rot_toprak": "Unbefestigt", "rot_kapali": "Meist gesperrt {a}–{b}", "rot_simdi": "Kann jetzt gesperrt sein ({a}–{b})", "rot_yuksek_kis": "Hoher Pass: im Winter evtl. gesperrt", "rot_yukleniyor": "Touren werden geladen …", "rot_hata": "Die Touren konnten nicht geladen werden.", "rot_ulkeler": "{v}", "efsane_acik_not": "Legendäre Strecken öffnen sich mit ihren eigenen Stopps. Du kannst sie in der App ändern.", "yer_baslik": "Orte entlang der Route", "yer_alt": "Aussichtspunkte, Essen, Camping, Buchten", "yer_manzara": "Aussichtspunkte", "yer_yeme": "Essen & Kaffee", "yer_kamp": "Camping", "yer_koy": "Buchten & Strände", "yer_benzin": "Tankstellen", "yer_yukleniyor": "Orte werden gesucht …", "yer_yok": "Im Umkreis von 2,5 km um die Route wurde nichts gefunden.", "yer_hata": "Die Orte konnten nicht geladen werden. Versuche es gleich noch einmal.", "yer_uzak": "{v} von der Route", "yer_ekle": "Als Stopp hinzufügen", "yer_eklendi": "Als Stopp hinzugefügt", "yer_ekleniyor": "Route wird aktualisiert …", "yer_ekle_hata": "Die Route konnte nicht aktualisiert werden. Versuche es erneut.", "yer_pro": "Hier siehst du bis zu fünf Orte. Alle Orte entlang der Route gehören zu „Entdecken“ in Motoseyir Pro.", "yer_atif": "Orte: © OpenStreetMap-Mitwirkende · Foursquare Open Source Places · Overture Maps Foundation", "kat_manzara": "Aussichtspunkt", "kat_kafe": "Café", "kat_restoran": "Restaurant", "kat_benzin": "Tankstelle", "kat_kamp": "Campingplatz", "kat_doga": "Natur", "kat_koy": "Bucht oder Strand", "kat_mola_yeri": "Rastplatz", "yer_haritada": "Auf der Karte zeigen", "g6": "Dein Motorrad", "motor_etiket": "Motorradtyp", "motor_alt": "Das Motorrad, das dich auf der Karte darstellt; nach links oder rechts ziehen, um es zu drehen", "motor_ipucu": "Gedrückt halten und ziehen, um das Motorrad zu drehen. Das gewählte fährt in der Vorschau deine Tour auf der Karte.", "motor_supersport": "Supersport", "motor_chopper": "Chopper", "motor_scooter": "Maxi-Scooter", "motor_touring": "Touring", "surus_etiket": "Vorschau", "surus_atla": "Vorschau überspringen", "surus_tekrar": "Fahrt noch einmal ansehen", "surus_ad": "Tourvorschau: Das gewählte Motorrad fährt die Tour von Anfang bis Ende", "yol_ustu": "Entlang der Route", "yol_ara_yer": "Entlang der Route suchen", "yer_kahve": "Kaffee", "yer_yemek": "Essen", "panel_ac": "Panel öffnen oder schließen", "kadran_ipucu": "Griff drehen und ziehen", "baslangic_tasi": "Zum Verschieben des Starts den Punkt des Zifferblatts ziehen oder die Karte außerhalb tippen.", "yer_km": "km {v}", "yer_rotadan": "an der Route", "yer_ara_sonuc": "{n} Orte für „{q}“", "yer_ara_yok": "Zu „{q}“ entlang der Route nichts gefunden.", "yer_gec": "Hier fährst du vorbei", "yer_sec_etiket": "Orte entlang der Route", "kadran_yon": "Richtung", "yer_mil": "Meile {v}"}, "ondalik": ",", "kok": "https://rota.motoseyir-app.com", "vekil": "https://motorota-rota.erengn.workers.dev", "magaza": {"ios": "https://apps.apple.com/de/app/id6792549131?pt=128439797&ct=site-web-tur&mt=8", "play": null}}</script>
+<script type="application/json" id="arac-ayar">{"dil": "de", "ui": {"ekmek": "Brotkrumen-Navigation", "ekmek_son": "Tourengenerator", "arac_baslik": "Tourengenerator", "harita_etiket": "Karte. Tippe darauf, um den Start deiner Rundtour zu setzen.", "harita_ipucu": "Tippe auf die Karte, um den Start zu setzen, oder suche einen Ort.", "harita_hata": "Die Karte konnte nicht geladen werden. Du kannst trotzdem einen Ort suchen oder deinen Standort nutzen; Touren werden weiter berechnet.", "g1": "Start", "ara_etiket": "Ort suchen", "ara_yer": "Ort, Adresse oder Sehenswürdigkeit", "ara_dugme": "Suchen", "konum_dugme": "Meinen Standort nutzen", "baslangic_bos": "Noch kein Start gewählt", "g2": "Richtung", "g3": "Länge", "birim_mesafe": "Strecke", "birim_sure": "Zeit", "olcu_etiket": "Einheit", "g4": "Kurven", "v1": "Entspannt", "v1_alt": "Flüssige Straßen", "v2": "Kurvig", "v2_alt": "Nebenstraßen", "v3": "Sehr kurvig", "v3_alt": "Haarnadelkurven", "g5": "Optionen", "k_otoyol": "Keine Autobahn", "k_gise": "Keine Maut", "k_toprak": "Kein Schotter", "k_gecit": "Über einen Pass", "uret": "Rundtour generieren", "araniyor": "Touren werden gesucht …", "vazgec": "Abbrechen", "ilerleme_etiket": "Fortschritt der Suche", "sonuc_etiket": "Generierte Rundtouren", "baska": "Noch eine", "ayara_don": "Einstellungen ändern", "telefon": "Aufs Handy schicken", "sonuc_not": "Die Zeiten sind Schätzungen ohne Verkehr. Prüfe Straßenzustand, Sperrungen und Wetter, bevor du losfährst.", "js_gerekli": "Der Tourengenerator braucht JavaScript. Touren planen kannst du trotzdem in der Motoseyir-App.", "dk": "Min.", "sa": "Std.", "yonlar": ["Norden", "Nordosten", "Osten", "Südosten", "Süden", "Südwesten", "Westen", "Nordwesten"], "yon_kisa": ["N", "NO", "O", "SO", "S", "SW", "W", "NW"], "her_yon": "Jede Richtung", "her_yon_kisa": "Alle", "baslangic": "Start", "bitis": "Ende", "durak": "Stopp {n}", "baslangic_isaret": "Start der Rundtour", "hata_harita": "Die Karte konnte nicht geladen werden.", "araniyor_adim": "Touren werden geprüft: {b} von {t}", "ara_araniyor": "Suche läuft …", "ara_yok": "Nichts gefunden. Versuche eine andere Schreibweise.", "ara_hata": "Die Suche ist gerade nicht erreichbar. Tippe stattdessen auf die Karte.", "konum_yok": "Dein Standort ist nicht verfügbar. Suche einen Ort oder tippe auf die Karte.", "konumum": "Mein Standort", "baslangic_sec": "Wähle zuerst einen Start: Tippe auf die Karte, suche einen Ort oder nutze deinen Standort.", "hata_tavan": "Du hast das Tageslimit des Tourengenerators erreicht. Versuche es morgen wieder oder plane in der Motoseyir-App.", "hata_mesgul": "Der Routenserver ist gerade ausgelastet. Warte eine Minute und versuche es erneut.", "hata_ag": "Keine Verbindung zum Routenserver. Prüfe deine Verbindung und versuche es erneut.", "hata_genel": "Die Rundtour konnte nicht erzeugt werden. Versuche es gleich noch einmal.", "bos": "Mit diesen Einstellungen wurde keine Rundtour gefunden. Wähle eine andere Richtung oder Länge oder setze den Start näher an eine Straße.", "gecit_yok": "Für diesen Start und diese Länge liegt kein Pass in Reichweite. Wähle eine längere Tour oder eine andere Richtung oder schalte die Pass-Option aus.", "baska_yok": "Es kam keine weitere, andere Rundtour heraus. Ändere Richtung oder Länge für mehr.", "sonuc_n": "{n} Rundtouren gefunden", "sonuc_1": "1 Rundtour gefunden", "adlar_yukleniyor": "Ortsnamen werden geladen …", "not_feribot": "Fähre auf der Strecke", "not_toprak": "{v} unbefestigt", "not_gise": "Mautabschnitt", "not_otoyol": "{v} Autobahn", "not_ortusme": "Der Rückweg führt größtenteils über dieselbe Straße", "not_kacin": "Die gewählte Straßenart ließ sich nicht ganz vermeiden", "sert_viraj": "{v} scharfe Kurven/km", "tur_ad": "{v0}-Runde · {v1}", "tur_ad_yedek": "Tour {n}", "hazirlaniyor": "Wird vorbereitet …", "paylas_tavan": "Du hast das Tageslimit für das Verschicken von Touren erreicht. Versuche es morgen wieder.", "paylas_buyuk": "Diese Tour ist zu groß zum Verschicken.", "paylas_hata": "Die Tour konnte nicht gesendet werden. Prüfe deine Verbindung und versuche es erneut.", "uygulamada_ac": "In Motoseyir öffnen", "magaza_ios": "Motoseyir im App Store", "magaza_play": "Bei Google Play laden", "qr_etiket": "QR-Code der Tour. Scanne ihn mit der Handykamera.", "telefon_baslik": "Mit dem Handy scannen", "telefon_acikla": "Richte die Handykamera auf den Code. Ist Motoseyir installiert, öffnet sich die Tour unter „Meine Touren“; sonst landest du im App Store.", "telefon_baslik_mobil": "Tour in der App öffnen", "telefon_acikla_mobil": "Tippe auf den Button, dann öffnet sich die Tour unter „Meine Touren“. Du kannst den Code auch unter „Meine Touren“ → „Mit Code“ eingeben.", "kod_etiket": "Tourcode", "baglanti_kopyala": "Link kopieren", "kopyalandi": "Kopiert", "android_not": "Motoseyir gibt es vorerst im App Store für das iPhone. Die Android-Version ist noch nicht bei Google Play.", "uygulama_yok": "Hat sich nichts geöffnet? Installiere zuerst Motoseyir und tippe dann noch einmal auf den Button.", "kod_gecerlilik": "Der Code gilt {gun} Tage. Beim Öffnen wird die Tour auf dein Handy kopiert.", "asama_1": "Routen werden gesucht", "asama_2": "Stopps werden auf Straßen gelegt", "asama_3": "Kurven werden gemessen", "asama_4": "Die drei besten werden gewählt", "sert_viraj_on": "", "sert_viraj_son": "scharfe Kurven/km", "pusula_etiket": "Gewählte Richtung", "kip_etiket": "Modus", "kip_uret": "Tour generieren", "kip_rotalar": "Touren in deiner Nähe", "rot_ipucu": "Legendäre Strecken und Pässe auf der Karte. Tippe auf eine Linie oder einen Pin oder wähle eine Karte.", "rot_sayi": "In diesem Kartenausschnitt: {r} Touren · {g} Pässe", "rot_filtre_rotalar": "Touren", "rot_filtre_gecitler": "Pässe", "rot_filtre_etiket": "Auf der Karte zeigen", "rot_yok": "In diesem Kartenausschnitt gibt es nichts. Zoome heraus oder verschiebe die Karte.", "rot_ac": "Diese Tour öffnen", "rot_gecit_buradan": "Von hier aus planen", "rot_aciliyor": "Route wird berechnet …", "rot_ac_hata": "Die Route konnte nicht berechnet werden. Versuche es gleich noch einmal.", "rot_efsane": "Legendäre Strecke", "rot_zirve": "Höchster Punkt {v}", "rot_zirve_ad": "{ad} {v}", "rot_kis": "Im Winter gesperrt", "rot_kaynak": "Quelle: {site}", "rot_gecit": "Pass", "rot_toprak": "Unbefestigt", "rot_kapali": "Meist gesperrt {a}–{b}", "rot_simdi": "Kann jetzt gesperrt sein ({a}–{b})", "rot_yuksek_kis": "Hoher Pass: im Winter evtl. gesperrt", "rot_yukleniyor": "Touren werden geladen …", "rot_hata": "Die Touren konnten nicht geladen werden.", "rot_ulkeler": "{v}", "efsane_acik_not": "Legendäre Strecken öffnen sich mit ihren eigenen Stopps. Du kannst sie in der App ändern.", "yer_baslik": "Orte entlang der Route", "yer_alt": "Aussichtspunkte, Essen, Camping, Buchten", "yer_manzara": "Aussichtspunkte", "yer_yeme": "Essen & Kaffee", "yer_kamp": "Camping", "yer_koy": "Buchten & Strände", "yer_benzin": "Tankstellen", "yer_yukleniyor": "Orte werden gesucht …", "yer_yok": "Im Umkreis von 2,5 km um die Route wurde nichts gefunden.", "yer_hata": "Die Orte konnten nicht geladen werden. Versuche es gleich noch einmal.", "yer_uzak": "{v} von der Route", "yer_ekle": "Als Stopp hinzufügen", "yer_eklendi": "Als Stopp hinzugefügt", "yer_ekleniyor": "Route wird aktualisiert …", "yer_ekle_hata": "Die Route konnte nicht aktualisiert werden. Versuche es erneut.", "yer_pro": "Hier siehst du bis zu fünf Orte. Alle Orte entlang der Route gehören zu „Entdecken“ in Motoseyir Pro.", "yer_atif": "Orte: © OpenStreetMap-Mitwirkende · Foursquare Open Source Places · Overture Maps Foundation", "kat_manzara": "Aussichtspunkt", "kat_kafe": "Café", "kat_restoran": "Restaurant", "kat_benzin": "Tankstelle", "kat_kamp": "Campingplatz", "kat_doga": "Natur", "kat_koy": "Bucht oder Strand", "kat_mola_yeri": "Rastplatz", "yer_haritada": "Auf der Karte zeigen", "g6": "Dein Motorrad", "motor_etiket": "Motorradtyp", "motor_alt": "Das Motorrad, das dich auf der Karte darstellt; nach links oder rechts ziehen, um es zu drehen", "motor_ipucu": "Dieses Motorrad stellt dich in der Vorschaufahrt auf der Karte dar.", "motor_supersport": "Supersport", "motor_chopper": "Chopper", "motor_scooter": "Maxi-Scooter", "motor_touring": "Touring", "surus_etiket": "Vorschau", "surus_atla": "Vorschau überspringen", "surus_tekrar": "Fahrt noch einmal ansehen", "surus_ad": "Tourvorschau: Das gewählte Motorrad fährt die Tour von Anfang bis Ende", "yol_ustu": "Entlang der Route", "yol_ara_yer": "Entlang der Route suchen", "yer_kahve": "Kaffee", "yer_yemek": "Essen", "panel_ac": "Panel öffnen oder schließen", "kadran_ipucu": "Greifen, drehen, ziehen", "baslangic_tasi": "Zum Verschieben des Starts den Punkt des Zifferblatts ziehen oder die Karte außerhalb tippen.", "yer_km": "km {v}", "yer_rotadan": "an der Route", "yer_ara_sonuc": "{n} Orte für „{q}“", "yer_ara_yok": "Zu „{q}“ entlang der Route nichts gefunden.", "yer_gec": "Hier fährst du vorbei", "yer_sec_etiket": "Orte entlang der Route", "kadran_yon": "Richtung", "yer_mil": "Meile {v}", "nasil_link": "So funktioniert es in der App"}, "ondalik": ",", "kok": "https://rota.motoseyir-app.com", "vekil": "https://motorota-rota.erengn.workers.dev", "magaza": {"ios": "https://apps.apple.com/de/app/id6792549131?pt=128439797&ct=site-web-tur&mt=8", "play": null}}</script>
 <script src="/m/tur/lib/maplibre-gl-4.7.1.js?v=6ea6d232"></script>
 <script src="/m/tur/lib/pmtiles-3.2.1.js?v=3cffa7f6"></script>
 <script src="/m/tur/lib/qrcode-generator-1.4.4.js?v=6e6189e2"></script>
@@ -564,7 +504,7 @@
 <script src="/m/tur/geometri.js?v=e25d7c7b"></script>
 <script src="/m/tur/kadran.js?v=e635a64c"></script>
 <script src="/m/tur/yerlesim.js?v=fa6dc69c"></script>
-<script src="/m/tur/tur.js?v=030a7366"></script>
+<script src="/m/tur/tur.js?v=50eb5e02"></script>
 <script src="/m/tur/surus.js?v=ee433693"></script>
 </body>
 </html>

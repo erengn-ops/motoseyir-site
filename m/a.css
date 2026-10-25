@@ -524,4 +524,4 @@ html:not(.js) .hk-adimlar{padding-left:0}
 }
 
 /* Web tur üreticisine bağlantı (anasayfa, Tur üret bölümü) */
-.arac-baglanti{margin:22px 0 0}
+.arac-baglanti{margin:22px 0 0;display:flex;flex-wrap:wrap;gap:10px}

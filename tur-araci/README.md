@@ -1,6 +1,6 @@
 # Web tur üreticisi — motor ve derleme
 
-`/tur-olusturucu/`, `/en/motorcycle-route-generator/`, `/de/motorrad-rundtour-planen/` sayfalarındaki araç. Uygulamadaki **Tur üret** ile
+`/tur-olusturucu/`, `/en/motorcycle-route-generator/`, `/de/motorrad-rundtour-planen/` sayfalarındaki araç (web uygulaması). Özelliği anlatan AYRI sayfa: `/tur-uret/`, `/en/tour-generator/`, `/de/tourengenerator/` (`sablon/tur-uret.html`, metin `tanitim/`). Uygulamadaki **Tur üret** ile
 **aynı kod** çalışır: hesap, moto-rota kaynağından tek dosyaya paketlenir, kopyalanıp çatallanmaz.
 
 ## Derleme

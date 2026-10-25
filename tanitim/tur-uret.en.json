@@ -1,0 +1,61 @@
+{
+  "dizin": "tour-generator",
+  "ad": "Tour generator",
+  "baslik": "Tour Generator in the Motoseyir App: Round Trips",
+  "aciklama": "The Motoseyir app's Tour generator takes your start, direction, length and curviness and draws up to three loops to your start. See it in a screen recording.",
+  "eyebrow": "Motoseyir feature",
+  "h1": "Tour generator: draw a loop back to your start on your phone",
+  "lead": "The Tour generator is the planner inside the Motoseyir app that asks for your start, direction, length and curviness. You turn and stretch the dial's handle on the map, and the app draws up to three round trips that end where they began.",
+  "yayin": "2026-10-27",
+  "guncelleme": "2026-10-27",
+  "indir": "Download on the App Store",
+  "web": "Try it on the web",
+  "bolumler": [
+    {
+      "id": "what-it-does",
+      "h2": "What the Tour generator does in the app",
+      "icerik": [
+        {
+          "p": "You pick the start on the map. Turning and stretching the dial's handle sets direction and length, then you choose Relaxed, Twisty or Very twisty. The app tries many tours on real roads and shows the best three."
+        },
+        {
+          "liste": [
+            "Pick one of eight directions or leave it open in every direction.",
+            "Set the length in kilometres, miles or hours.",
+            "Leave out motorways, tolls and unpaved roads, or favour tours over a mountain pass.",
+            "Browse viewpoints, food, camping and bays along the tour and add the ones you like as stops."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vs-web",
+      "h2": "How it differs from the web route generator",
+      "icerik": [
+        {
+          "p": "In the <a href=\"{arac}\">route generator in your browser</a> you draw the tour and send it to your phone with a QR code. In the app you edit the tour directly, ride it with navigation and save it. Both use the same planning logic."
+        }
+      ]
+    }
+  ],
+  "sss": [
+    {
+      "s": "Is the Tour generator free?",
+      "c": "The Motoseyir app is free to download. Some features, such as the country-roads mode, are in Motoseyir Pro, and the free tier keeps one saved tour."
+    },
+    {
+      "s": "Which phones have the Tour generator?",
+      "c": "Motoseyir is on the App Store for iPhone for now. The Android version is not on Google Play yet."
+    },
+    {
+      "s": "Can I try it in the browser?",
+      "c": "Yes. The route generator in your browser uses the same dial, draws the tour and sends it to your phone with a QR code."
+    }
+  ],
+  "varis": {
+    "h2": "Open the Tour generator in Motoseyir",
+    "p": [
+      "Download the app for free, pick your start, turn the dial and draw your tour."
+    ]
+  }
+}

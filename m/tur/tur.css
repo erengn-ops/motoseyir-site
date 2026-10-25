@@ -610,3 +610,32 @@ body.tur-sayfa { --border: var(--cizgi); --surface: var(--yuzey); --surface-2: v
 
 .tur-surus-gecit .ik.yerik { width: 28px; height: 28px; border-radius: 50%; background: #F4B63F; color: #3a2a00; display: grid; place-items: center; }
 .tur-surus-gecit .ik.yerik svg { width: 16px; height: 16px; }
+
+
+/* =====================================================================================================================
+   WEB UYGULAMASI DÜZENİ (27 Eki 2026): sitenin ince üst çubuğu + altında viewport'u dolduran harita; panel haritanın üstünde yüzer.
+   ===================================================================================================================== */
+.tur-sayfa { --ust-h: 59px; }
+.tur-uygulama { padding: 0; margin-top: var(--ust-h); background: #e7e3da; }
+.tur-uygulama .kap { max-width: none; padding: 0; }
+.tur-arac { height: calc(100vh - var(--ust-h)); height: calc(100dvh - var(--ust-h)); min-height: 560px; max-width: none; margin: 0; border-radius: 0; box-shadow: none; }
+@media (max-width: 899px) { .tur-uygulama { padding: 0; } .tur-uygulama .kap { padding: 0; } .tur-arac { border-radius: 0; height: calc(100dvh - var(--ust-h)); min-height: 520px; } }
+.tur-baslik-kutu { display: flex; align-items: baseline; justify-content: space-between; gap: 8px 12px; flex-wrap: wrap; margin: 0 0 .7rem; }
+.tur-h1 { margin: 0; font: 800 1.08rem/1.2 var(--sans); letter-spacing: -.01em; color: var(--yazi); }
+.tur-nasil-mini { font: 700 .78rem/1.2 var(--sans); color: #0E6E73; text-underline-offset: 3px; white-space: nowrap; }
+.tur-ozet { padding: 40px 0 12px; background: var(--zemin); }
+.tur-ozet .kap { max-width: 1200px; padding: 0 var(--gutter); }
+@media (min-width: 900px) { .tur-ozet .kap { padding: 0 40px; } }
+.tur-ozet .rehber-ekmek { font-size: .84rem; color: var(--yazi-3); margin-bottom: 14px; }
+.tur-ozet .rehber-ekmek a { color: var(--yazi-2); text-underline-offset: 3px; }
+.tur-ozet .metin { margin-top: 0; }
+.tur-nasil { margin: 14px 0 0; }
+.tur-nasil a { color: #0E6E73; font-weight: 700; text-underline-offset: 3px; }
+/* motor türü: yalnız küçük statik simgeler */
+.tur-motor-grup .tur-tipler { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.tur-motor-grup .tur-motor-not { margin-top: 8px; }
+/* kadran: ilk etkileşime kadar tutamak nazikçe nefes alır */
+.tur-kadran.ipucu .kd-tutamak .gov { animation: kd-nefes 2.6s var(--ease3) infinite; }
+@keyframes kd-nefes { 0%, 100% { scale: 1; } 50% { scale: 1.1; } }
+.tur-kadran.ipucu .kd-tutamak.tutuldu .gov { animation: none; }
+@media (prefers-reduced-motion: reduce) { .tur-kadran.ipucu .kd-tutamak .gov { animation: none; } }

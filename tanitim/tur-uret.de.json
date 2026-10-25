@@ -1,0 +1,61 @@
+{
+  "dizin": "tourengenerator",
+  "ad": "Tourengenerator",
+  "baslik": "Tourengenerator in der Motoseyir-App: Rundtouren",
+  "aciklama": "Der Tourengenerator der Motoseyir-App zeichnet aus Start, Richtung, Länge und Kurvigkeit bis zu drei Runden zum Start. Sieh ihn in einer Bildschirmaufnahme.",
+  "eyebrow": "Motoseyir-Funktion",
+  "h1": "Tourengenerator: Zeichne die Runde zurück zum Start auf dem Handy",
+  "lead": "Der Tourengenerator ist der Planer in der Motoseyir-App, der nach Start, Richtung, Länge und Kurvigkeit fragt. Du drehst und ziehst den Griff des Zifferblatts auf der Karte, und die App zeichnet bis zu drei Rundtouren, die dort enden, wo sie begonnen haben.",
+  "yayin": "2026-10-27",
+  "guncelleme": "2026-10-27",
+  "indir": "Im App Store laden",
+  "web": "Im Browser testen",
+  "bolumler": [
+    {
+      "id": "das-macht-er",
+      "h2": "Was der Tourengenerator in der App macht",
+      "icerik": [
+        {
+          "p": "Du wählst den Start auf der Karte. Mit Drehen und Ziehen am Griff des Zifferblatts legst du Richtung und Länge fest, dann wählst du Entspannt, Kurvig oder Sehr kurvig. Die App probiert viele Touren auf echten Straßen und zeigt die besten drei."
+        },
+        {
+          "liste": [
+            "Wähle eine von acht Richtungen oder lass alle Richtungen offen.",
+            "Stelle die Länge in Kilometern, Meilen oder Stunden ein.",
+            "Lass Autobahn, Maut und unbefestigte Straßen weg oder bevorzuge Touren über einen Pass.",
+            "Sieh dir Aussichtspunkte, Essen, Camping und Buchten entlang der Tour an und füge Gefallenes als Stopp hinzu."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "unterschied-web",
+      "h2": "Der Unterschied zum Tourengenerator im Browser",
+      "icerik": [
+        {
+          "p": "Im <a href=\"{arac}\">Tourengenerator im Browser</a> zeichnest du die Tour und schickst sie per QR-Code aufs Handy. In der App bearbeitest du die Tour direkt, fährst sie mit Navigation und speicherst sie. Beide nutzen dieselbe Planungslogik."
+        }
+      ]
+    }
+  ],
+  "sss": [
+    {
+      "s": "Ist der Tourengenerator kostenlos?",
+      "c": "Die Motoseyir-App ist kostenlos. Einige Funktionen, etwa der Landstraßen-Modus, gehören zu Motoseyir Pro; die kostenlose Stufe behält eine gespeicherte Tour."
+    },
+    {
+      "s": "Auf welchen Handys gibt es den Tourengenerator?",
+      "c": "Motoseyir gibt es vorerst im App Store für das iPhone. Die Android-Version ist bei Google Play noch nicht verfügbar."
+    },
+    {
+      "s": "Kann ich ihn im Browser ausprobieren?",
+      "c": "Ja. Der Tourengenerator im Browser nutzt dasselbe Zifferblatt, zeichnet die Tour und schickt sie per QR-Code aufs Handy."
+    }
+  ],
+  "varis": {
+    "h2": "Tourengenerator in Motoseyir öffnen",
+    "p": [
+      "Lade die App kostenlos, wähle deinen Start, drehe das Zifferblatt und zeichne deine Tour."
+    ]
+  }
+}

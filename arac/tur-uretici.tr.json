@@ -184,7 +184,7 @@
     "g6": "Motorun",
     "motor_etiket": "Motor türü",
     "motor_alt": "Haritada seni temsil edecek motosiklet; sağa sola sürükleyerek döndürebilirsin",
-    "motor_ipucu": "Basılı tutup sürükle, motoru döndür. Seçtiğin motor, önizlemede turu haritada seninle sürer.",
+    "motor_ipucu": "Önizleme sürüşünde haritada seni bu motor temsil eder.",
     "motor_supersport": "Supersport",
     "motor_chopper": "Chopper",
     "motor_scooter": "Maksi scooter",
@@ -198,7 +198,7 @@
     "yer_kahve": "Kahve",
     "yer_yemek": "Yemek",
     "panel_ac": "Paneli aç ya da kapat",
-    "kadran_ipucu": "Tutamağı çevir, uzat",
+    "kadran_ipucu": "Tut, çevir ve uzat",
     "baslangic_tasi": "Başlangıcı taşımak için kadranın noktasını sürükle ya da haritada kadranın dışına dokun.",
     "yer_km": "{v}. km",
     "yer_rotadan": "rotada",
@@ -207,7 +207,8 @@
     "yer_gec": "Burada geçiyorsun",
     "yer_sec_etiket": "Yol üstündeki yerler",
     "kadran_yon": "Yön",
-    "yer_mil": "{v}. mil"
+    "yer_mil": "{v}. mil",
+    "nasil_link": "Uygulamada nasıl çalışır?"
   },
   "adimlar_h2": "Tur oluşturucu nasıl çalışır",
   "adimlar": [

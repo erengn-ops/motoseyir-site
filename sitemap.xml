@@ -1392,6 +1392,36 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://motoseyir-app.com/en/motorcycle-route-generator/"/>
   </url>
   <url>
+    <loc>https://motoseyir-app.com/tur-uret/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://motoseyir-app.com/tur-uret/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://motoseyir-app.com/en/tour-generator/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://motoseyir-app.com/de/tourengenerator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://motoseyir-app.com/en/tour-generator/"/>
+  </url>
+  <url>
+    <loc>https://motoseyir-app.com/en/tour-generator/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://motoseyir-app.com/tur-uret/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://motoseyir-app.com/en/tour-generator/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://motoseyir-app.com/de/tourengenerator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://motoseyir-app.com/en/tour-generator/"/>
+  </url>
+  <url>
+    <loc>https://motoseyir-app.com/de/tourengenerator/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://motoseyir-app.com/tur-uret/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://motoseyir-app.com/en/tour-generator/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://motoseyir-app.com/de/tourengenerator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://motoseyir-app.com/en/tour-generator/"/>
+  </url>
+  <url>
     <loc>https://motoseyir-app.com/gizlilik/</loc>
     <lastmod>2026-10-20</lastmod>
     <changefreq>yearly</changefreq>

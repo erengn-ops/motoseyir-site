@@ -13,21 +13,17 @@
 <link rel="icon" href="/img/favicon.png">
 
 <!--
-  Web tur üreticisi (26 Eki 2026 yeniden tasarım): anasayfanın hareket dili. Stil m/a.css (ortak) + m/tur/tur.css (araç), hareket m/h.js (ortak)
-  + m/a.js (kahraman, sticky anlatı, dönen motor, telefon klipleri — anasayfayla AYNI dosya) + m/tur/surus.js (motor seçimi, tur önizleme sürüşü).
-  Kahraman bandı: m/sahne-tur(-dikey).mp4 = anasayfa sahnesinin 8 sn'lik hafif döngüsü (sahne-hd'den, 720p, sessiz).
-  Telefon klibi: m/demo-tur-uret-tr.mp4 (klipte Türkçe arayüz var; EN/DE sayfada da aynı klip, çünkü başka dilde kayıt yok).
+  WEB UYGULAMASI (27 Eki 2026): uygulamadaki Tur üret + Keşfet'in tarayıcıdaki karşılığı; ekranı dolduran harita + yüzen panel/alttan sayfa.
+  Stil m/a.css (ortak site çerçevesi) + m/tur/tur.css, hareket m/h.js (ortak) + m/tur/{geometri,kadran,yerlesim,tur,surus}.js.
+  Telefondaki özelliği anlatan sayfa AYRI: sablon/tur-uret.html (/tur-uret/, /en/tour-generator/, /de/tourengenerator/).
 -->
-<script>!function(d,c){c=" js";if(!matchMedia("(prefers-reduced-motion: reduce)").matches){c+=" hm";if(self.CSS&&CSS.supports&&CSS.supports("animation-timeline:view()"))c+=" sd"}d.className+=c}(document.documentElement)</script>
-<link rel="preload" as="image" type="image/webp" href="/m/sahne-dikey-poster.webp" media="(max-width:700px)" fetchpriority="high">
-<link rel="preload" as="image" type="image/webp" href="/m/sahne-poster.webp" media="(min-width:701px)" fetchpriority="high">
+<script>!function(d,c){c=" js hazir";if(!matchMedia("(prefers-reduced-motion: reduce)").matches){c+=" hm";if(self.CSS&&CSS.supports&&CSS.supports("animation-timeline:view()"))c+=" sd"}d.className+=c}(document.documentElement)</script>
 <link rel="preload" as="font" type="font/woff" href="/m/font/Manrope.woff" crossorigin>
 <link rel="stylesheet" href="/m/a.css">
 <link rel="stylesheet" href="/m/tur/lib/maplibre-gl-4.7.1.css">
 <link rel="stylesheet" href="/m/tur/tur.css">
 <link rel="preconnect" href="{{vekil}}" crossorigin>
 <script defer src="/m/h.js"></script>
-<script defer src="/m/a.js"></script>
 
 {{json_ld}}
 </head>
@@ -35,11 +31,11 @@
 <a class="skip" href="#icerik">{{skip}}</a>
 <div class="ilerle" aria-hidden="true"></div>
 
-<header class="ust" id="ustbar">
+<header class="ust acik" id="ustbar">
   <div class="ust-ic">
     <a class="logo" href="{{anasayfa_url}}" aria-label="Motoseyir"><img src="/img/favicon.png" alt="" width="28" height="28">MOTO<em>SEYİR</em></a>
     <nav aria-label="{{nav_etiket}}"><ul class="menu">
-      <li><a href="{{anasayfa_url}}">{{nav_anasayfa}}</a></li><li><a href="#arac-bolum">{{u_ekmek_son}}</a></li><li><a href="{{ozellikler_url}}">{{footer_tum_ozellikler}}</a></li><li><a href="{{corider_url}}">AI CoRider</a></li><li><a href="{{hub_url}}">{{ui_rehber}}</a></li>
+      <li><a href="{{anasayfa_url}}">{{nav_anasayfa}}</a></li><li><a href="{{arac_url}}" aria-current="page">{{u_ekmek_son}}</a></li><li><a href="{{ozellikler_url}}">{{footer_tum_ozellikler}}</a></li><li><a href="{{corider_url}}">AI CoRider</a></li><li><a href="{{hub_url}}">{{ui_rehber}}</a></li>
     </ul></nav>
     <div class="ust-sag">
       {{dil_secici}}
@@ -49,41 +45,10 @@
 </header>
 
 <main id="icerik">
-<section class="kahraman tur-kahraman" aria-labelledby="tur-h1">
-  <div class="k-arka">
-    <picture>
-      <source media="(max-width:700px)" srcset="/m/sahne-dikey-poster.webp" type="image/webp">
-      <img src="/m/sahne-poster.webp" alt="" fetchpriority="high" width="1920" height="1080">
-    </picture>
-    <video id="hv" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1" data-src="/m/sahne-tur.mp4" data-src-dikey="/m/sahne-tur-dikey.mp4"></video>
-  </div>
-  <div class="k-ic">
-    <div class="k-metin">
-      <nav class="tur-ekmek" aria-label="{{u_ekmek}}"><a href="{{anasayfa_url}}">{{nav_anasayfa}}</a> <span aria-hidden="true">›</span> <span aria-current="page">{{u_ekmek_son}}</span></nav>
-      <p class="ust-yazi">{{eyebrow}}</p>
-      <h1 id="tur-h1">{{h1}}</h1>
-      <p class="giris">{{t_hero_giris}}</p>
-      <div class="cta-satir">
-        <a class="btn" href="#arac-bolum"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v14m0 0-5.5-5.5M12 17l5.5-5.5M5 21h14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>{{u_uret}}</a>
-        <a class="btn btn-hayalet" href="#kesfet">{{u_kip_rotalar}}</a>
-        <p class="mikro">{{t_hero_mikro}}</p>
-      </div>
-    </div>
-    <div class="k-tel">
-      <div class="kt kt-arka"><i class="tu" aria-hidden="true"></i><img src="/m/ekran-kesfet-{{dil_kodu}}.webp" alt="" width="540" height="1174" decoding="async"></div>
-      <div class="kt kt-on"><i class="tu" aria-hidden="true"></i><img data-demo="tur-uret" data-demo-ilk src="/m/ekran-tur-{{dil_kodu}}.webp" alt="{{t_hero_tel_alt}}" width="540" height="1174" decoding="async"></div>
-    </div>
-  </div>
-</section>
-
-<div class="serit" aria-label="{{t_serit_etiket}}"><div class="serit-ic">
-{{t_serit}}
-</div></div>
-
-<section class="tur-sahne" id="arac-bolum" aria-labelledby="arac-baslik">
+<section class="tur-uygulama" id="arac-bolum" aria-labelledby="arac-baslik">
 <div class="kap">
   <h2 id="arac-baslik" class="gizli">{{u_arac_baslik}}</h2>
-  <div class="tur-arac" id="arac" data-r data-evre="ayar">
+  <div class="tur-arac" id="arac" data-evre="ayar">
     <div class="tur-harita-kolon">
       <div class="tur-harita-sar">
         <div id="tur-harita" class="tur-harita" role="application" aria-label="{{u_harita_etiket}}"></div>
@@ -120,6 +85,7 @@
     <div class="tur-panel" id="tur-panel" data-sheet="yarim">
       <button type="button" class="tur-tutamac" id="tur-tutamac" aria-expanded="true" aria-controls="tur-panel-ic" aria-label="{{u_panel_ac}}"><i></i></button>
       <div class="tur-panel-ic" id="tur-panel-ic">
+      <div class="tur-baslik-kutu"><h1 class="tur-h1" id="tur-h1">{{h1}}</h1><a class="tur-nasil-mini" href="{{tanitim_url}}">{{u_nasil_link}}</a></div>
       <p id="tur-durum" class="tur-durum" role="status" aria-live="polite" hidden></p>
       <div class="tur-kipler" id="kesfet" role="tablist" aria-label="{{u_kip_etiket}}">
         <button type="button" role="tab" id="tur-kip-uret" class="tur-kip-dugme" aria-selected="true" aria-controls="tur-panel-uret">{{u_kip_uret}}</button>
@@ -194,18 +160,13 @@
 
         <fieldset class="tur-grup tur-motor-grup">
           <legend><span class="no">6</span>{{u_g6}}</legend>
-          <div class="tur-motor-ic">
-            <div class="motor tur-motor" id="motor" data-tip="touring" role="img" aria-label="{{u_motor_alt}}"><img id="motorimg" src="/m/bike/090.webp" alt="" width="760" height="699" decoding="async"></div>
-            <div class="tur-motor-sec">
-              <div class="tur-tipler" id="tur-tipler" role="radiogroup" aria-label="{{u_motor_etiket}}">
+          <div class="tur-tipler" id="tur-tipler" role="radiogroup" aria-label="{{u_motor_etiket}}">
                 <label><input type="radio" name="arac" value="supersport"><span class="tip"><img src="/m/isaret-supersport.webp" alt="" width="48" height="48" loading="lazy" decoding="async"><b>{{u_motor_supersport}}</b></span></label>
                 <label><input type="radio" name="arac" value="chopper"><span class="tip"><img src="/m/isaret-chopper.webp" alt="" width="48" height="48" loading="lazy" decoding="async"><b>{{u_motor_chopper}}</b></span></label>
                 <label><input type="radio" name="arac" value="scooter"><span class="tip"><img src="/m/isaret-scooter.webp" alt="" width="48" height="48" loading="lazy" decoding="async"><b>{{u_motor_scooter}}</b></span></label>
                 <label><input type="radio" name="arac" value="touring" checked><span class="tip"><img src="/m/isaret-touring.webp" alt="" width="48" height="48" loading="lazy" decoding="async"><b>{{u_motor_touring}}</b></span></label>
               </div>
               <p class="tur-motor-not">{{u_motor_ipucu}}</p>
-            </div>
-          </div>
         </fieldset>
 
         <button type="submit" id="tur-uret" class="btn btn-primary tur-uret"><svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><path d="M3 10a7 7 0 1 1 2.2 5.1M3 15v-4h4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>{{u_uret}}</button>
@@ -253,27 +214,11 @@
 </div>
 </section>
 
-<section class="tur-ozet" aria-label="{{t_ozet_etiket}}"><div class="kap"><p class="metin" data-r>{{lead}}</p></div></section>
-
-<!-- Sticky anlatı: anasayfadaki kalıp (m/a.js "sticky anlatı"). Metinler `adimlar`dan; ekranlar uygulamanın gerçek ekranları, 3. adımda gerçek ekran kaydı. -->
-<section class="hikaye" id="nasil" aria-labelledby="hk-h">
-  <div class="kap">
-    <h2 id="hk-h" class="hk-baslik">{{adimlar_h2}}</h2>
-    <div class="hk-sahne" id="hk-sahne" data-a="0">
-      <div class="hk-yapis" aria-hidden="true">
-        <div class="hk-tel"><div class="tel"><i class="tu" aria-hidden="true"></i><div class="ekr">
-          <img class="e e0" src="/m/ekran-kesfet-{{dil_kodu}}.webp" alt="" width="540" height="1174" loading="lazy" decoding="async">
-          <img class="e e1" src="/m/ekran-tur-{{dil_kodu}}.webp" alt="" width="540" height="1174" loading="lazy" decoding="async">
-          {{hk_video}}
-          <img class="e e3" src="/m/ekran-nav-{{dil_kodu}}.webp" alt="" width="540" height="1174" loading="lazy" decoding="async">
-        </div></div></div>
-      </div>
-      <ol class="hk-adimlar">
-{{hk_adimlar}}
-      </ol>
-    </div>
-  </div>
-</section>
+<section class="tur-ozet" aria-label="{{t_ozet_etiket}}"><div class="kap">
+  <nav class="rehber-ekmek" aria-label="{{u_ekmek}}"><a href="{{anasayfa_url}}">{{nav_anasayfa}}</a> <span aria-hidden="true">›</span> <span aria-current="page">{{u_ekmek_son}}</span></nav>
+  <p class="metin" data-r>{{lead}}</p>
+  <p class="tur-nasil" data-r><a href="{{tanitim_url}}">{{u_nasil_link}} →</a></p>
+</div></section>
 
 <div class="ana tur-ana">
 {{arac_icerik}}
@@ -293,6 +238,7 @@
       <li><a href="{{ozellikler_url}}">{{footer_tum_ozellikler}}</a></li>
       <li><a href="{{hub_url}}">{{ui_rehber}}</a></li>
       <li><a href="{{arac_url}}" aria-current="page">{{u_ekmek_son}}</a></li>
+      <li><a href="{{tanitim_url}}">{{p_ad}}</a></li>
       <li><a href="{{corider_url}}">AI CoRider</a></li>
       <li><a href="{{nasil_url}}">{{nav_nasil}}</a></li>
       <li><a href="{{gizlilik_url}}">{{nav_gizlilik}}{{gizlilik_tr_notu}}</a></li>

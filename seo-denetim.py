@@ -40,7 +40,8 @@ REHBER_DIZIN = {"rehber", "guides", "ratgeber", "guide", "guias"}
 
 
 # Web tur üreticisi sayfaları (uret.py › ARAC): TR/EN/DE, tek hreflang kümesi (tr, en, de, x-default); JSON-LD'de WebApplication var.
-ARAC_YOLLARI = {"tur-olusturucu/index.html", "en/motorcycle-route-generator/index.html", "de/motorrad-rundtour-planen/index.html"}
+TANITIM_YOLLARI = {"tur-uret/index.html", "en/tour-generator/index.html", "de/tourengenerator/index.html"}  # uret.py › tanitim_yaz: aynı TR/EN/DE kümesi, WebApplication yok
+ARAC_YOLLARI = {"tur-olusturucu/index.html", "en/motorcycle-route-generator/index.html", "de/motorrad-rundtour-planen/index.html"} | TANITIM_YOLLARI
 
 
 def rehber_mi(rel: str) -> bool:
@@ -281,7 +282,7 @@ def main() -> int:
             if not {"Organization", "WebSite", "BreadcrumbList"} <= set(tipler) or not ({"WebPage", "Article"} <= set(tipler) or "CollectionPage" in tipler):
                 hatalar.append(f"{rel}: rehber JSON-LD türleri eksik: {tipler}")
         elif rel in ARAC_YOLLARI:
-            if not {"Organization", "WebSite", "WebPage", "BreadcrumbList", "WebApplication", "FAQPage"} <= set(tipler):
+            if not {"Organization", "WebSite", "WebPage", "BreadcrumbList", "FAQPage"} | (set() if rel in TANITIM_YOLLARI else {"WebApplication"}) <= set(tipler):
                 hatalar.append(f"{rel}: araç JSON-LD türleri eksik: {tipler}")
         elif "WebPage" not in tipler:
             hatalar.append(f"{rel}: JSON-LD'de WebPage yok")

@@ -184,7 +184,7 @@
     "g6": "Dein Motorrad",
     "motor_etiket": "Motorradtyp",
     "motor_alt": "Das Motorrad, das dich auf der Karte darstellt; nach links oder rechts ziehen, um es zu drehen",
-    "motor_ipucu": "Gedrückt halten und ziehen, um das Motorrad zu drehen. Das gewählte fährt in der Vorschau deine Tour auf der Karte.",
+    "motor_ipucu": "Dieses Motorrad stellt dich in der Vorschaufahrt auf der Karte dar.",
     "motor_supersport": "Supersport",
     "motor_chopper": "Chopper",
     "motor_scooter": "Maxi-Scooter",
@@ -198,7 +198,7 @@
     "yer_kahve": "Kaffee",
     "yer_yemek": "Essen",
     "panel_ac": "Panel öffnen oder schließen",
-    "kadran_ipucu": "Griff drehen und ziehen",
+    "kadran_ipucu": "Greifen, drehen, ziehen",
     "baslangic_tasi": "Zum Verschieben des Starts den Punkt des Zifferblatts ziehen oder die Karte außerhalb tippen.",
     "yer_km": "km {v}",
     "yer_rotadan": "an der Route",
@@ -207,7 +207,8 @@
     "yer_gec": "Hier fährst du vorbei",
     "yer_sec_etiket": "Orte entlang der Route",
     "kadran_yon": "Richtung",
-    "yer_mil": "Meile {v}"
+    "yer_mil": "Meile {v}",
+    "nasil_link": "So funktioniert es in der App"
   },
   "adimlar_h2": "So funktioniert der Tourengenerator",
   "adimlar": [

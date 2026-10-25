@@ -1,0 +1,61 @@
+{
+  "dizin": "tur-uret",
+  "ad": "Tur üret",
+  "baslik": "Tur üret: Motoseyir ile Başladığın Yere Dönen Tur",
+  "aciklama": "Motoseyir'in Tur üret özelliği başlangıcı, yönü, uzunluğu ve virajı alır; başladığın yere dönen en fazla üç turu çizer. Nasıl çalıştığını ekran kaydında gör.",
+  "eyebrow": "Motoseyir özelliği",
+  "h1": "Tur üret: başladığın yere dönen turu telefonunda çiz",
+  "lead": "Tur üret, Motoseyir uygulamasında başlangıç noktanı, yönünü, uzunluğunu ve virajını soran tur planlayıcısıdır. Haritadaki kadranın tutamağını çevirip uzatırsın, uygulama başladığın yere dönen en fazla üç turu çizer.",
+  "yayin": "2026-10-27",
+  "guncelleme": "2026-10-27",
+  "indir": "App Store'dan indir",
+  "web": "Web'de dene",
+  "bolumler": [
+    {
+      "id": "ne-yapar",
+      "h2": "Tur üret uygulamada ne yapar",
+      "icerik": [
+        {
+          "p": "Başlangıcı haritada seçersin. Kadranın tutamağını çevirip uzatarak yönü ve uzunluğu belirlersin, sonra Rahat, Virajlı ya da Çok virajlı seviyesini seçersin. Uygulama gerçek yollarda çok sayıda tur dener ve en iyi üçünü gösterir."
+        },
+        {
+          "liste": [
+            "Yönü sekiz yönden biriyle seç ya da her yönde bırak.",
+            "Uzunluğu kilometre, mil ya da saat olarak ayarla.",
+            "İstersen otoyolu, gişeyi ve toprak yolu dışarıda bırak, dağ geçidinden geçen turlara yönel.",
+            "Turun üstündeki manzara, yeme-içme, kamp ve koy yerlerine bak, beğendiğini durak olarak ekle."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "web-ile-fark",
+      "h2": "Web'deki tur oluşturucuyla farkı",
+      "icerik": [
+        {
+          "p": "Tarayıcıdaki <a href=\"{arac}\">tur oluşturucuda</a> turu çizip QR kodla telefonuna gönderirsin. Uygulamada ise turu doğrudan düzenler, yönlendirmeyle sürer ve kaydedersin. İkisi aynı hesap mantığıyla çalışır."
+        }
+      ]
+    }
+  ],
+  "sss": [
+    {
+      "s": "Tur üret ücretsiz mi?",
+      "c": "Motoseyir uygulaması ücretsiz indirilir. Köy yolları kipi gibi bazı özellikler Motoseyir Pro'dadır ve ücretsiz kademe bir kayıtlı tur tutar."
+    },
+    {
+      "s": "Tur üret hangi telefonlarda var?",
+      "c": "Motoseyir şimdilik iPhone için App Store'da. Android sürümü Google Play'de henüz yok."
+    },
+    {
+      "s": "Turu tarayıcıda deneyebilir miyim?",
+      "c": "Evet. Tarayıcıdaki tur oluşturucuda aynı kadranla turu çizer, QR kodla telefonuna gönderirsin."
+    }
+  ],
+  "varis": {
+    "h2": "Tur üret'i Motoseyir'de aç",
+    "p": [
+      "Uygulamayı ücretsiz indir, başlangıcını seç, kadranı çevir ve turunu çiz."
+    ]
+  }
+}

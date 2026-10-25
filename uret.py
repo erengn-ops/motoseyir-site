@@ -324,6 +324,7 @@ def sitemap() -> str:
 
     parca.extend(rehber_sitemap())
     parca.extend(arac_sitemap())
+    parca.extend(tanitim_sitemap())
 
     # Elle tutulan sayfalar: gizlilik (TR tam metin + EN + DE) ve Impressum (DE + EN).
     GZ = [("tr", "/gizlilik/"), ("en", "/gizlilik/en/"), ("de", "/gizlilik/de/")]
@@ -559,14 +560,16 @@ def arac_yol(kod: str) -> str:
 def arac_footer(kod: str) -> str:
     if kod not in arac_veri():
         return ""
-    return f'<li><a href="{arac_yol(kod)}">{arac_veri()[kod]["ui"]["ekmek_son"]}</a></li>'
+    return (f'<li><a href="{arac_yol(kod)}">{arac_veri()[kod]["ui"]["ekmek_son"]}</a></li>'
+            + f'<li><a href="{tanitim_yol(kod)}">{tanitim_veri()[kod]["ad"]}</a></li>')
 
 
 def arac_baglanti(kod: str) -> str:
     """Anasayfadaki "Tur üret" bölümünün altındaki bağlantı (TR/EN/DE); öteki dillerde boş."""
     if kod not in arac_veri():
         return ""
-    return f'<p class="arac-baglanti"><a class="btn btn-ghost btn-sm" href="{arac_yol(kod)}">{arac_veri()[kod]["anasayfa_baglanti"]} →</a></p>'
+    return (f'<p class="arac-baglanti"><a class="btn btn-hayalet btn-kucuk" href="{arac_yol(kod)}">{arac_veri()[kod]["anasayfa_baglanti"]} →</a> '
+            f'<a class="btn btn-hayalet btn-kucuk" href="{tanitim_yol(kod)}">{tanitim_veri()[kod]["ad"]} →</a></p>')
 
 
 def arac_dil_yolu(k: str) -> str:
@@ -636,7 +639,7 @@ def arac_icerik_govde(kod: str, v: dict) -> str:
     return "\n".join(parca)
 
 
-def arac_ayrinti(kod: str, v: dict) -> str:
+def arac_ayrinti(kod: str, v: dict, kaynak_goster: bool = True) -> str:
     """Bitiş çağrısından sonra: ilgili rehberler ve veri atıfları (anasayfadaki .ayr kalıbı)."""
     hub, makale = rehber_veri()
     ilgili = [g for g in v["ilgili"] if g in makale and kod in makale[g]]
@@ -646,7 +649,10 @@ def arac_ayrinti(kod: str, v: dict) -> str:
                + "".join(f'<li><a href="{rehber_yol(kod, g)}">{makale[g][kod]["h1"]}</a></li>' for g in ilgili)
                + f'</ul><a class="ok" href="{rehber_hub_yolu(kod)}">{hub[kod]["ui"]["tum_yazilar"]}</a></div>')
     kaynak = "".join(f'<li><a href="{k["url"]}" rel="noopener">{k["ad"]}</a></li>' for k in v["kaynaklar"])
-    sag = f'<div id="kaynaklar" class="rehber-kaynaklar"><h2>{v["kaynaklar_baslik"]}</h2><ul class="d">{kaynak}</ul></div>'
+    sag = f'<div id="kaynaklar" class="rehber-kaynaklar"><h2>{v["kaynaklar_baslik"]}</h2><ul class="d">{kaynak}</ul></div>' if kaynak_goster else ""
+    if not sol and not sag:
+        return ""
+
     return f'<section class="ayr"><div class="kap">{sol}{sag}</div></section>'
 
 
@@ -660,12 +666,12 @@ def arac_varis(kod: str, v: dict) -> str:
             + arac_ayrinti(kod, v))
 
 
-def arac_hikaye(kod: str, v: dict) -> tuple:
+def arac_hikaye(kod: str, v: dict, href: str = "#arac-bolum") -> tuple:
     """Sticky anlatı: adım listesi + 3. adımdaki gerçek ekran kaydı (klip yalnız TR'de var; hangi dilde olursa o klip)."""
     t = v["tasarim"]
     ad = "".join(
         f'        <li class="hk-adim{" on" if i == 0 else ""}" data-i="{i}"><p class="km">{t["adim"].format(n=i + 1)}</p><h3>{b}</h3>'
-        f'<p class="metin">{p}</p><a class="hk-link" href="#arac-bolum">{t["dene"]}</a></li>\n'
+        f'<p class="metin">{p}</p><a class="hk-link" href="{href}">{t["dene"]}</a></li>\n'
         for i, (b, p) in enumerate(v["adimlar"]))
     klip = "tur-uret-tr"
     kaynak = ""
@@ -676,6 +682,134 @@ def arac_hikaye(kod: str, v: dict) -> tuple:
              f'data-poster="/m/demo-{klip}.webp" width="1320" height="2868" aria-hidden="true" tabindex="-1">{kaynak}</video>'
              f'<noscript><img class="e e2" src="/m/ekran-tur-{kod}.webp" alt="" width="540" height="1174"></noscript>')
     return ad.rstrip("\n"), video
+
+
+# ---------------------------------------------------------------------------------------------------------------------
+# TANITIM SAYFASI (27 Eki 2026): telefondaki "Tur üret" özelliğini anlatan sayfa — web uygulamasından AYRI (iki ayrı niyet, iki ayrı sayfa).
+#   TR /tur-uret/   EN /en/tour-generator/   DE /de/tourengenerator/        Metin: arac/tur-uret.<kod>.json (+ adımlar ve şerit metni
+#   web uygulaması dosyasından: arac/tur-uretici.<kod>.json `adimlar`, `tasarim`). Şablon: sablon/tur-uret.html. App Store ct=site-tur-uret.
+# ---------------------------------------------------------------------------------------------------------------------
+_tanitim_onbellek: list = []
+TANITIM_ZORUNLU = ("dizin", "ad", "baslik", "aciklama", "eyebrow", "h1", "lead", "yayin", "guncelleme", "indir", "web", "bolumler", "sss", "varis")
+
+
+def tanitim_veri() -> dict:
+    if _tanitim_onbellek:
+        return _tanitim_onbellek[0]
+    veri = {}
+    for f in sorted((KOK / "tanitim").glob("tur-uret.*.json")):
+        kod = f.stem.split(".")[1]
+        v = json.loads(f.read_text(encoding="utf-8"))
+        eksik = [a for a in TANITIM_ZORUNLU if a not in v]
+        if eksik:
+            raise SystemExit(f"HATA: arac/{f.name}: eksik alan(lar): {', '.join(eksik)}")
+        veri[kod] = v
+    _tanitim_onbellek.append(veri)
+    return veri
+
+
+def tanitim_yol(kod: str) -> str:
+    on = "" if kod == VARSAYILAN else f"/{kod}"
+    return f"{on}/{tanitim_veri()[kod]['dizin']}/"
+
+
+def tanitim_dil_yolu(k: str) -> str:
+    return tanitim_yol(k) if k in tanitim_veri() else sayfa_yolu(k, "index.html")
+
+
+def tanitim_alternatifler() -> str:
+    kodlar = [d["kod"] for d in DILLER if d["kod"] in tanitim_veri()]
+    satir = [f'<link rel="alternate" hreflang="{dil_bilgisi(k)["lang"]}" href="{ALAN}{tanitim_yol(k)}">' for k in kodlar]
+    varsayilan = X_DEFAULT if X_DEFAULT in kodlar else kodlar[0]
+    satir.append(f'<link rel="alternate" hreflang="x-default" href="{ALAN}{tanitim_yol(varsayilan)}">')
+    return "\n".join(satir)
+
+
+def tanitim_sitemap() -> list:
+    veri = tanitim_veri()
+    kodlar = [d["kod"] for d in DILLER if d["kod"] in veri]
+    if not kodlar:
+        return []
+    alt = [f'    <xhtml:link rel="alternate" hreflang="{dil_bilgisi(k)["lang"]}" href="{ALAN}{tanitim_yol(k)}"/>' for k in kodlar]
+    varsayilan = X_DEFAULT if X_DEFAULT in kodlar else kodlar[0]
+    alt.append(f'    <xhtml:link rel="alternate" hreflang="x-default" href="{ALAN}{tanitim_yol(varsayilan)}"/>')
+    parca = []
+    for k in kodlar:
+        parca += ["  <url>", f"    <loc>{ALAN}{tanitim_yol(k)}</loc>", f"    <lastmod>{veri[k]['guncelleme']}</lastmod>",
+                  "    <changefreq>monthly</changefreq>", "    <priority>0.8</priority>"] + alt + ["  </url>"]
+    return parca
+
+
+def tanitim_json_ld(kod: str, v: dict, metin: dict, baslik: str, aciklama: str, url: str) -> str:
+    lang = dil_bilgisi(kod)["lang"]
+    ana = f"{ALAN}/"
+    org = {"@type": "Organization", "@id": f"{ALAN}/#organization", "name": "Motoseyir", "url": ana,
+           "logo": {"@type": "ImageObject", "url": LOGO, "width": 512, "height": 512}, "sameAs": SAMEAS}
+    site = {"@type": "WebSite", "@id": f"{ALAN}/#website", "url": ana, "name": "Motoseyir", "inLanguage": lang, "publisher": {"@id": f"{ALAN}/#organization"}}
+    sayfa = {"@type": "WebPage", "@id": f"{url}#sayfa", "url": url, "name": baslik, "description": aciklama, "inLanguage": lang,
+             "isPartOf": {"@id": f"{ALAN}/#website"}, "primaryImageOfPage": {"@type": "ImageObject", "url": SOSYAL_GORSEL, "width": 1200, "height": 630},
+             "dateModified": v["guncelleme"], "breadcrumb": {"@id": f"{url}#ekmek"}}
+    ekmek = {"@type": "BreadcrumbList", "@id": f"{url}#ekmek", "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": duz(metin["nav_anasayfa"]), "item": f"{ALAN}{sayfa_yolu(kod, 'index.html')}"},
+        {"@type": "ListItem", "position": 2, "name": duz(v["ad"]), "item": url}]}
+    sss = {"@type": "FAQPage", "@id": f"{url}#sss", "inLanguage": lang, "mainEntity": [
+        {"@type": "Question", "name": duz(x["s"]), "acceptedAnswer": {"@type": "Answer", "text": duz(x["c"])}} for x in v["sss"]]}
+    govde = json.dumps({"@context": "https://schema.org", "@graph": [org, site, sayfa, ekmek, sss]}, ensure_ascii=False, indent=2)
+    return '<script type="application/ld+json">\n' + govde.replace("</", "<\\/") + "\n</script>"
+
+
+def tanitim_yaz() -> int:
+    veri = tanitim_veri()
+    if not veri:
+        return 0
+    hub, _ = rehber_veri()
+    sablon = (SABLON / "tur-uret.html").read_text(encoding="utf-8")
+    yazilan = 0
+    for kod, v in veri.items():
+        a = arac_veri()[kod]
+        d = dil_bilgisi(kod)
+        metin = json.loads((DIL / f"{kod}.json").read_text(encoding="utf-8"))
+        url = f"{ALAN}{tanitim_yol(kod)}"
+        baslik = duz(v["baslik"])
+        tam = f"{baslik} — Motoseyir"
+        baslik_tam = tam if len(tam) <= 60 else baslik
+        aciklama = duz(v["aciklama"])
+        hk_ad, hk_video = arac_hikaye(kod, a, arac_yol(kod))
+        magaza = magaza_baglantisi(kod, "tur-uret")
+        govde = []
+        for b in v["bolumler"]:
+            ic = r_bloklar(b["icerik"], {"tablo_etiket": ""}).replace("{arac}", arac_yol(kod))
+            govde.append(f'<section class="bolum" id="{b["id"]}"><div class="kap"><div class="tur-yazi" data-r><h2>{b["h2"]}</h2>\n{ic}</div></div></section>')
+        govde.append(f'<section class="bolum" id="sss" aria-labelledby="sss-h"><div class="kap"><h2 id="sss-h">{hub[kod]["ui"]["sss"]}</h2><ul class="izgara tur-sss" data-r>'
+                     + "".join(f"<li><h3>{x['s']}</h3><p>{x['c']}</p></li>" for x in v["sss"]) + "</ul></div></section>")
+        vr = v["varis"]
+        varis = (f'<section class="varis" data-ton aria-labelledby="urun-h2"><div class="kap" data-r><h2 id="urun-h2">{vr["h2"]}</h2>'
+                 + "".join(f'<p class="metin">{p}</p>' for p in vr["p"])
+                 + f'<div class="cta-satir"><a class="btn" href="{magaza}">{v["indir"]}</a><a class="btn btn-hayalet" href="{arac_yol(kod)}">{v["web"]}</a></div></div></section>')
+        degerler = {
+            **metin, **{f"u_{x}": y for x, y in a["ui"].items() if isinstance(y, str)}, **{f"t_{x}": y for x, y in a["tasarim"].items() if isinstance(y, str)},
+            "lang": d["lang"], "baslik_tam": _html.escape(baslik_tam, quote=False), "aciklama_nitelik": _html.escape(aciklama, quote=True), "kanonik": url,
+            "alternatifler": tanitim_alternatifler(), "seo_head": rehber_seo_head(v, baslik_tam, aciklama, url, d["og"], False),
+            "json_ld": tanitim_json_ld(kod, v, metin, baslik_tam, aciklama, url),
+            "dil_secici": dil_secici(kod, "", metin, tanitim_dil_yolu), "dil_altbilgi": dil_altbilgi(kod, "", tanitim_dil_yolu),
+            "store": magaza, "gizlilik_url": gizlilik_url(kod), "impressum_url": impressum_url(kod), "anasayfa_url": sayfa_yolu(kod, "index.html"),
+            "corider_url": sayfa_yolu(kod, "corider.html"), "ozellikler_url": sayfa_yolu(kod, "ozellikler.html"), "nasil_url": sayfa_yolu(kod, "nasil-yapilir.html"),
+            "hub_url": rehber_hub_yolu(kod), "arac_url": arac_yol(kod), "tanitim_url": tanitim_yol(kod), "ui_rehber": hub[kod]["ui"]["rehber"],
+            "uygulama_id": UYGULAMA_ID, "yil": YIL, "dil_kodu": kod,
+            "eyebrow": v["eyebrow"], "h1": v["h1"], "adimlar_h2": a["adimlar_h2"], "hk_adimlar": hk_ad, "hk_video": hk_video,
+            "t_serit": "\n".join(f'<div class="sayi"><b>{b}</b><span>{y}</span></div>' for b, y in a["tasarim"]["serit"]),
+            "p_ad": v["ad"], "p_indir": v["indir"], "p_web": v["web"],
+            "arac_icerik": "\n".join(govde), "arac_varis": varis + "\n" + arac_ayrinti(kod, a, False),
+        }
+        html = doldur(sablon, degerler, f"tanitim/{kod}")
+        html = demolari_yerlestir(html, "tr")
+        html = M_DILLI.sub(lambda m: m.group(0) if m.group(2) != kod or (KOK / m.group(0).lstrip("/")).exists() else f"{m.group(1)}en{m.group(3)}", html)
+        html = varliklari_surumle(html)
+        hedef = KOK / tanitim_yol(kod).strip("/") / "index.html"
+        hedef.parent.mkdir(parents=True, exist_ok=True)
+        hedef.write_text(html, encoding="utf-8")
+        yazilan += 1
+    return yazilan
 
 
 def arac_yaz() -> int:
@@ -712,7 +846,7 @@ def arac_yaz() -> int:
             "impressum_url": impressum_url(kod), "anasayfa_url": sayfa_yolu(kod, "index.html"),
             "corider_url": sayfa_yolu(kod, "corider.html"), "ozellikler_url": sayfa_yolu(kod, "ozellikler.html"),
             "nasil_url": sayfa_yolu(kod, "nasil-yapilir.html"), "hub_url": rehber_hub_yolu(kod), "arac_url": arac_yol(kod),
-            "ui_rehber": hub[kod]["ui"]["rehber"], "uygulama_id": UYGULAMA_ID, "yil": YIL, "vekil": ARAC_VEKIL,
+            "tanitim_url": tanitim_yol(kod), "p_ad": tanitim_veri()[kod]["ad"], "ui_rehber": hub[kod]["ui"]["rehber"], "uygulama_id": UYGULAMA_ID, "yil": YIL, "vekil": ARAC_VEKIL,
             "eyebrow": v["eyebrow"], "h1": v["h1"], "lead": v["lead"], "adimlar_h2": v["adimlar_h2"],
             "arac_icerik": arac_icerik_govde(kod, v),
             "arac_varis": arac_varis(kod, v),
@@ -1255,7 +1389,7 @@ def main() -> None:
 
     rehber_yazilan = rehber_yaz()
     yazilan += rehber_yazilan
-    arac_yazilan = arac_yaz()
+    arac_yazilan = arac_yaz() + tanitim_yaz()
     yazilan += arac_yazilan
     yazilan += izle_yaz()
 

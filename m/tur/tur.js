@@ -230,7 +230,7 @@
       stil.glyphs = location.origin + stil.glyphs;
       stil.sprite = location.origin + stil.sprite;
       harita = new maplibregl.Map({
-        container: 'tur-harita', style: stil, center: MERKEZ.c, zoom: MERKEZ.z, minZoom: EN_AZ_YAKINLIK, maxZoom: 16.5,
+        container: 'tur-harita', style: stil, center: st.S ? [st.S.longitude, st.S.latitude] : MERKEZ.c, zoom: st.S ? 9.5 : MERKEZ.z, minZoom: EN_AZ_YAKINLIK, maxZoom: 16.5,
         attributionControl: false, dragRotate: false, pitchWithRotate: false, cooperativeGestures: false, fadeDuration: reduce ? 0 : 260
       });
       harita.touchZoomRotate.disableRotation();
@@ -289,7 +289,7 @@
     ekle({ id: 'rota-secili', type: 'line', source: 'secili', layout: cizgi, paint: { 'line-gradient': gradyan(0, '#0E6E73'), 'line-width': 5.5, 'line-opacity': 1, 'line-opacity-transition': GEC } });
     ekle({ id: 'bas-halka', type: 'circle', source: 'bas', paint: { 'circle-radius': 11, 'circle-color': '#F4B63F', 'circle-opacity': 0.35, 'circle-blur': 0.6 } });
     ekle({ id: 'bas-nokta', type: 'circle', source: 'bas', paint: { 'circle-radius': 5.5, 'circle-color': '#ffffff', 'circle-stroke-color': '#0E6E73', 'circle-stroke-width': 3 } });
-    if (st.S) { isaretKur(); halkaGuncelle(); kadranMod(); kadran && kadran.cerceve(0); }
+    if (st.S) { isaretKur(); halkaGuncelle(); kadranMod(); if (kadran) { kadran.ipucu(!kadranDokunuldu); kadran.cerceve(0); } }
     if (st.kip === 'rotalar' && kes.veri) kesKatmanGoster(true);
     $('#tur-harita').classList.add('hazir');
   }
@@ -1519,7 +1519,13 @@
   };
 
   /* ---------------------------------------------------------------- başlat */
+  /* Varsayılan başlangıç (konum izni İSTENMEZ): sayfa diline/saat dilimine göre makul bir şehir; kadran sayfa açılınca hazır. Ara ya da "Konumumu
+     kullan" dersen başlangıç taşınır. Ad yazılı: açılışta ters kodlama isteği (üçüncü taraf) atılmaz. */
+  var VARSAYILAN_BASLANGIC = A.dil === 'tr' ? { p: { latitude: 39.9334, longitude: 32.8597 }, ad: 'Ankara' }
+    : A.dil === 'de' ? { p: { latitude: 48.1351, longitude: 11.582 }, ad: 'München' }
+    : /^America\//.test(tz) ? { p: { latitude: 39.7392, longitude: -104.9903 }, ad: 'Denver' } : { p: { latitude: 47.2692, longitude: 11.4041 }, ad: 'Innsbruck' };
   evre('ayar');
+  baslangicKoy(VARSAYILAN_BASLANGIC.p, false, true, VARSAYILAN_BASLANGIC.ad);
   haritaKur();
   kok.classList.add('js');
 })();

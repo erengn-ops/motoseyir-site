@@ -184,7 +184,7 @@
     "g6": "Your bike",
     "motor_etiket": "Bike type",
     "motor_alt": "The motorcycle that will stand for you on the map; drag left or right to turn it",
-    "motor_ipucu": "Press and drag to turn the bike. The one you pick rides your tour on the map in the preview.",
+    "motor_ipucu": "This bike represents you on the map in the preview ride.",
     "motor_supersport": "Supersport",
     "motor_chopper": "Chopper",
     "motor_scooter": "Maxi scooter",
@@ -198,7 +198,7 @@
     "yer_kahve": "Coffee",
     "yer_yemek": "Food",
     "panel_ac": "Open or close the panel",
-    "kadran_ipucu": "Turn and stretch the handle",
+    "kadran_ipucu": "Grab, turn and stretch",
     "baslangic_tasi": "To move the start, drag the dial's dot or tap the map outside the dial.",
     "yer_km": "km {v}",
     "yer_rotadan": "on route",
@@ -207,7 +207,8 @@
     "yer_gec": "You pass here",
     "yer_sec_etiket": "Places along the route",
     "kadran_yon": "Direction",
-    "yer_mil": "mile {v}"
+    "yer_mil": "mile {v}",
+    "nasil_link": "How it works in the app"
   },
   "adimlar_h2": "How the route generator works",
   "adimlar": [
