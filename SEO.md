@@ -2,7 +2,7 @@
 
 Son güncelleme: 20 Ekim 2026 (`seo-2026-10-20` dalı). Alan adı: https://motoseyir-app.com (GitHub Pages, `CNAME`).
 Site statik ve **üretilmiş**: 14 dil × 4 sayfa (anasayfa, özellikler, nasıl yapılır, AI CoRider) = 56 sayfa, ayrıca
-2 gizlilik sayfası (elle), 2 reklam yönlendirme sayfası (`/indir/`, `/get/`, `noindex`) ve `404.html`. Blog yok.
+2 gizlilik sayfası (elle), 2 reklam yönlendirme sayfası (`/indir/`, `/get/`, `noindex`) ve `404.html`. **25 Eki 2026'dan beri rehber merkezi var** (Bölüm 6: 6 dilde 19 sayfa).
 Metinler `dil/*.json`, yapı `sablon/*.html`, SEO etiketleri `uret.py` içinde; ayrıntı için `README.md`.
 
 ## 1. Anahtar kelime haritası
@@ -176,3 +176,45 @@ Doğrulama bittikten sonra:
 - Search Console verisi gelince küçük pazarlar (PL HU SK HR GR RO) ve dönüşüm sorunu olan Avrupa için hangi dil sayfalarının
   görüntülendiğine bakıp çeviri kalitesini öncelikle oralarda iyileştirin.
 - Yeni özellik/sürüm geldiğinde `faq_*` ve ilgili `*_aciklama` metinlerini güncelleyin; `python3 seo-denetim.py` sınırları kontrol eder.
+
+## 6. Rehber merkezi (25 Eki 2026, `seo-icerik-2026-10-25` dalı)
+
+**Neden.** Search Console 19–23 Eki: 38 gösterim, 11'i "motoseyir"; geri kalanı "applicazione itinerari moto", "app itinerari in moto". Marka dışı
+aramada görünmemenin asıl sebebi içerik eksikliği: 56 sayfa yalnız ürünü anlatıyor, kullanıcının soru sorduğu konularda ("alp geçitleri motosiklet",
+"motor turu nasıl planlanır", "balade moto") hiç sayfa yok. Rehber merkezi bu açığı kapatır; ürün her sayfada "kendi turunu çiz" rolüyle, hazır rotalar
+yalnız ikincil cümlede anılır.
+
+**Yapı.** `/rehber/` (TR), `/en/guides/`, `/de/ratgeber/`, `/fr/guides/`, `/it/guide/`, `/es/guias/`: her dilde bir ana sayfa + yazılar. `uret.py`
+üretir; kaynak `icerik/*.json` (alanlar ve kurallar `REHBER-EKLE.md`). Her sayfada canonical, og/twitter, JSON-LD (`Organization`, `WebSite`,
+`WebPage`+`Article` ya da `CollectionPage`, `BreadcrumbList`, görünür SSS varsa `FAQPage`), kaynak listesi ve tek bir Motoseyir bloğu (App Store
+bağlantısı `ct=site-<kod>-rehber`). Aynı konunun dil eşleri hreflang grubu; yerel yazılar tek başına. Sitemap'e 19 adres eklendi (`lastmod` = yazının
+`guncelleme` tarihi). Altbilgiye (TR, EN, DE, FR, IT, ES) ve bu dillerin anasayfasına "Rehber" bağlantısı eklendi; diğer 8 dilde sayfa değişmedi.
+
+| Dil | Adres | Hedef sorgu |
+|---|---|---|
+| tr | `/rehber/turkiye-motosiklet-rotalari/` | türkiye motosiklet rotaları, motor turu rotaları |
+| tr, en, de | `/rehber/motor-turu-planlama/`, `/en/guides/motorcycle-route-planner/`, `/de/ratgeber/motorradtour-planen/` | motor turu planlama · motorcycle route planner · motorradtour planen, motorrad routenplaner |
+| tr | `/rehber/koy-yolu-motosiklet-rotasi/` | köy yolu motosiklet rotası |
+| tr | `/rehber/turkiye-dag-gecitleri-motosiklet/` | türkiye dağ geçitleri motosiklet |
+| en, de | `/en/guides/alpine-passes-motorcycle/`, `/de/ratgeber/alpenpaesse-motorrad/` | alpine passes motorcycle · alpenpässe motorrad |
+| en, de | `/en/guides/furka-grimsel-susten-loop/`, `/de/ratgeber/drei-paesse-runde-furka-grimsel-susten/` | furka grimsel susten motorcycle · …motorrad |
+| fr | `/fr/guides/balade-moto-grands-cols-france/` | balade moto, cols moto france |
+| it | `/it/guide/passi-in-moto-stelvio-gavia-dolomiti/` | passi in moto, percorsi moto, stelvio |
+| es | `/es/guias/rutas-en-moto-picos-de-europa/` | rutas en moto, picos de europa moto |
+
+**Veri kaynakları.** (1) Uygulamanın kendi verisi (`moto-rota/src/data`): Türkiye hazır rotaları (durak, uzunluk), Avrupa efsane yollarının kaynaklı
+olguları, geçit sayıları. (2) Her sayı yazının `kaynaklar` listesindeki sayfadan 25 Eki 2026'da yeniden okundu (işletme, turizm kurulu, belediye,
+Vikipedi). Uygulamanın bazı değerleri kaynağa göre farklı çıktı ve YAZIDA KAYNAĞIN değeri kullanıldı: Iseran 2.764 m (Route des Grandes Alpes; tepe
+levhası 2.770 m, uygulamanın efsane verisi 2.770), Susten "ilk Alp otomobil yolu" yerine kaynağın ifadesi, Galibier açılış ayları (iki kaynak çelişiyor,
+ikisi de yazıldı).
+
+**Doğrulanamayıp yazılmayanlar.** Grimsel yolundaki 30 km/sa galeri sınırı ve Nufenen açılış ayları (kaynak sayfaya erişilemedi); Pontón geçidinin
+yüksekliği (kaynak vermiyor); Stelvio'nun Bormio tarafındaki viraj sayısı (Bormio 41, Vikipedi 34 diyor: yazıda "Bormio Turismo'ya göre 41" diye
+atfedildi); Türkiye'de Zigana dışındaki yayla yollarının kış durumu.
+
+**Haftalık akış.** `REHBER-KUYRUK.md` (19 konu, hedef sorgu + kaynak) ve `REHBER-EKLE.md` (adım adım); zamanlanmış görev için talimat taslağı
+`REHBER-GOREV-TASLAGI.md` (görev KURULMADI; otomatik push kararı kullanıcıda).
+
+**İzleme.** Yayından 2–4 hafta sonra Search Console › Performans: sayfa filtresi `/rehber/`, `/guides/`, `/ratgeber/`, `/guide/`, `/guias/`. Hangi yazı
+hangi sorguda gösterim alıyorsa o yazının başlık/açıklamasını tıklama oranına göre ayarla; kuyruktaki sırayı gerçek sorgulara göre yeniden diz.
+Yayın sonrası yeni adresler için URL Denetimi › "Dizine eklenmesini iste" (günlük kota ~10; ana sayfalar ve en alakalı 6–8 yazı).
