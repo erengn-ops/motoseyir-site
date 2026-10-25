@@ -252,7 +252,16 @@
     "dz_durak_n": "Stop {n}",
     "dz_konum": "Selected location",
     "dz_yerinde_yok": "This stop could not be snapped to a road.",
-    "dz_aralik": "Grab the route and drag it to add a stop in between."
+    "dz_aralik": "Grab the route and drag it to add a stop in between.",
+    "dz_degistir": "Change",
+    "dz_baslangic_sec": "Choose a start",
+    "dz_yer_ara": "Search a place",
+    "dz_haritada_sec": "Pick on the map",
+    "dz_vazgec": "Cancel",
+    "dz_haritada_ipucu": "Tap the map: stop {n} moves there",
+    "dz_baslangic_ipucu": "Tap the map: the start goes there",
+    "dz_isaret_surukle": "Drag to move",
+    "dz_surukle_ipucu": "Drag the points to move them"
   },
   "adimlar_h2": "How the route generator works",
   "adimlar": [

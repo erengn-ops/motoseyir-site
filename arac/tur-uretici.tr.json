@@ -252,7 +252,16 @@
     "dz_durak_n": "Durak {n}",
     "dz_konum": "Seçilen konum",
     "dz_yerinde_yok": "Bu durak yola oturtulamadı.",
-    "dz_aralik": "Rotanın üstünden tutup çekerek araya durak ekleyebilirsin."
+    "dz_aralik": "Rotanın üstünden tutup çekerek araya durak ekleyebilirsin.",
+    "dz_degistir": "Değiştir",
+    "dz_baslangic_sec": "Başlangıç seç",
+    "dz_yer_ara": "Yer ara",
+    "dz_haritada_sec": "Haritada seç",
+    "dz_vazgec": "Vazgeç",
+    "dz_haritada_ipucu": "Haritaya dokun: {n}. durak oraya taşınır",
+    "dz_baslangic_ipucu": "Haritaya dokun: başlangıç oraya konur",
+    "dz_isaret_surukle": "Taşımak için sürükle",
+    "dz_surukle_ipucu": "Noktaları sürükleyerek taşıyabilirsin"
   },
   "adimlar_h2": "Tur oluşturucu nasıl çalışır",
   "adimlar": [

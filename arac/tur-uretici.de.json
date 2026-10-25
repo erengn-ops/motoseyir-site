@@ -252,7 +252,16 @@
     "dz_durak_n": "Stopp {n}",
     "dz_konum": "Gewählter Ort",
     "dz_yerinde_yok": "Dieser Stopp ließ sich nicht auf eine Straße legen.",
-    "dz_aralik": "Zieh die Route, um dazwischen einen Stopp einzufügen."
+    "dz_aralik": "Zieh die Route, um dazwischen einen Stopp einzufügen.",
+    "dz_degistir": "Ändern",
+    "dz_baslangic_sec": "Start wählen",
+    "dz_yer_ara": "Ort suchen",
+    "dz_haritada_sec": "Auf der Karte wählen",
+    "dz_vazgec": "Abbrechen",
+    "dz_haritada_ipucu": "Karte antippen: Stopp {n} wandert dorthin",
+    "dz_baslangic_ipucu": "Karte antippen: Der Start kommt dorthin",
+    "dz_isaret_surukle": "Zum Verschieben ziehen",
+    "dz_surukle_ipucu": "Punkte lassen sich per Ziehen verschieben"
   },
   "adimlar_h2": "So funktioniert der Tourengenerator",
   "adimlar": [

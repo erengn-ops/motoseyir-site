@@ -40,6 +40,8 @@
     bekle = setTimeout(function () { W.dispatchEvent(new CustomEvent('tur:yerlesim')); }, 30);
   }
 
+  /* alta kaydırılmış sayfadaki bir öğeye odak verilince tarayıcı kabı kaydırır; harita yukarı kaçmasın */
+  kok.addEventListener('scroll', function () { if (kok.scrollTop) kok.scrollTop = 0; });
   var sonSurukle = 0;
   if (tutamac) {
     tutamac.addEventListener('click', function () { if (performance.now() - sonSurukle < 350) return; ayarla(durum === 'kapali' ? 'yarim' : durum === 'yarim' ? 'acik' : 'kapali'); });

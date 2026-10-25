@@ -748,3 +748,26 @@ body.tur-sayfa { --border: var(--cizgi); --surface: var(--yuzey); --surface-2: v
 
 .tur-giris-satir { margin: 0 0 .9rem; }
 .tur-kod-form { margin: -.4rem 0 .9rem; }
+
+/* satır içi düzenleme (başlangıç ve duraklar): yer ara, Konumumu kullan, Haritada seç, Vazgeç */
+.dz-islem button.kalem:hover:not(:disabled), .dz-islem button.kalem[aria-expanded=true] { background: var(--vurgu-acik); color: #0A4F53; }
+.dz-durak.acik { background: var(--vurgu-acik); }
+.dz-durak.bos .dz-no { background: #F4B63F; color: #3a2a00; }
+.dz-duzenle { list-style: none; margin: 2px 0 6px 40px; padding: 8px; border-radius: 14px; background: #fff; border: 1px solid var(--vurgu); box-shadow: 0 10px 24px -16px rgba(14, 40, 42, .55); display: grid; gap: 6px; animation: yukari-ince .4s var(--ease-expo) both; }
+.dz-ara { display: flex; }
+.dz-ara input { flex: 1; min-width: 0; font: 600 .9rem/1 var(--sans); padding: .62rem .75rem; border: 1px solid var(--cizgi); border-right: 0; border-radius: 12px 0 0 12px; background: #fff; color: var(--yazi); -webkit-appearance: none; appearance: none; }
+.dz-ara button { width: 40px; border: 1px solid var(--cizgi); border-radius: 0 12px 12px 0; background: #fff; color: #0E6E73; cursor: pointer; display: grid; place-items: center; }
+.dz-ara button:hover { background: var(--vurgu-acik); }
+.dz-ara-sonuc { position: static; margin: 0; max-height: 14rem; box-shadow: none; border: 1px solid var(--cizgi); }
+.dz-ara-sonuc[hidden] { display: none; }
+.dz-secenek { display: flex; flex-wrap: wrap; gap: 6px; }
+.dz-secenek button { flex: 1 1 auto; padding: 8px 10px; border-radius: 10px; border: 1px solid var(--cizgi); background: var(--yuksek); color: #0E6E73; font: 800 .78rem/1 var(--sans); cursor: pointer; white-space: nowrap; }
+.dz-secenek button:hover:not(:disabled) { background: var(--vurgu-acik); border-color: #0E6E73; }
+.dz-secenek button[data-ed=vazgec] { color: var(--yazi-2); }
+.dz-secenek button.bekle { opacity: .6; cursor: progress; }
+.dz-ed-hata { margin: 0; padding: .45rem .65rem; border-radius: 10px; background: #fff3ee; color: #7a2f12; font-size: .84rem; line-height: 1.35; }
+.dz-ed-hata[hidden] { display: none; }
+/* harita işaretlerinin sürüklenebildiğini söyleyen tek seferlik balon */
+.tur-nokta.durak.ipucu::after { content: attr(data-ipucu); position: absolute; left: 50%; bottom: calc(100% + 12px); transform: translateX(-50%); white-space: nowrap; padding: 7px 12px; border-radius: 14px;
+  background: rgba(16, 24, 32, .84); color: #fff; font: 600 .78rem/1 var(--sans); pointer-events: none; z-index: 5; animation: yukari-ince .5s var(--ease-expo) both; box-shadow: 0 8px 20px -10px rgba(0, 0, 0, .6); }
+@media (prefers-reduced-motion: reduce) { .dz-duzenle, .tur-nokta.durak.ipucu::after { animation: none; } }

@@ -804,6 +804,7 @@
     var el = document.createElement('div');
     el.className = 'tur-nokta durak' + (surukle ? ' surukle' : '') + (surukle && k === 0 ? ' baslangic' : '');
     el.dataset.k = k;
+    if (surukle) el.title = T.dz_isaret_surukle;
     el.innerHTML = '<span class="ic"><b>' + no + '</b></span>';
     var m = new maplibregl.Marker({ element: el, anchor: 'center', draggable: !!surukle }).setLngLat([c.longitude, c.latitude]).addTo(harita);
     if (surukle) {
