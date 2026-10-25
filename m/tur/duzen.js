@@ -132,7 +132,7 @@
     if (!ed.liste.length) return '<li class="not">' + esc(T.ara_yok) + '</li>';
     return ed.liste.map(function (x, k) {
       var alt = [x.sehir, x.il, x.ulke].filter(Boolean).join(', ');
-      return '<li><button type="button" data-r="' + k + '"><strong>' + esc(x.ad) + '</strong><span>' + esc(alt) + '</span></button></li>';
+      return '<li><button type="button" data-sonuc="' + k + '"><strong>' + esc(x.ad) + '</strong><span>' + esc(alt) + '</span></button></li>';
     }).join('');
   }
   function editorHtml(i, ilk) {
@@ -338,8 +338,8 @@
       else if (ac === 'duzenle') { tasimaIptal(); if (ed.i === i) edKapat(); else edAc(i); }
       return;
     }
-    var d = e.target.closest('button[data-ed]'), r = e.target.closest('button[data-r]');
-    if (r && ed.liste) { var x = ed.liste[+r.dataset.r]; if (x) yereTasi(ed.i, x.lat, x.lon, [x.ad, x.sehir && x.sehir !== x.ad ? x.sehir : ''].filter(Boolean).join(', ')); return; }
+    var d = e.target.closest('button[data-ed]'), r = e.target.closest('button[data-sonuc]');
+    if (r && ed.liste) { var x = ed.liste[+r.dataset.sonuc]; if (x) yereTasi(ed.i, x.lat, x.lon, [x.ad, x.sehir && x.sehir !== x.ad ? x.sehir : ''].filter(Boolean).join(', ')); return; }
     if (!d) return;
     var i2 = ed.i, ek = d.dataset.ed;
     if (ek === 'vazgec') { tasimaIptal(); edKapat(); }
