@@ -2,7 +2,7 @@
  * Motoseyir web tur üreticisi — arayüz.
  * Hesap uygulamayla AYNI kod: m/tur/motor.js (tur-araci/derle.mjs moto-rota kaynağından paketliyor).
  * Burada yalnız ekran: harita (MapLibre + Protomaps), girdiler, sonuç kartları ve telefona aktarma (tur kodu + QR).
- * Bağımlılık: maplibre-gl, pmtiles, qrcode-generator (hepsi /m/tur/lib/ altında, sabit sürüm), motor.js (MotoTur).
+ * Bağımlılık: maplibre-gl, qrcode-generator (hepsi /m/tur/lib/ altında, sabit sürüm), motor.js (MotoTur).
  */
 (function () {
   'use strict';
@@ -228,9 +228,8 @@
   function halkaSigdir() { if (kadran && st.evre === 'ayar' && st.kip === 'uret') kadran.cerceve(640); }
 
   function haritaKur() {
-    if (!window.maplibregl || !window.pmtiles) { durum(T.hata_harita, 'hata'); return; }
-    maplibregl.addProtocol('pmtiles', new pmtiles.Protocol().tile);
-    fetch('/m/tur/harita/stil.json').then(function (r) { return r.json(); }).then(function (stil) {
+    if (!window.maplibregl) { durum(T.hata_harita, 'hata'); return; }
+    fetch('/m/tur/harita/stil.json?v=k1').then(function (r) { return r.json(); }).then(function (stil) {
       stil.glyphs = location.origin + stil.glyphs;
       stil.sprite = location.origin + stil.sprite;
       harita = new maplibregl.Map({
@@ -243,7 +242,7 @@
       if (/^(localhost|127\.0\.0\.1)$/.test(location.hostname)) window.MotoTurHarita = harita; // yalnız yerel sınama
       harita.on('error', function (e) {
         if (window.console) console.warn('harita:', e && e.error ? e.error.message || e.error : e);
-        if (e && e.error && /pmtiles|Failed to fetch|AJAXError/i.test(String(e.error.message || e.error))) haritaHata();
+        if (e && e.error && /Failed to fetch|AJAXError/i.test(String(e.error.message || e.error))) haritaHata();
       });
       // Harita, kapsayıcısı yerleşim bitmeden (yazı tipi/ızgara oturmadan) kurulunca kendini küçük pencere sanıp yalnız bir
       // parça yüklüyordu (25 Eki, kullanıcı ekranı: sol üstte tek kare, gerisi gri). Kapsayıcı boyutu değiştikçe yeniden ölç.

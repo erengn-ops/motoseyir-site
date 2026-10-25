@@ -36,7 +36,7 @@ sunucu + dış motor, dış motorda 10 konum sınırı için bacak grupları), `
 | Rota üstü yerler | vekil `/takip/yerler/koridor` (kendi yer veritabanı) | yalnız koridor ucu açık |
 | Durak hava durumu | vekil `GET /web/hava?lat&lon` → MET Norway locationforecast 2.0 | tarayıcı doğrudan çağıramaz (kimlikli User-Agent şart); vekil koordinatı 2 ondalığa yuvarlar, Cache API'de ≥30 dk tutar, `If-Modified-Since` ile sorar, günlük web tavanına (hava: 600) dahil. Atıf: MET Norway, CC BY 4.0. Kaynak: `moto-rota-web-tur/server/rota-worker` (dal `web-tur-worker`) |
 | Tur kodu ile açma | vekil `/tur/al` | düzenleyiciye yüklenir; GPX içe/dışa aktarma YOK |
-| Harita karoları | vekil `/web/harita.pmtiles` (R2 `gezegen/…pmtiles`, Range) | yalnız `motoseyir-app.com` ve localhost Origin'i |
+| Harita karoları | vekil `/web/k/{z}/{x}/{y}.mvt` (kenar önbellekli; R2 `gezegen/…pmtiles` kaynağı) | yalnız `motoseyir-app.com` ve localhost Origin'i |
 | Yer arama / ters kodlama | vekil `GET /web/ara` ve `GET /web/ters` → komoot Photon (vekil sorar, kimlikli UA, Cache API: ara 1 gün, ters 7 gün); komoot düşerse ya da bulamazsa `POST /takip/arama` (kendi aramamız, TR + GR) | yalnız Enter/düğme; yazarken sorgu yok; günlük web tavanı ara 300, ters 600; tarayıcı komoot'a gitmez |
 
 Worker: `moto-rota/server/rota-worker` (CORS, web hız sınırı, KV günlük tavan, test: `node test.mjs`). Web için IP başına günlük tavan:

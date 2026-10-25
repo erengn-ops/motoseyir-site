@@ -139,10 +139,9 @@
   function haritaKur(c, z, konumlu) {
     if (harita || haritaKuruluyor) return;
     konumluKuruldu = !!konumlu;
-    if (!window.maplibregl || !window.pmtiles) { haritaHata(); return; }
+    if (!window.maplibregl) { haritaHata(); return; }
     haritaKuruluyor = true;
-    maplibregl.addProtocol('pmtiles', new pmtiles.Protocol().tile);
-    fetch('/m/tur/harita/stil.json').then(function (r) { return r.json(); }).then(function (stil) {
+    fetch('/m/tur/harita/stil.json?v=k1').then(function (r) { return r.json(); }).then(function (stil) {
       stil.glyphs = location.origin + stil.glyphs;
       stil.sprite = location.origin + stil.sprite;
       var m = MERKEZ[dil] || { c: [8.5, 46.7], z: 5 };
@@ -157,7 +156,7 @@
       if (yerelHost) window.IzleHarita = harita; // yalnız yerel sınama
       harita.on('error', function (e) {
         if (window.console) console.warn('harita:', e && e.error ? e.error.message || e.error : e);
-        if (e && e.error && /pmtiles|Failed to fetch|AJAXError/i.test(String(e.error.message || e.error))) haritaHata();
+        if (e && e.error && /Failed to fetch|AJAXError/i.test(String(e.error.message || e.error))) haritaHata();
       });
       harita.on('dragstart', function () {
         takip = false;

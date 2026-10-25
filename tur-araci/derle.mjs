@@ -105,12 +105,13 @@ const boyut = Math.round(readFileSync(CIKTI).length / 1024);
 console.log(`→ ${CIKTI} (${boyut} KB, kaynak ${surum})`);
 
 /* Harita: uygulamanın çevrimdışı haritasının stili, yazı tipleri ve simgeleri (Protomaps v4 şeması) siteye kopyalanır.
-   Stil kaynağı gezegen yapısı (vekilin /web/harita.pmtiles ucu); yazı tipi/simge adresleri sitenin kendi yolu — üçüncü tarafa istek yok. */
+   Stil kaynağı gezegen yapısı (vekilin kenar önbellekli /web/k/{z}/{x}/{y}.mvt ucu); yazı tipi/simge adresleri sitenin kendi yolu — üçüncü tarafa istek yok. */
 const VARLIK = resolve(SRC, '../assets/harita');
 const HARITA = resolve(BURASI, '../m/tur/harita');
 mkdirSync(HARITA, { recursive: true });
 const stil = JSON.parse(readFileSync(join(VARLIK, 'protomaps-acik.json'), 'utf8'));
-stil.sources.protomaps = { ...stil.sources.protomaps, url: `pmtiles://${VEKIL}/web/harita.pmtiles`, attribution: '© OpenStreetMap · Protomaps' };
+delete stil.sources.protomaps.url;
+stil.sources.protomaps = { ...stil.sources.protomaps, tiles: [`${VEKIL}/web/k/{z}/{x}/{y}.mvt`], minzoom: 0, maxzoom: 15, attribution: '© OpenStreetMap · Protomaps' };
 stil.glyphs = '/m/tur/harita/fonts/{fontstack}/{range}.pbf';
 stil.sprite = '/m/tur/harita/sprites/light'; /* sayfa açılışta başına kökeni ekliyor: MapLibre göreli adres kabul etmiyor */
 writeFileSync(join(HARITA, 'stil.json'), JSON.stringify(stil));
