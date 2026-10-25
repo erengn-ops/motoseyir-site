@@ -146,7 +146,7 @@
       stil.sprite = location.origin + stil.sprite;
       var m = MERKEZ[dil] || { c: [8.5, 46.7], z: 5 };
       var secenek = {
-        container: 'izle-harita', style: stil, center: c || m.c, zoom: Math.max(6, z || m.z), minZoom: 6, maxZoom: 16.5,
+        container: 'izle-harita', style: stil, center: c || m.c, zoom: z || m.z, minZoom: 3, maxZoom: 16.5,
         attributionControl: false, dragRotate: false, pitchWithRotate: false, cooperativeGestures: false
       };
       harita = new maplibregl.Map(secenek);

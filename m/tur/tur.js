@@ -126,7 +126,7 @@
   var bos = { type: 'FeatureCollection', features: [] };
   // En az 6. düzey (25 Eki): harita dosyasında 4–5. düzeydeki bazı parçalar boş çiziliyor (veri sağlam, MapLibre'de bucket 0);
   // Türkiye'yi 5'te açınca yalnız bir kare dolu kalıyordu. Sebep bulunana kadar daha uzağa izin yok.
-  var EN_AZ_YAKINLIK = 6;
+  var EN_AZ_YAKINLIK = 3; // 26 Eki: /web/k karo ucuyla 4–5. düzeydeki boş karo sorunu kalktı (eski pmtiles istemci yolu)
   var MERKEZ = A.dil === 'tr' ? { c: [32.9, 39.9], z: 6 } : A.dil === 'de' ? { c: [11.0, 47.9], z: 6 }
     : /^America\//.test(tz) ? { c: [-105.5, 39.5], z: 6 } : { c: [8.5, 46.7], z: 6 };
 
