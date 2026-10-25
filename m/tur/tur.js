@@ -148,7 +148,7 @@
     var mobilEkran = window.innerWidth < 900, sag = 0, alt = 0;
     if (mobilEkran) alt = Math.max(0, r.bottom - p.top);
     else sag = Math.max(0, r.right - p.left + 6);
-    if (y && st.kip === 'uret' && st.evre === 'sonuc') { // çubuk henüz çizilmediyse tahmini boy (kamera çubuğun altında kalmasın)
+    if (y && (st.kip === 'uret' || st.kip === 'duzen') && st.evre === 'sonuc' && st.sonuc[st.secili] && st.sonuc[st.secili].coordinates.length > 1) { // çubuk henüz çizilmediyse tahmini boy (kamera çubuğun altında kalmasın)
       var yh = (y.hidden ? 0 : y.offsetHeight) || (mobilEkran ? 124 : 150);
       alt = Math.max(alt, (mobilEkran ? alt : 0) + yh + (mobilEkran ? 14 : 36));
     }
@@ -157,6 +157,9 @@
   function padYaz() {
     if (!hazir) return;
     var q = pay();
+    var yb = $('#tur-yolustu'); kok.style.setProperty('--yolustu-boy', (yb && !yb.hidden ? yb.offsetHeight : 0) + 'px');
+    var o = harita.getPadding();
+    if (o.top === q.ust && o.bottom === q.alt && o.left === q.sol && o.right === q.sag) return;   // değişmediyse sürmekte olan kamera hareketini kesme
     try { harita.setPadding({ top: q.ust, bottom: q.alt, left: q.sol, right: q.sag }); } catch (e) { /* eski */ }
   }
   function kadranKur() {
@@ -197,13 +200,14 @@
   }
   function kadranMod() {
     if (!kadran) return;
-    var m = st.kip === 'rotalar' ? 'gizli' : st.evre === 'araniyor' ? 'ara' : st.evre === 'sonuc' ? 'gizli' : 'ayar';
+    var m = st.kip !== 'uret' ? 'gizli' : st.evre === 'araniyor' ? 'ara' : st.evre === 'sonuc' ? 'gizli' : 'ayar';
     kadran.mod(m);
     pinGuncelle();
   }
   function pinGuncelle() { // sarı iğne yalnız sonuç evresinde (kadranda başlangıç noktası zaten görünüyor)
     if (!baslangicIsareti) return;
     var goster = st.kip === 'uret' && (st.evre === 'sonuc' || !kadran);
+    if (st.kip === 'duzen') goster = false;               // düzenlemede başlangıç da numaralı, sürüklenebilir işaret
     baslangicIsareti.getElement().style.display = goster ? '' : 'none';
   }
   var padZ = 0;
@@ -211,7 +215,7 @@
   /* Yol üstünde çubuğu: tur sonuçları görünürken haritanın altında */
   function yolustuGoster() {
     var y = $('#tur-yolustu'); if (!y) return;
-    var ac = st.kip === 'uret' && st.evre === 'sonuc' && st.sonuc.length > 0;
+    var tr = st.sonuc[st.secili], ac = (st.kip === 'uret' || st.kip === 'duzen') && st.evre === 'sonuc' && !!tr && tr.coordinates.length > 1;
     if (ac && y.hidden) { y.hidden = false; requestAnimationFrame(function () { requestAnimationFrame(function () { y.classList.add('on'); padYaz(); }); }); }
     else if (!ac && !y.hidden) { y.classList.remove('on'); y.hidden = true; yerIsaretleriTemizle(); yer.liste = []; padYaz(); }
   }
@@ -248,6 +252,7 @@
       harita.on('load', haritaYuklendi);
       harita.on('click', function (e) {
         if (st.kip === 'rotalar') { kesTikla(e); return; }
+        if (st.kip === 'duzen') { olay('tur:harita-tik', { lat: e.lngLat.lat, lng: e.lngLat.lng }); return; }
         baslangicKoy({ latitude: e.lngLat.lat, longitude: e.lngLat.lng }, false);
       });
     }).catch(haritaHata);
@@ -641,7 +646,8 @@
     }).then(function (turlar) {
       if (!gecerli()) return;
       /* Sayfada yalnız gösterim için gereken kalsın: manevra adımları ve bacaklar atılıyor (ham rota cevabı hiçbir yerde tutulmuyor). */
-      turlar.forEach(function (x) { x.rota = { totalDistanceMeters: x.rota.totalDistanceMeters, totalDurationSeconds: x.rota.totalDurationSeconds, icerik: x.rota.icerik }; });
+      turlar.forEach(function (x) { x.rota = { totalDistanceMeters: x.rota.totalDistanceMeters, totalDurationSeconds: x.rota.totalDurationSeconds, icerik: x.rota.icerik,
+        bacaklar: (x.rota.legs || []).map(function (l) { return { m: l.distanceMeters, sn: l.durationSeconds }; }), koyBulunamadi: !!x.rota.koyBulunamadi }; });
       if (st.gecit) { // "Dağ geçidinden geçsin": yalnız geçitten geçenler
         var g = turlar.filter(function (x) { return x.gecitler.length > 0; });
         if (!g.length && turlar.length) { turlar = []; st.gecitYok = true; }
@@ -774,6 +780,21 @@
       setTimeout(function () { m.remove(); }, 260);
     });
   }
+  function turDonus(tur) { return tur.donus != null ? tur.donus : !tur.efsane; }
+  /* Numaralı durak işareti; düzenleme kipinde SÜRÜKLENEBİLİR (bırakınca rota yeniden hesaplanır: m/tur/duzen.js). */
+  function durakIsareti(no, k, c, gecikme, surukle) {
+    var el = document.createElement('div');
+    el.className = 'tur-nokta durak' + (surukle ? ' surukle' : '') + (surukle && k === 0 ? ' baslangic' : '');
+    el.dataset.k = k;
+    el.innerHTML = '<span class="ic"><b>' + no + '</b></span>';
+    var m = new maplibregl.Marker({ element: el, anchor: 'center', draggable: !!surukle }).setLngLat([c.longitude, c.latitude]).addTo(harita);
+    if (surukle) {
+      m.on('dragstart', function () { el.classList.add('tutuldu'); });
+      m.on('dragend', function () { el.classList.remove('tutuldu'); var p = m.getLngLat(); olay('tur:durak-tasindi', { k: k, lat: p.lat, lng: p.lng }); });
+    }
+    isaretler.push(m);
+    if (reduce || !(gecikme > 0)) el.classList.add('goster'); else isaretZamanlari.push(setTimeout(function () { el.classList.add('goster'); }, gecikme));
+  }
   function isaretYap(sinif, html, c, anchor, gecikme, kutu) {
     kutu = kutu || { liste: isaretler, zamanlar: isaretZamanlari };
     var el = document.createElement('div');
@@ -790,14 +811,18 @@
     if (secilCiz) secilCiz();
     isaretleriTemizle(false);
     var ham = tur.coordinates;
+    if (!ham.length) { harita.getSource('secili').setData(bos); harita.getSource('bas').setData(bos); (tur.duraklar || []).forEach(function (c, k) { if (!(turDonus(tur) && k === tur.duraklar.length - 1)) durakIsareti(k + 1, k, c, 0, st.kip === 'duzen'); }); olay('tur:cizildi'); return; }
     harita.getSource('secili').setData({ type: 'Feature', properties: {}, geometry: { type: 'LineString', coordinates: ham.map(function (c) { return [c.longitude, c.latitude]; }) } });
     soldurAc();
     var cum = kumulatif(ham), top = cum[cum.length - 1] || 1;
     var zaman = function (f) { return sure * (1 - Math.pow(1 - Math.min(1, f), 1 / 3)); }; // EASE3'ün tersi
-    tur.duraklar.slice(0, tur.efsane ? undefined : -1).forEach(function (c, k) {
-      if (k === 0 && !tur.efsane) return;
+    var duzenKipi = st.kip === 'duzen', donus = turDonus(tur);
+    tur.duraklar.forEach(function (c, k) {
+      var son = k === tur.duraklar.length - 1;
+      if (donus && son) return;                                  // dönüş turunda bitiş = başlangıç
+      if (!duzenKipi && !tur.efsane && k === 0) return;          // sarı iğne başlangıcı gösteriyor
       var f = cum[enYakinIndeks(ham, c.latitude, c.longitude)] / top;
-      isaretYap('durak', '<b>' + (tur.efsane ? k + 1 : k) + '</b>', [c.longitude, c.latitude], 'center', zaman(f));
+      durakIsareti(duzenKipi ? k + 1 : tur.efsane ? k + 1 : k, k, c, zaman(f), duzenKipi);
     });
     tur.gecitler.forEach(function (g) {
       var f = cum[enYakinIndeks(ham, g.lat, g.lon)] / top;
@@ -815,6 +840,7 @@
       harita.setPaintProperty('rota-kenar', 'line-gradient', gradyan(p, '#FFFFFF'));
       if (!reduce && p < 1) bas(p); else harita.getSource('bas').setData(bos);
     }, function () { harita.getSource('bas').setData(bos); });
+    olay('tur:cizildi');
   }
   function soldurAc() {
     ['rota-kenar', 'rota-secili'].forEach(function (k) { harita.setPaintProperty(k, 'line-opacity', 1); });
@@ -834,7 +860,7 @@
       beklemeBitir(false);
       var b = new maplibregl.LngLatBounds();
       st.sonuc.forEach(function (t) { t.coordinates.forEach(function (c) { b.extend([c.longitude, c.latitude]); }); });
-      harita.fitBounds(b, kamera({ padding: { top: 40, bottom: 40, left: 40, right: 40 }, maxZoom: 13, duration: 1100 }));
+      if (!b.isEmpty()) harita.fitBounds(b, kamera({ padding: { top: 40, bottom: 40, left: 40, right: 40 }, maxZoom: 13, duration: 1100 }));
       cizSecili(1500);
     } else if (kip === 'sec') {
       cizSecili(800);
@@ -852,7 +878,7 @@
     if (odak && hazir) {
       var b = new maplibregl.LngLatBounds();
       st.sonuc[i].coordinates.forEach(function (c) { b.extend([c.longitude, c.latitude]); });
-      harita.fitBounds(b, kamera({ padding: 50, maxZoom: 13, duration: 700 }));
+      if (!b.isEmpty()) harita.fitBounds(b, kamera({ padding: 50, maxZoom: 13, duration: 700 }));
     }
     paylasKapat();
     adlariYukle(i);
@@ -876,6 +902,7 @@
       st.adlar.set(tur, a || []);
       var el = document.getElementById('tur-baslik-' + st.sonuc.indexOf(tur));
       if (el) el.textContent = baslikOf(st.sonuc.indexOf(tur));
+      olay('tur:adlar');
     });
   }
 
@@ -913,8 +940,8 @@
       var son = tur.duraklar.length - 1;
       var adlar = tur.duraklar.map(function (_, k) { return a[k] || (k === 0 ? T.baslangic : k === son ? T.bitis : doldur(T.durak, { n: k })); });
       var yon = yonAdiOf(tur.yon);
-      var ad = tur.efsane ? tur.efsane.ad : a[0] ? doldur(T.tur_ad, { v0: a[0], v1: yon }) : doldur(T.tur_ad_yedek, { n: 1 });
-      return M.turPaylas(M.turKaydi(tur, adlar, st.seviye, ad, tur.efsane ? { mod: tur.efsane.mod, presetId: tur.efsane.id } : undefined));
+      var ad = tur.ad || (tur.efsane ? tur.efsane.ad : a[0] ? doldur(T.tur_ad, { v0: a[0], v1: yon }) : doldur(T.tur_ad_yedek, { n: 1 }));
+      return M.turPaylas(M.turKaydi(tur, adlar, st.seviye, ad, tur.efsane ? { mod: tur.mod || tur.efsane.mod, presetId: tur.efsane.id } : tur.mod ? { mod: tur.mod } : undefined));
     }).then(function (s) {
       btn.disabled = false; btn.classList.remove('bekle'); yazi.textContent = eskiYazi;
       if (!s.ok) { durum(s.hata === 'gunluk' ? T.paylas_tavan : s.hata === 'buyuk' ? T.paylas_buyuk : T.paylas_hata, 'hata'); return; }
@@ -1132,9 +1159,10 @@
     }
     var yeni = tur.duraklar.slice();
     yeni.splice(idx, 0, { latitude: y.lat, longitude: y.lon });
-    M.rotaKur(yeni, st.seviye, tur.kacin, tur.efsane ? tur.efsane.mod : undefined, idx).then(function (r) {
+    M.rotaKur(yeni, st.seviye, tur.kacin, tur.mod || (tur.efsane ? tur.efsane.mod : undefined), idx).then(function (r) {
       tur.duraklar = yeni; tur.coordinates = r.coordinates; tur.rota = r.rota; tur.olcu = r.olcu; tur.gecitler = r.gecitler;
       var a = st.adlar.get(tur); if (a) a.splice(idx, 0, y.ad);
+      olay('tur:degisti');
       tur.eklenenYerler = tur.eklenenYerler || {}; tur.eklenenYerler[y.id] = 1;
       st.paylasim.delete(tur);
       yerEkleniyor = false;
@@ -1176,12 +1204,14 @@
     pinGuncelle();
     if (goster) halkaGuncelle();
   }
+  var KIPLER = ['uret', 'duzen', 'rotalar'];
   function kipSec(k, odak) {
     if (k === st.kip) return;
     olay('tur:iptal');
     st.kip = k;
     $$('.tur-kip-dugme').forEach(function (b) { var on = (b.id === 'tur-kip-' + k); b.setAttribute('aria-selected', on); b.tabIndex = on ? 0 : -1; });
     $('#tur-panel-uret').hidden = k !== 'uret';
+    $('#tur-panel-duzen').hidden = k !== 'duzen';
     $('#tur-panel-rotalar').hidden = k !== 'rotalar';
     kok.dataset.kip = k;
     $('#tur-ipucu').hidden = k === 'rotalar' || !!st.S;
@@ -1196,14 +1226,22 @@
       kesIsaretiTemizle();
       turGorunum(true);
       try { history.replaceState(null, '', location.pathname + location.search); } catch (e) { /* önemsiz */ }
+      if (st.sonuc.length) haritaSonuc('ayni');                 // işaretler kipe göre (numaralı, sürüklenebilir) yeniden çizilir
     }
     arayuzGuncelle();
+    var tr = st.sonuc[st.secili];
+      if (k === 'duzen' && hazir && tr && tr.coordinates.length > 1) {                      // düzenlemeye girerken tur ekrana sığsın
+        var bb = new maplibregl.LngLatBounds();
+        tr.coordinates.forEach(function (c) { bb.extend([c.longitude, c.latitude]); });
+        harita.fitBounds(bb, kamera({ padding: 60, maxZoom: 13, duration: 800 }));
+      }
+    olay('tur:kip', { kip: k });
     if (odak) $('#tur-kip-' + k).focus();
   }
   $$('.tur-kip-dugme').forEach(function (b) {
-    b.addEventListener('click', function () { kipSec(b.id === 'tur-kip-rotalar' ? 'rotalar' : 'uret'); });
+    b.addEventListener('click', function () { kipSec(b.id.replace('tur-kip-', '')); });
     b.addEventListener('keydown', function (e) {
-      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { e.preventDefault(); kipSec(st.kip === 'uret' ? 'rotalar' : 'uret', true); }
+      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { e.preventDefault(); var i = KIPLER.indexOf(st.kip); kipSec(KIPLER[(i + (e.key === 'ArrowRight' ? 1 : KIPLER.length - 1)) % KIPLER.length], true); }
     });
   });
 
@@ -1507,6 +1545,43 @@
     });
   }
   if (location.hash === '#kesfet') { var kipBekle = setInterval(function () { if (hazir) { clearInterval(kipBekle); kipSec('rotalar'); } }, 200); setTimeout(function () { clearInterval(kipBekle); }, 15000); }
+
+  /* ---------------------------------------------------------------- tur düzenleyici köprüsü (m/tur/duzen.js)
+     Düzenleyici (duraklar, bacaklar, kip, hava) kendi dosyasında; durum ve çizim burada kaldığı için buradan küçük bir arayüz alıyor. */
+  var adOnbellek = new Map(), adSirasi = Promise.resolve();
+  /* Yer adı: Photon ters kodlama, durak başına TEK istek, sıraya konmuş ve önbellekli (aynı ~100 m hücre bir daha sorulmaz). */
+  function tersAdAl(lat, lon) {
+    var anah = lat.toFixed(3) + ',' + lon.toFixed(3);
+    if (adOnbellek.has(anah)) return adOnbellek.get(anah);
+    var d = A.dil === 'tr' ? 'default' : A.dil;
+    var p = adSirasi = adSirasi.then(function () {
+      return fetch('https://photon.komoot.io/reverse?lat=' + lat + '&lon=' + lon + '&limit=1&lang=' + d)
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (j) {
+          if (!j || !j.features || !j.features[0]) return '';
+          var o = j.features[0].properties, ad = o.name || o.city || o.town || o.village || o.county;
+          if (ad && o.city && ad !== o.city) ad += ', ' + o.city;
+          return ad || '';
+        }).catch(function () { return ''; });
+    });
+    adOnbellek.set(anah, p);
+    return p;
+  }
+  /* Elle kurulan (boş tur) ya da başka kaynaktan gelen (tur kodu) turu sonuç olarak yerleştirir. */
+  function turuYerlestir(tur, adlar, yeni) {
+    st.calisma++;
+    aday.temizle(true);
+    st.sonuc = [tur]; st.adlar = new Map(); st.adlar.set(tur, adlar); st.secili = 0; st.varyasyon = 0; st.eskiSayi = 0; st.paylasim = new Map(); st.gecitYok = false;
+    kesIsaretiTemizle();
+    sonucCiz(yeni !== false);
+  }
+  function turuYenidenCiz() { st.eskiSayi = st.sonuc.length; sonucCiz(false); }
+  window.TurDuzenKancasi = {
+    st: st, M: M, T: T, A: A, kok: kok, $: $, $$: $$, esc: esc, doldur: doldur, f1: f1, mesafe: mesafe, sureYazi: sureYazi, kisaMesafe: kisaMesafe, reduce: reduce,
+    harita: function () { return hazir ? harita : null; }, kumulatif: kumulatif, enYakinIndeks: enYakinIndeks, kamera: kamera, kipSec: kipSec, evre: evre, durum: durum,
+    tersAdAl: tersAdAl, turuYerlestir: turuYerlestir, turuYenidenCiz: turuYenidenCiz, haritaSonuc: haritaSonuc, paylasKapat: paylasKapat, turDonus: turDonus,
+    yerOnbellekSifirla: function (tur) { yer.onbellek.delete(tur); yer.liste = []; yerYukle(); }, padGuncelle: padGuncelleGec, olay: olay, ayaraDon: ayaraDon, baslangicKoy: baslangicKoy
+  };
 
   /* ---------------------------------------------------------------- sürüş önizlemesi için küçük arayüz (m/tur/surus.js)
      Olaylar: tur:sonuc (yeni sonuç çizildi), tur:iptal (sonuç değişiyor / yeni arama). Hesap ve harita burada kalır. */

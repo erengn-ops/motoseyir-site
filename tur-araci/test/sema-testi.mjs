@@ -81,3 +81,27 @@ for (const [ad, ua] of [['iPhone', 'Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like
   assert.ok(!/\.gpx|\.kml|geojson|download|maps\.google|maps\.apple|waze|komoot/i.test(html), `${ad}: /k/ sayfasında dışa aktarma bağlantısı var`);
   console.log(`/k/${s.kod} (${ad}): derin bağlantı var, dışa aktarma yok`);
 }
+
+// 6) DÜZENLENMİŞ TUR (27 Eki 2026, web düzenleyici): bir durak silinip rota yeniden hesaplanır, kip değişir; aynı şema ve aynı geri okuma.
+{
+  assert.ok(u.duraklar.length >= 4, 'düzenleme sınaması için en az 4 nokta gerek');
+  const duzenli = u.duraklar.filter((_, i) => i !== 1);                       // 2. nokta (1. durak) silindi
+  const r = await M.rotaKur(duzenli.map((c) => ({ latitude: c.latitude, longitude: c.longitude })), seviye, undefined, 'koy');
+  assert.ok(r.coordinates.length > 10 && Array.isArray(r.rota.bacaklar) && r.rota.bacaklar.length === duzenli.length - 1, 'yeniden rotada bacaklar yok');
+  const editli = { ...u, duraklar: duzenli, coordinates: r.coordinates, rota: r.rota, olcu: r.olcu, gecitler: r.gecitler };
+  const adlar2 = ['Start', 'B', 'C', 'D', 'Start'].slice(0, duzenli.length); adlar2[adlar2.length - 1] = adlar2[0];
+  const web2 = M.turKaydi(editli, adlar2, seviye, 'Düzenlenmiş sınama turu', { mod: 'koy' });
+  assert.equal(web2.stops.length, duzenli.length);
+  assert.equal(web2.mode, 'koy');
+  const uyg2 = norm(uyg.paylasilacakTur(JSON.parse(JSON.stringify(web2))));
+  const fark2 = [...new Set([...Object.keys(uyg2), ...Object.keys(norm(web2))])].filter((k) => JSON.stringify(uyg2[k]) !== JSON.stringify(norm(web2)[k]));
+  assert.deepEqual(fark2, [], `düzenlenmiş turda beklenmeyen fark: ${fark2}`);
+  const s2 = await M.turPaylas(web2);
+  assert.ok(s2.ok, `düzenlenmiş tur paylaşılamadı: ${JSON.stringify(s2)}`);
+  const geri2 = await M.turAl(s2.kod);
+  assert.deepEqual(norm(geri2.tur), norm(web2), 'düzenlenmiş tur geri okununca farklı');
+  assert.equal(geri2.tur.stops.length, duzenli.length);
+  assert.equal(geri2.tur.mode, 'koy');
+  assert.ok(geri2.tur.routeDistanceMeters > 0 && geri2.tur.shape.length > 5);
+  console.log(`düzenlenmiş tur: kod ${s2.kod}, ${geri2.tur.stops.length} durak (biri silindi), mod koy, ${Math.round(geri2.tur.routeDistanceMeters / 1000)} km — uygulama şemasıyla aynı, sunucudan birebir geri okundu`);
+}

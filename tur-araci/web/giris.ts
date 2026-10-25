@@ -202,7 +202,8 @@ export async function turAl(kod: string): Promise<{ tur?: Tour; grupKod?: string
 
 export interface YenidenRota {
   coordinates: LatLng[];
-  rota: { totalDistanceMeters: number; totalDurationSeconds: number; icerik: unknown };
+  /** `bacaklar`: durak çiftleri arası mesafe (m) ve süre (sn); düzenleyicideki bacak hapları ve hava varış saatleri bunlardan. */
+  rota: { totalDistanceMeters: number; totalDurationSeconds: number; icerik: unknown; bacaklar: { m: number; sn: number }[]; koyBulunamadi?: boolean; erisilemezDurak?: number };
   olcu: ReturnType<typeof turOlc>;
   gecitler: ReturnType<typeof rotadakiGecitler>;
 }
@@ -218,7 +219,11 @@ export async function rotaKur(duraklar: LatLng[], seviye: VirajSeviyesi, kacin?:
   const km = rota.totalDistanceMeters / 1000;
   return {
     coordinates: rota.coordinates,
-    rota: { totalDistanceMeters: rota.totalDistanceMeters, totalDurationSeconds: rota.totalDurationSeconds, icerik: rota.icerik },
+    rota: {
+      totalDistanceMeters: rota.totalDistanceMeters, totalDurationSeconds: rota.totalDurationSeconds, icerik: rota.icerik,
+      bacaklar: (rota.legs ?? []).map((l) => ({ m: l.distanceMeters, sn: l.durationSeconds })),
+      ...(rota.koyBulunamadi ? { koyBulunamadi: true } : {}), ...(rota.unreachableStopIndex != null ? { erisilemezDurak: rota.unreachableStopIndex } : {}),
+    },
     olcu: turOlc(rota.coordinates, rota.totalDistanceMeters, km, seviye),
     gecitler: rotadakiGecitler(rota.coordinates),
   };

@@ -34,6 +34,8 @@ sunucu + dış motor, dış motorda 10 konum sınırı için bacak grupları), `
 | Rota (başka her yer) | `valhalla1.openstreetmap.de/route` (FOSSGIS herkese açık demo, **doğrudan tarayıcıdan**) | adil kullanım: 1 istek/sn/kullanıcı; iki eşzamanlı, 450 ms aralık, 429'da geri çekilme. Ticari/ağır kullanım için kendi Valhalla (Almanya, ABD) ya da Stadia (alan adı doğrulamalı anahtar) gerekir; değiştirmek `DIS_ROTA` ortam değişkeniyle derleme + `stubs/routesApi.ts` |
 | Tur kodu | vekil `/tur/paylas`, `/tur/al` | cihaz kimliği: tarayıcıda rastgele `web-…`; sunucu şeması uygulamayla aynı (`test/sema-testi.mjs`) |
 | Rota üstü yerler | vekil `/takip/yerler/koridor` (kendi yer veritabanı) | yalnız koridor ucu açık |
+| Durak hava durumu | vekil `GET /web/hava?lat&lon` → MET Norway locationforecast 2.0 | tarayıcı doğrudan çağıramaz (kimlikli User-Agent şart); vekil koordinatı 2 ondalığa yuvarlar, Cache API'de ≥30 dk tutar, `If-Modified-Since` ile sorar, günlük web tavanına (hava: 600) dahil. Atıf: MET Norway, CC BY 4.0. Kaynak: `moto-rota-web-tur/server/rota-worker` (dal `web-tur-worker`) |
+| Tur kodu ile açma | vekil `/tur/al` | düzenleyiciye yüklenir; GPX içe/dışa aktarma YOK |
 | Harita karoları | vekil `/web/harita.pmtiles` (R2 `gezegen/…pmtiles`, Range) | yalnız `motoseyir-app.com` ve localhost Origin'i |
 | Yer arama / ters kodlama | `photon.komoot.io` (doğrudan) | yalnız Enter/düğme; yazarken sorgu yok |
 

@@ -85,7 +85,7 @@
     function sur() {
       iptal(true);
       var tur = K.tur(), h = K.harita();
-      if (!tur || !h || K.evre() !== 'sonuc' || K.kip() !== 'uret') return;
+      if (!tur || !h || K.evre() !== 'sonuc' || (K.kip() !== 'uret' && K.kip() !== 'duzen') || tur.coordinates.length < 2) return;
       harita = h;
       var ham = tur.coordinates, cum = K.kumulatif(ham), top = cum[cum.length - 1] || 1;
       var tip = arac, kare = yukleKareler(tip);
@@ -128,7 +128,7 @@
       kat.hidden = false; kmEl.textContent = K.mesafe(0); cubuk.style.transform = 'scaleX(0)'; gecitEl.innerHTML = ''; gecitEl.classList.remove('goster');
       requestAnimationFrame(function () { kat.classList.add('on'); });
       if (tekrar) tekrar.hidden = true;
-      st.calisiyor = true;
+      st.calisiyor = true; var aracKok = $('#arac'); if (aracKok) aracKok.classList.add('surus-acik');
 
       var yerGoster = {}, raf = 0, zaman = 0, ilkMs = 0, bitti = false, h0 = yon(ham[0], nokta(pencere)), kamC = { lng: ham[0].longitude, lat: ham[0].latitude }, gizle = 0, sonYazi = '';
       var yakalaDuzenle = function (e) { if (e.originalEvent) iptal(false); };
@@ -138,7 +138,7 @@
         if (bitti) return; bitti = true;
         cancelAnimationFrame(raf); clearTimeout(gizle);
         harita.off('movestart', yakalaDuzenle);
-        st.calisiyor = false;
+        st.calisiyor = false; var aracKok2 = $('#arac'); if (aracKok2) aracKok2.classList.remove('surus-acik');
         var m = isaret; isaret = null;
         if (m) { m.getElement().classList.add('git'); setTimeout(function () { m.remove(); }, 450); }
         try { if (harita.getLayer(iz)) harita.removeLayer(iz); } catch (e) { /* harita kaldırıldı */ }
@@ -221,7 +221,7 @@
     W.addEventListener('tur:iptal', function () { iptal(false); if (tekrar) tekrar.hidden = true; });
     W.addEventListener('tur:sonuc', function (e) {
       if (tekrar) tekrar.hidden = false;
-      if (e.detail && e.detail.yeni) {
+      if (e.detail && e.detail.yeni && K.kip() === 'uret') {
         yukleKareler(arac);
         clearTimeout(st.bekle);
         st.bekle = setTimeout(sur, 2100);   // yol çizilip kamera oturduktan sonra

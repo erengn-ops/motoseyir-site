@@ -559,6 +559,8 @@
         <li><strong>Rota hesabı:</strong> başlangıç noktanız ve aday turların durakları Türkiye ve Yunanistan'da Motoseyir'in kendi rota sunucusuna (Cloudflare üzerindeki vekilimiz aracılığıyla), başka yerlerde FOSSGIS e.V.'nin (Almanya) OpenStreetMap tabanlı herkese açık rota servisine (valhalla1.openstreetmap.de) doğrudan tarayıcınızdan gider; bu servis IP adresinizi görür.</li>
         <li><strong>Yer arama ve yer adları:</strong> yazdığınız metin ya da koordinatlar komoot'un Photon servisine (photon.komoot.io, Almanya; OpenStreetMap verisi) tarayıcınızdan gider; Photon IP adresinizi görür.</li>
         <li><strong>Rota üstündeki yerler:</strong> rota çizgisi, adsız olarak, Motoseyir sunucusuna gider; sonuç saklanmaz.</li>
+        <li><strong>Hava durumu:</strong> tur düzenleyicide duraklardaki hava, durağın yaklaşık koordinatıyla (iki ondalık) Motoseyir vekiline gider; vekil bunu MET Norway'e (api.met.no, Norveç Meteoroloji Enstitüsü) kendi kimliğiyle sorar, yanıtı en az 30 dakika önbellekte tutar. MET IP adresinizi görmez. Hava: MET Norway (CC BY 4.0).</li>
+        <li><strong>Tur koduyla açma:</strong> yazdığınız tur kodu Motoseyir sunucusuna gider ve karşılığındaki tur tarayıcıda açılır; kod 30 gün geçerlidir.</li>
         <li><strong>Telefona gönderme:</strong> tur yalnız &ldquo;Telefonuma gönder&rdquo;e dokunduğunuzda saklanır: adı, durakları ve ayarları 30 gün boyunca durur, kimin gönderdiğine dair bilgi tutulmaz.</li>
         <li>Kötüye kullanımı önlemek için vekilimiz günlük istek sayısını IP adresinin geri çevrilemez özetiyle tutar; sayaç gün bitince silinir. Harita parçaları Motoseyir'in Cloudflare'deki harita deposundan gelir.</li>
       </ul>

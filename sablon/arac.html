@@ -54,6 +54,15 @@
         <div id="tur-harita" class="tur-harita" role="application" aria-label="{{u_harita_etiket}}"></div>
         <p class="tur-harita-ipucu" id="tur-ipucu">{{u_harita_ipucu}}</p>
         <div class="tur-kadran" id="tur-kadran" aria-hidden="true"></div>
+        <div class="tur-kip-secici" id="tur-kip-secici" hidden>
+          <button type="button" id="tur-kip-secici-dugme" aria-haspopup="listbox" aria-expanded="false" aria-label="{{u_rota_kipi}}"><span class="ik" aria-hidden="true"></span><span class="ad" id="tur-kip-secici-ad"></span><svg viewBox="0 0 12 12" width="11" height="11" aria-hidden="true"><path d="m2.5 4.5 3.5 3.5 3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <ul id="tur-kip-liste" role="listbox" aria-label="{{u_rota_kipi}}" hidden>
+            <li role="option" data-kip="standart"><span class="ik s" aria-hidden="true"></span>{{u_rk_standart}}</li>
+            <li role="option" data-kip="koy"><span class="ik k" aria-hidden="true"></span>{{u_rk_koy}}</li>
+            <li role="option" data-kip="sahil"><span class="ik c" aria-hidden="true"></span>{{u_rk_sahil}}</li>
+          </ul>
+        </div>
+        <div class="tur-toplam" id="tur-toplam" hidden aria-live="polite"><b id="tur-toplam-km"></b><span id="tur-toplam-sure"></span></div>
         <p class="tur-harita-hata" id="tur-harita-hata" role="alert" hidden>{{u_harita_hata}}</p>
                 <div class="tur-yolustu" id="tur-yolustu" hidden>
           <div class="tur-yolustu-ust">
@@ -89,10 +98,21 @@
       <p id="tur-durum" class="tur-durum" role="status" aria-live="polite" hidden></p>
       <div class="tur-kipler" id="kesfet" role="tablist" aria-label="{{u_kip_etiket}}">
         <button type="button" role="tab" id="tur-kip-uret" class="tur-kip-dugme" aria-selected="true" aria-controls="tur-panel-uret">{{u_kip_uret}}</button>
+        <button type="button" role="tab" id="tur-kip-duzen" class="tur-kip-dugme" aria-selected="false" aria-controls="tur-panel-duzen" tabindex="-1">{{u_kip_duzen}}</button>
         <button type="button" role="tab" id="tur-kip-rotalar" class="tur-kip-dugme" aria-selected="false" aria-controls="tur-panel-rotalar" tabindex="-1">{{u_kip_rotalar}}</button>
       </div>
       <div id="tur-panel-uret" role="tabpanel" aria-labelledby="tur-kip-uret">
       <form id="tur-form" novalidate>
+        <div class="tur-giris-satir">
+          <button type="button" id="tur-bos-tur" class="btn btn-ghost btn-sm"><svg viewBox="0 0 20 20" width="14" height="14" aria-hidden="true"><path d="M10 4v12M4 10h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>{{u_bos_tur}}</button>
+          <button type="button" id="tur-kod-ac" class="btn btn-ghost btn-sm" aria-expanded="false" aria-controls="tur-kod-form"><svg viewBox="0 0 20 20" width="14" height="14" aria-hidden="true"><path d="M3 6h14M3 14h14M7 3 5.5 17M14.5 3 13 17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>{{u_kod_ile}}</button>
+          <button type="button" id="tur-rotalar-git" class="btn btn-ghost btn-sm"><svg viewBox="0 0 20 20" width="14" height="14" aria-hidden="true"><path d="M1.8 16 7 6.8l3.3 5.4 2.2-3.2 5.7 7z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>{{u_kip_rotalar}}</button>
+        </div>
+        <div id="tur-kod-form" class="tur-kod-form" hidden>
+          <label class="gizli" for="tur-kod-girdi">{{u_kod_yer}}</label>
+          <input type="text" id="tur-kod-girdi" placeholder="{{u_kod_yer}}" autocomplete="off" autocapitalize="characters" spellcheck="false" maxlength="80">
+          <button type="button" id="tur-kod-dugme" class="btn btn-primary btn-sm">{{u_kod_ac}}</button>
+        </div>
         <fieldset class="tur-grup">
           <legend><span class="no">1</span>{{u_g1}}</legend>
           <div id="tur-ara-form" class="tur-ara" role="search" aria-label="{{u_ara_etiket}}">
@@ -190,12 +210,29 @@
           <button type="button" id="tur-ayara-don" class="btn btn-ghost btn-sm">{{u_ayara_don}}</button>
         </div>
 
+        <button type="button" id="tur-duzenle" class="btn btn-primary btn-sm tur-duzenle">{{u_dz_duzenle}}</button>
         <p class="kucuk tur-yer-not">{{u_yer_pro}}</p>
         <p class="kucuk tur-yer-not">{{u_yer_atif}}</p>
-        <button type="button" id="tur-telefon" class="btn btn-primary tur-telefon" aria-expanded="false" aria-controls="tur-paylas"><svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><rect x="5.5" y="1.5" width="9" height="17" rx="2.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M9 15.5h2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>{{u_telefon}}</span></button>
-        <div id="tur-paylas" class="tur-paylas" hidden></div>
-        <p class="kucuk tur-sonuc-not">{{u_sonuc_not}}</p>
       </div>
+      </div>
+
+      <div id="tur-panel-duzen" class="tur-panel-duzen" role="tabpanel" aria-labelledby="tur-kip-duzen" hidden>
+        <div id="tur-duzen-bos" class="tur-duzen-bos">
+          <p>{{u_duzen_bos}}</p>
+          <div class="tur-giris-satir"><button type="button" id="tur-duzen-bos-tur" class="btn btn-primary btn-sm">{{u_bos_tur}}</button><button type="button" id="tur-duzen-kod" class="btn btn-ghost btn-sm">{{u_kod_ile}}</button></div>
+        </div>
+        <div id="tur-duzen-ic" hidden>
+          <div class="tur-duzen-baslik"><h3>{{u_duraklar_baslik}}</h3><label class="tur-onay tur-donus"><input type="checkbox" id="tur-donus"><span>{{u_dz_donus}}</span></label></div>
+          <p id="tur-duzen-not" class="tur-duzen-not" role="status" aria-live="polite" hidden></p>
+          <ol class="tur-duraklar" id="tur-duraklar" aria-label="{{u_duraklar_baslik}}"></ol>
+          <div class="tur-durak-ekle-kutu">
+            <button type="button" id="tur-durak-ekle" class="btn btn-ghost btn-sm" aria-pressed="false"><svg viewBox="0 0 20 20" width="14" height="14" aria-hidden="true"><path d="M10 4v12M4 10h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>{{u_dz_durak_ekle}}</button>
+            <form id="tur-durak-ara" class="tur-durak-ara" role="search"><label class="gizli" for="tur-durak-ara-girdi">{{u_dz_ara_yer}}</label><input type="search" id="tur-durak-ara-girdi" placeholder="{{u_dz_ara_yer}}" autocomplete="off" enterkeyhint="search"><button type="submit" aria-label="{{u_ara_dugme}}"><svg viewBox="0 0 20 20" width="15" height="15" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="m13 13 4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button></form>
+            <ul id="tur-durak-ara-sonuc" class="tur-ara-sonuc tur-durak-ara-sonuc" hidden></ul>
+          </div>
+          <div class="tur-duzen-alt"><button type="button" id="tur-duzen-surus" class="btn btn-ghost btn-sm">{{u_surus_tekrar}}</button><button type="button" id="tur-duzen-sil" class="btn btn-ghost btn-sm tur-tehlike">{{u_dz_tumunu_sil}}</button></div>
+          <p class="kucuk tur-hava-atif">{{u_hava_atif}}</p>
+        </div>
       </div>
 
       <div id="tur-panel-rotalar" class="tur-panel-rotalar" role="tabpanel" aria-labelledby="tur-kip-rotalar" hidden>
@@ -206,6 +243,11 @@
         </div>
         <p id="tur-rot-sayi" class="tur-rot-sayi" role="status" aria-live="polite"></p>
         <ol id="tur-rot-liste" class="tur-kartlar tur-rot-liste"></ol>
+      </div>
+      <div id="tur-telefon-blok" class="tur-telefon-blok" hidden>
+        <button type="button" id="tur-telefon" class="btn btn-primary tur-telefon" aria-expanded="false" aria-controls="tur-paylas"><svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><rect x="5.5" y="1.5" width="9" height="17" rx="2.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M9 15.5h2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>{{u_telefon}}</span></button>
+        <div id="tur-paylas" class="tur-paylas" hidden></div>
+        <p class="kucuk tur-sonuc-not">{{u_sonuc_not}}</p>
       </div>
       </div>
     </div>
@@ -262,6 +304,7 @@
 <script src="/m/tur/kadran.js"></script>
 <script src="/m/tur/yerlesim.js"></script>
 <script src="/m/tur/tur.js"></script>
+<script src="/m/tur/duzen.js"></script>
 <script src="/m/tur/surus.js"></script>
 </body>
 </html>
