@@ -479,7 +479,7 @@
   });
   $$('input[name=olcu]').forEach(function (r) {
     r.checked = r.value === st.birim;
-    r.addEventListener('change', function () { st.birim = r.value; kaydet(); cetvelYazi(); if (st.evre === 'sonuc') sonucCiz(false); gecitGuncelle(); if (st.kip === 'rotalar') { kesVurgula(); kesListele(true); } });
+    r.addEventListener('change', function () { st.birim = r.value; kaydet(); cetvelYazi(); if (st.evre === 'sonuc') sonucCiz(false); if (yer.liste && yer.tur) yerCiz(yer.tur, yer.liste); gecitGuncelle(); if (st.kip === 'rotalar') { kesVurgula(); kesListele(true); } });
   });
 
   $$('input[name=seviye]').forEach(function (r) {
