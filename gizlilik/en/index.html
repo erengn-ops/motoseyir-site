@@ -173,7 +173,7 @@
   <div class="wrap">
     <div class="eyebrow">Motoseyir · The rider’s sat nav · <a href="/gizlilik/?dil=tr" lang="tr">Türkçe</a> · <a href="/gizlilik/de/" lang="de">Deutsch</a></div>
     <h1>Privacy Policy and Support</h1>
-    <p class="updated">Last updated: 21 October 2026 · iOS and Android</p>
+    <p class="updated">Last updated: 25 October 2026 · iOS and Android</p>
     <p class="lead">This is the same text you can read inside the app under Settings → Privacy Policy. The fuller Turkish version is at <a href="../?dil=tr">motoseyir-app.com/gizlilik/</a>.</p>
 
     <section class="summary">
@@ -279,6 +279,18 @@
       <p>Support chat (only if you write to us): the messages you send from Settings › "Something wrong, or an idea?", our replies, the app version and your phone's operating system are stored on our server; only the person who builds the app reads them and they are not shared with anyone. The conversation is tied to your hashed device ID and kept for at most one year. You can delete it at any time with the bin icon in the chat or with "Delete my data".</p>
       <p>Notification service (only if you allow notifications): your notification address (the token issued by Apple on iPhone or by Google on Android), the app version, the language, your phone's time-zone offset, your permission status, your “likes and comments” preference and a hash of your device ID are kept on our server. Notifications about new versions and announcements are sent only between 09:00 and 23:00 your local time; notifications about likes, comments and replies to your Community posts are sent too, unless you turn them off. The text of a notification is produced on the server and delivered through Apple or Google (see Third-party services). When you turn notifications off in Settings the record is deactivated; “Delete my data” deletes the record from the server; a record that has not been renewed for more than 180 days is deleted.</p>
       <p>Our servers hold no real name, email address, phone number, location HISTORY or payment information.</p>
+    </section>
+
+    <section>
+      <h2>Web route generator (motoseyir-app.com)</h2>
+      <p>The route generator on the website needs no account and sets no cookies. It keeps your last settings and a random device ID in your browser's local storage; you can clear both in your browser settings.</p>
+      <ul>
+        <li><strong>Routing:</strong> your start point and the stops of candidate tours go, in Turkey and Greece, to Motoseyir's own route server (through our proxy on Cloudflare) and elsewhere directly from your browser to the public OpenStreetMap-based routing service of FOSSGIS e.V. (Germany, valhalla1.openstreetmap.de), which sees your IP address.</li>
+        <li><strong>Place search and place names:</strong> the text you type or the coordinates go from your browser to komoot's Photon service (photon.komoot.io, Germany; OpenStreetMap data), which sees your IP address.</li>
+        <li><strong>Places along the route:</strong> the route line is sent, without names, to Motoseyir's server; the result is not stored.</li>
+        <li><strong>Send to my phone:</strong> a tour is stored only when you tap &ldquo;Send to my phone&rdquo;: its name, stops and settings, for 30 days, with no information about who sent it.</li>
+        <li>To prevent abuse our proxy keeps a daily request count under an irreversible hash of the IP address; the counter is deleted at the end of the day. Map tiles come from Motoseyir's map storage on Cloudflare.</li>
+      </ul>
     </section>
 
     <section>
