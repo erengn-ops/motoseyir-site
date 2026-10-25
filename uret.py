@@ -525,7 +525,7 @@ ARAC_VEKIL = "https://motorota-rota.erengn.workers.dev"  # Cloudflare Worker (se
 ARAC_KOD_KOKU = "https://rota.motoseyir-app.com"  # QR/bağlantı /k/<KOD> sayfası (sunucu tur kodunu uygulamaya yönlendiriyor)
 PLAY_BAGLANTISI = None  # Android sürümü Google Play'de yayına girince buraya mağaza adresi yazılır (25 Eki 2026'da sayfa 404)
 ARAC_ZORUNLU = ("anasayfa_baglanti", "dizin", "baslik", "aciklama", "h1", "eyebrow", "lead", "yayin", "guncelleme", "ondalik", "ui", "adimlar_h2", "adimlar",
-                "bolumler", "sss", "urun", "urun_dugme", "ilgili_baslik", "ilgili", "kaynaklar_baslik", "kaynaklar")
+                "bolumler", "sss", "urun", "urun_dugme", "ilgili_baslik", "ilgili", "kaynaklar_baslik", "kaynaklar", "tasarim")
 _arac_onbellek: list = []
 
 
@@ -625,29 +625,57 @@ def arac_json_ld(kod: str, v: dict, hub_ui: dict, metin: dict, baslik: str, acik
 
 
 def arac_icerik_govde(kod: str, v: dict) -> str:
-    """Aracın altındaki içerik: adımlar, bölümler, SSS, ilgili rehberler, uygulama bloğu, atıflar."""
+    """Aracın altındaki içerik (anasayfa kalıbında bölümler): metin bölümleri, SSS, ilgili rehberler, atıflar.
+    "Nasıl çalışır" adımları sticky anlatıda (arac_hikaye); ürün bloğu bitiş çağrısında (arac_varis)."""
     hub, makale = rehber_veri()
-    ui = v["ui"]
-    parca = [f'<section id="nasil" class="rehber-bolum"><h2>{v["adimlar_h2"]}</h2><ol class="tur-adimlar">'
-             + "".join(f"<li><b>{b}</b>{p}</li>" for b, p in v["adimlar"]) + "</ol></section>"]
+    parca = []
     for b in v["bolumler"]:
-        parca.append(f'<section id="{b["id"]}" class="rehber-bolum"><h2>{b["h2"]}</h2>\n{r_bloklar(b["icerik"], {"tablo_etiket": ""})}</section>')
-    parca.append(f'<section id="sss" class="rehber-bolum"><h2>{hub[kod]["ui"]["sss"]}</h2><ul class="rehber-sss-liste">'
-                 + "".join(f"<li><h3>{s['s']}</h3><p>{s['c']}</p></li>" for s in v["sss"]) + "</ul></section>")
-    ilgili = [g for g in v["ilgili"] if g in makale and kod in makale[g]]
-    if ilgili:
-        parca.append(f'<section class="rehber-bolum rehber-ilgili"><h2>{v["ilgili_baslik"]}</h2><ul>'
-                     + "".join(f'<li><a href="{rehber_yol(kod, g)}">{makale[g][kod]["h1"]}</a></li>' for g in ilgili)
-                     + f'</ul><p><a href="{rehber_hub_yolu(kod)}">{hub[kod]["ui"]["tum_yazilar"]}</a></p></section>')
-    u = v["urun"]
-    cta = f'<section class="tur-cta" aria-labelledby="urun-h2"><h2 id="urun-h2">{u["h2"]}</h2>' + "".join(f"<p>{p}</p>" for p in u["p"])
-    if u.get("ikincil"):
-        cta += f'<p class="kucuk">{u["ikincil"]}</p>'
-    cta += f'<p><a class="btn btn-primary" href="{arac_magaza(kod)}">{v["urun_dugme"]}</a></p></section>'
-    parca.append(cta)
-    kaynak = "".join(f'<li><a href="{k["url"]}" rel="noopener">{k["ad"]}</a></li>' for k in v["kaynaklar"])
-    parca.append(f'<section id="kaynaklar" class="rehber-bolum rehber-kaynaklar"><h2>{v["kaynaklar_baslik"]}</h2><ul>{kaynak}</ul></section>')
+        parca.append(f'<section class="bolum" id="{b["id"]}"><div class="kap"><div class="tur-yazi" data-r><h2>{b["h2"]}</h2>\n{r_bloklar(b["icerik"], {"tablo_etiket": ""})}</div></div></section>')
+    parca.append(f'<section class="bolum" id="sss" aria-labelledby="sss-h"><div class="kap"><h2 id="sss-h">{hub[kod]["ui"]["sss"]}</h2><ul class="izgara tur-sss" data-r>'
+                 + "".join(f"<li><h3>{s['s']}</h3><p>{s['c']}</p></li>" for s in v["sss"]) + "</ul></div></section>")
     return "\n".join(parca)
+
+
+def arac_ayrinti(kod: str, v: dict) -> str:
+    """Bitiş çağrısından sonra: ilgili rehberler ve veri atıfları (anasayfadaki .ayr kalıbı)."""
+    hub, makale = rehber_veri()
+    ilgili = [g for g in v["ilgili"] if g in makale and kod in makale[g]]
+    sol = ""
+    if ilgili:
+        sol = (f'<div class="rehber-ilgili"><p class="km">{v["tasarim"]["ilgili_etiket"]}</p><h2>{v["ilgili_baslik"]}</h2><ul class="d">'
+               + "".join(f'<li><a href="{rehber_yol(kod, g)}">{makale[g][kod]["h1"]}</a></li>' for g in ilgili)
+               + f'</ul><a class="ok" href="{rehber_hub_yolu(kod)}">{hub[kod]["ui"]["tum_yazilar"]}</a></div>')
+    kaynak = "".join(f'<li><a href="{k["url"]}" rel="noopener">{k["ad"]}</a></li>' for k in v["kaynaklar"])
+    sag = f'<div id="kaynaklar" class="rehber-kaynaklar"><h2>{v["kaynaklar_baslik"]}</h2><ul class="d">{kaynak}</ul></div>'
+    return f'<section class="ayr"><div class="kap">{sol}{sag}</div></section>'
+
+
+def arac_varis(kod: str, v: dict) -> str:
+    u = v["urun"]
+    govde = "".join(f'<p class="metin">{p}</p>' for p in u["p"])
+    if u.get("ikincil"):
+        govde += f'<p class="metin kucuk">{u["ikincil"]}</p>'
+    return (f'<section class="varis" data-ton aria-labelledby="urun-h2"><div class="kap" data-r><h2 id="urun-h2">{u["h2"]}</h2>{govde}'
+            f'<div class="cta-satir"><a class="btn" href="{arac_magaza(kod)}">{v["urun_dugme"]}</a></div></div></section>\n'
+            + arac_ayrinti(kod, v))
+
+
+def arac_hikaye(kod: str, v: dict) -> tuple:
+    """Sticky anlatı: adım listesi + 3. adımdaki gerçek ekran kaydı (klip yalnız TR'de var; hangi dilde olursa o klip)."""
+    t = v["tasarim"]
+    ad = "".join(
+        f'        <li class="hk-adim{" on" if i == 0 else ""}" data-i="{i}"><p class="km">{t["adim"].format(n=i + 1)}</p><h3>{b}</h3>'
+        f'<p class="metin">{p}</p><a class="hk-link" href="#arac-bolum">{t["dene"]}</a></li>\n'
+        for i, (b, p) in enumerate(v["adimlar"]))
+    klip = "tur-uret-tr"
+    kaynak = ""
+    if (KOK / f"m/demo-{klip}-hevc.mp4").exists():
+        kaynak += f'<source data-src="/m/demo-{klip}-hevc.mp4" type=\'video/mp4; codecs="{HEVC_KODEK}"\'>'
+    kaynak += f'<source data-src="/m/demo-{klip}.mp4" type="video/mp4">'
+    video = (f'<video class="e e2" data-demo data-demo-gec="2" muted loop playsinline preload="none" poster="/m/ekran-tur-{kod}.webp" '
+             f'data-poster="/m/demo-{klip}.webp" width="1320" height="2868" aria-hidden="true" tabindex="-1">{kaynak}</video>'
+             f'<noscript><img class="e e2" src="/m/ekran-tur-{kod}.webp" alt="" width="540" height="1174"></noscript>')
+    return ad.rstrip("\n"), video
 
 
 def arac_yaz() -> int:
@@ -667,6 +695,7 @@ def arac_yaz() -> int:
         tam = f"{baslik} — Motoseyir"
         baslik_tam = tam if len(tam) <= 60 else baslik
         aciklama = duz(v["aciklama"])
+        hk_ad, hk_video = arac_hikaye(kod, v)
         ayar = {"dil": kod, "ui": v["ui"], "ondalik": v["ondalik"], "kok": ARAC_KOD_KOKU, "vekil": ARAC_VEKIL,
                 "magaza": {"ios": arac_magaza(kod).replace("&amp;", "&"), "play": PLAY_BAGLANTISI}}
         degerler = {
@@ -684,11 +713,18 @@ def arac_yaz() -> int:
             "corider_url": sayfa_yolu(kod, "corider.html"), "ozellikler_url": sayfa_yolu(kod, "ozellikler.html"),
             "nasil_url": sayfa_yolu(kod, "nasil-yapilir.html"), "hub_url": rehber_hub_yolu(kod), "arac_url": arac_yol(kod),
             "ui_rehber": hub[kod]["ui"]["rehber"], "uygulama_id": UYGULAMA_ID, "yil": YIL, "vekil": ARAC_VEKIL,
-            "eyebrow": v["eyebrow"], "h1": v["h1"], "lead": v["lead"],
+            "eyebrow": v["eyebrow"], "h1": v["h1"], "lead": v["lead"], "adimlar_h2": v["adimlar_h2"],
             "arac_icerik": arac_icerik_govde(kod, v),
+            "arac_varis": arac_varis(kod, v),
+            "dil_kodu": kod,
+            "hk_adimlar": hk_ad, "hk_video": hk_video,
+            "t_serit": "\n".join(f'<div class="sayi"><b>{b}</b><span>{y}</span></div>' for b, y in v["tasarim"]["serit"]),
+            **{f"t_{a}": b for a, b in v["tasarim"].items() if isinstance(b, str)},
             "arac_ayar": json.dumps(ayar, ensure_ascii=False).replace("</", "<\\/"),
         }
         html = doldur(sablon, degerler, f"arac/{kod}")
+        html = demolari_yerlestir(html, "tr")  # kahraman telefonu: gerçek ekran kaydı (TR klibi tüm dillerde)
+        html = M_DILLI.sub(lambda m: m.group(0) if m.group(2) != kod or (KOK / m.group(0).lstrip("/")).exists() else f"{m.group(1)}en{m.group(3)}", html)  # dil görseli yoksa EN
         html = varliklari_surumle(html)
         hedef = KOK / arac_yol(kod).strip("/") / "index.html"
         hedef.parent.mkdir(parents=True, exist_ok=True)

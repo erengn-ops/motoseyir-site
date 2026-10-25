@@ -1,18 +1,19 @@
-/* Motoseyir web tur üreticisi — görünüm. Renkler sitenin değişkenleri (style.css) + uygulamanın altını. */
+/* Motoseyir web tur üreticisi — görünüm. Anasayfanın stili (m/a.css) üstüne: renkler a.css'in değişkenleri (+ uygulamanın altını).
+   Eski adlar (--petrol, --surface...) a.css'e bağlanıyor, böylece aşağıdaki araç stilleri aynen kalıyor. */
+body.tur-sayfa { --border: var(--cizgi); --surface: var(--yuzey); --surface-2: var(--yuksek); --text: var(--yazi); --text-2: var(--yazi-2); --text-muted: var(--yazi-3);
+  --petrol: var(--vurgu); --on-accent: #fff; --kiremit: #C0522D; --accent-tint: var(--vurgu-acik); --bg: var(--zemin); --serif: var(--sans); --radius: 12px; }
 :root { --altin: #F4B63F; --altin-koyu: #3a2a00; --ease3: cubic-bezier(.215, .61, .355, 1); --ease-expo: cubic-bezier(.16, 1, .3, 1); }
 .gizli { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
-.tur-ust { padding-bottom: 1.2rem; }
-.tur-bolum { padding-block: 1.6rem 3rem; }
 
 /* ---------- Yerleşim: masaüstünde harita sticky solda, panel sağda ---------- */
 .tur-arac { display: grid; gap: 1.1rem; grid-template-columns: minmax(0, 1fr); align-items: start; }
 @media (min-width: 960px) {
   .tur-arac { grid-template-columns: minmax(0, 1.35fr) minmax(360px, 0.95fr); gap: 1.6rem; }
-  .tur-harita-kolon { position: sticky; top: 5.2rem; }
+  .tur-harita-kolon { position: sticky; top: 92px; }
 }
 .tur-harita-sar { position: relative; border-radius: 18px; overflow: hidden; border: 1px solid var(--border); background: #e7e3da; box-shadow: 0 10px 34px rgba(14, 40, 42, .12); }
 .tur-harita { width: 100%; height: clamp(320px, 52vh, 460px); }
-@media (min-width: 960px) { .tur-harita { height: min(calc(100vh - 8rem), 720px); min-height: 520px; } }
+@media (min-width: 960px) { .tur-harita { height: min(calc(100vh - 8rem), 740px); min-height: 540px; } }
 .tur-harita .maplibregl-canvas { outline: none; }
 .tur-harita-ipucu {
   position: absolute; left: .8rem; right: .8rem; top: .8rem; margin: 0; padding: .55rem .85rem; border-radius: 12px; font-size: .9rem; line-height: 1.35;
@@ -154,22 +155,10 @@
 .tur-paylas .kucuk.vurgu { color: var(--text); font-weight: 600; }
 .tur-nojs { padding: 1rem; border-radius: 12px; background: var(--surface); border: 1px solid var(--border); }
 
-/* ---------- Altındaki içerik ---------- */
-.tur-icerik { padding-top: 2.6rem; }
-.tur-adimlar { list-style: none; padding: 0 !important; margin: 0 0 1.4rem !important; display: grid; gap: .8rem; counter-reset: adim; }
-.tur-adimlar li { counter-increment: adim; position: relative; padding: .9rem 1rem .9rem 3.4rem; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); margin: 0 !important; }
-.tur-adimlar li::before { content: counter(adim); position: absolute; left: 1rem; top: .85rem; width: 1.7rem; height: 1.7rem; border-radius: 50%; background: var(--altin); color: var(--altin-koyu); display: grid; place-items: center; font-weight: 800; font-size: .9rem; }
-.tur-adimlar b { display: block; color: var(--text); }
-.tur-cta { margin-top: 2.2rem; padding: 1.4rem; border-radius: 18px; background: var(--asfalt); color: var(--asfalt-metin); }
-.tur-cta h2 { color: var(--asfalt-metin); font-family: var(--serif); font-size: 1.45rem; margin: 0 0 .7rem; }
-.tur-cta p { color: var(--asfalt-metin-soluk) !important; }
-.tur-cta .btn-primary { background: var(--altin); color: var(--altin-koyu); }
-
 @media (max-width: 480px) {
   .tur-km-buyuk { font-size: 1.8rem; }
   .tur-viraj { gap: .35rem; }
   .tur-viraj .kart small { display: none; }
-  .tur-ust { padding-top: 2rem; }
   .tur-harita-ipucu { font-size: .84rem; }
 }
 
@@ -327,3 +316,130 @@
   .tur-viraj input:checked + .kart svg path, .tur-viraj label:hover .kart svg path { animation: none; }
   .tur-ilerleme span, .yon-hucre, .tur-kart, .tur-nokta .ic, .tur-pusula-kutu .ok, .tur-pusula-kutu .her, .tur-asamalar-liste li, .tur-asamalar-liste li span { transition: none; }
 }
+
+/* =====================================================================================================================
+   SAYFA (26 Eki 2026 yeniden tasarım): anasayfanın hareket dili. Hareket sistemi m/h.js + m/a.js; burada yalnız bu sayfaya özgü olanlar.
+   ===================================================================================================================== */
+.btn-ghost { background: var(--yuzey); color: var(--yazi); box-shadow: inset 0 0 0 1px var(--cizgi); }
+.btn-ghost:hover { background: var(--yuksek); }
+.btn-sm { padding: 10px 16px; font-size: .85rem; border-radius: 10px; }
+.btn:disabled { cursor: default; }
+.kucuk { font-size: .86rem; color: var(--yazi-3); line-height: 1.5; }
+.gizli { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.tur-nojs { padding: 1rem; border-radius: 12px; background: var(--yuzey); border: 1px solid var(--cizgi); }
+
+/* kahraman: araç sayfasında band biraz daha kısa, araç hemen altında */
+.tur-kahraman { --band: clamp(560px, 78svh, 760px); }
+.tur-ekmek { font-size: .82rem; margin-bottom: 14px; color: rgba(255, 255, 255, .82); }
+.tur-ekmek a { color: inherit; text-underline-offset: 3px; }
+.tur-ekmek a:hover { color: #fff; }
+.tur-kahraman .btn svg { fill: none; }
+.tur-kahraman .btn:not(.btn-hayalet) svg { stroke: currentColor; }
+.tur-kahraman .btn-hayalet { background: rgba(255, 255, 255, .1); color: #fff; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .38); }
+.tur-kahraman .btn-hayalet:hover { background: rgba(255, 255, 255, .2); }
+
+/* araç bölümü */
+.tur-sahne { position: relative; padding: 44px 0 56px; background: var(--zemin); }
+.tur-sahne .kap { max-width: 1280px; }
+@media (min-width: 900px) { .tur-sahne { padding: 72px 0 88px; } }
+.tur-arac { gap: 18px; }
+.tur-harita-sar { border-radius: 22px; border: 1px solid var(--cizgi); box-shadow: 0 26px 60px -34px rgba(14, 40, 42, .55), 0 2px 6px rgba(14, 40, 42, .06); }
+.tur-panel { background: var(--yuzey); border: 1px solid var(--cizgi); border-radius: 22px; padding: 20px 18px 22px; box-shadow: 0 24px 50px -38px rgba(14, 40, 42, .45); }
+@media (min-width: 960px) { .tur-panel { padding: 24px 24px 26px; } }
+.tur-grup legend { font-size: .98rem; letter-spacing: -.01em; }
+.tur-grup { margin-bottom: 1.25rem; }
+.tur-uret { border-radius: 14px; }
+.tur-ozet { background: var(--zemin); padding: 0 0 8px; }
+.tur-ozet .kap { max-width: 1200px; }
+.tur-ozet .metin { max-width: 50rem; margin-top: 0; font-size: 1.1rem; }
+
+/* motor seçimi: kare geçişli dönen motor (m/a.js) + dört işaret */
+.tur-motor-ic { display: grid; gap: 14px; }
+@media (min-width: 420px) { .tur-motor-ic { grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); align-items: center; } }
+.tur-motor { width: 100%; border-radius: 18px; border: 1px solid var(--cizgi); background: radial-gradient(120% 90% at 50% 100%, #fff 0, var(--vurgu-acik) 80%); }
+.tur-motor::after { display: none !important; }
+.tur-motor-sec { display: grid; gap: 10px; }
+@media (max-width: 419px) { .tur-motor { max-width: 250px; margin: 0 auto; } }
+.tur-tipler { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.tur-tipler label { position: relative; cursor: pointer; }
+.tur-tipler input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+.tur-tipler .tip { display: grid; justify-items: center; gap: 2px; padding: 8px 4px 9px; border-radius: 14px; border: 1px solid var(--cizgi); background: var(--yuzey); transition: border-color .2s, background-color .2s, box-shadow .2s; height: 100%; }
+.tur-tipler .tip img { width: 44px; height: 44px; }
+.tur-tipler .tip b { font: 700 .78rem/1.2 var(--sans); text-align: center; color: var(--yazi); }
+.tur-tipler label:hover .tip { border-color: var(--vurgu); }
+.tur-tipler label:has(input:checked) .tip { border-color: var(--vurgu); background: var(--vurgu-acik); box-shadow: inset 0 0 0 1px var(--vurgu); }
+.tur-tipler label:has(input:focus-visible) { outline: 3px solid var(--altin); outline-offset: 2px; border-radius: 14px; }
+.tur-motor-not { font-size: .8rem; line-height: 1.45; color: var(--yazi-3); }
+
+/* tur önizleme sürüşü: harita üstü katman */
+.tur-surus { position: absolute; inset: 0; z-index: 4; display: flex; flex-direction: column; justify-content: space-between; padding: 12px; pointer-events: none; }
+.tur-surus[hidden] { display: none; }
+.tur-surus-gecit { align-self: center; max-width: calc(100% - 24px); display: inline-flex; align-items: center; gap: 9px; padding: 7px 14px 7px 8px; border-radius: 99px; background: rgba(14, 21, 20, .86); color: #fff; font: 700 .9rem/1.2 var(--sans);
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); box-shadow: 0 8px 24px -10px rgba(0, 0, 0, .6);
+  opacity: 0; transform: translate3d(0, -10px, 0) scale(.96); transition: opacity .45s var(--ease3), transform .6s var(--ease-expo); }
+.tur-surus-gecit:empty { display: none; }
+.tur-surus-gecit.goster { opacity: 1; transform: none; }
+.tur-surus-gecit .ik { flex: none; width: 30px; height: 30px; }
+.tur-surus-gecit .ik svg, .tur-surus-gecit .ik img { width: 100%; height: 100%; display: block; }
+.tur-surus-gecit b { font-weight: 800; }
+.tur-surus-gecit span.m { color: var(--altin); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.tur-surus-alt { margin-top: auto; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 8px 14px; align-items: center; padding: 11px 12px 11px 16px; border-radius: 18px; background: rgba(14, 21, 20, .86); color: #fff; pointer-events: auto;
+  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); box-shadow: 0 16px 36px -16px rgba(0, 0, 0, .65);
+  opacity: 0; transform: translate3d(0, 22px, 0); transition: opacity .5s var(--ease3), transform .8s var(--ease-expo); }
+.tur-surus.on .tur-surus-alt { opacity: 1; transform: none; }
+.tur-surus-sayac { display: grid; line-height: 1.05; min-width: 4.8rem; }
+.tur-surus-sayac .et { font: 700 .68rem/1 var(--sans); letter-spacing: .1em; text-transform: uppercase; color: var(--altin); margin-bottom: 4px; }
+.tur-surus-sayac .km { margin: 0; color: #fff; font: 800 1.7rem/1 var(--sans); letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+.tur-surus-iz { height: 4px; border-radius: 4px; background: rgba(255, 255, 255, .2); overflow: hidden; }
+.tur-surus-iz span { display: block; height: 100%; border-radius: 4px; background: linear-gradient(90deg, var(--vurgu), var(--altin)); transform-origin: 0 50%; transform: scaleX(0); will-change: transform; }
+.tur-surus .btn-ghost { background: rgba(255, 255, 255, .12); color: #fff; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .28); white-space: nowrap; }
+.tur-surus .btn-ghost:hover { background: rgba(255, 255, 255, .22); }
+.tur-surus .btn:focus-visible { outline-color: #fff; }
+.tur-surus-isaret { pointer-events: none; will-change: transform; }
+.tur-surus-isaret img, .tur-surus-isaret canvas { display: block; width: 76px; height: 76px; filter: drop-shadow(0 6px 5px rgba(0, 0, 0, .28)); opacity: 0; transition: opacity .5s var(--ease3); }
+.tur-surus-isaret.goster img, .tur-surus-isaret.goster canvas { opacity: 1; }
+.tur-surus-isaret.git img, .tur-surus-isaret.git canvas { opacity: 0; transition-duration: .4s; }
+@media (max-width: 520px) {
+  .tur-surus-alt { grid-template-columns: auto minmax(0, 1fr); }
+  .tur-surus-alt .btn { grid-column: 1 / -1; justify-self: stretch; justify-content: center; }
+  .tur-surus-isaret img, .tur-surus-isaret canvas { width: 64px; height: 64px; }
+}
+
+/* içerik bölümleri (anasayfa kalıbı) */
+.tur-yazi { max-width: 46rem; }
+.tur-yazi h2 { margin-bottom: 18px; }
+.tur-yazi h3 { font: 800 1.12rem/1.3 var(--sans); margin: 26px 0 8px; }
+.tur-yazi p { margin: 0 0 14px; color: var(--yazi-2); font-size: 1.04rem; }
+.tur-yazi ul, .tur-yazi ol { margin: 0 0 16px; padding-left: 1.3rem; color: var(--yazi-2); display: grid; gap: 7px; }
+.tur-yazi strong, .tur-yazi b { color: var(--yazi); }
+.tur-yazi a, .ayr .rehber-kaynaklar a { color: var(--vurgu); text-underline-offset: 3px; }
+.tur-yazi .rehber-tablo { overflow-x: auto; margin: 0 0 16px; border: 1px solid var(--cizgi); border-radius: 14px; background: var(--yuzey); }
+.tur-yazi table { border-collapse: collapse; width: 100%; font-size: .94rem; min-width: 30rem; }
+.tur-yazi caption { text-align: left; padding: 12px 14px 4px; font-weight: 700; }
+.tur-yazi th, .tur-yazi td { padding: 10px 14px; text-align: left; border-top: 1px solid var(--cizgi); vertical-align: top; }
+.tur-yazi thead th { border-top: 0; font-size: .82rem; color: var(--yazi-3); }
+.tur-yazi .kucuk { margin-top: -4px; }
+.tur-sss { margin-top: 28px; max-width: none; }
+@media (min-width: 900px) { .tur-sss { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 72px; } }
+.tur-sss h3 { font-size: 1.05rem; }
+.varis .metin { max-width: 40rem; color: var(--yazi-2); }
+.varis .metin.kucuk { font-size: .9rem; }
+.ayr .rehber-ilgili .d a { color: var(--vurgu); }
+.ayr .rehber-kaynaklar .d { margin-top: 14px; }
+.ayr .rehber-kaynaklar h2 { font-size: clamp(1.3rem, 3.4vw, 1.7rem); }
+
+.hm .tur-tipler .tip img { transition: transform .5s cubic-bezier(.2, .8, .2, 1); }
+.hm .tur-tipler label:hover .tip img, .hm .tur-tipler input:checked + .tip img { transform: scale(1.1); }
+@media (prefers-reduced-motion: reduce) {
+  .tur-surus-gecit, .tur-surus-alt, .tur-surus-isaret img, .tur-tipler .tip, .tur-tipler .tip img { transition: none; }
+}
+
+/* geçit simgesi (kartlarda, haritadaki işaretlerde): tepe + yol + bayrak; resimli yerlerde uygulamanın çizimi */
+.tur-kart .no.ikon { width: 2.5rem; height: 2.5rem; background: none !important; border-radius: 0; margin: -.3rem 0 0 -.3rem; }
+.tur-kart .no.ikon svg, .tur-kart .no.ikon img { width: 100%; height: 100%; display: block; }
+.tur-kart.rot { grid-template-columns: 2.2rem minmax(0, 1fr); }
+.tur-nokta.gecit .ic { padding: .18rem .65rem .18rem .2rem; gap: .35rem; background: rgba(14, 21, 20, .9); color: #fff; }
+.tur-nokta.gecit .ic > svg, .tur-nokta.gecit .ic > img { flex: none; width: 22px; height: 22px; }
+.tur-nokta.gecit b { color: #fff; }
+.tur-chipler span, .tur-kart .chip.gecit svg { vertical-align: middle; }
+.tur-kart .chip.gecit { display: inline-flex; align-items: center; gap: .35rem; padding-left: .3rem; }

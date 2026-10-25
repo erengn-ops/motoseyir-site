@@ -180,7 +180,19 @@
     "kat_doga": "Nature",
     "kat_koy": "Bay or beach",
     "kat_mola_yeri": "Rest stop",
-    "yer_haritada": "Show on the map"
+    "yer_haritada": "Show on the map",
+    "g6": "Your bike",
+    "motor_etiket": "Bike type",
+    "motor_alt": "The motorcycle that will stand for you on the map; drag left or right to turn it",
+    "motor_ipucu": "Press and drag to turn the bike. The one you pick rides your tour on the map in the preview.",
+    "motor_supersport": "Supersport",
+    "motor_chopper": "Chopper",
+    "motor_scooter": "Maxi scooter",
+    "motor_touring": "Touring",
+    "surus_etiket": "Preview",
+    "surus_atla": "Skip preview",
+    "surus_tekrar": "Watch the ride again",
+    "surus_ad": "Tour preview: the bike you picked rides the tour from start to finish"
   },
   "adimlar_h2": "How the route generator works",
   "adimlar": [
@@ -355,5 +367,33 @@
       "url": "https://photon.komoot.io/"
     }
   ],
-  "anasayfa_baglanti": "Try it in your browser: route generator"
+  "anasayfa_baglanti": "Try it in your browser: route generator",
+  "tasarim": {
+    "hero_giris": "Say where you want to head, and it draws the loop that brings you back to your start.",
+    "hero_mikro": "Free. No account needed.",
+    "hero_tel_alt": "Recording of the Tour generator in the Motoseyir app: a loop drawn from start point, direction, length and curves (the app is shown in Turkish)",
+    "serit_etiket": "Route generator at a glance",
+    "serit": [
+      [
+        "3 loops",
+        "Per search, each back to your start"
+      ],
+      [
+        "8 directions",
+        "Or leave the direction random"
+      ],
+      [
+        "300 km",
+        "Longest tour you can pick"
+      ],
+      [
+        "Free",
+        "No account needed"
+      ]
+    ],
+    "ozet_etiket": "About the route generator",
+    "adim": "Step {n}",
+    "dene": "Try it now",
+    "ilgili_etiket": "Related guides and sources"
+  }
 }

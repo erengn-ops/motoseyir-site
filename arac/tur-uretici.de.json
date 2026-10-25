@@ -180,7 +180,19 @@
     "kat_doga": "Natur",
     "kat_koy": "Bucht oder Strand",
     "kat_mola_yeri": "Rastplatz",
-    "yer_haritada": "Auf der Karte zeigen"
+    "yer_haritada": "Auf der Karte zeigen",
+    "g6": "Dein Motorrad",
+    "motor_etiket": "Motorradtyp",
+    "motor_alt": "Das Motorrad, das dich auf der Karte darstellt; nach links oder rechts ziehen, um es zu drehen",
+    "motor_ipucu": "Gedrückt halten und ziehen, um das Motorrad zu drehen. Das gewählte fährt in der Vorschau deine Tour auf der Karte.",
+    "motor_supersport": "Supersport",
+    "motor_chopper": "Chopper",
+    "motor_scooter": "Maxi-Scooter",
+    "motor_touring": "Touring",
+    "surus_etiket": "Vorschau",
+    "surus_atla": "Vorschau überspringen",
+    "surus_tekrar": "Fahrt noch einmal ansehen",
+    "surus_ad": "Tourvorschau: Das gewählte Motorrad fährt die Tour von Anfang bis Ende"
   },
   "adimlar_h2": "So funktioniert der Tourengenerator",
   "adimlar": [
@@ -355,5 +367,33 @@
       "url": "https://photon.komoot.io/"
     }
   ],
-  "anasayfa_baglanti": "Im Browser ausprobieren: Tourengenerator"
+  "anasayfa_baglanti": "Im Browser ausprobieren: Tourengenerator",
+  "tasarim": {
+    "hero_giris": "Sag, wohin es gehen soll, und der Generator zeichnet die Runde zurück zu deinem Startpunkt.",
+    "hero_mikro": "Kostenlos. Ohne Konto.",
+    "hero_tel_alt": "Aufnahme des Tourengenerators in der Motoseyir-App: Eine Runde entsteht aus Start, Richtung, Länge und Kurven (die App ist auf Türkisch)",
+    "serit_etiket": "Tourengenerator im Überblick",
+    "serit": [
+      [
+        "3 Touren",
+        "Pro Suche, jede zurück zum Start"
+      ],
+      [
+        "8 Richtungen",
+        "Oder die Richtung zufällig lassen"
+      ],
+      [
+        "300 km",
+        "Längste wählbare Tour"
+      ],
+      [
+        "Kostenlos",
+        "Ohne Konto"
+      ]
+    ],
+    "ozet_etiket": "Über den Tourengenerator",
+    "adim": "Schritt {n}",
+    "dene": "Jetzt ausprobieren",
+    "ilgili_etiket": "Verwandte Ratgeber und Quellen"
+  }
 }

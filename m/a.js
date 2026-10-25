@@ -67,7 +67,8 @@
     if (c.saveData || /(^|-)2g$/.test(c.effectiveType || "")) return;
     var basla = function () {
       var dikey = matchMedia("(max-width:700px)").matches;
-      hv.src = "/m/sahne-" + (dikey ? "dikey-hd" : "hd") + (hevcVar() ? "-hevc" : "") + ".mp4";
+      if (hv.getAttribute("data-src")) hv.src = (dikey && hv.getAttribute("data-src-dikey")) || hv.getAttribute("data-src");   /* tur sayfası: hafif 8 sn'lik döngü */
+      else hv.src = "/m/sahne-" + (dikey ? "dikey-hd" : "hd") + (hevcVar() ? "-hevc" : "") + ".mp4";
       hv.addEventListener("playing", function () { hv.classList.add("oynuyor"); }, { once: true });
       var p = hv.play(); if (p && p.catch) p.catch(function () {});
       new IntersectionObserver(function (e) { if (e[0].isIntersecting) { hv.play().catch(function () {}); } else hv.pause(); }).observe(hv);
@@ -84,6 +85,7 @@
      Hareketi azalt, veri tasarrufu, 2G: yalnız kapak, video hiç indirilmez. İlk ekrandaki telefon (data-demo-ilk) ayrıca yükleme bitip
      kahraman bandı başlayana kadar bekler; zayıf donanımda (MH.hafif) kapakta kalır. Kaynak: HEVC (hvc1) çözen cihazda önce o, yoksa
      H.264 — kahraman bandındaki hevcVar() denetimi. */
+  var gecVideo = null, gecIstek = false;
   function demoBaslat() {
     var liste = $$("video[data-demo]");
     if (!liste.length) return;
@@ -101,6 +103,12 @@
       v.__kay = 1; v.load();
     }
     function oynat(v) { if (!v.__kay) return; var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+    /* data-demo-gec: sticky anlatıdaki klip — yalnız kendi adımı etkinken yüklenir ve oynar (anlatı sec() çağırır) */
+    MH.demoAc = function (v) { hazirla(v); oynat(v); };
+    MH.demoDur = function (v) { v.pause(); };
+    if (gecVideo && gecIstek) MH.demoAc(gecVideo);
+    liste = liste.filter(function (v) { return !v.hasAttribute("data-demo-gec"); });
+    if (!liste.length) return;
     if (!IO) { liste.forEach(hazirla); return; }
     var hz = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { hz.unobserve(e.target); hazirla(e.target); } }); }, { rootMargin: "300px 0px" });
     if (sade) { liste.forEach(function (v) { hz.observe(v); }); return; }
@@ -175,6 +183,7 @@
   /* ---------- sticky anlatı: adım adım ekran değişimi + sayfayla çizilen rota çizgisi ---------- */
   var sahne = $("#hk-sahne");
   if (sahne) (function () {
+    gecVideo = $("video[data-demo-gec]", sahne);
     var ol = $(".hk-adimlar", sahne), adimlar = $$(".hk-adim", sahne), NS = "http://www.w3.org/2000/svg";
     var svg, iz, kenar, yol, bas, dugumler = [], tablo = [], uzun = 0, ust0 = [], alt0 = [], dy = [], etkin = -1, gorunur = true, kurulu = false, gec = -1, kurK = 0;
     function el(ad, sinif, ust) { var e = D.createElementNS(NS, ad); if (sinif) e.setAttribute("class", sinif); if (ust) ust.appendChild(e); return e; }
@@ -182,6 +191,11 @@
       if (i === etkin) return; etkin = i;
       sahne.setAttribute("data-a", i);
       adimlar.forEach(function (a, k) { a.classList.toggle("on", k === i); });
+      if (gecVideo) {
+        var acik = String(i) === gecVideo.getAttribute("data-demo-gec");
+        gecIstek = acik;
+        if (MH.demoAc) { if (acik) MH.demoAc(gecVideo); else MH.demoDur(gecVideo); }
+      }
     }
     function kur() {
       /* rota çizgisi: her adımın "km" satırına bir düğüm; düğümler arası yılan gibi iki kıvrım */
@@ -241,58 +255,99 @@
     kur();
   })();
 
-  /* ---------- dönen motosiklet: kendi kendine yavaşça döner, sürükleyince bırakır (kare geçişli canvas) ---------- */
+  /* ---------- dönen motosiklet: kendi kendine yavaşça döner, sürükleyince bırakır (kare geçişli canvas) ----------
+     Tur sayfası aynı kodu kullanır ve motor türü seçtirir (#motor[data-tip]): MH.motor.tip("chopper") yeni türün karelerini yükler,
+     eskiyle çapraz soldurur ve motoru dönerek getirir (uygulamanın vitrin kareleri: 15°'de bir, 0–180°, öbür yarı ayna). */
   var motorImg = $("#motorimg"), motorKap = $("#motor");
-  var kare = [], resim = [], mevcut = -1, ters = false, surukle = false, x0 = 0, a0 = 90, derece = 90, oto = HM, hiz = 0, motorYuk = false, mvis = false, cvs = null, cg = null, raf = 0, tZ = 0, sonX = 0, sonT = 0;
-  for (var a = 0; a <= 180; a += 15) kare.push("/m/bike/" + ("00" + a).slice(-3) + ".webp");
+  var TIPLER = {   /* kare boyu ve lastiğin yere değdiği dikey oran (uygulama: assets/vitrin/vitrin-*.json) */
+    touring: { dir: "", boy: 699, ay: .8489 }, supersport: { dir: "supersport/", boy: 666, ay: .8375 },
+    chopper: { dir: "chopper/", boy: 622, ay: .8334 }, scooter: { dir: "scooter/", boy: 759, ay: .8494 }
+  };
+  var ZEMIN_Y = .782;                                   /* yer çizgisi (tuvalin oranı): touring ile birebir eski yerleşim */
+  var setler = {}, aktif = null, eskiSet = null, gecisT = 0, mevcut = -1, ters = false, surukle = false, x0 = 0, a0 = 90, derece = 90, oto = HM, hiz = 0, motorYuk = false, mvis = false, cvs = null, cg = null, raf = 0, tZ = 0, sonX = 0, sonT = 0;
+  function setAl(tip) {
+    if (setler[tip]) return setler[tip];
+    var t = TIPLER[tip] || TIPLER.touring, k = { tip: tip, t: t, kare: [], resim: [], hazir: false, n: 0 };
+    for (var a = 0; a <= 180; a += 15) k.kare.push("/m/bike/" + t.dir + ("00" + a).slice(-3) + ".webp");
+    return (setler[tip] = k);
+  }
   function resimDerece(n) { var d = ((n % 24) + 24) % 24 * 15; return d > 180 ? { i: (360 - d) / 15, t: true } : { i: d / 15, t: false }; }
-  function ciz() {
-    if (!cg || resim.length < kare.length) return;
-    var S = cvs.width, w = S * .88, h = w * 699 / 760, x = (S - w) / 2, y = (S - h) / 2;
-    var f = (((derece % 360) + 360) % 360) / 15, n0 = Math.floor(f), t = f - n0;
-    cg.clearRect(0, 0, S, S);
+  function setCiz(k, alfa, f, S) {
+    var n0 = Math.floor(f), t = f - n0, w = S * .88, h = w * k.t.boy / 760, x = (S - w) / 2, y = S * ZEMIN_Y - k.t.ay * h;
     /* 15°'lik karelerin hayalet gibi üst üste binmemesi için geçiş adımın ortasında hızlı: smoothstep(.3–.7) */
     var u = klamp((t - .3) / .4, 0, 1); u = u * u * (3 - 2 * u);
     [[n0, 1], [n0 + 1, u]].forEach(function (p) {
-      if (p[1] <= .003) return;
-      var r = resimDerece(p[0]); cg.globalAlpha = p[1];
-      if (r.t) { cg.save(); cg.translate(S, 0); cg.scale(-1, 1); cg.drawImage(resim[r.i], x, y, w, h); cg.restore(); } else cg.drawImage(resim[r.i], x, y, w, h);
+      if (p[1] <= .003 || alfa <= .003) return;
+      var r = resimDerece(p[0]); cg.globalAlpha = p[1] * alfa;
+      if (r.t) { cg.save(); cg.translate(S, 0); cg.scale(-1, 1); cg.drawImage(k.resim[r.i], x, y, w, h); cg.restore(); } else cg.drawImage(k.resim[r.i], x, y, w, h);
     });
+  }
+  function ciz() {
+    if (!cg || !aktif || !aktif.hazir) return;
+    var S = cvs.width, f = (((derece % 360) + 360) % 360) / 15;
+    cg.clearRect(0, 0, S, S);
+    if (eskiSet && eskiSet.hazir && gecisT < 1) { var u = gecisT * gecisT * (3 - 2 * gecisT); setCiz(eskiSet, 1 - u, f, S); setCiz(aktif, u, f, S); }
+    else setCiz(aktif, 1, f, S);
     cg.globalAlpha = 1;
   }
   function tekKare() {
     /* canvas yokken (JS ilk yükleme / hareketsiz kip): eski yöntem, en yakın kare */
+    var k = aktif || setAl(motorKap.getAttribute("data-tip") || "touring");
     var der = ((derece % 360) + 360) % 360, tr = der > 180, f = Math.round((tr ? 360 - der : der) / 15);
-    if (f === mevcut && tr === ters) return;
-    mevcut = f; ters = tr; motorImg.src = kare[f]; motorImg.classList.toggle("ters", tr);
+    if (f === mevcut && tr === ters && motorImg.__set === k) return;
+    mevcut = f; ters = tr; motorImg.__set = k; motorImg.src = k.kare[f]; motorImg.classList.toggle("ters", tr);
   }
   function motorDongu(t) {
     raf = 0;
     var dt = tZ ? Math.min(.05, (t - tZ) / 1000) : .016; tZ = t;
+    if (eskiSet && gecisT < 1) { gecisT = Math.min(1, gecisT + dt / .55); if (gecisT >= 1) eskiSet = null; }
     if (!surukle) {
       if (Math.abs(hiz) > 1) { derece += hiz * dt; hiz *= Math.pow(.04, dt); }      /* bırakınca süzülür */
       else if (oto) derece += 20 * dt;                                                 /* yavaş otomatik dönüş: saniyede 20° */
     }
     cvs ? ciz() : tekKare();
-    if (mvis && (surukle || oto || Math.abs(hiz) > 1)) raf = requestAnimationFrame(motorDongu); else tZ = 0;
+    if (mvis && (surukle || oto || Math.abs(hiz) > 1 || (eskiSet && gecisT < 1))) raf = requestAnimationFrame(motorDongu); else tZ = 0;
   }
   function motorIste() { if (!raf) raf = requestAnimationFrame(motorDongu); }
-  function motorYukle() {
-    if (motorYuk) return; motorYuk = true;
-    var n = 0;
-    kare.forEach(function (s, i) {
+  function setYukle(k, bitti) {
+    if (k.hazir) { if (bitti) bitti(); return; }
+    if (k.yukleniyor) { if (bitti) k.bekleyen.push(bitti); return; }
+    k.yukleniyor = true; k.bekleyen = bitti ? [bitti] : [];
+    k.kare.forEach(function (s, i) {
       var im = new Image();
-      im.onload = function () {
-        if (++n < kare.length || !HM) return;
-        /* hepsi geldi: canvas'a geç */
-        var S = Math.round(motorKap.clientWidth * Math.min(W.devicePixelRatio || 1, 2));
-        cvs = D.createElement("canvas"); cvs.width = cvs.height = S; cg = cvs.getContext("2d");
-        motorKap.insertBefore(cvs, motorImg.nextSibling); motorKap.classList.add("cv");
-        ciz(); motorIste();
-      };
-      im.src = s; resim[i] = im;
+      im.onload = function () { if (++k.n < k.kare.length) return; k.hazir = true; k.bekleyen.forEach(function (f) { f(); }); k.bekleyen = []; };
+      im.src = s; k.resim[i] = im;
     });
   }
+  function canvasKur() {
+    if (cvs || !HM) return;
+    /* hepsi geldi: canvas'a geç */
+    var S = Math.round(motorKap.clientWidth * Math.min(W.devicePixelRatio || 1, 2));
+    cvs = D.createElement("canvas"); cvs.width = cvs.height = S; cg = cvs.getContext("2d");
+    motorKap.insertBefore(cvs, motorImg.nextSibling); motorKap.classList.add("cv");
+  }
+  function motorYukle() {
+    if (motorYuk) return; motorYuk = true;
+    aktif = aktif || setAl(motorKap.getAttribute("data-tip") || "touring");
+    setYukle(aktif, function () { if (!HM) return; canvasKur(); ciz(); motorIste(); });
+  }
+  /* Tür değişimi: kareler gelince (yeniden yüklemeden) çapraz solma + hızlı dönüş; hareket azaltmada yalnız kare değişir. */
+  var motorApi = MH.motor = {
+    tip: function (tip, hemen) {
+      if (!motorKap || !TIPLER[tip]) return;
+      var k = setAl(tip);
+      motorKap.setAttribute("data-tip", tip);
+      if (k === aktif) return;
+      motorYuk = true;
+      setYukle(k, function () {
+        if (k.tip !== motorKap.getAttribute("data-tip")) return;      /* bu arada başka tür seçildi */
+        if (HM && cvs) { eskiSet = hemen ? null : aktif; gecisT = hemen ? 1 : 0; if (!hemen && !azalt) hiz = 380; }
+        aktif = k; mevcut = -1; tekKare();
+        if (cvs) { ciz(); motorIste(); } else if (HM) { canvasKur(); ciz(); motorIste(); }
+      });
+    },
+    yukle: function (tip) { setYukle(setAl(tip)); }          /* seçici ilk görünüşte öbür türleri boşta ısıtır */
+  };
   if (motorKap && motorImg) {
     if (!IO) motorYukle();
     else {

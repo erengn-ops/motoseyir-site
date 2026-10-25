@@ -2,7 +2,7 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Motosiklet Tur Oluşturucu: Başladığın Yere Dönen Rota</title>
 <meta name="description" content="Ücretsiz motosiklet tur oluşturucu: Başlangıcı, uzunluğu ve virajı seç, en fazla üç tur gör, beğendiğini QR kodla telefonuna gönder ve Motoseyir&#x27;de sür.">
 <link rel="canonical" href="https://motoseyir-app.com/tur-olusturucu/">
@@ -27,13 +27,25 @@
 <meta name="twitter:image" content="https://motoseyir-app.com/img/og-kapak.jpg">
 <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 <meta name="apple-itunes-app" content="app-id=6792549131">
-<meta name="theme-color" content="#0E6E73" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0E1315" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#101414">
 <link rel="icon" href="/img/favicon.png">
-<link rel="stylesheet" href="/style.css">
+
+<!--
+  Web tur üreticisi (26 Eki 2026 yeniden tasarım): anasayfanın hareket dili. Stil m/a.css (ortak) + m/tur/tur.css (araç), hareket m/h.js (ortak)
+  + m/a.js (kahraman, sticky anlatı, dönen motor, telefon klipleri — anasayfayla AYNI dosya) + m/tur/surus.js (motor seçimi, tur önizleme sürüşü).
+  Kahraman bandı: m/sahne-tur(-dikey).mp4 = anasayfa sahnesinin 8 sn'lik hafif döngüsü (sahne-hd'den, 720p, sessiz).
+  Telefon klibi: m/demo-tur-uret-tr.mp4 (klipte Türkçe arayüz var; EN/DE sayfada da aynı klip, çünkü başka dilde kayıt yok).
+-->
+<script>!function(d,c){c=" js";if(!matchMedia("(prefers-reduced-motion: reduce)").matches){c+=" hm";if(self.CSS&&CSS.supports&&CSS.supports("animation-timeline:view()"))c+=" sd"}d.className+=c}(document.documentElement)</script>
+<link rel="preload" as="image" type="image/webp" href="/m/sahne-dikey-poster.webp" media="(max-width:700px)" fetchpriority="high">
+<link rel="preload" as="image" type="image/webp" href="/m/sahne-poster.webp" media="(min-width:701px)" fetchpriority="high">
+<link rel="preload" as="font" type="font/woff" href="/m/font/Manrope.woff" crossorigin>
+<link rel="stylesheet" href="/m/a.css?v=6f3313af">
 <link rel="stylesheet" href="/m/tur/lib/maplibre-gl-4.7.1.css?v=1fa5e619">
-<link rel="stylesheet" href="/m/tur/tur.css?v=7b0559d8">
+<link rel="stylesheet" href="/m/tur/tur.css?v=a58b3e96">
 <link rel="preconnect" href="https://motorota-rota.erengn.workers.dev" crossorigin>
+<script defer src="/m/h.js?v=1805b0f7"></script>
+<script defer src="/m/a.js?v=b1bd69cb"></script>
 
 <script type="application/ld+json">
 {
@@ -212,22 +224,17 @@
 }
 </script>
 </head>
-<body>
-<a class="skip-link" href="#icerik">İçeriğe geç</a>
+<body id="top" class="tur-sayfa">
+<a class="skip" href="#icerik">İçeriğe geç</a>
+<div class="ilerle" aria-hidden="true"></div>
 
-<header class="site-header">
-  <div class="wrap header-inner">
-    <a class="logo" href="/">MOTO<em>SEYİR</em></a>
-    <nav aria-label="Ana gezinme">
-      <ul class="nav">
-        <li><a href="/">Anasayfa</a></li>
-        <li><a href="/ozellikler.html">Tüm özellikler</a></li>
-        <li><a href="/rehber/">Rehber</a></li>
-        <li><a href="/corider.html">AI CoRider</a></li>
-        <li><a href="/#iletisim">İletişim</a></li>
-      </ul>
-    </nav>
-    <div class="header-cta">
+<header class="ust" id="ustbar">
+  <div class="ust-ic">
+    <a class="logo" href="/" aria-label="Motoseyir"><img src="/img/favicon.png" alt="" width="28" height="28">MOTO<em>SEYİR</em></a>
+    <nav aria-label="Ana gezinme"><ul class="menu">
+      <li><a href="/">Anasayfa</a></li><li><a href="#arac-bolum">Tur oluşturucu</a></li><li><a href="/ozellikler.html">Tüm özellikler</a></li><li><a href="/corider.html">AI CoRider</a></li><li><a href="/rehber/">Rehber</a></li>
+    </ul></nav>
+    <div class="ust-sag">
       <details class="dil-sec">
   <summary aria-label="Dil seç"><span class="dil-kod">TR</span><span class="dil-ad">Türkçe</span></summary>
   <ul>
@@ -247,28 +254,63 @@
     <li><a href="/el/" lang="el" hreflang="el">Ελληνικά</a></li>
   </ul>
 </details>
-      <a class="btn btn-ghost btn-sm" href="https://apps.apple.com/tr/app/id6792549131?pt=128439797&amp;ct=site-tr-web-tur&amp;mt=8">İndir</a>
+      <a class="btn btn-kucuk" href="https://apps.apple.com/tr/app/id6792549131?pt=128439797&amp;ct=site-tr-web-tur&amp;mt=8">İndir</a>
     </div>
   </div>
 </header>
 
 <main id="icerik">
-<section class="section rehber-ust tur-ust"><div class="wrap">
-  <nav class="rehber-ekmek" aria-label="Sayfa yolu"><a href="/">Anasayfa</a> <span aria-hidden="true">›</span> <span aria-current="page">Tur oluşturucu</span></nav>
-  <span class="eyebrow">Tur planlayıcı</span>
-  <h1>Motosiklet tur oluşturucu</h1>
-  <p class="section-lead">Başlangıç noktanı, ne kadar süreceğini ve yolların ne kadar virajlı olacağını seç. Oluşturucu, başladığın yere dönen en fazla üç tur çizer. Beğendiğin turu QR kodla telefonuna gönderip Motoseyir'de sürebilirsin.</p>
-</div></section>
+<section class="kahraman tur-kahraman" aria-labelledby="tur-h1">
+  <div class="k-arka">
+    <picture>
+      <source media="(max-width:700px)" srcset="/m/sahne-dikey-poster.webp" type="image/webp">
+      <img src="/m/sahne-poster.webp" alt="" fetchpriority="high" width="1920" height="1080">
+    </picture>
+    <video id="hv" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1" data-src="/m/sahne-tur.mp4" data-src-dikey="/m/sahne-tur-dikey.mp4"></video>
+  </div>
+  <div class="k-ic">
+    <div class="k-metin">
+      <nav class="tur-ekmek" aria-label="Sayfa yolu"><a href="/">Anasayfa</a> <span aria-hidden="true">›</span> <span aria-current="page">Tur oluşturucu</span></nav>
+      <p class="ust-yazi">Tur planlayıcı</p>
+      <h1 id="tur-h1">Motosiklet tur oluşturucu</h1>
+      <p class="giris">Nereye gitmek istediğini söyle, başladığın yere dönen turu o çizsin.</p>
+      <div class="cta-satir">
+        <a class="btn" href="#arac-bolum"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v14m0 0-5.5-5.5M12 17l5.5-5.5M5 21h14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Tur oluştur</a>
+        <a class="btn btn-hayalet" href="#kesfet">Bölgendeki rotalar</a>
+        <p class="mikro">Ücretsiz. Hesap açmak gerekmez.</p>
+      </div>
+    </div>
+    <div class="k-tel">
+      <div class="kt kt-arka"><i class="tu" aria-hidden="true"></i><img src="/m/ekran-kesfet-tr.webp" alt="" width="540" height="1174" decoding="async"></div>
+      <div class="kt kt-on"><i class="tu" aria-hidden="true"></i><video data-demo data-demo-ilk muted loop playsinline preload="none" poster="/m/demo-tur-uret-tr.webp" width="1320" height="2868" aria-label="Motoseyir uygulamasında Tur üret ekranının kaydı: başlangıç, yön, uzunluk ve virajdan turun çizilmesi"><source data-src="/m/demo-tur-uret-tr-hevc.mp4" type='video/mp4; codecs="hvc1.1.6.L150.B0"'><source data-src="/m/demo-tur-uret-tr.mp4" type="video/mp4"></video><noscript><img src="/m/ekran-tur-tr.webp" alt="Motoseyir uygulamasında Tur üret ekranının kaydı: başlangıç, yön, uzunluk ve virajdan turun çizilmesi" width="540" height="1174" decoding="async"></noscript></div>
+    </div>
+  </div>
+</section>
 
-<section class="section section-2 tur-bolum" aria-labelledby="arac-baslik">
-<div class="wrap">
+<div class="serit" aria-label="Tur oluşturucu özeti"><div class="serit-ic">
+<div class="sayi"><b>3 tur</b><span>Bir seferde, başladığın yere dönen</span></div>
+<div class="sayi"><b>8 yön</b><span>Ya da yönü rastgele bırak</span></div>
+<div class="sayi"><b>300 km</b><span>Seçebileceğin en uzun tur</span></div>
+<div class="sayi"><b>Ücretsiz</b><span>Hesap açmak gerekmez</span></div>
+</div></div>
+
+<section class="tur-sahne" id="arac-bolum" aria-labelledby="arac-baslik">
+<div class="kap">
   <h2 id="arac-baslik" class="gizli">Tur oluşturucu</h2>
-  <div class="tur-arac" id="arac" data-evre="ayar">
+  <div class="tur-arac" id="arac" data-r data-evre="ayar">
     <div class="tur-harita-kolon">
       <div class="tur-harita-sar">
         <div id="tur-harita" class="tur-harita" role="application" aria-label="Harita. Turun başlangıcını belirlemek için dokun."></div>
         <p class="tur-harita-ipucu" id="tur-ipucu">Başlangıcı belirlemek için haritaya dokun ya da bir yer ara.</p>
         <p class="tur-harita-hata" id="tur-harita-hata" role="alert" hidden>Harita yüklenemedi. Yer arayabilir ya da konumunu kullanabilirsin; turlar yine hesaplanır.</p>
+        <div class="tur-surus" id="tur-surus" hidden>
+          <div class="tur-surus-gecit" id="tur-surus-gecit" role="status" aria-live="polite"></div>
+          <div class="tur-surus-alt">
+            <div class="tur-surus-sayac"><span class="et">Önizleme</span><output id="tur-surus-km" class="km">0 km</output></div>
+            <div class="tur-surus-iz" aria-hidden="true"><span id="tur-surus-cubuk"></span></div>
+            <button type="button" class="btn btn-ghost btn-sm" id="tur-surus-atla">Önizlemeyi atla</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -344,6 +386,22 @@
           </div>
         </fieldset>
 
+        <fieldset class="tur-grup tur-motor-grup">
+          <legend><span class="no">6</span>Motorun</legend>
+          <div class="tur-motor-ic">
+            <div class="motor tur-motor" id="motor" data-tip="touring" role="img" aria-label="Haritada seni temsil edecek motosiklet; sağa sola sürükleyerek döndürebilirsin"><img id="motorimg" src="/m/bike/090.webp" alt="" width="760" height="699" decoding="async"></div>
+            <div class="tur-motor-sec">
+              <div class="tur-tipler" id="tur-tipler" role="radiogroup" aria-label="Motor türü">
+                <label><input type="radio" name="arac" value="supersport"><span class="tip"><img src="/m/isaret-supersport.webp" alt="" width="48" height="48" loading="lazy" decoding="async"><b>Supersport</b></span></label>
+                <label><input type="radio" name="arac" value="chopper"><span class="tip"><img src="/m/isaret-chopper.webp" alt="" width="48" height="48" loading="lazy" decoding="async"><b>Chopper</b></span></label>
+                <label><input type="radio" name="arac" value="scooter"><span class="tip"><img src="/m/isaret-scooter.webp" alt="" width="48" height="48" loading="lazy" decoding="async"><b>Maksi scooter</b></span></label>
+                <label><input type="radio" name="arac" value="touring" checked><span class="tip"><img src="/m/isaret-touring.webp" alt="" width="48" height="48" loading="lazy" decoding="async"><b>Touring</b></span></label>
+              </div>
+              <p class="tur-motor-not">Basılı tutup sürükle, motoru döndür. Seçtiğin motor, önizlemede turu haritada seninle sürer.</p>
+            </div>
+          </div>
+        </fieldset>
+
         <button type="submit" id="tur-uret" class="btn btn-primary tur-uret"><svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><path d="M3 10a7 7 0 1 1 2.2 5.1M3 15v-4h4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Tur oluştur</button>
       </form>
 
@@ -361,6 +419,7 @@
         <ol id="tur-kartlar" class="tur-kartlar" role="radiogroup" aria-label="Oluşturulan turlar"></ol>
         <div class="tur-sonuc-dugmeler">
           <button type="button" id="tur-baska" class="btn btn-ghost btn-sm">Başka bir tane</button>
+          <button type="button" id="tur-surus-tekrar" class="btn btn-ghost btn-sm" hidden>Turu yeniden izle</button>
           <button type="button" id="tur-ayara-don" class="btn btn-ghost btn-sm">Ayarları değiştir</button>
         </div>
 
@@ -397,58 +456,79 @@
       </div>
     </div>
   </div>
-  <noscript><p class="tur-nojs">Tur oluşturucu JavaScript ister. Turları yine Motoseyir uygulamasında planlayabilirsin.</p></noscript>
+    <noscript><p class="tur-nojs">Tur oluşturucu JavaScript ister. Turları yine Motoseyir uygulamasında planlayabilirsin.</p></noscript>
 </div>
 </section>
 
-<section class="section tur-icerik"><div class="wrap"><div class="rehber-kolon">
-<section id="nasil" class="rehber-bolum"><h2>Tur oluşturucu nasıl çalışır</h2><ol class="tur-adimlar"><li><b>Başlangıcı belirle</b>Bir şehir ya da adres ara, haritaya dokun ya da konumunu kullan. İğneyi sonradan sürükleyebilirsin.</li><li><b>Yönü, uzunluğu ve virajı seç</b>Sekiz yönden birini seç ya da rastgele bir tur için her yönde bırak. Uzunluğu kilometre, mil ya da saat olarak ayarla, sonra Rahat, Virajlı ve Çok virajlı seviyelerinden birini seç. İstersen otoyolu, gişeyi ve toprak yolu dışarıda bırak.</li><li><b>Oluştur</b>Oluşturucu gerçek yollarda çok sayıda turu dener ve en iyi üçünü bırakır. Başka turlar görmek için “Başka bir tane”ye dokun.</li><li><b>Telefonuna gönder</b>QR kodu okut ya da bağlantıyı aç. Tur, Motoseyir uygulamasında Turlarım'a düşer ve yönlendirmeyle sürmeye hazır olur.</li></ol></section>
-<section id="nasil-yapilir" class="rehber-bolum"><h2>Turlar nasıl çizilir</h2>
+<section class="tur-ozet" aria-label="Tur oluşturucu hakkında"><div class="kap"><p class="metin" data-r>Başlangıç noktanı, ne kadar süreceğini ve yolların ne kadar virajlı olacağını seç. Oluşturucu, başladığın yere dönen en fazla üç tur çizer. Beğendiğin turu QR kodla telefonuna gönderip Motoseyir'de sürebilirsin.</p></div></section>
+
+<!-- Sticky anlatı: anasayfadaki kalıp (m/a.js "sticky anlatı"). Metinler `adimlar`dan; ekranlar uygulamanın gerçek ekranları, 3. adımda gerçek ekran kaydı. -->
+<section class="hikaye" id="nasil" aria-labelledby="hk-h">
+  <div class="kap">
+    <h2 id="hk-h" class="hk-baslik">Tur oluşturucu nasıl çalışır</h2>
+    <div class="hk-sahne" id="hk-sahne" data-a="0">
+      <div class="hk-yapis" aria-hidden="true">
+        <div class="hk-tel"><div class="tel"><i class="tu" aria-hidden="true"></i><div class="ekr">
+          <img class="e e0" src="/m/ekran-kesfet-tr.webp" alt="" width="540" height="1174" loading="lazy" decoding="async">
+          <img class="e e1" src="/m/ekran-tur-tr.webp" alt="" width="540" height="1174" loading="lazy" decoding="async">
+          <video class="e e2" data-demo data-demo-gec="2" muted loop playsinline preload="none" poster="/m/ekran-tur-tr.webp" data-poster="/m/demo-tur-uret-tr.webp" width="1320" height="2868" aria-hidden="true" tabindex="-1"><source data-src="/m/demo-tur-uret-tr-hevc.mp4" type='video/mp4; codecs="hvc1.1.6.L150.B0"'><source data-src="/m/demo-tur-uret-tr.mp4" type="video/mp4"></video><noscript><img class="e e2" src="/m/ekran-tur-tr.webp" alt="" width="540" height="1174"></noscript>
+          <img class="e e3" src="/m/ekran-nav-tr.webp" alt="" width="540" height="1174" loading="lazy" decoding="async">
+        </div></div></div>
+      </div>
+      <ol class="hk-adimlar">
+        <li class="hk-adim on" data-i="0"><p class="km">Adım 1</p><h3>Başlangıcı belirle</h3><p class="metin">Bir şehir ya da adres ara, haritaya dokun ya da konumunu kullan. İğneyi sonradan sürükleyebilirsin.</p><a class="hk-link" href="#arac-bolum">Şimdi dene</a></li>
+        <li class="hk-adim" data-i="1"><p class="km">Adım 2</p><h3>Yönü, uzunluğu ve virajı seç</h3><p class="metin">Sekiz yönden birini seç ya da rastgele bir tur için her yönde bırak. Uzunluğu kilometre, mil ya da saat olarak ayarla, sonra Rahat, Virajlı ve Çok virajlı seviyelerinden birini seç. İstersen otoyolu, gişeyi ve toprak yolu dışarıda bırak.</p><a class="hk-link" href="#arac-bolum">Şimdi dene</a></li>
+        <li class="hk-adim" data-i="2"><p class="km">Adım 3</p><h3>Oluştur</h3><p class="metin">Oluşturucu gerçek yollarda çok sayıda turu dener ve en iyi üçünü bırakır. Başka turlar görmek için “Başka bir tane”ye dokun.</p><a class="hk-link" href="#arac-bolum">Şimdi dene</a></li>
+        <li class="hk-adim" data-i="3"><p class="km">Adım 4</p><h3>Telefonuna gönder</h3><p class="metin">QR kodu okut ya da bağlantıyı aç. Tur, Motoseyir uygulamasında Turlarım'a düşer ve yönlendirmeyle sürmeye hazır olur.</p><a class="hk-link" href="#arac-bolum">Şimdi dene</a></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<div class="ana tur-ana">
+<section class="bolum" id="nasil-yapilir"><div class="kap"><div class="tur-yazi" data-r><h2>Turlar nasıl çizilir</h2>
 <p>Oluşturucu başlangıç noktandan geçen bir çember kurar ve üstüne üç ya da dört durak koyar. Böylece tur seçtiğin yöne açılır ve kavis çizerek geri döner. Duraklar gerçek yollara oturtulur, sonra rota hesaplanır. Yollar çember olmadığı için her aday, gerçekten çıkan rota üzerinden ölçülür.</p>
 <p>Her aday üç şeye göre puanlanır: kilometre başına kaç sert viraj olduğu, uzunluğunun istediğin değerden ne kadar saptığı ve dönüşün ne kadarının gidişle aynı yoldan geçtiği. Birbirinden farklı en iyi üç tur gösterilir. Erişilebilir bir dağ geçidi varsa turlardan en az biri geçitten geçer ve kartta geçidin adı yazar.</p>
-<ul><li><strong>Rahat</strong> akıcı yolları tercih eder; otoyolu kapatmadıysan otoyol da kullanılabilir.</li><li><strong>Virajlı</strong> ve <strong>Çok virajlı</strong> köy yollarına ve virajlara yönelir.</li><li><strong>Dağ geçidinden geçsin</strong> yalnız bilinen bir geçidi aşan turları bırakır.</li><li><strong>Süre</strong> seçilince saat, viraj seviyesinin ortalama hızıyla kilometreye çevrilir; sonra her rotanın gerçek sürüş süresine bakılır.</li></ul></section>
-<section id="telefon" class="rehber-bolum"><h2>Tarayıcıdan telefona</h2>
+<ul><li><strong>Rahat</strong> akıcı yolları tercih eder; otoyolu kapatmadıysan otoyol da kullanılabilir.</li><li><strong>Virajlı</strong> ve <strong>Çok virajlı</strong> köy yollarına ve virajlara yönelir.</li><li><strong>Dağ geçidinden geçsin</strong> yalnız bilinen bir geçidi aşan turları bırakır.</li><li><strong>Süre</strong> seçilince saat, viraj seviyesinin ortalama hızıyla kilometreye çevrilir; sonra her rotanın gerçek sürüş süresine bakılır.</li></ul></div></div></section>
+<section class="bolum" id="telefon"><div class="kap"><div class="tur-yazi" data-r><h2>Tarayıcıdan telefona</h2>
 <p>Bu sayfa dönüş dönüş yönlendirme vermez. Yönlendirme Motoseyir uygulamasında kalır; durakların sırasını orada değiştirir, haritaya uzun basarak yer eklersin ve turu sesli yönlendirmeyle sürersin.</p>
-<p>“Telefonuma gönder”e dokunduğunda tur, sekiz karakterlik bir kodla kaydedilir. QR kod da bağlantı da bu koda gider, uygulama onu Turlarım'da açar. Kodlar 30 gün geçerlidir. Bu sayfada hesap açman gerekmez.</p></section>
-<section id="kesfet" class="rehber-bolum"><h2>Rota üstündeki yerler ve bölgendeki rotalar</h2>
+<p>“Telefonuma gönder”e dokunduğunda tur, sekiz karakterlik bir kodla kaydedilir. QR kod da bağlantı da bu koda gider, uygulama onu Turlarım'da açar. Kodlar 30 gün geçerlidir. Bu sayfada hesap açman gerekmez.</p></div></div></section>
+<section class="bolum" id="kesfet"><div class="kap"><div class="tur-yazi" data-r><h2>Rota üstündeki yerler ve bölgendeki rotalar</h2>
 <p>Oluşturulan bir turun altında <strong>Rota üstündeki yerler</strong>, çizgiye yakın en fazla beş manzara noktasını, yeme-içme molasını, kamp alanını, koyu ya da akaryakıt istasyonunu gösterir. Birini durak olarak eklersen rota yeniden hesaplanır; telefona gönderdiğin tur onu da içerir.</p>
 <p><strong>Bölgendeki rotalar</strong>, baktığın harita bölümündeki efsane rotaları ve dağ geçitlerini listeler. Bir çizgiye ya da işarete dokununca görürsün. <em>Bu turu aç</em> gerçek rotayı çizer ve telefona aynı yoldan gönderir.</p>
-<p>Yerler Motoseyir'in kendi yer veritabanından gelir; veritabanı OpenStreetMap, Foursquare Open Source Places ve Overture Maps verisinden derlenmiştir. İçinde puan ya da yorum olmadığı için bu sayfa da göstermez. Rota üstündeki bütün yerler ayrıntılarıyla Motoseyir Pro'daki Keşfet'te yer alır.</p></section>
-<section id="kontrol" class="rehber-bolum"><h2>Yola çıkmadan önce kontrol et</h2>
-<ul><li>Yol verisi OpenStreetMap katkıcılarından gelir. Eksikler ve hatalar olabilir; yola çıkmadan rotaya haritadan bak.</li><li>Dağ geçitleri kışın ve yol çalışmalarında kapanır. Sürmek istediğin geçit için işletmenin güncel duyurusuna bak.</li><li>Süreler trafiksiz tahmindir. Mola, yakıt ve fotoğraf için zaman ekle.</li><li>Kartta feribot, asfaltsız ya da gişeli bölüm yazabilir. Bir yol türünü dışarıda bırakmışsan ve bölgede başka yol yoksa kart bunu da söyler.</li></ul></section>
-<section id="veri" class="rehber-bolum"><h2>Hangi veri nereye gider</h2>
+<p>Yerler Motoseyir'in kendi yer veritabanından gelir; veritabanı OpenStreetMap, Foursquare Open Source Places ve Overture Maps verisinden derlenmiştir. İçinde puan ya da yorum olmadığı için bu sayfa da göstermez. Rota üstündeki bütün yerler ayrıntılarıyla Motoseyir Pro'daki Keşfet'te yer alır.</p></div></div></section>
+<section class="bolum" id="kontrol"><div class="kap"><div class="tur-yazi" data-r><h2>Yola çıkmadan önce kontrol et</h2>
+<ul><li>Yol verisi OpenStreetMap katkıcılarından gelir. Eksikler ve hatalar olabilir; yola çıkmadan rotaya haritadan bak.</li><li>Dağ geçitleri kışın ve yol çalışmalarında kapanır. Sürmek istediğin geçit için işletmenin güncel duyurusuna bak.</li><li>Süreler trafiksiz tahmindir. Mola, yakıt ve fotoğraf için zaman ekle.</li><li>Kartta feribot, asfaltsız ya da gişeli bölüm yazabilir. Bir yol türünü dışarıda bırakmışsan ve bölgede başka yol yoksa kart bunu da söyler.</li></ul></div></div></section>
+<section class="bolum" id="veri"><div class="kap"><div class="tur-yazi" data-r><h2>Hangi veri nereye gider</h2>
 <p>Sayfa hesap istemez ve çerez bırakmaz. Son ayarlarını ve rastgele bir cihaz kimliğini tarayıcının yerel depolamasında tutar; ikisini de tarayıcı ayarlarından silebilirsin.</p>
-<p>Başlangıç noktan ve her adayın durakları rota motoruna gider: Türkiye ve Yunanistan'da Motoseyir'in kendi rota sunucusuna, başka yerlerde OpenStreetMap tabanlı herkese açık bir rota servisine; bu servis her web sitesi gibi IP adresini görür. Yer ararken ve yer adlarını getirirken yazdığın metin ya da koordinatlar Photon servisine (OpenStreetMap verisi) gider. Harita parçaları Motoseyir sunucusundan gelir. Tur yalnız “Telefonuma gönder”e dokunduğunda saklanır: adı, durakları ve ayarları 30 gün boyunca durur, kimin gönderdiğine dair bir bilgi tutulmaz. Rota üstündeki yerler aranırken rota çizgisi, adsız olarak, Motoseyir sunucusuna gider. Efsane rotalar ve geçitler bu siteden yüklenir, hiçbir yere gönderilmez.</p></section>
-<section id="sss" class="rehber-bolum"><h2>Sık sorulanlar</h2><ul class="rehber-sss-liste"><li><h3>Motosiklet tur oluşturucu ücretsiz mi?</h3><p>Evet. Bu sayfada tur oluşturmak ve görmek ücretsizdir, hesap gerekmez. Motoseyir uygulaması ücretsiz indirilir; köy yolları kipi gibi bazı özellikler Motoseyir Pro'dadır ve ücretsiz kademe bir kayıtlı tur tutar.</p></li><li><h3>Rastgele motosiklet turu nasıl bulurum?</h3><p>Yönü “Her yön”de bırak, bir uzunluk seç ve “Tur oluştur”a dokun. Aynı ayarlarla başka turlar için “Başka bir tane”yi kullan.</p></li><li><h3>Türkiye dışında da çalışıyor mu?</h3><p>Evet, OpenStreetMap'te yolu olan her yerde çalışır. Türkiye ve Yunanistan'da rotalar Motoseyir'in kendi rota sunucusundan gelir; başka yerlerde herkese açık bir rota servisi kullanılır, o servis ara sıra yavaşlayabilir ya da yoğun olabilir.</p></li><li><h3>Turu telefonuma nasıl alırım?</h3><p>Turun altındaki “Telefonuma gönder”e dokun. Bilgisayardaysan QR kodu telefonunun kamerasıyla okut, telefondaysan “Motoseyir'de aç”a dokun. Tur Turlarım'da görünür.</p></li><li><h3>Rotamın üstündeki yerleri bulabilir miyim?</h3><p>Evet. Turunun altında “Rota üstündeki yerler”i aç; manzara, yeme-içme, kamp, koy ya da benzin seç. Çizgiye yakın en fazla beş yer görürsün ve birini durak olarak ekleyebilirsin.</p></li><li><h3>Efsane rotalar ve geçitler nereden geliyor?</h3><p>Motoseyir uygulamasının kullandığı listelerle aynıdır. Her efsane rota kartı kaynağını yazar, geçitlerin konumu OpenStreetMap'ten gelir. Geçitlerin açık olduğu tarihler her yıl değişir; yola çıkmadan işletmenin güncel duyurusuna bak.</p></li><li><h3>Uygulamam yok ya da Android kullanıyorum, ne olur?</h3><p>iPhone kullananlar bağlantıdan App Store'a gider. Motoseyir şimdilik iPhone için App Store'da; Android sürümü Google Play'de henüz yok. Tur kodu 30 gün geçerli kalır.</p></li><li><h3>Otoyoldan ve gişeden kaçınabilir miyim?</h3><p>Evet. Tur oluşturmadan önce “Otoyol yok”, “Gişe yok” ya da “Toprak yok”u aç. Bunlar rota motoruna giden tercihlerdir; bir bölümden kaçınılamadıysa kart bunu belirtir.</p></li><li><h3>Tur ne kadar uzun çıkar?</h3><p>Seçtiğin uzunluğa yakın çıkar. Oluşturucu küçük bir sapmayı kabul eder; ilk rota fazla uzun ya da kısa çıkarsa turun boyunu bir kez düzeltir.</p></li></ul></section>
-<section class="rehber-bolum rehber-ilgili"><h2>İlgili rehberler</h2><ul><li><a href="/rehber/motor-turu-planlama/">Motor turu nasıl planlanır?</a></li><li><a href="/rehber/koy-yolu-motosiklet-rotasi/">Köy yoluyla motosiklet rotası nasıl çıkarılır?</a></li><li><a href="/rehber/turkiye-dag-gecitleri-motosiklet/">Türkiye’nin dağ geçitleri: motosikletle yedi geçit</a></li></ul><p><a href="/rehber/">Bütün rehberler →</a></p></section>
-<section class="tur-cta" aria-labelledby="urun-h2"><h2 id="urun-h2">Turu Motoseyir'de sür</h2><p>Motoseyir, turunu kendin çizdiğin bir motosiklet navigasyon uygulamasıdır: başlangıcı ve bitişi belirler, durakları koyar, sırasını değiştirirsin. Bu sayfadan gelen tur uygulamada sıradan bir tur olarak açılır, yola çıkmadan önce üzerinde değişiklik yapabilirsin.</p><p class="kucuk">Fikir lazım olursa Efsane sekmesinde hazır rotalar da duruyor; birine dokununca durakları turlarına kopyalanıyor ve üstüne yazabiliyorsun.</p><p><a class="btn btn-primary" href="https://apps.apple.com/tr/app/id6792549131?pt=128439797&amp;ct=site-web-tur&amp;mt=8">App Store'dan indir</a></p></section>
-<section id="kaynaklar" class="rehber-bolum rehber-kaynaklar"><h2>Veri ve atıflar</h2><ul><li><a href="https://www.openstreetmap.org/copyright" rel="noopener">OpenStreetMap katkıcıları (yol ve harita verisi, ODbL)</a></li><li><a href="https://protomaps.com/" rel="noopener">Protomaps (harita parçaları)</a></li><li><a href="https://github.com/valhalla/valhalla" rel="noopener">Valhalla rota motoru</a></li><li><a href="https://fossgis-routing-server.readthedocs.io/" rel="noopener">FOSSGIS rota servisi (Türkiye ve Yunanistan dışındaki rotalar)</a></li><li><a href="https://docs.overturemaps.org/attribution/" rel="noopener">Foursquare Open Source Places (Apache-2.0) ve Overture Maps Foundation (rota üstündeki yerler)</a></li><li><a href="https://photon.komoot.io/" rel="noopener">Photon (yer arama)</a></li></ul></section>
-</div></div></section>
+<p>Başlangıç noktan ve her adayın durakları rota motoruna gider: Türkiye ve Yunanistan'da Motoseyir'in kendi rota sunucusuna, başka yerlerde OpenStreetMap tabanlı herkese açık bir rota servisine; bu servis her web sitesi gibi IP adresini görür. Yer ararken ve yer adlarını getirirken yazdığın metin ya da koordinatlar Photon servisine (OpenStreetMap verisi) gider. Harita parçaları Motoseyir sunucusundan gelir. Tur yalnız “Telefonuma gönder”e dokunduğunda saklanır: adı, durakları ve ayarları 30 gün boyunca durur, kimin gönderdiğine dair bir bilgi tutulmaz. Rota üstündeki yerler aranırken rota çizgisi, adsız olarak, Motoseyir sunucusuna gider. Efsane rotalar ve geçitler bu siteden yüklenir, hiçbir yere gönderilmez.</p></div></div></section>
+<section class="bolum" id="sss" aria-labelledby="sss-h"><div class="kap"><h2 id="sss-h">Sık sorulanlar</h2><ul class="izgara tur-sss" data-r><li><h3>Motosiklet tur oluşturucu ücretsiz mi?</h3><p>Evet. Bu sayfada tur oluşturmak ve görmek ücretsizdir, hesap gerekmez. Motoseyir uygulaması ücretsiz indirilir; köy yolları kipi gibi bazı özellikler Motoseyir Pro'dadır ve ücretsiz kademe bir kayıtlı tur tutar.</p></li><li><h3>Rastgele motosiklet turu nasıl bulurum?</h3><p>Yönü “Her yön”de bırak, bir uzunluk seç ve “Tur oluştur”a dokun. Aynı ayarlarla başka turlar için “Başka bir tane”yi kullan.</p></li><li><h3>Türkiye dışında da çalışıyor mu?</h3><p>Evet, OpenStreetMap'te yolu olan her yerde çalışır. Türkiye ve Yunanistan'da rotalar Motoseyir'in kendi rota sunucusundan gelir; başka yerlerde herkese açık bir rota servisi kullanılır, o servis ara sıra yavaşlayabilir ya da yoğun olabilir.</p></li><li><h3>Turu telefonuma nasıl alırım?</h3><p>Turun altındaki “Telefonuma gönder”e dokun. Bilgisayardaysan QR kodu telefonunun kamerasıyla okut, telefondaysan “Motoseyir'de aç”a dokun. Tur Turlarım'da görünür.</p></li><li><h3>Rotamın üstündeki yerleri bulabilir miyim?</h3><p>Evet. Turunun altında “Rota üstündeki yerler”i aç; manzara, yeme-içme, kamp, koy ya da benzin seç. Çizgiye yakın en fazla beş yer görürsün ve birini durak olarak ekleyebilirsin.</p></li><li><h3>Efsane rotalar ve geçitler nereden geliyor?</h3><p>Motoseyir uygulamasının kullandığı listelerle aynıdır. Her efsane rota kartı kaynağını yazar, geçitlerin konumu OpenStreetMap'ten gelir. Geçitlerin açık olduğu tarihler her yıl değişir; yola çıkmadan işletmenin güncel duyurusuna bak.</p></li><li><h3>Uygulamam yok ya da Android kullanıyorum, ne olur?</h3><p>iPhone kullananlar bağlantıdan App Store'a gider. Motoseyir şimdilik iPhone için App Store'da; Android sürümü Google Play'de henüz yok. Tur kodu 30 gün geçerli kalır.</p></li><li><h3>Otoyoldan ve gişeden kaçınabilir miyim?</h3><p>Evet. Tur oluşturmadan önce “Otoyol yok”, “Gişe yok” ya da “Toprak yok”u aç. Bunlar rota motoruna giden tercihlerdir; bir bölümden kaçınılamadıysa kart bunu belirtir.</p></li><li><h3>Tur ne kadar uzun çıkar?</h3><p>Seçtiğin uzunluğa yakın çıkar. Oluşturucu küçük bir sapmayı kabul eder; ilk rota fazla uzun ya da kısa çıkarsa turun boyunu bir kez düzeltir.</p></li></ul></div></section>
+</div>
+
+<section class="varis" data-ton aria-labelledby="urun-h2"><div class="kap" data-r><h2 id="urun-h2">Turu Motoseyir'de sür</h2><p class="metin">Motoseyir, turunu kendin çizdiğin bir motosiklet navigasyon uygulamasıdır: başlangıcı ve bitişi belirler, durakları koyar, sırasını değiştirirsin. Bu sayfadan gelen tur uygulamada sıradan bir tur olarak açılır, yola çıkmadan önce üzerinde değişiklik yapabilirsin.</p><p class="metin kucuk">Fikir lazım olursa Efsane sekmesinde hazır rotalar da duruyor; birine dokununca durakları turlarına kopyalanıyor ve üstüne yazabiliyorsun.</p><div class="cta-satir"><a class="btn" href="https://apps.apple.com/tr/app/id6792549131?pt=128439797&amp;ct=site-web-tur&amp;mt=8">App Store'dan indir</a></div></div></section>
+<section class="ayr"><div class="kap"><div class="rehber-ilgili"><p class="km">İlgili rehberler ve kaynaklar</p><h2>İlgili rehberler</h2><ul class="d"><li><a href="/rehber/motor-turu-planlama/">Motor turu nasıl planlanır?</a></li><li><a href="/rehber/koy-yolu-motosiklet-rotasi/">Köy yoluyla motosiklet rotası nasıl çıkarılır?</a></li><li><a href="/rehber/turkiye-dag-gecitleri-motosiklet/">Türkiye’nin dağ geçitleri: motosikletle yedi geçit</a></li></ul><a class="ok" href="/rehber/">Bütün rehberler →</a></div><div id="kaynaklar" class="rehber-kaynaklar"><h2>Veri ve atıflar</h2><ul class="d"><li><a href="https://www.openstreetmap.org/copyright" rel="noopener">OpenStreetMap katkıcıları (yol ve harita verisi, ODbL)</a></li><li><a href="https://protomaps.com/" rel="noopener">Protomaps (harita parçaları)</a></li><li><a href="https://github.com/valhalla/valhalla" rel="noopener">Valhalla rota motoru</a></li><li><a href="https://fossgis-routing-server.readthedocs.io/" rel="noopener">FOSSGIS rota servisi (Türkiye ve Yunanistan dışındaki rotalar)</a></li><li><a href="https://docs.overturemaps.org/attribution/" rel="noopener">Foursquare Open Source Places (Apache-2.0) ve Overture Maps Foundation (rota üstündeki yerler)</a></li><li><a href="https://photon.komoot.io/" rel="noopener">Photon (yer arama)</a></li></ul></div></div></section>
 </main>
 
-<footer class="site-footer">
-  <div class="wrap">
-    <div class="footer-ust">
-      <div>
-        <a class="logo" href="/" style="font-size:1.05rem;">MOTO<em>SEYİR</em></a>
-      </div>
-      <ul class="footer-links">
-        <li><a href="/">Anasayfa</a></li>
-        <li><a href="/ozellikler.html">Tüm özellikler</a></li>
-        <li><a href="/rehber/">Rehber</a></li>
-        <li><a href="/tur-olusturucu/" aria-current="page">Tur oluşturucu</a></li>
-        <li><a href="/corider.html">AI CoRider</a></li>
-        <li><a href="/nasil-yapilir.html">Nasıl Yapılır</a></li>
-        <li><a href="/gizlilik/">Gizlilik</a></li>
-        <li><a href="/impressum/">Impressum</a></li>
-        <li><a href="/#iletisim">İletişim</a></li>
-        <li><a href="https://www.instagram.com/motoseyir.app/">Instagram</a></li>
-        <li><a href="https://apps.apple.com/tr/app/id6792549131?pt=128439797&amp;ct=site-tr-web-tur&amp;mt=8">App Store</a></li>
-      </ul>
+<footer>
+  <div class="alt-ic">
+    <div>
+      <p><a class="logo" href="/" aria-label="Motoseyir"><img src="/img/favicon.png" alt="" width="28" height="28">MOTO<em>SEYİR</em></a></p>
+      <p style="margin-top:10px">© 2026 Motoseyir. Tüm hakları saklıdır.</p>
     </div>
-    <p>© 2026 Motoseyir. Tüm hakları saklıdır.</p>
-    <div class="dil-altbilgi">
-      <span class="dil-altbilgi-baslik">Diller</span>
+    <ul>
+      <li><a href="/">Anasayfa</a></li>
+      <li><a href="/ozellikler.html">Tüm özellikler</a></li>
+      <li><a href="/rehber/">Rehber</a></li>
+      <li><a href="/tur-olusturucu/" aria-current="page">Tur oluşturucu</a></li>
+      <li><a href="/corider.html">AI CoRider</a></li>
+      <li><a href="/nasil-yapilir.html">Nasıl Yapılır</a></li>
+      <li><a href="/gizlilik/">Gizlilik</a></li>
+      <li><a href="/impressum/">Impressum</a></li>
+      <li><a href="/#iletisim">İletişim</a></li>
+      <li><a href="https://www.instagram.com/motoseyir.app/">Instagram</a></li>
+      <li><a href="https://apps.apple.com/tr/app/id6792549131?pt=128439797&amp;ct=site-tr-web-tur&amp;mt=8">App Store</a></li>
+    </ul>
+    <div class="dil-altbilgi"><span>Diller</span>
       <ul class="dil-liste">
   <li><strong lang="tr">Türkçe</strong></li>
   <li><a href="/en/motorcycle-route-generator/" lang="en" hreflang="en">English</a></li>
@@ -469,11 +549,12 @@
   </div>
 </footer>
 
-<script type="application/json" id="arac-ayar">{"dil": "tr", "ui": {"ekmek": "Sayfa yolu", "ekmek_son": "Tur oluşturucu", "arac_baslik": "Tur oluşturucu", "harita_etiket": "Harita. Turun başlangıcını belirlemek için dokun.", "harita_ipucu": "Başlangıcı belirlemek için haritaya dokun ya da bir yer ara.", "harita_hata": "Harita yüklenemedi. Yer arayabilir ya da konumunu kullanabilirsin; turlar yine hesaplanır.", "g1": "Başlangıç", "ara_etiket": "Yer ara", "ara_yer": "Şehir, ilçe, adres ya da yer", "ara_dugme": "Ara", "konum_dugme": "Konumumu kullan", "baslangic_bos": "Henüz başlangıç seçilmedi", "g2": "Yön", "g3": "Uzunluk", "birim_mesafe": "Mesafe", "birim_sure": "Süre", "olcu_etiket": "Mesafe birimi", "g4": "Viraj", "v1": "Rahat", "v1_alt": "Akıcı yollar", "v2": "Virajlı", "v2_alt": "Köy yolları", "v3": "Çok virajlı", "v3_alt": "Saç tokaları", "g5": "Seçenekler", "k_otoyol": "Otoyol yok", "k_gise": "Gişe yok", "k_toprak": "Toprak yok", "k_gecit": "Dağ geçidinden geçsin", "uret": "Tur oluştur", "araniyor": "Rotalar aranıyor…", "vazgec": "Vazgeç", "ilerleme_etiket": "Arama ilerlemesi", "sonuc_etiket": "Oluşturulan turlar", "baska": "Başka bir tane", "ayara_don": "Ayarları değiştir", "telefon": "Telefonuma gönder", "sonuc_not": "Süreler trafiksiz tahmindir. Yola çıkmadan önce yol durumunu, kapanışları ve havayı kontrol et.", "js_gerekli": "Tur oluşturucu JavaScript ister. Turları yine Motoseyir uygulamasında planlayabilirsin.", "dk": "dk", "sa": "sa", "yonlar": ["Kuzey", "Kuzeydoğu", "Doğu", "Güneydoğu", "Güney", "Güneybatı", "Batı", "Kuzeybatı"], "yon_kisa": ["K", "KD", "D", "GD", "G", "GB", "B", "KB"], "her_yon": "Her yön", "her_yon_kisa": "Her yön", "baslangic": "Başlangıç", "bitis": "Bitiş", "durak": "Durak {n}", "baslangic_isaret": "Turun başlangıcı", "hata_harita": "Harita yüklenemedi.", "araniyor_adim": "Rotalar deneniyor: {b} / {t}", "ara_araniyor": "Aranıyor…", "ara_yok": "Sonuç çıkmadı. Başka bir yazımla dene.", "ara_hata": "Arama şu an çalışmıyor. Bunun yerine haritaya dokun.", "konum_yok": "Konumuna ulaşılamadı. Bir yer ara ya da haritaya dokun.", "konumum": "Konumum", "baslangic_sec": "Önce başlangıcı seç: haritaya dokun, bir yer ara ya da konumunu kullan.", "hata_tavan": "Tur oluşturucunun bugünkü hakkın doldu. Yarın yine dene ya da Motoseyir uygulamasında planla.", "hata_mesgul": "Rota sunucusu şu an yoğun. Bir dakika bekleyip tekrar dene.", "hata_ag": "Rota sunucusuna ulaşılamadı. Bağlantını kontrol edip tekrar dene.", "hata_genel": "Tur oluşturulamadı. Birazdan tekrar dene.", "bos": "Bu seçimle tur bulunamadı. Başka bir yön ya da uzunluk dene, başlangıcı bir yola yaklaştır.", "gecit_yok": "Bu başlangıç ve uzunlukta ulaşılabilir bir dağ geçidi yok. Daha uzun bir tur ya da başka bir yön dene, geçit seçeneğini de kapatabilirsin.", "baska_yok": "Farklı yeni bir tur çıkmadı. Yönü ya da uzunluğu değiştirirsen daha fazlası çıkar.", "sonuc_n": "{n} tur bulundu", "sonuc_1": "1 tur bulundu", "adlar_yukleniyor": "Yer adları yükleniyor…", "not_feribot": "Yolda feribot var", "not_toprak": "{v} asfaltsız", "not_gise": "Gişeli bölüm var", "not_otoyol": "{v} otoyol", "not_ortusme": "Dönüşün çoğu aynı yoldan", "not_kacin": "Seçtiğin yol türünden tamamen kaçınamadık", "sert_viraj": "{v} sert viraj/km", "tur_ad": "{v0} turu · {v1}", "tur_ad_yedek": "Tur {n}", "hazirlaniyor": "Hazırlanıyor…", "paylas_tavan": "Tur gönderme hakkın bugün doldu. Yarın yine dene.", "paylas_buyuk": "Bu tur gönderilemeyecek kadar büyük.", "paylas_hata": "Tur gönderilemedi. Bağlantını kontrol edip tekrar dene.", "uygulamada_ac": "Motoseyir'de aç", "magaza_ios": "App Store'dan indir", "magaza_play": "Google Play'den indir", "qr_etiket": "Turun QR kodu. Telefon kamerasıyla okut.", "telefon_baslik": "Telefonunla okut", "telefon_acikla": "Telefonun kamerasını koda tut. Motoseyir kuruluysa tur Turlarım'da açılır; kurulu değilse App Store'a gidersin.", "telefon_baslik_mobil": "Turu uygulamada aç", "telefon_acikla_mobil": "Düğmeye dokun, tur Turlarım'da açılır. Kodu Turlarım → “Kod ile” bölümünden elle de girebilirsin.", "kod_etiket": "Tur kodu", "baglanti_kopyala": "Bağlantıyı kopyala", "kopyalandi": "Kopyalandı", "android_not": "Motoseyir şimdilik iPhone için App Store'da. Android sürümü Google Play'de henüz yok.", "uygulama_yok": "Hiçbir şey açılmadı mı? Önce Motoseyir'i kur, sonra düğmeye yeniden dokun.", "kod_gecerlilik": "Kod {gun} gün geçerli. Turu açtığında telefonuna kopyalanır.", "asama_1": "Rota aranıyor", "asama_2": "Duraklar yola oturtuluyor", "asama_3": "Virajlar ölçülüyor", "asama_4": "En iyi üç tur seçiliyor", "sert_viraj_on": "", "sert_viraj_son": "sert viraj/km", "pusula_etiket": "Seçili yön", "kip_etiket": "Araç kipi", "kip_uret": "Tur oluştur", "kip_rotalar": "Bölgendeki rotalar", "rot_ipucu": "Haritada efsane rotalar ve dağ geçitleri duruyor. Bir çizgiye ya da işarete dokun, ya da bir kart seç.", "rot_sayi": "Bu harita görünümünde: {r} rota · {g} geçit", "rot_filtre_rotalar": "Rotalar", "rot_filtre_gecitler": "Geçitler", "rot_filtre_etiket": "Haritada göster", "rot_yok": "Haritanın bu bölümünde bir şey yok. Uzaklaştır ya da haritayı kaydır.", "rot_ac": "Bu turu aç", "rot_gecit_buradan": "Buradan tur planla", "rot_aciliyor": "Rota hesaplanıyor…", "rot_ac_hata": "Rota hesaplanamadı. Birazdan tekrar dene.", "rot_efsane": "Efsane rota", "rot_zirve": "En yüksek nokta {v}", "rot_zirve_ad": "{ad} {v}", "rot_kis": "Kışın kapanır", "rot_kaynak": "Kaynak: {site}", "rot_gecit": "Dağ geçidi", "rot_toprak": "Asfaltsız", "rot_kapali": "Genelde kapalı {a}–{b}", "rot_simdi": "Şimdi kapalı olabilir ({a}–{b})", "rot_yuksek_kis": "Yüksek geçit: kışın kapalı olabilir", "rot_yukleniyor": "Rotalar yükleniyor…", "rot_hata": "Rotalar yüklenemedi.", "rot_ulkeler": "{v}", "efsane_acik_not": "Efsane rotalar kendi duraklarıyla açılır. Duraklarda değişikliği uygulamada yapabilirsin.", "yer_baslik": "Rota üstündeki yerler", "yer_alt": "Manzara, yemek, kamp, koy", "yer_manzara": "Manzara", "yer_yeme": "Yeme-içme", "yer_kamp": "Kamp", "yer_koy": "Koy & plaj", "yer_benzin": "Benzin", "yer_yukleniyor": "Yerler aranıyor…", "yer_yok": "Bu rotanın 2,5 km çevresinde yer bulunamadı.", "yer_hata": "Yerler yüklenemedi. Birazdan tekrar dene.", "yer_uzak": "Rotaya {v}", "yer_ekle": "Durak olarak ekle", "yer_eklendi": "Durak olarak eklendi", "yer_ekleniyor": "Rota güncelleniyor…", "yer_ekle_hata": "Rota güncellenemedi. Tekrar dene.", "yer_pro": "Burada en çok beş yer görünür. Rota üstündeki bütün yerler Motoseyir Pro'daki Keşfet'te.", "yer_atif": "Yerler: © OpenStreetMap katkıcıları · Foursquare Open Source Places · Overture Maps Foundation", "kat_manzara": "Manzara noktası", "kat_kafe": "Kafe", "kat_restoran": "Restoran", "kat_benzin": "Akaryakıt", "kat_kamp": "Kamp alanı", "kat_doga": "Doğa", "kat_koy": "Koy ya da plaj", "kat_mola_yeri": "Mola yeri", "yer_haritada": "Haritada göster"}, "ondalik": ",", "kok": "https://rota.motoseyir-app.com", "vekil": "https://motorota-rota.erengn.workers.dev", "magaza": {"ios": "https://apps.apple.com/tr/app/id6792549131?pt=128439797&ct=site-web-tur&mt=8", "play": null}}</script>
+<script type="application/json" id="arac-ayar">{"dil": "tr", "ui": {"ekmek": "Sayfa yolu", "ekmek_son": "Tur oluşturucu", "arac_baslik": "Tur oluşturucu", "harita_etiket": "Harita. Turun başlangıcını belirlemek için dokun.", "harita_ipucu": "Başlangıcı belirlemek için haritaya dokun ya da bir yer ara.", "harita_hata": "Harita yüklenemedi. Yer arayabilir ya da konumunu kullanabilirsin; turlar yine hesaplanır.", "g1": "Başlangıç", "ara_etiket": "Yer ara", "ara_yer": "Şehir, ilçe, adres ya da yer", "ara_dugme": "Ara", "konum_dugme": "Konumumu kullan", "baslangic_bos": "Henüz başlangıç seçilmedi", "g2": "Yön", "g3": "Uzunluk", "birim_mesafe": "Mesafe", "birim_sure": "Süre", "olcu_etiket": "Mesafe birimi", "g4": "Viraj", "v1": "Rahat", "v1_alt": "Akıcı yollar", "v2": "Virajlı", "v2_alt": "Köy yolları", "v3": "Çok virajlı", "v3_alt": "Saç tokaları", "g5": "Seçenekler", "k_otoyol": "Otoyol yok", "k_gise": "Gişe yok", "k_toprak": "Toprak yok", "k_gecit": "Dağ geçidinden geçsin", "uret": "Tur oluştur", "araniyor": "Rotalar aranıyor…", "vazgec": "Vazgeç", "ilerleme_etiket": "Arama ilerlemesi", "sonuc_etiket": "Oluşturulan turlar", "baska": "Başka bir tane", "ayara_don": "Ayarları değiştir", "telefon": "Telefonuma gönder", "sonuc_not": "Süreler trafiksiz tahmindir. Yola çıkmadan önce yol durumunu, kapanışları ve havayı kontrol et.", "js_gerekli": "Tur oluşturucu JavaScript ister. Turları yine Motoseyir uygulamasında planlayabilirsin.", "dk": "dk", "sa": "sa", "yonlar": ["Kuzey", "Kuzeydoğu", "Doğu", "Güneydoğu", "Güney", "Güneybatı", "Batı", "Kuzeybatı"], "yon_kisa": ["K", "KD", "D", "GD", "G", "GB", "B", "KB"], "her_yon": "Her yön", "her_yon_kisa": "Her yön", "baslangic": "Başlangıç", "bitis": "Bitiş", "durak": "Durak {n}", "baslangic_isaret": "Turun başlangıcı", "hata_harita": "Harita yüklenemedi.", "araniyor_adim": "Rotalar deneniyor: {b} / {t}", "ara_araniyor": "Aranıyor…", "ara_yok": "Sonuç çıkmadı. Başka bir yazımla dene.", "ara_hata": "Arama şu an çalışmıyor. Bunun yerine haritaya dokun.", "konum_yok": "Konumuna ulaşılamadı. Bir yer ara ya da haritaya dokun.", "konumum": "Konumum", "baslangic_sec": "Önce başlangıcı seç: haritaya dokun, bir yer ara ya da konumunu kullan.", "hata_tavan": "Tur oluşturucunun bugünkü hakkın doldu. Yarın yine dene ya da Motoseyir uygulamasında planla.", "hata_mesgul": "Rota sunucusu şu an yoğun. Bir dakika bekleyip tekrar dene.", "hata_ag": "Rota sunucusuna ulaşılamadı. Bağlantını kontrol edip tekrar dene.", "hata_genel": "Tur oluşturulamadı. Birazdan tekrar dene.", "bos": "Bu seçimle tur bulunamadı. Başka bir yön ya da uzunluk dene, başlangıcı bir yola yaklaştır.", "gecit_yok": "Bu başlangıç ve uzunlukta ulaşılabilir bir dağ geçidi yok. Daha uzun bir tur ya da başka bir yön dene, geçit seçeneğini de kapatabilirsin.", "baska_yok": "Farklı yeni bir tur çıkmadı. Yönü ya da uzunluğu değiştirirsen daha fazlası çıkar.", "sonuc_n": "{n} tur bulundu", "sonuc_1": "1 tur bulundu", "adlar_yukleniyor": "Yer adları yükleniyor…", "not_feribot": "Yolda feribot var", "not_toprak": "{v} asfaltsız", "not_gise": "Gişeli bölüm var", "not_otoyol": "{v} otoyol", "not_ortusme": "Dönüşün çoğu aynı yoldan", "not_kacin": "Seçtiğin yol türünden tamamen kaçınamadık", "sert_viraj": "{v} sert viraj/km", "tur_ad": "{v0} turu · {v1}", "tur_ad_yedek": "Tur {n}", "hazirlaniyor": "Hazırlanıyor…", "paylas_tavan": "Tur gönderme hakkın bugün doldu. Yarın yine dene.", "paylas_buyuk": "Bu tur gönderilemeyecek kadar büyük.", "paylas_hata": "Tur gönderilemedi. Bağlantını kontrol edip tekrar dene.", "uygulamada_ac": "Motoseyir'de aç", "magaza_ios": "App Store'dan indir", "magaza_play": "Google Play'den indir", "qr_etiket": "Turun QR kodu. Telefon kamerasıyla okut.", "telefon_baslik": "Telefonunla okut", "telefon_acikla": "Telefonun kamerasını koda tut. Motoseyir kuruluysa tur Turlarım'da açılır; kurulu değilse App Store'a gidersin.", "telefon_baslik_mobil": "Turu uygulamada aç", "telefon_acikla_mobil": "Düğmeye dokun, tur Turlarım'da açılır. Kodu Turlarım → “Kod ile” bölümünden elle de girebilirsin.", "kod_etiket": "Tur kodu", "baglanti_kopyala": "Bağlantıyı kopyala", "kopyalandi": "Kopyalandı", "android_not": "Motoseyir şimdilik iPhone için App Store'da. Android sürümü Google Play'de henüz yok.", "uygulama_yok": "Hiçbir şey açılmadı mı? Önce Motoseyir'i kur, sonra düğmeye yeniden dokun.", "kod_gecerlilik": "Kod {gun} gün geçerli. Turu açtığında telefonuna kopyalanır.", "asama_1": "Rota aranıyor", "asama_2": "Duraklar yola oturtuluyor", "asama_3": "Virajlar ölçülüyor", "asama_4": "En iyi üç tur seçiliyor", "sert_viraj_on": "", "sert_viraj_son": "sert viraj/km", "pusula_etiket": "Seçili yön", "kip_etiket": "Araç kipi", "kip_uret": "Tur oluştur", "kip_rotalar": "Bölgendeki rotalar", "rot_ipucu": "Haritada efsane rotalar ve dağ geçitleri duruyor. Bir çizgiye ya da işarete dokun, ya da bir kart seç.", "rot_sayi": "Bu harita görünümünde: {r} rota · {g} geçit", "rot_filtre_rotalar": "Rotalar", "rot_filtre_gecitler": "Geçitler", "rot_filtre_etiket": "Haritada göster", "rot_yok": "Haritanın bu bölümünde bir şey yok. Uzaklaştır ya da haritayı kaydır.", "rot_ac": "Bu turu aç", "rot_gecit_buradan": "Buradan tur planla", "rot_aciliyor": "Rota hesaplanıyor…", "rot_ac_hata": "Rota hesaplanamadı. Birazdan tekrar dene.", "rot_efsane": "Efsane rota", "rot_zirve": "En yüksek nokta {v}", "rot_zirve_ad": "{ad} {v}", "rot_kis": "Kışın kapanır", "rot_kaynak": "Kaynak: {site}", "rot_gecit": "Dağ geçidi", "rot_toprak": "Asfaltsız", "rot_kapali": "Genelde kapalı {a}–{b}", "rot_simdi": "Şimdi kapalı olabilir ({a}–{b})", "rot_yuksek_kis": "Yüksek geçit: kışın kapalı olabilir", "rot_yukleniyor": "Rotalar yükleniyor…", "rot_hata": "Rotalar yüklenemedi.", "rot_ulkeler": "{v}", "efsane_acik_not": "Efsane rotalar kendi duraklarıyla açılır. Duraklarda değişikliği uygulamada yapabilirsin.", "yer_baslik": "Rota üstündeki yerler", "yer_alt": "Manzara, yemek, kamp, koy", "yer_manzara": "Manzara", "yer_yeme": "Yeme-içme", "yer_kamp": "Kamp", "yer_koy": "Koy & plaj", "yer_benzin": "Benzin", "yer_yukleniyor": "Yerler aranıyor…", "yer_yok": "Bu rotanın 2,5 km çevresinde yer bulunamadı.", "yer_hata": "Yerler yüklenemedi. Birazdan tekrar dene.", "yer_uzak": "Rotaya {v}", "yer_ekle": "Durak olarak ekle", "yer_eklendi": "Durak olarak eklendi", "yer_ekleniyor": "Rota güncelleniyor…", "yer_ekle_hata": "Rota güncellenemedi. Tekrar dene.", "yer_pro": "Burada en çok beş yer görünür. Rota üstündeki bütün yerler Motoseyir Pro'daki Keşfet'te.", "yer_atif": "Yerler: © OpenStreetMap katkıcıları · Foursquare Open Source Places · Overture Maps Foundation", "kat_manzara": "Manzara noktası", "kat_kafe": "Kafe", "kat_restoran": "Restoran", "kat_benzin": "Akaryakıt", "kat_kamp": "Kamp alanı", "kat_doga": "Doğa", "kat_koy": "Koy ya da plaj", "kat_mola_yeri": "Mola yeri", "yer_haritada": "Haritada göster", "g6": "Motorun", "motor_etiket": "Motor türü", "motor_alt": "Haritada seni temsil edecek motosiklet; sağa sola sürükleyerek döndürebilirsin", "motor_ipucu": "Basılı tutup sürükle, motoru döndür. Seçtiğin motor, önizlemede turu haritada seninle sürer.", "motor_supersport": "Supersport", "motor_chopper": "Chopper", "motor_scooter": "Maksi scooter", "motor_touring": "Touring", "surus_etiket": "Önizleme", "surus_atla": "Önizlemeyi atla", "surus_tekrar": "Turu yeniden izle", "surus_ad": "Tur önizlemesi: seçtiğin motor turu baştan sona sürüyor"}, "ondalik": ",", "kok": "https://rota.motoseyir-app.com", "vekil": "https://motorota-rota.erengn.workers.dev", "magaza": {"ios": "https://apps.apple.com/tr/app/id6792549131?pt=128439797&ct=site-web-tur&mt=8", "play": null}}</script>
 <script src="/m/tur/lib/maplibre-gl-4.7.1.js?v=6ea6d232"></script>
 <script src="/m/tur/lib/pmtiles-3.2.1.js?v=3cffa7f6"></script>
 <script src="/m/tur/lib/qrcode-generator-1.4.4.js?v=6e6189e2"></script>
 <script src="/m/tur/motor.js?v=bc40dffa"></script>
-<script src="/m/tur/tur.js?v=bb3a8ab3"></script>
+<script src="/m/tur/tur.js?v=e88511d5"></script>
+<script src="/m/tur/surus.js?v=6cad1954"></script>
 </body>
 </html>

@@ -180,7 +180,19 @@
     "kat_doga": "Doğa",
     "kat_koy": "Koy ya da plaj",
     "kat_mola_yeri": "Mola yeri",
-    "yer_haritada": "Haritada göster"
+    "yer_haritada": "Haritada göster",
+    "g6": "Motorun",
+    "motor_etiket": "Motor türü",
+    "motor_alt": "Haritada seni temsil edecek motosiklet; sağa sola sürükleyerek döndürebilirsin",
+    "motor_ipucu": "Basılı tutup sürükle, motoru döndür. Seçtiğin motor, önizlemede turu haritada seninle sürer.",
+    "motor_supersport": "Supersport",
+    "motor_chopper": "Chopper",
+    "motor_scooter": "Maksi scooter",
+    "motor_touring": "Touring",
+    "surus_etiket": "Önizleme",
+    "surus_atla": "Önizlemeyi atla",
+    "surus_tekrar": "Turu yeniden izle",
+    "surus_ad": "Tur önizlemesi: seçtiğin motor turu baştan sona sürüyor"
   },
   "adimlar_h2": "Tur oluşturucu nasıl çalışır",
   "adimlar": [
@@ -355,5 +367,33 @@
       "url": "https://photon.komoot.io/"
     }
   ],
-  "anasayfa_baglanti": "Tarayıcıda dene: tur oluşturucu"
+  "anasayfa_baglanti": "Tarayıcıda dene: tur oluşturucu",
+  "tasarim": {
+    "hero_giris": "Nereye gitmek istediğini söyle, başladığın yere dönen turu o çizsin.",
+    "hero_mikro": "Ücretsiz. Hesap açmak gerekmez.",
+    "hero_tel_alt": "Motoseyir uygulamasında Tur üret ekranının kaydı: başlangıç, yön, uzunluk ve virajdan turun çizilmesi",
+    "serit_etiket": "Tur oluşturucu özeti",
+    "serit": [
+      [
+        "3 tur",
+        "Bir seferde, başladığın yere dönen"
+      ],
+      [
+        "8 yön",
+        "Ya da yönü rastgele bırak"
+      ],
+      [
+        "300 km",
+        "Seçebileceğin en uzun tur"
+      ],
+      [
+        "Ücretsiz",
+        "Hesap açmak gerekmez"
+      ]
+    ],
+    "ozet_etiket": "Tur oluşturucu hakkında",
+    "adim": "Adım {n}",
+    "dene": "Şimdi dene",
+    "ilgili_etiket": "İlgili rehberler ve kaynaklar"
+  }
 }
