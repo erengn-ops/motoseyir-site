@@ -333,10 +333,9 @@
   $('#tur-durak-ara').addEventListener('submit', function (e) {
     e.preventDefault();
     var q = araGirdi.value.trim(); if (q.length < 2) return;
-    var h = K.harita(), c = h ? h.getCenter() : { lat: 40, lng: 30 }, d = A.dil === 'tr' ? 'default' : A.dil;
+    var h = K.harita(), c = h ? h.getCenter() : { lat: 40, lng: 30 };
     araListe.hidden = false; araListe.innerHTML = '<li class="not">' + esc(T.araniyor) + '</li>';
-    fetch('https://photon.komoot.io/api/?q=' + encodeURIComponent(q) + '&limit=5&lang=' + d + '&lat=' + c.lat.toFixed(3) + '&lon=' + c.lng.toFixed(3))
-      .then(function (r) { if (!r.ok) throw new Error('ara'); return r.json(); })
+    K.yerAra(q, c, 5)
       .then(function (j) {
         var f = (j.features || []).filter(function (x) { return x.geometry && x.geometry.coordinates; });
         if (!f.length) { araListe.innerHTML = '<li class="not">' + esc(T.ara_yok) + '</li>'; return; }

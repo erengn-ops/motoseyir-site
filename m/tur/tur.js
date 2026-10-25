@@ -335,12 +335,32 @@
     if (!ad) tersAd(st.S);
     durum('');
   }
+  /* Yer arama ve ters kodlama artık TARAYICIDAN komoot'a değil Motoseyir vekiline gider (worker /web/ara, /web/ters): Photon'u vekil sorar,
+     IP adresin komoot'a gitmez, sonuçlar önbellekli; komoot düşerse vekil kendi aramamıza (TR + GR) düşer. Aşağıdaki iki işlev eski Photon
+     biçimine ({features:[{geometry, properties}]}) çevirir ki çizim kodu aynı kalsın. */
+  function vekilTaban() {
+    try {
+      if (/^(localhost|127\.0\.0\.1)$/.test(location.hostname)) { var t = localStorage.getItem('motoseyir.vekil.taban') || localStorage.getItem('motoseyir.hava.taban'); if (t) return t; }
+    } catch (e) { /* yerel sınama anahtarı yok */ }
+    return A.vekil;
+  }
+  function vekilDil() { return A.dil === 'tr' ? 'default' : A.dil; }
+  function vekilAra(q, c, limit) {
+    return fetch(vekilTaban() + '/web/ara?q=' + encodeURIComponent(q) + '&limit=' + limit + '&dil=' + vekilDil() + '&lat=' + c.lat.toFixed(3) + '&lon=' + c.lng.toFixed(3))
+      .then(function (r) { if (!r.ok) throw new Error('ara'); return r.json(); })
+      .then(function (j) {
+        return { features: (j.sonuc || []).map(function (x) { return { geometry: { coordinates: [x.lon, x.lat] }, properties: { name: x.ad, city: x.sehir, state: x.il, country: x.ulke } }; }) };
+      });
+  }
+  function vekilTers(lat, lon) {
+    return fetch(vekilTaban() + '/web/ters?lat=' + lat.toFixed(5) + '&lon=' + lon.toFixed(5) + '&dil=' + vekilDil())
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (j) { return j && j.ad ? { features: [{ properties: { name: j.ad, city: j.sehir, state: j.il, country: j.ulke } }] } : { features: [] }; });
+  }
   var tersNo = 0;
   function tersAd(s) {
     var no = ++tersNo;
-    var d = A.dil === 'tr' ? 'default' : A.dil;
-    fetch('https://photon.komoot.io/reverse?lat=' + s.latitude + '&lon=' + s.longitude + '&limit=1&lang=' + d)
-      .then(function (r) { return r.ok ? r.json() : null; })
+    vekilTers(s.latitude, s.longitude)
       .then(function (j) {
         if (no !== tersNo || !j || !j.features || !j.features[0]) return;
         var o = j.features[0].properties;
@@ -356,11 +376,9 @@
     q = q.trim();
     if (q.length < 2) return;
     var c = harita ? harita.getCenter() : { lat: MERKEZ.c[1], lng: MERKEZ.c[0] };
-    var d = A.dil === 'tr' ? 'default' : A.dil;
     araListe.hidden = false;
     araListe.innerHTML = '<li class="not">' + esc(T.araniyor) + '</li>';
-    fetch('https://photon.komoot.io/api/?q=' + encodeURIComponent(q) + '&limit=6&lang=' + d + '&lat=' + c.lat.toFixed(3) + '&lon=' + c.lng.toFixed(3))
-      .then(function (r) { if (!r.ok) throw new Error('ara'); return r.json(); })
+    vekilAra(q, c, 6)
       .then(function (j) {
         var f = (j.features || []).filter(function (x) { return x.geometry && x.geometry.coordinates; });
         if (!f.length) { araListe.innerHTML = '<li class="not">' + esc(T.ara_yok) + '</li>'; return; }
@@ -1549,14 +1567,12 @@
   /* ---------------------------------------------------------------- tur düzenleyici köprüsü (m/tur/duzen.js)
      Düzenleyici (duraklar, bacaklar, kip, hava) kendi dosyasında; durum ve çizim burada kaldığı için buradan küçük bir arayüz alıyor. */
   var adOnbellek = new Map(), adSirasi = Promise.resolve();
-  /* Yer adı: Photon ters kodlama, durak başına TEK istek, sıraya konmuş ve önbellekli (aynı ~100 m hücre bir daha sorulmaz). */
+  /* Yer adı: ters kodlama (vekil üzerinden Photon), durak başına TEK istek, sıraya konmuş ve önbellekli (aynı ~100 m hücre bir daha sorulmaz). */
   function tersAdAl(lat, lon) {
     var anah = lat.toFixed(3) + ',' + lon.toFixed(3);
     if (adOnbellek.has(anah)) return adOnbellek.get(anah);
-    var d = A.dil === 'tr' ? 'default' : A.dil;
     var p = adSirasi = adSirasi.then(function () {
-      return fetch('https://photon.komoot.io/reverse?lat=' + lat + '&lon=' + lon + '&limit=1&lang=' + d)
-        .then(function (r) { return r.ok ? r.json() : null; })
+      return vekilTers(lat, lon)
         .then(function (j) {
           if (!j || !j.features || !j.features[0]) return '';
           var o = j.features[0].properties, ad = o.name || o.city || o.town || o.village || o.county;
@@ -1580,7 +1596,7 @@
     st: st, M: M, T: T, A: A, kok: kok, $: $, $$: $$, esc: esc, doldur: doldur, f1: f1, mesafe: mesafe, sureYazi: sureYazi, kisaMesafe: kisaMesafe, reduce: reduce,
     harita: function () { return hazir ? harita : null; }, kumulatif: kumulatif, enYakinIndeks: enYakinIndeks, kamera: kamera, kipSec: kipSec, evre: evre, durum: durum,
     tersAdAl: tersAdAl, turuYerlestir: turuYerlestir, turuYenidenCiz: turuYenidenCiz, haritaSonuc: haritaSonuc, paylasKapat: paylasKapat, turDonus: turDonus,
-    yerOnbellekSifirla: function (tur) { yer.onbellek.delete(tur); yer.liste = []; yerYukle(); }, padGuncelle: padGuncelleGec, olay: olay, ayaraDon: ayaraDon, baslangicKoy: baslangicKoy
+    yerAra: vekilAra, yerOnbellekSifirla: function (tur) { yer.onbellek.delete(tur); yer.liste = []; yerYukle(); }, padGuncelle: padGuncelleGec, olay: olay, ayaraDon: ayaraDon, baslangicKoy: baslangicKoy
   };
 
   /* ---------------------------------------------------------------- sürüş önizlemesi için küçük arayüz (m/tur/surus.js)
