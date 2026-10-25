@@ -345,11 +345,23 @@
     return A.vekil;
   }
   function vekilDil() { return A.dil === 'tr' ? 'default' : A.dil; }
+  // Yazdıkça öneri (25 Eki, kullanıcı: "ankar yazınca ankara çıkacak"): yeni arama eskisini iptal eder; iptal edilen
+  // istek hiç çözülmez (eski sonuç yenisinin üstüne yazılmasın, "arama çalışmıyor" da görünmesin).
+  var araDenetim = null;
   function vekilAra(q, c, limit) {
-    return fetch(vekilTaban() + '/web/ara?q=' + encodeURIComponent(q) + '&limit=' + limit + '&dil=' + vekilDil() + '&lat=' + c.lat.toFixed(3) + '&lon=' + c.lng.toFixed(3))
+    if (araDenetim) araDenetim.abort();
+    var dn = araDenetim = new AbortController();
+    return fetch(vekilTaban() + '/web/ara?q=' + encodeURIComponent(q) + '&limit=' + limit + '&dil=' + vekilDil() + '&lat=' + c.lat.toFixed(3) + '&lon=' + c.lng.toFixed(3), { signal: dn.signal })
+      .catch(function (e) { if (dn.signal.aborted) return new Promise(function () {}); throw e; })
       .then(function (r) { if (!r.ok) throw new Error('ara'); return r.json(); })
       .then(function (j) {
-        return { features: (j.sonuc || []).map(function (x) { return { geometry: { coordinates: [x.lon, x.lat] }, properties: { name: x.ad, city: x.sehir, state: x.il, country: x.ulke } }; }) };
+        // Aynı yer (Ankara şehir / il / merkez) birkaç kez geliyor: aynı ad ve ~5 km içindekileri teke indir.
+        var tek = [];
+        (j.sonuc || []).forEach(function (x) {
+          var ayni = tek.some(function (y) { return y.ad === x.ad && Math.abs(y.lat - x.lat) < 0.05 && Math.abs(y.lon - x.lon) < 0.05; });
+          if (!ayni) tek.push(x);
+        });
+        return { features: tek.map(function (x) { return { geometry: { coordinates: [x.lon, x.lat] }, properties: { name: x.ad, city: x.sehir, state: x.il, country: x.ulke } }; }) };
       });
   }
   function vekilTers(lat, lon) {
@@ -397,6 +409,20 @@
       }).catch(function () { araListe.innerHTML = '<li class="not">' + esc(T.ara_hata) + '</li>'; });
   }
   $('#tur-ara-dugme').addEventListener('click', function () { ara(araGirdi.value); });
+  // Yazdıkça öneri: başlangıç kutusu, durak ekleme kutusu ve satır içi düzenleyici (form.dz-ara) — 280 ms durunca.
+  var oneriZaman = null;
+  document.addEventListener('input', function (e) {
+    var g = e.target;
+    if (!g || g.tagName !== 'INPUT') return;
+    var bas = g.id === 'tur-ara-girdi', form = g.closest('#tur-durak-ara, form.dz-ara');
+    if (!bas && !form) return;
+    clearTimeout(oneriZaman);
+    if (g.value.trim().length < 2) { if (bas) araListe.hidden = true; return; }
+    oneriZaman = setTimeout(function () {
+      if (bas) ara(g.value);
+      else if (form.requestSubmit) form.requestSubmit(); else form.dispatchEvent(new Event('submit', { cancelable: true, bubbles: true }));
+    }, 280);
+  });
   araGirdi.addEventListener('keydown', function (e) {
     if (e.key === 'Enter') { e.preventDefault(); ara(araGirdi.value); }
     if (e.key === 'Escape') araListe.hidden = true;
