@@ -111,7 +111,7 @@ const HARITA = resolve(BURASI, '../m/tur/harita');
 mkdirSync(HARITA, { recursive: true });
 const stil = JSON.parse(readFileSync(join(VARLIK, 'protomaps-acik.json'), 'utf8'));
 delete stil.sources.protomaps.url;
-stil.sources.protomaps = { ...stil.sources.protomaps, tiles: [`${VEKIL}/web/k/{z}/{x}/{y}.mvt`], minzoom: 0, maxzoom: 15, attribution: '© OpenStreetMap · Protomaps' };
+stil.sources.protomaps = { ...stil.sources.protomaps, tiles: [`${VEKIL}/web/k/{z}/{x}/{y}.mvt?v=2`], minzoom: 0, maxzoom: 15, attribution: '© OpenStreetMap · Protomaps' };
 stil.glyphs = '/m/tur/harita/fonts/{fontstack}/{range}.pbf';
 stil.sprite = '/m/tur/harita/sprites/light'; /* sayfa açılışta başına kökeni ekliyor: MapLibre göreli adres kabul etmiyor */
 writeFileSync(join(HARITA, 'stil.json'), JSON.stringify(stil));

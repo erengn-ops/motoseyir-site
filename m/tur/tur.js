@@ -229,7 +229,7 @@
 
   function haritaKur() {
     if (!window.maplibregl) { durum(T.hata_harita, 'hata'); return; }
-    fetch('/m/tur/harita/stil.json?v=k1').then(function (r) { return r.json(); }).then(function (stil) {
+    fetch('/m/tur/harita/stil.json?v=k2').then(function (r) { return r.json(); }).then(function (stil) {
       stil.glyphs = location.origin + stil.glyphs;
       stil.sprite = location.origin + stil.sprite;
       harita = new maplibregl.Map({
