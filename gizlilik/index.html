@@ -278,8 +278,10 @@
         Navigasyon ya da sürüş kaydı sırasında bir bağlantı paylaşırsanız (yalnız siz açarsanız),
         <strong>bağlantıya sahip olan herkes</strong> (gönderdiğiniz kişi onu başkasına iletirse o da)
         <strong>uygulama olmadan</strong> bir web sayfasında son konumunuzu, gittiğiniz yönü ve konumun ne zaman
-        alındığını, navigasyondaysanız varış noktanızın adını, kalan yolu ve tahmini varış saatini görür; sayfanın
-        haritası OpenStreetMap'ten gelir. Bağlantı varınca, navigasyonu ya da sürüş kaydını bitirince ya da paylaşımı
+        alındığını, navigasyondaysanız varış noktanızın adını, kalan yolu ve tahmini varış saatini görür; sayfa
+        motoseyir-app.com/izle/ adresinde açılır ve haritası Motoseyir'in kendi harita deposundan gelir. Sayfa ayrıca sürüşte
+        <strong>şimdiye kadar geçtiğiniz yolu</strong> (iz çizgisi) gösterir: bağlantı açıkken en çok 500 nokta yalnızca
+        sunucunun belleğinde durur, diske yazılmaz; bağlantı kapanınca ya da servis yeniden başlayınca silinir. Bağlantı varınca, navigasyonu ya da sürüş kaydını bitirince ya da paylaşımı
         durdurduğunuzda kapanır; <strong>en geç 24 saatte</strong>, telefonunuzdan üç saat konum gelmezse de kapanır.
         Konumunuz yine <strong>yalnız sürüş sürerken</strong> tutulur; sunucuda bağlantının kendisi değil geri
         çevrilemez bir özeti durur.
@@ -503,7 +505,7 @@
             <tr><td>Grup rotası: ad, başlangıç, duraklar, çizgi, dönüş talimatları</td><td>Takip servisimiz</td><td>Gruptakilerin aynı rotayı açması</td><td>Sürüş bitince silinir; en geç 12 saat</td></tr>
             <tr><td>Grup uyarısı; konumunuzu grupta gösteriyorsanız o anki konum</td><td>Takip servisimiz</td><td>Gruba hızlı haber</td><td>10 dakika</td></tr>
             <tr><td>Toplanma noktası (konum, varsa adı ve saati); lider / süpürücü rolü</td><td>Takip servisimiz</td><td>Grubun buluşması</td><td>Saatinden 30 dk sonra (saatsizse 12 saat); rol grupla birlikte</td></tr>
-            <tr><td>Son konum, yön, varış noktasının adı, kalan yol ve varış saati (Sürüşümü paylaş, yalnız siz açarsanız)</td><td>Takip servisimiz; bağlantıya sahip olanların tarayıcısı</td><td>Uygulamasız canlı izleme</td><td>Yalnız son nokta, sürüş sürerken; bağlantı en geç 24 saatte kapanır</td></tr>
+            <tr><td>Son konum, yön, varış noktasının adı, kalan yol, varış saati ve sürüşte geçilen yolun çizgisi (Sürüşümü paylaş, yalnız siz açarsanız)</td><td>Takip servisimiz; bağlantıya sahip olanların tarayıcısı</td><td>Uygulamasız canlı izleme</td><td>Son nokta, yalnız sürüş sürerken; iz çizgisi yalnızca bellekte; bağlantı en geç 24 saatte kapanır</td></tr>
             <tr><td>Son bilinen konum (&ldquo;Yakınımda&rdquo; sıralaması)</td><td>Topluluk servisimiz</td><td>Paylaşımları yakınlığa göre sıralama</td><td>Hayır</td></tr>
             <tr><td>Topluluk etkinliği: başlık, açıklama, saat ve saat dilimi, buluşma noktası, kontenjan, ekli rota; katılımlar (yalnız siz oluşturur ya da katılırsanız)</td><td>Topluluk servisimiz</td><td>Birlikte sürüş için buluşma</td><td>Başlangıçtan 14 gün sonra silinir</td></tr>
             <tr><td>Arama metni ve konum (yazım düzeltmesi dahil)</td><td>Motoseyir sunucuları (arama servisi ve yer servisi); iPhone'da Apple Haritalar (sunucularımız yanıt vermezse ya da yeri bulamazsa); Android'de Stadia Maps, Motoseyir sunucusu üzerinden (Stadia sunucumuzun adresini görür)</td><td>Yer önerileri</td><td>Hayır</td></tr>
@@ -560,6 +562,8 @@
         <li><strong>Telefona gönderme:</strong> tur yalnız &ldquo;Telefonuma gönder&rdquo;e dokunduğunuzda saklanır: adı, durakları ve ayarları 30 gün boyunca durur, kimin gönderdiğine dair bilgi tutulmaz.</li>
         <li>Kötüye kullanımı önlemek için vekilimiz günlük istek sayısını IP adresinin geri çevrilemez özetiyle tutar; sayaç gün bitince silinir. Harita parçaları Motoseyir'in Cloudflare'deki harita deposundan gelir.</li>
       </ul>
+      <h3>Canlı sürüş sayfası (motoseyir-app.com/izle/)</h3>
+      <p>Bir sürücünün &ldquo;Sürüşümü paylaş&rdquo; bağlantısını açtığınızda bu sayfa açılır. Hesap istemez, çerez bırakmaz; yalnız seçtiğiniz dili tarayıcınızın yerel depolamasında tutar. Bağlantının belirteci adresin # işaretinden sonrasındadır, tarayıcınız onu siteye göndermez. Sayfa, belirteci yalnız sürüşün durumunu sormak için Motoseyir takip servisine (rota.motoseyir-app.com) gönderir ve 5 saniyede bir yeniler; bu serviste IP adresinizin kendisi kaydedilmez, kötüye kullanımı sınırlamak için geri çevrilemez bir özeti bellekte kısa süre tutulur. Sürücünün son konumu, yönü, varış bilgileri ve sürüşte geçtiği yol bu sayfada bağlantıya sahip herkese görünür; iz çizgisi bağlantı kapanınca silinir. Harita parçaları Motoseyir'in Cloudflare'deki harita deposundan gelir.</p>
     </section>
 
     <section>

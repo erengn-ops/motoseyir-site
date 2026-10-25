@@ -697,6 +697,90 @@ def arac_yaz() -> int:
     return yazilan
 
 
+# ---------------------------------------------------------------------------------------------------------------------
+# CANLI İZLEME SAYFASI (25 Eki 2026): /izle/ — uygulamadaki "Sürüşümü paylaş" bağlantısı burada açılır.
+# Bağlantı biçimi `https://motoseyir-app.com/izle/#/izle/<belirteç>` (sunucu: server/takip.py, MOTOSEYIR_IZLE_SITE=1; parça
+# sunucuya gitmez). Sayfa tek ve dili tarayıcıdan seçer (tr/en/de/fr/it); üst menü/altbilgi metinleri bu betikte mevcut dil
+# sözlüklerinden JSON'a konur ve m/izle/izle.js dile göre değiştirir. KİŞİSEL sürüş sayfası: noindex, sitemap'e GİRMEZ.
+# Metin: arac/canli-izle.json · şablon: sablon/izle.html · stil/davranış: m/izle/izle.css, m/izle/izle.js.
+# Veri: IZLE_API/izle/<belirteç>/durum (CORS yalnız bu site); harita: tur üreticisiyle aynı stil/parçalar.
+# ---------------------------------------------------------------------------------------------------------------------
+IZLE_ETIKET = "canli-izle"  # App Store `ct`
+IZLE_API = "https://rota.motoseyir-app.com"
+IZLE_DILLER = ("tr", "en", "de", "fr", "it")  # uygulamanın beş dili
+IZLE_MAGAZA = f"https://apps.apple.com/app/apple-store/id{UYGULAMA_ID}?pt={SAGLAYICI}&ct={IZLE_ETIKET}&mt=8"
+
+
+def izle_dil_secici(metin_tr: dict, v: dict) -> str:
+    ogeler = "\n    ".join(
+        f'<li><a href="#" data-dil="{k}" lang="{k}" hreflang="{k}"{" aria-current=" + chr(34) + "true" + chr(34) if k == "tr" else ""}>{v[k]["ad"]}</a></li>'
+        for k in IZLE_DILLER)
+    return ('<details class="dil-sec">\n'
+            f'  <summary aria-label="{metin_tr["dil_sec_etiket"]}"><span class="dil-kod">TR</span><span class="dil-ad">{v["tr"]["ad"]}</span></summary>\n'
+            f'  <ul>\n    {ogeler}\n  </ul>\n</details>')
+
+
+def izle_dil_altbilgi(v: dict) -> str:
+    ogeler = "\n  ".join(
+        f'<li><a href="#" data-dil="{k}" lang="{k}" hreflang="{k}"{" aria-current=" + chr(34) + "true" + chr(34) if k == "tr" else ""}>{v[k]["ad"]}</a></li>'
+        for k in IZLE_DILLER)
+    return f'<ul class="dil-liste">\n  {ogeler}\n</ul>'
+
+
+def izle_yaz() -> int:
+    dosya = ARAC_ICERIK / "canli-izle.json"
+    if not dosya.exists():
+        return 0
+    v = json.loads(dosya.read_text(encoding="utf-8"))
+    v.pop("_not", None)
+    zorunlu = ("lang", "yerel", "ad", "baslik", "eyebrow", "aciklama", "harita_etiket", "durum", "etiket", "ortala", "ag_hata", "harita_hata", "alt",
+               "iz_not", "js_gerekli", "cta_baslik", "cta_metin", "cta_dugme", "cta_android")
+    durumlar = ("canli", "bekliyor", "bekliyor_alt", "kopuk", "kopuk_alt", "bitti", "bitti_alt", "varis", "kapatildi", "sessiz", "yok", "yok_alt")
+    for k in IZLE_DILLER:
+        eksik = [a for a in zorunlu if a not in v.get(k, {})] + [f"durum.{a}" for a in durumlar if a not in v.get(k, {}).get("durum", {})]
+        eksik += [f"etiket.{a}" for a in ("hedef", "kalan", "varis", "son") if a not in v.get(k, {}).get("etiket", {})]
+        if eksik:
+            raise SystemExit(f"HATA: arac/canli-izle.json [{k}]: eksik alan(lar): {', '.join(eksik)}")
+    hub, _ = rehber_veri()
+    chrome = {}
+    for k in IZLE_DILLER:
+        m = json.loads((DIL / f"{k}.json").read_text(encoding="utf-8"))
+        u = _html.unescape
+        chrome[k] = {
+            "skip": u(m["skip"]), "nav_etiket": u(m["nav_etiket"]), "dil_sec_etiket": u(m["dil_sec_etiket"]),
+            "haklar": u(m["footer_haklar"]), "diller": u(m["footer_diller"]),
+            "anasayfa": {"t": u(m["nav_anasayfa"]), "h": sayfa_yolu(k, "index.html")},
+            "ozellikler": {"t": u(m["footer_tum_ozellikler"]), "h": sayfa_yolu(k, "ozellikler.html")},
+            "rehber": {"t": u(hub[k]["ui"]["rehber"]), "h": rehber_hub_yolu(k)},
+            "corider": {"t": "AI CoRider", "h": sayfa_yolu(k, "corider.html")},
+            "iletisim": {"t": u(m["nav_iletisim"]), "h": sayfa_yolu(k, "index.html") + "#iletisim"},
+            "nasil": {"t": u(m["nav_nasil"]), "h": sayfa_yolu(k, "nasil-yapilir.html")},
+            "gizlilik": {"t": u(m["nav_gizlilik"]) + u(m["gizlilik_tr_notu"]), "h": gizlilik_url(k)},
+            "impressum": {"t": u(m["nav_impressum"]), "h": impressum_url(k)},
+            "indir": {"t": u(m["btn_indir"]), "h": IZLE_MAGAZA},
+        }
+    tr, metin_tr = v["tr"], json.loads((DIL / "tr.json").read_text(encoding="utf-8"))
+    ayar = {"metin": {k: v[k] for k in IZLE_DILLER}, "chrome": chrome, "api": IZLE_API,
+            "magaza": {"ios": IZLE_MAGAZA, "play": PLAY_BAGLANTISI}}
+    degerler = {
+        **metin_tr,
+        **{a: b for a, b in tr.items() if isinstance(b, str)},
+        "aciklama_nitelik": _html.escape(tr["aciklama"], quote=True),
+        "og_aciklama": _html.escape(f'{tr["aciklama"].split(".")[0]}. · {v["en"]["aciklama"].split(".")[0]}.', quote=True),
+        "e_hedef": tr["etiket"]["hedef"], "e_kalan": tr["etiket"]["kalan"], "e_varis": tr["etiket"]["varis"], "e_son": tr["etiket"]["son"],
+        "alan": ALAN, "vekil": ARAC_VEKIL, "api": IZLE_API, "store": IZLE_MAGAZA.replace("&", "&amp;"),
+        "dil_secici": izle_dil_secici(metin_tr, v), "dil_altbilgi": izle_dil_altbilgi(v),
+        "ui_rehber": hub["tr"]["ui"]["rehber"], "yil": YIL,
+        "izle_ayar": json.dumps(ayar, ensure_ascii=False).replace("</", "<\\/"),
+    }
+    html = doldur((SABLON / "izle.html").read_text(encoding="utf-8"), degerler, "izle")
+    html = varliklari_surumle(html)
+    hedef = KOK / "izle" / "index.html"
+    hedef.parent.mkdir(parents=True, exist_ok=True)
+    hedef.write_text(html, encoding="utf-8")
+    return 1
+
+
 ICERIK = KOK / "icerik"
 REHBER_DIZIN = {"tr": "rehber", "en": "guides", "de": "ratgeber", "fr": "guides", "it": "guide", "es": "guias"}
 REHBER_ETIKET = "rehber"
@@ -1137,6 +1221,7 @@ def main() -> None:
     yazilan += rehber_yazilan
     arac_yazilan = arac_yaz()
     yazilan += arac_yazilan
+    yazilan += izle_yaz()
 
     (KOK / "sitemap.xml").write_text(sitemap(), encoding="utf-8")
     (KOK / "robots.txt").write_text(ROBOTS, encoding="utf-8")

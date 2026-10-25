@@ -12,7 +12,7 @@ Neye bakar (her HTML dosyası; `sablon/`, `*taslak.html` ve Search Console doğr
   - JSON-LD: her blok JSON olarak ayrışır; FAQPage soruları sayfadaki GÖRÜNÜR SSS ile birebir; aggregateRating/review yok
   - <img>: alt, width, height var
   - dahili bağlantılar (href/src) ve #parça hedefleri gerçekten var
-  - sitemap.xml: her adres bir dosyaya karşılık gelir, indexlenebilir her sayfa sitemap'te, noindex sayfalar (indir, get, 404) yok
+  - sitemap.xml: her adres bir dosyaya karşılık gelir, indexlenebilir her sayfa sitemap'te, noindex sayfalar (indir, get, izle, 404) yok
   - başlık ve açıklamalar tekil (aynı dilde iki sayfa aynı metni kullanmaz)
   - rehber sayfaları (`rehber/`, `<dil>/guides|ratgeber|guide|guias/`): hreflang yalnız var olan eşleri kapsar (tek dilli yazıda yok), kendine ve x-default'a
     işaret eder, karşılıklıdır ve sitemap'teki gruplarla aynıdır; JSON-LD'de Organization + WebSite + BreadcrumbList + (WebPage+Article | CollectionPage);
@@ -34,7 +34,7 @@ KOK = Path(__file__).resolve().parent
 ALAN = "https://motoseyir-app.com"
 DILLER = ["tr", "en", "de", "fr", "it", "es", "nl", "pl", "cs", "sk", "hu", "ro", "hr", "el"]
 HARIC_DIZIN = {"sablon", "_kanit", "node_modules", ".git", "m", "img", "dil", "tur-araci", "arac"}
-NOINDEX_BEKLENEN = {"indir/index.html", "get/index.html", "404.html"}
+NOINDEX_BEKLENEN = {"indir/index.html", "get/index.html", "404.html", "izle/index.html"}  # izle: kişisel canlı sürüş sayfası (25 Eki 2026)
 # Rehber sayfaları (uret.py › REHBER): her dilin kendi dizini; hreflang yalnız var olan eşleri kapsar (tek dilli yazıda hiç yok).
 REHBER_DIZIN = {"rehber", "guides", "ratgeber", "guide", "guias"}
 

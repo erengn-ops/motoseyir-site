@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Motoseyir · {{baslik}}</title>
+<meta name="description" content="{{aciklama_nitelik}}">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="googlebot" content="noindex,nofollow,noarchive">
+<meta name="referrer" content="strict-origin">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Motoseyir">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:title" content="Motoseyir · canlı sürüş">
+<meta property="og:description" content="{{og_aciklama}}">
+<meta property="og:url" content="{{alan}}/izle/">
+<meta property="og:image" content="{{alan}}/img/og-kapak.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Motoseyir · canlı sürüş">
+<meta name="twitter:description" content="{{og_aciklama}}">
+<meta name="twitter:image" content="{{alan}}/img/og-kapak.jpg">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<meta name="theme-color" content="#0E6E73" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0E1315" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/img/favicon.png">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/m/tur/lib/maplibre-gl-4.7.1.css">
+<link rel="stylesheet" href="/m/izle/izle.css">
+<link rel="preconnect" href="{{vekil}}" crossorigin>
+<link rel="preconnect" href="{{api}}" crossorigin>
+</head>
+<body>
+<a class="skip-link" href="#icerik" data-c="skip">{{skip}}</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="/">MOTO<em>SEYİR</em></a>
+    <nav aria-label="{{nav_etiket}}" data-ca="nav_etiket">
+      <ul class="nav">
+        <li><a href="/" data-c="anasayfa">{{nav_anasayfa}}</a></li>
+        <li><a href="/ozellikler.html" data-c="ozellikler">{{footer_tum_ozellikler}}</a></li>
+        <li><a href="/rehber/" data-c="rehber">{{ui_rehber}}</a></li>
+        <li><a href="/corider.html" data-c="corider">AI CoRider</a></li>
+        <li><a href="/#iletisim" data-c="iletisim">{{nav_iletisim}}</a></li>
+      </ul>
+    </nav>
+    <div class="header-cta">
+      {{dil_secici}}
+      <a class="btn btn-ghost btn-sm" href="{{store}}" data-c="indir" data-magaza>{{btn_indir}}</a>
+    </div>
+  </div>
+</header>
+
+<main id="icerik">
+<section class="section rehber-ust izle-ust"><div class="wrap">
+  <span class="eyebrow" data-i="eyebrow">{{eyebrow}}</span>
+  <h1 data-i="baslik">{{baslik}}</h1>
+</div></section>
+
+<section class="section section-2 izle-bolum" aria-label="{{baslik}}">
+<div class="wrap">
+  <div class="izle-arac" id="izle" data-durum="yukleniyor">
+    <div class="izle-harita-kolon">
+      <div class="izle-harita-sar" id="izle-harita-sar">
+        <div id="izle-harita" class="izle-harita" role="application" aria-label="{{harita_etiket}}" data-ai="harita_etiket"></div>
+        <button type="button" id="izle-ortala" class="izle-ortala" hidden data-i="ortala">{{ortala}}</button>
+        <p class="izle-harita-hata" id="izle-harita-hata" role="alert" hidden data-i="harita_hata">{{harita_hata}}</p>
+      </div>
+    </div>
+
+    <div class="izle-kart izle-durum-kart" id="izle-durum-kart">
+      <div class="izle-durum-ust" role="status" aria-live="polite">
+        <span class="izle-nokta" id="izle-nokta" aria-hidden="true"></span>
+        <strong class="izle-durum-yazi" id="izle-durum-yazi">…</strong>
+      </div>
+      <p class="izle-not" id="izle-not" hidden></p>
+      <dl class="izle-satirlar" id="izle-satirlar">
+        <div class="izle-satir" id="satir-hedef" hidden><dt data-i="etiket.hedef">{{e_hedef}}</dt><dd id="deger-hedef"></dd></div>
+        <div class="izle-satir izle-satir-buyuk" id="satir-kalan" hidden><dt data-i="etiket.kalan">{{e_kalan}}</dt><dd id="deger-kalan"></dd></div>
+        <div class="izle-satir izle-satir-buyuk" id="satir-varis" hidden><dt data-i="etiket.varis">{{e_varis}}</dt><dd id="deger-varis"></dd></div>
+        <div class="izle-satir" id="satir-son" hidden><dt data-i="etiket.son">{{e_son}}</dt><dd id="deger-son"></dd></div>
+      </dl>
+      <p class="izle-ag-hata" id="izle-ag-hata" hidden data-i="ag_hata">{{ag_hata}}</p>
+      <noscript><p class="izle-nojs">{{js_gerekli}}</p></noscript>
+    </div>
+
+    <p class="izle-alt"><span data-i="alt">{{alt}}</span> <span data-i="iz_not">{{iz_not}}</span></p>
+
+    <aside class="izle-kart izle-cta" aria-labelledby="izle-cta-baslik">
+      <h2 id="izle-cta-baslik" data-i="cta_baslik">{{cta_baslik}}</h2>
+      <p data-i="cta_metin">{{cta_metin}}</p>
+      <p><a class="btn btn-primary" id="izle-magaza" href="{{store}}" rel="noopener" data-magaza data-i="cta_dugme">{{cta_dugme}}</a></p>
+      <p class="izle-cta-not" id="izle-cta-android" hidden data-i="cta_android">{{cta_android}}</p>
+    </aside>
+  </div>
+</div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-ust">
+      <div>
+        <a class="logo" href="/" style="font-size:1.05rem;">MOTO<em>SEYİR</em></a>
+      </div>
+      <ul class="footer-links">
+        <li><a href="/" data-c="anasayfa">{{nav_anasayfa}}</a></li>
+        <li><a href="/ozellikler.html" data-c="ozellikler">{{footer_tum_ozellikler}}</a></li>
+        <li><a href="/rehber/" data-c="rehber">{{ui_rehber}}</a></li>
+        <li><a href="/corider.html" data-c="corider">AI CoRider</a></li>
+        <li><a href="/nasil-yapilir.html" data-c="nasil">{{nav_nasil}}</a></li>
+        <li><a href="/gizlilik/" data-c="gizlilik">{{nav_gizlilik}}</a></li>
+        <li><a href="/impressum/" data-c="impressum">{{nav_impressum}}</a></li>
+        <li><a href="/#iletisim" data-c="iletisim">{{nav_iletisim}}</a></li>
+        <li><a href="https://www.instagram.com/motoseyir.app/">Instagram</a></li>
+        <li><a href="{{store}}" data-magaza>App Store</a></li>
+      </ul>
+    </div>
+    <p>© {{yil}} Motoseyir. <span data-c="haklar">{{footer_haklar}}</span></p>
+    <div class="dil-altbilgi">
+      <span class="dil-altbilgi-baslik" data-c="diller">{{footer_diller}}</span>
+      {{dil_altbilgi}}
+    </div>
+  </div>
+</footer>
+
+<script type="application/json" id="izle-ayar">{{izle_ayar}}</script>
+<script src="/m/tur/lib/maplibre-gl-4.7.1.js"></script>
+<script src="/m/tur/lib/pmtiles-3.2.1.js"></script>
+<script src="/m/izle/izle.js"></script>
+</body>
+</html>
