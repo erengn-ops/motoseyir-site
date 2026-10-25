@@ -103,8 +103,11 @@
   /* ---------------------------------------------------------------- harita */
   var harita = null, hazir = false, baslangicIsareti = null, ilkSembolKimligi = null;
   var bos = { type: 'FeatureCollection', features: [] };
-  var MERKEZ = A.dil === 'tr' ? { c: [35.5, 39.2], z: 5 } : A.dil === 'de' ? { c: [11.0, 47.9], z: 6 }
-    : /^America\//.test(tz) ? { c: [-98, 39], z: 3.6 } : { c: [8.5, 46.7], z: 5 };
+  // En az 6. düzey (25 Eki): harita dosyasında 4–5. düzeydeki bazı parçalar boş çiziliyor (veri sağlam, MapLibre'de bucket 0);
+  // Türkiye'yi 5'te açınca yalnız bir kare dolu kalıyordu. Sebep bulunana kadar daha uzağa izin yok.
+  var EN_AZ_YAKINLIK = 6;
+  var MERKEZ = A.dil === 'tr' ? { c: [32.9, 39.9], z: 6 } : A.dil === 'de' ? { c: [11.0, 47.9], z: 6 }
+    : /^America\//.test(tz) ? { c: [-105.5, 39.5], z: 6 } : { c: [8.5, 46.7], z: 6 };
 
   function daire(c, rKm, n) {
     var kx = 111.32 * Math.cos(c.latitude * Math.PI / 180), ky = 110.574, hal = [];
@@ -161,7 +164,7 @@
       stil.glyphs = location.origin + stil.glyphs;
       stil.sprite = location.origin + stil.sprite;
       harita = new maplibregl.Map({
-        container: 'tur-harita', style: stil, center: MERKEZ.c, zoom: MERKEZ.z, minZoom: 2, maxZoom: 16.5,
+        container: 'tur-harita', style: stil, center: MERKEZ.c, zoom: MERKEZ.z, minZoom: EN_AZ_YAKINLIK, maxZoom: 16.5,
         attributionControl: false, dragRotate: false, pitchWithRotate: false, cooperativeGestures: false
       });
       harita.touchZoomRotate.disableRotation();
@@ -172,6 +175,10 @@
         if (window.console) console.warn('harita:', e && e.error ? e.error.message || e.error : e);
         if (e && e.error && /pmtiles|Failed to fetch|AJAXError/i.test(String(e.error.message || e.error))) haritaHata();
       });
+      // Harita, kapsayıcısı yerleşim bitmeden (yazı tipi/ızgara oturmadan) kurulunca kendini küçük pencere sanıp yalnız bir
+      // parça yüklüyordu (25 Eki, kullanıcı ekranı: sol üstte tek kare, gerisi gri). Kapsayıcı boyutu değiştikçe yeniden ölç.
+      if (window.ResizeObserver) new ResizeObserver(function () { harita.resize(); }).observe(document.getElementById('tur-harita'));
+      window.addEventListener('load', function () { harita.resize(); });
       harita.on('load', haritaYuklendi);
       harita.on('click', function (e) {
         if (st.kip === 'rotalar') { kesTikla(e); return; }
@@ -193,6 +200,14 @@
   }
   var GEC = { duration: 450, delay: 0 };
   function haritaYuklendi() {
+    // Harita stili uygulamadan geldiği için etiketler name:tr; EN/DE sayfada sayfanın dilini kullan (25 Eki: "İSVİÇRE").
+    if (A.dil !== 'tr') harita.getStyle().layers.forEach(function (l) {
+      var tf = l.layout && l.layout['text-field'];
+      if (!tf) return;
+      var j = JSON.stringify(tf);
+      if (j.indexOf('name:tr') < 0) return;
+      try { harita.setLayoutProperty(l.id, 'text-field', JSON.parse(j.split('name:tr').join('name:' + A.dil))); } catch (e) { /* etiket Türkçe kalır */ }
+    });
     hazir = true;
     var ilkSembol = null;
     harita.getStyle().layers.some(function (l) { if (l.type === 'symbol') { ilkSembol = l.id; return true; } return false; });
