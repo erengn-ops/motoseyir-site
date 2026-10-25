@@ -192,7 +192,22 @@
     "surus_etiket": "Preview",
     "surus_atla": "Skip preview",
     "surus_tekrar": "Watch the ride again",
-    "surus_ad": "Tour preview: the bike you picked rides the tour from start to finish"
+    "surus_ad": "Tour preview: the bike you picked rides the tour from start to finish",
+    "yol_ustu": "Along the route",
+    "yol_ara_yer": "Search along the route",
+    "yer_kahve": "Coffee",
+    "yer_yemek": "Food",
+    "panel_ac": "Open or close the panel",
+    "kadran_ipucu": "Turn and stretch the handle",
+    "baslangic_tasi": "To move the start, drag the dial's dot or tap the map outside the dial.",
+    "yer_km": "km {v}",
+    "yer_rotadan": "on route",
+    "yer_ara_sonuc": "{n} places for “{q}”",
+    "yer_ara_yok": "Nothing found for “{q}” along the route.",
+    "yer_gec": "You pass here",
+    "yer_sec_etiket": "Places along the route",
+    "kadran_yon": "Direction",
+    "yer_mil": "mile {v}"
   },
   "adimlar_h2": "How the route generator works",
   "adimlar": [

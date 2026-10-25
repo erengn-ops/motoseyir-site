@@ -192,7 +192,22 @@
     "surus_etiket": "Vorschau",
     "surus_atla": "Vorschau überspringen",
     "surus_tekrar": "Fahrt noch einmal ansehen",
-    "surus_ad": "Tourvorschau: Das gewählte Motorrad fährt die Tour von Anfang bis Ende"
+    "surus_ad": "Tourvorschau: Das gewählte Motorrad fährt die Tour von Anfang bis Ende",
+    "yol_ustu": "Entlang der Route",
+    "yol_ara_yer": "Entlang der Route suchen",
+    "yer_kahve": "Kaffee",
+    "yer_yemek": "Essen",
+    "panel_ac": "Panel öffnen oder schließen",
+    "kadran_ipucu": "Griff drehen und ziehen",
+    "baslangic_tasi": "Zum Verschieben des Starts den Punkt des Zifferblatts ziehen oder die Karte außerhalb tippen.",
+    "yer_km": "km {v}",
+    "yer_rotadan": "an der Route",
+    "yer_ara_sonuc": "{n} Orte für „{q}“",
+    "yer_ara_yok": "Zu „{q}“ entlang der Route nichts gefunden.",
+    "yer_gec": "Hier fährst du vorbei",
+    "yer_sec_etiket": "Orte entlang der Route",
+    "kadran_yon": "Richtung",
+    "yer_mil": "Meile {v}"
   },
   "adimlar_h2": "So funktioniert der Tourengenerator",
   "adimlar": [

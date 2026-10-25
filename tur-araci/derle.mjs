@@ -64,6 +64,17 @@ const eklenti = {
   },
 };
 
+/* Kadran geometrisi: ayrı küçük paket (m/tur/geometri.js). `node derle.mjs --geometri` yalnız bunu yeniler (motor.js'e dokunmaz). */
+const GEO = resolve(BURASI, '../m/tur/geometri.js');
+await build({
+  entryPoints: [join(BURASI, 'web/kadran-geometri.ts')], bundle: true, minify: true, format: 'iife', globalName: 'TurGeometri', target: ['es2020'],
+  platform: 'browser', outfile: GEO, plugins: [eklenti], legalComments: 'none', logLevel: 'error',
+  define: { 'process.env.NODE_ENV': '"production"' },
+});
+writeFileSync(GEO, `/* Tur üret kadranı geometrisi — moto-rota ${surum} kaynağından derlendi (tur-araci/derle.mjs). Elle düzenleme. */\n${readFileSync(GEO, 'utf8')}`);
+console.log(`→ ${GEO} (${Math.round(readFileSync(GEO).length / 1024)} KB)`);
+if (process.argv.includes('--geometri')) process.exit(0);
+
 mkdirSync(dirname(CIKTI), { recursive: true });
 const sonuc = await build({
   entryPoints: [join(BURASI, 'web/giris.ts')],

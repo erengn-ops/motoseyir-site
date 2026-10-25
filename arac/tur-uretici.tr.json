@@ -192,7 +192,22 @@
     "surus_etiket": "Önizleme",
     "surus_atla": "Önizlemeyi atla",
     "surus_tekrar": "Turu yeniden izle",
-    "surus_ad": "Tur önizlemesi: seçtiğin motor turu baştan sona sürüyor"
+    "surus_ad": "Tur önizlemesi: seçtiğin motor turu baştan sona sürüyor",
+    "yol_ustu": "Yol üstünde",
+    "yol_ara_yer": "Yol üstünde ara",
+    "yer_kahve": "Kahve",
+    "yer_yemek": "Yemek",
+    "panel_ac": "Paneli aç ya da kapat",
+    "kadran_ipucu": "Tutamağı çevir, uzat",
+    "baslangic_tasi": "Başlangıcı taşımak için kadranın noktasını sürükle ya da haritada kadranın dışına dokun.",
+    "yer_km": "{v}. km",
+    "yer_rotadan": "rotada",
+    "yer_ara_sonuc": "“{q}” için {n} yer",
+    "yer_ara_yok": "“{q}” yol üstünde bulunamadı.",
+    "yer_gec": "Burada geçiyorsun",
+    "yer_sec_etiket": "Yol üstündeki yerler",
+    "kadran_yon": "Yön",
+    "yer_mil": "{v}. mil"
   },
   "adimlar_h2": "Tur oluşturucu nasıl çalışır",
   "adimlar": [

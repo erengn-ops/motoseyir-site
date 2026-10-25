@@ -19,6 +19,8 @@ cd .. && python3 uret.py             # sayfalar (m/tur/* sürüm özetiyle bağl
 | `m/tur/kesfet.<dil>.json` | Keşfet "bölgendeki rotalar" verisi: Türkiye klasikleri + Avrupa/ABD efsane yolları (`data/presetTours`, `avrupaEfsaneYollari`, `abdEfsaneYollari`); metinler uygulamanın çeviri sözlüğünden (`i18n/en.ts`, `de.ts`). Çevirisi olmayan metin derlemede UYARI olarak yazılır. |
 | `m/tur/harita/` | Uygulamanın çevrimdışı harita stili (`assets/harita/protomaps-acik.json`), yazı tipleri ve simgeleri; kaynak: gezegen yapısı (vekil). Dışarıya istek yok. |
 
+`node derle.mjs --geometri` yalnız `m/tur/geometri.js`i yeniler (motor.js'e dokunmaz): Tur üret kadranının geometrisi (`components/turUretici/geometri.ts`, saf işlevler) `window.TurGeometri` olarak paketlenir; `m/tur/kadran.js` onu kullanır, kopya yok.
+
 `stubs/` uygulamanın React Native'e bağlı küçük katmanlarının web karşılıklarıdır: `routesApi` (tur üreticinin kullandığı DAR yol; kendi
 sunucu + dış motor, dış motorda 10 konum sınırı için bacak grupları), `i18n`, `format`, `expo-location` (yer adları Photon ile), `preferences`,
 `uzakAyar`, `surusKaydi`, `react-native`. `web/giris.ts` ağ yapıştırıcısıdır (vekil, dış motora nazik hız, sayaç/hata sebebi), turu uygulamanın

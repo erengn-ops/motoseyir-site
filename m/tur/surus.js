@@ -130,7 +130,7 @@
       if (tekrar) tekrar.hidden = true;
       st.calisiyor = true;
 
-      var raf = 0, zaman = 0, ilkMs = 0, bitti = false, h0 = yon(ham[0], nokta(pencere)), kamC = { lng: ham[0].longitude, lat: ham[0].latitude }, gizle = 0, sonYazi = '';
+      var yerGoster = {}, raf = 0, zaman = 0, ilkMs = 0, bitti = false, h0 = yon(ham[0], nokta(pencere)), kamC = { lng: ham[0].longitude, lat: ham[0].latitude }, gizle = 0, sonYazi = '';
       var yakalaDuzenle = function (e) { if (e.originalEvent) iptal(false); };
       harita.on('movestart', yakalaDuzenle);
 
@@ -191,6 +191,14 @@
         cubuk.style.transform = 'scaleX(' + p.toFixed(4) + ')';
         var yazi = K.mesafe(top * p);
         if (yazi !== sonYazi) { kmEl.textContent = yazi; sonYazi = yazi; }
+        var yl = K.yerler ? K.yerler() : [];
+        for (var yi = 0; yi < yl.length; yi++) if (!yerGoster[yl[yi].i + ':' + yl[yi].ad] && yl[yi].m != null && d * 1000 >= yl[yi].m - 120) {
+          yerGoster[yl[yi].i + ':' + yl[yi].ad] = 1; K.yerVurgu(yl[yi].i);
+          if (!gecitEl.classList.contains('goster')) {
+            gecitEl.innerHTML = '<span class="ik yerik">' + K.yerIkon(yl[yi].kat || 'manzara') + '</span><span><b>' + esc(yl[yi].ad) + '</b></span>';
+            gecitEl.classList.add('goster'); clearTimeout(gizle); gizle = setTimeout(function () { gecitEl.classList.remove('goster'); }, 2200);
+          }
+        }
         for (var i = 0; i < gecitler.length; i++) if (!gecitler[i].goster && d >= gecitler[i].d - 0.2) { gecitler[i].goster = true; gecitRozeti(gecitler[i].g); }
         if (u >= 1) { cancelAnimationFrame(raf); raf = 0; kmEl.textContent = K.mesafe(top); setTimeout(function () { temizle(true); }, 500); }
       }
