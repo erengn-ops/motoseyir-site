@@ -55,6 +55,11 @@
     var s = Math.floor(dk / 60), d = dk % 60;
     return s + ' ' + T.sa + (d ? ' ' + d + ' ' + T.dk : '');
   }
+  // Yol parçası uzunluğu (asfaltsız vb.): 13692 m değil "13,7 km" / "8.5 mi".
+  function kisaMesafe(m) {
+    var v = st.birim === 'mi' ? m / 1609.344 : m / 1000, b = st.birim === 'mi' ? ' mi' : ' km';
+    return (v < 10 ? v.toLocaleString(document.documentElement.lang || 'tr', { maximumFractionDigits: 1 }) : Math.round(v)) + b;
+  }
   function metreYazi(m) { return st.birim === 'mi' ? Math.round(m * 3.28084) + ' ft' : Math.round(m) + ' m'; }
   function doldur(s, d) { return s.replace(/\{(\w+)\}/g, function (_, k) { return d[k] != null ? d[k] : ''; }); }
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
@@ -604,7 +609,7 @@
   function notlarOf(tur) {
     var n = [], ic = tur.rota.icerik || {};
     if (ic.feribotSayisi) n.push(T.not_feribot);
-    if (ic.asfaltsizM >= 500) n.push(doldur(T.not_toprak, { v: metreYazi(ic.asfaltsizM) }));
+    if (ic.asfaltsizM >= 500) n.push(doldur(T.not_toprak, { v: kisaMesafe(ic.asfaltsizM) }));
     if (ic.parali) n.push(T.not_gise);
     if (tur.kacin && tur.kacin.otoyol && (tur.otoyolM || 0) >= M.OTOYOL_ESIK_M) n.push(doldur(T.not_otoyol, { v: mesafe(tur.otoyolM / 1000) }));
     return n;
