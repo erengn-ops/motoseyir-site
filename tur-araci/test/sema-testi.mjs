@@ -105,3 +105,23 @@ for (const [ad, ua] of [['iPhone', 'Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like
   assert.ok(geri2.tur.routeDistanceMeters > 0 && geri2.tur.shape.length > 5);
   console.log(`düzenlenmiş tur: kod ${s2.kod}, ${geri2.tur.stops.length} durak (biri silindi), mod koy, ${Math.round(geri2.tur.routeDistanceMeters / 1000)} km — uygulama şemasıyla aynı, sunucudan birebir geri okundu`);
 }
+
+// 7) YOL TARİFİ PANELİNİN DÖNÜŞSÜZ TURU (A → duraklar → B, başlangıca dönüş yok): aynı şema, sunucudan birebir geri okunur.
+{
+  const n = u.duraklar.length;
+  const donussuz = [u.duraklar[0], u.duraklar[Math.floor(n / 2)], u.duraklar[n - 2]];          // A, 1 durak, B (bitiş ≠ başlangıç)
+  const r = await M.rotaKur(donussuz.map((c) => ({ latitude: c.latitude, longitude: c.longitude })), seviye, undefined, 'standart');
+  assert.ok(r.coordinates.length > 10 && r.rota.bacaklar.length === donussuz.length - 1, 'dönüşsüz rotada bacaklar yok');
+  const tek = { ...u, duraklar: donussuz, coordinates: r.coordinates, rota: r.rota, olcu: r.olcu, gecitler: r.gecitler, donus: false };
+  const web3 = M.turKaydi(tek, ['A', 'Durak', 'B'], seviye, 'Dönüşsüz sınama turu', { mod: 'standart' });
+  assert.equal(web3.stops.length, 3);
+  assert.notDeepEqual(web3.stops[0].coords, web3.stops[2].coords, 'dönüşsüz turda bitiş başlangıca eşit olmamalı');
+  const uyg3 = norm(uyg.paylasilacakTur(JSON.parse(JSON.stringify(web3))));
+  const fark3 = [...new Set([...Object.keys(uyg3), ...Object.keys(norm(web3))])].filter((k) => JSON.stringify(uyg3[k]) !== JSON.stringify(norm(web3)[k]));
+  assert.deepEqual(fark3, [], `dönüşsüz turda beklenmeyen fark: ${fark3}`);
+  const s3 = await M.turPaylas(web3);
+  assert.ok(s3.ok, `dönüşsüz tur paylaşılamadı: ${JSON.stringify(s3)}`);
+  const geri3 = await M.turAl(s3.kod);
+  assert.deepEqual(norm(geri3.tur), norm(web3), 'dönüşsüz tur geri okununca farklı');
+  console.log(`dönüşsüz tur: kod ${s3.kod}, A → 1 durak → B, ${Math.round(geri3.tur.routeDistanceMeters / 1000)} km — uygulama şemasıyla aynı, sunucudan birebir geri okundu`);
+}

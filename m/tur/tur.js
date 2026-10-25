@@ -389,7 +389,7 @@
     if (q.length < 2) return;
     var c = harita ? harita.getCenter() : { lat: MERKEZ.c[1], lng: MERKEZ.c[0] };
     araListe.hidden = false;
-    araListe.innerHTML = '<li class="not">' + esc(T.araniyor) + '</li>';
+    araListe.innerHTML = '<li class="not">' + esc(T.yer_araniyor) + '</li>';
     vekilAra(q, c, 6)
       .then(function (j) {
         var f = (j.features || []).filter(function (x) { return x.geometry && x.geometry.coordinates; });
@@ -409,19 +409,12 @@
       }).catch(function () { araListe.innerHTML = '<li class="not">' + esc(T.ara_hata) + '</li>'; });
   }
   $('#tur-ara-dugme').addEventListener('click', function () { ara(araGirdi.value); });
-  // Yazdıkça öneri: başlangıç kutusu, durak ekleme kutusu ve satır içi düzenleyici (form.dz-ara) — 280 ms durunca.
+  // Yazdıkça öneri (başlangıç kutusu): 280 ms durunca. Duraklar sekmesindeki satırlar kendi girdilerini m/tur/duzen.js'te yönetir.
   var oneriZaman = null;
-  document.addEventListener('input', function (e) {
-    var g = e.target;
-    if (!g || g.tagName !== 'INPUT') return;
-    var bas = g.id === 'tur-ara-girdi', form = g.closest('#tur-durak-ara, form.dz-ara');
-    if (!bas && !form) return;
+  araGirdi.addEventListener('input', function () {
     clearTimeout(oneriZaman);
-    if (g.value.trim().length < 2) { if (bas) araListe.hidden = true; return; }
-    oneriZaman = setTimeout(function () {
-      if (bas) ara(g.value);
-      else if (form.requestSubmit) form.requestSubmit(); else form.dispatchEvent(new Event('submit', { cancelable: true, bubbles: true }));
-    }, 280);
+    if (araGirdi.value.trim().length < 2) { araListe.hidden = true; return; }
+    oneriZaman = setTimeout(function () { ara(araGirdi.value); }, 280);
   });
   araGirdi.addEventListener('keydown', function (e) {
     if (e.key === 'Enter') { e.preventDefault(); ara(araGirdi.value); }
@@ -825,10 +818,13 @@
     });
   }
   function turDonus(tur) { return tur.donus != null ? tur.donus : !tur.efsane; }
+  /* Düzenleme kipinde işaret harfleri panelle aynı: A başlangıç, 1…n duraklar, B bitiş (yalnız dönüşsüz turda). */
+  function durakEtiketi(tur, k) { var n = tur.duraklar.length; return k === 0 ? 'A' : (!turDonus(tur) && n >= 2 && k === n - 1) ? 'B' : String(k); }
+  function durakBitis(tur, k) { return !turDonus(tur) && tur.duraklar.length >= 2 && k === tur.duraklar.length - 1; }
   /* Numaralı durak işareti; düzenleme kipinde SÜRÜKLENEBİLİR (bırakınca rota yeniden hesaplanır: m/tur/duzen.js). */
-  function durakIsareti(no, k, c, gecikme, surukle) {
+  function durakIsareti(no, k, c, gecikme, surukle, bitis) {
     var el = document.createElement('div');
-    el.className = 'tur-nokta durak' + (surukle ? ' surukle' : '') + (surukle && k === 0 ? ' baslangic' : '');
+    el.className = 'tur-nokta durak' + (surukle ? ' surukle' : '') + (surukle && k === 0 ? ' baslangic' : '') + (bitis ? ' bitis' : '');
     el.dataset.k = k;
     if (surukle) el.title = T.dz_isaret_surukle;
     el.innerHTML = '<span class="ic"><b>' + no + '</b></span>';
@@ -856,7 +852,7 @@
     if (secilCiz) secilCiz();
     isaretleriTemizle(false);
     var ham = tur.coordinates;
-    if (!ham.length) { harita.getSource('secili').setData(bos); harita.getSource('bas').setData(bos); (tur.duraklar || []).forEach(function (c, k) { if (!(turDonus(tur) && k === tur.duraklar.length - 1)) durakIsareti(k + 1, k, c, 0, st.kip === 'duzen'); }); olay('tur:cizildi'); return; }
+    if (!ham.length) { harita.getSource('secili').setData(bos); harita.getSource('bas').setData(bos); (tur.duraklar || []).forEach(function (c, k) { if (!(turDonus(tur) && k === tur.duraklar.length - 1)) durakIsareti(st.kip === 'duzen' ? durakEtiketi(tur, k) : k + 1, k, c, 0, st.kip === 'duzen', st.kip === 'duzen' && durakBitis(tur, k)); }); olay('tur:cizildi'); return; }
     harita.getSource('secili').setData({ type: 'Feature', properties: {}, geometry: { type: 'LineString', coordinates: ham.map(function (c) { return [c.longitude, c.latitude]; }) } });
     soldurAc();
     var cum = kumulatif(ham), top = cum[cum.length - 1] || 1;
@@ -867,7 +863,7 @@
       if (donus && son) return;                                  // dönüş turunda bitiş = başlangıç
       if (!duzenKipi && !tur.efsane && k === 0) return;          // sarı iğne başlangıcı gösteriyor
       var f = cum[enYakinIndeks(ham, c.latitude, c.longitude)] / top;
-      durakIsareti(duzenKipi ? k + 1 : tur.efsane ? k + 1 : k, k, c, zaman(f), duzenKipi);
+      durakIsareti(duzenKipi ? durakEtiketi(tur, k) : tur.efsane ? k + 1 : k, k, c, zaman(f), duzenKipi, duzenKipi && durakBitis(tur, k));
     });
     tur.gecitler.forEach(function (g) {
       var f = cum[enYakinIndeks(ham, g.lat, g.lon)] / top;
