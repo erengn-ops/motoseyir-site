@@ -14,6 +14,9 @@ Neye bakar (her HTML dosyası; `sablon/`, `*taslak.html` ve Search Console doğr
   - dahili bağlantılar (href/src) ve #parça hedefleri gerçekten var
   - sitemap.xml: her adres bir dosyaya karşılık gelir, indexlenebilir her sayfa sitemap'te, noindex sayfalar (indir, get, 404) yok
   - başlık ve açıklamalar tekil (aynı dilde iki sayfa aynı metni kullanmaz)
+  - rehber sayfaları (`rehber/`, `<dil>/guides|ratgeber|guide|guias/`): hreflang yalnız var olan eşleri kapsar (tek dilli yazıda yok), kendine ve x-default'a
+    işaret eder, karşılıklıdır ve sitemap'teki gruplarla aynıdır; JSON-LD'de Organization + WebSite + BreadcrumbList + (WebPage+Article | CollectionPage);
+    FAQPage görünür SSS ile birebir. İçerik tarafı (rakip adı, kaynak vb.) ayrıca `icerik-denetim.py`'de.
 """
 from __future__ import annotations
 
@@ -32,6 +35,13 @@ ALAN = "https://motoseyir-app.com"
 DILLER = ["tr", "en", "de", "fr", "it", "es", "nl", "pl", "cs", "sk", "hu", "ro", "hr", "el"]
 HARIC_DIZIN = {"sablon", "_kanit", "node_modules", ".git", "m", "img", "dil"}
 NOINDEX_BEKLENEN = {"indir/index.html", "get/index.html", "404.html"}
+# Rehber sayfaları (uret.py › REHBER): her dilin kendi dizini; hreflang yalnız var olan eşleri kapsar (tek dilli yazıda hiç yok).
+REHBER_DIZIN = {"rehber", "guides", "ratgeber", "guide", "guias"}
+
+
+def rehber_mi(rel: str) -> bool:
+    p = rel.split("/")
+    return (p[0] in REHBER_DIZIN) or (len(p) > 1 and p[0] in DILLER and p[1] in REHBER_DIZIN)
 SERBEST_UZUNLUK = NOINDEX_BEKLENEN  # bu sayfalarda başlık/açıklama sınırı aranmaz
 
 
@@ -215,7 +225,13 @@ def main() -> int:
         aciklamalar.setdefault((dil, desc), []).append(rel)
         # hreflang
         hl = {l["hreflang"]: l["href"] for l in p.links if l.get("rel") == "alternate" and "hreflang" in l}
-        if rel.startswith("gizlilik/"):
+        if rehber_mi(rel):
+            beklenen = set(hl)  # eşler yazıya göre değişir; kümenin kendi içinde tutarlılığı aşağıda
+            if hl and (dil not in hl or "x-default" not in hl):
+                hatalar.append(f"{rel}: hreflang kümesi kendi dilini ({dil}) ya da x-default'u içermiyor")
+            if hl and hl.get(dil) != beklenen_adres(rel):
+                hatalar.append(f"{rel}: hreflang {dil} kendine işaret etmiyor")
+        elif rel.startswith("gizlilik/"):
             beklenen = {"tr", "en", "de", "x-default"}
         elif rel.startswith("impressum/"):
             beklenen = {"de", "en", "x-default"}
@@ -244,6 +260,8 @@ def main() -> int:
             for d in dugumler:
                 t = d.get("@type")
                 tipler.append(t if isinstance(t, str) else "+".join(t))
+                if t == "Article" and not (d.get("headline") and len(d["headline"]) <= 110 and d.get("datePublished") and d.get("dateModified")):
+                    hatalar.append(f"{rel}: Article eksik/uzun (headline ≤110, datePublished, dateModified)")
                 if t == "FAQPage":
                     gorunur = cevap_ciftleri_corider(src) if rel.endswith("corider.html") else cevap_ciftleri_anasayfa(src)
                     ld_sss = [(ld_duz(q["name"]), ld_duz(q["acceptedAnswer"]["text"])) for q in d["mainEntity"]]
@@ -253,11 +271,14 @@ def main() -> int:
                 hatalar.append(f"{rel}: aggregateRating/review yasak")
         if not tipler:
             hatalar.append(f"{rel}: JSON-LD yok")
+        elif rehber_mi(rel):
+            if not {"Organization", "WebSite", "BreadcrumbList"} <= set(tipler) or not ({"WebPage", "Article"} <= set(tipler) or "CollectionPage" in tipler):
+                hatalar.append(f"{rel}: rehber JSON-LD türleri eksik: {tipler}")
         elif "WebPage" not in tipler:
             hatalar.append(f"{rel}: JSON-LD'de WebPage yok")
-        if not rel.startswith(("gizlilik/", "impressum/")) and not {"Organization", "WebSite", "MobileApplication"} <= set(tipler):
+        if not rehber_mi(rel) and not rel.startswith(("gizlilik/", "impressum/")) and not {"Organization", "WebSite", "MobileApplication"} <= set(tipler):
             hatalar.append(f"{rel}: JSON-LD türleri eksik: {tipler}")
-        if rel not in ("index.html",) and not rel.endswith("/index.html") and not rel.startswith(("gizlilik/", "impressum/")) and "BreadcrumbList" not in tipler:
+        if rel not in ("index.html",) and (not rel.endswith("/index.html") or rehber_mi(rel)) and not rel.startswith(("gizlilik/", "impressum/")) and "BreadcrumbList" not in tipler:
             hatalar.append(f"{rel}: BreadcrumbList yok")
         # görseller
         for im in p.imgs:
@@ -330,6 +351,17 @@ def main() -> int:
     for rel in veri:
         if rel not in NOINDEX_BEKLENEN and beklenen_adres(rel) not in gorulen:
             hatalar.append(f"sitemap'te yok: {rel}")
+    # rehber sayfalarında sitemap'teki hreflang grubu sayfanın kendi <link> kümesiyle aynı mı
+    xh = "{http://www.w3.org/1999/xhtml}link"
+    for u in kok.findall("s:url", ns):
+        loc = u.find("s:loc", ns).text
+        yol = urlsplit(loc).path.lstrip("/")
+        hedef = yol + "index.html" if (yol == "" or yol.endswith("/")) else yol
+        if hedef in veri and rehber_mi(hedef):
+            sm = {l.get("hreflang"): l.get("href") for l in u.findall(xh)}
+            sayfa = {l["hreflang"]: l["href"] for l in veri[hedef][0].links if l.get("rel") == "alternate" and "hreflang" in l}
+            if sm != sayfa:
+                hatalar.append(f"sitemap hreflang ≠ sayfa hreflang: {loc}")
     robots = (KOK / "robots.txt").read_text(encoding="utf-8")
     if f"Sitemap: {ALAN}/sitemap.xml" not in robots:
         hatalar.append("robots.txt: Sitemap satırı yok")

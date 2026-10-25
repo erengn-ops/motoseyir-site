@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="{{lang}}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{baslik_tam}}</title>
+<meta name="description" content="{{aciklama_nitelik}}">
+<link rel="canonical" href="{{kanonik}}">
+{{alternatifler}}
+{{seo_head}}
+<meta name="apple-itunes-app" content="app-id={{uygulama_id}}">
+<meta name="theme-color" content="#0E6E73" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0E1315" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/img/favicon.png">
+<link rel="stylesheet" href="/style.css">
+
+{{json_ld}}
+</head>
+<body>
+<a class="skip-link" href="#icerik">{{skip}}</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="{{anasayfa_url}}">MOTO<em>SEYİR</em></a>
+    <nav aria-label="{{nav_etiket}}">
+      <ul class="nav">
+        <li><a href="{{anasayfa_url}}">{{nav_anasayfa}}</a></li>
+        <li><a href="{{ozellikler_url}}">{{footer_tum_ozellikler}}</a></li>
+        <li><a href="{{hub_url}}">{{ui_rehber}}</a></li>
+        <li><a href="{{corider_url}}">AI CoRider</a></li>
+        <li><a href="{{anasayfa_url}}#iletisim">{{nav_iletisim}}</a></li>
+      </ul>
+    </nav>
+    <div class="header-cta">
+      {{dil_secici}}
+      <a class="btn btn-ghost btn-sm" href="{{store}}">{{btn_indir}}</a>
+    </div>
+  </div>
+</header>
+
+<main id="icerik">
+{{rehber_icerik}}
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-ust">
+      <div>
+        <a class="logo" href="{{anasayfa_url}}" style="font-size:1.05rem;">MOTO<em>SEYİR</em></a>
+      </div>
+      <ul class="footer-links">
+        <li><a href="{{anasayfa_url}}">{{nav_anasayfa}}</a></li>
+        <li><a href="{{ozellikler_url}}">{{footer_tum_ozellikler}}</a></li>
+        <li><a href="{{hub_url}}">{{ui_rehber}}</a></li>
+        <li><a href="{{corider_url}}">AI CoRider</a></li>
+        <li><a href="{{nasil_url}}">{{nav_nasil}}</a></li>
+        <li><a href="{{gizlilik_url}}">{{nav_gizlilik}}{{gizlilik_tr_notu}}</a></li>
+        <li><a href="{{impressum_url}}">{{nav_impressum}}</a></li>
+        <li><a href="{{anasayfa_url}}#iletisim">{{nav_iletisim}}</a></li>
+        <li><a href="https://www.instagram.com/motoseyir.app/">Instagram</a></li>
+        <li><a href="{{store}}">App Store</a></li>
+      </ul>
+    </div>
+    <p>© {{yil}} Motoseyir. {{footer_haklar}}</p>
+    <div class="dil-altbilgi">
+      <span class="dil-altbilgi-baslik">{{footer_diller}}</span>
+      {{dil_altbilgi}}
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -11,7 +11,8 @@ python3 uret.py
 ```
 
 Bu komut `sablon/` + `dil/` ikilisinden 14 dilde 4 sayfa (56 dosya: anasayfa, özellikler,
-nasıl yapılır, AI CoRider), ayrıca `sitemap.xml` ve `robots.txt` üretir. Türkçe **köke** yazılır
+nasıl yapılır, AI CoRider), `sablon/rehber.html` + `icerik/` ikilisinden rehber sayfalarını (6 dilde hub + yazılar, 25 Eki 2026'da 19 dosya),
+ayrıca `sitemap.xml` ve `robots.txt` üretir. Türkçe **köke** yazılır
 (`index.html`, `ozellikler.html`, `nasil-yapilir.html`, `corider.html`) — eski adresler
 bozulmasın diye; diğer diller `/<kod>/` altına.
 
@@ -53,11 +54,22 @@ Arka plan videosu yapay zekâ ile üretildi (Higgsfield Wan 3.0); gerçek çekim
 | `indir/index.html`, `get/index.html` | Instagram reklamı yönlendirme sayfaları (`noindex`, ölçüm işareti var; **dokunma**) — **elle** tutuluyor |
 | `404.html` | bulunamayan adres sayfası (`noindex`) — **elle** tutuluyor |
 | `seo-denetim.py` | yayın öncesi SEO denetimi (aşağıda) |
+| `sablon/rehber.html` | rehber (hub + yazı) kabuk şablonu; gövde `uret.py` içinde bloklardan üretilir |
+| `icerik/hub.<kod>.json`, `icerik/<grup>.<kod>.json` | rehber ana sayfası + arayüz metinleri; yazılar. **Elle yazılan kaynak** — alanlar: `REHBER-EKLE.md` |
+| `icerik-denetim.py` | rehber içerik denetimi (uzunluk, rakip adı, kaynak, tablo, tekrar, Türkçe yüklem uyarıları) |
+| `REHBER-EKLE.md`, `REHBER-KUYRUK.md`, `REHBER-GOREV-TASLAGI.md` | yazı ekleme talimatı; konu kuyruğu (hedef sorgu + kaynak); haftalık görev talimat TASLAĞI (görev kurulmadı) |
 | `SEO.md` | anahtar kelime haritası, yapılan SEO işleri, sahibinin yapacakları |
 
 `uret.py` yalnız yukarıdaki üç şablondan üretilen sayfalara, `sitemap.xml` ve
 `robots.txt`'ye dokunur. Gizlilik ve indir sayfaları ile `style.css` ondan
 bağımsızdır.
+
+## Rehber (rota / geçit / tur planlama yazıları)
+
+`python3 uret.py` ayrıca her dilin rehberini yazar: `/rehber/` (TR), `/en/guides/`, `/de/ratgeber/`, `/fr/guides/`, `/it/guide/`, `/es/guias/` ve altındaki
+yazılar (`/<hub>/<slug>/`). Aynı konunun farklı dillerdeki yazıları `icerik/` altında aynı grup adını taşır ve birbirinin hreflang eşidir; tek dilli
+yazıda hreflang yoktur. Altbilgiye ve (TR, EN, DE, FR, IT, ES) anasayfaya "Rehber" bağlantısı kendiliğinden girer; diğer 8 dil değişmez.
+Yazı eklemek `icerik/` altına bir JSON eklemekten ibarettir (`REHBER-EKLE.md`). App Store bağlantısı `ct=site-<kod>-rehber` etiketlidir.
 
 ## Yeni dil eklemek
 
@@ -128,6 +140,7 @@ görünür metinle birebir. Yeni soru eklenirse 14 dil dosyasına da eklenmeli. 
 ```sh
 python3 uret.py
 python3 seo-denetim.py        # SEO + bağlantı + sitemap denetimi; sorun varsa çıkış kodu 1
+python3 icerik-denetim.py     # rehber içeriği (icerik/*.json) denetimi
 python3 -m http.server 8099   # http://127.0.0.1:8099/
 ```
 

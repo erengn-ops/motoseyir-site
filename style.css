@@ -672,3 +672,74 @@ a:hover { text-decoration-thickness: 2px; }
 /* "Yakında" gibi yan notlar: gövdeden bir tık küçük, sessiz. */
 .kucuk { font-size: .9rem; opacity: .85; color: var(--text-2); max-width: 60ch; }
 .ozellik-metin p.kucuk { font-size: .9rem; opacity: .85; }
+
+/* ---------- Rehber (25 Eki 2026) ----------
+   Rota/geçit/tur-planlama yazıları: tek sütun, okunur satır uzunluğu, telefonda yatay kayma yok (tablo kendi
+   kutusunda kayar). Yeni renk yok — yalnız yukarıdaki değişkenler. */
+.rehber-ust { padding-bottom: 1rem; }
+.rehber-ust h1 {
+  font-family: var(--serif);
+  font-size: clamp(1.9rem, 4.4vw, 2.7rem);
+  line-height: 1.14;
+  margin: 0 0 1rem;
+  max-width: 24ch;
+  text-wrap: balance;
+}
+.rehber-ekmek { font-size: .86rem; color: var(--text-muted); margin-bottom: 1.4rem; }
+.rehber-ekmek a { color: var(--text-2); }
+.rehber-meta { font-size: .86rem; color: var(--text-muted); margin: 1rem 0 0; }
+.rehber-govde { padding-top: 2.5rem; }
+.rehber-kolon { max-width: 70ch; }
+.rehber-bolum { margin-bottom: 2.6rem; scroll-margin-top: 5rem; }
+.rehber-bolum h2 { font-family: var(--serif); font-size: clamp(1.4rem, 3vw, 1.75rem); line-height: 1.2; margin: 0 0 .9rem; }
+.rehber-bolum h3 { font-size: 1.08rem; margin: 1.6rem 0 .5rem; }
+.rehber-bolum ul, .rehber-bolum ol { padding-left: 1.25rem; margin: 0 0 1em; color: var(--text-2); }
+.rehber-bolum li { margin-bottom: .45rem; }
+.rehber-bolum p { color: var(--text-2); }
+.rehber-icindekiler {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.4rem;
+  margin-bottom: 2.4rem;
+}
+.rehber-icindekiler-baslik { font-weight: 800; margin: 0 0 .5rem; color: var(--text) !important; }
+.rehber-icindekiler ol { margin: 0; padding-left: 1.2rem; font-size: .96rem; }
+.rehber-tablo { overflow-x: auto; margin: 0 0 1rem; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); }
+.rehber-tablo table { border-collapse: collapse; width: 100%; min-width: 30rem; font-size: .92rem; }
+.rehber-tablo caption { text-align: left; font-weight: 700; padding: .8rem 1rem .2rem; color: var(--text); }
+.rehber-tablo th, .rehber-tablo td { padding: .6rem 1rem; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; }
+.rehber-tablo thead th { font-size: .74rem; text-transform: uppercase; letter-spacing: .07em; color: var(--text-muted); }
+.rehber-tablo tbody th { font-weight: 700; color: var(--text); }
+.rehber-tablo td { color: var(--text-2); }
+.rehber-tablo tr:last-child th, .rehber-tablo tr:last-child td { border-bottom: 0; }
+.rehber-urun {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  align-items: center;
+  background: var(--surface);
+  border: 1px solid var(--petrol);
+  border-radius: var(--radius);
+  padding: 1.6rem;
+  margin: 0 0 2.6rem;
+}
+.rehber-urun h2 { font-family: var(--serif); font-size: 1.45rem; margin: 0 0 .8rem; }
+.rehber-urun p, .rehber-urun li { color: var(--text-2); }
+.rehber-urun ol { padding-left: 1.25rem; margin: 0 0 1em; }
+.rehber-urun img { width: 100%; max-width: 220px; height: auto; border-radius: 18px; border: 1px solid var(--border); justify-self: center; }
+@media (min-width: 720px) {
+  .rehber-urun:has(img) { grid-template-columns: 1fr 220px; }
+}
+.rehber-sss-liste { list-style: none; padding: 0 !important; display: grid; gap: .9rem; }
+.rehber-sss-liste li { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.2rem; margin: 0; }
+.rehber-sss-liste h3 { margin: 0 0 .4rem !important; font-size: 1.02rem; }
+.rehber-sss-liste p { margin: 0; font-size: .97rem; }
+.rehber-kaynaklar ul { font-size: .94rem; overflow-wrap: anywhere; }
+.rehber-kartlar { list-style: none; padding: 0; margin: 0 0 3rem; display: grid; gap: 1.1rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); }
+.rehber-kart { height: 100%; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.4rem; }
+.rehber-kart h2 { font-family: var(--serif); font-size: 1.25rem; line-height: 1.25; margin: 0 0 .6rem; }
+.rehber-kart h2 a { color: var(--text); text-decoration: none; }
+.rehber-kart h2 a:hover { color: var(--petrol); }
+.rehber-kart p { color: var(--text-2); font-size: .97rem; margin: 0 0 .7rem; }
+.rehber-kart-oku { font-weight: 700; margin: 0 !important; }
