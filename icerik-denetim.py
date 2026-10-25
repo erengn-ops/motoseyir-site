@@ -81,7 +81,8 @@ FIIL_SON = re.compile(
 def main() -> int:
     hatalar, uyarilar = [], []
     sayfalar = {}
-    for f in sorted((KOK / "icerik").glob("*.json")):
+    # `arac/` = web tur üreticisi sayfaları (aynı kurallar: başlık/açıklama uzunluğu, rakip adı, kaynak, Türkçe uyarılar)
+    for f in sorted([*(KOK / "icerik").glob("*.json"), *(KOK / "arac").glob("*.json")]):
         sayfalar[f.name] = json.loads(f.read_text(encoding="utf-8"))
     if not sayfalar:
         print("icerik/ boş")

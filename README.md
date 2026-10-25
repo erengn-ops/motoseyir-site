@@ -146,3 +146,9 @@ python3 -m http.server 8099   # http://127.0.0.1:8099/
 
 Bakılacaklar: dil seçici (dar ekranda da), `/`, `/en/`, `/de/` sayfaları,
 altbilgideki gizlilik bağlantısı, App Store bağlantısında `pt=` ve `ct=`.
+
+
+## Web tur üreticisi
+
+`arac/tur-uretici.<kod>.json` + `sablon/arac.html` → TR/EN/DE üç sayfa (`uret.py` üretir). Araç motoru `m/tur/motor.js` moto-rota kaynağından
+`tur-araci/derle.mjs` ile derlenir (elle düzenlenmez); ayrıntı ve kurallar: `tur-araci/README.md`.

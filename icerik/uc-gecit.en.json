@@ -49,7 +49,8 @@
           "Direction: the suggested direction is clockwise from Andermatt. Reverse is also possible, with the same roads.",
           "Food and drink: there are food stops on the way. Carry water for the climbs anyway.",
           "Weather: conditions change quickly in the Alps. Look at the forecast the evening before and again at breakfast."
-        ]}
+        ]},
+        {"p": "The <a href=\"{@arac}#kesfet\">routes near you</a> map shows this loop and the other legendary rides, and the <a href=\"{@arac}\">route generator</a> can build a loop from your own start."}
       ]
     },
     {

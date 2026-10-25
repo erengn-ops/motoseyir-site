@@ -61,7 +61,8 @@
       "h2": "Grupla gidiyorsan",
       "icerik": [
         {"p": "Bir kişi grup kurduğunda tek bir kod üretiliyor; herkes o koda katılıyor ve rota üzerinde birbirini görüyor. Konum yalnız sürüş kaydı ya da navigasyon sürerken paylaşılıyor, sürüş bitince sunucudan siliniyor. Gruba davetle ya da kodla katılmak ücretsiz, grup kurmak Pro’da."},
-        {"p": "Grup rotası sürülürken interkom bir kez soruyor; kabul edersen ses yalnız grubuna gidiyor ve kaydedilmiyor. Bluetooth kaskı doğrudan bağlayabilirsin."}
+        {"p": "Grup rotası sürülürken interkom bir kez soruyor; kabul edersen ses yalnız grubuna gidiyor ve kaydedilmiyor. Bluetooth kaskı doğrudan bağlayabilirsin."},
+        {"p": "Turu önce bir araca çizdirmek istersen <a href=\"{@arac}\">tur oluşturucu</a> başlangıç noktandan en fazla üç tur çıkarır, <a href=\"{@arac}#kesfet\">bölgendeki rotalar</a> ise efsane rotaları ve geçitleri haritada gösterir."}
       ]
     },
     {

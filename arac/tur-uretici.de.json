@@ -1,0 +1,359 @@
+{
+  "dizin": "motorrad-rundtour-planen",
+  "baslik": "Motorrad Rundtour planen: Kurvige Touren generieren",
+  "aciklama": "Motorrad Rundtour planen, kostenlos: Startpunkt, Länge und Kurvigkeit wählen, bis zu drei Rundtouren erhalten und per QR-Code aufs Handy schicken.",
+  "h1": "Motorrad Rundtour planen",
+  "eyebrow": "Tourengenerator",
+  "lead": "Wähle einen Startpunkt, wie lange du fahren willst und wie kurvig die Straßen sein sollen. Der Generator zeichnet bis zu drei Rundtouren, die dich zum Start zurückbringen. Die Tour, die dir gefällt, schickst du per QR-Code aufs Handy und fährst sie in Motoseyir.",
+  "yayin": "2026-10-25",
+  "guncelleme": "2026-10-25",
+  "ondalik": ",",
+  "ui": {
+    "ekmek": "Brotkrumen-Navigation",
+    "ekmek_son": "Tourengenerator",
+    "arac_baslik": "Tourengenerator",
+    "harita_etiket": "Karte. Tippe darauf, um den Start deiner Rundtour zu setzen.",
+    "harita_ipucu": "Tippe auf die Karte, um den Start zu setzen, oder suche einen Ort.",
+    "harita_hata": "Die Karte konnte nicht geladen werden. Du kannst trotzdem einen Ort suchen oder deinen Standort nutzen; Touren werden weiter berechnet.",
+    "g1": "Start",
+    "ara_etiket": "Ort suchen",
+    "ara_yer": "Ort, Adresse oder Sehenswürdigkeit",
+    "ara_dugme": "Suchen",
+    "konum_dugme": "Meinen Standort nutzen",
+    "baslangic_bos": "Noch kein Start gewählt",
+    "g2": "Richtung",
+    "g3": "Länge",
+    "birim_mesafe": "Strecke",
+    "birim_sure": "Zeit",
+    "olcu_etiket": "Einheit",
+    "g4": "Kurven",
+    "v1": "Entspannt",
+    "v1_alt": "Flüssige Straßen",
+    "v2": "Kurvig",
+    "v2_alt": "Nebenstraßen",
+    "v3": "Sehr kurvig",
+    "v3_alt": "Haarnadelkurven",
+    "g5": "Optionen",
+    "k_otoyol": "Keine Autobahn",
+    "k_gise": "Keine Maut",
+    "k_toprak": "Kein Schotter",
+    "k_gecit": "Über einen Pass",
+    "uret": "Rundtour generieren",
+    "araniyor": "Touren werden gesucht …",
+    "vazgec": "Abbrechen",
+    "ilerleme_etiket": "Fortschritt der Suche",
+    "sonuc_etiket": "Generierte Rundtouren",
+    "baska": "Noch eine",
+    "ayara_don": "Einstellungen ändern",
+    "telefon": "Aufs Handy schicken",
+    "sonuc_not": "Die Zeiten sind Schätzungen ohne Verkehr. Prüfe Straßenzustand, Sperrungen und Wetter, bevor du losfährst.",
+    "js_gerekli": "Der Tourengenerator braucht JavaScript. Touren planen kannst du trotzdem in der Motoseyir-App.",
+    "dk": "Min.",
+    "sa": "Std.",
+    "yonlar": [
+      "Norden",
+      "Nordosten",
+      "Osten",
+      "Südosten",
+      "Süden",
+      "Südwesten",
+      "Westen",
+      "Nordwesten"
+    ],
+    "yon_kisa": [
+      "N",
+      "NO",
+      "O",
+      "SO",
+      "S",
+      "SW",
+      "W",
+      "NW"
+    ],
+    "her_yon": "Jede Richtung",
+    "her_yon_kisa": "Alle",
+    "baslangic": "Start",
+    "bitis": "Ende",
+    "durak": "Stopp {n}",
+    "baslangic_isaret": "Start der Rundtour",
+    "hata_harita": "Die Karte konnte nicht geladen werden.",
+    "araniyor_adim": "Touren werden geprüft: {b} von {t}",
+    "ara_araniyor": "Suche läuft …",
+    "ara_yok": "Nichts gefunden. Versuche eine andere Schreibweise.",
+    "ara_hata": "Die Suche ist gerade nicht erreichbar. Tippe stattdessen auf die Karte.",
+    "konum_yok": "Dein Standort ist nicht verfügbar. Suche einen Ort oder tippe auf die Karte.",
+    "konumum": "Mein Standort",
+    "baslangic_sec": "Wähle zuerst einen Start: Tippe auf die Karte, suche einen Ort oder nutze deinen Standort.",
+    "hata_tavan": "Du hast das Tageslimit des Tourengenerators erreicht. Versuche es morgen wieder oder plane in der Motoseyir-App.",
+    "hata_mesgul": "Der Routenserver ist gerade ausgelastet. Warte eine Minute und versuche es erneut.",
+    "hata_ag": "Keine Verbindung zum Routenserver. Prüfe deine Verbindung und versuche es erneut.",
+    "hata_genel": "Die Rundtour konnte nicht erzeugt werden. Versuche es gleich noch einmal.",
+    "bos": "Mit diesen Einstellungen wurde keine Rundtour gefunden. Wähle eine andere Richtung oder Länge oder setze den Start näher an eine Straße.",
+    "gecit_yok": "Für diesen Start und diese Länge liegt kein Pass in Reichweite. Wähle eine längere Tour oder eine andere Richtung oder schalte die Pass-Option aus.",
+    "baska_yok": "Es kam keine weitere, andere Rundtour heraus. Ändere Richtung oder Länge für mehr.",
+    "sonuc_n": "{n} Rundtouren gefunden",
+    "sonuc_1": "1 Rundtour gefunden",
+    "adlar_yukleniyor": "Ortsnamen werden geladen …",
+    "not_feribot": "Fähre auf der Strecke",
+    "not_toprak": "{v} unbefestigt",
+    "not_gise": "Mautabschnitt",
+    "not_otoyol": "{v} Autobahn",
+    "not_ortusme": "Der Rückweg führt größtenteils über dieselbe Straße",
+    "not_kacin": "Die gewählte Straßenart ließ sich nicht ganz vermeiden",
+    "sert_viraj": "{v} scharfe Kurven/km",
+    "tur_ad": "{v0}-Runde · {v1}",
+    "tur_ad_yedek": "Tour {n}",
+    "hazirlaniyor": "Wird vorbereitet …",
+    "paylas_tavan": "Du hast das Tageslimit für das Verschicken von Touren erreicht. Versuche es morgen wieder.",
+    "paylas_buyuk": "Diese Tour ist zu groß zum Verschicken.",
+    "paylas_hata": "Die Tour konnte nicht gesendet werden. Prüfe deine Verbindung und versuche es erneut.",
+    "uygulamada_ac": "In Motoseyir öffnen",
+    "magaza_ios": "Motoseyir im App Store",
+    "magaza_play": "Bei Google Play laden",
+    "qr_etiket": "QR-Code der Tour. Scanne ihn mit der Handykamera.",
+    "telefon_baslik": "Mit dem Handy scannen",
+    "telefon_acikla": "Richte die Handykamera auf den Code. Ist Motoseyir installiert, öffnet sich die Tour unter „Meine Touren“; sonst landest du im App Store.",
+    "telefon_baslik_mobil": "Tour in der App öffnen",
+    "telefon_acikla_mobil": "Tippe auf den Button, dann öffnet sich die Tour unter „Meine Touren“. Du kannst den Code auch unter „Meine Touren“ → „Mit Code“ eingeben.",
+    "kod_etiket": "Tourcode",
+    "baglanti_kopyala": "Link kopieren",
+    "kopyalandi": "Kopiert",
+    "android_not": "Motoseyir gibt es vorerst im App Store für das iPhone. Die Android-Version ist noch nicht bei Google Play.",
+    "uygulama_yok": "Hat sich nichts geöffnet? Installiere zuerst Motoseyir und tippe dann noch einmal auf den Button.",
+    "kod_gecerlilik": "Der Code gilt {gun} Tage. Beim Öffnen wird die Tour auf dein Handy kopiert.",
+    "asama_1": "Routen werden gesucht",
+    "asama_2": "Stopps werden auf Straßen gelegt",
+    "asama_3": "Kurven werden gemessen",
+    "asama_4": "Die drei besten werden gewählt",
+    "sert_viraj_on": "",
+    "sert_viraj_son": "scharfe Kurven/km",
+    "pusula_etiket": "Gewählte Richtung",
+    "kip_etiket": "Modus",
+    "kip_uret": "Tour generieren",
+    "kip_rotalar": "Touren in deiner Nähe",
+    "rot_ipucu": "Legendäre Strecken und Pässe auf der Karte. Tippe auf eine Linie oder einen Pin oder wähle eine Karte.",
+    "rot_sayi": "In diesem Kartenausschnitt: {r} Touren · {g} Pässe",
+    "rot_filtre_rotalar": "Touren",
+    "rot_filtre_gecitler": "Pässe",
+    "rot_filtre_etiket": "Auf der Karte zeigen",
+    "rot_yok": "In diesem Kartenausschnitt gibt es nichts. Zoome heraus oder verschiebe die Karte.",
+    "rot_ac": "Diese Tour öffnen",
+    "rot_gecit_buradan": "Von hier aus planen",
+    "rot_aciliyor": "Route wird berechnet …",
+    "rot_ac_hata": "Die Route konnte nicht berechnet werden. Versuche es gleich noch einmal.",
+    "rot_efsane": "Legendäre Strecke",
+    "rot_zirve": "Höchster Punkt {v}",
+    "rot_zirve_ad": "{ad} {v}",
+    "rot_kis": "Im Winter gesperrt",
+    "rot_kaynak": "Quelle: {site}",
+    "rot_gecit": "Pass",
+    "rot_toprak": "Unbefestigt",
+    "rot_kapali": "Meist gesperrt {a}–{b}",
+    "rot_simdi": "Kann jetzt gesperrt sein ({a}–{b})",
+    "rot_yuksek_kis": "Hoher Pass: im Winter evtl. gesperrt",
+    "rot_yukleniyor": "Touren werden geladen …",
+    "rot_hata": "Die Touren konnten nicht geladen werden.",
+    "rot_ulkeler": "{v}",
+    "efsane_acik_not": "Legendäre Strecken öffnen sich mit ihren eigenen Stopps. Du kannst sie in der App ändern.",
+    "yer_baslik": "Orte entlang der Route",
+    "yer_alt": "Aussichtspunkte, Essen, Camping, Buchten",
+    "yer_manzara": "Aussichtspunkte",
+    "yer_yeme": "Essen & Kaffee",
+    "yer_kamp": "Camping",
+    "yer_koy": "Buchten & Strände",
+    "yer_benzin": "Tankstellen",
+    "yer_yukleniyor": "Orte werden gesucht …",
+    "yer_yok": "Im Umkreis von 2,5 km um die Route wurde nichts gefunden.",
+    "yer_hata": "Die Orte konnten nicht geladen werden. Versuche es gleich noch einmal.",
+    "yer_uzak": "{v} von der Route",
+    "yer_ekle": "Als Stopp hinzufügen",
+    "yer_eklendi": "Als Stopp hinzugefügt",
+    "yer_ekleniyor": "Route wird aktualisiert …",
+    "yer_ekle_hata": "Die Route konnte nicht aktualisiert werden. Versuche es erneut.",
+    "yer_pro": "Hier siehst du bis zu fünf Orte. Alle Orte entlang der Route gehören zu „Entdecken“ in Motoseyir Pro.",
+    "yer_atif": "Orte: © OpenStreetMap-Mitwirkende · Foursquare Open Source Places · Overture Maps Foundation",
+    "kat_manzara": "Aussichtspunkt",
+    "kat_kafe": "Café",
+    "kat_restoran": "Restaurant",
+    "kat_benzin": "Tankstelle",
+    "kat_kamp": "Campingplatz",
+    "kat_doga": "Natur",
+    "kat_koy": "Bucht oder Strand",
+    "kat_mola_yeri": "Rastplatz",
+    "yer_haritada": "Auf der Karte zeigen"
+  },
+  "adimlar_h2": "So funktioniert der Tourengenerator",
+  "adimlar": [
+    [
+      "Start setzen",
+      "Suche einen Ort oder eine Adresse, tippe auf die Karte oder nutze deinen Standort. Den Pin kannst du danach verschieben."
+    ],
+    [
+      "Richtung, Länge und Kurven wählen",
+      "Wähle eine von acht Richtungen oder lass „Jede Richtung“ für eine zufällige Runde stehen. Stelle die Länge in Kilometern, Meilen oder Stunden ein und wähle Entspannt, Kurvig oder Sehr kurvig. Autobahn, Maut und Schotter kannst du ausschließen."
+    ],
+    [
+      "Generieren",
+      "Der Generator prüft viele Runden auf echten Straßen und behält die drei besten. Mit „Noch eine“ bekommst du andere Runden."
+    ],
+    [
+      "Aufs Handy schicken",
+      "Scanne den QR-Code oder öffne den Link. Die Tour erscheint in der Motoseyir-App unter „Meine Touren“ und ist bereit für die Navigation."
+    ]
+  ],
+  "bolumler": [
+    {
+      "id": "nasil-yapilir",
+      "h2": "So entstehen die Rundtouren",
+      "icerik": [
+        {
+          "p": "Der Generator legt einen Kreis durch deinen Startpunkt und setzt drei oder vier Stopps darauf. So führt die Tour in die gewählte Richtung hinaus und auf einem Bogen zurück. Die Stopps werden auf echte Straßen gelegt, dann wird die Route berechnet. Straßen sind keine Kreise, deshalb wird jeder Kandidat an der Route gemessen, die tatsächlich herauskommt."
+        },
+        {
+          "p": "Jeder Kandidat wird nach drei Dingen bewertet: wie viele scharfe Kurven er pro Kilometer hat, wie weit seine Länge von deinem Wunsch abweicht und wie viel des Rückwegs über dieselbe Straße wie der Hinweg führt. Angezeigt werden die drei besten Runden, die sich voneinander unterscheiden. Liegt ein Pass in Reichweite, führt mindestens eine Runde darüber, und der Pass steht auf der Karte."
+        },
+        {
+          "liste": [
+            "<strong>Entspannt</strong> bevorzugt flüssige Straßen; Autobahnen sind erlaubt, solange du sie nicht ausschließt.",
+            "<strong>Kurvig</strong> und <strong>Sehr kurvig</strong> gehen eher über Nebenstraßen und Kurven.",
+            "<strong>Über einen Pass</strong> behält nur Runden, die einen bekannten Pass kreuzen.",
+            "<strong>Zeit</strong> rechnet Stunden mit einer Durchschnittsgeschwindigkeit je Kurvenstufe in Kilometer um und prüft dann die echte Fahrzeit jeder Route."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "telefon",
+      "h2": "Vom Browser aufs Handy",
+      "icerik": [
+        {
+          "p": "Diese Seite zeigt keine Abbiegehinweise. Die Navigation bleibt in der Motoseyir-App. Dort änderst du auch die Reihenfolge der Stopps, fügst per langem Druck auf die Karte Orte hinzu und fährst die Tour mit Sprachansagen."
+        },
+        {
+          "p": "Tippst du auf „Aufs Handy schicken“, wird die Tour unter einem Code aus acht Zeichen gespeichert. QR-Code und Link führen zu diesem Code, und die App öffnet ihn unter „Meine Touren“. Codes gelten 30 Tage. Ein Konto brauchst du auf dieser Seite nicht."
+        }
+      ]
+    },
+    {
+      "id": "kesfet",
+      "h2": "Orte entlang der Route und Touren in deiner Nähe",
+      "icerik": [
+        {
+          "p": "Unter einer generierten Rundtour zeigt <strong>Orte entlang der Route</strong> bis zu fünf Aussichtspunkte, Essens- und Kaffeestopps, Campingplätze, Buchten oder Tankstellen nahe der Strecke. Fügst du einen als Stopp hinzu, wird die Route neu berechnet; die Tour, die du aufs Handy schickst, enthält ihn."
+        },
+        {
+          "p": "<strong>Touren in deiner Nähe</strong> listet legendäre Strecken und Pässe im Kartenausschnitt auf. Tippe auf eine Linie oder einen Pin, um sie zu sehen. <em>Diese Tour öffnen</em> zeichnet die echte Route und schickt sie auf demselben Weg aufs Handy."
+        },
+        {
+          "p": "Die Orte stammen aus der eigenen Ortsdatenbank von Motoseyir, aufgebaut aus Daten von OpenStreetMap, Foursquare Open Source Places und Overture Maps. Sie enthält keine Bewertungen, deshalb zeigt diese Seite keine. Alle Orte entlang der Route mit Details gehören zu „Entdecken“ in Motoseyir Pro."
+        }
+      ]
+    },
+    {
+      "id": "kontrol",
+      "h2": "Das prüfst du vor der Fahrt",
+      "icerik": [
+        {
+          "liste": [
+            "Die Straßendaten stammen von den OpenStreetMap-Mitwirkenden. Lücken und Fehler kommen vor; sieh dir die Route auf der Karte an, bevor du losfährst.",
+            "Pässe sind im Winter und bei Bauarbeiten gesperrt. Prüfe die aktuelle Meldung des Betreibers für den Pass, den du fahren willst.",
+            "Die Zeiten sind Schätzungen ohne Verkehr. Rechne Zeit für Pausen, Tanken und Fotos dazu.",
+            "Auf einer Karte können Fähre, unbefestigte Abschnitte oder Maut stehen. Hast du eine Straßenart ausgeschlossen und gibt es in der Gegend keine andere Straße, steht das ebenfalls dort."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "veri",
+      "h2": "Welche Daten wohin gehen",
+      "icerik": [
+        {
+          "p": "Die Seite braucht kein Konto und setzt keine Cookies. Sie merkt sich deine letzten Einstellungen und eine zufällige Geräte-ID im lokalen Speicher deines Browsers; beides kannst du in den Browser-Einstellungen löschen."
+        },
+        {
+          "p": "Dein Startpunkt und die Stopps jedes Kandidaten gehen an die Routing-Engine: in der Türkei und in Griechenland an den eigenen Routenserver von Motoseyir, sonst an einen öffentlichen Routing-Dienst auf Basis von OpenStreetMap, der wie jede Website deine IP-Adresse sieht. Bei der Ortssuche und bei der Abfrage von Ortsnamen gehen Text oder Koordinaten an den Dienst Photon (OpenStreetMap-Daten). Die Kartenkacheln kommen vom Motoseyir-Server. Eine Tour wird nur gespeichert, wenn du auf „Aufs Handy schicken“ tippst: Name, Stopps und Einstellungen, 30 Tage lang, ohne Angabe darüber, wer sie gesendet hat. Die Suche nach Orten entlang einer Route sendet die Routenlinie ohne Namen an den Server von Motoseyir. Legendäre Strecken und Pässe werden von dieser Seite geladen und nirgendwohin gesendet."
+        }
+      ]
+    }
+  ],
+  "sss": [
+    {
+      "s": "Ist der Tourengenerator kostenlos?",
+      "c": "Ja. Rundtouren erzeugen und ansehen kannst du auf dieser Seite kostenlos und ohne Konto. Die Motoseyir-App lädst du kostenlos; einige Funktionen wie der Modus „Nebenstraßen“ gehören zu Motoseyir Pro, und der kostenlose Tarif speichert eine Tour."
+    },
+    {
+      "s": "Wie bekomme ich eine zufällige Motorradtour?",
+      "c": "Lass die Richtung auf „Jede Richtung“, stelle eine Länge ein und tippe auf „Rundtour generieren“. Mit „Noch eine“ erhältst du andere Runden mit denselben Einstellungen."
+    },
+    {
+      "s": "Funktioniert das auch in Deutschland und den Alpen?",
+      "c": "Ja, überall dort, wo OpenStreetMap Straßen kennt. In der Türkei und in Griechenland kommen die Routen vom eigenen Routenserver von Motoseyir; anderswo wird ein öffentlicher Routing-Dienst genutzt, der manchmal langsamer oder ausgelastet ist."
+    },
+    {
+      "s": "Wie kommt die Tour aufs Handy?",
+      "c": "Tippe unter deiner Rundtour auf „Aufs Handy schicken“. Am Computer scannst du den QR-Code mit der Handykamera, am Handy tippst du auf „In Motoseyir öffnen“. Die Tour erscheint unter „Meine Touren“."
+    },
+    {
+      "s": "Kann ich Orte entlang meiner Route finden?",
+      "c": "Ja. Öffne unter deiner Rundtour „Orte entlang der Route“ und wähle Aussichtspunkte, Essen und Kaffee, Camping, Buchten oder Tankstellen. Du siehst bis zu fünf Orte nahe der Linie und kannst einen als Stopp hinzufügen."
+    },
+    {
+      "s": "Woher stammen die legendären Strecken und Pässe?",
+      "c": "Es sind dieselben Listen, die auch die Motoseyir-App nutzt. Jede Karte einer legendären Strecke nennt ihre Quelle, die Positionen der Pässe stammen von OpenStreetMap. Die Öffnungszeiten der Pässe ändern sich von Jahr zu Jahr; prüfe vor der Fahrt die Meldung des Betreibers."
+    },
+    {
+      "s": "Ich habe die App nicht oder nutze Android. Was passiert?",
+      "c": "Der Link führt iPhone-Nutzer in den App Store. Motoseyir gibt es vorerst im App Store für das iPhone; die Android-Version ist noch nicht bei Google Play. Der Tourcode bleibt 30 Tage gültig."
+    },
+    {
+      "s": "Kann ich Autobahn und Maut vermeiden?",
+      "c": "Ja. Schalte vor dem Generieren „Keine Autobahn“, „Keine Maut“ oder „Kein Schotter“ ein. Das sind Vorgaben für die Routing-Engine; jede Karte zeigt an, wenn sich ein Abschnitt nicht vermeiden ließ."
+    },
+    {
+      "s": "Wie lang ist die Rundtour?",
+      "c": "Nahe an der eingestellten Länge. Der Generator lässt eine Abweichung zu und korrigiert die Größe der Runde einmal, wenn die erste Route zu lang oder zu kurz ausfällt."
+    }
+  ],
+  "urun": {
+    "h2": "Fahre die Tour in Motoseyir",
+    "p": [
+      "Motoseyir ist eine Navigations-App für Motorradfahrer, in der du deine Tour selbst zeichnest: Du legst Start und Ziel fest, setzt die Stopps und änderst ihre Reihenfolge. Eine Tour von dieser Seite kommt als normale Tour an, du kannst sie vor der Abfahrt also noch ändern."
+    ],
+    "ikincil": "Wenn du eine Idee brauchst: Im Tab Legendär liegen fertige Routen; ein Tipp, und die Stopps werden in deine Touren kopiert, wo du sie ändern kannst."
+  },
+  "urun_dugme": "Motoseyir im App Store",
+  "ilgili_baslik": "Passende Ratgeber",
+  "ilgili": [
+    "tur-planlama",
+    "alpler",
+    "uc-gecit"
+  ],
+  "kaynaklar_baslik": "Daten und Quellen",
+  "kaynaklar": [
+    {
+      "ad": "OpenStreetMap-Mitwirkende (Straßen- und Kartendaten, ODbL)",
+      "url": "https://www.openstreetmap.org/copyright"
+    },
+    {
+      "ad": "Protomaps (Kartenkacheln)",
+      "url": "https://protomaps.com/"
+    },
+    {
+      "ad": "Valhalla Routing-Engine",
+      "url": "https://github.com/valhalla/valhalla"
+    },
+    {
+      "ad": "FOSSGIS-Routingdienst (Routen außerhalb der Türkei und Griechenlands)",
+      "url": "https://fossgis-routing-server.readthedocs.io/"
+    },
+    {
+      "ad": "Foursquare Open Source Places (Apache-2.0) und Overture Maps Foundation (Orte entlang der Route)",
+      "url": "https://docs.overturemaps.org/attribution/"
+    },
+    {
+      "ad": "Photon-Geocoder (Ortssuche)",
+      "url": "https://photon.komoot.io/"
+    }
+  ],
+  "anasayfa_baglanti": "Im Browser ausprobieren: Tourengenerator"
+}

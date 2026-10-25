@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Motorcycle Route Generator: Round Trips &amp; Twisty Roads</title>
+<meta name="description" content="Free motorcycle route generator: pick a start, length and how twisty you want it, get up to three round trips, then send one to your phone with a QR code.">
+<link rel="canonical" href="https://motoseyir-app.com/en/motorcycle-route-generator/">
+<link rel="alternate" hreflang="tr" href="https://motoseyir-app.com/tur-olusturucu/">
+<link rel="alternate" hreflang="en" href="https://motoseyir-app.com/en/motorcycle-route-generator/">
+<link rel="alternate" hreflang="de" href="https://motoseyir-app.com/de/motorrad-rundtour-planen/">
+<link rel="alternate" hreflang="x-default" href="https://motoseyir-app.com/en/motorcycle-route-generator/">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Motoseyir">
+<meta property="og:locale" content="en_GB">
+<meta property="og:title" content="Motorcycle Route Generator: Round Trips &amp; Twisty Roads">
+<meta property="og:description" content="Free motorcycle route generator: pick a start, length and how twisty you want it, get up to three round trips, then send one to your phone with a QR code.">
+<meta property="og:url" content="https://motoseyir-app.com/en/motorcycle-route-generator/">
+<meta property="og:image" content="https://motoseyir-app.com/img/og-kapak.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Motorcycle Route Generator: Round Trips &amp; Twisty Roads">
+<meta name="twitter:description" content="Free motorcycle route generator: pick a start, length and how twisty you want it, get up to three round trips, then send one to your phone with a QR code.">
+<meta name="twitter:image" content="https://motoseyir-app.com/img/og-kapak.jpg">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<meta name="apple-itunes-app" content="app-id=6792549131">
+<meta name="theme-color" content="#0E6E73" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0E1315" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/img/favicon.png">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/m/tur/lib/maplibre-gl-4.7.1.css?v=1fa5e619">
+<link rel="stylesheet" href="/m/tur/tur.css?v=7b0559d8">
+<link rel="preconnect" href="https://motorota-rota.erengn.workers.dev" crossorigin>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://motoseyir-app.com/#organization",
+      "name": "Motoseyir",
+      "url": "https://motoseyir-app.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://motoseyir-app.com/img/uygulama-simgesi-512.png",
+        "width": 512,
+        "height": 512
+      },
+      "sameAs": [
+        "https://www.instagram.com/motoseyir.app/",
+        "https://www.instagram.com/motoseyir.app.en/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://motoseyir-app.com/#website",
+      "url": "https://motoseyir-app.com/",
+      "name": "Motoseyir",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://motoseyir-app.com/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://motoseyir-app.com/en/motorcycle-route-generator/#sayfa",
+      "url": "https://motoseyir-app.com/en/motorcycle-route-generator/",
+      "name": "Motorcycle Route Generator: Round Trips & Twisty Roads",
+      "description": "Free motorcycle route generator: pick a start, length and how twisty you want it, get up to three round trips, then send one to your phone with a QR code.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://motoseyir-app.com/#website"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://motoseyir-app.com/img/og-kapak.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "dateModified": "2026-10-25",
+      "breadcrumb": {
+        "@id": "https://motoseyir-app.com/en/motorcycle-route-generator/#ekmek"
+      },
+      "mainEntity": {
+        "@id": "https://motoseyir-app.com/en/motorcycle-route-generator/#arac"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://motoseyir-app.com/en/motorcycle-route-generator/#ekmek",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://motoseyir-app.com/en/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Route generator",
+          "item": "https://motoseyir-app.com/en/motorcycle-route-generator/"
+        }
+      ]
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://motoseyir-app.com/en/motorcycle-route-generator/#arac",
+      "name": "Motorcycle route generator",
+      "url": "https://motoseyir-app.com/en/motorcycle-route-generator/",
+      "description": "Free motorcycle route generator: pick a start, length and how twisty you want it, get up to three round trips, then send one to your phone with a QR code.",
+      "applicationCategory": "TravelApplication",
+      "operatingSystem": "Any (web browser)",
+      "browserRequirements": "Requires JavaScript",
+      "inLanguage": "en",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "publisher": {
+        "@id": "https://motoseyir-app.com/#organization"
+      },
+      "datePublished": "2026-10-25",
+      "dateModified": "2026-10-25"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://motoseyir-app.com/en/motorcycle-route-generator/#sss",
+      "inLanguage": "en",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is the motorcycle route generator free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You can generate and look at round trips on this page for free and without an account. Motoseyir itself is a free download; some features such as Back roads mode belong to Motoseyir Pro, and the free plan keeps one saved tour."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I get a random motorcycle route?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Leave the direction on Any direction, set a length and tap Generate round trip. Tap Another one to get different loops with the same settings."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it work outside Turkey?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, anywhere OpenStreetMap has roads. In Turkey and Greece the routes come from Motoseyir's own route server; elsewhere a public routing service is used, which can be slower or busy at times."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I get the route onto my phone?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tap Send to my phone under your round trip. On a computer, scan the QR code with your phone camera. On a phone, tap Open in Motoseyir. The tour appears in My Tours."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I find places along my route?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Open Places along the route under your round trip and choose viewpoints, food and coffee, camping, bays or fuel. You see up to five places near the line, and you can add one as a stop."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where do the legendary routes and passes come from?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "They are the same lists the Motoseyir app uses. Each legendary route card names its source, and the pass positions come from OpenStreetMap. Opening times of passes change from year to year, so check the operator's notice before you ride."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "I do not have the app or I use Android. What happens?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The link takes iPhone users to the App Store. Motoseyir is on the App Store for iPhone for now; the Android version is not on Google Play yet. The tour code stays valid for 30 days."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can it avoid motorways and tolls?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Switch on No motorways, No tolls or No dirt before you generate. These are preferences for the route engine, and each card shows if a section could not be avoided."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long is the round trip?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Close to the length you set. The generator accepts a deviation and corrects the size of the loop once if the first route comes out too long or too short."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#icerik">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="/en/">MOTO<em>SEYİR</em></a>
+    <nav aria-label="Main navigation">
+      <ul class="nav">
+        <li><a href="/en/">Home</a></li>
+        <li><a href="/en/ozellikler.html">All features</a></li>
+        <li><a href="/en/guides/">Guides</a></li>
+        <li><a href="/en/corider.html">AI CoRider</a></li>
+        <li><a href="/en/#iletisim">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="header-cta">
+      <details class="dil-sec">
+  <summary aria-label="Choose language"><span class="dil-kod">EN</span><span class="dil-ad">English</span></summary>
+  <ul>
+    <li><a href="/tur-olusturucu/" lang="tr" hreflang="tr">Türkçe</a></li>
+    <li><span aria-current="true">English</span></li>
+    <li><a href="/de/motorrad-rundtour-planen/" lang="de" hreflang="de">Deutsch</a></li>
+    <li><a href="/fr/" lang="fr" hreflang="fr">Français</a></li>
+    <li><a href="/it/" lang="it" hreflang="it">Italiano</a></li>
+    <li><a href="/es/" lang="es" hreflang="es">Español</a></li>
+    <li><a href="/nl/" lang="nl" hreflang="nl">Nederlands</a></li>
+    <li><a href="/pl/" lang="pl" hreflang="pl">Polski</a></li>
+    <li><a href="/cs/" lang="cs" hreflang="cs">Čeština</a></li>
+    <li><a href="/sk/" lang="sk" hreflang="sk">Slovenčina</a></li>
+    <li><a href="/hu/" lang="hu" hreflang="hu">Magyar</a></li>
+    <li><a href="/ro/" lang="ro" hreflang="ro">Română</a></li>
+    <li><a href="/hr/" lang="hr" hreflang="hr">Hrvatski</a></li>
+    <li><a href="/el/" lang="el" hreflang="el">Ελληνικά</a></li>
+  </ul>
+</details>
+      <a class="btn btn-ghost btn-sm" href="https://apps.apple.com/app/id6792549131?pt=128439797&amp;ct=site-en-web-tur&amp;mt=8">Download</a>
+    </div>
+  </div>
+</header>
+
+<main id="icerik">
+<section class="section rehber-ust tur-ust"><div class="wrap">
+  <nav class="rehber-ekmek" aria-label="Breadcrumb"><a href="/en/">Home</a> <span aria-hidden="true">›</span> <span aria-current="page">Route generator</span></nav>
+  <span class="eyebrow">Round trip planner</span>
+  <h1>Motorcycle route generator</h1>
+  <p class="section-lead">Pick a start point, how long you want to ride and how twisty the roads should be. The generator draws up to three round trips that bring you back to where you started. Send the one you like to your phone with a QR code and ride it in Motoseyir.</p>
+</div></section>
+
+<section class="section section-2 tur-bolum" aria-labelledby="arac-baslik">
+<div class="wrap">
+  <h2 id="arac-baslik" class="gizli">Route generator</h2>
+  <div class="tur-arac" id="arac" data-evre="ayar">
+    <div class="tur-harita-kolon">
+      <div class="tur-harita-sar">
+        <div id="tur-harita" class="tur-harita" role="application" aria-label="Map. Tap to set the start of your round trip."></div>
+        <p class="tur-harita-ipucu" id="tur-ipucu">Tap the map to set your start, or search for a place.</p>
+        <p class="tur-harita-hata" id="tur-harita-hata" role="alert" hidden>The map could not be loaded. Search for a place or use your location; routes are still generated.</p>
+      </div>
+    </div>
+
+    <div class="tur-panel">
+      <p id="tur-durum" class="tur-durum" role="status" aria-live="polite" hidden></p>
+      <div class="tur-kipler" id="kesfet" role="tablist" aria-label="Tool mode">
+        <button type="button" role="tab" id="tur-kip-uret" class="tur-kip-dugme" aria-selected="true" aria-controls="tur-panel-uret">Generate a tour</button>
+        <button type="button" role="tab" id="tur-kip-rotalar" class="tur-kip-dugme" aria-selected="false" aria-controls="tur-panel-rotalar" tabindex="-1">Routes near you</button>
+      </div>
+      <div id="tur-panel-uret" role="tabpanel" aria-labelledby="tur-kip-uret">
+      <form id="tur-form" novalidate>
+        <fieldset class="tur-grup">
+          <legend><span class="no">1</span>Start</legend>
+          <div id="tur-ara-form" class="tur-ara" role="search" aria-label="Search for a place">
+            <label class="gizli" for="tur-ara-girdi">Search for a place</label>
+            <input type="search" id="tur-ara-girdi" autocomplete="off" enterkeyhint="search" placeholder="Town, address or place">
+            <button type="button" id="tur-ara-dugme" class="tur-ikon-dugme" aria-label="Search"><svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="m13 13 4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+            <ul id="tur-ara-sonuc" class="tur-ara-sonuc" hidden></ul>
+          </div>
+          <div class="tur-baslangic-satir">
+            <button type="button" id="tur-konum" class="btn btn-ghost btn-sm"><svg viewBox="0 0 20 20" width="15" height="15" aria-hidden="true"><circle cx="10" cy="10" r="3" fill="currentColor"/><circle cx="10" cy="10" r="6.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10 1v3M10 16v3M1 10h3M16 10h3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>Use my location</button>
+            <p class="tur-baslangic-yazi" id="tur-baslangic-yazi" aria-live="polite">No start chosen yet</p>
+          </div>
+        </fieldset>
+
+        <fieldset class="tur-grup">
+          <legend><span class="no">2</span>Direction</legend>
+          <div class="tur-yon-satir">
+            <div class="tur-yonler" id="tur-yonler" role="radiogroup" aria-label="Direction"></div>
+            <div class="tur-pusula-kutu" id="tur-pusula" aria-hidden="true">
+              <svg viewBox="-50 -50 100 100"><circle class="dis" r="46"/><circle class="ic" r="30"/>
+                <g class="isaretler"><path d="M0 -46v6M46 0h-6M0 46v-6M-46 0h6"/></g>
+                <g class="ok" id="tur-ok"><path d="M0 -38 L9 -6 L0 -13 L-9 -6 Z"/></g>
+                <g class="her"><circle cx="0" cy="-36" r="3.2"/><circle cx="31" cy="-18" r="3.2"/><circle cx="31" cy="18" r="3.2"/><circle cx="0" cy="36" r="3.2"/><circle cx="-31" cy="18" r="3.2"/><circle cx="-31" cy="-18" r="3.2"/></g>
+              </svg>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="tur-grup">
+          <legend><span class="no">3</span>Length</legend>
+          <div class="tur-segment" role="radiogroup" aria-label="Length">
+            <label><input type="radio" name="birim" value="mesafe" checked><span>Distance</span></label>
+            <label><input type="radio" name="birim" value="sure"><span>Time</span></label>
+          </div>
+          <div class="tur-km-satir" aria-live="off">
+            <output class="tur-km-buyuk" id="tur-km-buyuk" for="tur-km">100 km</output>
+            <span class="tur-km-kucuk" id="tur-km-kucuk"></span>
+          </div>
+          <input type="range" id="tur-km" class="tur-kaydirgac" min="30" max="300" step="10" value="100" aria-label="Length">
+          <div class="tur-segment kucuk" role="radiogroup" aria-label="Distance unit">
+            <label><input type="radio" name="olcu" value="km" checked><span>km</span></label>
+            <label><input type="radio" name="olcu" value="mi"><span>mi</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="tur-grup">
+          <legend><span class="no">4</span>Curves</legend>
+          <div class="tur-viraj" role="radiogroup" aria-label="Curves">
+            <label><input type="radio" name="seviye" value="1"><span class="kart"><svg viewBox="0 0 64 20" aria-hidden="true"><path d="M2 10c10-3 14 3 22 0s14-3 22 0 12 1 16 0" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><b>Relaxed</b><small>Flowing roads</small></span></label>
+            <label><input type="radio" name="seviye" value="2" checked><span class="kart"><svg viewBox="0 0 64 20" aria-hidden="true"><path d="M2 10c5-9 10-9 15 0s10 9 15 0 10-9 15 0 8 6 15 0" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><b>Twisty</b><small>Back roads</small></span></label>
+            <label><input type="radio" name="seviye" value="3"><span class="kart"><svg viewBox="0 0 64 20" aria-hidden="true"><path d="M2 12c3-14 8-14 9 0s5 10 8 0 6-14 9 0 5 10 8 0 6-14 9 0 5 8 9 0" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><b>Very twisty</b><small>Hairpins</small></span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="tur-grup">
+          <legend><span class="no">5</span>Options</legend>
+          <div class="tur-secenekler">
+            <label class="tur-onay"><input type="checkbox" name="kacin" value="otoyol"><span>No motorways</span></label>
+            <label class="tur-onay"><input type="checkbox" name="kacin" value="gise"><span>No tolls</span></label>
+            <label class="tur-onay"><input type="checkbox" name="kacin" value="toprak"><span>No dirt</span></label>
+            <label class="tur-onay"><input type="checkbox" id="tur-gecit"><span>Over a mountain pass</span></label>
+          </div>
+        </fieldset>
+
+        <button type="submit" id="tur-uret" class="btn btn-primary tur-uret"><svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><path d="M3 10a7 7 0 1 1 2.2 5.1M3 15v-4h4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Generate round trip</button>
+      </form>
+
+      <div id="tur-ilerleme-kutu" class="tur-ilerleme-kutu" hidden>
+        <p id="tur-asama-yazi" class="tur-asama-yazi">Searching routes</p>
+        <ol id="tur-asamalar" class="tur-asamalar-liste" aria-hidden="true"><li class="aktif"><span></span>Searching routes</li><li><span></span>Snapping stops to roads</li><li><span></span>Measuring curves</li></ol>
+        <p id="tur-ilerleme-yazi" class="tur-ilerleme-yazi">Searching for routes…</p>
+        <div id="tur-ilerleme" class="tur-ilerleme" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Search progress"><span></span></div>
+        <button type="button" id="tur-vazgec" class="btn btn-ghost btn-sm">Cancel</button>
+      </div>
+
+
+      <div id="tur-sonuc-kutu" class="tur-sonuc-kutu" hidden>
+        <h3 id="tur-sonuc-baslik" class="tur-sonuc-baslik" tabindex="-1"></h3>
+        <ol id="tur-kartlar" class="tur-kartlar" role="radiogroup" aria-label="Generated round trips"></ol>
+        <div class="tur-sonuc-dugmeler">
+          <button type="button" id="tur-baska" class="btn btn-ghost btn-sm">Another one</button>
+          <button type="button" id="tur-ayara-don" class="btn btn-ghost btn-sm">Change settings</button>
+        </div>
+
+        <details id="tur-yerler" class="tur-yerler">
+          <summary><span class="ba">Places along the route</span><small>Viewpoints, food, camping, bays</small></summary>
+          <div class="tur-yerler-ic">
+            <div class="tur-chipler" id="tur-yer-chipler" role="radiogroup" aria-label="Places along the route">
+              <label><input type="radio" name="yer" value="manzara" checked><span>Viewpoints</span></label>
+              <label><input type="radio" name="yer" value="yeme"><span>Food & coffee</span></label>
+              <label><input type="radio" name="yer" value="kamp"><span>Camping</span></label>
+              <label><input type="radio" name="yer" value="koy"><span>Bays & beaches</span></label>
+              <label><input type="radio" name="yer" value="benzin"><span>Fuel</span></label>
+            </div>
+            <p id="tur-yer-durum" class="tur-yer-durum" role="status" aria-live="polite"></p>
+            <ol id="tur-yer-liste" class="tur-yer-liste"></ol>
+            <p class="kucuk tur-yer-not">Up to five places are shown here. Every place along the route is part of Discover in Motoseyir Pro.</p>
+            <p class="kucuk tur-yer-not">Places: © OpenStreetMap contributors · Foursquare Open Source Places · Overture Maps Foundation</p>
+          </div>
+        </details>
+        <button type="button" id="tur-telefon" class="btn btn-primary tur-telefon" aria-expanded="false" aria-controls="tur-paylas"><svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><rect x="5.5" y="1.5" width="9" height="17" rx="2.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M9 15.5h2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Send to my phone</span></button>
+        <div id="tur-paylas" class="tur-paylas" hidden></div>
+        <p class="kucuk tur-sonuc-not">Times are estimates without traffic. Check road conditions, closures and the weather before you ride.</p>
+      </div>
+      </div>
+
+      <div id="tur-panel-rotalar" class="tur-panel-rotalar" role="tabpanel" aria-labelledby="tur-kip-rotalar" hidden>
+        <p class="tur-rot-ipucu">Legendary rides and mountain passes on the map. Tap a line or a pin, or pick a card.</p>
+        <div class="tur-chipler" role="group" aria-label="Show on the map">
+          <label><input type="checkbox" id="tur-rot-rotalar" checked><span>Routes</span></label>
+          <label><input type="checkbox" id="tur-rot-gecitler" checked><span>Passes</span></label>
+        </div>
+        <p id="tur-rot-sayi" class="tur-rot-sayi" role="status" aria-live="polite"></p>
+        <ol id="tur-rot-liste" class="tur-kartlar tur-rot-liste"></ol>
+      </div>
+    </div>
+  </div>
+  <noscript><p class="tur-nojs">The route generator needs JavaScript. You can still plan rides in the Motoseyir app.</p></noscript>
+</div>
+</section>
+
+<section class="section tur-icerik"><div class="wrap"><div class="rehber-kolon">
+<section id="nasil" class="rehber-bolum"><h2>How the route generator works</h2><ol class="tur-adimlar"><li><b>Set the start</b>Search for a town or address, tap the map or use your location. You can drag the pin afterwards.</li><li><b>Choose direction, length and curves</b>Pick one of eight directions or leave it on any direction for a random loop. Set the length in kilometres, miles or hours, then choose Relaxed, Twisty or Very twisty. Skip motorways, tolls or dirt roads if you want to.</li><li><b>Generate</b>The generator checks many loops on real roads and keeps the best three. Tap Another one for different loops.</li><li><b>Send it to your phone</b>Scan the QR code or open the link. The tour lands in My Tours in the Motoseyir app, ready for turn-by-turn navigation.</li></ol></section>
+<section id="nasil-yapilir" class="rehber-bolum"><h2>How the loops are made</h2>
+<p>The generator puts a circle through your start point and sets three or four stops on it, so the ride runs out in your chosen direction and comes back around. It then snaps the stops to real roads and asks the route engine for the route. Roads are not circles, so every candidate is measured on the route that comes back.</p>
+<p>Each candidate is scored on three things: how many sharp bends it has per kilometre, how far its length is from what you asked for, and how much of the way back repeats the way out. The three best loops that differ from each other are shown. If a mountain pass lies within reach, at least one loop is routed over it and the pass is named on the card.</p>
+<ul><li><strong>Relaxed</strong> favours flowing roads, motorways allowed unless you switch them off.</li><li><strong>Twisty</strong> and <strong>Very twisty</strong> lean towards back roads and curves.</li><li><strong>Over a mountain pass</strong> keeps only loops that cross a known pass.</li><li><strong>Time</strong> uses an average speed for the curve level to turn hours into kilometres, then checks the real driving time of each route.</li></ul></section>
+<section id="telefon" class="rehber-bolum"><h2>From the browser to your phone</h2>
+<p>The page does not draw turn-by-turn directions. Navigation stays in the Motoseyir app, where you can also reorder the stops, add places by long-pressing the map and ride the tour with voice guidance.</p>
+<p>When you tap Send to my phone, the tour is saved under an eight-character code. The QR code and the link both lead to that code, and the app opens it in My Tours. Codes work for 30 days. You do not need an account on this page.</p></section>
+<section id="kesfet" class="rehber-bolum"><h2>Places along the route and routes near you</h2>
+<p>Under a generated round trip, <strong>Places along the route</strong> shows up to five viewpoints, food and coffee stops, campsites, bays or fuel stops close to the route. Add one as a stop and the route is calculated again; the tour you send to your phone includes it.</p>
+<p><strong>Routes near you</strong> lists legendary rides and mountain passes in the part of the map you are looking at. Tap a line or a pin to see it. <em>Open this tour</em> draws the real route and sends it down the same path to your phone.</p>
+<p>The places come from Motoseyir's own place database, built from OpenStreetMap, Foursquare Open Source Places and Overture Maps data. It holds no ratings or reviews, so this page shows none. Every place along the route, with details, is part of Discover in Motoseyir Pro.</p></section>
+<section id="kontrol" class="rehber-bolum"><h2>What to check before you ride</h2>
+<ul><li>Road data comes from OpenStreetMap contributors. Gaps and mistakes exist; look at the route on the map before you set off.</li><li>Mountain passes close in winter and for roadworks. Check the operator's current notice for the pass you want to ride.</li><li>Times are estimates without traffic. Add time for stops, fuel and photos.</li><li>A card can show a ferry, unpaved or toll section. If you chose to avoid a road type and the area has no other road, the card says so.</li></ul></section>
+<section id="veri" class="rehber-bolum"><h2>Which data goes where</h2>
+<p>The page needs no account and sets no cookies. It remembers your last settings and a random device ID in your browser's local storage; you can clear them in your browser settings.</p>
+<p>Your start point and the stops of each candidate go to the route engine: in Turkey and Greece to Motoseyir's own route server, elsewhere to a public OpenStreetMap-based routing service, which sees your IP address like any website. Searching for a place and looking up place names send the text or coordinates to the Photon service (OpenStreetMap data). Map tiles come from Motoseyir's server. A tour is stored only when you tap Send to my phone: its name, stops and settings, for 30 days, without any information about who sent it. Looking for places along a route sends the route line, without names, to Motoseyir's server. Legendary routes and passes are loaded from this site and are not sent anywhere.</p></section>
+<section id="sss" class="rehber-bolum"><h2>Frequently asked questions</h2><ul class="rehber-sss-liste"><li><h3>Is the motorcycle route generator free?</h3><p>Yes. You can generate and look at round trips on this page for free and without an account. Motoseyir itself is a free download; some features such as Back roads mode belong to Motoseyir Pro, and the free plan keeps one saved tour.</p></li><li><h3>How do I get a random motorcycle route?</h3><p>Leave the direction on Any direction, set a length and tap Generate round trip. Tap Another one to get different loops with the same settings.</p></li><li><h3>Does it work outside Turkey?</h3><p>Yes, anywhere OpenStreetMap has roads. In Turkey and Greece the routes come from Motoseyir's own route server; elsewhere a public routing service is used, which can be slower or busy at times.</p></li><li><h3>How do I get the route onto my phone?</h3><p>Tap Send to my phone under your round trip. On a computer, scan the QR code with your phone camera. On a phone, tap Open in Motoseyir. The tour appears in My Tours.</p></li><li><h3>Can I find places along my route?</h3><p>Yes. Open Places along the route under your round trip and choose viewpoints, food and coffee, camping, bays or fuel. You see up to five places near the line, and you can add one as a stop.</p></li><li><h3>Where do the legendary routes and passes come from?</h3><p>They are the same lists the Motoseyir app uses. Each legendary route card names its source, and the pass positions come from OpenStreetMap. Opening times of passes change from year to year, so check the operator's notice before you ride.</p></li><li><h3>I do not have the app or I use Android. What happens?</h3><p>The link takes iPhone users to the App Store. Motoseyir is on the App Store for iPhone for now; the Android version is not on Google Play yet. The tour code stays valid for 30 days.</p></li><li><h3>Can it avoid motorways and tolls?</h3><p>Yes. Switch on No motorways, No tolls or No dirt before you generate. These are preferences for the route engine, and each card shows if a section could not be avoided.</p></li><li><h3>How long is the round trip?</h3><p>Close to the length you set. The generator accepts a deviation and corrects the size of the loop once if the first route comes out too long or too short.</p></li></ul></section>
+<section class="rehber-bolum rehber-ilgili"><h2>Related guides</h2><ul><li><a href="/en/guides/motorcycle-route-planner/">How to plan a motorcycle ride, step by step</a></li><li><a href="/en/guides/alpine-passes-motorcycle/">Alpine passes by motorcycle: heights, seasons and tolls</a></li><li><a href="/en/guides/furka-grimsel-susten-loop/">Furka, Grimsel and Susten: the Swiss three-pass loop by motorcycle</a></li></ul><p><a href="/en/guides/">All guides →</a></p></section>
+<section class="tur-cta" aria-labelledby="urun-h2"><h2 id="urun-h2">Ride it in Motoseyir</h2><p>Motoseyir is a motorcycle navigation app where you draw your own tour: you set the start and end, place the stops and change their order. A tour from this page arrives as a normal tour, so you can still edit it before you leave.</p><p class="kucuk">If you need an idea, ready-made routes sit in the Legendary tab; tap one and its stops are copied into your tours, where you can change them.</p><p><a class="btn btn-primary" href="https://apps.apple.com/app/id6792549131?pt=128439797&amp;ct=site-web-tur&amp;mt=8">Get Motoseyir on the App Store</a></p></section>
+<section id="kaynaklar" class="rehber-bolum rehber-kaynaklar"><h2>Data and attributions</h2><ul><li><a href="https://www.openstreetmap.org/copyright" rel="noopener">OpenStreetMap contributors (road and map data, ODbL)</a></li><li><a href="https://protomaps.com/" rel="noopener">Protomaps (map tiles)</a></li><li><a href="https://github.com/valhalla/valhalla" rel="noopener">Valhalla routing engine</a></li><li><a href="https://fossgis-routing-server.readthedocs.io/" rel="noopener">FOSSGIS routing service (routes outside Turkey and Greece)</a></li><li><a href="https://docs.overturemaps.org/attribution/" rel="noopener">Foursquare Open Source Places (Apache-2.0) and Overture Maps Foundation (places along the route)</a></li><li><a href="https://photon.komoot.io/" rel="noopener">Photon geocoder (place search)</a></li></ul></section>
+</div></div></section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-ust">
+      <div>
+        <a class="logo" href="/en/" style="font-size:1.05rem;">MOTO<em>SEYİR</em></a>
+      </div>
+      <ul class="footer-links">
+        <li><a href="/en/">Home</a></li>
+        <li><a href="/en/ozellikler.html">All features</a></li>
+        <li><a href="/en/guides/">Guides</a></li>
+        <li><a href="/en/motorcycle-route-generator/" aria-current="page">Route generator</a></li>
+        <li><a href="/en/corider.html">AI CoRider</a></li>
+        <li><a href="/en/nasil-yapilir.html">How it works</a></li>
+        <li><a href="/gizlilik/en/">Privacy</a></li>
+        <li><a href="/impressum/en/">Legal notice</a></li>
+        <li><a href="/en/#iletisim">Contact</a></li>
+        <li><a href="https://www.instagram.com/motoseyir.app/">Instagram</a></li>
+        <li><a href="https://apps.apple.com/app/id6792549131?pt=128439797&amp;ct=site-en-web-tur&amp;mt=8">App Store</a></li>
+      </ul>
+    </div>
+    <p>© 2026 Motoseyir. All rights reserved.</p>
+    <div class="dil-altbilgi">
+      <span class="dil-altbilgi-baslik">Languages</span>
+      <ul class="dil-liste">
+  <li><a href="/tur-olusturucu/" lang="tr" hreflang="tr">Türkçe</a></li>
+  <li><strong lang="en">English</strong></li>
+  <li><a href="/de/motorrad-rundtour-planen/" lang="de" hreflang="de">Deutsch</a></li>
+  <li><a href="/fr/" lang="fr" hreflang="fr">Français</a></li>
+  <li><a href="/it/" lang="it" hreflang="it">Italiano</a></li>
+  <li><a href="/es/" lang="es" hreflang="es">Español</a></li>
+  <li><a href="/nl/" lang="nl" hreflang="nl">Nederlands</a></li>
+  <li><a href="/pl/" lang="pl" hreflang="pl">Polski</a></li>
+  <li><a href="/cs/" lang="cs" hreflang="cs">Čeština</a></li>
+  <li><a href="/sk/" lang="sk" hreflang="sk">Slovenčina</a></li>
+  <li><a href="/hu/" lang="hu" hreflang="hu">Magyar</a></li>
+  <li><a href="/ro/" lang="ro" hreflang="ro">Română</a></li>
+  <li><a href="/hr/" lang="hr" hreflang="hr">Hrvatski</a></li>
+  <li><a href="/el/" lang="el" hreflang="el">Ελληνικά</a></li>
+</ul>
+    </div>
+  </div>
+</footer>
+
+<script type="application/json" id="arac-ayar">{"dil": "en", "ui": {"ekmek": "Breadcrumb", "ekmek_son": "Route generator", "arac_baslik": "Route generator", "harita_etiket": "Map. Tap to set the start of your round trip.", "harita_ipucu": "Tap the map to set your start, or search for a place.", "harita_hata": "The map could not be loaded. Search for a place or use your location; routes are still generated.", "g1": "Start", "ara_etiket": "Search for a place", "ara_yer": "Town, address or place", "ara_dugme": "Search", "konum_dugme": "Use my location", "baslangic_bos": "No start chosen yet", "g2": "Direction", "g3": "Length", "birim_mesafe": "Distance", "birim_sure": "Time", "olcu_etiket": "Distance unit", "g4": "Curves", "v1": "Relaxed", "v1_alt": "Flowing roads", "v2": "Twisty", "v2_alt": "Back roads", "v3": "Very twisty", "v3_alt": "Hairpins", "g5": "Options", "k_otoyol": "No motorways", "k_gise": "No tolls", "k_toprak": "No dirt", "k_gecit": "Over a mountain pass", "uret": "Generate round trip", "araniyor": "Searching for routes…", "vazgec": "Cancel", "ilerleme_etiket": "Search progress", "sonuc_etiket": "Generated round trips", "baska": "Another one", "ayara_don": "Change settings", "telefon": "Send to my phone", "sonuc_not": "Times are estimates without traffic. Check road conditions, closures and the weather before you ride.", "js_gerekli": "The route generator needs JavaScript. You can still plan rides in the Motoseyir app.", "dk": "min", "sa": "h", "yonlar": ["North", "North-east", "East", "South-east", "South", "South-west", "West", "North-west"], "yon_kisa": ["N", "NE", "E", "SE", "S", "SW", "W", "NW"], "her_yon": "Any direction", "her_yon_kisa": "Any", "baslangic": "Start", "bitis": "End", "durak": "Stop {n}", "baslangic_isaret": "Start of the round trip", "hata_harita": "The map could not be loaded.", "araniyor_adim": "Checking routes: {b} of {t}", "ara_araniyor": "Searching…", "ara_yok": "Nothing found. Try another spelling.", "ara_hata": "Search is not available right now. Tap the map instead.", "konum_yok": "Your location is not available. Search for a place or tap the map.", "konumum": "My location", "baslangic_sec": "Choose a start first: tap the map, search or use your location.", "hata_tavan": "You have reached today's limit for the route generator. Try again tomorrow, or plan in the Motoseyir app.", "hata_mesgul": "The route server is busy right now. Wait a minute and try again.", "hata_ag": "No connection to the route server. Check your connection and try again.", "hata_genel": "The round trip could not be generated. Try again in a moment.", "bos": "No round trip found with these settings. Try another direction or length, or move the start closer to a road.", "gecit_yok": "No mountain pass is within reach for this start and length. Try a longer ride, another direction or switch the pass option off.", "baska_yok": "No further different round trip came up. Change the direction or length for more.", "sonuc_n": "{n} round trips found", "sonuc_1": "1 round trip found", "adlar_yukleniyor": "Loading place names…", "not_feribot": "Ferry on the way", "not_toprak": "{v} unpaved", "not_gise": "Toll section", "not_otoyol": "{v} motorway", "not_ortusme": "Most of the way back is on the same road", "not_kacin": "Could not fully avoid the road type you chose", "sert_viraj": "{v} sharp bends/km", "tur_ad": "{v0} loop · {v1}", "tur_ad_yedek": "Tour {n}", "hazirlaniyor": "Preparing…", "paylas_tavan": "You have reached today's limit for sending tours. Try again tomorrow.", "paylas_buyuk": "This tour is too large to send.", "paylas_hata": "The tour could not be sent. Check your connection and try again.", "uygulamada_ac": "Open in Motoseyir", "magaza_ios": "Get Motoseyir on the App Store", "magaza_play": "Get it on Google Play", "qr_etiket": "QR code for the tour. Scan it with your phone camera.", "telefon_baslik": "Scan with your phone", "telefon_acikla": "Point your phone camera at the code. If Motoseyir is installed, the tour opens in My Tours; if not, you land on the App Store.", "telefon_baslik_mobil": "Open the tour in the app", "telefon_acikla_mobil": "Tap the button and the tour opens in My Tours. You can also enter the code under My Tours → With a code.", "kod_etiket": "Tour code", "baglanti_kopyala": "Copy link", "kopyalandi": "Copied", "android_not": "Motoseyir is on the App Store for iPhone for now. The Android version is not on Google Play yet.", "uygulama_yok": "Nothing opened? Install Motoseyir first, then tap the button again.", "kod_gecerlilik": "The code works for {gun} days. The tour is copied to your phone when you open it.", "asama_1": "Searching routes", "asama_2": "Snapping stops to roads", "asama_3": "Measuring curves", "asama_4": "Choosing the best three", "sert_viraj_on": "", "sert_viraj_son": "sharp bends/km", "pusula_etiket": "Selected direction", "kip_etiket": "Tool mode", "kip_uret": "Generate a tour", "kip_rotalar": "Routes near you", "rot_ipucu": "Legendary rides and mountain passes on the map. Tap a line or a pin, or pick a card.", "rot_sayi": "In this map view: {r} routes · {g} passes", "rot_filtre_rotalar": "Routes", "rot_filtre_gecitler": "Passes", "rot_filtre_etiket": "Show on the map", "rot_yok": "Nothing in this part of the map. Zoom out or move the map.", "rot_ac": "Open this tour", "rot_gecit_buradan": "Plan a ride from here", "rot_aciliyor": "Calculating the route…", "rot_ac_hata": "The route could not be calculated. Try again in a moment.", "rot_efsane": "Legendary route", "rot_zirve": "Highest point {v}", "rot_zirve_ad": "{ad} {v}", "rot_kis": "Closes in winter", "rot_kaynak": "Source: {site}", "rot_gecit": "Mountain pass", "rot_toprak": "Unpaved", "rot_kapali": "Usually closed {a}–{b}", "rot_simdi": "May be closed now ({a}–{b})", "rot_yuksek_kis": "High pass: may be closed in winter", "rot_yukleniyor": "Loading routes…", "rot_hata": "The routes could not be loaded.", "rot_ulkeler": "{v}", "efsane_acik_not": "Legendary routes open with their own stops. You can change them in the app.", "yer_baslik": "Places along the route", "yer_alt": "Viewpoints, food, camping, bays", "yer_manzara": "Viewpoints", "yer_yeme": "Food & coffee", "yer_kamp": "Camping", "yer_koy": "Bays & beaches", "yer_benzin": "Fuel", "yer_yukleniyor": "Looking for places…", "yer_yok": "No places found within 2.5 km of this route.", "yer_hata": "The places could not be loaded. Try again in a moment.", "yer_uzak": "{v} from the route", "yer_ekle": "Add as a stop", "yer_eklendi": "Added as a stop", "yer_ekleniyor": "Updating the route…", "yer_ekle_hata": "The route could not be updated. Try again.", "yer_pro": "Up to five places are shown here. Every place along the route is part of Discover in Motoseyir Pro.", "yer_atif": "Places: © OpenStreetMap contributors · Foursquare Open Source Places · Overture Maps Foundation", "kat_manzara": "Viewpoint", "kat_kafe": "Café", "kat_restoran": "Restaurant", "kat_benzin": "Fuel station", "kat_kamp": "Campsite", "kat_doga": "Nature", "kat_koy": "Bay or beach", "kat_mola_yeri": "Rest stop", "yer_haritada": "Show on the map"}, "ondalik": ".", "kok": "https://rota.motoseyir-app.com", "vekil": "https://motorota-rota.erengn.workers.dev", "magaza": {"ios": "https://apps.apple.com/app/id6792549131?pt=128439797&ct=site-web-tur&mt=8", "play": null}}</script>
+<script src="/m/tur/lib/maplibre-gl-4.7.1.js?v=6ea6d232"></script>
+<script src="/m/tur/lib/pmtiles-3.2.1.js?v=3cffa7f6"></script>
+<script src="/m/tur/lib/qrcode-generator-1.4.4.js?v=6e6189e2"></script>
+<script src="/m/tur/motor.js?v=bc40dffa"></script>
+<script src="/m/tur/tur.js?v=e1eb327e"></script>
+</body>
+</html>

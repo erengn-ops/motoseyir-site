@@ -61,7 +61,8 @@
       "h2": "Wenn du in der Gruppe fährst",
       "icerik": [
         {"p": "Legt eine Person eine Gruppe an, entsteht ein einziger Code; alle treten damit bei und sehen einander auf der Route. Der Standort wird nur geteilt, solange eine Fahrtaufzeichnung oder Navigation läuft, und danach vom Server gelöscht. Einer Gruppe per Einladung oder Code beizutreten ist kostenlos, eine Gruppe anzulegen ist Pro."},
-        {"p": "Während eine Gruppenroute gefahren wird, fragt die Gegensprechfunktion einmal nach; stimmst du zu, geht deine Stimme nur an deine Gruppe und wird nicht aufgezeichnet. Ein Bluetooth-Helm lässt sich direkt verbinden."}
+        {"p": "Während eine Gruppenroute gefahren wird, fragt die Gegensprechfunktion einmal nach; stimmst du zu, geht deine Stimme nur an deine Gruppe und wird nicht aufgezeichnet. Ein Bluetooth-Helm lässt sich direkt verbinden."},
+        {"p": "Willst du dir die Runde zuerst zeichnen lassen, baut der <a href=\"{@arac}\">Tourengenerator</a> aus deinem Startpunkt bis zu drei Rundtouren, und <a href=\"{@arac}#kesfet\">Touren in deiner Nähe</a> zeigt legendäre Strecken und Pässe auf der Karte."}
       ]
     },
     {

@@ -43,7 +43,8 @@
       "h2": "Kış ve kar",
       "icerik": [
         {"p": "Zigana’da kar yılda yaklaşık beş ay yerde kalıyor. Kop Geçidi’nde yoğun kar ve sis kışın geçidi açık tutmayı zorlaştırıyor. Sertavul da kışın zor bir geçit. Bu üçünü yaz aylarında planlamak, kış rotası için ise tüneli ya da alternatif yolu seçmek gerekiyor."},
-        {"p": "Motoseyir’in geçit listesi kış kapanışını OpenStreetMap’teki mevsimlik kapanış kaydından alıyor. Kaydı olmayan geçitte bilgi yok; uygulama o zaman yalnız yüksek geçitlerde yumuşak bir kış uyarısı gösteriyor. Rotan bu ay kapalı olabilecek bir geçitten geçiyorsa haber veriyor."}
+        {"p": "Motoseyir’in geçit listesi kış kapanışını OpenStreetMap’teki mevsimlik kapanış kaydından alıyor. Kaydı olmayan geçitte bilgi yok; uygulama o zaman yalnız yüksek geçitlerde yumuşak bir kış uyarısı gösteriyor. Rotan bu ay kapalı olabilecek bir geçitten geçiyorsa haber veriyor."},
+        {"p": "Geçitleri haritada <a href=\"{@arac}#kesfet\">bölgendeki rotalar</a> bölümünde görebilirsin; <a href=\"{@arac}\">tur oluşturucu</a> yakındaki bir geçitten geçen bir tur da çıkarabilir."}
       ]
     },
     {

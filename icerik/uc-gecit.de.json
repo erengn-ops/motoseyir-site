@@ -49,7 +49,8 @@
           "Richtung: Empfohlen wird die Fahrt im Uhrzeigersinn ab Andermatt. Die Gegenrichtung ist auf denselben Straßen ebenso möglich.",
           "Verpflegung: Unterwegs gibt es Möglichkeiten zum Essen. Nimm für die Anstiege trotzdem Wasser mit.",
           "Wetter: In den Alpen ändern sich die Bedingungen schnell. Sieh dir die Vorhersage am Vorabend und noch einmal beim Frühstück an."
-        ]}
+        ]},
+        {"p": "Die Karte <a href=\"{@arac}#kesfet\">Touren in deiner Nähe</a> zeigt diese Runde und andere legendäre Strecken, und der <a href=\"{@arac}\">Tourengenerator</a> baut eine Runde von deinem eigenen Start aus."}
       ]
     },
     {

@@ -61,7 +61,8 @@
       "h2": "Riding with a group",
       "icerik": [
         {"p": "When one person creates a group, a single code is generated; everyone joins with it and can see each other on the route. Location is shared only while a ride recording or navigation is running and is deleted from the server afterwards. Joining a group by invite or code is free, creating one is Pro."},
-        {"p": "While a group route is being ridden, the intercom asks once; if you accept, your voice goes only to your group and is not recorded. A Bluetooth helmet can connect directly."}
+        {"p": "While a group route is being ridden, the intercom asks once; if you accept, your voice goes only to your group and is not recorded. A Bluetooth helmet can connect directly."},
+        {"p": "If you would rather let a tool draw the loop first, the <a href=\"{@arac}\">route generator</a> builds up to three round trips from your start point, and <a href=\"{@arac}#kesfet\">routes near you</a> shows legendary rides and passes on the map."}
       ]
     },
     {

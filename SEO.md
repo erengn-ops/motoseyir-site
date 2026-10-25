@@ -218,3 +218,14 @@ atfedildi); Türkiye'de Zigana dışındaki yayla yollarının kış durumu.
 **İzleme.** Yayından 2–4 hafta sonra Search Console › Performans: sayfa filtresi `/rehber/`, `/guides/`, `/ratgeber/`, `/guide/`, `/guias/`. Hangi yazı
 hangi sorguda gösterim alıyorsa o yazının başlık/açıklamasını tıklama oranına göre ayarla; kuyruktaki sırayı gerçek sorgulara göre yeniden diz.
 Yayın sonrası yeni adresler için URL Denetimi › "Dizine eklenmesini iste" (günlük kota ~10; ana sayfalar ve en alakalı 6–8 yazı).
+
+## 7. Web tur üreticisi (25 Eki 2026, `web-tur-uretici` dalı)
+
+Üç sayfa, tek hreflang kümesi (tr, en, de, x-default): `/tur-olusturucu/` (TR), `/en/motorcycle-route-generator/`, `/de/motorrad-rundtour-planen/`.
+Metin `arac/tur-uretici.<kod>.json`, şablon `sablon/arac.html`, motor `m/tur/` (bkz. `tur-araci/README.md`). Aranan ifadeler: EN "motorcycle route generator",
+"round trip planner/generator", "random motorcycle route generator"; DE "motorrad rundtour planen (kostenlos)"; TR "motosiklet tur oluşturucu".
+JSON-LD: Organization + WebSite + WebPage + BreadcrumbList + WebApplication + FAQPage (görünür SSS ile birebir). Başlık ≤ 60, açıklama 140–160.
+Bağlantılar: tüm TR/EN/DE sayfaların altbilgisi (rehber_footer), anasayfadaki Tur üret bölümü, rehber yazıları (`{@arac}`, `{@arac}#kesfet`).
+`seo-denetim.py` araç sayfalarını tanır (`ARAC_YOLLARI`); `icerik-denetim.py` `arac/*.json`'ı da tarar. App Store `ct`: `site-web-tur` (araçtaki bütün mağaza bağlantıları),
+altbilgi/üst düğme `site-<dil>-web-tur`. Play bağlantısı Android yayına girince `uret.py` `PLAY_BAGLANTISI`.
+Yapılacak: Search Console'da üç adres için indeks isteği; gizlilik sayfalarına (TR/EN/DE) web aracının veri akışı paragrafı (araç sayfasının "Hangi veri nereye gider" bölümü taslak).

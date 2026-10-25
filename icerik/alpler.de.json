@@ -85,7 +85,8 @@
       "id": "dolomiten",
       "h2": "Die Dolomiten: Sellaronda und Pordoijoch",
       "icerik": [
-        {"p": "Die Sellaronda umrundet die Sellagruppe über vier Pässe: Grödner Joch, Sellajoch, Pordoijoch und Campolongo. Alta Badia gibt die Runde mit 50,7 km an, gefahren gegen den Uhrzeigersinn ab Corvara. Das Pordoijoch auf 2.239 m verbindet das Fassatal im Trentino mit dem Buchensteintal in Belluno. Im Sommer ist die Straße zwischen 9 und 12 Uhr am vollsten; IDM Südtirol rät deshalb zu Besuchen außerhalb dieser Zeit."}
+        {"p": "Die Sellaronda umrundet die Sellagruppe über vier Pässe: Grödner Joch, Sellajoch, Pordoijoch und Campolongo. Alta Badia gibt die Runde mit 50,7 km an, gefahren gegen den Uhrzeigersinn ab Corvara. Das Pordoijoch auf 2.239 m verbindet das Fassatal im Trentino mit dem Buchensteintal in Belluno. Im Sommer ist die Straße zwischen 9 und 12 Uhr am vollsten; IDM Südtirol rät deshalb zu Besuchen außerhalb dieser Zeit."},
+        {"p": "Du möchtest eine Runde über einen dieser Pässe von deinem eigenen Start aus? Der <a href=\"{@arac}\">Tourengenerator</a> kann eine Rundtour über einen Pass legen, und <a href=\"{@arac}#kesfet\">Touren in deiner Nähe</a> zeigt die legendären Alpenstrecken auf der Karte."}
       ]
     },
     {

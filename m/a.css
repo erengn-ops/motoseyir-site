@@ -522,3 +522,6 @@ html:not(.js) .hk-adimlar{padding-left:0}
   .hat{display:none}
   .hk-sahne{--hm:0}
 }
+
+/* Web tur üreticisine bağlantı (anasayfa, Tur üret bölümü) */
+.arac-baglanti{margin:22px 0 0}

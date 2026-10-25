@@ -1,0 +1,359 @@
+{
+  "dizin": "tur-olusturucu",
+  "baslik": "Motosiklet Tur Oluşturucu: Başladığın Yere Dönen Rota",
+  "aciklama": "Ücretsiz motosiklet tur oluşturucu: Başlangıcı, uzunluğu ve virajı seç, en fazla üç tur gör, beğendiğini QR kodla telefonuna gönder ve Motoseyir'de sür.",
+  "h1": "Motosiklet tur oluşturucu",
+  "eyebrow": "Tur planlayıcı",
+  "lead": "Başlangıç noktanı, ne kadar süreceğini ve yolların ne kadar virajlı olacağını seç. Oluşturucu, başladığın yere dönen en fazla üç tur çizer. Beğendiğin turu QR kodla telefonuna gönderip Motoseyir'de sürebilirsin.",
+  "yayin": "2026-10-25",
+  "guncelleme": "2026-10-25",
+  "ondalik": ",",
+  "ui": {
+    "ekmek": "Sayfa yolu",
+    "ekmek_son": "Tur oluşturucu",
+    "arac_baslik": "Tur oluşturucu",
+    "harita_etiket": "Harita. Turun başlangıcını belirlemek için dokun.",
+    "harita_ipucu": "Başlangıcı belirlemek için haritaya dokun ya da bir yer ara.",
+    "harita_hata": "Harita yüklenemedi. Yer arayabilir ya da konumunu kullanabilirsin; turlar yine hesaplanır.",
+    "g1": "Başlangıç",
+    "ara_etiket": "Yer ara",
+    "ara_yer": "Şehir, ilçe, adres ya da yer",
+    "ara_dugme": "Ara",
+    "konum_dugme": "Konumumu kullan",
+    "baslangic_bos": "Henüz başlangıç seçilmedi",
+    "g2": "Yön",
+    "g3": "Uzunluk",
+    "birim_mesafe": "Mesafe",
+    "birim_sure": "Süre",
+    "olcu_etiket": "Mesafe birimi",
+    "g4": "Viraj",
+    "v1": "Rahat",
+    "v1_alt": "Akıcı yollar",
+    "v2": "Virajlı",
+    "v2_alt": "Köy yolları",
+    "v3": "Çok virajlı",
+    "v3_alt": "Saç tokaları",
+    "g5": "Seçenekler",
+    "k_otoyol": "Otoyol yok",
+    "k_gise": "Gişe yok",
+    "k_toprak": "Toprak yok",
+    "k_gecit": "Dağ geçidinden geçsin",
+    "uret": "Tur oluştur",
+    "araniyor": "Rotalar aranıyor…",
+    "vazgec": "Vazgeç",
+    "ilerleme_etiket": "Arama ilerlemesi",
+    "sonuc_etiket": "Oluşturulan turlar",
+    "baska": "Başka bir tane",
+    "ayara_don": "Ayarları değiştir",
+    "telefon": "Telefonuma gönder",
+    "sonuc_not": "Süreler trafiksiz tahmindir. Yola çıkmadan önce yol durumunu, kapanışları ve havayı kontrol et.",
+    "js_gerekli": "Tur oluşturucu JavaScript ister. Turları yine Motoseyir uygulamasında planlayabilirsin.",
+    "dk": "dk",
+    "sa": "sa",
+    "yonlar": [
+      "Kuzey",
+      "Kuzeydoğu",
+      "Doğu",
+      "Güneydoğu",
+      "Güney",
+      "Güneybatı",
+      "Batı",
+      "Kuzeybatı"
+    ],
+    "yon_kisa": [
+      "K",
+      "KD",
+      "D",
+      "GD",
+      "G",
+      "GB",
+      "B",
+      "KB"
+    ],
+    "her_yon": "Her yön",
+    "her_yon_kisa": "Her yön",
+    "baslangic": "Başlangıç",
+    "bitis": "Bitiş",
+    "durak": "Durak {n}",
+    "baslangic_isaret": "Turun başlangıcı",
+    "hata_harita": "Harita yüklenemedi.",
+    "araniyor_adim": "Rotalar deneniyor: {b} / {t}",
+    "ara_araniyor": "Aranıyor…",
+    "ara_yok": "Sonuç çıkmadı. Başka bir yazımla dene.",
+    "ara_hata": "Arama şu an çalışmıyor. Bunun yerine haritaya dokun.",
+    "konum_yok": "Konumuna ulaşılamadı. Bir yer ara ya da haritaya dokun.",
+    "konumum": "Konumum",
+    "baslangic_sec": "Önce başlangıcı seç: haritaya dokun, bir yer ara ya da konumunu kullan.",
+    "hata_tavan": "Tur oluşturucunun bugünkü hakkın doldu. Yarın yine dene ya da Motoseyir uygulamasında planla.",
+    "hata_mesgul": "Rota sunucusu şu an yoğun. Bir dakika bekleyip tekrar dene.",
+    "hata_ag": "Rota sunucusuna ulaşılamadı. Bağlantını kontrol edip tekrar dene.",
+    "hata_genel": "Tur oluşturulamadı. Birazdan tekrar dene.",
+    "bos": "Bu seçimle tur bulunamadı. Başka bir yön ya da uzunluk dene, başlangıcı bir yola yaklaştır.",
+    "gecit_yok": "Bu başlangıç ve uzunlukta ulaşılabilir bir dağ geçidi yok. Daha uzun bir tur ya da başka bir yön dene, geçit seçeneğini de kapatabilirsin.",
+    "baska_yok": "Farklı yeni bir tur çıkmadı. Yönü ya da uzunluğu değiştirirsen daha fazlası çıkar.",
+    "sonuc_n": "{n} tur bulundu",
+    "sonuc_1": "1 tur bulundu",
+    "adlar_yukleniyor": "Yer adları yükleniyor…",
+    "not_feribot": "Yolda feribot var",
+    "not_toprak": "{v} asfaltsız",
+    "not_gise": "Gişeli bölüm var",
+    "not_otoyol": "{v} otoyol",
+    "not_ortusme": "Dönüşün çoğu aynı yoldan",
+    "not_kacin": "Seçtiğin yol türünden tamamen kaçınamadık",
+    "sert_viraj": "{v} sert viraj/km",
+    "tur_ad": "{v0} turu · {v1}",
+    "tur_ad_yedek": "Tur {n}",
+    "hazirlaniyor": "Hazırlanıyor…",
+    "paylas_tavan": "Tur gönderme hakkın bugün doldu. Yarın yine dene.",
+    "paylas_buyuk": "Bu tur gönderilemeyecek kadar büyük.",
+    "paylas_hata": "Tur gönderilemedi. Bağlantını kontrol edip tekrar dene.",
+    "uygulamada_ac": "Motoseyir'de aç",
+    "magaza_ios": "App Store'dan indir",
+    "magaza_play": "Google Play'den indir",
+    "qr_etiket": "Turun QR kodu. Telefon kamerasıyla okut.",
+    "telefon_baslik": "Telefonunla okut",
+    "telefon_acikla": "Telefonun kamerasını koda tut. Motoseyir kuruluysa tur Turlarım'da açılır; kurulu değilse App Store'a gidersin.",
+    "telefon_baslik_mobil": "Turu uygulamada aç",
+    "telefon_acikla_mobil": "Düğmeye dokun, tur Turlarım'da açılır. Kodu Turlarım → “Kod ile” bölümünden elle de girebilirsin.",
+    "kod_etiket": "Tur kodu",
+    "baglanti_kopyala": "Bağlantıyı kopyala",
+    "kopyalandi": "Kopyalandı",
+    "android_not": "Motoseyir şimdilik iPhone için App Store'da. Android sürümü Google Play'de henüz yok.",
+    "uygulama_yok": "Hiçbir şey açılmadı mı? Önce Motoseyir'i kur, sonra düğmeye yeniden dokun.",
+    "kod_gecerlilik": "Kod {gun} gün geçerli. Turu açtığında telefonuna kopyalanır.",
+    "asama_1": "Rota aranıyor",
+    "asama_2": "Duraklar yola oturtuluyor",
+    "asama_3": "Virajlar ölçülüyor",
+    "asama_4": "En iyi üç tur seçiliyor",
+    "sert_viraj_on": "",
+    "sert_viraj_son": "sert viraj/km",
+    "pusula_etiket": "Seçili yön",
+    "kip_etiket": "Araç kipi",
+    "kip_uret": "Tur oluştur",
+    "kip_rotalar": "Bölgendeki rotalar",
+    "rot_ipucu": "Haritada efsane rotalar ve dağ geçitleri duruyor. Bir çizgiye ya da işarete dokun, ya da bir kart seç.",
+    "rot_sayi": "Bu harita görünümünde: {r} rota · {g} geçit",
+    "rot_filtre_rotalar": "Rotalar",
+    "rot_filtre_gecitler": "Geçitler",
+    "rot_filtre_etiket": "Haritada göster",
+    "rot_yok": "Haritanın bu bölümünde bir şey yok. Uzaklaştır ya da haritayı kaydır.",
+    "rot_ac": "Bu turu aç",
+    "rot_gecit_buradan": "Buradan tur planla",
+    "rot_aciliyor": "Rota hesaplanıyor…",
+    "rot_ac_hata": "Rota hesaplanamadı. Birazdan tekrar dene.",
+    "rot_efsane": "Efsane rota",
+    "rot_zirve": "En yüksek nokta {v}",
+    "rot_zirve_ad": "{ad} {v}",
+    "rot_kis": "Kışın kapanır",
+    "rot_kaynak": "Kaynak: {site}",
+    "rot_gecit": "Dağ geçidi",
+    "rot_toprak": "Asfaltsız",
+    "rot_kapali": "Genelde kapalı {a}–{b}",
+    "rot_simdi": "Şimdi kapalı olabilir ({a}–{b})",
+    "rot_yuksek_kis": "Yüksek geçit: kışın kapalı olabilir",
+    "rot_yukleniyor": "Rotalar yükleniyor…",
+    "rot_hata": "Rotalar yüklenemedi.",
+    "rot_ulkeler": "{v}",
+    "efsane_acik_not": "Efsane rotalar kendi duraklarıyla açılır. Duraklarda değişikliği uygulamada yapabilirsin.",
+    "yer_baslik": "Rota üstündeki yerler",
+    "yer_alt": "Manzara, yemek, kamp, koy",
+    "yer_manzara": "Manzara",
+    "yer_yeme": "Yeme-içme",
+    "yer_kamp": "Kamp",
+    "yer_koy": "Koy & plaj",
+    "yer_benzin": "Benzin",
+    "yer_yukleniyor": "Yerler aranıyor…",
+    "yer_yok": "Bu rotanın 2,5 km çevresinde yer bulunamadı.",
+    "yer_hata": "Yerler yüklenemedi. Birazdan tekrar dene.",
+    "yer_uzak": "Rotaya {v}",
+    "yer_ekle": "Durak olarak ekle",
+    "yer_eklendi": "Durak olarak eklendi",
+    "yer_ekleniyor": "Rota güncelleniyor…",
+    "yer_ekle_hata": "Rota güncellenemedi. Tekrar dene.",
+    "yer_pro": "Burada en çok beş yer görünür. Rota üstündeki bütün yerler Motoseyir Pro'daki Keşfet'te.",
+    "yer_atif": "Yerler: © OpenStreetMap katkıcıları · Foursquare Open Source Places · Overture Maps Foundation",
+    "kat_manzara": "Manzara noktası",
+    "kat_kafe": "Kafe",
+    "kat_restoran": "Restoran",
+    "kat_benzin": "Akaryakıt",
+    "kat_kamp": "Kamp alanı",
+    "kat_doga": "Doğa",
+    "kat_koy": "Koy ya da plaj",
+    "kat_mola_yeri": "Mola yeri",
+    "yer_haritada": "Haritada göster"
+  },
+  "adimlar_h2": "Tur oluşturucu nasıl çalışır",
+  "adimlar": [
+    [
+      "Başlangıcı belirle",
+      "Bir şehir ya da adres ara, haritaya dokun ya da konumunu kullan. İğneyi sonradan sürükleyebilirsin."
+    ],
+    [
+      "Yönü, uzunluğu ve virajı seç",
+      "Sekiz yönden birini seç ya da rastgele bir tur için her yönde bırak. Uzunluğu kilometre, mil ya da saat olarak ayarla, sonra Rahat, Virajlı ve Çok virajlı seviyelerinden birini seç. İstersen otoyolu, gişeyi ve toprak yolu dışarıda bırak."
+    ],
+    [
+      "Oluştur",
+      "Oluşturucu gerçek yollarda çok sayıda turu dener ve en iyi üçünü bırakır. Başka turlar görmek için “Başka bir tane”ye dokun."
+    ],
+    [
+      "Telefonuna gönder",
+      "QR kodu okut ya da bağlantıyı aç. Tur, Motoseyir uygulamasında Turlarım'a düşer ve yönlendirmeyle sürmeye hazır olur."
+    ]
+  ],
+  "bolumler": [
+    {
+      "id": "nasil-yapilir",
+      "h2": "Turlar nasıl çizilir",
+      "icerik": [
+        {
+          "p": "Oluşturucu başlangıç noktandan geçen bir çember kurar ve üstüne üç ya da dört durak koyar. Böylece tur seçtiğin yöne açılır ve kavis çizerek geri döner. Duraklar gerçek yollara oturtulur, sonra rota hesaplanır. Yollar çember olmadığı için her aday, gerçekten çıkan rota üzerinden ölçülür."
+        },
+        {
+          "p": "Her aday üç şeye göre puanlanır: kilometre başına kaç sert viraj olduğu, uzunluğunun istediğin değerden ne kadar saptığı ve dönüşün ne kadarının gidişle aynı yoldan geçtiği. Birbirinden farklı en iyi üç tur gösterilir. Erişilebilir bir dağ geçidi varsa turlardan en az biri geçitten geçer ve kartta geçidin adı yazar."
+        },
+        {
+          "liste": [
+            "<strong>Rahat</strong> akıcı yolları tercih eder; otoyolu kapatmadıysan otoyol da kullanılabilir.",
+            "<strong>Virajlı</strong> ve <strong>Çok virajlı</strong> köy yollarına ve virajlara yönelir.",
+            "<strong>Dağ geçidinden geçsin</strong> yalnız bilinen bir geçidi aşan turları bırakır.",
+            "<strong>Süre</strong> seçilince saat, viraj seviyesinin ortalama hızıyla kilometreye çevrilir; sonra her rotanın gerçek sürüş süresine bakılır."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "telefon",
+      "h2": "Tarayıcıdan telefona",
+      "icerik": [
+        {
+          "p": "Bu sayfa dönüş dönüş yönlendirme vermez. Yönlendirme Motoseyir uygulamasında kalır; durakların sırasını orada değiştirir, haritaya uzun basarak yer eklersin ve turu sesli yönlendirmeyle sürersin."
+        },
+        {
+          "p": "“Telefonuma gönder”e dokunduğunda tur, sekiz karakterlik bir kodla kaydedilir. QR kod da bağlantı da bu koda gider, uygulama onu Turlarım'da açar. Kodlar 30 gün geçerlidir. Bu sayfada hesap açman gerekmez."
+        }
+      ]
+    },
+    {
+      "id": "kesfet",
+      "h2": "Rota üstündeki yerler ve bölgendeki rotalar",
+      "icerik": [
+        {
+          "p": "Oluşturulan bir turun altında <strong>Rota üstündeki yerler</strong>, çizgiye yakın en fazla beş manzara noktasını, yeme-içme molasını, kamp alanını, koyu ya da akaryakıt istasyonunu gösterir. Birini durak olarak eklersen rota yeniden hesaplanır; telefona gönderdiğin tur onu da içerir."
+        },
+        {
+          "p": "<strong>Bölgendeki rotalar</strong>, baktığın harita bölümündeki efsane rotaları ve dağ geçitlerini listeler. Bir çizgiye ya da işarete dokununca görürsün. <em>Bu turu aç</em> gerçek rotayı çizer ve telefona aynı yoldan gönderir."
+        },
+        {
+          "p": "Yerler Motoseyir'in kendi yer veritabanından gelir; veritabanı OpenStreetMap, Foursquare Open Source Places ve Overture Maps verisinden derlenmiştir. İçinde puan ya da yorum olmadığı için bu sayfa da göstermez. Rota üstündeki bütün yerler ayrıntılarıyla Motoseyir Pro'daki Keşfet'te yer alır."
+        }
+      ]
+    },
+    {
+      "id": "kontrol",
+      "h2": "Yola çıkmadan önce kontrol et",
+      "icerik": [
+        {
+          "liste": [
+            "Yol verisi OpenStreetMap katkıcılarından gelir. Eksikler ve hatalar olabilir; yola çıkmadan rotaya haritadan bak.",
+            "Dağ geçitleri kışın ve yol çalışmalarında kapanır. Sürmek istediğin geçit için işletmenin güncel duyurusuna bak.",
+            "Süreler trafiksiz tahmindir. Mola, yakıt ve fotoğraf için zaman ekle.",
+            "Kartta feribot, asfaltsız ya da gişeli bölüm yazabilir. Bir yol türünü dışarıda bırakmışsan ve bölgede başka yol yoksa kart bunu da söyler."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "veri",
+      "h2": "Hangi veri nereye gider",
+      "icerik": [
+        {
+          "p": "Sayfa hesap istemez ve çerez bırakmaz. Son ayarlarını ve rastgele bir cihaz kimliğini tarayıcının yerel depolamasında tutar; ikisini de tarayıcı ayarlarından silebilirsin."
+        },
+        {
+          "p": "Başlangıç noktan ve her adayın durakları rota motoruna gider: Türkiye ve Yunanistan'da Motoseyir'in kendi rota sunucusuna, başka yerlerde OpenStreetMap tabanlı herkese açık bir rota servisine; bu servis her web sitesi gibi IP adresini görür. Yer ararken ve yer adlarını getirirken yazdığın metin ya da koordinatlar Photon servisine (OpenStreetMap verisi) gider. Harita parçaları Motoseyir sunucusundan gelir. Tur yalnız “Telefonuma gönder”e dokunduğunda saklanır: adı, durakları ve ayarları 30 gün boyunca durur, kimin gönderdiğine dair bir bilgi tutulmaz. Rota üstündeki yerler aranırken rota çizgisi, adsız olarak, Motoseyir sunucusuna gider. Efsane rotalar ve geçitler bu siteden yüklenir, hiçbir yere gönderilmez."
+        }
+      ]
+    }
+  ],
+  "sss": [
+    {
+      "s": "Motosiklet tur oluşturucu ücretsiz mi?",
+      "c": "Evet. Bu sayfada tur oluşturmak ve görmek ücretsizdir, hesap gerekmez. Motoseyir uygulaması ücretsiz indirilir; köy yolları kipi gibi bazı özellikler Motoseyir Pro'dadır ve ücretsiz kademe bir kayıtlı tur tutar."
+    },
+    {
+      "s": "Rastgele motosiklet turu nasıl bulurum?",
+      "c": "Yönü “Her yön”de bırak, bir uzunluk seç ve “Tur oluştur”a dokun. Aynı ayarlarla başka turlar için “Başka bir tane”yi kullan."
+    },
+    {
+      "s": "Türkiye dışında da çalışıyor mu?",
+      "c": "Evet, OpenStreetMap'te yolu olan her yerde çalışır. Türkiye ve Yunanistan'da rotalar Motoseyir'in kendi rota sunucusundan gelir; başka yerlerde herkese açık bir rota servisi kullanılır, o servis ara sıra yavaşlayabilir ya da yoğun olabilir."
+    },
+    {
+      "s": "Turu telefonuma nasıl alırım?",
+      "c": "Turun altındaki “Telefonuma gönder”e dokun. Bilgisayardaysan QR kodu telefonunun kamerasıyla okut, telefondaysan “Motoseyir'de aç”a dokun. Tur Turlarım'da görünür."
+    },
+    {
+      "s": "Rotamın üstündeki yerleri bulabilir miyim?",
+      "c": "Evet. Turunun altında “Rota üstündeki yerler”i aç; manzara, yeme-içme, kamp, koy ya da benzin seç. Çizgiye yakın en fazla beş yer görürsün ve birini durak olarak ekleyebilirsin."
+    },
+    {
+      "s": "Efsane rotalar ve geçitler nereden geliyor?",
+      "c": "Motoseyir uygulamasının kullandığı listelerle aynıdır. Her efsane rota kartı kaynağını yazar, geçitlerin konumu OpenStreetMap'ten gelir. Geçitlerin açık olduğu tarihler her yıl değişir; yola çıkmadan işletmenin güncel duyurusuna bak."
+    },
+    {
+      "s": "Uygulamam yok ya da Android kullanıyorum, ne olur?",
+      "c": "iPhone kullananlar bağlantıdan App Store'a gider. Motoseyir şimdilik iPhone için App Store'da; Android sürümü Google Play'de henüz yok. Tur kodu 30 gün geçerli kalır."
+    },
+    {
+      "s": "Otoyoldan ve gişeden kaçınabilir miyim?",
+      "c": "Evet. Tur oluşturmadan önce “Otoyol yok”, “Gişe yok” ya da “Toprak yok”u aç. Bunlar rota motoruna giden tercihlerdir; bir bölümden kaçınılamadıysa kart bunu belirtir."
+    },
+    {
+      "s": "Tur ne kadar uzun çıkar?",
+      "c": "Seçtiğin uzunluğa yakın çıkar. Oluşturucu küçük bir sapmayı kabul eder; ilk rota fazla uzun ya da kısa çıkarsa turun boyunu bir kez düzeltir."
+    }
+  ],
+  "urun": {
+    "h2": "Turu Motoseyir'de sür",
+    "p": [
+      "Motoseyir, turunu kendin çizdiğin bir motosiklet navigasyon uygulamasıdır: başlangıcı ve bitişi belirler, durakları koyar, sırasını değiştirirsin. Bu sayfadan gelen tur uygulamada sıradan bir tur olarak açılır, yola çıkmadan önce üzerinde değişiklik yapabilirsin."
+    ],
+    "ikincil": "Fikir lazım olursa Efsane sekmesinde hazır rotalar da duruyor; birine dokununca durakları turlarına kopyalanıyor ve üstüne yazabiliyorsun."
+  },
+  "urun_dugme": "App Store'dan indir",
+  "ilgili_baslik": "İlgili rehberler",
+  "ilgili": [
+    "tur-planlama",
+    "koy-yolu",
+    "turkiye-gecitleri"
+  ],
+  "kaynaklar_baslik": "Veri ve atıflar",
+  "kaynaklar": [
+    {
+      "ad": "OpenStreetMap katkıcıları (yol ve harita verisi, ODbL)",
+      "url": "https://www.openstreetmap.org/copyright"
+    },
+    {
+      "ad": "Protomaps (harita parçaları)",
+      "url": "https://protomaps.com/"
+    },
+    {
+      "ad": "Valhalla rota motoru",
+      "url": "https://github.com/valhalla/valhalla"
+    },
+    {
+      "ad": "FOSSGIS rota servisi (Türkiye ve Yunanistan dışındaki rotalar)",
+      "url": "https://fossgis-routing-server.readthedocs.io/"
+    },
+    {
+      "ad": "Foursquare Open Source Places (Apache-2.0) ve Overture Maps Foundation (rota üstündeki yerler)",
+      "url": "https://docs.overturemaps.org/attribution/"
+    },
+    {
+      "ad": "Photon (yer arama)",
+      "url": "https://photon.komoot.io/"
+    }
+  ],
+  "anasayfa_baglanti": "Tarayıcıda dene: tur oluşturucu"
+}

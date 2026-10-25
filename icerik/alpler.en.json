@@ -85,7 +85,8 @@
       "id": "dolomites",
       "h2": "The Dolomites: Sellaronda and Pordoi",
       "icerik": [
-        {"p": "The Sellaronda circles the Sella massif over four passes, Gardena, Sella, Pordoi and Campolongo. Alta Badia lists the loop at 50.7 km, ridden anti-clockwise from Corvara. Passo Pordoi, at 2,239 m, links the Val di Fassa in Trentino with Buchenstein in Belluno. In summer the road is busiest between 9 a.m. and 12 noon, so IDM Südtirol suggests visiting outside those hours."}
+        {"p": "The Sellaronda circles the Sella massif over four passes, Gardena, Sella, Pordoi and Campolongo. Alta Badia lists the loop at 50.7 km, ridden anti-clockwise from Corvara. Passo Pordoi, at 2,239 m, links the Val di Fassa in Trentino with Buchenstein in Belluno. In summer the road is busiest between 9 a.m. and 12 noon, so IDM Südtirol suggests visiting outside those hours."},
+        {"p": "Want a loop over one of these passes from your own start point? The <a href=\"{@arac}\">route generator</a> can route a round trip over a pass, and <a href=\"{@arac}#kesfet\">routes near you</a> lists the legendary Alpine rides on the map."}
       ]
     },
     {

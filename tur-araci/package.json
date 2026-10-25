@@ -1,0 +1,8 @@
+{
+  "name": "motoseyir-tur-araci",
+  "private": true,
+  "type": "module",
+  "description": "Web tur üreticisinin motorunu moto-rota kaynağından tek dosyaya paketler (bkz. README.md).",
+  "scripts": { "derle": "node derle.mjs" },
+  "devDependencies": { "esbuild": "0.25.10" }
+}
