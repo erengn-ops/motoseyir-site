@@ -48,9 +48,32 @@ const DEGISTIR = [
   [/(^|\/)surusKaydi$/, stub('surusKaydi.ts')],
 ];
 
+/*
+ * WEBE ÖZEL YAMALAR (28 Eki 2026; kullanıcı: "1000 km olsun, webde aç, uygulamada 300 bırakalım"). Uygulamanın kaynağı
+ * değişmiyor; paketlenirken metin olarak değiştiriliyor. Desen tutmazsa derleme DURUR (uygulamada kod kayınca sessizce
+ * 300'e dönmesin).
+ *   - En uzun tur 1000 km.
+ *   - Durak sayısı uzunlukla artıyor: 300 km'ye kadar uygulamadaki gibi (3/4), üstünde ~80 km'de bir, en çok 12. Dört
+ *     durakla 1000 km'de duraklar arası ~150 km olur, aradaki yol ana yollara kayar, tur virajını kaybeder.
+ */
+const WEB_YAMA = [
+  [/components\/turUretici\/geometri\.ts$/, 'export const KM_EN_COK = 300;', 'export const KM_EN_COK = 1000;'],
+  [/utils\/turUretici\.ts$/, 'return hedefKm <= 120 ? 3 : 4;', 'return hedefKm <= 120 ? 3 : hedefKm <= 300 ? 4 : Math.min(12, Math.round(hedefKm / 80));'],
+];
+
 const eklenti = {
   name: 'moto-rota',
   setup(b) {
+    b.onLoad({ filter: /\.ts$/ }, (a) => {
+      const yamalar = WEB_YAMA.filter(([d]) => d.test(a.path));
+      if (!yamalar.length) return null;
+      let kod = readFileSync(a.path, 'utf8');
+      for (const [, eski, yeni] of yamalar) {
+        if (!kod.includes(eski)) return { errors: [{ text: `web yaması tutmadı (${a.path}): ${eski}` }] };
+        kod = kod.replace(eski, yeni);
+      }
+      return { contents: kod, loader: 'ts' };
+    });
     b.onResolve({ filter: /^moto-rota\// }, (a) => {
       const yol = join(SRC, a.path.slice('moto-rota/'.length));
       for (const uz of ['.ts', '.tsx', '/index.ts', '']) if (existsSync(yol + uz) && !yol.endsWith('/') ) { if (uz === '' && !/\.\w+$/.test(yol)) continue; return { path: yol + uz }; }

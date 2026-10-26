@@ -63,7 +63,7 @@
       tacYollari.push(g);
     }
     var durakEl = [], kuyrukEl = [];
-    for (var i = 0; i < 4; i++) durakEl.push(el('circle', 'kd-durak', gHalka, { r: 6 }));
+    for (var i = 0; i < 12; i++) durakEl.push(el('circle', 'kd-durak', gHalka, { r: 6 }));
     for (var k = 0; k < KUYRUK; k++) kuyrukEl.push(el('circle', 'kd-yildiz', gHalka, { r: 4.5 - k * 0.8 }));
     var harfler = PUSULA.map(function (h) { return div('kd-harf', kok, h); });
     var disk = div('kd-disk', kok);                                    // etkileşim alanı (kadranın diski)
@@ -152,7 +152,7 @@
         tacYollari.forEach(function (g) { g.firstChild.setAttribute('d', tacD); g.lastChild.setAttribute('d', tacD); });
       }
       // duraklar
-      var dn = d.km <= 120 ? 3 : 4;
+      var dn = G.durakSayisi(d.km);                                   // motorla aynı (webde 300 km üstü artıyor)
       durakEl.forEach(function (c, i) {
         if (i >= dn) { c.style.display = 'none'; return; }
         c.style.display = '';

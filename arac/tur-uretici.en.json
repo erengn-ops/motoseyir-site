@@ -50,6 +50,7 @@
     "js_gerekli": "The route generator needs JavaScript. You can still plan rides in the Motoseyir app.",
     "dk": "min",
     "sa": "h",
+    "gun": "days",
     "yonlar": [
       "North",
       "North-east",

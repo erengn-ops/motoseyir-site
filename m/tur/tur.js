@@ -36,7 +36,7 @@
     if (kayit && typeof kayit === 'object') {
       if ([1, 2, 3].indexOf(kayit.seviye) >= 0) st.seviye = kayit.seviye;
       if (kayit.kacin) st.kacin = { otoyol: !!kayit.kacin.otoyol, gise: !!kayit.kacin.gise, toprak: !!kayit.kacin.toprak };
-      if (typeof kayit.km === 'number' && kayit.km >= 30 && kayit.km <= 300) st.km = Math.round(kayit.km / 10) * 10;
+      if (typeof kayit.km === 'number' && kayit.km >= M.KM_EN_AZ && kayit.km <= M.KM_EN_COK) st.km = Math.round(kayit.km / 10) * 10;
       if (kayit.birim === 'mi') st.birim = 'mi';
     } else if (A.dil === 'en' && /^en-(US|GB)$/i.test(navigator.language || '')) {
       st.birim = 'mi';
@@ -172,6 +172,7 @@
         var buyuk, kucuk, adim = M.cetvelAdimi(st.sure, st.seviye), km = M.adimaOturt(st.km, adim);
         if (st.sure) { buyuk = sureYazi(M.sureSaniye(km, st.seviye)); kucuk = '≈ ' + mesafe(km); }
         else { buyuk = mesafe(km); kucuk = '≈ ' + sureYazi((km / M.ORTALAMA_KMSA[st.seviye]) * 3600); }
+        kucuk += gunEki(km);
         return { buyuk: buyuk, kucuk: kucuk, yon: yonAdlari[M.enYakinYon(st.yon).i], herYon: T.her_yon };
       },
       yaz: function (d) {
@@ -183,7 +184,7 @@
         if (d.km != null) {
           var adim = M.cetvelAdimi(st.sure, st.seviye), oturt = M.adimaOturt(d.km, adim);
           st.kmCanli = d.km; st.km = oturt;
-          kaydirgac.value = st.sure ? Math.round(oturt / adim) : oturt;
+          kaydirgac.value = basamakSirasi(oturt);
           cetvelYazi();
         }
       },
@@ -485,23 +486,43 @@
   yonOk();
 
   var kaydirgac = $('#tur-km');
-  function cetvelKur() {
-    var adim = M.cetvelAdimi(st.sure, st.seviye);
-    var sinir = M.adimSiniri(adim);
-    var km = M.adimaOturt(st.km, adim);
-    st.km = km;
-    if (st.sure) {
-      kaydirgac.min = Math.round(sinir.enAz / adim); kaydirgac.max = Math.round(sinir.enCok / adim); kaydirgac.step = 1;
-      kaydirgac.value = Math.round(km / adim);
-    } else {
-      kaydirgac.min = sinir.enAz; kaydirgac.max = sinir.enCok; kaydirgac.step = 10; kaydirgac.value = km;
+  /*
+   * Kaydırgacın basamakları (28 Eki 2026, web 1000 km'ye açıldı): 300 km'ye kadar cetvel adımı (10 km / yarım saat), üstünde
+   * seyrek (50 km / 1 saat). Doğrusal 30–1000 olsaydı asıl kullanılan 30–300 aralığı çubuğun dörtte birine sıkışırdı.
+   * Kadranı sürüklerken km yine 10'a oturuyor; seyreklik yalnız kaydırgacın.
+   */
+  var UZUN_ESIK_KM = 300;
+  function basamaklar() {
+    var adim = M.cetvelAdimi(st.sure, st.seviye), sinir = M.adimSiniri(adim), kat = st.sure ? 2 : 5, l = [], uzun = 0;
+    for (var i = Math.round(sinir.enAz / adim); i * adim <= sinir.enCok + 1e-9; i++) {
+      var k = i * adim;
+      if (k > UZUN_ESIK_KM + 1e-9 && (++uzun % kat) && k + adim <= sinir.enCok + 1e-9) continue;
+      l.push(k);
     }
+    return l;
+  }
+  function basamakSirasi(km) {
+    var l = basamaklar(), en = 0;
+    for (var i = 1; i < l.length; i++) if (Math.abs(l[i] - km) < Math.abs(l[en] - km)) en = i;
+    return en;
+  }
+  /* 8 saatten uzun tur tek günde sürülmez: uygulama da bu eşikte (TurGunleri UZUN_TUR_SN) günlere bölmeyi öneriyor. */
+  function gunEki(km) {
+    var sn = (km / M.ORTALAMA_KMSA[st.seviye]) * 3600;
+    return sn > 8 * 3600 ? ' · ' + Math.ceil(sn / (8 * 3600)) + ' ' + T.gun : '';
+  }
+  function cetvelKur() {
+    var adim = M.cetvelAdimi(st.sure, st.seviye), l = basamaklar();
+    st.km = M.adimaOturt(st.km, adim);
+    kaydirgac.min = 0; kaydirgac.max = l.length - 1; kaydirgac.step = 1;
+    kaydirgac.value = basamakSirasi(st.km);
     cetvelYazi();
   }
   function cetvelYazi() {
     var buyuk, kucuk;
     if (st.sure) { buyuk = sureYazi(M.sureSaniye(st.km, st.seviye)); kucuk = '≈ ' + mesafe(st.km); }
     else { buyuk = mesafe(st.km); kucuk = '≈ ' + sureYazi((st.km / M.ORTALAMA_KMSA[st.seviye]) * 3600); }
+    kucuk += gunEki(st.km);
     $('#tur-km-buyuk').textContent = buyuk;
     $('#tur-km-kucuk').textContent = kucuk;
     kaydirgac.setAttribute('aria-valuetext', buyuk + ', ' + kucuk);
@@ -509,8 +530,8 @@
     kaydirgac.style.setProperty('--dolu', yuzde + '%');
   }
   function kaydirgacDegeri() {
-    var adim = M.cetvelAdimi(st.sure, st.seviye);
-    st.km = st.sure ? M.adimaOturt(+kaydirgac.value * adim, adim) : +kaydirgac.value;
+    var l = basamaklar();
+    st.km = l[Math.max(0, Math.min(l.length - 1, +kaydirgac.value))];
   }
   kaydirgac.addEventListener('input', function () { st.kmCanli = null; kaydirgacDegeri(); cetvelYazi(); halkaGuncelle(); });
   kaydirgac.addEventListener('change', function () { kaydirgacDegeri(); kaydet(); halkaSigdir(); });
