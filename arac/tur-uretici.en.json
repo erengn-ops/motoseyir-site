@@ -468,5 +468,13 @@
     "adim": "Step {n}",
     "dene": "Try it now",
     "ilgili_etiket": "Related guides and sources"
+  },
+  "anasayfa_hero": "Generate a tour in your browser",
+  "anasayfa_bant": {
+    "ust": "New: in your browser",
+    "h2": "Draw your tour right in the browser.",
+    "p": "Pick a start on the map, grab the dial, turn it to the direction you want and stretch it. Motoseyir draws three round trips that bring you back to where you started; send the one you like to your phone with a QR code and ride it in the app.",
+    "btn": "Open the route generator",
+    "alt": "Motoseyir web route generator: the dial and tour settings around Innsbruck"
   }
 }

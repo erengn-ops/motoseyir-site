@@ -572,6 +572,31 @@ def arac_baglanti(kod: str) -> str:
             f'<a class="btn btn-hayalet btn-kucuk" href="{tanitim_yol(kod)}">{tanitim_veri()[kod]["ad"]} →</a></p>')
 
 
+def arac_menu(kod: str) -> str:
+    """Anasayfa üst menüsünde web tur oluşturucu (26 Eki, kullanıcı: "ana sayfaya tur generator ile ilgili bir şey koymamışsın")."""
+    if kod not in arac_veri():
+        return ""
+    return f'<li><a href="{arac_yol(kod)}">{arac_veri()[kod]["ui"]["ekmek_son"]}</a></li>'
+
+
+def arac_hero(kod: str) -> str:
+    if kod not in arac_veri():
+        return ""
+    return f'<a class="btn btn-cam" href="{arac_yol(kod)}">{arac_veri()[kod]["anasayfa_hero"]} →</a>'
+
+
+def arac_bant(kod: str) -> str:
+    """Rakam şeridinin altında web aracının görselli bandı (TR/EN/DE; görsel m/web-arac-<kod>.webp)."""
+    if kod not in arac_veri():
+        return ""
+    b = arac_veri()[kod]["anasayfa_bant"]
+    return (f'<section class="web-arac" aria-labelledby="web-arac-h"><div class="web-arac-ic">'
+            f'<div class="web-arac-metin" data-r><p class="ust-yazi">{b["ust"]}</p><h2 id="web-arac-h">{b["h2"]}</h2><p>{b["p"]}</p>'
+            f'<a class="btn" href="{arac_yol(kod)}">{b["btn"]} →</a></div>'
+            f'<a class="web-arac-gorsel" href="{arac_yol(kod)}" tabindex="-1" data-r><img src="/m/web-arac-{kod}.webp" alt="{b["alt"]}" '
+            f'width="1200" height="769" loading="lazy" decoding="async"></a></div></section>')
+
+
 def arac_dil_yolu(k: str) -> str:
     return arac_yol(k) if k in arac_veri() else sayfa_yolu(k, "index.html")
 
@@ -1362,6 +1387,7 @@ def main() -> None:
                 "rehber_footer": rehber_footer(kod),
                 "rehber_baglam": rehber_baglam(kod),
                 "arac_baglanti": arac_baglanti(kod),
+                "arac_menu": arac_menu(kod), "arac_hero": arac_hero(kod), "arac_bant": arac_bant(kod),
             }
             sablon_metni = sablonlar[sablon_adi]
             if dosya == "index.html" and kod in HAREKETLI_ANASAYFA:

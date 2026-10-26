@@ -248,7 +248,12 @@
       // parça yüklüyordu (25 Eki, kullanıcı ekranı: sol üstte tek kare, gerisi gri). Kapsayıcı boyutu değiştikçe yeniden ölç.
       if (window.ResizeObserver) new ResizeObserver(function () { harita.resize(); }).observe(document.getElementById('tur-harita'));
       window.addEventListener('load', function () { harita.resize(); });
-      harita.on('load', haritaYuklendi);
+      // 26 Eki: 'load' ilk görünümün BÜTÜN karoları inene kadar bekliyor; soğuk önbellekte kadran 8+ sn çıkmıyordu.
+      // Katmanlar ve kadran yalnız stile ihtiyaç duyuyor → stil hazır olunca bir kez çalıştır (karolar arkadan gelir).
+      var yuklendiBir = false;
+      var yuklendi = function () { if (yuklendiBir) return; yuklendiBir = true; haritaYuklendi(); };
+      harita.once('style.load', yuklendi);
+      harita.on('load', yuklendi);
       harita.on('click', function (e) {
         if (st.kip === 'rotalar') { kesTikla(e); return; }
         if (st.kip === 'duzen') { olay('tur:harita-tik', { lat: e.lngLat.lat, lng: e.lngLat.lng }); return; }

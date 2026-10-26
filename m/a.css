@@ -525,3 +525,17 @@ html:not(.js) .hk-adimlar{padding-left:0}
 
 /* Web tur üreticisine bağlantı (anasayfa, Tur üret bölümü) */
 .arac-baglanti{margin:22px 0 0;display:flex;flex-wrap:wrap;gap:10px}
+
+/* ---------- Web tur oluşturucu bandı + kahraman ikinci düğmesi (26 Eki) ---------- */
+.kahraman .btn-cam{background:rgba(255,255,255,.12);color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.45);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.kahraman .btn-cam:hover{background:rgba(255,255,255,.22)}
+.web-arac{background:linear-gradient(180deg,var(--yuksek),var(--zemin));border-bottom:1px solid var(--cizgi)}
+.web-arac-ic{max-width:1200px;margin:0 auto;padding:56px var(--gutter);display:grid;gap:30px;align-items:center}
+.web-arac-metin .ust-yazi{color:var(--vurgu);font-weight:700;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;margin:0 0 10px}
+.web-arac-metin h2{font-size:clamp(1.6rem,3.2vw,2.4rem);line-height:1.15;margin:0 0 14px}
+.web-arac-metin p{color:var(--yazi-2);font-size:1.05rem;line-height:1.6;margin:0 0 22px;max-width:52ch}
+.web-arac-gorsel{display:block;border-radius:18px;overflow:hidden;box-shadow:0 30px 60px -28px rgba(14,60,62,.45),0 0 0 1px var(--cizgi)}
+.web-arac-gorsel img{display:block;width:100%;height:auto;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.web-arac-gorsel:hover img{transform:scale(1.025)}
+@media(min-width:900px){.web-arac-ic{grid-template-columns:5fr 7fr;gap:48px;padding:80px var(--gutter)}}
+@media(prefers-reduced-motion:reduce){.web-arac-gorsel img{transition:none}.web-arac-gorsel:hover img{transform:none}}

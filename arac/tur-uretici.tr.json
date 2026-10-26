@@ -468,5 +468,13 @@
     "adim": "Adım {n}",
     "dene": "Şimdi dene",
     "ilgili_etiket": "İlgili rehberler ve kaynaklar"
+  },
+  "anasayfa_hero": "Tarayıcıda tur oluştur",
+  "anasayfa_bant": {
+    "ust": "Yeni: tarayıcıda",
+    "h2": "Turunu telefonu açmadan çiz.",
+    "p": "Haritada başlangıcı seç, kadranı tut, istediğin yöne çevir ve uzat. Motoseyir başladığın yere dönen üç tur çizer; beğendiğini QR kodla telefonuna gönderip uygulamada sürersin.",
+    "btn": "Tur oluşturucuyu aç",
+    "alt": "Motoseyir web tur oluşturucusu: Ankara çevresinde kadran ve tur ayarları"
   }
 }

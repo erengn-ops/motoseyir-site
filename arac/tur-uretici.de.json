@@ -468,5 +468,13 @@
     "adim": "Schritt {n}",
     "dene": "Jetzt ausprobieren",
     "ilgili_etiket": "Verwandte Ratgeber und Quellen"
+  },
+  "anasayfa_hero": "Rundtour im Browser planen",
+  "anasayfa_bant": {
+    "ust": "Neu: im Browser",
+    "h2": "Plane deine Rundtour direkt im Browser.",
+    "p": "Wähle auf der Karte deinen Start, greif das Zifferblatt, dreh es in die gewünschte Richtung und zieh es länger. Motoseyir zeichnet drei Rundtouren zurück zum Start; die beste schickst du per QR-Code aufs Handy und fährst sie in der App.",
+    "btn": "Tourengenerator öffnen",
+    "alt": "Motoseyir Tourengenerator im Browser: Zifferblatt und Toureinstellungen rund um München"
   }
 }
