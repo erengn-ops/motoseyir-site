@@ -1,10 +1,10 @@
 {
   "dizin": "motorcycle-route-generator",
-  "baslik": "Motorcycle Route Generator: Round Trips & Twisty Roads",
-  "aciklama": "Free motorcycle route generator: pick a start, length and how twisty you want it, get up to three round trips, then send one to your phone with a QR code.",
-  "h1": "Motorcycle route generator",
-  "eyebrow": "Round trip planner",
-  "lead": "Pick a start point, how long you want to ride and how twisty the roads should be. The generator draws up to three round trips that bring you back to where you started. Send the one you like to your phone with a QR code and ride it in Motoseyir.",
+  "baslik": "Motorcycle Route Planner: Free Round Trip Generator",
+  "aciklama": "Free motorcycle route and trip planner: pick a start, length and how twisty you want it, get up to three round trips of up to 1000 km, then send one to your phone.",
+  "h1": "Motorcycle route planner",
+  "eyebrow": "Round trip generator",
+  "lead": "Plan a motorcycle ride from a start point, how long you want to ride and how twisty the roads should be. The planner draws up to three round trips that bring you back to where you started. Send the one you like to your phone with a QR code and ride it in Motoseyir.",
   "yayin": "2026-10-25",
   "guncelleme": "2026-10-25",
   "ondalik": ".",
@@ -293,7 +293,7 @@
       "h2": "How the loops are made",
       "icerik": [
         {
-          "p": "The generator puts a circle through your start point and sets three or four stops on it, so the ride runs out in your chosen direction and comes back around. It then snaps the stops to real roads and asks the route engine for the route. Roads are not circles, so every candidate is measured on the route that comes back."
+          "p": "The generator puts a circle through your start point and sets three or four stops on it (more on long trips, up to twelve), so the ride runs out in your chosen direction and comes back around. It then snaps the stops to real roads and asks the route engine for the route. Roads are not circles, so every candidate is measured on the route that comes back."
         },
         {
           "p": "Each candidate is scored on three things: how many sharp bends it has per kilometre, how far its length is from what you asked for, and how much of the way back repeats the way out. The three best loops that differ from each other are shown. If a mountain pass lies within reach, at least one loop is routed over it and the pass is named on the card."
@@ -397,7 +397,15 @@
     },
     {
       "s": "How long is the round trip?",
-      "c": "Close to the length you set. The generator accepts a deviation and corrects the size of the loop once if the first route comes out too long or too short."
+      "c": "Close to the length you set, from 30 to 1000 km. The generator accepts a deviation and corrects the size of the loop once if the first route comes out too long or too short."
+    },
+    {
+      "s": "Can I plan a multi-day motorcycle trip?",
+      "c": "Yes. Set up to 1000 km; when the ride is longer than about eight hours, the length shows how many days it takes. In Motoseyir you can then split the tour into days and edit the stops. The Tour generator inside the app goes up to 300 km."
+    },
+    {
+      "s": "How do I find twisty roads near me?",
+      "c": "Tap Use my location, choose Very twisty and a length, then generate. Each round trip card shows its sharp bends per kilometre, so you can compare how curvy the loops are."
     }
   ],
   "urun": {

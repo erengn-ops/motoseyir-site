@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Motorcycle Route Generator: Round Trips &amp; Twisty Roads</title>
-<meta name="description" content="Free motorcycle route generator: pick a start, length and how twisty you want it, get up to three round trips, then send one to your phone with a QR code.">
+<title>Motorcycle Route Planner: Free Round Trip Generator</title>
+<meta name="description" content="Free motorcycle route and trip planner: pick a start, length and how twisty you want it, get up to three round trips of up to 1000 km, then send one to your phone.">
 <link rel="canonical" href="https://motoseyir-app.com/en/motorcycle-route-generator/">
 <link rel="alternate" hreflang="tr" href="https://motoseyir-app.com/tur-olusturucu/">
 <link rel="alternate" hreflang="en" href="https://motoseyir-app.com/en/motorcycle-route-generator/">
@@ -14,16 +14,16 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Motoseyir">
 <meta property="og:locale" content="en_GB">
-<meta property="og:title" content="Motorcycle Route Generator: Round Trips &amp; Twisty Roads">
-<meta property="og:description" content="Free motorcycle route generator: pick a start, length and how twisty you want it, get up to three round trips, then send one to your phone with a QR code.">
+<meta property="og:title" content="Motorcycle Route Planner: Free Round Trip Generator">
+<meta property="og:description" content="Free motorcycle route and trip planner: pick a start, length and how twisty you want it, get up to three round trips of up to 1000 km, then send one to your phone.">
 <meta property="og:url" content="https://motoseyir-app.com/en/motorcycle-route-generator/">
 <meta property="og:image" content="https://motoseyir-app.com/img/og-kapak.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Motorcycle Route Generator: Round Trips &amp; Twisty Roads">
-<meta name="twitter:description" content="Free motorcycle route generator: pick a start, length and how twisty you want it, get up to three round trips, then send one to your phone with a QR code.">
+<meta name="twitter:title" content="Motorcycle Route Planner: Free Round Trip Generator">
+<meta name="twitter:description" content="Free motorcycle route and trip planner: pick a start, length and how twisty you want it, get up to three round trips of up to 1000 km, then send one to your phone.">
 <meta name="twitter:image" content="https://motoseyir-app.com/img/og-kapak.jpg">
 <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 <meta name="apple-itunes-app" content="app-id=6792549131">
@@ -77,8 +77,8 @@
       "@type": "WebPage",
       "@id": "https://motoseyir-app.com/en/motorcycle-route-generator/#sayfa",
       "url": "https://motoseyir-app.com/en/motorcycle-route-generator/",
-      "name": "Motorcycle Route Generator: Round Trips & Twisty Roads",
-      "description": "Free motorcycle route generator: pick a start, length and how twisty you want it, get up to three round trips, then send one to your phone with a QR code.",
+      "name": "Motorcycle Route Planner: Free Round Trip Generator",
+      "description": "Free motorcycle route and trip planner: pick a start, length and how twisty you want it, get up to three round trips of up to 1000 km, then send one to your phone.",
       "inLanguage": "en",
       "isPartOf": {
         "@id": "https://motoseyir-app.com/#website"
@@ -118,9 +118,9 @@
     {
       "@type": "WebApplication",
       "@id": "https://motoseyir-app.com/en/motorcycle-route-generator/#arac",
-      "name": "Motorcycle route generator",
+      "name": "Motorcycle route planner",
       "url": "https://motoseyir-app.com/en/motorcycle-route-generator/",
-      "description": "Free motorcycle route generator: pick a start, length and how twisty you want it, get up to three round trips, then send one to your phone with a QR code.",
+      "description": "Free motorcycle route and trip planner: pick a start, length and how twisty you want it, get up to three round trips of up to 1000 km, then send one to your phone.",
       "applicationCategory": "TravelApplication",
       "operatingSystem": "Any (web browser)",
       "browserRequirements": "Requires JavaScript",
@@ -211,7 +211,23 @@
           "name": "How long is the round trip?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Close to the length you set. The generator accepts a deviation and corrects the size of the loop once if the first route comes out too long or too short."
+            "text": "Close to the length you set, from 30 to 1000 km. The generator accepts a deviation and corrects the size of the loop once if the first route comes out too long or too short."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I plan a multi-day motorcycle trip?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Set up to 1000 km; when the ride is longer than about eight hours, the length shows how many days it takes. In Motoseyir you can then split the tour into days and edit the stops. The Tour generator inside the app goes up to 300 km."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I find twisty roads near me?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tap Use my location, choose Very twisty and a length, then generate. Each round trip card shows its sharp bends per kilometre, so you can compare how curvy the loops are."
           }
         }
       ]
@@ -306,7 +322,7 @@
     <div class="tur-panel" id="tur-panel" data-sheet="yarim">
       <button type="button" class="tur-tutamac" id="tur-tutamac" aria-expanded="true" aria-controls="tur-panel-ic" aria-label="Open or close the panel"><i></i></button>
       <div class="tur-panel-ic" id="tur-panel-ic">
-      <div class="tur-baslik-kutu"><h1 class="tur-h1" id="tur-h1">Motorcycle route generator</h1><a class="tur-nasil-mini" href="/en/tour-generator/">How it works in the app</a></div>
+      <div class="tur-baslik-kutu"><h1 class="tur-h1" id="tur-h1">Motorcycle route planner</h1><a class="tur-nasil-mini" href="/en/tour-generator/">How it works in the app</a></div>
       <p id="tur-durum" class="tur-durum" role="status" aria-live="polite" hidden></p>
       <div class="tur-kipler" id="kesfet" role="tablist" aria-label="Tool mode">
         <button type="button" role="tab" id="tur-kip-uret" class="tur-kip-dugme" aria-selected="true" aria-controls="tur-panel-uret">Generate a tour</button>
@@ -465,13 +481,13 @@
 
 <section class="tur-ozet" aria-label="About the route generator"><div class="kap">
   <nav class="rehber-ekmek" aria-label="Breadcrumb"><a href="/en/">Home</a> <span aria-hidden="true">›</span> <span aria-current="page">Route generator</span></nav>
-  <p class="metin" data-r>Pick a start point, how long you want to ride and how twisty the roads should be. The generator draws up to three round trips that bring you back to where you started. Send the one you like to your phone with a QR code and ride it in Motoseyir.</p>
+  <p class="metin" data-r>Plan a motorcycle ride from a start point, how long you want to ride and how twisty the roads should be. The planner draws up to three round trips that bring you back to where you started. Send the one you like to your phone with a QR code and ride it in Motoseyir.</p>
   <p class="tur-nasil" data-r><a href="/en/tour-generator/">How it works in the app →</a></p>
 </div></section>
 
 <div class="ana tur-ana">
 <section class="bolum" id="nasil-yapilir"><div class="kap"><div class="tur-yazi" data-r><h2>How the loops are made</h2>
-<p>The generator puts a circle through your start point and sets three or four stops on it, so the ride runs out in your chosen direction and comes back around. It then snaps the stops to real roads and asks the route engine for the route. Roads are not circles, so every candidate is measured on the route that comes back.</p>
+<p>The generator puts a circle through your start point and sets three or four stops on it (more on long trips, up to twelve), so the ride runs out in your chosen direction and comes back around. It then snaps the stops to real roads and asks the route engine for the route. Roads are not circles, so every candidate is measured on the route that comes back.</p>
 <p>Each candidate is scored on three things: how many sharp bends it has per kilometre, how far its length is from what you asked for, and how much of the way back repeats the way out. The three best loops that differ from each other are shown. If a mountain pass lies within reach, at least one loop is routed over it and the pass is named on the card.</p>
 <ul><li><strong>Relaxed</strong> favours flowing roads, motorways allowed unless you switch them off.</li><li><strong>Twisty</strong> and <strong>Very twisty</strong> lean towards back roads and curves.</li><li><strong>Over a mountain pass</strong> keeps only loops that cross a known pass.</li><li><strong>Time</strong> uses an average speed for the curve level to turn hours into kilometres, then checks the real driving time of each route.</li></ul></div></div></section>
 <section class="bolum" id="telefon"><div class="kap"><div class="tur-yazi" data-r><h2>From the browser to your phone</h2>
@@ -486,7 +502,7 @@
 <section class="bolum" id="veri"><div class="kap"><div class="tur-yazi" data-r><h2>Which data goes where</h2>
 <p>The page needs no account and sets no cookies. It remembers your last settings and a random device ID in your browser's local storage; you can clear them in your browser settings.</p>
 <p>Your start point and the stops of each candidate go to the route engine: in Turkey and Greece to Motoseyir's own route server, elsewhere to a public OpenStreetMap-based routing service, which sees your IP address like any website. Searching for a place and looking up place names send the text or coordinates to the Photon service (OpenStreetMap data). Map tiles come from Motoseyir's server. A tour is stored only when you tap Send to my phone: its name, stops and settings, for 30 days, without any information about who sent it. Looking for places along a route sends the route line, without names, to Motoseyir's server. Legendary routes and passes are loaded from this site and are not sent anywhere.</p></div></div></section>
-<section class="bolum" id="sss" aria-labelledby="sss-h"><div class="kap"><h2 id="sss-h">Frequently asked questions</h2><ul class="izgara tur-sss" data-r><li><h3>Is the motorcycle route generator free?</h3><p>Yes. You can generate and look at round trips on this page for free and without an account. Motoseyir itself is a free download; some features such as Back roads mode belong to Motoseyir Pro, and the free plan keeps one saved tour.</p></li><li><h3>How do I get a random motorcycle route?</h3><p>Leave the direction on Any direction, set a length and tap Generate round trip. Tap Another one to get different loops with the same settings.</p></li><li><h3>Does it work outside Turkey?</h3><p>Yes, anywhere OpenStreetMap has roads. In Turkey and Greece the routes come from Motoseyir's own route server; elsewhere a public routing service is used, which can be slower or busy at times.</p></li><li><h3>How do I get the route onto my phone?</h3><p>Tap Send to my phone under your round trip. On a computer, scan the QR code with your phone camera. On a phone, tap Open in Motoseyir. The tour appears in My Tours.</p></li><li><h3>Can I find places along my route?</h3><p>Yes. Open Places along the route under your round trip and choose viewpoints, food and coffee, camping, bays or fuel. You see up to five places near the line, and you can add one as a stop.</p></li><li><h3>Where do the legendary routes and passes come from?</h3><p>They are the same lists the Motoseyir app uses. Each legendary route card names its source, and the pass positions come from OpenStreetMap. Opening times of passes change from year to year, so check the operator's notice before you ride.</p></li><li><h3>I do not have the app or I use Android. What happens?</h3><p>The link takes iPhone users to the App Store. Motoseyir is on the App Store for iPhone for now; the Android version is not on Google Play yet. The tour code stays valid for 30 days.</p></li><li><h3>Can it avoid motorways and tolls?</h3><p>Yes. Switch on No motorways, No tolls or No dirt before you generate. These are preferences for the route engine, and each card shows if a section could not be avoided.</p></li><li><h3>How long is the round trip?</h3><p>Close to the length you set. The generator accepts a deviation and corrects the size of the loop once if the first route comes out too long or too short.</p></li></ul></div></section>
+<section class="bolum" id="sss" aria-labelledby="sss-h"><div class="kap"><h2 id="sss-h">Frequently asked questions</h2><ul class="izgara tur-sss" data-r><li><h3>Is the motorcycle route generator free?</h3><p>Yes. You can generate and look at round trips on this page for free and without an account. Motoseyir itself is a free download; some features such as Back roads mode belong to Motoseyir Pro, and the free plan keeps one saved tour.</p></li><li><h3>How do I get a random motorcycle route?</h3><p>Leave the direction on Any direction, set a length and tap Generate round trip. Tap Another one to get different loops with the same settings.</p></li><li><h3>Does it work outside Turkey?</h3><p>Yes, anywhere OpenStreetMap has roads. In Turkey and Greece the routes come from Motoseyir's own route server; elsewhere a public routing service is used, which can be slower or busy at times.</p></li><li><h3>How do I get the route onto my phone?</h3><p>Tap Send to my phone under your round trip. On a computer, scan the QR code with your phone camera. On a phone, tap Open in Motoseyir. The tour appears in My Tours.</p></li><li><h3>Can I find places along my route?</h3><p>Yes. Open Places along the route under your round trip and choose viewpoints, food and coffee, camping, bays or fuel. You see up to five places near the line, and you can add one as a stop.</p></li><li><h3>Where do the legendary routes and passes come from?</h3><p>They are the same lists the Motoseyir app uses. Each legendary route card names its source, and the pass positions come from OpenStreetMap. Opening times of passes change from year to year, so check the operator's notice before you ride.</p></li><li><h3>I do not have the app or I use Android. What happens?</h3><p>The link takes iPhone users to the App Store. Motoseyir is on the App Store for iPhone for now; the Android version is not on Google Play yet. The tour code stays valid for 30 days.</p></li><li><h3>Can it avoid motorways and tolls?</h3><p>Yes. Switch on No motorways, No tolls or No dirt before you generate. These are preferences for the route engine, and each card shows if a section could not be avoided.</p></li><li><h3>How long is the round trip?</h3><p>Close to the length you set, from 30 to 1000 km. The generator accepts a deviation and corrects the size of the loop once if the first route comes out too long or too short.</p></li><li><h3>Can I plan a multi-day motorcycle trip?</h3><p>Yes. Set up to 1000 km; when the ride is longer than about eight hours, the length shows how many days it takes. In Motoseyir you can then split the tour into days and edit the stops. The Tour generator inside the app goes up to 300 km.</p></li><li><h3>How do I find twisty roads near me?</h3><p>Tap Use my location, choose Very twisty and a length, then generate. Each round trip card shows its sharp bends per kilometre, so you can compare how curvy the loops are.</p></li></ul></div></section>
 </div>
 
 <section class="varis" data-ton aria-labelledby="urun-h2"><div class="kap" data-r><h2 id="urun-h2">Ride it in Motoseyir</h2><p class="metin">Motoseyir is a motorcycle navigation app where you draw your own tour: you set the start and end, place the stops and change their order. A tour from this page arrives as a normal tour, so you can still edit it before you leave.</p><p class="metin kucuk">If you need an idea, ready-made routes sit in the Legendary tab; tap one and its stops are copied into your tours, where you can change them.</p><div class="cta-satir"><a class="btn" href="https://apps.apple.com/app/id6792549131?pt=128439797&amp;ct=site-web-tur&amp;mt=8">Get Motoseyir on the App Store</a></div></div></section>

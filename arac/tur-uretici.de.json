@@ -1,10 +1,10 @@
 {
   "dizin": "motorrad-rundtour-planen",
-  "baslik": "Motorrad Rundtour planen: Kurvige Touren generieren",
-  "aciklama": "Motorrad Rundtour planen, kostenlos: Startpunkt, Länge und Kurvigkeit wählen, bis zu drei Rundtouren erhalten und per QR-Code aufs Handy schicken.",
-  "h1": "Motorrad Rundtour planen",
-  "eyebrow": "Tourengenerator",
-  "lead": "Wähle einen Startpunkt, wie lange du fahren willst und wie kurvig die Straßen sein sollen. Der Generator zeichnet bis zu drei Rundtouren, die dich zum Start zurückbringen. Die Tour, die dir gefällt, schickst du per QR-Code aufs Handy und fährst sie in Motoseyir.",
+  "baslik": "Motorrad Routenplaner: Rundtour planen, kostenlos",
+  "aciklama": "Kostenloser Motorrad Routenplaner: Startpunkt, Länge und Kurvigkeit wählen, bis zu drei Rundtouren bis 1000 km erhalten und per QR-Code aufs Handy schicken.",
+  "h1": "Motorrad Routenplaner für Rundtouren",
+  "eyebrow": "Motorradtour planen",
+  "lead": "Plane deine Motorradtour mit Startpunkt, Fahrzeit und Kurvigkeit. Der Routenplaner zeichnet bis zu drei Rundtouren, die dich zum Start zurückbringen. Die Tour, die dir gefällt, schickst du per QR-Code aufs Handy und fährst sie in Motoseyir.",
   "yayin": "2026-10-25",
   "guncelleme": "2026-10-25",
   "ondalik": ",",
@@ -293,7 +293,7 @@
       "h2": "So entstehen die Rundtouren",
       "icerik": [
         {
-          "p": "Der Generator legt einen Kreis durch deinen Startpunkt und setzt drei oder vier Stopps darauf. So führt die Tour in die gewählte Richtung hinaus und auf einem Bogen zurück. Die Stopps werden auf echte Straßen gelegt, dann wird die Route berechnet. Straßen sind keine Kreise, deshalb wird jeder Kandidat an der Route gemessen, die tatsächlich herauskommt."
+          "p": "Der Generator legt einen Kreis durch deinen Startpunkt und setzt drei oder vier Stopps darauf, bei langen Touren mehr (bis zu zwölf). So führt die Tour in die gewählte Richtung hinaus und auf einem Bogen zurück. Die Stopps werden auf echte Straßen gelegt, dann wird die Route berechnet. Straßen sind keine Kreise, deshalb wird jeder Kandidat an der Route gemessen, die tatsächlich herauskommt."
         },
         {
           "p": "Jeder Kandidat wird nach drei Dingen bewertet: wie viele scharfe Kurven er pro Kilometer hat, wie weit seine Länge von deinem Wunsch abweicht und wie viel des Rückwegs über dieselbe Straße wie der Hinweg führt. Angezeigt werden die drei besten Runden, die sich voneinander unterscheiden. Liegt ein Pass in Reichweite, führt mindestens eine Runde darüber, und der Pass steht auf der Karte."
@@ -397,7 +397,15 @@
     },
     {
       "s": "Wie lang ist die Rundtour?",
-      "c": "Nahe an der eingestellten Länge. Der Generator lässt eine Abweichung zu und korrigiert die Größe der Runde einmal, wenn die erste Route zu lang oder zu kurz ausfällt."
+      "c": "Nahe an der eingestellten Länge, von 30 bis 1000 km. Der Generator lässt eine Abweichung zu und korrigiert die Größe der Runde einmal, wenn die erste Route zu lang oder zu kurz ausfällt."
+    },
+    {
+      "s": "Kann ich eine mehrtägige Motorradtour planen?",
+      "c": "Ja. Stelle bis zu 1000 km ein; dauert die Fahrt länger als etwa acht Stunden, zeigt die Länge, wie viele Tage sie braucht. In Motoseyir teilst du die Tour dann in Tage auf und bearbeitest die Stopps. Der Tourengenerator in der App geht bis 300 km."
+    },
+    {
+      "s": "Wie finde ich kurvenreiche Strecken in der Nähe?",
+      "c": "Tippe auf „Meinen Standort nutzen“, wähle „Sehr kurvig“ und eine Länge und generiere. Jede Karte zeigt die scharfen Kurven pro Kilometer, so vergleichst du, wie kurvig die Runden sind."
     }
   ],
   "urun": {

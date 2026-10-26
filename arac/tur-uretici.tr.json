@@ -1,8 +1,8 @@
 {
   "dizin": "tur-olusturucu",
-  "baslik": "Motosiklet Tur Oluşturucu: Başladığın Yere Dönen Rota",
-  "aciklama": "Ücretsiz motosiklet tur oluşturucu: Başlangıcı, uzunluğu ve virajı seç, en fazla üç tur gör, beğendiğini QR kodla telefonuna gönder ve Motoseyir'de sür.",
-  "h1": "Motosiklet tur oluşturucu",
+  "baslik": "Motosiklet Rota Oluşturucu: Başladığın Yere Dönen Tur",
+  "aciklama": "Ücretsiz motosiklet rota oluşturucu: Başlangıcı, uzunluğu ve virajı seç, 1000 km'ye kadar en fazla üç tur gör, beğendiğini QR kodla telefonuna gönder ve Motoseyir'de sür.",
+  "h1": "Motosiklet rota ve tur oluşturucu",
   "eyebrow": "Tur planlayıcı",
   "lead": "Başlangıç noktanı, ne kadar süreceğini ve yolların ne kadar virajlı olacağını seç. Oluşturucu, başladığın yere dönen en fazla üç tur çizer. Beğendiğin turu QR kodla telefonuna gönderip Motoseyir'de sürebilirsin.",
   "yayin": "2026-10-25",
@@ -293,7 +293,7 @@
       "h2": "Turlar nasıl çizilir",
       "icerik": [
         {
-          "p": "Oluşturucu başlangıç noktandan geçen bir çember kurar ve üstüne üç ya da dört durak koyar. Böylece tur seçtiğin yöne açılır ve kavis çizerek geri döner. Duraklar gerçek yollara oturtulur, sonra rota hesaplanır. Yollar çember olmadığı için her aday, gerçekten çıkan rota üzerinden ölçülür."
+          "p": "Oluşturucu başlangıç noktandan geçen bir çember kurar ve üstüne üç ya da dört durak koyar; uzun turlarda daha fazla, en çok on iki. Böylece tur seçtiğin yöne açılır ve kavis çizerek geri döner. Duraklar gerçek yollara oturtulur, sonra rota hesaplanır. Yollar çember olmadığı için her aday, gerçekten çıkan rota üzerinden ölçülür."
         },
         {
           "p": "Her aday üç şeye göre puanlanır: kilometre başına kaç sert viraj olduğu, uzunluğunun istediğin değerden ne kadar saptığı ve dönüşün ne kadarının gidişle aynı yoldan geçtiği. Birbirinden farklı en iyi üç tur gösterilir. Erişilebilir bir dağ geçidi varsa turlardan en az biri geçitten geçer ve kartta geçidin adı yazar."
@@ -397,7 +397,15 @@
     },
     {
       "s": "Tur ne kadar uzun çıkar?",
-      "c": "Seçtiğin uzunluğa yakın çıkar. Oluşturucu küçük bir sapmayı kabul eder; ilk rota fazla uzun ya da kısa çıkarsa turun boyunu bir kez düzeltir."
+      "c": "Seçtiğin uzunluğa yakın çıkar; 30 ile 1000 km arasında seçebilirsin. Oluşturucu küçük bir sapmayı kabul eder; ilk rota fazla uzun ya da kısa çıkarsa turun boyunu bir kez düzeltir."
+    },
+    {
+      "s": "Birkaç günlük motosiklet turu planlayabilir miyim?",
+      "c": "Evet. 1000 km'ye kadar seçebilirsin; sürüş yaklaşık sekiz saati geçince uzunluğun yanında kaç gün süreceği yazar. Motoseyir'de turu günlere bölüp durakları düzenleyebilirsin. Uygulamanın içindeki Tur üret en fazla 300 km'ye kadar gider."
+    },
+    {
+      "s": "Yakınımdaki virajlı yolları nasıl bulurum?",
+      "c": "“Konumumu kullan”a dokun, “Çok virajlı”yı ve bir uzunluk seç, sonra turu oluştur. Her tur kartı kilometre başına sert viraj sayısını gösterir; turların ne kadar virajlı olduğunu böyle karşılaştırırsın."
     }
   ],
   "urun": {
