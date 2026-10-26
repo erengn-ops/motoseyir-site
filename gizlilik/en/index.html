@@ -250,6 +250,11 @@
     </section>
 
     <section>
+      <h2>Site visit counter</h2>
+      <p>Pages on motoseyir-app.com send a cookie-free count signal to our server (rota.motoseyir-app.com) so that we can see how many people visit the site and move on to the app: when a page stays open for 1 second, when you tap the App Store or Google Play button, when the tour generator produces a tour and when a tour is sent to your phone. What is sent: the page address (path only), the page language, the ad campaign tag (if any), the domain of the site you came from (e.g. google.com; not the full address) and a random session number per page view. The server does not store your IP address: only the country code is derived from it, and a non-reversible hash valid for that day only is kept to tell repeat visits on the same day apart; the next day the same person looks like someone else. The browser type (Safari, Chrome, Instagram etc.) is also recorded. Records are deleted after 30 days. Nothing is used for advertising, profiling or third-party tracking.</p>
+    </section>
+
+    <section>
       <h2>Our servers</h2>
       <p>The routing service calculates routes: the start, destination and via-point coordinates are sent, the route is calculated, the result is returned, and no record is kept. When it opens, the app also gets its settings from our server; this request carries only the hashed device ID and is not stored. When you start a tour that has a track — from a route file you imported (GPX, KML or GeoJSON), from one of your ride recordings or from a trail shared with you — the coordinates of points picked from the track are also sent, to tell whether the track follows roads and to give directions along it (at most 600 points for an imported file, up to about 1,500 for other tracks); these are not stored either.</p>
       <p>The search service looks up places: the text you type and your location are processed only to produce the results, and no record is kept. The hashed device ID is used only in a one-minute counter to limit excessive requests; the server keeps only an hourly total of query types (place, address, business).</p>

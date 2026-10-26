@@ -1011,7 +1011,7 @@
     }).then(function (s) {
       btn.disabled = false; btn.classList.remove('bekle'); yazi.textContent = eskiYazi;
       if (!s.ok) { durum(s.hata === 'gunluk' ? T.paylas_tavan : s.hata === 'buyuk' ? T.paylas_buyuk : T.paylas_hata, 'hata'); return; }
-      st.paylasim.set(tur, s); paylasCiz(s);
+      st.paylasim.set(tur, s); paylasCiz(s); olay('tur:gonderildi');
     });
   });
   function paylasCiz(s) {
