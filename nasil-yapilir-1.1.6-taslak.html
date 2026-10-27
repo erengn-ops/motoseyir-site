@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<title>Nasıl yapılır — 1.1.6 taslağı (YAYINLANMAZ)</title>
+</head>
+<body>
+<!--
+  TASLAK — 13 Eki 2026. Canlı site dosyalarına DOKUNULMADI.
+  Kaynak: moto-rota/src/components/YardimSayfasi.tsx (yeni konular, sonraki derlemeyle uygulamaya girer) +
+  i18n en/de/fr/it. Her dil için, ilgili nasil-yapilir.html içindeki <div class="yardim-liste"> bloğuna
+  yapıştırılacak <details class="yardim-kart"> kartları aşağıda. Kartlar uygulamadaki sırayla:
+  Navigasyon, Yolda güvenlik, Tur üret ve çok günlü tur, Dağ geçitleri, Sürüşü izle ve videoya çevir,
+  Grupta roller ve buluşma, CarPlay; ayrıca İnterkom kartına eklenecek 1 satır.
+  Pro işaretleri 363 (1.1.6) davranışına göre: Bu turu kur ve Otoyol yok Pro; sitedeki eski "çok duraklı rota Pro"
+  satırları ise sonraki derlemede (ücretsiz durak) değişiyor, o zaman birlikte güncellenmeli.
+-->
+
+<!-- ======== Türkçe → nasil-yapilir.html ======== (Sonrasında Rota, Turlar ve Grup bölümlerindeki eski satırlarla çelişenleri güncelle.) -->
+<section lang="tr">
+<div class="yardim-liste">
+  <details class="yardim-kart">
+    <summary>Navigasyon<span class="ok">▾</span></summary>
+    <ul>
+      <li>Telefon yataysa sol panelin sağ kenarındaki ‹ tutamağına dokun → harita tam ekran olur; süre, mesafe ve varış saati sol altta küçük bir kartta kalır, karta dokununca panel geri gelir.</li>
+      <li>Sağ sütundaki ⋯ düğmesi → Pil tasarrufu, Yüksek eğim, 2D / 3D, Harita katmanı, Sürüşü kaydet ve Grup sürüşü burada; açık olanların üstünde küçük bir nokta yanar.</li>
+      <li>Ara düğmesi (iPhone) → Benzinlik, Kahve, Yemek, Market, Eczane, Mola yeri ve Motosiklet servisi kartları açılır; birine dokununca rotanın önündeki yerler gelir, bir dokunuşla durak eklersin.</li>
+      <li>Ara düğmesine basılı tut → panel açılır ve son aradığın kategori hemen aranır.</li>
+      <li>Ayarlar → Sürüş → Rotadan çıkınca → Yeni rota çiz ya da Rotaya geri götür seçilir; ikincisi planladığın yolu korur.</li>
+      <li>Ayarlar → Sürüş → Kısa sesli yönlendirme → anonslar kısalır.</li>
+    </ul>
+  </details>
+
+  <details class="yardim-kart">
+    <summary>Yolda güvenlik<span class="ok">▾</span></summary>
+    <ul>
+      <li>Navigasyondayken telefonu kilitle → sıradaki dönüş kilitli ekranda ve Dynamic Island’da kalır; Ayarlar → Sürüş → Kilitli ekranda sıradaki dönüş ile kapatırsın (iPhone).</li>
+      <li>Sinyal gidecekse yola çıkmadan turu bir kez aç → rotası, dönüşleri ve durakları telefona kaydedilir, navigasyon bağlantı olmadan da sürer.</li>
+      <li>Sürüşümü paylaş → navigasyonda ya da sürüş kaydında düğmeye dokunup bağlantıyı gönder; açan kişi seni canlı izler, sürüş bitince paylaşım kapanır.</li>
+      <li>Hareket hâlindeyken bağlantı hazırlanır, şeritte "Durunca dokun, bağlantıyı gönder" yazar → durunca dokunup gönderirsin.</li>
+      <li>Ayarlar → Sürüş → Depo menzili ve Uyarı payı → dolu depoyla gittiğin yolu yaz; benzinlikler seyrekleşince navigasyon seni uyarır, Durak ekle ve Doldurdum düğmeleri yalnız durduğunda çıkar.</li>
+      <li>Rota kartı → rotada yağış bekleniyorsa nerede ve kaçta olduğunu, ayrıca gün batımını, feribotu, toprak ve paralı yolu yazar.</li>
+    </ul>
+  </details>
+
+  <details class="yardim-kart">
+    <summary>Tur üret ve çok günlü tur<span class="ok">▾</span></summary>
+    <ul>
+      <li>Turlarım → Tur üret → başlangıcı seç (varsayılan konumun), yönü seç ya da Her yön’ü bırak, uzunluğu cetvelden ayarla; km | sa anahtarı uzunluğu süre olarak seçtirir.</li>
+      <li>Rahat, Virajlı ya da Çok virajlı → seçtikten sonra Otoyol yok (Pro), Gişe yok ve Toprak yok ile istemediğin yolları dışarıda bırakırsın.</li>
+      <li>Tur üret düğmesi → başladığın yere dönen en iyi üç tur kart olarak gelir; kartta mesafe, süre, tırmanış ve akşamsa gün batımı yazar.</li>
+      <li>Başka bir tane → yeni turlar eskilerin yanına eklenir (en çok dokuz tura kadar); beğendiğin turda Bu turu kur (Pro) → Turlarım’a kaydedilir.</li>
+      <li>Geceleyeceğin durağın yanındaki yatak simgesi → tur günlere bölünür; ertesi sabah 2. günü başlat o günün rotasını açar.</li>
+      <li>Durağın yanındaki halka simgesi → orası ara nokta olur: rota oradan geçer ama anons yapılmaz ve varış sayılmaz.</li>
+    </ul>
+  </details>
+
+  <details class="yardim-kart">
+    <summary>Dağ geçitleri<span class="ok">▾</span></summary>
+    <ul>
+      <li>Turlarım → Efsane → Dağ geçitleri sayfasında bölgeni seç → geçitler haritada ve listede görünür.</li>
+      <li>Bir geçide dokun → Buraya git: rota bulunduğun yerden o geçide kurulur.</li>
+      <li>Geçidin sayfasında Tura ekle → geçit sona eklenmez, rotanı en az uzatan yere girer.</li>
+      <li>Fotoğraf ekle → kendi karen kullanıcı adınla geçidin sayfasında görünür.</li>
+      <li>Rotan ya da turun bu ay kapalı olabilecek bir geçitten geçiyorsa seni uyarırız; geçtiğin her geçit rozetlerine yazılır.</li>
+    </ul>
+  </details>
+
+  <details class="yardim-kart">
+    <summary>Sürüşü izle ve videoya çevir<span class="ok">▾</span></summary>
+    <ul>
+      <li>Kayıt sekmesi → Sürüşlerim → bir sürüş → 3B izle: oynatma başlar; kısa hazırlığı beklemek istemezsen Atla’ya dokun.</li>
+      <li>Hız çipi → 1×, 5×, 20× ve 60× arasında geçer; iki parmakla ya da + / − ile yakınlaş, tek parmakla yatay sürükleyerek kamerayı döndür.</li>
+      <li>Pusula düğmesi → Kuzey yukarı ile Otomatik yön arasında geçiş yapar; ilerleme çubuğunu sürükleyerek sürüşün istediğin anına atlarsın.</li>
+      <li>Sürüş detayında Fotoğraflar → Sürüşe fotoğraf ekle → kameradan ya da galeriden eklediğin fotoğraf, motor o noktaya gelince oynatmada ve videoda açılır.</li>
+      <li>3B izle’nin üstündeki kamera düğmesi → Video olarak paylaş: 15, 30 ya da 60 saniye seç, Kaydı başlat’a dokun; ilk kez iOS ekran kaydı izni ister, mikrofon kaydedilmez.</li>
+      <li>Videon hazır kartında Videoyu kaydet → dikey MP4 Fotoğraflar’a gider; Paylaş → Instagram’a, WhatsApp’a ya da istediğin yere gönderirsin; Yeniden kaydet → başka bir süre denersin.</li>
+    </ul>
+  </details>
+
+  <details class="yardim-kart">
+    <summary>Grupta roller ve buluşma<span class="ok">▾</span></summary>
+    <ul>
+      <li>Grup panelinde üyenin yanındaki Rol → süpürücüyü seç; Liderliği devret → liderliği başkasına verirsin (rolleri yalnız lider değiştirir).</li>
+      <li>Bulunduğum yeri işaretle ya da haritada uzun bas → Toplanma noktası yap: istersen saat de seç; nokta herkesin haritasında görünür, Git rotayı kurar (noktayı lider belirler).</li>
+      <li>Grupla navigasyondayken Geride kaldım, Mola, Tehlike ve Benzin düğmeleri → uyarı gruba gider ve 10 dakika görünür; sen dokunmadan hiçbir uyarı gönderilmez.</li>
+      <li>Biri durur ya da geride kalırsa → lider ve süpürücü bunu sürerken şeritte hemen görür.</li>
+      <li>Topluluk → Etkinlikler → Etkinlik oluştur: başlık, yer, saat ve istersen rota ekle; Katılıyorum diyenleri görürsün, katılanlar rotayı tek dokunuşla açar.</li>
+    </ul>
+  </details>
+
+  <details class="yardim-kart">
+    <summary>CarPlay<span class="ok">▾</span></summary>
+    <ul>
+      <li>Telefonu araca bağla ve araç ekranında Motoseyir’e dokun → harita ve rota araç ekranında açılır; CarPlay navigasyonu Pro’ya dahil.</li>
+      <li>Hedefler → Turlarım, Kayıtlı adresler ve Son hedefler listelenir; birini seçince telefon rotayı kurar, aradığın yer yoksa Ara’ya yaz.</li>
+      <li>Navigasyondayken Durak → kategori seç → listeden bir yere dokun, rotana durak olarak eklenir; son aradığın kategori ilk düğmede durur.</li>
+      <li>Kayıt düğmesi → sürüş kaydını başlatır, duraklatır ve sürdürür; Bitir ve kaydet ile bitirirsin.</li>
+      <li>CoRider ve interkom düğmeleri → AI CoRider’ı çağırırsın, grup sürüşünde interkomun mikrofonunu kapatıp açarsın; Durağı atla ara durağı geçer.</li>
+      <li>Rota düzenleme ve tur kurma telefonda yapılır; navigasyon yokken araç ekranında "Rotayı telefonda başlat" yazar.</li>
+    </ul>
+  </details>
+
+</div>
+<!-- İnterkom kartına ek satır -->
+<ul>
+  <li>Interkom çubuğunun yanındaki hoparlör düğmesi → gelen sesi susturur; arkadaşların konuşur ama sen duymazsın, sen konuşunca onlar seni duyar.</li>
+</ul>
+</section>
+
+<!-- ======== English → en/nasil-yapilir.html ======== (Check the older lines in the Route, Tours and Group cards against these.) -->
+<section lang="en">
+<div class="yardim-liste">
+  <details class="yardim-kart">
+    <summary>Navigation<span class="ok">▾</span></summary>
+    <ul>
+      <li>With the phone in landscape, tap the ‹ handle on the right edge of the left panel → the map goes full screen; time, distance and arrival stay in a small card at the bottom left, and tapping the card brings the panel back.</li>
+      <li>The ⋯ button in the right column → Battery saver, High tilt, 2D / 3D, Map layer, Record ride and Group ride are here; a small dot lights up above it when one of them is on.</li>
+      <li>The Search button (iPhone) → cards for Fuel, Coffee, Food, Groceries, Pharmacy, Rest area and Motorcycle repair open; tap one and the places ahead on the route appear, and one more tap adds a stop.</li>
+      <li>Press and hold the Search button → the panel opens and the category you searched last is searched right away.</li>
+      <li>Settings → Riding → When you leave the route → choose New route or Back to route; the second keeps the road you planned.</li>
+      <li>Settings → Riding → Short voice guidance → announcements get shorter.</li>
+    </ul>
+  </details>
+
+  <details class="yardim-kart">
+    <summary>Safety on the road<span class="ok">▾</span></summary>
+    <ul>
+      <li>Lock the phone while navigating → the next turn stays on the Lock Screen and in the Dynamic Island; turn it off in Settings → Riding → Next turn on the Lock Screen (iPhone).</li>
+      <li>If you might lose signal, open the tour once before you leave → its route, turns and stops are saved to the phone, and navigation keeps going without a connection.</li>
+      <li>Share my ride → tap the button during navigation or a recording and send the link; whoever opens it follows you live, and sharing ends when the ride ends.</li>
+      <li>While you’re moving, the link is prepared and the banner says "Tap when stopped to send the link" → tap it once you’ve stopped and send.</li>
+      <li>Settings → Riding → Tank range and Warning margin → enter how far you get on a full tank; navigation warns you when fuel stops get sparse, and the Add stop and Filled up buttons appear only when you’ve stopped.</li>
+      <li>The route card → shows where and when rain is expected on the route, plus sunset, ferries, dirt and toll roads.</li>
+    </ul>
+  </details>
+
+  <details class="yardim-kart">
+    <summary>Generate a tour and multi-day tours<span class="ok">▾</span></summary>
+    <ul>
+      <li>My Tours → Generate a tour → pick the start (your location by default), choose a direction or leave Any direction, and set the length on the ruler; the km | h switch lets you pick it as a time instead.</li>
+      <li>Relaxed, Twisty or Very twisty → then use No motorways (Pro), No tolls and No dirt to leave out the roads you don’t want.</li>
+      <li>The Generate a tour button → the three best tours that return to your start come as cards, with distance, time, climb and, in the evening, sunset.</li>
+      <li>Another one → new tours are added next to the old ones (up to nine in all); on the one you like, Use this tour (Pro) → saves it to My Tours.</li>
+      <li>The bed icon next to the stop where you’ll spend the night → the tour splits into days; the next morning, Start day 2 opens that day’s route.</li>
+      <li>The ring icon next to a stop → it becomes a waypoint: the route passes through, but it isn’t announced and doesn’t count as an arrival.</li>
+    </ul>
+  </details>
+
+  <details class="yardim-kart">
+    <summary>Mountain passes<span class="ok">▾</span></summary>
+    <ul>
+      <li>My Tours → Legendary → on the Mountain passes page, pick a region → the passes show on the map and in the list.</li>
+      <li>Tap a pass → Go here: the route is built from where you are to that pass.</li>
+      <li>Add to tour on the pass page → the pass doesn’t go on the end, it slots in where it lengthens your route the least.</li>
+      <li>Add photo → your own shot appears on the pass’s page under your username.</li>
+      <li>If your route or tour crosses a pass that may be closed this month, we warn you; every pass you ride goes into your badges.</li>
+    </ul>
+  </details>
+
+  <details class="yardim-kart">
+    <summary>Replay a ride and make a video<span class="ok">▾</span></summary>
+    <ul>
+      <li>Record tab → My Rides → a ride → Watch in 3D: playback starts; if you don’t want to wait for the short preparation, tap Skip.</li>
+      <li>The speed chip → cycles through 1×, 5×, 20× and 60×; zoom with two fingers or + / −, and drag sideways with one finger to turn the camera.</li>
+      <li>The compass button → switches between North up and Automatic heading; drag the progress bar to jump to any moment of the ride.</li>
+      <li>In the ride details, Photos → Add photos to the ride → a photo you add from the camera or library opens in playback and in the video when the bike reaches that spot.</li>
+      <li>The camera button at the top of Watch in 3D → Share as video: pick 15, 30 or 60 seconds and tap Start recording; the first time, iOS asks for screen recording permission, and the microphone is never recorded.</li>
+      <li>On the Your video is ready card, Save video → the vertical MP4 goes to Photos; Share → send it to Instagram, WhatsApp or anywhere you like; Record again → try another length.</li>
+    </ul>
+  </details>
+
+  <details class="yardim-kart">
+    <summary>Group roles and meet-ups<span class="ok">▾</span></summary>
+    <ul>
+      <li>In the group panel, Role next to a member → choose the sweep; Hand over leadership → give the lead to someone else (only the leader changes roles).</li>
+      <li>Mark where I am, or long-press the map → Make meeting point: add a time if you like; the point shows on everyone’s map and Go sets up the route (the leader sets the point).</li>
+      <li>While navigating with a group, the I’m behind, Break, Hazard and Fuel buttons → the alert goes to the group and stays visible for 10 minutes; nothing is sent unless you tap.</li>
+      <li>If someone stops or falls behind → the leader and the sweep see it right away in the banner while riding.</li>
+      <li>Community → Events → Create an event: add a title, place, time and, if you like, a route; you see who taps I’m going, and they open the route with one tap.</li>
+    </ul>
+  </details>
+
+  <details class="yardim-kart">
+    <summary>CarPlay<span class="ok">▾</span></summary>
+    <ul>
+      <li>Connect the phone to the vehicle and tap Motoseyir on its screen → the map and route open on the vehicle screen; CarPlay navigation is part of Pro.</li>
+      <li>Destinations → My Tours, Saved addresses and Recent destinations are listed; pick one and the phone builds the route, and if your place isn’t there, type it in Search.</li>
+      <li>While navigating, Stops → pick a category → tap a place in the list and it’s added to your route as a stop; the category you searched last is the first button.</li>
+      <li>The Record button → starts, pauses and resumes the ride recording; Finish and save ends it.</li>
+      <li>The CoRider and intercom buttons → call AI CoRider, or mute and unmute the intercom microphone in a group ride; Skip stop moves on past an intermediate stop.</li>
+      <li>Editing routes and building tours is done on the phone; with no navigation running, the vehicle screen says "Start your route on your phone".</li>
+    </ul>
+  </details>
+
+</div>
+<!-- İnterkom kartına ek satır -->
+<ul>
+  <li>The speaker button next to the intercom bar → silences incoming audio; your friends talk and you don’t hear them, but they still hear you when you speak.</li>
+</ul>
+</section>
+
+<!-- ======== Deutsch → de/nasil-yapilir.html ======== (Prüfe die älteren Zeilen in den Karten Route, Touren und Gruppe gegen diese.) -->
+<section lang="de">
+<div class="yardim-liste">
+  <details class="yardim-kart">
+    <summary>Navigation<span class="ok">▾</span></summary>
+    <ul>
+      <li>Bei quer gehaltenem Handy auf den ‹-Griff am rechten Rand des linken Panels tippen → die Karte geht in den Vollbildmodus; Zeit, Entfernung und Ankunft bleiben in einer kleinen Karte unten links, ein Tipp darauf holt das Panel zurück.</li>
+      <li>Die ⋯-Taste in der rechten Spalte → Energiesparen, Starke Neigung, 2D / 3D, Kartenebene, Fahrt aufzeichnen und Gruppenfahrt findest du hier; ein kleiner Punkt darüber zeigt, dass etwas davon an ist.</li>
+      <li>Die Taste „Suchen“ (iPhone) → Karten für Tankstelle, Kaffee, Essen, Supermarkt, Apotheke, Rastplatz und Motorradwerkstatt öffnen sich; ein Tipp zeigt die Orte vor dir auf der Route, ein weiterer fügt einen Stopp hinzu.</li>
+      <li>Die Taste „Suchen“ gedrückt halten → das Panel öffnet sich und die zuletzt gesuchte Kategorie wird sofort gesucht.</li>
+      <li>Einstellungen → Fahren → Wenn du die Route verlässt → Neue Route oder Zurück zur Route wählen; Letzteres behält deine geplante Strecke.</li>
+      <li>Einstellungen → Fahren → Kurze Sprachansagen → die Ansagen werden kürzer.</li>
+    </ul>
+  </details>
+
+  <details class="yardim-kart">
+    <summary>Sicherheit unterwegs<span class="ok">▾</span></summary>
+    <ul>
+      <li>Sperr das Handy während der Navigation → die nächste Abbiegung bleibt auf dem Sperrbildschirm und in der Dynamic Island; ausschalten unter Einstellungen → Fahren → Nächste Abbiegung auf dem Sperrbildschirm (iPhone).</li>
+      <li>Wenn das Netz wegbrechen könnte, öffne die Tour vor der Abfahrt einmal → Route, Abbiegungen und Stopps werden auf dem Handy gespeichert, die Navigation läuft auch ohne Verbindung weiter.</li>
+      <li>Meine Fahrt teilen → tippe in der Navigation oder bei der Aufzeichnung auf die Taste und schick den Link; wer ihn öffnet, sieht dich live, und das Teilen endet mit der Fahrt.</li>
+      <li>Während der Fahrt wird der Link vorbereitet und im Streifen steht „Tippe nach dem Anhalten, um den Link zu senden“ → nach dem Anhalten tippen und senden.</li>
+      <li>Einstellungen → Fahren → Tankreichweite und Warnreserve → trag ein, wie weit du mit vollem Tank kommst; die Navigation warnt dich, wenn die Tankstellen seltener werden, und die Tasten Stopp hinzufügen und Getankt erscheinen nur im Stand.</li>
+      <li>Die Routenkarte → zeigt, wo und wann auf der Route Regen erwartet wird, dazu Sonnenuntergang, Fähre, Schotter- und Mautstrecken.</li>
+    </ul>
+  </details>
+
+  <details class="yardim-kart">
+    <summary>Tour generieren und mehrtägige Touren<span class="ok">▾</span></summary>
+    <ul>
+      <li>Meine Touren → Tour generieren → Start wählen (standardmäßig dein Standort), Richtung wählen oder „Jede Richtung“ lassen und die Länge am Lineal einstellen; mit dem Schalter km | Std. wählst du die Länge als Zeit.</li>
+      <li>Entspannt, Kurvig oder Sehr kurvig → danach schließt du mit Keine Autobahn (Pro), Keine Maut und Kein Schotter Straßen aus, die du nicht willst.</li>
+      <li>Die Taste „Tour generieren“ → die drei besten Touren, die zum Start zurückführen, erscheinen als Karten mit Strecke, Dauer, Anstieg und abends dem Sonnenuntergang.</li>
+      <li>Noch eine → neue Touren kommen zu den alten dazu (bis zu neun insgesamt); bei der Tour, die dir gefällt, speichert Diese Tour übernehmen (Pro) sie in Meine Touren.</li>
+      <li>Das Bett-Symbol neben dem Stopp, an dem du übernachtest → die Tour teilt sich in Tage; am nächsten Morgen öffnet Tag 2 starten die Route des Tages.</li>
+      <li>Das Ring-Symbol neben einem Stopp → er wird zum Zwischenpunkt: Die Route führt hindurch, es gibt aber keine Ansage und keine Ankunft.</li>
+    </ul>
+  </details>
+
+  <details class="yardim-kart">
+    <summary>Bergpässe<span class="ok">▾</span></summary>
+    <ul>
+      <li>Meine Touren → Legendär → auf der Seite „Bergpässe“ eine Region wählen → die Pässe erscheinen auf der Karte und in der Liste.</li>
+      <li>Tippe einen Pass an → Hierhin fahren: Die Route wird von deinem Standort zu diesem Pass gebaut.</li>
+      <li>Auf der Seite des Passes Zur Tour hinzufügen → der Pass kommt nicht ans Ende, sondern dorthin, wo er deine Strecke am wenigsten verlängert.</li>
+      <li>Foto hinzufügen → dein Bild erscheint unter deinem Benutzernamen auf der Seite des Passes.</li>
+      <li>Führt deine Route oder Tour über einen Pass, der diesen Monat gesperrt sein könnte, warnen wir dich; jeder Pass, den du fährst, zählt für deine Abzeichen.</li>
+    </ul>
+  </details>
+
+  <details class="yardim-kart">
+    <summary>Fahrt ansehen und als Video teilen<span class="ok">▾</span></summary>
+    <ul>
+      <li>Tab Aufnahme → Meine Fahrten → eine Fahrt → In 3D ansehen: Die Wiedergabe startet; willst du die kurze Vorbereitung nicht abwarten, tippe auf Überspringen.</li>
+      <li>Der Tempo-Chip → wechselt zwischen 1×, 5×, 20× und 60×; mit zwei Fingern oder + / − zoomen, mit einem Finger seitlich ziehen, um die Kamera zu drehen.</li>
+      <li>Die Kompass-Taste → wechselt zwischen Norden oben und Automatische Ausrichtung; ziehe die Fortschrittsleiste, um zu einem beliebigen Moment der Fahrt zu springen.</li>
+      <li>In den Fahrtdetails Fotos → Fotos zur Fahrt hinzufügen → ein Foto aus Kamera oder Mediathek öffnet sich in der Wiedergabe und im Video, sobald das Motorrad die Stelle erreicht.</li>
+      <li>Die Kamera-Taste oben in „In 3D ansehen“ → Als Video teilen: 15, 30 oder 60 Sekunden wählen und auf Aufzeichnung starten tippen; beim ersten Mal fragt iOS nach der Berechtigung zur Bildschirmaufnahme, das Mikrofon wird nie aufgenommen.</li>
+      <li>Auf der Karte „Dein Video ist fertig“ legt Video sichern das Hochformat-MP4 in Fotos ab; Teilen → schick es an Instagram, WhatsApp oder wohin du magst; Neu aufnehmen → probiere eine andere Länge.</li>
+    </ul>
+  </details>
+
+  <details class="yardim-kart">
+    <summary>Rollen und Treffen in der Gruppe<span class="ok">▾</span></summary>
+    <ul>
+      <li>Im Gruppenpanel Rolle neben einem Mitglied → den Schlussfahrer wählen; Führung übergeben → die Führung an jemand anderen geben (Rollen ändert nur der Guide).</li>
+      <li>Meinen Standort markieren oder lang auf die Karte drücken → Als Treffpunkt festlegen: auf Wunsch mit Uhrzeit; der Punkt erscheint auf jeder Karte, Los baut die Route (den Punkt legt der Guide fest).</li>
+      <li>Bei der Navigation in der Gruppe senden die Tasten Hänge hinterher, Pause, Gefahr und Tanken → die Meldung geht an die Gruppe und bleibt 10 Minuten sichtbar; ohne deinen Tipp wird nichts gesendet.</li>
+      <li>Hält jemand an oder fällt zurück → Guide und Schlussfahrer sehen es während der Fahrt sofort im Streifen.</li>
+      <li>Community → Events → Event erstellen: Titel, Ort, Zeit und auf Wunsch eine Route hinzufügen; du siehst, wer „Ich bin dabei“ tippt, und wer zusagt, öffnet die Route mit einem Tipp.</li>
+    </ul>
+  </details>
+
+  <details class="yardim-kart">
+    <summary>CarPlay<span class="ok">▾</span></summary>
+    <ul>
+      <li>Verbinde das Handy mit dem Fahrzeug und tippe auf dem Fahrzeugdisplay auf Motoseyir → Karte und Route öffnen sich dort; die CarPlay-Navigation gehört zu Pro.</li>
+      <li>Ziele → Meine Touren, Gespeicherte Adressen und Letzte Ziele stehen in der Liste; wähle eines, und das Handy baut die Route; ist dein Ort nicht dabei, gib ihn bei Suchen ein.</li>
+      <li>Während der Navigation Stopps → Kategorie wählen → einen Ort in der Liste antippen, und er wird als Stopp zur Route hinzugefügt; die zuletzt gesuchte Kategorie ist der erste Button.</li>
+      <li>Die Taste „Aufnahme“ → startet, pausiert und setzt die Fahrtaufzeichnung fort; Beenden und speichern schließt sie ab.</li>
+      <li>Die Tasten CoRider und Intercom → rufen AI CoRider oder schalten in einer Gruppenfahrt das Intercom-Mikrofon aus und an; Stopp überspringen geht am Zwischenstopp vorbei.</li>
+      <li>Routen bearbeiten und Touren bauen geht am Handy; ohne laufende Navigation steht auf dem Fahrzeugdisplay „Starte die Route auf dem Handy“.</li>
+    </ul>
+  </details>
+
+</div>
+<!-- İnterkom kartına ek satır -->
+<ul>
+  <li>Die Lautsprecher-Taste neben der Intercom-Leiste → schaltet das eingehende Audio stumm; deine Freunde sprechen, du hörst sie nicht, aber sie hören dich, wenn du sprichst.</li>
+</ul>
+</section>
+
+<!-- ======== Français → fr/nasil-yapilir.html ======== (Vérifie les anciennes lignes des cartes Itinéraire, Tours et Groupe par rapport à celles-ci.) -->
+<section lang="fr">
+<div class="yardim-liste">
+  <details class="yardim-kart">
+    <summary>Navigation<span class="ok">▾</span></summary>
+    <ul>
+      <li>Téléphone en paysage, touche la poignée ‹ au bord droit du panneau de gauche → la carte passe en plein écran ; durée, distance et arrivée restent dans une petite carte en bas à gauche, et un toucher dessus ramène le panneau.</li>
+      <li>Le bouton ⋯ de la colonne de droite → Économie de batterie, Forte inclinaison, 2D / 3D, Couche de carte, Enregistrer la sortie et Sortie en groupe sont ici ; un petit point s’allume au-dessus quand l’un d’eux est actif.</li>
+      <li>Le bouton Chercher (iPhone) → des cartes Carburant, Café, Restaurants, Supermarché, Pharmacie, Aire de repos et Garage moto s’ouvrent ; un toucher affiche les lieux devant toi sur l’itinéraire, un autre ajoute une étape.</li>
+      <li>Maintiens le bouton Chercher → le panneau s’ouvre et la dernière catégorie cherchée est lancée aussitôt.</li>
+      <li>Réglages → Conduite → Quand tu quittes l’itinéraire → choisis Nouvel itinéraire ou Retour à l’itinéraire ; le second garde la route que tu avais prévue.</li>
+      <li>Réglages → Conduite → Guidage vocal court → les annonces raccourcissent.</li>
+    </ul>
+  </details>
+
+  <details class="yardim-kart">
+    <summary>Sécurité sur la route<span class="ok">▾</span></summary>
+    <ul>
+      <li>Verrouille le téléphone pendant la navigation → la prochaine manœuvre reste sur l’écran verrouillé et dans la Dynamic Island ; désactive-la dans Réglages → Conduite → Prochaine manœuvre sur l’écran verrouillé (iPhone).</li>
+      <li>Si le réseau risque de couper, ouvre le tour une fois avant de partir → l’itinéraire, les virages et les étapes sont enregistrés sur le téléphone, et la navigation continue sans connexion.</li>
+      <li>Partager mon trajet → touche le bouton pendant la navigation ou un enregistrement et envoie le lien ; la personne qui l’ouvre te suit en direct, et le partage s’arrête à la fin du trajet.</li>
+      <li>En roulant, le lien est préparé et le bandeau indique « Touche à l’arrêt pour envoyer le lien » → touche-le une fois arrêté et envoie.</li>
+      <li>Réglages → Conduite → Autonomie du réservoir et Marge d’alerte → indique la distance que tu parcours avec un plein ; la navigation te prévient quand les stations se raréfient, et les boutons Ajouter une étape et Plein fait n’apparaissent qu’à l’arrêt.</li>
+      <li>La fiche d’itinéraire → indique où et quand de la pluie est attendue sur l’itinéraire, ainsi que le coucher du soleil, les ferries, les pistes et les péages.</li>
+    </ul>
+  </details>
+
+  <details class="yardim-kart">
+    <summary>Générer un circuit et tours sur plusieurs jours<span class="ok">▾</span></summary>
+    <ul>
+      <li>Mes tours → Générer un circuit → choisis le départ (ta position par défaut), une direction ou Toutes directions, et règle la longueur sur la règle ; l’interrupteur km | h te laisse la choisir en durée.</li>
+      <li>Tranquille, Sinueux ou Très sinueux → ensuite, Sans autoroute (Pro), Sans péage et Sans piste écartent les routes dont tu ne veux pas.</li>
+      <li>Le bouton Générer un circuit → les trois meilleurs circuits qui reviennent au départ arrivent en cartes, avec distance, durée, dénivelé et, le soir, le coucher du soleil.</li>
+      <li>Une autre → les nouveaux circuits s’ajoutent aux anciens (jusqu’à neuf en tout) ; sur celui qui te plaît, Prendre ce circuit (Pro) → l’enregistre dans Mes tours.</li>
+      <li>L’icône de lit à côté de l’étape où tu passes la nuit → le tour se découpe en jours ; le lendemain matin, Démarrer le jour 2 ouvre l’itinéraire du jour.</li>
+      <li>L’icône de cercle à côté d’une étape → elle devient un point de passage : l’itinéraire y passe, mais sans annonce et sans compter comme une arrivée.</li>
+    </ul>
+  </details>
+
+  <details class="yardim-kart">
+    <summary>Cols de montagne<span class="ok">▾</span></summary>
+    <ul>
+      <li>Mes tours → Légendaires → sur la page Cols de montagne, choisis une région → les cols s’affichent sur la carte et dans la liste.</li>
+      <li>Touche un col → Y aller : l’itinéraire est calculé de ta position jusqu’à ce col.</li>
+      <li>Ajouter au tour sur la page du col → le col ne va pas à la fin, il se place là où il allonge le moins ton trajet.</li>
+      <li>Ajouter une photo → ton cliché apparaît sous ton nom d’utilisateur sur la page du col.</li>
+      <li>Si ton itinéraire ou ton tour franchit un col qui pourrait être fermé ce mois-ci, on te prévient ; chaque col franchi s’inscrit dans tes badges.</li>
+    </ul>
+  </details>
+
+  <details class="yardim-kart">
+    <summary>Revoir une sortie et en faire une vidéo<span class="ok">▾</span></summary>
+    <ul>
+      <li>Onglet Enregistrer → Mes sorties → une sortie → Voir en 3D : la lecture démarre ; si tu ne veux pas attendre la courte préparation, touche Passer.</li>
+      <li>La pastille de vitesse → passe de 1× à 5×, 20× et 60× ; zoome à deux doigts ou avec + / −, et fais glisser un doigt sur le côté pour tourner la caméra.</li>
+      <li>Le bouton boussole → alterne entre Nord en haut et Cap automatique ; fais glisser la barre de progression pour sauter à n’importe quel moment de la sortie.</li>
+      <li>Dans le détail d’une sortie, Photos → Ajouter des photos à la sortie → une photo ajoutée depuis l’appareil ou la photothèque s’ouvre dans la lecture et dans la vidéo quand la moto arrive à cet endroit.</li>
+      <li>Le bouton caméra en haut de Voir en 3D → Partager en vidéo : choisis 15, 30 ou 60 secondes et touche Démarrer l’enregistrement ; la première fois, iOS demande l’autorisation d’enregistrer l’écran, et le micro n’est jamais enregistré.</li>
+      <li>Sur la carte Ta vidéo est prête, Enregistrer la vidéo → le MP4 vertical va dans Photos ; Partager → envoie-le sur Instagram, WhatsApp ou ailleurs ; Réenregistrer → essaie une autre durée.</li>
+    </ul>
+  </details>
+
+  <details class="yardim-kart">
+    <summary>Rôles et rendez-vous en groupe<span class="ok">▾</span></summary>
+    <ul>
+      <li>Dans le panneau du groupe, Rôle à côté d’un membre → choisis le serre-file ; Céder l’ouverture → tu passes la tête à quelqu’un d’autre (seul l’ouvreur change les rôles).</li>
+      <li>Marquer ma position, ou appui long sur la carte → Définir comme rendez-vous : ajoute une heure si tu veux ; le point s’affiche sur la carte de tous et Aller prépare l’itinéraire (c’est l’ouvreur qui le définit).</li>
+      <li>En navigation avec un groupe, les boutons À la traîne, Pause, Danger et Carburant → l’alerte part vers le groupe et reste visible 10 minutes ; rien n’est envoyé sans ton toucher.</li>
+      <li>Si quelqu’un s’arrête ou décroche → l’ouvreur et le serre-file le voient aussitôt dans le bandeau en roulant.</li>
+      <li>Communauté → Événements → Créer un événement : ajoute un titre, un lieu, une heure et, si tu veux, un itinéraire ; tu vois qui touche Je participe, et ceux-ci ouvrent l’itinéraire d’un toucher.</li>
+    </ul>
+  </details>
+
+  <details class="yardim-kart">
+    <summary>CarPlay<span class="ok">▾</span></summary>
+    <ul>
+      <li>Branche le téléphone au véhicule et touche Motoseyir sur son écran → la carte et l’itinéraire s’ouvrent sur l’écran du véhicule ; la navigation CarPlay est incluse dans Pro.</li>
+      <li>Destinations → Mes tours, Adresses enregistrées et Destinations récentes sont listés ; choisis-en une et le téléphone prépare l’itinéraire, et si ton lieu n’y est pas, saisis-le dans Rechercher.</li>
+      <li>Pendant la navigation, Étapes → choisis une catégorie → touche un lieu dans la liste et il est ajouté à ton itinéraire comme étape ; la dernière catégorie cherchée est le premier bouton.</li>
+      <li>Le bouton Enregistrer → démarre, met en pause et reprend l’enregistrement de la sortie ; Terminer et enregistrer le conclut.</li>
+      <li>Les boutons CoRider et intercom → appellent AI CoRider ou coupent et rétablissent le micro de l’intercom en sortie en groupe ; Passer l’étape saute une étape intermédiaire.</li>
+      <li>La modification d’itinéraires et la création de tours se font sur le téléphone ; sans navigation en cours, l’écran du véhicule affiche « Lance l’itinéraire sur ton téléphone ».</li>
+    </ul>
+  </details>
+
+</div>
+<!-- İnterkom kartına ek satır -->
+<ul>
+  <li>Le bouton haut-parleur à côté de la barre d’intercom → coupe le son entrant ; tes amis parlent sans que tu les entendes, mais ils t’entendent quand tu parles.</li>
+</ul>
+</section>
+
+<!-- ======== Italiano → it/nasil-yapilir.html ======== (Controlla le righe vecchie delle schede Percorso, Tour e Gruppo rispetto a queste.) -->
+<section lang="it">
+<div class="yardim-liste">
+  <details class="yardim-kart">
+    <summary>Navigazione<span class="ok">▾</span></summary>
+    <ul>
+      <li>Con il telefono in orizzontale, tocca la maniglia ‹ sul bordo destro del pannello a sinistra → la mappa va a tutto schermo; durata, distanza e arrivo restano in una piccola scheda in basso a sinistra, e un tocco sulla scheda riporta il pannello.</li>
+      <li>Il pulsante ⋯ nella colonna di destra → Risparmio energetico, Forte inclinazione, 2D / 3D, Livello mappa, Registra il giro e Giro in gruppo sono qui; un puntino si accende sopra quando uno è attivo.</li>
+      <li>Il pulsante Cerca (iPhone) → si aprono le schede Carburante, Caffè, Ristoranti, Supermercato, Farmacia, Area di sosta e Officina moto; un tocco mostra i posti davanti a te sul percorso, un altro aggiunge una tappa.</li>
+      <li>Tieni premuto il pulsante Cerca → il pannello si apre e l’ultima categoria cercata parte subito.</li>
+      <li>Impostazioni → Guida → Quando esci dal percorso → scegli Nuovo percorso o Torna al percorso; il secondo mantiene la strada che avevi pianificato.</li>
+      <li>Impostazioni → Guida → Guida vocale breve → gli annunci si accorciano.</li>
+    </ul>
+  </details>
+
+  <details class="yardim-kart">
+    <summary>Sicurezza in strada<span class="ok">▾</span></summary>
+    <ul>
+      <li>Blocca il telefono durante la navigazione → la prossima svolta resta sulla schermata di blocco e nella Dynamic Island; la disattivi in Impostazioni → Guida → Prossima svolta sulla schermata di blocco (iPhone).</li>
+      <li>Se il segnale può mancare, apri il tour una volta prima di partire → percorso, svolte e tappe vengono salvati sul telefono e la navigazione prosegue anche senza connessione.</li>
+      <li>Condividi il mio giro → tocca il pulsante durante la navigazione o una registrazione e invia il link; chi lo apre ti segue dal vivo e la condivisione finisce con il giro.</li>
+      <li>Mentre ti muovi, il link viene preparato e la barra dice «Tocca da fermo per inviare il link» → tocca quando ti sei fermato e invia.</li>
+      <li>Impostazioni → Guida → Autonomia del serbatoio e Margine di avviso → scrivi quanta strada fai con il pieno; la navigazione ti avvisa quando i distributori si diradano, e i pulsanti Aggiungi tappa e Pieno fatto compaiono solo da fermo.</li>
+      <li>La scheda del percorso → mostra dove e quando è prevista pioggia sul percorso, oltre a tramonto, traghetti, sterrato e pedaggi.</li>
+    </ul>
+  </details>
+
+  <details class="yardim-kart">
+    <summary>Genera un giro e tour di più giorni<span class="ok">▾</span></summary>
+    <ul>
+      <li>I miei tour → Genera un giro → scegli la partenza (la tua posizione di default), una direzione o Ogni direzione, e regola la lunghezza sul righello; l’interruttore km | h te la fa scegliere in durata.</li>
+      <li>Tranquillo, Tortuoso o Molto tortuoso → poi con Senza autostrade (Pro), Senza pedaggi e Senza sterrato escludi le strade che non vuoi.</li>
+      <li>Il pulsante Genera un giro → i tre giri migliori che tornano al punto di partenza arrivano come schede, con distanza, durata, dislivello e, di sera, il tramonto.</li>
+      <li>Un altro → i nuovi giri si aggiungono ai vecchi (fino a nove in tutto); su quello che ti piace, Usa questo giro (Pro) → lo salva in I miei tour.</li>
+      <li>L’icona del letto accanto alla tappa dove dormi → il tour si divide in giorni; la mattina dopo, Avvia il giorno 2 apre il percorso della giornata.</li>
+      <li>L’icona dell’anello accanto a una tappa → diventa un punto di passaggio: il percorso ci passa, ma senza annuncio e senza contare come arrivo.</li>
+    </ul>
+  </details>
+
+  <details class="yardim-kart">
+    <summary>Passi di montagna<span class="ok">▾</span></summary>
+    <ul>
+      <li>I miei tour → Leggendarie → nella pagina Passi di montagna scegli una regione → i passi compaiono sulla mappa e nell’elenco.</li>
+      <li>Tocca un passo → Vai qui: il percorso viene costruito da dove sei fino a quel passo.</li>
+      <li>Aggiungi al tour nella pagina del passo → il passo non va in coda, ma dove allunga meno il percorso.</li>
+      <li>Aggiungi foto → il tuo scatto compare con il tuo nome utente nella pagina del passo.</li>
+      <li>Se il tuo percorso o tour attraversa un passo che questo mese potrebbe essere chiuso, ti avvisiamo; ogni passo che attraversi finisce nei tuoi badge.</li>
+    </ul>
+  </details>
+
+  <details class="yardim-kart">
+    <summary>Rivedi un giro e fanne un video<span class="ok">▾</span></summary>
+    <ul>
+      <li>Scheda Registra → I miei giri → un giro → Guarda in 3D: parte la riproduzione; se non vuoi aspettare la breve preparazione, tocca Salta.</li>
+      <li>Il chip della velocità → passa tra 1×, 5×, 20× e 60×; ingrandisci con due dita o con + / −, e trascina di lato con un dito per girare la telecamera.</li>
+      <li>Il pulsante bussola → passa tra Nord in alto e Direzione automatica; trascina la barra di avanzamento per saltare a un momento qualsiasi del giro.</li>
+      <li>Nei dettagli del giro, Foto → Aggiungi foto al giro → una foto aggiunta dalla fotocamera o dalla libreria si apre nella riproduzione e nel video quando la moto arriva in quel punto.</li>
+      <li>Il pulsante della fotocamera in alto in Guarda in 3D → Condividi come video: scegli 15, 30 o 60 secondi e tocca Avvia la registrazione; la prima volta iOS chiede il permesso di registrare lo schermo, e il microfono non viene mai registrato.</li>
+      <li>Nella scheda Il tuo video è pronto, Salva il video → l’MP4 verticale va in Foto; Condividi → mandalo a Instagram, WhatsApp o dove preferisci; Registra di nuovo → prova un’altra durata.</li>
+    </ul>
+  </details>
+
+  <details class="yardim-kart">
+    <summary>Ruoli e ritrovi nel gruppo<span class="ok">▾</span></summary>
+    <ul>
+      <li>Nel pannello del gruppo, Ruolo accanto a un membro → scegli la scopa; Cedi il ruolo di capofila → passi la guida a un altro (solo il capofila cambia i ruoli).</li>
+      <li>Segna dove sono, oppure tocco prolungato sulla mappa → Imposta come ritrovo: aggiungi un orario se vuoi; il punto compare sulla mappa di tutti e Vai prepara il percorso (il punto lo imposta il capofila).</li>
+      <li>In navigazione con un gruppo, i pulsanti Sono indietro, Sosta, Pericolo e Carburante → l’avviso va al gruppo e resta visibile 10 minuti; senza il tuo tocco non parte nulla.</li>
+      <li>Se qualcuno si ferma o resta indietro → capofila e scopa lo vedono subito nella barra mentre guidano.</li>
+      <li>Community → Eventi → Crea un evento: aggiungi titolo, luogo, orario e, se vuoi, un percorso; vedi chi tocca Partecipo, e chi partecipa apre il percorso con un tocco.</li>
+    </ul>
+  </details>
+
+  <details class="yardim-kart">
+    <summary>CarPlay<span class="ok">▾</span></summary>
+    <ul>
+      <li>Collega il telefono al veicolo e tocca Motoseyir sul suo schermo → mappa e percorso si aprono sullo schermo del veicolo; la navigazione CarPlay è inclusa in Pro.</li>
+      <li>Destinazioni → I miei tour, Indirizzi salvati e Destinazioni recenti sono nell’elenco; scegline uno e il telefono costruisce il percorso, e se il tuo posto non c’è, scrivilo in Cerca.</li>
+      <li>Durante la navigazione, Tappe → scegli una categoria → tocca un posto nell’elenco e viene aggiunto al percorso come tappa; l’ultima categoria cercata è il primo pulsante.</li>
+      <li>Il pulsante Registra → avvia, mette in pausa e riprende la registrazione del giro; Termina e salva la conclude.</li>
+      <li>I pulsanti CoRider e interfono → chiamano AI CoRider oppure spengono e riaccendono il microfono dell’interfono in un giro in gruppo; Salta tappa passa oltre una tappa intermedia.</li>
+      <li>Modificare i percorsi e creare i tour si fa sul telefono; senza navigazione in corso, lo schermo del veicolo dice «Avvia il percorso sul telefono».</li>
+    </ul>
+  </details>
+
+</div>
+<!-- İnterkom kartına ek satır -->
+<ul>
+  <li>Il pulsante dell’altoparlante accanto alla barra dell’interfono → silenzia l’audio in arrivo; i tuoi amici parlano e tu non li senti, ma loro ti sentono quando parli.</li>
+</ul>
+</section>
+</body>
+</html>
