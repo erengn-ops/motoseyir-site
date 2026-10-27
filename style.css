@@ -743,3 +743,29 @@ a:hover { text-decoration-thickness: 2px; }
 .rehber-kart h2 a:hover { color: var(--petrol); }
 .rehber-kart p { color: var(--text-2); font-size: .97rem; margin: 0 0 .7rem; }
 .rehber-kart-oku { font-weight: 700; margin: 0 !important; }
+
+/* Geçit sayfaları (27 Eki 2026, uret.py › GEÇİT SAYFALARI): fotoğraf + atıf, "kısaca" tanım listesi, yakındaki geçitler. */
+.gecit-foto { margin: 0 0 2.2rem; }
+.gecit-foto img { display: block; width: 100%; height: auto; border-radius: var(--radius); border: 1px solid var(--border); background: var(--surface); }
+.gecit-foto figcaption { font-size: .8rem; color: var(--text-muted); margin-top: .45rem; overflow-wrap: anywhere; }
+.gecit-foto figcaption a { color: inherit; }
+.gecit-bilgi { display: grid; grid-template-columns: minmax(7.5rem, max-content) 1fr; gap: .55rem 1.2rem; margin: 0 0 1rem;
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.1rem 1.2rem; }
+.gecit-bilgi dt { font-weight: 700; color: var(--text); }
+.gecit-bilgi dd { margin: 0; color: var(--text-2); overflow-wrap: anywhere; }
+@media (max-width: 520px) {
+  .gecit-bilgi { grid-template-columns: 1fr; gap: .15rem; }
+  .gecit-bilgi dd { margin-bottom: .6rem; }
+}
+.gecit-yakin { list-style: none; padding: 0 !important; display: grid; gap: .5rem; }
+.gecit-yakin li { margin: 0; }
+.gecit-yakin a { font-weight: 700; }
+.gecit-yakin-bilgi { color: var(--text-muted); font-size: .92rem; white-space: nowrap; }
+.gecit-tablo table { min-width: 0; }
+@media (max-width: 520px) {
+  .gecit-tablo table { font-size: .84rem; }
+  .gecit-tablo th, .gecit-tablo td { padding: .5rem .35rem; }
+  .gecit-tablo thead th { letter-spacing: .02em; font-size: .66rem; }
+  .gecit-tablo td { white-space: nowrap; }
+  .gecit-yakin-bilgi { white-space: normal; }
+}

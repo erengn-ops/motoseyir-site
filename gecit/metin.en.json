@@ -1,0 +1,151 @@
+{
+  "dizin": "passes",
+  "ad": "Mountain passes",
+  "sayi_bin": ",",
+  "ondalik": ".",
+  "index": {
+    "baslik": "Mountain Passes for Motorcyclists: USA and the Alps",
+    "aciklama": "Altitude, road surface and usual winter closure for {n_abd} US and {n_alp} Alpine mountain passes, sorted by state and country, each with a loop planner.",
+    "eyebrow": "Pass guide",
+    "h1": "Mountain passes for motorcyclists",
+    "lead": "Every pass on the Motoseyir map in the United States and the Alps: how high it is, whether the road is paved, the months it is usually closed and the passes around it. Pick a state or a country, open a pass, and plan a loop that rides over it.",
+    "abd_h2": "United States, by state",
+    "abd_p": "{n} passes in {s} states. The list follows the app: named passes on a road you can ride, from OpenStreetMap, most with a Wikipedia entry.",
+    "alp_h2": "The Alps, by country",
+    "alp_p": "{n} passes in the Alps and the Dolomites. A pass on a border is listed under both countries.",
+    "diger": "Other states",
+    "en_yuksek_h2": "The ten highest",
+    "hub_satir": "{n} passes · highest: {ad}, {rakim}"
+  },
+  "hub_abd": {
+    "baslik": "Mountain Passes in {bolge} for Motorcyclists",
+    "h1": "Mountain passes in {bolge}",
+    "eyebrow": "Motorcycle passes · USA",
+    "aciklama": [
+      "All {n} {bolge} mountain passes on the Motoseyir map, by elevation from {ilk} down, with road surface and the months each road is usually closed.",
+      "{n} mountain passes in {bolge} by elevation, from {ilk} down: road surface, usual winter closure and a motorcycle loop planner for each pass.",
+      "{n} {bolge} mountain passes for motorcyclists, sorted by elevation: road surface, usual winter closure and nearby passes, with a loop planner for each one."
+    ]
+  },
+  "hub_alp": {
+    "baslik": "Alpine Passes in {bolge} by Motorcycle",
+    "h1": "Alpine passes in {bolge}",
+    "eyebrow": "Motorcycle passes · Alps",
+    "aciklama": [
+      "All {n} Alpine passes in {bolge} on the Motoseyir map, by elevation from {ilk} down, with road surface and the months each road is usually closed.",
+      "{n} Alpine passes in {bolge} by elevation, from {ilk} down: road surface, usual winter closure and a motorcycle loop planner for each pass.",
+      "{n} mountain passes in the {bolge} Alps for motorcyclists, sorted by elevation: road surface, usual winter closure and a loop planner for each one."
+    ]
+  },
+  "hub_lead": "The Motoseyir pass map has {n} passes in {bolge}. {ilk} is the highest at {rakim}. {toprak_cumle}{kis_cumle}Open a pass for its location, the passes around it and a loop that rides over it.",
+  "toprak_cumle": "{t} of them are on unpaved roads. ",
+  "toprak_yok": "All of them are on paved roads. ",
+  "kis_cumle": "For {k} we know the months the road is usually closed to motor vehicles. ",
+  "tablo": {
+    "gecit": "Pass",
+    "rakim": "Elevation",
+    "yuzey": "Surface",
+    "kis": "Usually closed"
+  },
+  "asfalt": "Paved",
+  "toprak": "Unpaved (dirt or gravel)",
+  "toprak_kisa": "Unpaved",
+  "bilinmiyor": "—",
+  "gecit": {
+    "baslik": [
+      "{ad} ({rakim}) – Motorcycle Pass, {bolge}",
+      "{ad} ({rakim}) by Motorcycle",
+      "{ad} by Motorcycle"
+    ],
+    "eyebrow": "Mountain pass · {bolge}",
+    "h1": "{ad} by motorcycle",
+    "aciklama_bas": "{ad} in {bolge} tops out at {rakim_tam}{yuzey_kisa}{kis_kisa}.",
+    "aciklama_kuyruk": [
+      " See the passes nearby and plan a motorcycle loop over it in Motoseyir.",
+      " Nearby passes, exact location and a motorcycle loop that rides over it.",
+      " Here: the passes nearby, its exact location and a free motorcycle loop that rides over it, ready to send to your phone.",
+      " Location, nearby passes and a free loop planner.",
+      " Nearby passes and a loop over it.",
+      " Free route planner included.",
+      " Check before you go."
+    ],
+    "yuzey_kisa_toprak": " on an unpaved road",
+    "kis_kisa": ", usually closed {ay1}–{ay2}",
+    "lead": "{ad} tops out at {rakim_tam} in {bolge}. {siralama} Below: the road surface, when it is usually closed, the passes around it and a loop you can ride over it.",
+    "siralama": "It is the {sira} highest of the {n} passes in {bolge} on the Motoseyir map.",
+    "siralama_tek": "It is the only pass in {bolge} on the Motoseyir map.",
+    "bilgi_h2": "At a glance",
+    "b_rakim": "Elevation",
+    "b_yer": "Location",
+    "b_yuzey": "Road surface",
+    "b_kis": "Winter",
+    "b_konum": "Coordinates",
+    "b_kaynak": "Sources",
+    "kis_var": "Usually closed to motor vehicles from {ay1} to {ay2}, going by the seasonal closure recorded for the road. Dates move with the snow every year, so check the road authority’s current notice before you go.",
+    "kis_yok": "No seasonal closure is recorded for this road in our data. High roads can still close after snow, so check before you go.",
+    "konum_osm": "on OpenStreetMap",
+    "rakim_not": "Elevation is the figure on the pass’s OpenStreetMap entry or its source page; the point is the summit on the road itself.",
+    "tur_h2": "Ride a loop over {ad}",
+    "tur_p": "The web route planner opens with {ad} as the start point. Choose a direction, how long you want to ride and how twisty the roads should be, and it draws up to three round trips that come back to the pass. Send the one you like to your phone with a QR code and ride it in Motoseyir.",
+    "tur_dugme": "Plan a loop over {ad}",
+    "yakin_h2": "Passes near {ad}",
+    "yakin_satir": "{mesafe} {yon} · {rakim}",
+    "uyg_h2": "{ad} in the Motoseyir app",
+    "uyg_p1": "{ad} is on Motoseyir’s pass map with its altitude and exact location, along with 1,600+ passes in 36 countries. Add it to your tour and go.",
+    "uyg_p2": "If your route crosses a pass that may be closed this month, the app tells you before you set off, and Generate a tour skips closed passes. Passes you ride over are ticked off from your ride log automatically.",
+    "foto_alt": "{ad}",
+    "foto_atif": "Photo: {yazar}, {lisans}, via Wikimedia Commons",
+    "veri_not": "Pass data: Motoseyir’s pass list, compiled from OpenStreetMap (© OpenStreetMap contributors, ODbL) and the source page linked above.",
+    "hub_baglanti": "All passes in {bolge} →",
+    "index_baglanti": "All mountain passes →",
+    "siralama_ilk": "It is the highest of the {n} passes in {bolge} on the Motoseyir map.",
+    "foto_atif_genel": "Photo: Wikimedia Commons, {lisans}"
+  },
+  "yonler": [
+    "N",
+    "NE",
+    "E",
+    "SE",
+    "S",
+    "SW",
+    "W",
+    "NW"
+  ],
+  "ay_kisa": [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec"
+  ],
+  "ulkeler": {
+    "AT": "Austria",
+    "IT": "Italy",
+    "FR": "France",
+    "CH": "Switzerland",
+    "DE": "Germany",
+    "SI": "Slovenia",
+    "US": "United States"
+  },
+  "ulke_slug": {
+    "AT": "austria",
+    "IT": "italy",
+    "FR": "france",
+    "CH": "switzerland",
+    "DE": "germany",
+    "SI": "slovenia"
+  },
+  "eksonim": {
+    "stelvio": "Stelvio Pass",
+    "gavia": "Gavia Pass",
+    "buyuk-st-bernard": "Great St Bernard Pass",
+    "kucuk-st-bernard": "Little St Bernard Pass"
+  }
+}

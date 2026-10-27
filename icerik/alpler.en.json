@@ -98,7 +98,8 @@
           "Furka, Grimsel and Susten make a single 120 km loop from Andermatt; see the <a href=\"{@uc-gecit}\">loop guide</a>.",
           "Galibier and Iseran are both on the Route des Grandes Alpes; the Iseran is the higher one.",
           "Leave a day open for weather. A forecast that is clean in the valley can still mean snow on a pass at 2,500 m."
-        ]}
+        ]},
+        {"p": "Every Alpine pass on the Motoseyir map has its own page, with its height, road surface, usual winter closure and the passes around it: <a href=\"{@gecitler}\">Alpine passes by country</a>."}
       ]
     }
   ],

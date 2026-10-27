@@ -229,3 +229,27 @@ Bağlantılar: tüm TR/EN/DE sayfaların altbilgisi (rehber_footer), anasayfadak
 `seo-denetim.py` araç sayfalarını tanır (`ARAC_YOLLARI`); `icerik-denetim.py` `arac/*.json`'ı da tarar. App Store `ct`: `site-web-tur` (araçtaki bütün mağaza bağlantıları),
 altbilgi/üst düğme `site-<dil>-web-tur`. Play bağlantısı Android yayına girince `uret.py` `PLAY_BAGLANTISI`.
 Yapılacak: Search Console'da üç adres için indeks isteği; gizlilik sayfalarına (TR/EN/DE) web aracının veri akışı paragrafı (araç sayfasının "Hangi veri nereye gider" bölümü taslak).
+
+## 8. Geçit sayfaları (27 Eki 2026, `seo-gecit-sayfalari` dalı)
+
+Uygulamanın geçit listesinden programatik sayfalar (`uret.py` › GEÇİT SAYFALARI). Hedef: geçit adıyla yapılan aramalar ("Stilfser Joch
+Motorrad", "Independence Pass motorcycle", "Kop Geçidi") ve bölge listeleri ("mountain passes in Colorado", "Alpenpässe Schweiz").
+
+| Dil | Dizin | Liste | Geçit |
+|---|---|---|---|
+| EN | `/en/passes/` | eyalet (≥3 geçit) ve Alp ülkesi: `/en/passes/colorado/`, `/en/passes/switzerland/` | ABD + Alpler: `/en/passes/<ad>/` |
+| DE | `/de/paesse/` | Alp ülkesi: `/de/paesse/schweiz/` | Alpler: `/de/paesse/<ad>/` |
+| TR | — | `/gecitler/` | Türkiye: `/gecitler/<ad>/` |
+
+- **Veri:** `gecit/gecitler.json` (uygulamadan, `node gecit/veri.mjs`), ABD eyaleti `gecit/abd-eyalet.json` (`python3 gecit/eyalet.py`, ABD Nüfus
+  Bürosu ters kodlayıcısı), fotoğraf `m/gecit/<id>.webp` (`python3 gecit/foto.py`, Commons'tan bir kez indirilir; sayfa üçüncü tarafa istek atmaz,
+  atıf fotoğrafın altında). Metin `gecit/metin.<kod>.json`. Uygulamanın geçit listesi değişince üçü sırayla, sonra `uret.py`.
+- **Sayfada yalnız veri:** rakım, eyalet/ülke, yol yüzeyi, kapanış ayları (yumuşak dille + "yola çıkmadan bak"), konum, kaynak; bunlardan
+  hesaplanan sıra ("Colorado'daki 63 geçidin 2.'si") ve en yakın 6 geçit (≤120 km). Uydurma açılış tarihi / yol adı / puan yok.
+- **Tur bağlantısı:** "Plan a loop over …" web tur oluşturucuyu `?bas=<enlem>,<boylam>&ad=<ad>` ile açar (başlangıç geçit; `m/tur/tur.js`).
+- **App Store** `ct=seo-gecit`. **hreflang:** Alp geçidi ve Alp ülke listesi EN↔DE; ABD (EN) ve Türkiye (TR) tek dilli.
+- **JSON-LD:** WebPage + TouristAttraction (GeoCoordinates, elevation, sameAs Wikipedia/OSM) + BreadcrumbList; listelerde CollectionPage + ItemList.
+- Almanca/İngilizce yerleşik adı olan birkaç İtalyan/İsviçre geçidi o adla (`eksonim`: Stilfser Joch, Stelvio Pass, Großer Sankt Bernhard…).
+- Rehber yazılarından bağlantı: `{@gecitler}` yer tutucusu (alpler, uc-gecit, turkiye-gecitleri); altbilgide "Mountain passes / Alpenpässe / Dağ geçitleri".
+- Yayından sonra: Search Console'a sitemap'i yeniden gönder; birkaç liste sayfası için URL Denetimi → dizine eklenmesini iste. 4–6 hafta sonra
+  Performans'ta `/passes/` ve `/paesse/` sorgularına bak; gösterimi olmayan geçit sayfaları ince içerik sayılıyorsa listeyi daralt (ör. yalnız fotoğraflı).

@@ -57,7 +57,8 @@
       "id": "mehr",
       "h2": "Wo diese Runde hineinpasst",
       "icerik": [
-        {"p": "Die Furka gehört auch zu den zehn Straßen im Vergleich <a href=\"{@alpler}\">Alpenpässe mit dem Motorrad</a>, dort mit Höhe, Maut und üblichen Öffnungsmonaten der übrigen Pässe."}
+        {"p": "Die Furka gehört auch zu den zehn Straßen im Vergleich <a href=\"{@alpler}\">Alpenpässe mit dem Motorrad</a>, dort mit Höhe, Maut und üblichen Öffnungsmonaten der übrigen Pässe."},
+        {"p": "Furka, Grimsel und Susten haben jeweils eine eigene Seite mit den Pässen in der Nähe: <a href=\"{@gecitler}\">Alpenpässe nach Land</a>."}
       ]
     }
   ],

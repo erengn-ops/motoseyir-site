@@ -325,6 +325,7 @@ def sitemap() -> str:
     parca.extend(rehber_sitemap())
     parca.extend(arac_sitemap())
     parca.extend(tanitim_sitemap())
+    parca.extend(gecit_sitemap())
 
     # Elle tutulan sayfalar: gizlilik (TR tam metin + EN + DE) ve Impressum (DE + EN).
     GZ = [("tr", "/gizlilik/"), ("en", "/gizlilik/en/"), ("de", "/gizlilik/de/")]
@@ -561,7 +562,7 @@ def arac_footer(kod: str) -> str:
     if kod not in arac_veri():
         return ""
     return (f'<li><a href="{arac_yol(kod)}">{arac_veri()[kod]["ui"]["ekmek_son"]}</a></li>'
-            + f'<li><a href="{tanitim_yol(kod)}">{tanitim_veri()[kod]["ad"]}</a></li>')
+            + f'<li><a href="{tanitim_yol(kod)}">{tanitim_veri()[kod]["ad"]}</a></li>' + gecit_footer(kod))
 
 
 def arac_baglanti(kod: str) -> str:
@@ -629,6 +630,15 @@ def arac_magaza(kod: str) -> str:
     return magaza_baglantisi(kod, "").replace(f"ct=site-{kod}&amp;", f"ct=site-{ARAC_ETIKET}&amp;")
 
 
+def uygulama_dugumu(kod: str, magaza: str) -> dict:
+    """Araç ve tanıtım sayfalarındaki MobileApplication (27 Eki 2026, SEO): anasayfadakiyle aynı @id; indirme ücretsiz, Pro uygulama
+    içi abonelik. aggregateRating / review YOK (uydurma puan yazılmaz)."""
+    return {"@type": "MobileApplication", "@id": f"{ALAN}/#uygulama", "name": "Motoseyir", "operatingSystem": "iOS",
+            "applicationCategory": "NavigationApplication", "inLanguage": dil_bilgisi(kod)["lang"],
+            "url": f"{ALAN}{sayfa_yolu(kod, 'index.html')}", "image": SOSYAL_GORSEL, "downloadUrl": _html.unescape(magaza),
+            "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "publisher": {"@id": f"{ALAN}/#organization"}}
+
+
 def arac_json_ld(kod: str, v: dict, hub_ui: dict, metin: dict, baslik: str, aciklama: str, url: str) -> str:
     lang = dil_bilgisi(kod)["lang"]
     ana = f"{ALAN}/"
@@ -648,7 +658,8 @@ def arac_json_ld(kod: str, v: dict, hub_ui: dict, metin: dict, baslik: str, acik
                 "publisher": {"@id": f"{ALAN}/#organization"}, "datePublished": v["yayin"], "dateModified": v["guncelleme"]}
     sss = {"@type": "FAQPage", "@id": f"{url}#sss", "inLanguage": lang, "mainEntity": [
         {"@type": "Question", "name": duz(s["s"]), "acceptedAnswer": {"@type": "Answer", "text": duz(s["c"])}} for s in v["sss"]]}
-    govde = json.dumps({"@context": "https://schema.org", "@graph": [org, site, sayfa, ekmek, uygulama, sss]}, ensure_ascii=False, indent=2)
+    govde = json.dumps({"@context": "https://schema.org", "@graph": [org, site, sayfa, ekmek, uygulama, uygulama_dugumu(kod, arac_magaza(kod)), sss]},
+                       ensure_ascii=False, indent=2)
     return '<script type="application/ld+json">\n' + govde.replace("</", "<\\/") + "\n</script>"
 
 
@@ -779,7 +790,8 @@ def tanitim_json_ld(kod: str, v: dict, metin: dict, baslik: str, aciklama: str, 
         {"@type": "ListItem", "position": 2, "name": duz(v["ad"]), "item": url}]}
     sss = {"@type": "FAQPage", "@id": f"{url}#sss", "inLanguage": lang, "mainEntity": [
         {"@type": "Question", "name": duz(x["s"]), "acceptedAnswer": {"@type": "Answer", "text": duz(x["c"])}} for x in v["sss"]]}
-    govde = json.dumps({"@context": "https://schema.org", "@graph": [org, site, sayfa, ekmek, sss]}, ensure_ascii=False, indent=2)
+    govde = json.dumps({"@context": "https://schema.org", "@graph": [org, site, sayfa, ekmek, uygulama_dugumu(kod, magaza_baglantisi(kod, "tur-uret")), sss]},
+                       ensure_ascii=False, indent=2)
     return '<script type="application/ld+json">\n' + govde.replace("</", "<\\/") + "\n</script>"
 
 
@@ -1121,6 +1133,8 @@ def rehber_jetonlari_coz(deger, kod: str, nerede: str):
                  "corider": sayfa_yolu(kod, "corider.html"), "store": magaza_baglantisi(kod, REHBER_ETIKET)}
         if kod in arac_veri():
             sabit["arac"] = arac_yol(kod)
+        if kod in GECIT_KAPSAM:
+            sabit["gecitler"] = gecit_kok(kod)
         if a in sabit:
             return sabit[a]
         if a in makale and kod in makale[a]:
@@ -1344,6 +1358,578 @@ def rehber_yaz() -> int:
     return yazilan
 
 
+# ---------------------------------------------------------------------------------------------------------------------
+# GEÇİT SAYFALARI (27 Eki 2026, SEO; kullanıcı: "hepsini yapalım"). Uygulamanın geçit listesinden programatik sayfalar:
+#   EN /en/passes/ (dizin) · /en/passes/<eyalet|ülke>/ (liste) · /en/passes/<geçit>/   — ABD + Alpler
+#   DE /de/paesse/ · /de/paesse/<land>/ · /de/paesse/<pass>/                              — Alpler
+#   TR /gecitler/ (liste) · /gecitler/<geçit>/                                             — Türkiye
+# Veri: gecit/gecitler.json (uygulamadan, gecit/veri.mjs), gecit/abd-eyalet.json (gecit/eyalet.py), fotoğraf m/gecit/<id>.webp
+# (gecit/foto.py, Commons'tan; atıf sayfada). Metin gecit/metin.<kod>.json. Sayfada YALNIZ veride olan yazar: rakım, ülke/eyalet,
+# yol yüzeyi (`toprak`), kapanış ayları (`kapaliAylar`), konum, kaynak ve bunlardan hesaplanan sıra ve komşu geçitler. Uydurma
+# açılış tarihi, yol adı, puan YOK. Şablon rehberinki (sablon/rehber.html). App Store `ct=seo-gecit`. Alp geçidinin EN↔DE
+# sayfaları hreflang eşi; ABD (yalnız EN) ve Türkiye (yalnız TR) tek dilli.
+# ---------------------------------------------------------------------------------------------------------------------
+GECIT_DIZIN = KOK / "gecit"
+GECIT_KAPSAM = {"en": ("abd", "alp"), "de": ("alp",), "tr": ("tr",)}
+GECIT_ETIKET = "seo-gecit"
+GECIT_HUB_EN_AZ = 3  # bu sayıdan az geçidi olan eyaletin liste sayfası yok (dizinde "diğer eyaletler")
+GECIT_YAKIN = 6
+GECIT_YAKIN_KM = 120
+GECIT_GUNCELLEME = "2026-10-27"
+_gecit_onbellek: dict = {}
+
+
+def _ascii_slug(ad: str) -> str:
+    import unicodedata
+    s = ad.replace("ß", "ss").replace("ı", "i").replace("’", "").replace("'", "")
+    s = unicodedata.normalize("NFKD", s).encode("ascii", "ignore").decode().lower()
+    return re.sub(r"[^a-z0-9]+", "-", s).strip("-")
+
+
+def gecit_veri() -> dict:
+    """{kod: {"metin", "gecitler": [g...], "hub": {hub_id: {...}}}}; g'ye dile özgü ad/slug/hub eklenir."""
+    if _gecit_onbellek:
+        return _gecit_onbellek
+    hepsi = json.loads((GECIT_DIZIN / "gecitler.json").read_text(encoding="utf-8"))["gecitler"]
+    eyalet = json.loads((GECIT_DIZIN / "abd-eyalet.json").read_text(encoding="utf-8"))
+    for kod, bolgeler in GECIT_KAPSAM.items():
+        m = json.loads((GECIT_DIZIN / f"metin.{kod}.json").read_text(encoding="utf-8"))
+        liste = []
+        for g0 in hepsi:
+            if g0["bolge"] not in bolgeler:
+                continue
+            g = dict(g0)
+            g["gad"] = m["eksonim"].get(g["id"], g["ad"])
+            if g["gad"] != g["ad"]:
+                g["gad_tam"] = f'{g["gad"]} ({g["ad"]})'
+            else:
+                g["gad_tam"] = g["ad"]
+            if g["bolge"] == "abd":
+                e = eyalet[g["id"]]
+                g["hublar"] = [("abd-" + _ascii_slug(e["ad"]), e["ad"])]
+            elif g["bolge"] == "alp":
+                g["hublar"] = [("alp-" + u, m["ulkeler"][u]) for u in g["ulkeler"] if u in m["ulkeler"]]
+            else:
+                g["hublar"] = [("tr", m["ulkeler"]["TR"])]
+            liste.append(g)
+        liste.sort(key=lambda g: (-g["rakimM"], g["ad"]))
+        # slug: adın ASCII'si; aynı ad iki kez varsa eyalet/ülke eklenir, yine çakışırsa rakım
+        say: dict = {}
+        for g in liste:
+            say[_ascii_slug(g["gad"])] = say.get(_ascii_slug(g["gad"]), 0) + 1
+        alinan = set()
+        for g in liste:
+            s = _ascii_slug(g["gad"])
+            if say[s] > 1:
+                s = f'{s}-{_ascii_slug(g["hublar"][0][1])}'
+                if s in alinan:
+                    s = f'{s}-{g["rakimM"]}'
+            if s in alinan:
+                raise SystemExit(f"HATA: geçit slug'ı çakıştı: {s}")
+            alinan.add(s)
+            g["slug"] = s
+        hub: dict = {}
+        for g in liste:
+            for hid, had in g["hublar"]:
+                hub.setdefault(hid, {"id": hid, "ad": had, "gecitler": []})["gecitler"].append(g)
+        for hid, h in hub.items():
+            if hid.startswith("abd-"):
+                h["slug"] = hid[4:]
+                h["sayfa"] = len(h["gecitler"]) >= GECIT_HUB_EN_AZ
+            elif hid.startswith("alp-"):
+                h["slug"] = m["ulke_slug"][hid[4:]]
+                h["sayfa"] = True
+                h["ulke"] = hid[4:]
+            else:
+                h["slug"] = ""
+                h["sayfa"] = True
+            if h["slug"] in alinan:
+                raise SystemExit(f"HATA: liste sayfası adı bir geçitle çakıştı: {h['slug']}")
+        _gecit_onbellek[kod] = {"metin": m, "gecitler": liste, "hub": hub}
+    return _gecit_onbellek
+
+
+def gecit_kok(kod: str) -> str:
+    m = gecit_veri()[kod]["metin"]
+    return f'{"" if kod == VARSAYILAN else "/" + kod}/{m["dizin"]}/'
+
+
+def gecit_yol(kod: str, g: dict) -> str:
+    return f'{gecit_kok(kod)}{g["slug"]}/'
+
+
+def gecit_hub_yol(kod: str, h: dict) -> str:
+    if not h["slug"]:
+        return gecit_kok(kod)
+    return f'{gecit_kok(kod)}{h["slug"]}/' if h["sayfa"] else gecit_kok(kod)
+
+
+def gecit_esi(kod: str, g: dict):
+    """Alp geçidinin öbür dildeki sayfası (EN↔DE)."""
+    if g["bolge"] != "alp":
+        return None
+    diger = "de" if kod == "en" else "en"
+    for x in gecit_veri()[diger]["gecitler"]:
+        if x["id"] == g["id"]:
+            return diger, x
+    return None
+
+
+def _sayi(n, m: dict) -> str:
+    s = f"{int(round(n)):,}"
+    return s.replace(",", m["sayi_bin"])
+
+
+def gecit_rakim(g: dict, kod: str, m: dict, tam: bool = False) -> str:
+    metre = f'{_sayi(g["rakimM"], m)} m'
+    if g["bolge"] == "abd":
+        ft = f'{_sayi(g["rakimM"] * 3.28084, m)} ft'
+        return f"{ft} ({metre})" if tam else ft
+    if kod == "en" and tam:
+        return f'{metre} ({_sayi(g["rakimM"] * 3.28084, m)} ft)'
+    return metre
+
+
+def _mesafe(a: dict, b: dict) -> float:
+    import math
+    r = 6371.0
+    p1, p2 = math.radians(a["lat"]), math.radians(b["lat"])
+    dp, dl = p2 - p1, math.radians(b["lon"] - a["lon"])
+    h = math.sin(dp / 2) ** 2 + math.cos(p1) * math.cos(p2) * math.sin(dl / 2) ** 2
+    return 2 * r * math.asin(math.sqrt(h))
+
+
+def _yon(a: dict, b: dict, yonler: list) -> str:
+    import math
+    p1, p2 = math.radians(a["lat"]), math.radians(b["lat"])
+    dl = math.radians(b["lon"] - a["lon"])
+    x = math.sin(dl) * math.cos(p2)
+    y = math.cos(p1) * math.sin(p2) - math.sin(p1) * math.cos(p2) * math.cos(dl)
+    aci = (math.degrees(math.atan2(x, y)) + 360) % 360
+    return yonler[int((aci + 22.5) // 45) % 8]
+
+
+def _sira(n: int, kod: str) -> str:
+    if kod == "en":
+        son = "th" if 10 <= n % 100 <= 20 else {1: "st", 2: "nd", 3: "rd"}.get(n % 10, "th")
+        return f"{n}{son}"
+    return f"{n}."
+
+
+def _kaynak_ad(url: str) -> str:
+    if "wikipedia.org" in url:
+        return "Wikipedia"
+    if "wikidata.org" in url:
+        return "Wikidata"
+    if "openstreetmap.org" in url:
+        return "OpenStreetMap"
+    return re.sub(r"^https?://(www\.)?", "", url).split("/")[0]
+
+
+def _aciklama_sec(bas: str, kuyruklar: list) -> str:
+    """140–160 karakterlik açıklama: gövde + sığan ilk kuyruk (yoksa iki kuyruk); hiçbiri sığmazsa 160'ı aşmayan en uzunu."""
+    adaylar = [bas + k for k in kuyruklar] + [bas + k1 + k2 for i, k1 in enumerate(kuyruklar) for k2 in kuyruklar[i + 1:]]
+    for a in adaylar:
+        if 140 <= len(a) <= 160:
+            return a
+    sigan = [a for a in adaylar if len(a) <= 160]
+    return max(sigan, key=len) if sigan else adaylar[0]
+
+
+def _baslik_sec(adaylar: list) -> str:
+    for a in adaylar:
+        if len(a) <= 60:
+            return a
+    return adaylar[-1][:60]
+
+
+def gecit_bolge_adi(kod: str, h: dict, m: dict) -> tuple:
+    """(ad, 'in …' biçimi). DE'de ülke artikelli: in der Schweiz."""
+    if kod == "de" and h.get("ulke"):
+        return h["ad"], m["ulke_in"][h["ulke"]]
+    return h["ad"], h["ad"]
+
+
+def gecit_magaza(kod: str) -> str:
+    return magaza_baglantisi(kod, "").replace(f"ct=site-{kod}&amp;", f"ct={GECIT_ETIKET}&amp;")
+
+
+def gecit_arac_baglanti(kod: str, g: dict) -> str:
+    from urllib.parse import quote
+    return f'{arac_yol(kod)}?bas={g["lat"]:.5f},{g["lon"]:.5f}&amp;ad={quote(g["gad"])}'
+
+
+def gecit_footer(kod: str) -> str:
+    if kod not in GECIT_KAPSAM:
+        return ""
+    return f'<li><a href="{gecit_kok(kod)}">{gecit_veri()[kod]["metin"]["ad"]}</a></li>'
+
+
+def _gecit_yapi(kod: str, g: dict, m: dict, ui: dict) -> dict:
+    """Bir geçidin dile göre metin parçaları."""
+    v = gecit_veri()[kod]
+    h = v["hub"][g["hublar"][0][0]]
+    bolge, bolge_in = gecit_bolge_adi(kod, h, m)
+    sira_list = h["gecitler"]
+    n = len(sira_list)
+    sira = sira_list.index(g) + 1
+    gm = m["gecit"]
+    ad = g["gad"]
+    p = {"ad": ad, "bolge": bolge, "bolge_in": bolge_in, "rakim": gecit_rakim(g, kod, m), "rakim_tam": gecit_rakim(g, kod, m, True)}
+    if n > 1:
+        p["siralama"] = gm["siralama_ilk" if sira == 1 else "siralama"].format(
+            ad=ad, sira=sira if kod == "de" else _sira(sira, kod), n=n, bolge=bolge, bolge_in=bolge_in)
+    else:
+        p["siralama"] = gm["siralama_tek"].format(ad=ad, bolge=bolge, bolge_in=bolge_in)
+    kis = ""
+    if g.get("kapaliAylar"):
+        a1, a2 = g["kapaliAylar"]
+        p["kis_kisa"] = gm["kis_kisa"].format(ay1=m["ay_kisa"][a1 - 1], ay2=m["ay_kisa"][a2 - 1])
+        kis = gm["kis_var"].format(ay1=ui["aylar"][a1 - 1], ay2=ui["aylar"][a2 - 1])
+    else:
+        p["kis_kisa"] = ""
+        kis = gm["kis_yok"]
+    p["yuzey_kisa"] = gm["yuzey_kisa_toprak"] if g.get("toprak") else ""
+    p["kis"] = kis
+    return p
+
+
+def gecit_govde(kod: str, g: dict, m: dict, ui: dict, metin: dict) -> tuple:
+    """(gövde html, başlık, açıklama, h1)."""
+    v = gecit_veri()[kod]
+    gm = m["gecit"]
+    p = _gecit_yapi(kod, g, m, ui)
+    h0 = v["hub"][g["hublar"][0][0]]
+    ad = g["gad"]
+    baslik = _baslik_sec([b.format(**p) for b in gm["baslik"]])
+    aciklama = _aciklama_sec(gm["aciklama_bas"].format(**p), gm["aciklama_kuyruk"])
+    h1 = gm["h1"].format(**p)
+    e = _html.escape
+    # sayfa yolu
+    ek = [f'<a href="{sayfa_yolu(kod, "index.html")}">{metin["nav_anasayfa"]}</a>']
+    if kod != "tr":
+        ek.append(f'<a href="{gecit_kok(kod)}">{m["ad"]}</a>')
+    if h0["sayfa"] and h0["slug"]:
+        ek.append(f'<a href="{gecit_hub_yol(kod, h0)}">{e(p["bolge"])}</a>')
+    elif kod == "tr":
+        ek.append(f'<a href="{gecit_kok(kod)}">{m["ad"]}</a>')
+    ek.append(f'<span aria-current="page">{e(ad)}</span>')
+    ekmek = f'<nav class="rehber-ekmek" aria-label="{ui["ekmek"]}">' + ' <span aria-hidden="true">›</span> '.join(ek) + "</nav>"
+    parca = ['<section class="section rehber-ust"><div class="wrap">', ekmek,
+             f'<span class="eyebrow">{e(gm["eyebrow"].format(**p))}</span>', f"<h1>{e(h1)}</h1>",
+             f'<p class="section-lead">{e(gm["lead"].format(**p)).replace("  ", " ")}</p>', "</div></section>",
+             '<section class="section section-2 rehber-govde"><div class="wrap"><div class="rehber-kolon">']
+    # fotoğraf
+    foto = KOK / "m" / "gecit" / f'{g["id"]}.webp'
+    if g.get("foto") and foto.exists():
+        f0 = g["foto"][0]
+        w, hh = webp_boyut(foto)
+        commons = "https://commons.wikimedia.org/wiki/File:" + _html.escape(f0["ad"].replace(" ", "_"), quote=True)
+        yazar = re.sub(r"\s+", " ", f0["yazar"]).strip()
+        # uygulamanın listesinde yazar 60 harfte kesik ya da "No machine-readable author" olabilir: o zaman adı dosya sayfasında
+        if not yazar or len(yazar) >= 60 or yazar.lower().startswith("no machine-readable"):
+            atif = gm["foto_atif_genel"].format(lisans=e(f0["lisans"]))
+        else:
+            atif = gm["foto_atif"].format(yazar=e(yazar), lisans=e(f0["lisans"]))
+        parca.append(f'<figure class="gecit-foto"><img src="/m/gecit/{g["id"]}.webp" alt="{e(gm["foto_alt"].format(**p), quote=True)}" '
+                     f'width="{w}" height="{hh}" fetchpriority="high"><figcaption><a href="{commons}" rel="noopener">{atif}</a></figcaption></figure>')
+    # kısaca
+    yer = ", ".join(e(x[1]) for x in g["hublar"]) if g["bolge"] != "abd" else e(f'{p["bolge"]}, {m["ulkeler"]["US"]}')
+    yuzey = m["toprak"] if g.get("toprak") else m["asfalt"]
+    osm = f'https://www.openstreetmap.org/node/{g["osm"]}'
+    kaynaklar = [f'<a href="{e(g["kaynak"], quote=True)}" rel="noopener">{_kaynak_ad(g["kaynak"])}</a>']
+    if "openstreetmap.org" not in g["kaynak"]:
+        kaynaklar.append(f'<a href="{osm}" rel="noopener">OpenStreetMap</a>')
+    satirlar = [(gm["b_rakim"], e(p["rakim_tam"])), (gm["b_yer"], yer), (gm["b_yuzey"], yuzey), (gm["b_kis"], e(p["kis"])),
+                (gm["b_konum"], f'<a href="{osm}" rel="noopener">{g["lat"]:.4f}, {g["lon"]:.4f}</a>'),
+                (gm["b_kaynak"], " · ".join(kaynaklar))]
+    parca.append(f'<section id="kisaca" class="rehber-bolum"><h2>{gm["bilgi_h2"]}</h2><dl class="gecit-bilgi">'
+                 + "".join(f"<dt>{a}</dt><dd>{b}</dd>" for a, b in satirlar)
+                 + f'</dl><p class="kucuk">{gm["rakim_not"]}</p></section>')
+    # tur
+    parca.append(f'<section id="tur" class="rehber-bolum gecit-tur"><h2>{e(gm["tur_h2"].format(**p))}</h2><p>{e(gm["tur_p"].format(**p))}</p>'
+                 f'<p><a class="btn btn-primary" href="{gecit_arac_baglanti(kod, g)}">{e(gm["tur_dugme"].format(**p))}</a></p></section>')
+    # yakındaki geçitler
+    yakin = sorted(((_mesafe(g, x), x) for x in v["gecitler"] if x is not g), key=lambda t: t[0])
+    yakin = [(d, x) for d, x in yakin if d <= GECIT_YAKIN_KM][:GECIT_YAKIN]
+    if yakin:
+        mil = g["bolge"] == "abd"
+        ogeler = []
+        for d, x in yakin:
+            mesafe = f'{_sayi(d / 1.609344, m)} mi' if mil else f'{_sayi(d, m)} km'
+            if d < 1:
+                mesafe = "< 1 mi" if mil else "< 1 km"
+            satir = gm["yakin_satir"].format(mesafe=mesafe, yon=_yon(g, x, m["yonler"]), rakim=gecit_rakim(x, kod, m))
+            ogeler.append(f'<li><a href="{gecit_yol(kod, x)}">{e(x["gad"])}</a> <span class="gecit-yakin-bilgi">{e(satir)}</span></li>')
+        parca.append(f'<section id="yakin" class="rehber-bolum"><h2>{e(gm["yakin_h2"].format(**p))}</h2><ul class="gecit-yakin">'
+                     + "".join(ogeler) + "</ul></section>")
+    # uygulama
+    parca.append(f'<section class="rehber-urun" aria-labelledby="urun-h2"><div><h2 id="urun-h2">{e(gm["uyg_h2"].format(**p))}</h2>'
+                 f'<p>{e(gm["uyg_p1"].format(**p))}</p><p>{e(gm["uyg_p2"].format(**p))}</p>'
+                 f'<p><a class="btn btn-primary" href="{gecit_magaza(kod)}">{metin["btn_store"]}</a></p></div></section>')
+    # alt bağlantılar + veri notu
+    alt = []
+    if h0["sayfa"] and h0["slug"]:
+        alt.append(f'<a href="{gecit_hub_yol(kod, h0)}">{e(gm["hub_baglanti"].format(bolge=p["bolge"], bolge_in=p["bolge_in"]))}</a>')
+    alt.append(f'<a href="{gecit_kok(kod)}">{gm["index_baglanti"]}</a>')
+    parca.append(f'<section class="rehber-bolum"><p>{" · ".join(dict.fromkeys(alt))}</p><p class="kucuk">{gm["veri_not"]}</p></section>')
+    parca.append("</div></div></section>")
+    return "\n".join(parca), baslik, aciklama, h1, p
+
+
+def gecit_tablo(kod: str, gecitler: list, m: dict, ui: dict) -> str:
+    t = m["tablo"]
+    e = _html.escape
+    kis_var = any(g.get("kapaliAylar") for g in gecitler)
+    bas = f'<th scope="col">{t["gecit"]}</th><th scope="col">{t["rakim"]}</th><th scope="col">{t["yuzey"]}</th>'
+    if kis_var:
+        bas += f'<th scope="col">{t["kis"]}</th>'
+    satir = []
+    for g in gecitler:
+        s = (f'<tr><th scope="row"><a href="{gecit_yol(kod, g)}">{e(g["gad"])}</a></th><td>{e(gecit_rakim(g, kod, m))}</td>'
+             f'<td>{m["toprak_kisa"] if g.get("toprak") else m["asfalt"]}</td>')
+        if kis_var:
+            if g.get("kapaliAylar"):
+                a1, a2 = g["kapaliAylar"]
+                s += f'<td>{m["ay_kisa"][a1 - 1]}–{m["ay_kisa"][a2 - 1]}</td>'
+            else:
+                s += f'<td>{m["bilinmiyor"]}</td>'
+        satir.append(s + "</tr>")
+    return (f'<div class="rehber-tablo gecit-tablo" role="region" aria-label="{e(ui["tablo_etiket"], quote=True)}" tabindex="0"><table>'
+            f"<thead><tr>{bas}</tr></thead><tbody>{''.join(satir)}</tbody></table></div>")
+
+
+def gecit_hub_govde(kod: str, h: dict, m: dict, ui: dict, metin: dict) -> tuple:
+    e = _html.escape
+    gecitler = h["gecitler"]
+    bolge, bolge_in = gecit_bolge_adi(kod, h, m)
+    anahtar = "hub_abd" if h["id"].startswith("abd-") else ("hub_alp" if h["id"].startswith("alp-") else "hub_tr")
+    hm = m[anahtar]
+    ilk = gecitler[0]
+    p = {"n": len(gecitler), "bolge": bolge, "bolge_in": bolge_in, "ilk": ilk["gad"], "rakim": gecit_rakim(ilk, kod, m)}
+    t = sum(1 for g in gecitler if g.get("toprak"))
+    k = sum(1 for g in gecitler if g.get("kapaliAylar"))
+    toprak_cumle = m["toprak_cumle"].format(t=t) if t else m["toprak_yok"]
+    kis_cumle = m["kis_cumle"].format(k=k) if (k and m["kis_cumle"]) else ""
+    lead = m["hub_lead"].format(**p, toprak_cumle=toprak_cumle, kis_cumle=kis_cumle)
+    baslik = _baslik_sec([hm["baslik"].format(**p)])
+    adaylar = [a.format(**p) for a in hm["aciklama"]]
+    aciklama = next((a for a in adaylar if 140 <= len(a) <= 160), min(adaylar, key=lambda a: abs(len(a) - 150)))
+    h1 = hm["h1"].format(**p)
+    ek = [f'<a href="{sayfa_yolu(kod, "index.html")}">{metin["nav_anasayfa"]}</a>']
+    if h["slug"]:
+        ek.append(f'<a href="{gecit_kok(kod)}">{m["ad"]}</a>')
+    ek.append(f'<span aria-current="page">{e(bolge)}</span>' if h["slug"] else f'<span aria-current="page">{m["ad"]}</span>')
+    ekmek = f'<nav class="rehber-ekmek" aria-label="{ui["ekmek"]}">' + ' <span aria-hidden="true">›</span> '.join(ek) + "</nav>"
+    govde = "\n".join([
+        '<section class="section rehber-ust"><div class="wrap">', ekmek, f'<span class="eyebrow">{e(hm["eyebrow"])}</span>',
+        f"<h1>{e(h1)}</h1>", f'<p class="section-lead">{e(lead)}</p>', "</div></section>",
+        '<section class="section section-2 rehber-govde"><div class="wrap"><div class="rehber-kolon">',
+        gecit_tablo(kod, gecitler, m, ui),
+        f'<section class="rehber-urun" aria-labelledby="urun-h2"><div><h2 id="urun-h2">Motoseyir</h2>'
+        f'<p>{e(m["gecit"]["uyg_p2"])}</p><p><a class="btn btn-primary" href="{gecit_magaza(kod)}">{metin["btn_store"]}</a></p></div></section>',
+        (f'<p><a href="{gecit_kok(kod)}">{m["gecit"]["index_baglanti"]}</a></p>' if h["slug"] else ""),
+        f'<p class="kucuk">{m["gecit"]["veri_not"]}</p>',
+        "</div></div></section>"])
+    return govde, baslik, aciklama, h1
+
+
+def gecit_index_govde(kod: str, m: dict, ui: dict, metin: dict) -> tuple:
+    """EN/DE dizin sayfası: bölgelere göre liste sayfaları + en yüksek on geçit."""
+    e = _html.escape
+    v = gecit_veri()[kod]
+    im = m["index"]
+    n_abd = sum(1 for g in v["gecitler"] if g["bolge"] == "abd")
+    n_alp = sum(1 for g in v["gecitler"] if g["bolge"] == "alp")
+    p = {"n_abd": n_abd, "n_alp": n_alp}
+    parca = ['<section class="section rehber-ust"><div class="wrap">',
+             f'<nav class="rehber-ekmek" aria-label="{ui["ekmek"]}"><a href="{sayfa_yolu(kod, "index.html")}">{metin["nav_anasayfa"]}</a>'
+             f' <span aria-hidden="true">›</span> <span aria-current="page">{m["ad"]}</span></nav>',
+             f'<span class="eyebrow">{e(im["eyebrow"])}</span>', f'<h1>{e(im["h1"])}</h1>', f'<p class="section-lead">{e(im["lead"])}</p>',
+             "</div></section>", '<section class="section section-2 rehber-govde"><div class="wrap"><div class="rehber-kolon">']
+    for bolge, h2a, pa in (("abd", "abd_h2", "abd_p"), ("alp", "alp_h2", "alp_p")):
+        if bolge not in GECIT_KAPSAM[kod]:
+            continue
+        hublar = sorted((h for h in v["hub"].values() if h["id"].startswith(bolge + "-")), key=lambda h: (-len(h["gecitler"]), h["ad"]))
+        sayfali = [h for h in hublar if h["sayfa"]]
+        n = sum(1 for g in v["gecitler"] if g["bolge"] == bolge)
+        ogeler = "".join(
+            f'<li><a href="{gecit_hub_yol(kod, h)}">{e(h["ad"])}</a> <span class="gecit-yakin-bilgi">'
+            f'{e(im["hub_satir"].format(n=len(h["gecitler"]), ad=h["gecitler"][0]["gad"], rakim=gecit_rakim(h["gecitler"][0], kod, m)))}</span></li>'
+            for h in sayfali)
+        parca.append(f'<section class="rehber-bolum"><h2>{im[h2a]}</h2><p>{e(im[pa].format(n=n, s=len(hublar)))}</p><ul class="gecit-yakin">{ogeler}</ul>')
+        tek = [h for h in hublar if not h["sayfa"]]
+        if tek:
+            parca.append(f'<h3>{im["diger"]}</h3><ul class="gecit-yakin">' + "".join(
+                f'<li>{e(h["ad"])}: ' + ", ".join(f'<a href="{gecit_yol(kod, g)}">{e(g["gad"])}</a>' for g in h["gecitler"]) + "</li>" for h in tek) + "</ul>")
+        en_yuksek = [g for g in v["gecitler"] if g["bolge"] == bolge][:10]
+        parca.append(f'<h3>{im["en_yuksek_h2"]}</h3>' + gecit_tablo(kod, en_yuksek, m, ui) + "</section>")
+    parca.append(f'<section class="rehber-urun" aria-labelledby="urun-h2"><div><h2 id="urun-h2">Motoseyir</h2>'
+                 f'<p>{e(m["gecit"]["uyg_p2"])}</p><p><a class="btn btn-primary" href="{gecit_magaza(kod)}">{metin["btn_store"]}</a></p></div></section>')
+    parca.append(f'<p class="kucuk">{m["gecit"]["veri_not"]}</p>')
+    parca.append("</div></div></section>")
+    baslik = im["baslik"]
+    return "\n".join(parca), baslik, im["aciklama"].format(**p), im["h1"]
+
+
+def gecit_json_ld(kod: str, tur: str, url: str, baslik: str, aciklama: str, ekmek: list, g: dict = None, liste: list = None) -> str:
+    """Organization + WebSite + WebPage/CollectionPage + BreadcrumbList; geçitte TouristAttraction (GeoCoordinates), listede ItemList."""
+    lang = dil_bilgisi(kod)["lang"]
+    ana = f"{ALAN}/"
+    org = {"@type": "Organization", "@id": f"{ALAN}/#organization", "name": "Motoseyir", "url": ana,
+           "logo": {"@type": "ImageObject", "url": LOGO, "width": 512, "height": 512}, "sameAs": SAMEAS}
+    site = {"@type": "WebSite", "@id": f"{ALAN}/#website", "url": ana, "name": "Motoseyir", "inLanguage": lang,
+            "publisher": {"@id": f"{ALAN}/#organization"}}
+    sayfa = {"@type": "WebPage" if tur == "gecit" else "CollectionPage", "@id": f"{url}#sayfa", "url": url, "name": baslik,
+             "description": aciklama, "inLanguage": lang, "isPartOf": {"@id": f"{ALAN}/#website"},
+             "dateModified": GECIT_GUNCELLEME, "breadcrumb": {"@id": f"{url}#ekmek"}}
+    graf = [org, site, sayfa, {"@type": "BreadcrumbList", "@id": f"{url}#ekmek", "itemListElement": [
+        {"@type": "ListItem", "position": i + 1, "name": ad, "item": f"{ALAN}{yol}"} for i, (ad, yol) in enumerate(ekmek)]}]
+    if g:
+        yer = {"@type": "TouristAttraction", "@id": f"{url}#yer", "name": g["gad"], "url": url,
+               "geo": {"@type": "GeoCoordinates", "latitude": round(g["lat"], 6), "longitude": round(g["lon"], 6), "elevation": g["rakimM"]},
+               "sameAs": [g["kaynak"], f'https://www.openstreetmap.org/node/{g["osm"]}'] if "openstreetmap.org" not in g["kaynak"] else [g["kaynak"]],
+               "containedInPlace": {"@type": "Country", "name": g["ulkeler"][0]}}
+        if g["gad"] != g["ad"]:
+            yer["alternateName"] = g["ad"]
+        if (KOK / "m" / "gecit" / f'{g["id"]}.webp').exists():
+            yer["image"] = f'{ALAN}/m/gecit/{g["id"]}.webp'
+            sayfa["primaryImageOfPage"] = {"@type": "ImageObject", "url": yer["image"]}
+        sayfa["about"] = {"@id": f"{url}#yer"}
+        graf.append(yer)
+    if liste:
+        graf.append({"@type": "ItemList", "@id": f"{url}#liste", "numberOfItems": len(liste), "itemListElement": [
+            {"@type": "ListItem", "position": i + 1, "url": f"{ALAN}{gecit_yol(kod, x)}", "name": x["gad"]} for i, x in enumerate(liste)]})
+        sayfa["mainEntity"] = {"@id": f"{url}#liste"}
+    govde = json.dumps({"@context": "https://schema.org", "@graph": graf}, ensure_ascii=False, indent=1)
+    return '<script type="application/ld+json">\n' + govde.replace("</", "<\\/") + "\n</script>"
+
+
+def gecit_sayfalari() -> list:
+    """[(kod, yol, tur, nesne)] — üretim ve sitemap aynı listeden."""
+    cikti = []
+    for kod in GECIT_KAPSAM:
+        v = gecit_veri()[kod]
+        if kod != "tr":
+            cikti.append((kod, gecit_kok(kod), "index", None))
+        for h in v["hub"].values():
+            if h["sayfa"]:
+                cikti.append((kod, gecit_hub_yol(kod, h), "hub", h))
+        for g in v["gecitler"]:
+            cikti.append((kod, gecit_yol(kod, g), "gecit", g))
+    return cikti
+
+
+def gecit_alternatifler(kod: str, tur: str, nesne) -> list:
+    """[(hreflang, yol)] — alp geçidi ve alp ülke listesi EN↔DE; geri kalan tek dilli."""
+    if tur == "gecit" and nesne["bolge"] == "alp":
+        es = gecit_esi(kod, nesne)
+        if es:
+            yollar = {kod: gecit_yol(kod, nesne), es[0]: gecit_yol(es[0], es[1])}
+            return [(k, yollar[k]) for k in ("en", "de")]
+    if tur == "hub" and nesne["id"].startswith("alp-"):
+        yollar = {}
+        for k in ("en", "de"):
+            h = gecit_veri()[k]["hub"].get(nesne["id"])
+            if h:
+                yollar[k] = gecit_hub_yol(k, h)
+        if len(yollar) == 2:
+            return [(k, yollar[k]) for k in ("en", "de")]
+    return []
+
+
+def gecit_sitemap() -> list:
+    parca = []
+    for kod, yol, tur, nesne in gecit_sayfalari():
+        alt = gecit_alternatifler(kod, tur, nesne)
+        satir = ["  <url>", f"    <loc>{ALAN}{yol}</loc>", f"    <lastmod>{GECIT_GUNCELLEME}</lastmod>",
+                 "    <changefreq>monthly</changefreq>", f'    <priority>{"0.6" if tur != "gecit" else "0.5"}</priority>']
+        if alt:
+            satir += [f'    <xhtml:link rel="alternate" hreflang="{k}" href="{ALAN}{y}"/>' for k, y in alt]
+            satir.append(f'    <xhtml:link rel="alternate" hreflang="x-default" href="{ALAN}{dict(alt)["en"]}"/>')
+        parca += satir + ["  </url>"]
+    return parca
+
+
+def gecit_yaz() -> int:
+    hub_r, _ = rehber_veri()
+    sablon = (SABLON / "rehber.html").read_text(encoding="utf-8")
+    yazilan = 0
+    for kod, yol, tur, nesne in gecit_sayfalari():
+        v = gecit_veri()[kod]
+        m = v["metin"]
+        d = dil_bilgisi(kod)
+        metin = json.loads((DIL / f"{kod}.json").read_text(encoding="utf-8"))
+        ui = hub_r[kod]["ui"]
+        url = f"{ALAN}{yol}"
+        ekmek = [(duz(metin["nav_anasayfa"]), sayfa_yolu(kod, "index.html"))]
+        if tur == "gecit":
+            govde, baslik, aciklama, h1, p = gecit_govde(kod, nesne, m, ui, metin)
+            if kod != "tr":
+                ekmek.append((m["ad"], gecit_kok(kod)))
+            h0 = v["hub"][nesne["hublar"][0][0]]
+            if h0["sayfa"] and h0["slug"]:
+                ekmek.append((p["bolge"], gecit_hub_yol(kod, h0)))
+            elif kod == "tr":
+                ekmek.append((m["ad"], gecit_kok(kod)))
+            ekmek.append((nesne["gad"], yol))
+            ld = gecit_json_ld(kod, tur, url, baslik, aciklama, ekmek, g=nesne)
+        elif tur == "hub":
+            govde, baslik, aciklama, h1 = gecit_hub_govde(kod, nesne, m, ui, metin)
+            if nesne["slug"]:
+                ekmek.append((m["ad"], gecit_kok(kod)))
+                ekmek.append((gecit_bolge_adi(kod, nesne, m)[0], yol))
+            else:
+                ekmek.append((m["ad"], yol))
+            ld = gecit_json_ld(kod, tur, url, baslik, aciklama, ekmek, liste=nesne["gecitler"])
+        else:
+            govde, baslik, aciklama, h1 = gecit_index_govde(kod, m, ui, metin)
+            ekmek.append((m["ad"], yol))
+            ld = gecit_json_ld(kod, tur, url, baslik, aciklama, ekmek)
+        tam = f"{baslik} — Motoseyir"
+        baslik_tam = tam if len(tam) <= 60 else baslik
+        alt = gecit_alternatifler(kod, tur, nesne)
+        alternatif = ""
+        if alt:
+            alternatif = "\n".join([f'<link rel="alternate" hreflang="{k}" href="{ALAN}{y}">' for k, y in alt]
+                                   + [f'<link rel="alternate" hreflang="x-default" href="{ALAN}{dict(alt)["en"]}">'])
+        es = dict(alt)
+
+        def dil_yolu(k, es=es):
+            if k in es:
+                return es[k]
+            if k in GECIT_KAPSAM:
+                return gecit_kok(k)
+            return sayfa_yolu(k, "index.html")
+        seo = rehber_seo_head({}, baslik_tam, aciklama, url, d["og"], False)
+        foto = KOK / "m" / "gecit" / f'{nesne["id"]}.webp' if tur == "gecit" else None
+        if foto and foto.exists():  # paylaşım görseli geçidin fotoğrafı (boyutuyla)
+            w, h = webp_boyut(foto)
+            seo = (seo.replace(SOSYAL_GORSEL, f'{ALAN}/m/gecit/{nesne["id"]}.webp')
+                   .replace('content="image/jpeg"', 'content="image/webp"')
+                   .replace('og:image:width" content="1200"', f'og:image:width" content="{w}"')
+                   .replace('og:image:height" content="630"', f'og:image:height" content="{h}"'))
+        degerler = {
+            **metin,
+            "lang": d["lang"], "baslik_tam": _html.escape(baslik_tam, quote=False),
+            "aciklama_nitelik": _html.escape(aciklama, quote=True), "kanonik": url,
+            "alternatifler": alternatif, "seo_head": seo, "json_ld": ld,
+            "dil_secici": dil_secici(kod, "", metin, dil_yolu), "dil_altbilgi": dil_altbilgi(kod, "", dil_yolu),
+            "store": gecit_magaza(kod), "gizlilik_url": gizlilik_url(kod),
+            "impressum_url": impressum_url(kod), "anasayfa_url": sayfa_yolu(kod, "index.html"),
+            "corider_url": sayfa_yolu(kod, "corider.html"), "ozellikler_url": sayfa_yolu(kod, "ozellikler.html"),
+            "nasil_url": sayfa_yolu(kod, "nasil-yapilir.html"), "hub_url": rehber_hub_yolu(kod),
+            "ui_rehber": ui["rehber"], "uygulama_id": UYGULAMA_ID, "yil": YIL, "rehber_icerik": govde,
+            "arac_footer": arac_footer(kod),
+        }
+        html = varliklari_surumle(doldur(sablon, degerler, f"{kod}{yol}"))
+        hedef = KOK / yol.strip("/") / "index.html"
+        hedef.parent.mkdir(parents=True, exist_ok=True)
+        hedef.write_text(html, encoding="utf-8")
+        yazilan += 1
+    return yazilan
+
+
 def main() -> None:
     sablonlar = {}
     for ad in SAYFALAR:
@@ -1418,12 +2004,14 @@ def main() -> None:
     arac_yazilan = arac_yaz() + tanitim_yaz()
     yazilan += arac_yazilan
     yazilan += izle_yaz()
+    gecit_yazilan = gecit_yaz()
+    yazilan += gecit_yazilan
 
     (KOK / "sitemap.xml").write_text(sitemap(), encoding="utf-8")
     (KOK / "robots.txt").write_text(ROBOTS, encoding="utf-8")
 
     diller = ", ".join(d["kod"] for d in DILLER)
-    print(f"{yazilan} sayfa yazıldı — {len(DILLER)} dil ({diller}); bunların {rehber_yazilan}'i rehber, {arac_yazilan}'i araç sayfası")
+    print(f"{yazilan} sayfa yazıldı — {len(DILLER)} dil ({diller}); bunların {rehber_yazilan}'i rehber, {arac_yazilan}'i araç sayfası, {gecit_yazilan}'i geçit sayfası")
     print("sitemap.xml ve robots.txt yenilendi")
 
 

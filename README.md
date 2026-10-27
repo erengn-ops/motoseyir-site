@@ -152,3 +152,8 @@ altbilgideki gizlilik bağlantısı, App Store bağlantısında `pt=` ve `ct=`.
 
 `arac/tur-uretici.<kod>.json` + `sablon/arac.html` → TR/EN/DE üç sayfa (`uret.py` üretir). Araç motoru `m/tur/motor.js` moto-rota kaynağından
 `tur-araci/derle.mjs` ile derlenir (elle düzenlenmez); ayrıntı ve kurallar: `tur-araci/README.md`.
+
+## Geçit sayfaları
+
+`python3 uret.py` uygulamanın geçit listesinden EN (`/en/passes/`, ABD + Alpler), DE (`/de/paesse/`, Alpler) ve TR (`/gecitler/`) sayfalarını da
+yazar (27 Eki 2026'da 1.516 dosya). Veri ve fotoğraflar `gecit/` altındaki üç betikle yenilenir; ayrıntı ve kurallar: `SEO.md` Bölüm 8.

@@ -1,0 +1,1194 @@
+{
+"beartooth": {
+"kod": "WY",
+"ad": "Wyoming"
+},
+"dead-indian": {
+"kod": "WY",
+"ad": "Wyoming"
+},
+"deals-gap": {
+"kod": "TN",
+"ad": "Tennessee"
+},
+"independence": {
+"kod": "CO",
+"ad": "Colorado"
+},
+"logan": {
+"kod": "MT",
+"ad": "Montana"
+},
+"loveland": {
+"kod": "CO",
+"ad": "Colorado"
+},
+"milner": {
+"kod": "CO",
+"ad": "Colorado"
+},
+"monarch": {
+"kod": "CO",
+"ad": "Colorado"
+},
+"newfound-gap": {
+"kod": "TN",
+"ad": "Tennessee"
+},
+"osm-10012017511": {
+"kod": "AZ",
+"ad": "Arizona"
+},
+"osm-10049465632": {
+"kod": "CA",
+"ad": "California"
+},
+"osm-10127591373": {
+"kod": "AZ",
+"ad": "Arizona"
+},
+"osm-10127648990": {
+"kod": "AZ",
+"ad": "Arizona"
+},
+"osm-10127908975": {
+"kod": "AZ",
+"ad": "Arizona"
+},
+"osm-10127919922": {
+"kod": "AZ",
+"ad": "Arizona"
+},
+"osm-10127941079": {
+"kod": "AZ",
+"ad": "Arizona"
+},
+"osm-10127984234": {
+"kod": "CO",
+"ad": "Colorado"
+},
+"osm-10128034275": {
+"kod": "CO",
+"ad": "Colorado"
+},
+"osm-10128084743": {
+"kod": "CO",
+"ad": "Colorado"
+},
+"osm-10128117373": {
+"kod": "CO",
+"ad": "Colorado"
+},
+"osm-10128130659": {
+"kod": "CO",
+"ad": "Colorado"
+},
+"osm-10128131320": {
+"kod": "CO",
+"ad": "Colorado"
+},
+"osm-10147402846": {
+"kod": "CO",
+"ad": "Colorado"
+},
+"osm-10151331208": {
+"kod": "CO",
+"ad": "Colorado"
+},
+"osm-10151375335": {
+"kod": "CO",
+"ad": "Colorado"
+},
+"osm-10151377988": {
+"kod": "CO",
+"ad": "Colorado"
+},
+"osm-10151380014": {
+"kod": "CO",
+"ad": "Colorado"
+},
+"osm-10151502459": {
+"kod": "CO",
+"ad": "Colorado"
+},
+"osm-10151518729": {
+"kod": "CO",
+"ad": "Colorado"
+},
+"osm-10151564056": {
+"kod": "CO",
+"ad": "Colorado"
+},
+"osm-10154197254": {
+"kod": "CO",
+"ad": "Colorado"
+},
+"osm-10154261590": {
+"kod": "CO",
+"ad": "Colorado"
+},
+"osm-10154264141": {
+"kod": "GA",
+"ad": "Georgia"
+},
+"osm-10154339894": {
+"kod": "ID",
+"ad": "Idaho"
+},
+"osm-10154349842": {
+"kod": "ID",
+"ad": "Idaho"
+},
+"osm-10154368873": {
+"kod": "ID",
+"ad": "Idaho"
+},
+"osm-10156892938": {
+"kod": "CA",
+"ad": "California"
+},
+"osm-10156952015": {
+"kod": "CA",
+"ad": "California"
+},
+"osm-10156961598": {
+"kod": "CA",
+"ad": "California"
+},
+"osm-10157006491": {
+"kod": "CA",
+"ad": "California"
+},
+"osm-10157029202": {
+"kod": "CA",
+"ad": "California"
+},
+"osm-10157029671": {
+"kod": "CA",
+"ad": "California"
+},
+"osm-10157067314": {
+"kod": "CA",
+"ad": "California"
+},
+"osm-10157070974": {
+"kod": "CA",
+"ad": "California"
+},
+"osm-10157087697": {
+"kod": "CA",
+"ad": "California"
+},
+"osm-10157142907": {
+"kod": "CA",
+"ad": "California"
+},
+"osm-10157150713": {
+"kod": "CA",
+"ad": "California"
+},
+"osm-10157153506": {
+"kod": "CA",
+"ad": "California"
+},
+"osm-10157171548": {
+"kod": "CA",
+"ad": "California"
+},
+"osm-10157212938": {
+"kod": "CA",
+"ad": "California"
+},
+"osm-10157218787": {
+"kod": "ME",
+"ad": "Maine"
+},
+"osm-10157234309": {
+"kod": "NV",
+"ad": "Nevada"
+},
+"osm-10157235172": {
+"kod": "ME",
+"ad": "Maine"
+},
+"osm-10157272116": {
+"kod": "NV",
+"ad": "Nevada"
+},
+"osm-10157285670": {
+"kod": "NH",
+"ad": "New Hampshire"
+},
+"osm-10157331256": {
+"kod": "NH",
+"ad": "New Hampshire"
+},
+"osm-10157331983": {
+"kod": "NH",
+"ad": "New Hampshire"
+},
+"osm-10168423186": {
+"kod": "NH",
+"ad": "New Hampshire"
+},
+"osm-10168468874": {
+"kod": "NM",
+"ad": "New Mexico"
+},
+"osm-10168487659": {
+"kod": "NM",
+"ad": "New Mexico"
+},
+"osm-10168493437": {
+"kod": "NM",
+"ad": "New Mexico"
+},
+"osm-10168494990": {
+"kod": "NM",
+"ad": "New Mexico"
+},
+"osm-10168515437": {
+"kod": "NM",
+"ad": "New Mexico"
+},
+"osm-10168550477": {
+"kod": "NM",
+"ad": "New Mexico"
+},
+"osm-10168553724": {
+"kod": "NM",
+"ad": "New Mexico"
+},
+"osm-10168555541": {
+"kod": "NY",
+"ad": "New York"
+},
+"osm-10168614835": {
+"kod": "NY",
+"ad": "New York"
+},
+"osm-10168648213": {
+"kod": "NC",
+"ad": "North Carolina"
+},
+"osm-10168655073": {
+"kod": "NC",
+"ad": "North Carolina"
+},
+"osm-10168661516": {
+"kod": "NC",
+"ad": "North Carolina"
+},
+"osm-10168799959": {
+"kod": "NC",
+"ad": "North Carolina"
+},
+"osm-10168874125": {
+"kod": "NC",
+"ad": "North Carolina"
+},
+"osm-10169126768": {
+"kod": "OR",
+"ad": "Oregon"
+},
+"osm-10169152497": {
+"kod": "OR",
+"ad": "Oregon"
+},
+"osm-10169200987": {
+"kod": "OR",
+"ad": "Oregon"
+},
+"osm-10171412843": {
+"kod": "OR",
+"ad": "Oregon"
+},
+"osm-10171433368": {
+"kod": "OR",
+"ad": "Oregon"
+},
+"osm-10171490550": {
+"kod": "OR",
+"ad": "Oregon"
+},
+"osm-10171490983": {
+"kod": "OR",
+"ad": "Oregon"
+},
+"osm-10175680859": {
+"kod": "OR",
+"ad": "Oregon"
+},
+"osm-10175705648": {
+"kod": "OR",
+"ad": "Oregon"
+},
+"osm-10175893821": {
+"kod": "OR",
+"ad": "Oregon"
+},
+"osm-10185910647": {
+"kod": "SD",
+"ad": "South Dakota"
+},
+"osm-10185919832": {
+"kod": "TX",
+"ad": "Texas"
+},
+"osm-10185919833": {
+"kod": "TX",
+"ad": "Texas"
+},
+"osm-10185928070": {
+"kod": "TX",
+"ad": "Texas"
+},
+"osm-10188385134": {
+"kod": "TX",
+"ad": "Texas"
+},
+"osm-10188390574": {
+"kod": "UT",
+"ad": "Utah"
+},
+"osm-10188411259": {
+"kod": "UT",
+"ad": "Utah"
+},
+"osm-10188420110": {
+"kod": "VT",
+"ad": "Vermont"
+},
+"osm-10188462166": {
+"kod": "VA",
+"ad": "Virginia"
+},
+"osm-10188553479": {
+"kod": "VA",
+"ad": "Virginia"
+},
+"osm-10188559022": {
+"kod": "VA",
+"ad": "Virginia"
+},
+"osm-10188655481": {
+"kod": "VA",
+"ad": "Virginia"
+},
+"osm-10196810129": {
+"kod": "WA",
+"ad": "Washington"
+},
+"osm-10199777090": {
+"kod": "MT",
+"ad": "Montana"
+},
+"osm-10217262152": {
+"kod": "WY",
+"ad": "Wyoming"
+},
+"osm-10218018016": {
+"kod": "WY",
+"ad": "Wyoming"
+},
+"osm-1100436904": {
+"kod": "CA",
+"ad": "California"
+},
+"osm-110480963": {
+"kod": "WA",
+"ad": "Washington"
+},
+"osm-1108624652": {
+"kod": "CO",
+"ad": "Colorado"
+},
+"osm-1116386810": {
+"kod": "CO",
+"ad": "Colorado"
+},
+"osm-11286231687": {
+"kod": "CA",
+"ad": "California"
+},
+"osm-11358446096": {
+"kod": "ID",
+"ad": "Idaho"
+},
+"osm-11484332570": {
+"kod": "ID",
+"ad": "Idaho"
+},
+"osm-1151403471": {
+"kod": "CO",
+"ad": "Colorado"
+},
+"osm-1153557554": {
+"kod": "CO",
+"ad": "Colorado"
+},
+"osm-11838887785": {
+"kod": "MT",
+"ad": "Montana"
+},
+"osm-1209890492": {
+"kod": "WY",
+"ad": "Wyoming"
+},
+"osm-12121199948": {
+"kod": "CA",
+"ad": "California"
+},
+"osm-123064732": {
+"kod": "CA",
+"ad": "California"
+},
+"osm-12449827202": {
+"kod": "GA",
+"ad": "Georgia"
+},
+"osm-1248919282": {
+"kod": "WY",
+"ad": "Wyoming"
+},
+"osm-12618669871": {
+"kod": "NV",
+"ad": "Nevada"
+},
+"osm-127025215": {
+"kod": "ID",
+"ad": "Idaho"
+},
+"osm-127294714": {
+"kod": "ID",
+"ad": "Idaho"
+},
+"osm-128537081": {
+"kod": "MT",
+"ad": "Montana"
+},
+"osm-128638394": {
+"kod": "ID",
+"ad": "Idaho"
+},
+"osm-130324807": {
+"kod": "MT",
+"ad": "Montana"
+},
+"osm-1334790141": {
+"kod": "CO",
+"ad": "Colorado"
+},
+"osm-13455791093": {
+"kod": "CA",
+"ad": "California"
+},
+"osm-139349436": {
+"kod": "NV",
+"ad": "Nevada"
+},
+"osm-141031760": {
+"kod": "CA",
+"ad": "California"
+},
+"osm-142367453": {
+"kod": "NM",
+"ad": "New Mexico"
+},
+"osm-1448592327": {
+"kod": "CO",
+"ad": "Colorado"
+},
+"osm-150955112": {
+"kod": "ID",
+"ad": "Idaho"
+},
+"osm-154303511": {
+"kod": "VA",
+"ad": "Virginia"
+},
+"osm-156494494": {
+"kod": "WY",
+"ad": "Wyoming"
+},
+"osm-157611966": {
+"kod": "VA",
+"ad": "Virginia"
+},
+"osm-1636962720": {
+"kod": "ID",
+"ad": "Idaho"
+},
+"osm-1646631936": {
+"kod": "ID",
+"ad": "Idaho"
+},
+"osm-1647528956": {
+"kod": "MT",
+"ad": "Montana"
+},
+"osm-169336336": {
+"kod": "NC",
+"ad": "North Carolina"
+},
+"osm-175602687": {
+"kod": "AZ",
+"ad": "Arizona"
+},
+"osm-176412755": {
+"kod": "CO",
+"ad": "Colorado"
+},
+"osm-176584320": {
+"kod": "CO",
+"ad": "Colorado"
+},
+"osm-176641915": {
+"kod": "CO",
+"ad": "Colorado"
+},
+"osm-177131456": {
+"kod": "CO",
+"ad": "Colorado"
+},
+"osm-177153229": {
+"kod": "CO",
+"ad": "Colorado"
+},
+"osm-177158587": {
+"kod": "CO",
+"ad": "Colorado"
+},
+"osm-177174447": {
+"kod": "CO",
+"ad": "Colorado"
+},
+"osm-177185677": {
+"kod": "CO",
+"ad": "Colorado"
+},
+"osm-177192828": {
+"kod": "CO",
+"ad": "Colorado"
+},
+"osm-177240597": {
+"kod": "CO",
+"ad": "Colorado"
+},
+"osm-177259338": {
+"kod": "CO",
+"ad": "Colorado"
+},
+"osm-177267399": {
+"kod": "CO",
+"ad": "Colorado"
+},
+"osm-177267937": {
+"kod": "CO",
+"ad": "Colorado"
+},
+"osm-177342013": {
+"kod": "CO",
+"ad": "Colorado"
+},
+"osm-177472947": {
+"kod": "CO",
+"ad": "Colorado"
+},
+"osm-177483419": {
+"kod": "CO",
+"ad": "Colorado"
+},
+"osm-177588687": {
+"kod": "CO",
+"ad": "Colorado"
+},
+"osm-177772576": {
+"kod": "CO",
+"ad": "Colorado"
+},
+"osm-177785170": {
+"kod": "CO",
+"ad": "Colorado"
+},
+"osm-177802838": {
+"kod": "CO",
+"ad": "Colorado"
+},
+"osm-177962696": {
+"kod": "CO",
+"ad": "Colorado"
+},
+"osm-178055960": {
+"kod": "CO",
+"ad": "Colorado"
+},
+"osm-178056150": {
+"kod": "CO",
+"ad": "Colorado"
+},
+"osm-178060898": {
+"kod": "CO",
+"ad": "Colorado"
+},
+"osm-178066856": {
+"kod": "CO",
+"ad": "Colorado"
+},
+"osm-178112890": {
+"kod": "CO",
+"ad": "Colorado"
+},
+"osm-1833562514": {
+"kod": "CA",
+"ad": "California"
+},
+"osm-1843228624": {
+"kod": "MT",
+"ad": "Montana"
+},
+"osm-194841515": {
+"kod": "NH",
+"ad": "New Hampshire"
+},
+"osm-204187588": {
+"kod": "VT",
+"ad": "Vermont"
+},
+"osm-204253424": {
+"kod": "VT",
+"ad": "Vermont"
+},
+"osm-204284746": {
+"kod": "VT",
+"ad": "Vermont"
+},
+"osm-204597109": {
+"kod": "VT",
+"ad": "Vermont"
+},
+"osm-204656201": {
+"kod": "VT",
+"ad": "Vermont"
+},
+"osm-2146868986": {
+"kod": "OR",
+"ad": "Oregon"
+},
+"osm-2261554739": {
+"kod": "CO",
+"ad": "Colorado"
+},
+"osm-2338854015": {
+"kod": "CA",
+"ad": "California"
+},
+"osm-2454879734": {
+"kod": "TN",
+"ad": "Tennessee"
+},
+"osm-2454879832": {
+"kod": "NC",
+"ad": "North Carolina"
+},
+"osm-2454879849": {
+"kod": "NC",
+"ad": "North Carolina"
+},
+"osm-2522397112": {
+"kod": "CO",
+"ad": "Colorado"
+},
+"osm-260639506": {
+"kod": "WY",
+"ad": "Wyoming"
+},
+"osm-26497399": {
+"kod": "CA",
+"ad": "California"
+},
+"osm-2728938000": {
+"kod": "NV",
+"ad": "Nevada"
+},
+"osm-2828204542": {
+"kod": "WY",
+"ad": "Wyoming"
+},
+"osm-2893596753": {
+"kod": "NC",
+"ad": "North Carolina"
+},
+"osm-2954866478": {
+"kod": "KY",
+"ad": "Kentucky"
+},
+"osm-297629103": {
+"kod": "WA",
+"ad": "Washington"
+},
+"osm-3087386549": {
+"kod": "UT",
+"ad": "Utah"
+},
+"osm-3194476279": {
+"kod": "NV",
+"ad": "Nevada"
+},
+"osm-33442857": {
+"kod": "OR",
+"ad": "Oregon"
+},
+"osm-3357050534": {
+"kod": "CO",
+"ad": "Colorado"
+},
+"osm-35416289": {
+"kod": "OR",
+"ad": "Oregon"
+},
+"osm-35461713": {
+"kod": "OR",
+"ad": "Oregon"
+},
+"osm-357729626": {
+"kod": "NH",
+"ad": "New Hampshire"
+},
+"osm-35831495": {
+"kod": "WA",
+"ad": "Washington"
+},
+"osm-358652129": {
+"kod": "ID",
+"ad": "Idaho"
+},
+"osm-358653809": {
+"kod": "ID",
+"ad": "Idaho"
+},
+"osm-358657560": {
+"kod": "ID",
+"ad": "Idaho"
+},
+"osm-358658339": {
+"kod": "ID",
+"ad": "Idaho"
+},
+"osm-358659551": {
+"kod": "ID",
+"ad": "Idaho"
+},
+"osm-358661550": {
+"kod": "ID",
+"ad": "Idaho"
+},
+"osm-358661570": {
+"kod": "ID",
+"ad": "Idaho"
+},
+"osm-358663048": {
+"kod": "ID",
+"ad": "Idaho"
+},
+"osm-358663060": {
+"kod": "ID",
+"ad": "Idaho"
+},
+"osm-358663083": {
+"kod": "ID",
+"ad": "Idaho"
+},
+"osm-358663249": {
+"kod": "ID",
+"ad": "Idaho"
+},
+"osm-358663689": {
+"kod": "ID",
+"ad": "Idaho"
+},
+"osm-358795151": {
+"kod": "CA",
+"ad": "California"
+},
+"osm-358802553": {
+"kod": "CA",
+"ad": "California"
+},
+"osm-359214962": {
+"kod": "CA",
+"ad": "California"
+},
+"osm-36224443": {
+"kod": "OR",
+"ad": "Oregon"
+},
+"osm-3733811902": {
+"kod": "NV",
+"ad": "Nevada"
+},
+"osm-374831881": {
+"kod": "NC",
+"ad": "North Carolina"
+},
+"osm-3767982428": {
+"kod": "CA",
+"ad": "California"
+},
+"osm-3774025482": {
+"kod": "WA",
+"ad": "Washington"
+},
+"osm-3783910761": {
+"kod": "CO",
+"ad": "Colorado"
+},
+"osm-3842011748": {
+"kod": "CA",
+"ad": "California"
+},
+"osm-3846578163": {
+"kod": "CO",
+"ad": "Colorado"
+},
+"osm-38770755": {
+"kod": "OR",
+"ad": "Oregon"
+},
+"osm-3892471162": {
+"kod": "WY",
+"ad": "Wyoming"
+},
+"osm-39287729": {
+"kod": "OR",
+"ad": "Oregon"
+},
+"osm-3980483922": {
+"kod": "GA",
+"ad": "Georgia"
+},
+"osm-40448496": {
+"kod": "ID",
+"ad": "Idaho"
+},
+"osm-40778497": {
+"kod": "MT",
+"ad": "Montana"
+},
+"osm-4100669834": {
+"kod": "WA",
+"ad": "Washington"
+},
+"osm-4102373439": {
+"kod": "WA",
+"ad": "Washington"
+},
+"osm-4272733018": {
+"kod": "WA",
+"ad": "Washington"
+},
+"osm-4365607876": {
+"kod": "WA",
+"ad": "Washington"
+},
+"osm-440832732": {
+"kod": "OR",
+"ad": "Oregon"
+},
+"osm-4506950832": {
+"kod": "CO",
+"ad": "Colorado"
+},
+"osm-451145130": {
+"kod": "CA",
+"ad": "California"
+},
+"osm-4515968092": {
+"kod": "CA",
+"ad": "California"
+},
+"osm-4515968093": {
+"kod": "CA",
+"ad": "California"
+},
+"osm-45658997": {
+"kod": "MT",
+"ad": "Montana"
+},
+"osm-45797840": {
+"kod": "ID",
+"ad": "Idaho"
+},
+"osm-4677395837": {
+"kod": "TX",
+"ad": "Texas"
+},
+"osm-46992450": {
+"kod": "WA",
+"ad": "Washington"
+},
+"osm-47098274": {
+"kod": "WA",
+"ad": "Washington"
+},
+"osm-477453727": {
+"kod": "NC",
+"ad": "North Carolina"
+},
+"osm-47975368": {
+"kod": "WA",
+"ad": "Washington"
+},
+"osm-4915446022": {
+"kod": "VA",
+"ad": "Virginia"
+},
+"osm-4915446024": {
+"kod": "VA",
+"ad": "Virginia"
+},
+"osm-49560247": {
+"kod": "CA",
+"ad": "California"
+},
+"osm-50310230": {
+"kod": "WA",
+"ad": "Washington"
+},
+"osm-50698581": {
+"kod": "WA",
+"ad": "Washington"
+},
+"osm-5102486900": {
+"kod": "NE",
+"ad": "Nebraska"
+},
+"osm-5221748669": {
+"kod": "VT",
+"ad": "Vermont"
+},
+"osm-53058285": {
+"kod": "WA",
+"ad": "Washington"
+},
+"osm-5373275217": {
+"kod": "OR",
+"ad": "Oregon"
+},
+"osm-54863220": {
+"kod": "CA",
+"ad": "California"
+},
+"osm-5512589303": {
+"kod": "OR",
+"ad": "Oregon"
+},
+"osm-58737875": {
+"kod": "CA",
+"ad": "California"
+},
+"osm-599901578": {
+"kod": "NM",
+"ad": "New Mexico"
+},
+"osm-6211984975": {
+"kod": "CA",
+"ad": "California"
+},
+"osm-621683331": {
+"kod": "CO",
+"ad": "Colorado"
+},
+"osm-6218968307": {
+"kod": "CO",
+"ad": "Colorado"
+},
+"osm-6473803342": {
+"kod": "WA",
+"ad": "Washington"
+},
+"osm-6722119792": {
+"kod": "CO",
+"ad": "Colorado"
+},
+"osm-6751570469": {
+"kod": "NC",
+"ad": "North Carolina"
+},
+"osm-6760756804": {
+"kod": "ID",
+"ad": "Idaho"
+},
+"osm-679416952": {
+"kod": "MT",
+"ad": "Montana"
+},
+"osm-680042675": {
+"kod": "ID",
+"ad": "Idaho"
+},
+"osm-7057664029": {
+"kod": "CA",
+"ad": "California"
+},
+"osm-7450403972": {
+"kod": "CA",
+"ad": "California"
+},
+"osm-7732086805": {
+"kod": "OR",
+"ad": "Oregon"
+},
+"osm-7928541765": {
+"kod": "CA",
+"ad": "California"
+},
+"osm-7961498567": {
+"kod": "NC",
+"ad": "North Carolina"
+},
+"osm-8105381378": {
+"kod": "WY",
+"ad": "Wyoming"
+},
+"osm-8195551213": {
+"kod": "VA",
+"ad": "Virginia"
+},
+"osm-8235996107": {
+"kod": "ID",
+"ad": "Idaho"
+},
+"osm-8262059129": {
+"kod": "NC",
+"ad": "North Carolina"
+},
+"osm-83709600": {
+"kod": "UT",
+"ad": "Utah"
+},
+"osm-83738326": {
+"kod": "UT",
+"ad": "Utah"
+},
+"osm-84214299": {
+"kod": "UT",
+"ad": "Utah"
+},
+"osm-8558707149": {
+"kod": "CA",
+"ad": "California"
+},
+"osm-8558707164": {
+"kod": "CA",
+"ad": "California"
+},
+"osm-86296007": {
+"kod": "CA",
+"ad": "California"
+},
+"osm-8705571403": {
+"kod": "VA",
+"ad": "Virginia"
+},
+"osm-87372030": {
+"kod": "CA",
+"ad": "California"
+},
+"osm-87414473": {
+"kod": "CA",
+"ad": "California"
+},
+"osm-87746490": {
+"kod": "CA",
+"ad": "California"
+},
+"osm-88352322": {
+"kod": "CA",
+"ad": "California"
+},
+"osm-88376657": {
+"kod": "CA",
+"ad": "California"
+},
+"osm-89471958": {
+"kod": "CA",
+"ad": "California"
+},
+"osm-89737487": {
+"kod": "CA",
+"ad": "California"
+},
+"osm-8991630755": {
+"kod": "VA",
+"ad": "Virginia"
+},
+"osm-9068537353": {
+"kod": "NV",
+"ad": "Nevada"
+},
+"osm-9068537356": {
+"kod": "NV",
+"ad": "Nevada"
+},
+"osm-9191116511": {
+"kod": "NV",
+"ad": "Nevada"
+},
+"osm-94489273": {
+"kod": "CA",
+"ad": "California"
+},
+"osm-954847585": {
+"kod": "AZ",
+"ad": "Arizona"
+},
+"osm-9702040492": {
+"kod": "VA",
+"ad": "Virginia"
+},
+"osm-975668439": {
+"kod": "CA",
+"ad": "California"
+},
+"osm-976441273": {
+"kod": "CA",
+"ad": "California"
+},
+"osm-976442703": {
+"kod": "CA",
+"ad": "California"
+},
+"osm-9784539070": {
+"kod": "CA",
+"ad": "California"
+},
+"osm-985822238": {
+"kod": "OR",
+"ad": "Oregon"
+},
+"red-mountain": {
+"kod": "CO",
+"ad": "Colorado"
+},
+"sonora": {
+"kod": "CA",
+"ad": "California"
+},
+"teton": {
+"kod": "WY",
+"ad": "Wyoming"
+},
+"tioga": {
+"kod": "CA",
+"ad": "California"
+},
+"washington": {
+"kod": "WA",
+"ad": "Washington"
+},
+"wolf-creek": {
+"kod": "CO",
+"ad": "Colorado"
+}
+}

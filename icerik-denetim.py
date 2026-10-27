@@ -90,6 +90,8 @@ def main() -> int:
     basliklar, aciklamalar = defaultdict(list), defaultdict(list)
     ngram = defaultdict(set)
     for ad, v in sayfalar.items():
+        if ad.count(".") != 2:  # arac/canli-izle.json gibi: içerik sayfası değil (<grup>.<kod>.json değil)
+            continue
         grup, kod = ad[:-5].split(".")
         baslik = duz(v["baslik"])
         tam = f"{baslik} — Motoseyir"

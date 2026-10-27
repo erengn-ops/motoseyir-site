@@ -1,0 +1,151 @@
+{
+  "dizin": "paesse",
+  "ad": "Alpenpässe",
+  "sayi_bin": ".",
+  "ondalik": ",",
+  "index": {
+    "baslik": "Alpenpässe mit dem Motorrad: alle Pässe nach Land",
+    "aciklama": "Höhe, Fahrbahn und übliche Wintersperre von {n_alp} Alpenpässen in Österreich, Italien, Frankreich, der Schweiz, Deutschland und Slowenien, mit Tourenplaner.",
+    "eyebrow": "Pässe",
+    "h1": "Alpenpässe mit dem Motorrad",
+    "lead": "Jeder Alpenpass auf der Motoseyir-Karte: wie hoch er ist, ob die Straße asphaltiert ist, in welchen Monaten sie meist gesperrt ist und welche Pässe in der Nähe liegen. Wähle ein Land, öffne einen Pass und plane eine Runde, die über ihn führt.",
+    "alp_h2": "Nach Land",
+    "alp_p": "{n} Pässe in den Alpen und Dolomiten. Ein Pass auf einer Grenze steht bei beiden Ländern.",
+    "en_yuksek_h2": "Die zehn höchsten",
+    "hub_satir": "{n} Pässe · höchster: {ad}, {rakim}"
+  },
+  "hub_alp": {
+    "baslik": "Alpenpässe {bolge_in} mit dem Motorrad",
+    "h1": "Alpenpässe {bolge_in}",
+    "eyebrow": "Motorradpässe · Alpen",
+    "aciklama": [
+      "Alle {n} Alpenpässe {bolge_in} auf der Motoseyir-Karte, nach Höhe ab {ilk}, mit Fahrbahn und den Monaten, in denen die Straße meist gesperrt ist.",
+      "{n} Alpenpässe {bolge_in} nach Höhe, ab {ilk}: Fahrbahn, übliche Wintersperre und ein Motorrad-Rundtourenplaner für jeden Pass.",
+      "{n} Alpenpässe {bolge_in} für Motorradfahrer, nach Höhe sortiert: Fahrbahn, übliche Wintersperre und Pässe in der Nähe, mit Tourenplaner."
+    ]
+  },
+  "hub_lead": "Auf der Motoseyir-Karte liegen {n} Pässe {bolge_in}. Der höchste ist {ilk} mit {rakim}. {toprak_cumle}{kis_cumle}Öffne einen Pass für seine Lage, die Pässe in der Nähe und eine Runde, die über ihn führt.",
+  "toprak_cumle": "{t} davon liegen an unbefestigten Straßen. ",
+  "toprak_yok": "Alle liegen an asphaltierten Straßen. ",
+  "kis_cumle": "Bei {k} kennen wir die Monate, in denen die Straße für Kraftfahrzeuge meist gesperrt ist. ",
+  "tablo": {
+    "gecit": "Pass",
+    "rakim": "Höhe",
+    "yuzey": "Fahrbahn",
+    "kis": "Meist gesperrt"
+  },
+  "asfalt": "Asphalt",
+  "toprak": "Unbefestigt (Schotter oder Erde)",
+  "toprak_kisa": "Unbefestigt",
+  "bilinmiyor": "—",
+  "gecit": {
+    "baslik": [
+      "{ad} ({rakim}) mit dem Motorrad – {bolge}",
+      "{ad} ({rakim}) mit dem Motorrad",
+      "{ad} mit dem Motorrad"
+    ],
+    "eyebrow": "Pass · {bolge}",
+    "h1": "{ad} mit dem Motorrad",
+    "aciklama_bas": "{ad} {bolge_in} liegt auf {rakim_tam}{yuzey_kisa}{kis_kisa}.",
+    "aciklama_kuyruk": [
+      " Pässe in der Nähe, genaue Lage und eine Motorradrunde über den Pass in Motoseyir.",
+      " Pässe in der Nähe und eine Runde über den Pass.",
+      " Hier: Pässe in der Nähe, die genaue Lage und eine kostenlose Motorradrunde über den Pass, bereit fürs Handy.",
+      " Lage, Pässe in der Nähe und ein kostenloser Tourenplaner.",
+      " Pässe in der Nähe, Lage und Rundtour.",
+      " Mit kostenlosem Routenplaner.",
+      " Vor der Fahrt prüfen."
+    ],
+    "yuzey_kisa_toprak": ", unbefestigt",
+    "kis_kisa": ", meist {ay1}–{ay2} gesperrt",
+    "lead": "{ad} liegt auf {rakim_tam} {bolge_in}. {siralama} Unten: Fahrbahn, übliche Wintersperre, die Pässe in der Nähe und eine Runde, die über den Pass führt.",
+    "siralama": "Nach Höhe liegt {ad} auf Platz {sira} der {n} Pässe {bolge_in} auf der Motoseyir-Karte.",
+    "siralama_tek": "{ad} ist auf der Motoseyir-Karte der einzige Pass {bolge_in}.",
+    "bilgi_h2": "Auf einen Blick",
+    "b_rakim": "Höhe",
+    "b_yer": "Land",
+    "b_yuzey": "Fahrbahn",
+    "b_kis": "Winter",
+    "b_konum": "Koordinaten",
+    "b_kaynak": "Quellen",
+    "kis_var": "Laut der Wintersperre, die für die Straße eingetragen ist, meist von {ay1} bis {ay2} für Kraftfahrzeuge gesperrt. Die Termine ändern sich jedes Jahr mit dem Schnee; prüfe vor der Abfahrt die aktuelle Meldung der Straßenverwaltung.",
+    "kis_yok": "In unseren Daten ist für diese Straße keine Wintersperre eingetragen. Hohe Straßen können nach Schneefall trotzdem gesperrt sein; prüfe das vor der Abfahrt.",
+    "konum_osm": "auf OpenStreetMap",
+    "rakim_not": "Die Höhe stammt aus dem OpenStreetMap-Eintrag des Passes oder seiner Quellseite; der Punkt ist die Passhöhe auf der Straße selbst.",
+    "tur_h2": "Eine Runde über {ad}",
+    "tur_p": "Der Routenplaner im Browser startet mit {ad} als Startpunkt. Wähle Richtung, Fahrzeit und Kurvigkeit, und er zeichnet bis zu drei Rundtouren, die zum Pass zurückführen. Die Tour, die dir gefällt, schickst du per QR-Code aufs Handy und fährst sie in Motoseyir.",
+    "tur_dugme": "Runde über {ad} planen",
+    "yakin_h2": "Pässe in der Nähe",
+    "yakin_satir": "{mesafe} {yon} · {rakim}",
+    "uyg_h2": "{ad} in der Motoseyir-App",
+    "uyg_p1": "{ad} steht mit Höhe und genauer Lage auf der Passkarte von Motoseyir, zusammen mit über 1.600 Pässen in 36 Ländern. Füge den Pass deiner Tour hinzu und fahr los.",
+    "uyg_p2": "Führt deine Route über einen Pass, der in diesem Monat gesperrt sein kann, sagt dir die App das vor der Abfahrt, und „Tour erstellen“ lässt gesperrte Pässe aus. Pässe, die du fährst, werden aus deinem Fahrtenbuch automatisch abgehakt.",
+    "foto_alt": "{ad}",
+    "foto_atif": "Foto: {yazar}, {lisans}, über Wikimedia Commons",
+    "veri_not": "Passdaten: Passliste von Motoseyir, zusammengestellt aus OpenStreetMap (© OpenStreetMap-Mitwirkende, ODbL) und der oben verlinkten Quellseite.",
+    "hub_baglanti": "Alle Alpenpässe {bolge_in} →",
+    "index_baglanti": "Alle Alpenpässe →",
+    "siralama_ilk": "Nach Höhe liegt {ad} auf Platz 1 der {n} Pässe {bolge_in} auf der Motoseyir-Karte.",
+    "foto_atif_genel": "Foto: Wikimedia Commons, {lisans}"
+  },
+  "yonler": [
+    "N",
+    "NO",
+    "O",
+    "SO",
+    "S",
+    "SW",
+    "W",
+    "NW"
+  ],
+  "ay_kisa": [
+    "Jan.",
+    "Feb.",
+    "März",
+    "Apr.",
+    "Mai",
+    "Juni",
+    "Juli",
+    "Aug.",
+    "Sep.",
+    "Okt.",
+    "Nov.",
+    "Dez."
+  ],
+  "ulkeler": {
+    "AT": "Österreich",
+    "IT": "Italien",
+    "FR": "Frankreich",
+    "CH": "Schweiz",
+    "DE": "Deutschland",
+    "SI": "Slowenien"
+  },
+  "ulke_in": {
+    "AT": "in Österreich",
+    "IT": "in Italien",
+    "FR": "in Frankreich",
+    "CH": "in der Schweiz",
+    "DE": "in Deutschland",
+    "SI": "in Slowenien"
+  },
+  "ulke_slug": {
+    "AT": "oesterreich",
+    "IT": "italien",
+    "FR": "frankreich",
+    "CH": "schweiz",
+    "DE": "deutschland",
+    "SI": "slowenien"
+  },
+  "eksonim": {
+    "stelvio": "Stilfser Joch",
+    "gavia": "Gaviapass",
+    "pordoi": "Pordoijoch",
+    "sella": "Sellajoch",
+    "gardena": "Grödner Joch",
+    "giau": "Giaupass",
+    "falzarego": "Falzaregopass",
+    "tonale": "Tonalepass",
+    "buyuk-st-bernard": "Großer Sankt Bernhard",
+    "kucuk-st-bernard": "Kleiner Sankt Bernhard"
+  }
+}

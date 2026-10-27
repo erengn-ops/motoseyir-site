@@ -98,7 +98,8 @@
           "Furka, Grimsel und Susten ergeben ab Andermatt eine Runde von 120 km; siehe den <a href=\"{@uc-gecit}\">Beitrag zur Runde</a>.",
           "Galibier und Iseran liegen beide an der Route des Grandes Alpes; der Iseran ist der höhere.",
           "Plane einen Tag Spielraum für das Wetter ein. Eine Vorhersage, die im Tal sauber aussieht, kann auf einem Pass in 2.500 m trotzdem Schnee bedeuten."
-        ]}
+        ]},
+        {"p": "Jeder Alpenpass auf der Motoseyir-Karte hat eine eigene Seite mit Höhe, Fahrbahn, üblicher Wintersperre und den Pässen in der Nähe: <a href=\"{@gecitler}\">Alpenpässe nach Land</a>."}
       ]
     }
   ],

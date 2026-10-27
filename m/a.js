@@ -65,6 +65,14 @@
     if (azalt || !hv) return;
     var c = navigator.connection || {};
     if (c.saveData || /(^|-)2g$/.test(c.effectiveType || "")) return;
+    /* 27 Eki 2026 (SEO, mobil veri): dar ekranda 3G'de de video yok (5–6 MB'lık dikey döngü); ayrıca kaynak, kahraman ekranda
+       GÖRÜNÜRKEN atanır — sayfa yüklenene kadar aşağı kaydıran telefona video hiç indirilmez, geri dönerse o zaman başlar. */
+    if (c.effectiveType === "3g" && matchMedia("(max-width:700px)").matches) return;
+    var kur = function () {
+      if (!IO) return basla();
+      var g = new IntersectionObserver(function (e) { if (e[0].isIntersecting) { g.disconnect(); basla(); } });
+      g.observe(hv);
+    };
     var basla = function () {
       var dikey = matchMedia("(max-width:700px)").matches;
       if (hv.getAttribute("data-src")) hv.src = (dikey && hv.getAttribute("data-src-dikey")) || hv.getAttribute("data-src");   /* tur sayfası: hafif 8 sn'lik döngü */
@@ -73,8 +81,8 @@
       var p = hv.play(); if (p && p.catch) p.catch(function () {});
       new IntersectionObserver(function (e) { if (e[0].isIntersecting) { hv.play().catch(function () {}); } else hv.pause(); }).observe(hv);
     };
-    if (D.readyState === "complete") idle(basla);
-    else W.addEventListener("load", function () { idle(basla); });
+    if (D.readyState === "complete") idle(kur);
+    else W.addEventListener("load", function () { idle(kur); });
   }
   function idle(f) { if (W.requestIdleCallback) W.requestIdleCallback(f, { timeout: 400 }); else setTimeout(f, 200); }
 

@@ -1663,6 +1663,13 @@
   var VARSAYILAN_BASLANGIC = A.dil === 'tr' ? { p: { latitude: 39.9334, longitude: 32.8597 }, ad: 'Ankara' }
     : A.dil === 'de' ? { p: { latitude: 48.1351, longitude: 11.582 }, ad: 'München' }
     : /^America\//.test(tz) ? { p: { latitude: 39.7392, longitude: -104.9903 }, ad: 'Denver' } : { p: { latitude: 47.2692, longitude: 11.4041 }, ad: 'Innsbruck' };
+  /* Geçit sayfalarından gelen başlangıç (27 Eki 2026, SEO): ?bas=<enlem>,<boylam>&ad=<yer adı> — "bu geçitten geçen tur çiz". */
+  try {
+    var q = new URLSearchParams(location.search), b = (q.get('bas') || '').split(',').map(Number);
+    if (b.length === 2 && isFinite(b[0]) && isFinite(b[1]) && Math.abs(b[0]) <= 85 && Math.abs(b[1]) <= 180) {
+      VARSAYILAN_BASLANGIC = { p: { latitude: b[0], longitude: b[1] }, ad: (q.get('ad') || '').slice(0, 80) };
+    }
+  } catch (e) { /* eski tarayıcı: varsayılan şehir */ }
   evre('ayar');
   baslangicKoy(VARSAYILAN_BASLANGIC.p, false, true, VARSAYILAN_BASLANGIC.ad);
   haritaKur();

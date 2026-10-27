@@ -57,7 +57,8 @@
       "id": "more",
       "h2": "Where this loop fits",
       "icerik": [
-        {"p": "Furka is also one of the ten roads in our comparison of <a href=\"{@alpler}\">Alpine passes by motorcycle</a>, with heights, tolls and usual open months for the others."}
+        {"p": "Furka is also one of the ten roads in our comparison of <a href=\"{@alpler}\">Alpine passes by motorcycle</a>, with heights, tolls and usual open months for the others."},
+        {"p": "Furka, Grimsel and Susten each have a page of their own, with the passes around them: <a href=\"{@gecitler}\">Alpine passes by country</a>."}
       ]
     }
   ],

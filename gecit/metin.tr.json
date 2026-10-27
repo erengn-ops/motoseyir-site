@@ -1,0 +1,107 @@
+{
+  "dizin": "gecitler",
+  "ad": "Dağ geçitleri",
+  "sayi_bin": ".",
+  "ondalik": ",",
+  "hub_tr": {
+    "baslik": "Türkiye'nin Dağ Geçitleri: Rakım ve Yol Bilgisi",
+    "h1": "Türkiye'nin dağ geçitleri",
+    "eyebrow": "Motosikletle geçitler",
+    "aciklama": [
+      "Motoseyir haritasındaki {n} Türkiye geçidi rakım sırasıyla: yol yüzeyi, yakındaki geçitler ve her geçidin üstünden geçen bir motosiklet turu çizme bağlantısı."
+    ]
+  },
+  "hub_lead": "Motoseyir'in geçit haritasında Türkiye'den {n} geçit var. En yükseği {rakim} ile {ilk}. {toprak_cumle}Bir geçidi açınca yerini, çevresindeki geçitleri ve üstünden geçen bir tur çizme bağlantısını bulursun.",
+  "toprak_cumle": "{t} tanesinin yolu toprak ya da stabilize. ",
+  "toprak_yok": "Hepsinin yolu asfalt. ",
+  "kis_cumle": "",
+  "tablo": {
+    "gecit": "Geçit",
+    "rakim": "Rakım",
+    "yuzey": "Yol",
+    "kis": "Genellikle kapalı"
+  },
+  "asfalt": "Asfalt",
+  "toprak": "Toprak ya da stabilize",
+  "toprak_kisa": "Toprak",
+  "bilinmiyor": "—",
+  "gecit": {
+    "baslik": [
+      "{ad} ({rakim}): Motosikletle Geçit Bilgisi",
+      "{ad} ({rakim}) Motosiklet Rotası",
+      "{ad} Motosiklet Rotası"
+    ],
+    "eyebrow": "Dağ geçidi · Türkiye",
+    "h1": "Motosikletle {ad}",
+    "aciklama_bas": "{ad} {rakim_tam} yükseklikte{yuzey_kisa}.",
+    "aciklama_kuyruk": [
+      " Yakındaki geçitleri, tam yerini ve geçitten geçen bir motosiklet turunu Motoseyir'de bul.",
+      " Yakındaki geçitler, haritadaki yeri ve üstünden geçen motosiklet turu burada.",
+      " Bu sayfada yakındaki geçitler, tam konumu ve geçidin üstünden geçen, telefonuna gönderebileceğin ücretsiz bir motosiklet turu var.",
+      " Yakındaki geçitler ve üstünden geçen tur.",
+      " Yakındaki geçitler, konum ve ücretsiz tur oluşturucu burada.",
+      " Tur oluşturucu ücretsiz.",
+      " Yola çıkmadan yol durumuna bak."
+    ],
+    "yuzey_kisa_toprak": ", yolu toprak ya da stabilize",
+    "kis_kisa": "",
+    "lead": "{ad} {rakim_tam} yükseklikte. {siralama} Aşağıda yolun yüzeyini, çevresindeki geçitleri ve üstünden geçen bir turu bulursun.",
+    "siralama": "Motoseyir haritasındaki {n} Türkiye geçidi arasında yükseklikte {sira} sırada.",
+    "siralama_tek": "",
+    "bilgi_h2": "Kısaca",
+    "b_rakim": "Rakım",
+    "b_yer": "Ülke",
+    "b_yuzey": "Yol yüzeyi",
+    "b_kis": "Kış",
+    "b_konum": "Koordinat",
+    "b_kaynak": "Kaynaklar",
+    "kis_var": "Yolun mevsimlik kapanış kaydına göre genellikle {ay1}–{ay2} arası motorlu taşıta kapalı. Tarihler her yıl kara göre değişir; yola çıkmadan karayolu idaresinin güncel duyurusuna bak.",
+    "kis_yok": "Verimizde bu yol için mevsimlik kapanış kaydı yok. Yüksek yollar kar yağınca yine kapanabilir; yola çıkmadan yol durumuna bak.",
+    "konum_osm": "OpenStreetMap'te",
+    "rakim_not": "Rakım, geçidin OpenStreetMap kaydındaki ya da kaynak sayfasındaki değer; nokta yolun üstündeki geçit tepesi.",
+    "tur_h2": "{ad} üstünden geçen bir tur",
+    "tur_p": "Tarayıcıdaki tur oluşturucu {ad} başlangıç noktası olarak seçili açılır. Yönü, ne kadar süreceğini ve yolların ne kadar virajlı olacağını seçersin; oluşturucu geçide dönen en fazla üç tur çizer. Beğendiğin turu QR kodla telefonuna gönderip Motoseyir'de sürebilirsin.",
+    "tur_dugme": "{ad} üstünden tur çiz",
+    "yakin_h2": "Yakındaki geçitler",
+    "yakin_satir": "{mesafe} {yon} · {rakim}",
+    "uyg_h2": "Motoseyir'de {ad}",
+    "uyg_p1": "{ad}, Motoseyir'in geçit haritasında rakımı ve tam yeriyle duruyor; haritada 36 ülkeden 1.600'ü aşkın geçit var. Geçidi turuna ekleyip yola çıkabilirsin.",
+    "uyg_p2": "Rotan bu ay kapalı olabilecek bir geçitten geçiyorsa uygulama yola çıkmadan uyarır; Tur üret de kapalı geçitleri atlar. Geçtiğin geçitler sürüş kaydından kendiliğinden işaretlenir.",
+    "foto_alt": "{ad}",
+    "foto_atif": "Fotoğraf: {yazar}, {lisans}, Wikimedia Commons",
+    "veri_not": "Geçit verisi: Motoseyir'in geçit listesi; OpenStreetMap (© OpenStreetMap katkıcıları, ODbL) ve yukarıdaki kaynak sayfasından derlendi.",
+    "hub_baglanti": "Bütün Türkiye geçitleri →",
+    "index_baglanti": "Bütün Türkiye geçitleri →",
+    "siralama_ilk": "Motoseyir haritasındaki {n} Türkiye geçidinin en yükseği.",
+    "foto_atif_genel": "Fotoğraf: Wikimedia Commons, {lisans}"
+  },
+  "yonler": [
+    "K",
+    "KD",
+    "D",
+    "GD",
+    "G",
+    "GB",
+    "B",
+    "KB"
+  ],
+  "ay_kisa": [
+    "Ocak",
+    "Şubat",
+    "Mart",
+    "Nisan",
+    "Mayıs",
+    "Haziran",
+    "Temmuz",
+    "Ağustos",
+    "Eylül",
+    "Ekim",
+    "Kasım",
+    "Aralık"
+  ],
+  "ulkeler": {
+    "TR": "Türkiye"
+  },
+  "ulke_slug": {},
+  "eksonim": {}
+}

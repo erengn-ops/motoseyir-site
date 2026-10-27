@@ -17,6 +17,8 @@ Neye bakar (her HTML dosyası; `sablon/`, `*taslak.html` ve Search Console doğr
   - rehber sayfaları (`rehber/`, `<dil>/guides|ratgeber|guide|guias/`): hreflang yalnız var olan eşleri kapsar (tek dilli yazıda yok), kendine ve x-default'a
     işaret eder, karşılıklıdır ve sitemap'teki gruplarla aynıdır; JSON-LD'de Organization + WebSite + BreadcrumbList + (WebPage+Article | CollectionPage);
     FAQPage görünür SSS ile birebir. İçerik tarafı (rakip adı, kaynak vb.) ayrıca `icerik-denetim.py`'de.
+  - geçit sayfaları (`gecitler/`, `en/passes/`, `de/paesse/`; uret.py › GEÇİT SAYFALARI): hreflang rehberdeki gibi yalnız var olan eşler
+    (Alp geçidi EN↔DE); JSON-LD'de Organization + WebSite + BreadcrumbList + (WebPage + TouristAttraction | CollectionPage).
 """
 from __future__ import annotations
 
@@ -42,6 +44,14 @@ REHBER_DIZIN = {"rehber", "guides", "ratgeber", "guide", "guias"}
 # Web tur üreticisi sayfaları (uret.py › ARAC): TR/EN/DE, tek hreflang kümesi (tr, en, de, x-default); JSON-LD'de WebApplication var.
 TANITIM_YOLLARI = {"tur-uret/index.html", "en/tour-generator/index.html", "de/tourengenerator/index.html"}  # uret.py › tanitim_yaz: aynı TR/EN/DE kümesi, WebApplication yok
 ARAC_YOLLARI = {"tur-olusturucu/index.html", "en/motorcycle-route-generator/index.html", "de/motorrad-rundtour-planen/index.html"} | TANITIM_YOLLARI
+
+
+GECIT_DIZIN = {("tr", "gecitler"), ("en", "passes"), ("de", "paesse")}
+
+
+def gecit_mi(rel: str) -> bool:
+    p = rel.split("/")
+    return (p[0] == "gecitler") or (len(p) > 1 and (p[0], p[1]) in GECIT_DIZIN)
 
 
 def rehber_mi(rel: str) -> bool:
@@ -230,7 +240,7 @@ def main() -> int:
         aciklamalar.setdefault((dil, desc), []).append(rel)
         # hreflang
         hl = {l["hreflang"]: l["href"] for l in p.links if l.get("rel") == "alternate" and "hreflang" in l}
-        if rehber_mi(rel):
+        if rehber_mi(rel) or gecit_mi(rel):
             beklenen = set(hl)  # eşler yazıya göre değişir; kümenin kendi içinde tutarlılığı aşağıda
             if hl and (dil not in hl or "x-default" not in hl):
                 hatalar.append(f"{rel}: hreflang kümesi kendi dilini ({dil}) ya da x-default'u içermiyor")
@@ -278,6 +288,9 @@ def main() -> int:
                 hatalar.append(f"{rel}: aggregateRating/review yasak")
         if not tipler:
             hatalar.append(f"{rel}: JSON-LD yok")
+        elif gecit_mi(rel):
+            if not {"Organization", "WebSite", "BreadcrumbList"} <= set(tipler) or not ({"WebPage", "TouristAttraction"} <= set(tipler) or "CollectionPage" in tipler):
+                hatalar.append(f"{rel}: geçit JSON-LD türleri eksik: {tipler}")
         elif rehber_mi(rel):
             if not {"Organization", "WebSite", "BreadcrumbList"} <= set(tipler) or not ({"WebPage", "Article"} <= set(tipler) or "CollectionPage" in tipler):
                 hatalar.append(f"{rel}: rehber JSON-LD türleri eksik: {tipler}")
@@ -286,9 +299,9 @@ def main() -> int:
                 hatalar.append(f"{rel}: araç JSON-LD türleri eksik: {tipler}")
         elif "WebPage" not in tipler:
             hatalar.append(f"{rel}: JSON-LD'de WebPage yok")
-        if rel not in ARAC_YOLLARI and not rehber_mi(rel) and not rel.startswith(("gizlilik/", "impressum/")) and not {"Organization", "WebSite", "MobileApplication"} <= set(tipler):
+        if rel not in ARAC_YOLLARI and not rehber_mi(rel) and not gecit_mi(rel) and not rel.startswith(("gizlilik/", "impressum/")) and not {"Organization", "WebSite", "MobileApplication"} <= set(tipler):
             hatalar.append(f"{rel}: JSON-LD türleri eksik: {tipler}")
-        if rel not in ("index.html",) and (not rel.endswith("/index.html") or rehber_mi(rel) or rel in ARAC_YOLLARI) and not rel.startswith(("gizlilik/", "impressum/")) and "BreadcrumbList" not in tipler:
+        if rel not in ("index.html",) and (not rel.endswith("/index.html") or rehber_mi(rel) or gecit_mi(rel) or rel in ARAC_YOLLARI) and not rel.startswith(("gizlilik/", "impressum/")) and "BreadcrumbList" not in tipler:
             hatalar.append(f"{rel}: BreadcrumbList yok")
         # görseller
         for im in p.imgs:
@@ -367,7 +380,7 @@ def main() -> int:
         loc = u.find("s:loc", ns).text
         yol = urlsplit(loc).path.lstrip("/")
         hedef = yol + "index.html" if (yol == "" or yol.endswith("/")) else yol
-        if hedef in veri and rehber_mi(hedef):
+        if hedef in veri and (rehber_mi(hedef) or gecit_mi(hedef)):
             sm = {l.get("hreflang"): l.get("href") for l in u.findall(xh)}
             sayfa = {l["hreflang"]: l["href"] for l in veri[hedef][0].links if l.get("rel") == "alternate" and "hreflang" in l}
             if sm != sayfa:
