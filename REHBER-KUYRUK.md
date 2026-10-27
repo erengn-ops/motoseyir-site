@@ -35,27 +35,28 @@ Veri kaynağı sütunundaki "app" = `~/Claude/moto-rota/src/data/` (bkz. `REHBER
 
 | # | Dil | Grup / çalışma adı | Hedef sorgu | Veri / kaynak | Not |
 |---|---|---|---|---|---|
-| 1 | tr | `alpler` — Alp geçitleri motosiklet | alp geçitleri motosiklet, alpler motor turu | `icerik/alpler.en.json` olguları aynen (tablo + kaynaklar); Türkçeye UYARLA | `alpler` grubuna tr eklenir → hreflang 3 dil |
-| 2 | tr | `karadeniz` — Karadeniz motosiklet rotası | karadeniz motosiklet rotası, ayder zigana motor | app: Ayder–Çamlıhemşin, Trabzon–Zigana–Torul, Hemşin 24,1 km örneği; Vikipedi Zigana/Kop/Ovit | Yayla yollarının yol durumu için Karayolları (KGM) kaynağı bul |
-| 3 | tr | `istanbul-gunubirlik` — İstanbul çevresi günübirlik motor rotaları | istanbul motor rotaları, şile ağva motor | app: Şile–Ağva, Sapanca–Kartepe, Abant–Yedigöller | Bölgeye özgü yeni olgu için resmî kaynak (örn. belediye / milli park) gerek |
-| 4 | tr | `ege-akdeniz` — Ege ve Akdeniz sahil motor turu | likya D400 motor, datça motor rotası | app: Likya, Datça, Assos, Olympos; D400 için Karayolları sayfası | |
-| 5 | en | `stelvio` — Stelvio Pass by motorcycle | stelvio pass motorcycle | Bormio, IDM Südtirol, Wikipedia; Prad/Bormio tırmanış ayrıntısı | de: Stilfser Joch Motorrad |
-| 6 | en+de | `grossglockner` — Großglockner by motorcycle | grossglockner motorcycle toll, großglockner motorrad maut | grossglockner.at (fiyat ve saatler her yıl değişir: güncelle) | Fiyatlar yıla bağlı; yazıya yıl yaz |
+| 1 | de | `de-motorrad-navi` — Motorrad Navi: worauf achten | motorrad navi, motorrad navigation | özellikler sayfası | DE: motorrad navi 35 gösterim |
+| 2 | en | `stelvio` — Stelvio Pass by motorcycle | stelvio pass motorcycle | Bormio, IDM Südtirol, Wikipedia; Prad/Bormio tırmanış ayrıntısı | de: Stilfser Joch Motorrad |
+| 3 | tr | `alpler` — Alp geçitleri motosiklet | alp geçitleri motosiklet, alpler motor turu | `icerik/alpler.en.json` olguları aynen (tablo + kaynaklar); Türkçeye UYARLA | `alpler` grubuna tr eklenir → hreflang 3 dil |
+| 4 | en+de | `grossglockner` — Großglockner by motorcycle | grossglockner motorcycle toll, großglockner motorrad maut | grossglockner.at (fiyat ve saatler her yıl değişir: güncelle) | Fiyatlar yıla bağlı; yazıya yıl yaz |
+| 5 | en | `us-legendary-roads` — Tail of the Dragon, Beartooth, Blue Ridge | tail of the dragon motorcycle | app `abdEfsaneYollari` (NPS, eyalet DOT kaynakları) | ABD vitrininde uygulama durumunu kontrol et (`SEO.md` eski notu) |
+| 6 | tr | `karadeniz` — Karadeniz motosiklet rotası | karadeniz motosiklet rotası, ayder zigana motor | app: Ayder–Çamlıhemşin, Trabzon–Zigana–Torul, Hemşin 24,1 km örneği; Vikipedi Zigana/Kop/Ovit | Yayla yollarının yol durumu için Karayolları (KGM) kaynağı bul |
 | 7 | en+de+it | `dolomiten` — Dolomites by motorcycle | dolomites motorcycle, dolomiten motorrad | Alta Badia, IDM Südtirol, Arabba Fodom, it.wikipedia Sellaronda | it yazısıyla (`it-passi`) çakışmasın: o Stelvio+Gavia+Sellaronda |
-| 8 | en+de+fr | `rumaenien` — Transfăgărășan and Transalpina | transfagarasan motorcycle, transalpina motorrad | app `avrupaEfsaneYollari` (Argeș İl Meclisi, Sibiu Turism, Gorj İl Meclisi, Novaci) | Kaynak sayfaları yeniden aç, kapanış/saat bilgisini doğrula |
-| 9 | en | `norwegen` — Trollstigen and the Atlantic Road | trollstigen motorcycle | app: Nasjonale turistveger, Fjord Norway | |
-| 10 | fr | `fr-gps-moto` — GPS moto : comment choisir | gps moto, gps moto gratuit | özellikler sayfası (rakip adı yok; ölçüt listesi) | `SEO.md` FR: gps moto 104 gösterim |
-| 11 | de | `de-motorrad-navi` — Motorrad Navi: worauf achten | motorrad navi, motorrad navigation | özellikler sayfası | DE: motorrad navi 35 gösterim |
-| 12 | it | `it-navigatore-moto` — Navigatore moto | navigatore moto, percorsi moto | özellikler sayfası | |
-| 13 | es | `es-gps-moto` — GPS para moto | gps moto, navegador para moto | özellikler sayfası; ES arayüz dili yok → düğme adları İngilizce | |
-| 14 | fr | `col-turini-route-des-grandes-alpes` ya da `tourmalet` ayrı yazı | col de turini moto, col du tourmalet moto | Côte d'Azur France, Tourmalet Pic du Midi (şu an `fr-cols` içinde kısa) | Ayrı sayfa yalnız yeterli olgu varsa |
-| 15 | es | `es-pirineos` — Pirineos en moto | pirineos moto | app: Pireneler listesi (94 geçit) + resmî kaynak | |
-| 16 | en | `us-legendary-roads` — Tail of the Dragon, Beartooth, Blue Ridge | tail of the dragon motorcycle | app `abdEfsaneYollari` (NPS, eyalet DOT kaynakları) | ABD vitrininde uygulama durumunu kontrol et (`SEO.md` eski notu) |
-| 17 | tr | `motosiklet-yakit-hesabi` — rota yakıt hesabı | motosiklet yakıt hesabı | uygulama özellikleri | Ürün-özellik yazısı; SSS ağırlıklı |
+| 8 | fr | `fr-gps-moto` — GPS moto : comment choisir | gps moto, gps moto gratuit | özellikler sayfası (rakip adı yok; ölçüt listesi) | `SEO.md` FR: gps moto 104 gösterim |
+| 9 | tr | `istanbul-gunubirlik` — İstanbul çevresi günübirlik motor rotaları | istanbul motor rotaları, şile ağva motor | app: Şile–Ağva, Sapanca–Kartepe, Abant–Yedigöller | Bölgeye özgü yeni olgu için resmî kaynak (örn. belediye / milli park) gerek |
+| 10 | en+de+fr | `rumaenien` — Transfăgărășan and Transalpina | transfagarasan motorcycle, transalpina motorrad | app `avrupaEfsaneYollari` (Argeș İl Meclisi, Sibiu Turism, Gorj İl Meclisi, Novaci) | Kaynak sayfaları yeniden aç, kapanış/saat bilgisini doğrula |
+| 11 | en | `norwegen` — Trollstigen and the Atlantic Road | trollstigen motorcycle | app: Nasjonale turistveger, Fjord Norway | |
+| 12 | tr | `ege-akdeniz` — Ege ve Akdeniz sahil motor turu | likya D400 motor, datça motor rotası | app: Likya, Datça, Assos, Olympos; D400 için Karayolları sayfası | |
+| 13 | it | `it-navigatore-moto` — Navigatore moto | navigatore moto, percorsi moto | özellikler sayfası | |
+| 14 | es | `es-gps-moto` — GPS para moto | gps moto, navegador para moto | özellikler sayfası; ES arayüz dili yok → düğme adları İngilizce | |
+| 15 | tr | `motosiklet-yakit-hesabi` — rota yakıt hesabı | motosiklet yakıt hesabı | uygulama özellikleri | Ürün-özellik yazısı; SSS ağırlıklı |
+| 16 | es | `es-pirineos` — Pirineos en moto | pirineos moto | app: Pireneler listesi (94 geçit) + resmî kaynak | |
+| 17 | fr | `col-turini-route-des-grandes-alpes` ya da `tourmalet` ayrı yazı | col de turini moto, col du tourmalet moto | Côte d'Azur France, Tourmalet Pic du Midi (şu an `fr-cols` içinde kısa) | Ayrı sayfa yalnız yeterli olgu varsa |
 | 18 | tr | `grupla-motor-turu` — grupla motor turu | grup motor turu, motor grubu navigasyon | özellikler sayfası (grup, interkom) | |
 | 19 | nl, pl, cs … | `tur-planlama` çevirisi | motor gps, nawigacja motocyklowa | EN yazının uyarlaması + yerel Search Console sorgusu | Önce Search Console'da o dilin gösterimi var mı bak |
 
-Sıradaki konu seçilirken: (1) Search Console'da gösterimi olan dil/sorgu, (2) elde doğrulanmış kaynak, (3) aynı haftada aynı dilde iki yazı yok.
+Sıra 27 Eki'de dillere DÖNÜŞÜMLÜ dizildi (kullanıcı: "dönüşümlü yap"): DE/EN aramaları ölçülmüş olarak daha büyük (DE "Motorrad Navi App" 1.300/ay, "Motorrad Routenplaner" 2.400/ay), TR araya serpiştirildi; geçit/Alp yazıları `/en/passes/`, `/de/paesse/`, `/gecitler/` sayfalarına iç bağlantı versin.
+Sıradaki konu seçilirken: (0) tablodaki sıra, (1) Search Console'da gösterimi olan dil/sorgu, (2) elde doğrulanmış kaynak, (3) aynı haftada aynı dilde iki yazı yok.
 
 ## Kurallar özeti (ayrıntı: `REHBER-EKLE.md`)
 
