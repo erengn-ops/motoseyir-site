@@ -1,0 +1,112 @@
+{
+  "slug": "motorrad-navi-worauf-achten",
+  "sira": 4,
+  "baslik": "Motorrad Navi: Worauf du beim Kauf achten solltest",
+  "aciklama": "Motorrad Navi gesucht? Diese Kriterien zählen: Routenart, Stopps, Halterung und Sprachführung, Gruppenfahrt, Wetter und Kosten, mit Beispielen aus Motoseyir.",
+  "h1": "Motorrad Navi: Worauf du bei Navigation und App achten solltest",
+  "eyebrow": "Motorrad-Navigation",
+  "lead": "Ein Auto-Navi rechnet mit dem schnellsten Weg, ein Motorradfahrer will oft etwas anderes. Dieser Beitrag legt Kriterien fest, mit denen du jede Motorrad-Navigation prüfen kannst, und zeigt jeweils, wie Motoseyir sie löst.",
+  "yayin": "2026-10-28",
+  "guncelleme": "2026-10-28",
+  "ozet": "Routenart, Stopps, Bedienung am Lenker, Gruppenfahrt, Wetter und Kosten: sieben Kriterien für die Wahl einer Motorrad-Navigation.",
+  "bolumler": [
+    {
+      "id": "routenart",
+      "h2": "Welche Art von Route berechnet das Navi?",
+      "icerik": [
+        {"p": "Das wichtigste Kriterium ist die Routenlogik. Ein Navi für Autos bietet den schnellsten Weg an. Auf dem Motorrad ermüden dich eher Kilometer als Minuten, und für einen Sonntagsausflug soll die Straße oft gerade nicht die Autobahn sein. Prüfe also, ob du zwischen mehreren Routenarten wählen kannst."},
+        {"p": "Motoseyir vergleicht zwischen denselben zwei Punkten mehrere Varianten und schlägt standardmäßig die mit den wenigsten Kilometern vor, auch wenn sie etwas länger dauert. Der Nebenstraßenmodus meidet Autobahn und Maut. Für die Türkei und Griechenland rechnet ein eigener Server von Motoseyir; der Küstenmodus hält die Route an der Küste. Zwischen „Kürzeste“ und „Nebenstraßen“ wechselst du kostenlos, die Modustaste für Standard, Nebenstraßen und Küste in einer Tour ist Pro."}
+      ]
+    },
+    {
+      "id": "stopps",
+      "h2": "Wie einfach lassen sich mehrere Stopps setzen?",
+      "icerik": [
+        {"p": "Eine Tour besteht selten aus zwei Punkten. Achte darauf, dass du Stopps per Suche, per Tipp auf einen Ortsnamen oder per langem Druck auf einen freien Kartenpunkt hinzufügen kannst und dass sich die Reihenfolge ändern lässt."},
+        {"p": "In Motoseyir gibt es dafür „Meine Touren“ mit bis zu 26 Stopps in einer Tour. „Beste Reihenfolge“ (Pro) sortiert die Stopps nach der kürzesten Gesamtstrecke neu. Im Beispiel der App brauchen dieselben vier Stopps in Istanbul in deiner Reihenfolge 57,1 km und in der gefundenen 46,9 km. Ob die neue Reihenfolge zu deiner Tour passt, entscheidest du selbst."}
+      ]
+    },
+    {
+      "id": "bedienung",
+      "h2": "Wie gut ist die Navigation am Lenker lesbar?",
+      "icerik": [
+        {"p": "Beim Fahren schaust du in Sekundenbruchteilen aufs Display. Wichtig sind eine große Abbiegeanzeige, Restdistanz und Ankunftszeit, eine Sprachführung und ein Layout, das in der Halterung passt."},
+        {"liste": [
+          "Die Navigation Schritt für Schritt zeigt eine nah mitlaufende Karte, Abbiegehinweise, Restdistanz und Ankunftszeit.",
+          "Die Abbiegehinweise spricht die Stimme deines Telefons in der Sprache der App; die Distanz folgt deiner Region (Kilometer in Europa, Meilen und Fuß in den USA).",
+          "Im Querformat sammeln sich Abbiegeband und Ankunftskarte links, die Karte nimmt den Rest. Das passt zu breiten Haltern über dem Tank.",
+          "Die nächste Abbiegung erscheint auf dem Sperrbildschirm und in der Dynamic Island, du musst das Handy nicht entsperren (nur iPhone, in den Einstellungen abschaltbar)."
+        ]}
+      ]
+    },
+    {
+      "id": "gruppe",
+      "h2": "Funktioniert die Gruppenfahrt ohne Umwege?",
+      "icerik": [
+        {"p": "Wer zu mehreren fährt, braucht Position und Route der anderen. Prüfe, wie man einer Gruppe beitritt, wann der Standort geteilt wird und wie lange er gespeichert bleibt."},
+        {"p": "In Motoseyir erzeugt eine neue Gruppe einen einzigen Code, mit dem alle beitreten. Der Standort wird nur geteilt, solange eine Fahrtaufzeichnung oder die Navigation läuft, und danach vom Server gelöscht. Beitreten ist kostenlos, eine Gruppe zu erstellen ist Pro. Das Intercom fragt während einer Gruppenroute einmal nach; der Ton geht nur an deine Gruppe und wird auf dem Server nicht aufgezeichnet. Helm oder Headset verbindest du über Bluetooth."}
+      ]
+    },
+    {
+      "id": "wetter-sprit",
+      "h2": "Wetter, Sprit und Pässe",
+      "icerik": [
+        {"p": "Drei Dinge sind auf einer längeren Tour entscheidend: Regen auf der Strecke, die Tankreichweite und gesperrte Pässe. Ein gutes Navi nennt sie vor der Abfahrt."},
+        {"liste": [
+          "Regenwarnung: Motoseyir prüft vier Punkte der Route für die Zeit, zu der du dort bist. Bleibt es trocken, erscheint keine Warnung.",
+          "Sprit: Die geschätzte Menge steht vor der Abfahrt auf der Routenkarte. Tippst du auf den Verbrauch, gibst du den echten Wert deines Motorrads ein.",
+          "Pässe: Die Passliste enthält 1.638 Pässe in 36 Ländern mit Höhe und Lage; wo die Sperrmonate bekannt sind, werden sie angezeigt. Ob ein Pass tatsächlich offen ist, erfährst du bei Betreiber oder Straßenverwaltung. Mehr dazu in den <a href=\"{@alpler}\">Alpenpässen mit dem Motorrad</a> und in der <a href=\"{@gecitler}\">Passübersicht</a>."
+        ]}
+      ]
+    },
+    {
+      "id": "aufzeichnung",
+      "h2": "Aufzeichnung, GPX und Datenschutz",
+      "icerik": [
+        {"p": "Wer eine schöne Strecke gefunden hat, will sie behalten. Achte auf Fahrtaufzeichnung bei ausgeschaltetem Display, GPX-Import und -Export und darauf, wo deine Daten liegen."},
+        {"p": "Die Aufzeichnung in Motoseyir läuft auch bei ausgeschaltetem Display weiter. Pausen werden getrennt gezählt, und eine beendete Fahrt lässt sich als Trail speichern oder als GPX exportieren. Eine GPX-Datei importierst du in den Tab „Trail“. Touren bleiben auf dem Gerät; für den Einstieg brauchst du keine E-Mail und kein Passwort."}
+      ]
+    },
+    {
+      "id": "kosten",
+      "h2": "Was kostet es, und was ist im kostenlosen Tarif?",
+      "icerik": [
+        {"p": "Lies bei jeder App, was kostenlos ist und was zum Abo gehört. Bei Motoseyir kostet die Navigation nichts und ist nicht begrenzt, solange du in der Türkei, in Europa oder in den USA fährst; im kostenlosen Tarif bleibt 1 gespeicherte Tour. Pro schaltet unbegrenzte Touren und Trails, Tourmodi, Entdecken, das Erstellen von Gruppen, CarPlay und AI CoRider frei. Neue Abonnenten testen das 3-Monats- und das Jahresabo 7 Tage kostenlos; kündigst du mindestens 24 Stunden vor Ende, zahlst du nichts."}
+      ]
+    },
+    {
+      "id": "checkliste",
+      "h2": "Checkliste für den Vergleich",
+      "icerik": [
+        {"adimlar": [
+          "Gibt es neben dem schnellsten Weg auch eine kürzeste Route und einen Nebenstraßenmodus?",
+          "Lassen sich mehrere Stopps setzen, ordnen und neu sortieren?",
+          "Ist die Anzeige im Hoch- und Querformat am Lenker lesbar?",
+          "Teilt die Gruppenfahrt den Standort nur während der Fahrt?",
+          "Warnt die App vor Regen für die Zeit, zu der du ankommst?",
+          "Läuft die Aufzeichnung bei ausgeschaltetem Display, und gibt es GPX?",
+          "Ist klar, was kostenlos ist und was zum Abo gehört?"
+        ]},
+        {"p": "Weitere Hilfe beim Aufbau einer Tour gibt der Beitrag <a href=\"{@tur-planlama}\">Motorradtour planen</a>; alle Funktionen stehen auf der <a href=\"{@ozellikler}\">Funktionsseite</a>."}
+      ]
+    }
+  ],
+  "sss": [
+    {"s": "Brauche ich für ein Motorrad Navi ein Konto?", "c": "Bei Motoseyir nicht. Die App fragt weder nach Name noch nach E-Mail oder Telefonnummer. Die Navigation ist in der Türkei, in Europa und in den USA gratis und ohne Limit."},
+    {"s": "Welche Routenarten bietet Motoseyir?", "c": "Standardmäßig die Kürzeste, die die wenigsten Kilometer wählt, sowie Nebenstraßen. Im Tour-Bildschirm kommt der Küstenmodus dazu; Nebenstraßen und Küste in einer Tour sind Pro."},
+    {"s": "Zeigt das Navi, ob ein Pass gesperrt ist?", "c": "Die Passliste zeigt die Sperrmonate, wo sie bekannt sind. Ob ein Pass in diesem Jahr tatsächlich offen ist, hängt vom Schnee ab; prüfe vor der Abfahrt die Meldung des Betreibers oder der Straßenverwaltung."}
+  ],
+  "kaynaklar": [
+    {"ad": "Motoseyir-Funktionsseite (Routenarten, Beste Reihenfolge, Gruppenfahrt, Wetter, Pässe)", "url": "https://motoseyir-app.com/de/ozellikler.html"},
+    {"ad": "Motoseyir-Anleitung (Route, Touren, Aufzeichnung, Abo)", "url": "https://motoseyir-app.com/de/nasil-yapilir.html"}
+  ],
+  "urun": {
+    "h2": "Zeichne die Tour in Motoseyir selbst",
+    "p": [
+      "Du legst Start und Ziel fest, setzt jeden Stopp von Hand und änderst die Reihenfolge nach Belieben. Über die Suche oder einen langen Druck auf die Karte kommt jeder Punkt in die Tour, auch eine Kurve ohne Namen."
+    ],
+    "ikincil": "Als Anregung dienen die fertigen Routen unter Legendär; du übernimmst sie in deine Touren und passt sie an.",
+    "gorsel": "nav",
+    "gorsel_alt": "Die Navigation in Motoseyir mit Abbiegeband, Restdistanz und Ankunftszeit"
+  }
+}
