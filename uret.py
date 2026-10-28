@@ -1376,6 +1376,15 @@ GECIT_HUB_EN_AZ = 3  # bu sayıdan az geçidi olan eyaletin liste sayfası yok (
 GECIT_YAKIN = 6
 GECIT_YAKIN_KM = 120
 GECIT_GUNCELLEME = "2026-10-27"
+# Kalkan geçit sayfalarının adresi → yeni adres (GitHub Pages'te sunucu yönlendirmesi yok: canonical + anında meta yenileme,
+# noindex; Google bunu kalıcı yönlendirme sayar). 28 Eki 2026: etiketi kopyalanmış üç ABD düğümü uygulamadan elendi
+# (moto-rota f18cf0c9); sahte Newfound Gap gidince gerçeğinin adı da "-tennessee" ekinden kurtuldu.
+GECIT_YONLENDIRME = {
+    "/en/passes/newfound-gap-tennessee/": "/en/passes/newfound-gap/",
+    "/en/passes/newfound-gap-north-carolina/": "/en/passes/newfound-gap/",
+    "/en/passes/granite-pass/": "/en/passes/montana/",
+    "/en/passes/siskiyou-gap/": "/en/passes/oregon/",
+}
 _gecit_onbellek: dict = {}
 
 
@@ -1927,6 +1936,18 @@ def gecit_yaz() -> int:
         hedef.parent.mkdir(parents=True, exist_ok=True)
         hedef.write_text(html, encoding="utf-8")
         yazilan += 1
+    for eski, yeni in GECIT_YONLENDIRME.items():
+        if any(y == eski for _, y, _, _ in gecit_sayfalari()):
+            raise SystemExit(f"HATA: yönlendirilen adreste yine sayfa var: {eski}")
+        hedef = KOK / eski.strip("/") / "index.html"
+        hedef.parent.mkdir(parents=True, exist_ok=True)
+        u = f"{ALAN}{yeni}"
+        hedef.write_text(f'''<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Moved</title>
+<meta name="robots" content="noindex"><link rel="canonical" href="{u}">
+<meta http-equiv="refresh" content="0; url={yeni}"></head>
+<body><p><a href="{yeni}">{u}</a></p></body></html>
+''', encoding="utf-8")
     return yazilan
 
 
