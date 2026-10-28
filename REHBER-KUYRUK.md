@@ -25,8 +25,9 @@ buradaki "Hedef sorgu" sütunu GERÇEK sorgularla güncellenir — önce Perform
 | 2026-10-25 | fr | `/fr/guides/`, `/fr/guides/balade-moto-grands-cols-france/` | balade moto, cols moto france | RDGA, Valloire, Val d'Isère Tourisme, Côte d'Azur France, Tourmalet Pic du Midi |
 | 2026-10-25 | it | `/it/guide/`, `/it/guide/passi-in-moto-stelvio-gavia-dolomiti/` | passi in moto, percorsi moto, stelvio | Bormio Turismo, IDM Südtirol, Alta Badia, Arabba Fodom |
 | 2026-10-25 | es | `/es/guias/`, `/es/guias/rutas-en-moto-picos-de-europa/` | rutas en moto, picos de europa moto | Wikipedia (es), Ayto. Posada de Valdeón, Turismo Asturias |
+| 2026-10-28 | de | `/de/ratgeber/motorrad-navi-worauf-achten/` | motorrad navi, motorrad navigation | Motoseyir özellikler ve nasıl yapılır sayfaları (DE) |
 
-hreflang grupları (`icerik/<grup>.<kod>.json` dosya adındaki grup): `hub` (6 dil), `tur-planlama` (tr, en, de), `alpler` (en, de), `uc-gecit` (en, de);
+hreflang grupları (`icerik/<grup>.<kod>.json` dosya adındaki grup): `hub` (6 dil), `tur-planlama` (tr, en, de), `alpler` (en, de), `uc-gecit` (en, de); `de-motorrad-navi` tek dillidir;
 `turkiye-rotalari`, `koy-yolu`, `turkiye-gecitleri`, `fr-cols`, `it-passi`, `es-rutas` tek dillidir (hreflang yok).
 
 ## Sırada (öncelik sırasıyla)
@@ -35,7 +36,6 @@ Veri kaynağı sütunundaki "app" = `~/Claude/moto-rota/src/data/` (bkz. `REHBER
 
 | # | Dil | Grup / çalışma adı | Hedef sorgu | Veri / kaynak | Not |
 |---|---|---|---|---|---|
-| 1 | de | `de-motorrad-navi` — Motorrad Navi: worauf achten | motorrad navi, motorrad navigation | özellikler sayfası | DE: motorrad navi 35 gösterim |
 | 2 | en | `stelvio` — Stelvio Pass by motorcycle | stelvio pass motorcycle | Bormio, IDM Südtirol, Wikipedia; Prad/Bormio tırmanış ayrıntısı | de: Stilfser Joch Motorrad |
 | 3 | tr | `alpler` — Alp geçitleri motosiklet | alp geçitleri motosiklet, alpler motor turu | `icerik/alpler.en.json` olguları aynen (tablo + kaynaklar); Türkçeye UYARLA | `alpler` grubuna tr eklenir → hreflang 3 dil |
 | 4 | en+de | `grossglockner` — Großglockner by motorcycle | grossglockner motorcycle toll, großglockner motorrad maut | grossglockner.at (fiyat ve saatler her yıl değişir: güncelle) | Fiyatlar yıla bağlı; yazıya yıl yaz |
