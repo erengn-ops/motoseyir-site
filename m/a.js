@@ -93,6 +93,10 @@
      belleğe iner (blob), oynatma ancak o zaman başlar; o ana dek kapak görüntüsü durur ve video .oynuyor ile yumuşakça belirir.
      Döngü de bellekten döner (her turda yeniden istek, ara takılma yok). fetch/Blob yoksa ya da indirme düşerse eski yol: doğrudan
      kaynak, ama oynatma yine "canplaythrough"u (tarayıcının "sonuna kadar takılmadan oynar" tahmini) bekler. */
+  /* İndirme bağlantıyı dolduruyor: 14 MB'lık kahraman inerken dil/sayfa bağlantısına tıklayınca yeni sayfanın ilk baytı 0,1 sn yerine
+     0,5–1,6 sn'de geliyordu (28 Eki ölçümü, "tıkladım geç geldi"). Bir bağlantıya basılınca (ya da dil menüsü açılınca) süren indirmeler
+     iptal edilir; sayfada kalınırsa 2,5 sn sonra yeniden başlar. */
+  var inenler = [];
   function tamponla(v, url, hazir) {
     var bitti = false;
     function ac(src) {
@@ -101,10 +105,41 @@
       v.addEventListener("canplaythrough", function () { hazir(); }, { once: true });
       v.preload = "auto"; v.src = src; v.load();
     }
-    if (!W.fetch || !W.URL || !URL.createObjectURL) return ac(url);
-    fetch(url, { priority: "low" }).then(function (r) { if (!r.ok) throw r.status; return r.blob(); })
-      .then(function (b) { ac(URL.createObjectURL(b)); }, function () { ac(url); });
+    if (!W.fetch || !W.URL || !URL.createObjectURL || !W.AbortController) return ac(url);
+    var ab = new AbortController(), is = { ab: ab, yeniden: function () { tamponla(v, url, hazir); } };
+    inenler.push(is);
+    fetch(url, { priority: "low", signal: ab.signal }).then(function (r) { if (!r.ok) throw r.status; return r.blob(); })
+      .then(function (b) { ac(URL.createObjectURL(b)); }, function (e) { if (!(e && e.name === "AbortError")) ac(url); })
+      .then(function () { var i = inenler.indexOf(is); if (i >= 0) inenler.splice(i, 1); });
   }
+  var ertele = null;
+  function indirmeleriDurdur() {
+    if (!inenler.length) return;
+    var duran = inenler.splice(0);
+    duran.forEach(function (is) { is.ab.abort(); });
+    clearTimeout(ertele);
+    ertele = setTimeout(function () { if (!D.hidden) duran.forEach(function (is) { is.yeniden(); }); }, 2500);
+  }
+  D.addEventListener("pointerdown", function (e) {
+    var a = e.target.closest && e.target.closest("a[href]");
+    if (!a || a.target === "_blank" || a.hasAttribute("download")) return;
+    var h = a.getAttribute("href");
+    if (h.charAt(0) === "#" || (a.origin === location.origin && a.pathname === location.pathname)) return;
+    indirmeleriDurdur();
+  }, true);
+  $$(".dil-sec").forEach(function (d) { d.addEventListener("toggle", function () { if (d.open) indirmeleriDurdur(); }); });
+  W.addEventListener("pagehide", function () { inenler.splice(0).forEach(function (is) { is.ab.abort(); }); });
+
+  /* Bağlantının üstünde ~200 ms duran (ya da basılan) sayfa önceden getirilir: Speculation Rules, "moderate" (Chrome/Edge; Safari ve
+     Firefox kuralı yok sayar). Yalnız sitenin kendi sayfaları; /m/ varlıkları ve dışarı bağlantılar değil. */
+  if (HTMLScriptElement.supports && HTMLScriptElement.supports("speculationrules")) {
+    var kural = D.createElement("script");
+    kural.type = "speculationrules";
+    kural.textContent = JSON.stringify({ prefetch: [{ source: "document", eagerness: "moderate",
+      where: { and: [{ href_matches: "/*" }, { not: { href_matches: "/m/*" } }, { not: { selector_matches: "[download], [target=_blank]" } }] } }] });
+    D.head.appendChild(kural);
+  }
+
 
   /* ---------- telefon demoları (19 Eki 2026) ----------
      Çerçevedeki ekran görüntüsünün yerinde uygulamanın gerçek kullanımı (m/demo-<ad>-<kod>.mp4). uret.py yalnız o dilin klibi VARSA

@@ -13,7 +13,7 @@
  */
 import { build } from 'esbuild';
 import { execFileSync } from 'node:child_process';
-import { cpSync, existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { cpSync, existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { homedir } from 'node:os';
@@ -139,6 +139,16 @@ stil.glyphs = '/m/tur/harita/fonts/{fontstack}/{range}.pbf';
 stil.sprite = '/m/tur/harita/sprites/light'; /* sayfa açılışta başına kökeni ekliyor: MapLibre göreli adres kabul etmiyor */
 writeFileSync(join(HARITA, 'stil.json'), JSON.stringify(stil));
 cpSync(join(VARLIK, 'harita-varliklari/fonts'), join(HARITA, 'fonts'), { recursive: true });
+/* Eksik glif aralıkları BOŞ dosya (28 Eki 2026): varlıkta yalnız Latin/Yunan/Kiril aralıkları var. Karoda başka yazı (Çeroki, Arap,
+   Gürcü, CJK…) geçince MapLibre 4.7 o aralığı istiyor, 404 alınca KAROYU verisiz bırakıyordu — Asheville batısı (Qualla Boundary)
+   gri kalıyordu. Boş 200 yanıtında karo çizilir, yalnız o harfler görünmez. */
+for (const yigin of readdirSync(join(HARITA, 'fonts'), { withFileTypes: true }).filter((d) => d.isDirectory())) {
+  const kl = join(HARITA, 'fonts', yigin.name);
+  for (let a = 0; a < 65536; a += 256) {
+    const dosya = join(kl, `${a}-${a + 255}.pbf`);
+    if (!existsSync(dosya)) writeFileSync(dosya, '');
+  }
+}
 cpSync(join(VARLIK, 'harita-varliklari/sprites'), join(HARITA, 'sprites'), { recursive: true });
 console.log(`→ ${HARITA} (stil, ${stil.layers.length} katman; yazı tipleri, simgeler)`);
 
