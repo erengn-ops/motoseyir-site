@@ -373,7 +373,8 @@
         var pxKm = s.R / G.capKm(d.km, d.seviye);
         var z = Math.log2(pxKm * 40075.016 * Math.cos(d.S.latitude * Math.PI / 180) / 512);
         z = klamp(z, h.getMinZoom(), 14.5);
-        h.easeTo({ center: [d.S.longitude, d.S.latitude], zoom: z, bearing: 0, duration: reduce ? 0 : (sure == null ? 600 : sure), easing: ease3 });
+        var hedef = { center: [d.S.longitude, d.S.latitude], zoom: z, bearing: 0, duration: reduce ? 0 : (sure == null ? 600 : sure), easing: ease3 };
+        if (o.kamera) o.kamera('easeTo', hedef); else h.easeTo(hedef);   // tur.js kameraGit: önce hedefin karoları (28 Eki)
       },
       yok: function () { cancelAnimationFrame(raf); kok.innerHTML = ''; }
     };

@@ -130,6 +130,77 @@
   var MERKEZ = A.dil === 'tr' ? { c: [32.9, 39.9], z: 6 } : A.dil === 'de' ? { c: [11.0, 47.9], z: 6 }
     : /^America\//.test(tz) ? { c: [-105.5, 39.5], z: 6 } : { c: [8.5, 46.7], z: 6 };
 
+  /* ------------------------------------------------- karo ön yükleme (28 Eki 2026)
+     Kullanıcı: "tur oluştururken karo karo yükleniyor ... kesin çözelim". Karolar /web/k'dan geliyor: kenar önbelleğinde ~10 ms,
+     soğukta R2'den 0,3–0,7 sn. Kamera yeni bir düzeye kayınca MapLibre hedef karoları ancak oraya varınca istiyor; geldikçe tek tek
+     beliriyor. Çare: hedef görünümün karolarını kamera kalkmadan (tur üretilirken rota hesabı sürerken, açılışta stil inerken, boşta
+     bir üst düzeyi) tarayıcı önbelleğine çek; MapLibre aynı adresi istediğinde yanıt önbellekten gelir. İstek MapLibre'ninkiyle aynı
+     (cors, çerezsiz) ki önbellek kaydı paylaşılsın. Aynı karo bir kez istenir, aynı anda en çok 6, bir seferde en çok 48 karo. */
+  var KARO = 'https://motorota-rota.erengn.workers.dev/web/k/{z}/{x}/{y}.mvt?v=2';   // stil gelince oradaki adresle değişir
+  var karoIstenen = new Set(), karoKuyruk = [], karoAkan = 0;
+  function karoCek() {
+    while (karoAkan < 6 && karoKuyruk.length) {
+      var is = karoKuyruk.shift();
+      karoAkan++;
+      fetch(is.url, { mode: 'cors', credentials: 'same-origin' }).then(function (r) { return r.arrayBuffer(); })
+        .catch(function () { karoIstenen.delete(is.url); })
+        .then(function () { karoAkan--; is.bitti(); karoCek(); });
+    }
+  }
+  /* Görünüm kutusu [batı, güney, doğu, kuzey]: merkez + düzey + harita kutusunun piksel boyu (512'lik karo, Web Mercator) */
+  function gorunumKutusu(merkez, z) {
+    var el = document.getElementById('tur-harita');
+    var w = (el && el.clientWidth) || window.innerWidth, h = (el && el.clientHeight) || window.innerHeight;
+    var dunya = 512 * Math.pow(2, z);
+    var mx = (merkez[0] + 180) / 360 * dunya;
+    var my = (1 - Math.log(Math.tan(Math.PI / 4 + merkez[1] * Math.PI / 360)) / Math.PI) / 2 * dunya;
+    var lon = function (x) { return x / dunya * 360 - 180; };
+    var lat = function (y) { return Math.atan(Math.sinh(Math.PI * (1 - 2 * y / dunya))) * 180 / Math.PI; };
+    return [lon(mx - w / 2), lat(my + h / 2), lon(mx + w / 2), lat(my - h / 2)];
+  }
+  /* kutu × düzey → karo adresleri; söz: hepsi bitince (ya da hiçbiri yoksa hemen) */
+  function karoOnYukle(kutu, z) {
+    z = Math.max(0, Math.min(15, Math.floor(z)));
+    var n = Math.pow(2, z);
+    var tx = function (lon) { return Math.floor((lon + 180) / 360 * n); };
+    var ty = function (lat) { var r = lat * Math.PI / 180; return Math.floor((1 - Math.log(Math.tan(r) + 1 / Math.cos(r)) / Math.PI) / 2 * n); };
+    var x0 = tx(kutu[0]), x1 = tx(kutu[2]), y0 = Math.max(0, ty(Math.min(85, kutu[3]))), y1 = Math.min(n - 1, ty(Math.max(-85, kutu[1])));
+    var sozler = [], sayi = 0;
+    for (var x = x0; x <= x1; x++) for (var y = y0; y <= y1; y++) {
+      if (++sayi > 48) break;
+      var url = KARO.replace('{z}', z).replace('{x}', ((x % n) + n) % n).replace('{y}', y);
+      if (karoIstenen.has(url)) continue;
+      karoIstenen.add(url);
+      sozler.push(new Promise(function (bitti) { karoKuyruk.push({ url: url, bitti: bitti }); }));
+    }
+    karoCek();
+    return Promise.all(sozler);
+  }
+  function enGec(soz, ms) { return Promise.race([soz, new Promise(function (r) { setTimeout(r, ms); })]); }
+  /* Kamera hareketi: önce hedefin karolarını iste, en çok `bekle` ms bekle (önbellekteyse anında), sonra kay. Hedef ve bir üst düzey
+     istenir (MapLibre geçişte üst düzeyi yer tutucu olarak çiziyor). */
+  function kameraGit(tur, a, b, bekle) {
+    if (!harita) return;
+    var hedef = null;
+    try {
+      if (tur === 'fitBounds') hedef = harita.cameraForBounds(a, b);
+      else hedef = { center: a.center ? maplibregl.LngLat.convert(a.center) : harita.getCenter(), zoom: a.zoom != null ? a.zoom : harita.getZoom() };
+    } catch (e) { hedef = null; }
+    if (!hedef || reduce) { harita[tur](a, b); return; }
+    var c = maplibregl.LngLat.convert(hedef.center), kutu = gorunumKutusu([c.lng, c.lat], hedef.zoom);
+    var soz = Promise.all([karoOnYukle(kutu, hedef.zoom), karoOnYukle(kutu, hedef.zoom - 1)]);
+    var sure = (tur === 'fitBounds' ? b : a) || {};
+    if (sure.duration === 0) { harita[tur](a, b); return; }   // anlık geçiş (açılış çerçevesi): bekleme yok, karolar yine istendi
+    enGec(soz, bekle == null ? 350 : bekle).then(function () { if (harita) harita[tur](a, b); });
+  }
+  /* Boşta: görünümün bir üst düzeyini (uzaklaştırınca gerekecek, alan 4 katı) önceden çek. */
+  function ustDuzeyHazirla() {
+    if (!harita || reduce) return;
+    var c = harita.getCenter(), z = harita.getZoom() - 1;
+    var go = function () { karoOnYukle(gorunumKutusu([c.lng, c.lat], z), z); };
+    if (window.requestIdleCallback) requestIdleCallback(go, { timeout: 1500 }); else setTimeout(go, 300);
+  }
+
   function daire(c, rKm, n) {
     var kx = 111.32 * Math.cos(c.latitude * Math.PI / 180), ky = 110.574, hal = [];
     for (var i = 0; i <= n; i++) {
@@ -167,6 +238,7 @@
     kadran = TurKadran.kur({
       kok: $('#tur-kadran'), reduce: reduce, pay: pay, ipucuYazi: T.kadran_ipucu,
       harita: function () { return hazir ? harita : null; },
+      kamera: function (tur, hedef) { kameraGit(tur, hedef, undefined, 200); },
       durum: function () { return { S: st.S, yon: st.yon, herYon: st.herYon, km: st.kmCanli != null ? st.kmCanli : st.km, seviye: st.seviye, sure: st.sure }; },
       yazilar: function () {
         var buyuk, kucuk, adim = M.cetvelAdimi(st.sure, st.seviye), km = M.adimaOturt(st.km, adim);
@@ -230,13 +302,31 @@
 
   function haritaKur() {
     if (!window.maplibregl) { durum(T.hata_harita, 'hata'); return; }
+    var ilkMerkez = st.S ? [st.S.longitude, st.S.latitude] : MERKEZ.c, ilkZ = st.S ? 9.5 : MERKEZ.z;
+    // İlk görünümün karoları stil inerken paralel istenir (yoksa sıra: stil → harita → karolar).
+    if (!reduce) { var ik = gorunumKutusu(ilkMerkez, ilkZ); karoOnYukle(ik, ilkZ); }
     fetch('/m/tur/harita/stil.json?v=k2').then(function (r) { return r.json(); }).then(function (stil) {
       stil.glyphs = location.origin + stil.glyphs;
       stil.sprite = location.origin + stil.sprite;
-      harita = new maplibregl.Map({
-        container: 'tur-harita', style: stil, center: st.S ? [st.S.longitude, st.S.latitude] : MERKEZ.c, zoom: st.S ? 9.5 : MERKEZ.z, minZoom: EN_AZ_YAKINLIK, maxZoom: 16.5,
-        attributionControl: false, dragRotate: false, pitchWithRotate: false, cooperativeGestures: false, fadeDuration: reduce ? 0 : 260
+      var kaynak = stil.sources && stil.sources.protomaps;
+      if (kaynak && kaynak.tiles && kaynak.tiles[0]) KARO = kaynak.tiles[0];
+      // Stil uygulamadan geliyor; webde iki şey haritaya VERİLMEDEN önce değişir (sonradan setLayoutProperty ilk karoları yeniden
+      // işletiyordu): EN/DE'de etiket dili (25 Eki: "İSVİÇRE"), zemin rengi #cccccc → kara rengi (karo inene kadarki an gri dörtgen değil).
+      stil.layers.forEach(function (l) {
+        if (l.type === 'background' && l.paint) l.paint['background-color'] = '#e2dfda';
+        var tf = A.dil !== 'tr' && l.layout && l.layout['text-field'];
+        if (!tf) return;
+        var j = JSON.stringify(tf);
+        if (j.indexOf('name:tr') >= 0) l.layout['text-field'] = JSON.parse(j.split('name:tr').join('name:' + A.dil));
       });
+      harita = new maplibregl.Map({
+        container: 'tur-harita', style: stil, center: ilkMerkez, zoom: ilkZ, minZoom: EN_AZ_YAKINLIK, maxZoom: 16.5,
+        attributionControl: false, dragRotate: false, pitchWithRotate: false, cooperativeGestures: false, fadeDuration: reduce ? 0 : 260,
+        // Yakınlaşırken yarım kalan karo istekleri iptal edilmesin: iptal edilen karo varışta yeniden isteniyordu. Karolar sürümlü (?v=)
+        // ve değişmiyor: süresi dolunca yeniden istenmesin.
+        cancelPendingTileRequestsWhileZooming: false, refreshExpiredTiles: false
+      });
+      yuklemeGostergesi();
       harita.touchZoomRotate.disableRotation();
       harita.addControl(new maplibregl.AttributionControl({ compact: true, customAttribution: '© OpenStreetMap · Protomaps' }), 'bottom-left');
       harita.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-left');
@@ -275,15 +365,36 @@
     return ['step', ['line-progress'], renk, Math.max(p, 0.00005), 'rgba(0,0,0,0)'];
   }
   var GEC = { duration: 450, delay: 0 };
-  function haritaYuklendi() {
-    // Harita stili uygulamadan geldiği için etiketler name:tr; EN/DE sayfada sayfanın dilini kullan (25 Eki: "İSVİÇRE").
-    if (A.dil !== 'tr') harita.getStyle().layers.forEach(function (l) {
-      var tf = l.layout && l.layout['text-field'];
-      if (!tf) return;
-      var j = JSON.stringify(tf);
-      if (j.indexOf('name:tr') < 0) return;
-      try { harita.setLayoutProperty(l.id, 'text-field', JSON.parse(j.split('name:tr').join('name:' + A.dil))); } catch (e) { /* etiket Türkçe kalır */ }
+  /* Açılışta harita, ilk görünümün karoları inene kadar kara renginde bekler ve yumuşakça açılır (en çok 4 sn). Sonra karolar 0,6 sn'den
+     uzun gecikirse haritanın üstünde ince bir yükleniyor çizgisi çıkar; hızlı gelen karoda hiçbir şey görünmez (geç gösterilen yükleme). */
+  function yuklemeGostergesi() {
+    var kap = document.getElementById('tur-harita');
+    var cubuk = document.createElement('div');
+    cubuk.className = 'harita-yukleniyor'; cubuk.setAttribute('aria-hidden', 'true');
+    kap.appendChild(cubuk);
+    if (!reduce) kap.classList.add('harita-acilis');
+    var acildi = false, zaman = null;
+    var ac = function () { if (acildi) return; acildi = true; kap.classList.remove('harita-acilis'); };
+    setTimeout(ac, 4000);
+    var bitti = function () { return harita.isSourceLoaded('protomaps'); };
+    harita.on('dataloading', function (e) {
+      if (e.sourceId !== 'protomaps' || zaman || !acildi) return;
+      zaman = setTimeout(function () { zaman = null; if (!bitti()) cubuk.classList.add('acik'); }, 600);
     });
+    var kontrol = function (e) {
+      if (e && e.sourceId && e.sourceId !== 'protomaps') return;
+      var tamam = false; try { tamam = bitti(); } catch (x) { return; }
+      if (!tamam) return;
+      ac();
+      if (zaman) { clearTimeout(zaman); zaman = null; }
+      cubuk.classList.remove('acik');
+    };
+    harita.on('sourcedata', kontrol);
+    harita.on('idle', function () { kontrol(); ustDuzeyHazirla(); });
+  }
+
+  function haritaYuklendi() {
+    // EN/DE etiket dili artık stil haritaya verilmeden önce (haritaKur).
     hazir = true;
     padYaz();
     kadranKur();
@@ -654,7 +765,7 @@
       if (this.kimlikler.length === 1 && st.S && !reduce) { // ilk aday gelince kamera turun sınırlarına yumuşakça oturur
         var b = new maplibregl.LngLatBounds();
         tur.coordinates.forEach(function (c) { b.extend([c.longitude, c.latitude]); });
-        harita.fitBounds(b, kamera({ padding: 40, maxZoom: 12, duration: 1000 }));
+        kameraGit('fitBounds', b, kamera({ padding: 40, maxZoom: 12, duration: 1000 }), 1200);   // tur üretilirken: kullanıcı zaten bekliyor
       }
     },
     /* hizli: hemen sil; değilse 450 ms sönüp silinir */
@@ -677,6 +788,25 @@
     return null;
   }
 
+  /* Rota hesabı birkaç saniye sürüyor; ilk aday gelince kamera turun sınırına oturacak. O görünümün karoları şimdiden istenir:
+     tur, çapı capKm olan ve başlangıçtan geçen halkanın içinde (yön seçiliyse halkanın merkezi o yönde r km ötede, "her yön"de
+     başlangıç çevresinde 2r). Düzey, o kutuya fitBounds'un vereceği düzey (en çok 12, ilk aday kamerasıyla aynı sınır). */
+  function turAlaniHazirla() {
+    if (!harita || !st.S || reduce) return;
+    var r = M.capKm ? M.capKm(M.uretimKm(st.km, st.sure, st.seviye), st.seviye) / 2 : null;
+    if (!(r > 0) && window.TurGeometri) r = TurGeometri.capKm(M.uretimKm(st.km, st.sure, st.seviye), st.seviye) / 2;
+    if (!(r > 0)) return;
+    var lat = st.S.latitude, lon = st.S.longitude, kx = 111.32 * Math.cos(lat * Math.PI / 180), ky = 110.574;
+    var yari = st.herYon ? 2 * r : r * 1.1, cLat = lat, cLon = lon;
+    if (!st.herYon) { var a = st.yon * Math.PI / 180; cLat += r * Math.cos(a) / ky; cLon += r * Math.sin(a) / kx; }
+    var b = new maplibregl.LngLatBounds([cLon - yari / kx, cLat - yari / ky], [cLon + yari / kx, cLat + yari / ky]);
+    var hedef = null;
+    try { hedef = harita.cameraForBounds(b, { padding: 40, maxZoom: 12 }); } catch (e) { return; }
+    if (!hedef) return;
+    var kutu = [b.getWest(), b.getSouth(), b.getEast(), b.getNorth()];
+    karoOnYukle(kutu, hedef.zoom); karoOnYukle(kutu, hedef.zoom - 1);
+  }
+
   function uret(devam) {
     olay('tur:iptal');
     var no = ++st.calisma;
@@ -694,6 +824,7 @@
     ilerlemeCiz(0, 6);
     halkaGuncelle();
     beklemeBaslat();
+    turAlaniHazirla();
     var kacin = st.kacin;
     var girdi = {
       baslangic: st.S, yon: st.herYon ? null : st.yon, hedefKm: M.uretimKm(st.km, st.sure, st.seviye), seviye: st.seviye,
@@ -926,7 +1057,7 @@
       beklemeBitir(false);
       var b = new maplibregl.LngLatBounds();
       st.sonuc.forEach(function (t) { t.coordinates.forEach(function (c) { b.extend([c.longitude, c.latitude]); }); });
-      if (!b.isEmpty()) harita.fitBounds(b, kamera({ padding: { top: 40, bottom: 40, left: 40, right: 40 }, maxZoom: 13, duration: 1100 }));
+      if (!b.isEmpty()) kameraGit('fitBounds', b, kamera({ padding: { top: 40, bottom: 40, left: 40, right: 40 }, maxZoom: 13, duration: 1100 }));
       cizSecili(1500);
     } else if (kip === 'sec') {
       cizSecili(800);
@@ -944,7 +1075,7 @@
     if (odak && hazir) {
       var b = new maplibregl.LngLatBounds();
       st.sonuc[i].coordinates.forEach(function (c) { b.extend([c.longitude, c.latitude]); });
-      if (!b.isEmpty()) harita.fitBounds(b, kamera({ padding: 50, maxZoom: 13, duration: 700 }));
+      if (!b.isEmpty()) kameraGit('fitBounds', b, kamera({ padding: 50, maxZoom: 13, duration: 700 }));
     }
     paylasKapat();
     adlariYukle(i);
@@ -1175,7 +1306,7 @@
     $$('.yer-kart2', $('#tur-yer-liste')).forEach(function (b, k) { b.classList.toggle('secili', k === i); });
     var y = yer.liste[i];
     if (kartiKaydir) { var kart = $('.yer-kart2[data-i="' + i + '"]'); if (kart && kart.scrollIntoView) { try { kart.scrollIntoView({ block: 'nearest', inline: 'center', behavior: reduce ? 'auto' : 'smooth' }); } catch (e) { /* eski */ } } }
-    if (hazir && y) harita.easeTo(kamera({ center: [y.lon, y.lat], zoom: Math.max(harita.getZoom(), 12), duration: 800 }));
+    if (hazir && y) kameraGit('easeTo', kamera({ center: [y.lon, y.lat], zoom: Math.max(harita.getZoom(), 12), duration: 800 }));
   }
   /* Önizleme sürüşü bir yerin yanından geçerken o yer kısa bir an vurgulanır (m/tur/surus.js) */
   function yerVurgu(i) {
@@ -1285,7 +1416,7 @@
     if (k === 'rotalar') {
       turGorunum(false);
       if (!kes.veri) kesVeriYukle(); else { kesKatmanGoster(true); kesListele(); }
-      if (hazir && !st.S && harita.getZoom() < 4.5) harita.easeTo(kamera({ zoom: 5, duration: 700 }));
+      if (hazir && !st.S && harita.getZoom() < 4.5) kameraGit('easeTo', kamera({ zoom: 5, duration: 700 }));
       try { history.replaceState(null, '', '#kesfet'); } catch (e) { /* önemsiz */ }
     } else {
       kesKatmanGoster(false);
@@ -1299,7 +1430,7 @@
       if (k === 'duzen' && hazir && tr && tr.coordinates.length > 1) {                      // düzenlemeye girerken tur ekrana sığsın
         var bb = new maplibregl.LngLatBounds();
         tr.coordinates.forEach(function (c) { bb.extend([c.longitude, c.latitude]); });
-        harita.fitBounds(bb, kamera({ padding: 60, maxZoom: 13, duration: 800 }));
+        kameraGit('fitBounds', bb, kamera({ padding: 60, maxZoom: 13, duration: 800 }));
       }
     olay('tur:kip', { kip: k });
     if (odak) $('#tur-kip-' + k).focus();
@@ -1570,7 +1701,7 @@
       harita.setPaintProperty('kes-sec-kenar', 'line-gradient', gradyan(0, '#0A3F42'));
       var b = new maplibregl.LngLatBounds();
       l.sekil.forEach(function (p) { b.extend([p[1], p[0]]); });
-      harita.fitBounds(b, kamera({ padding: { top: 50, bottom: 50, left: 50, right: 50 }, maxZoom: 12, duration: 1000 }));
+      kameraGit('fitBounds', b, kamera({ padding: { top: 50, bottom: 50, left: 50, right: 50 }, maxZoom: 12, duration: 1000 }));
       var cum = kumulatif(ham), top = cum[cum.length - 1] || 1;
       l.duraklar.forEach(function (d, k) {
         var f = cum[enYakinIndeks(ham, d.lat, d.lon)] / top;
@@ -1583,7 +1714,7 @@
       });
     } else {
       var g = M.GECITLER[i];
-      harita.flyTo(kamera({ center: [g.lon, g.lat], zoom: Math.max(harita.getZoom(), 9.5), duration: 1100 }));
+      kameraGit('flyTo', kamera({ center: [g.lon, g.lat], zoom: Math.max(harita.getZoom(), 9.5), duration: 1100 }));
     }
     kesListele(true);
     if (haritadan) {

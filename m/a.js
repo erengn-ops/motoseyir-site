@@ -75,16 +75,36 @@
     };
     var basla = function () {
       var dikey = matchMedia("(max-width:700px)").matches;
-      if (hv.getAttribute("data-src")) hv.src = (dikey && hv.getAttribute("data-src-dikey")) || hv.getAttribute("data-src");   /* tur sayfası: hafif 8 sn'lik döngü */
-      else hv.src = "/m/sahne-" + (dikey ? "dikey-hd" : "hd") + (hevcVar() ? "-hevc" : "") + ".mp4";
+      var url = hv.getAttribute("data-src") ? (dikey && hv.getAttribute("data-src-dikey")) || hv.getAttribute("data-src")   /* tur sayfası: hafif 8 sn'lik döngü */
+        : "/m/sahne-" + (dikey ? "dikey-hd" : "hd") + (hevcVar() ? "-hevc" : "") + ".mp4";
+      var gorunur = true;
       hv.addEventListener("playing", function () { hv.classList.add("oynuyor"); }, { once: true });
-      var p = hv.play(); if (p && p.catch) p.catch(function () {});
-      new IntersectionObserver(function (e) { if (e[0].isIntersecting) { hv.play().catch(function () {}); } else hv.pause(); }).observe(hv);
+      tamponla(hv, url, function () { if (gorunur && !D.hidden) { var p = hv.play(); if (p && p.catch) p.catch(function () {}); } });
+      new IntersectionObserver(function (e) { gorunur = e[0].isIntersecting; if (gorunur) { if (hv.readyState >= 4) hv.play().catch(function () {}); } else hv.pause(); }).observe(hv);
     };
     if (D.readyState === "complete") idle(kur);
     else W.addEventListener("load", function () { idle(kur); });
   }
   function idle(f) { if (W.requestIdleCallback) W.requestIdleCallback(f, { timeout: 400 }); else setTimeout(f, 200); }
+
+  /* ---------- videoyu önce TAMAMEN indir, sonra oynat (28 Eki 2026) ----------
+     Kullanıcı: "açılırken video kare kare geliyor, takılıyor". Kaynak atanıp hemen play() edilince tarayıcı ilk kareyle başlıyor;
+     bağlantı videonun bit hızının (kahraman 1080p ≈ 5 Mbit/sn) altına düştüğü her an donuyordu. Şimdi dosya fetch ile bir kerede
+     belleğe iner (blob), oynatma ancak o zaman başlar; o ana dek kapak görüntüsü durur ve video .oynuyor ile yumuşakça belirir.
+     Döngü de bellekten döner (her turda yeniden istek, ara takılma yok). fetch/Blob yoksa ya da indirme düşerse eski yol: doğrudan
+     kaynak, ama oynatma yine "canplaythrough"u (tarayıcının "sonuna kadar takılmadan oynar" tahmini) bekler. */
+  function tamponla(v, url, hazir) {
+    var bitti = false;
+    function ac(src) {
+      if (bitti) return; bitti = true;
+      if (v.getAttribute("src")) return hazir();   /* bu arada başka yol (CoRider ses düğmesi) kaynağı doğrudan atadı: ona dokunma */
+      v.addEventListener("canplaythrough", function () { hazir(); }, { once: true });
+      v.preload = "auto"; v.src = src; v.load();
+    }
+    if (!W.fetch || !W.URL || !URL.createObjectURL) return ac(url);
+    fetch(url, { priority: "low" }).then(function (r) { if (!r.ok) throw r.status; return r.blob(); })
+      .then(function (b) { ac(URL.createObjectURL(b)); }, function () { ac(url); });
+  }
 
   /* ---------- telefon demoları (19 Eki 2026) ----------
      Çerçevedeki ekran görüntüsünün yerinde uygulamanın gerçek kullanımı (m/demo-<ad>-<kod>.mp4). uret.py yalnız o dilin klibi VARSA
@@ -104,16 +124,18 @@
     function hazirla(v) {
       if (v.__hz) return; v.__hz = 1; kapak(v);
       if (sade || (v.hasAttribute("data-demo-ilk") && MH.hafif)) return;
-      var hev = hevcVar();
+      var hev = hevcVar(), url = null;
       $$("source[data-src]", v).forEach(function (k) {
-        if (/hvc1/.test(k.type) && !hev) k.parentNode.removeChild(k); else k.src = k.getAttribute("data-src");
+        if (!url && (hev || !/hvc1/.test(k.type))) url = k.getAttribute("data-src");
+        k.parentNode.removeChild(k);   /* kaynak tek: seçilen dosya belleğe iner (tamponla) */
       });
-      v.__kay = 1; v.load();
+      if (!url) return;
+      tamponla(v, url, function () { v.__kay = 1; if (v.__iste) oynat(v); });
     }
-    function oynat(v) { if (!v.__kay) return; var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+    function oynat(v) { v.__iste = 1; if (!v.__kay) return; var p = v.play(); if (p && p.catch) p.catch(function () {}); }
     /* data-demo-gec: sticky anlatıdaki klip — yalnız kendi adımı etkinken yüklenir ve oynar (anlatı sec() çağırır) */
     MH.demoAc = function (v) { hazirla(v); oynat(v); };
-    MH.demoDur = function (v) { v.pause(); };
+    MH.demoDur = function (v) { v.__iste = 0; v.pause(); };
     if (gecVideo && gecIstek) MH.demoAc(gecVideo);
     liste = liste.filter(function (v) { return !v.hasAttribute("data-demo-gec"); });
     if (!liste.length) return;
@@ -123,11 +145,11 @@
     var oyn = new IntersectionObserver(function (es) {
       es.forEach(function (e) {
         var v = e.target;
-        if (e.isIntersecting) { gor.add(v); hazirla(v); if (!D.hidden) oynat(v); } else { gor.delete(v); v.pause(); }
+        if (e.isIntersecting) { gor.add(v); hazirla(v); if (!D.hidden) oynat(v); } else { gor.delete(v); v.__iste = 0; v.pause(); }
       });
     }, { threshold: .2 });
     function izle(v) { hz.observe(v); oyn.observe(v); }
-    D.addEventListener("visibilitychange", function () { gor.forEach(function (v) { if (D.hidden) v.pause(); else oynat(v); }); });
+    D.addEventListener("visibilitychange", function () { gor.forEach(function (v) { if (D.hidden) { v.__iste = 0; v.pause(); } else oynat(v); }); });
     var ilk = liste.filter(function (v) { return v.hasAttribute("data-demo-ilk"); });
     liste.forEach(function (v) { if (ilk.indexOf(v) < 0) izle(v); });
     if (ilk.length) {
@@ -137,7 +159,7 @@
   }
 
   /* klipler: görününce yüklenir ve oynar, çıkınca durur */
-  var klipler = $$("video[data-src]");
+  var klipler = $$("video[data-src]:not(#hv)");   /* kahraman bandı kendi yolundan (videoBaslat) */
   /* Tek sürüm: tam çözünürlük (küçük/düşük çözünürlüklü yedekler kaldırıldı). */
   function kaynak(v) { return v.getAttribute("data-src"); }
   if (azalt) klipler.forEach(function (v) { var dp = v.getAttribute("data-poster"); if (dp) v.poster = dp; });  /* hareket azaltmada video yüklenmez; durağan kapak görünür */
@@ -145,7 +167,12 @@
     var kio = new IntersectionObserver(function (es) {
       es.forEach(function (e) {
         var v = e.target;
-        if (e.isIntersecting) { if (!v.poster && v.getAttribute("data-poster")) v.poster = v.getAttribute("data-poster"); if (!v.getAttribute("src")) v.src = kaynak(v); v.play().catch(function () {}); } else v.pause();
+        if (e.isIntersecting) {
+          if (!v.poster && v.getAttribute("data-poster")) v.poster = v.getAttribute("data-poster");
+          v.__gor = 1;
+          if (!v.__tk) { v.__tk = 1; tamponla(v, kaynak(v), function () { v.__hazir = 1; if (v.__gor) v.play().catch(function () {}); }); }
+          else if (v.__hazir) v.play().catch(function () {});
+        } else { v.__gor = 0; v.pause(); }
       });
     }, { threshold: .25, rootMargin: "200px 0px" });
     klipler.forEach(function (v) { kio.observe(v); });
