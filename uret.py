@@ -909,12 +909,15 @@ def arac_yaz() -> int:
 # Bağlantı biçimi `https://motoseyir-app.com/izle/#/izle/<belirteç>` (sunucu: server/takip.py, MOTOSEYIR_IZLE_SITE=1; parça
 # sunucuya gitmez). Sayfa tek ve dili tarayıcıdan seçer (tr/en/de/fr/it); üst menü/altbilgi metinleri bu betikte mevcut dil
 # sözlüklerinden JSON'a konur ve m/izle/izle.js dile göre değiştirir. KİŞİSEL sürüş sayfası: noindex, sitemap'e GİRMEZ.
+# Kısa kod (1 Kas 2026): `/izle/` kodsuz açılınca kod kutusu; `#/kod/<KOD>` ve `?kod=<KOD>` canlı görünümü kodla açar.
 # Metin: arac/canli-izle.json · şablon: sablon/izle.html · stil/davranış: m/izle/izle.css, m/izle/izle.js.
 # Veri: IZLE_API/izle/<belirteç>/durum (CORS yalnız bu site); harita: tur üreticisiyle aynı stil/parçalar.
 # ---------------------------------------------------------------------------------------------------------------------
 IZLE_ETIKET = "canli-izle"  # App Store `ct`
 IZLE_API = "https://rota.motoseyir-app.com"
 IZLE_DILLER = ("tr", "en", "de", "fr", "it")  # uygulamanın beş dili
+# Kısa izleme kodu kutusu (1 Kas 2026): /izle/ kodsuz açılınca "sürüş kodunu gir"; çözüm <api>/izle/k/<KOD>/durum.
+IZLE_KOD_ALANLARI = ("baslik", "ipucu", "dugme", "kisa", "bicim", "bulunamadi", "sinir", "ag", "yok", "yok_alt")
 IZLE_MAGAZA = f"https://apps.apple.com/app/apple-store/id{UYGULAMA_ID}?pt={SAGLAYICI}&ct={IZLE_ETIKET}&mt=8"
 
 
@@ -941,11 +944,12 @@ def izle_yaz() -> int:
     v = json.loads(dosya.read_text(encoding="utf-8"))
     v.pop("_not", None)
     zorunlu = ("lang", "yerel", "ad", "baslik", "eyebrow", "aciklama", "harita_etiket", "durum", "etiket", "ortala", "ag_hata", "harita_hata", "alt",
-               "iz_not", "js_gerekli", "cta_baslik", "cta_metin", "cta_dugme", "cta_android")
+               "iz_not", "js_gerekli", "cta_baslik", "cta_metin", "cta_dugme", "cta_android", "kod")
     durumlar = ("canli", "bekliyor", "bekliyor_alt", "kopuk", "kopuk_alt", "bitti", "bitti_alt", "varis", "kapatildi", "sessiz", "yok", "yok_alt")
     for k in IZLE_DILLER:
         eksik = [a for a in zorunlu if a not in v.get(k, {})] + [f"durum.{a}" for a in durumlar if a not in v.get(k, {}).get("durum", {})]
         eksik += [f"etiket.{a}" for a in ("hedef", "kalan", "varis", "son") if a not in v.get(k, {}).get("etiket", {})]
+        eksik += [f"kod.{a}" for a in IZLE_KOD_ALANLARI if a not in v.get(k, {}).get("kod", {})]
         if eksik:
             raise SystemExit(f"HATA: arac/canli-izle.json [{k}]: eksik alan(lar): {', '.join(eksik)}")
     hub, _ = rehber_veri()
@@ -974,6 +978,7 @@ def izle_yaz() -> int:
         **{a: b for a, b in tr.items() if isinstance(b, str)},
         "aciklama_nitelik": _html.escape(tr["aciklama"], quote=True),
         "og_aciklama": _html.escape(f'{tr["aciklama"].split(".")[0]}. · {v["en"]["aciklama"].split(".")[0]}.', quote=True),
+        "k_baslik": tr["kod"]["baslik"], "k_ipucu": tr["kod"]["ipucu"], "k_dugme": tr["kod"]["dugme"],
         "e_hedef": tr["etiket"]["hedef"], "e_kalan": tr["etiket"]["kalan"], "e_varis": tr["etiket"]["varis"], "e_son": tr["etiket"]["son"],
         "alan": ALAN, "vekil": ARAC_VEKIL, "api": IZLE_API, "store": IZLE_MAGAZA.replace("&", "&amp;"),
         "dil_secici": izle_dil_secici(metin_tr, v), "dil_altbilgi": izle_dil_altbilgi(v),

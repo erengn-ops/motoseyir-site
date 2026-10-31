@@ -1,6 +1,8 @@
 /*
  * Motoseyir canlı sürüş sayfası (/izle/).
  * Belirteç adreste PARÇA olarak (#/izle/<belirteç>; ?t=<belirteç> de olur): parça sunucuya ve günlüklere gitmez.
+ * KISA KOD (1 Kas 2026): sürücünün uygulamada gördüğü 8 haneli kod. Adreste #/kod/<KOD> (ya da ?kod=<KOD>, o da
+ * hemen parçaya çevrilir); kodsuz ve belirteçsiz açılışta kod kutusu çıkar. Veri: <api>/izle/k/<KOD>/durum.
  * Veri: rota.motoseyir-app.com/izle/<belirteç>/durum (anahtarsız, CORS yalnız bu site), 5 sn'de bir; ?s=<izS> ile artımlı iz.
  * Harita: MapLibre + Protomaps (tur üreticisiyle aynı stil/parçalar, /m/tur/harita/stil.json).
  * Hareket: power3 / expo çıkışı; konum değişimi yumuşak kayma, iz çizgisi uzayarak; prefers-reduced-motion'da tek adım.
@@ -62,6 +64,7 @@
       if (e.getAttribute('data-dil') === k) e.setAttribute('aria-current', 'true'); else e.removeAttribute('aria-current');
     });
     if (haritaEl) haritaEl.setAttribute('aria-label', T.harita_etiket);
+    if (kodGiris) kodHataYaz(null);
     goster();
   }
 
@@ -115,6 +118,25 @@
     return q ? q[1] : null;
   }
   var belirtec = belirtecBul();
+  /* Kısa kod: sunucunun alfabesi (0/O/1/I/L yok), 8 hane; yazarken tire/boşluk/küçük harf serbest. */
+  var KOD_ALFABE = /^[23456789ABCDEFGHJKMNPQRSTUVWXYZ]{8}$/;
+  function kodTemizle(s) { return String(s || '').toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 8); }
+  function kodBul() {
+    var m = /#\/kod\/([^/?&#]{1,40})/.exec(location.hash || '');
+    var q = /[?&]kod=([^&#]{1,40})/.exec(location.search || '');
+    var ham = m ? m[1] : q ? q[1] : null;
+    if (ham === null) return null;
+    try { ham = decodeURIComponent(ham); } catch (e) { /* ham kalsın */ }
+    var k = kodTemizle(ham);
+    return KOD_ALFABE.test(k) ? k : null;
+  }
+  var kod = belirtec ? null : kodBul();
+  /* ?kod= sunucu günlüğüne düşer (statik barındırma); hemen parçaya çevriliyor, parça sunucuya gitmez. */
+  if (kod && /[?&]kod=/.test(location.search || '') && window.history && history.replaceState) {
+    var kalanSorgu = (location.search || '').replace(/([?&])kod=[^&]*&?/, '$1').replace(/[?&]$/, '');
+    try { history.replaceState(null, '', location.pathname + kalanSorgu + '#/kod/' + kod); } catch (e) { /* sorun değil */ }
+  }
+  var kaynak = belirtec ? '/izle/' + belirtec + '/durum' : kod ? '/izle/k/' + kod + '/durum' : null;
   var api = A.api;
   if (yerelHost) { var qa = /[?&]api=([^&]+)/.exec(location.search || ''); if (qa) api = decodeURIComponent(qa[1]); } // yalnız yerel sınama
   window.addEventListener('hashchange', function () { location.reload(); });
@@ -296,7 +318,8 @@
     var d = son, gecen = (Date.now() - alinma) / 1000;
     $('izle-ag-hata').hidden = !agHatasi;
     var yazi, ad, alt = '', hedef = null, kalan = null, varisSaati = null, sonYazi = null;
-    if (d.durum === 'yok') { ad = 'yok'; yazi = T.durum.yok; alt = T.durum.yok_alt; }
+    if (d.durum === 'giris') { ad = 'giris'; yazi = ''; }
+    else if (d.durum === 'yok') { ad = 'yok'; yazi = kod ? T.kod.yok : T.durum.yok; alt = kod ? T.kod.yok_alt : T.durum.yok_alt; }
     else if (d.durum === 'bitti') {
       var varis = d.neden === 'varis';
       ad = varis ? 'varis' : 'bitti';
@@ -314,6 +337,7 @@
       if (isaretEl) isaretEl.classList.toggle('eski', d.durum !== 'canli' || yas > 60);
     }
     durumKur(ad); yaz('izle-durum-yazi', yazi); not(alt);
+    if (kodForm.hidden === (ad === 'giris' || ad === 'yok')) kodForm.hidden = !(ad === 'giris' || ad === 'yok');
     satir('hedef', hedef);
     satir('kalan', kalan !== null ? true : null);
     if (kalan !== null) kalanTween(kalan); else gosterilenKalan = null;
@@ -337,9 +361,12 @@
     zamanlayici = null;
     /* Arka plandaki sekme sormuyor (pil, veri); ilk soru yine de gidiyor ki sekme öne gelince ekran boş durmasın. */
     if (bitti || (document.hidden && son)) return;
-    var adres = api + '/izle/' + belirtec + '/durum' + (izS !== null ? '?s=' + izS : '');
+    var adres = api + kaynak + (izS !== null ? '?s=' + izS : '');
     fetch(adres, { cache: 'no-store', credentials: 'omit', mode: 'cors' }).then(function (r) {
-      if (r.status === 404) return { durum: 'yok' };
+      /* Kodla izlerken sunucu biten sürüşün kodunu da "yok" (404) diye yanıtlıyor (kod yalnız canlıyken çözülür):
+         daha önce sürüş görüldüyse bu "bitti"dir, "kod geçersiz" değil. */
+      if (r.status === 404) return kod && son && (son.durum === 'canli' || son.durum === 'kopuk' || son.durum === 'bekliyor') ? { durum: 'bitti', neden: 'bitti' } : { durum: 'yok' };
+      if (r.status === 429) throw new Error('429');
       if (!r.ok) throw new Error(String(r.status));
       return r.json();
     }).then(function (d) {
@@ -372,7 +399,32 @@
     });
   }
   document.addEventListener('visibilitychange', function () {
-    if (!document.hidden && !zamanlayici && !bitti && belirtec) sor();
+    if (!document.hidden && !zamanlayici && !bitti && kaynak) sor();
+  });
+
+  /* ---------------------------------------------------------------- kod kutusu */
+  var kodForm = $('izle-kod-form'), kodGiris = $('izle-kod-giris'), kodHata = $('izle-kod-hata'), kodDugme = $('izle-kod-dugme');
+  var kodGonderiyor = false;
+  function kodHataYaz(anahtar) { kodHata.textContent = anahtar ? T.kod[anahtar] : ''; kodHata.hidden = !anahtar; kodGiris.setAttribute('aria-invalid', anahtar ? 'true' : 'false'); }
+  kodGiris.addEventListener('input', function () {
+    var t = kodTemizle(kodGiris.value);
+    kodGiris.value = t.length > 4 ? t.slice(0, 4) + '-' + t.slice(4) : t;
+    kodHataYaz(null);
+  });
+  kodForm.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    if (kodGonderiyor) return;
+    var k = kodTemizle(kodGiris.value);
+    if (k.length < 8) { kodHataYaz('kisa'); return; }
+    if (!KOD_ALFABE.test(k)) { kodHataYaz('bicim'); return; }
+    /* Önce çöz: bulunamazsa sayfa yeniden yüklenmeden kutuda söylenir; bulunursa canlı görünüm açılır. */
+    kodGonderiyor = true; kodDugme.disabled = true; kodHataYaz(null);
+    fetch(api + '/izle/k/' + k + '/durum', { cache: 'no-store', credentials: 'omit', mode: 'cors' }).then(function (r) {
+      if (r.status === 404) { kodHataYaz('bulunamadi'); return; }
+      if (r.status === 429) { kodHataYaz('sinir'); return; }
+      if (!r.ok) throw new Error(String(r.status));
+      location.hash = '#/kod/' + k; // hashchange → sayfa yenilenir, canlı görünüm kodla açılır
+    }).catch(function () { kodHataYaz('ag'); }).then(function () { kodGonderiyor = false; kodDugme.disabled = false; });
   });
 
   /* ---------------------------------------------------------------- dil seçici ve mağaza */
@@ -391,10 +443,12 @@
 
   /* ---------------------------------------------------------------- başlangıç */
   dilKur(dilBul(), false);
-  if (!belirtec) {
-    son = { durum: 'yok' }; alinma = Date.now(); bitti = true; ilkYanit = false;
+  if (!kaynak) {
+    /* Belirteç de kod da yok (ya da kod bozuk): geçersiz bağlantı demek yerine kod kutusu. */
+    son = { durum: 'giris' }; alinma = Date.now(); bitti = true; ilkYanit = false;
     kok.setAttribute('data-harita', 'yok');
     goster();
+    if (kodGiris && window.matchMedia && matchMedia('(pointer: fine)').matches) kodGiris.focus();
   } else {
     sor();
   }

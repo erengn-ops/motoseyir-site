@@ -21,6 +21,7 @@
       "yok_alt": "Sürücüden yeni bir bağlantı isteyebilirsin."
     },
     "etiket": {"hedef": "Hedef", "kalan": "Kalan yol", "varis": "Tahmini varış", "son": "Son konum"},
+    "kod": {"baslik": "Sürüş kodunu gir", "ipucu": "Sürücü uygulamada sürüşünü paylaşırken 8 haneli bir kod görür. O kodu buraya yaz.", "dugme": "İzle", "kisa": "Kod 8 haneli; eksik kalmış.", "bicim": "Kodda 0, O, 1, I ve L kullanılmaz; yazdığını kontrol et.", "bulunamadi": "Bu kodla canlı bir sürüş bulunamadı. Kodu kontrol et; sürüş bitmiş olabilir.", "sinir": "Çok fazla deneme yapıldı. Bir dakika sonra yeniden dene.", "ag": "Bağlantı kurulamadı. İnternetini kontrol edip yeniden dene.", "yok": "Bu kodla canlı bir sürüş yok", "yok_alt": "Sürüş bitmiş ya da kodun süresi dolmuş olabilir. Sürücüden yeni kod isteyebilirsin."},
     "ortala": "Ortala",
     "ag_hata": "Bağlantı kurulamıyor, yeniden deneniyor…",
     "harita_hata": "Harita yüklenemedi; durum bilgisi yine de güncelleniyor.",
@@ -53,6 +54,7 @@
       "yok_alt": "You can ask the rider for a new link."
     },
     "etiket": {"hedef": "Destination", "kalan": "Distance left", "varis": "Estimated arrival", "son": "Last location"},
+    "kod": {"baslik": "Enter the ride code", "ipucu": "While sharing a ride, the rider sees an 8-character code in the app. Type it here.", "dugme": "Watch", "kisa": "The code has 8 characters; some are missing.", "bicim": "Codes never contain 0, O, 1, I or L; check what you typed.", "bulunamadi": "No live ride found for this code. Check the code; the ride may have ended.", "sinir": "Too many attempts. Try again in a minute.", "ag": "Could not connect. Check your internet and try again.", "yok": "No live ride for this code", "yok_alt": "The ride may have ended or the code may have expired. You can ask the rider for a new code."},
     "ortala": "Center",
     "ag_hata": "Can't connect, retrying…",
     "harita_hata": "The map could not be loaded; the status keeps updating anyway.",
@@ -85,6 +87,7 @@
       "yok_alt": "Bitte den Fahrer um einen neuen Link."
     },
     "etiket": {"hedef": "Ziel", "kalan": "Reststrecke", "varis": "Voraussichtliche Ankunft", "son": "Letzter Standort"},
+    "kod": {"baslik": "Fahrtcode eingeben", "ipucu": "Beim Teilen einer Fahrt sieht der Fahrer in der App einen 8-stelligen Code. Gib ihn hier ein.", "dugme": "Ansehen", "kisa": "Der Code hat 8 Zeichen; es fehlen welche.", "bicim": "Codes enthalten nie 0, O, 1, I oder L; prüfe deine Eingabe.", "bulunamadi": "Zu diesem Code gibt es keine laufende Fahrt. Prüfe den Code; die Fahrt ist vielleicht beendet.", "sinir": "Zu viele Versuche. Versuche es in einer Minute erneut.", "ag": "Keine Verbindung. Prüfe dein Internet und versuche es erneut.", "yok": "Zu diesem Code gibt es keine laufende Fahrt", "yok_alt": "Die Fahrt ist vielleicht beendet oder der Code abgelaufen. Du kannst den Fahrer um einen neuen Code bitten."},
     "ortala": "Zentrieren",
     "ag_hata": "Keine Verbindung, neuer Versuch…",
     "harita_hata": "Die Karte konnte nicht geladen werden; der Status wird trotzdem aktualisiert.",
@@ -117,6 +120,7 @@
       "yok_alt": "Demande un nouveau lien au motard."
     },
     "etiket": {"hedef": "Destination", "kalan": "Distance restante", "varis": "Arrivée estimée", "son": "Dernière position"},
+    "kod": {"baslik": "Saisis le code du trajet", "ipucu": "Quand il partage son trajet, le motard voit un code à 8 caractères dans l'appli. Saisis-le ici.", "dugme": "Suivre", "kisa": "Le code compte 8 caractères ; il en manque.", "bicim": "Les codes ne contiennent jamais 0, O, 1, I ni L ; vérifie ta saisie.", "bulunamadi": "Aucun trajet en direct pour ce code. Vérifie le code ; le trajet est peut-être terminé.", "sinir": "Trop d'essais. Réessaie dans une minute.", "ag": "Connexion impossible. Vérifie ta connexion internet et réessaie.", "yok": "Aucun trajet en direct pour ce code", "yok_alt": "Le trajet est peut-être terminé ou le code expiré. Tu peux demander un nouveau code au motard."},
     "ortala": "Recentrer",
     "ag_hata": "Connexion impossible, nouvelle tentative…",
     "harita_hata": "La carte n'a pas pu se charger ; l'état continue de se mettre à jour.",
@@ -149,6 +153,7 @@
       "yok_alt": "Chiedi al motociclista un nuovo link."
     },
     "etiket": {"hedef": "Destinazione", "kalan": "Distanza rimasta", "varis": "Arrivo previsto", "son": "Ultima posizione"},
+    "kod": {"baslik": "Inserisci il codice del giro", "ipucu": "Quando condivide il giro, il motociclista vede nell'app un codice di 8 caratteri. Scrivilo qui.", "dugme": "Segui", "kisa": "Il codice ha 8 caratteri; ne mancano alcuni.", "bicim": "I codici non contengono mai 0, O, 1, I o L; controlla cosa hai scritto.", "bulunamadi": "Nessun giro in diretta con questo codice. Controlla il codice; il giro potrebbe essere finito.", "sinir": "Troppi tentativi. Riprova tra un minuto.", "ag": "Impossibile connettersi. Controlla internet e riprova.", "yok": "Nessun giro in diretta con questo codice", "yok_alt": "Il giro potrebbe essere finito o il codice scaduto. Puoi chiedere un nuovo codice al motociclista."},
     "ortala": "Centra",
     "ag_hata": "Impossibile connettersi, nuovo tentativo…",
     "harita_hata": "Impossibile caricare la mappa; lo stato continua ad aggiornarsi.",

@@ -110,3 +110,23 @@
   .izle-satir, .izle-ortala { animation: none; }
   .izle-harita, .izle-nokta { transition: none; }
 }
+
+/* ---------- Kısa kod kutusu (1 Kas 2026): kodsuz açılışta ve geçersiz/bitmiş bağlantıda ---------- */
+.izle-arac[data-durum="giris"] .izle-durum-ust { display: none; }
+.izle-kod-form[hidden] { display: none; }
+.izle-kod-form { margin: .9rem 0 0; }
+.izle-arac[data-durum="giris"] .izle-kod-form { margin-top: 0; }
+.izle-kod-baslik { display: block; font-family: var(--serif); font-size: 1.55rem; line-height: 1.2; font-weight: 800; letter-spacing: -.01em; }
+.izle-kod-ipucu { margin: .45rem 0 .9rem; color: var(--text-2); font-size: .98rem; }
+.izle-kod-satir { display: flex; gap: .6rem; align-items: stretch; flex-wrap: wrap; }
+.izle-kod-giris {
+  flex: 1 1 11rem; min-width: 0; padding: .7rem .9rem; border-radius: 12px; border: 1.5px solid var(--border); background: var(--surface); color: var(--text);
+  font: 700 1.55rem/1.2 ui-monospace, "SF Mono", Menlo, Consolas, monospace; letter-spacing: .14em; text-transform: uppercase; text-align: center;
+}
+.izle-kod-giris::placeholder { color: var(--text-muted); opacity: .55; font-weight: 600; }
+.izle-kod-giris:focus-visible { outline: 3px solid var(--altin); outline-offset: 2px; border-color: var(--petrol); }
+.izle-kod-giris[aria-invalid="true"] { border-color: var(--kiremit); }
+.izle-kod-form .btn { min-height: 3rem; }
+.izle-kod-form .btn:disabled { opacity: .6; cursor: progress; }
+.izle-kod-hata { margin: .6rem 0 0; padding: .5rem .75rem; border-radius: 10px; background: #fff3ee; color: #7a2f12; font-size: .92rem; }
+.izle-kod-hata[hidden] { display: none; }

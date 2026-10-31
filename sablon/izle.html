@@ -77,6 +77,15 @@
         <strong class="izle-durum-yazi" id="izle-durum-yazi">…</strong>
       </div>
       <p class="izle-not" id="izle-not" hidden></p>
+      <form class="izle-kod-form" id="izle-kod-form" novalidate hidden>
+        <label class="izle-kod-baslik" for="izle-kod-giris" data-i="kod.baslik">{{k_baslik}}</label>
+        <p class="izle-kod-ipucu" data-i="kod.ipucu">{{k_ipucu}}</p>
+        <div class="izle-kod-satir">
+          <input type="text" id="izle-kod-giris" class="izle-kod-giris" name="kod" maxlength="9" placeholder="ABCD-EFGH" autocomplete="off" autocapitalize="characters" autocorrect="off" spellcheck="false" enterkeyhint="go" aria-describedby="izle-kod-hata">
+          <button type="submit" class="btn btn-primary" id="izle-kod-dugme" data-i="kod.dugme">{{k_dugme}}</button>
+        </div>
+        <p class="izle-kod-hata" id="izle-kod-hata" role="alert" hidden></p>
+      </form>
       <dl class="izle-satirlar" id="izle-satirlar">
         <div class="izle-satir" id="satir-hedef" hidden><dt data-i="etiket.hedef">{{e_hedef}}</dt><dd id="deger-hedef"></dd></div>
         <div class="izle-satir izle-satir-buyuk" id="satir-kalan" hidden><dt data-i="etiket.kalan">{{e_kalan}}</dt><dd id="deger-kalan"></dd></div>
