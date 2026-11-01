@@ -17,7 +17,8 @@ body.tur-sayfa { --border: var(--cizgi); --surface: var(--yuzey); --surface-2: v
 .tur-harita .maplibregl-canvas { outline: none; }
 /* 28 Eki: açılışta harita ilk karoları inene kadar kara renginde bekler, sonra yumuşakça açılır; sonradan karolar 0,6 sn'den uzun
    gecikirse üstte ince bir yükleniyor çizgisi (tur.js yuklemeGostergesi). Zemin = stilin kara rengi (#e2dfda). */
-.tur-harita { background: #e2dfda; }
+/* 1 Kas 2026: küre görünümünde dünyanın arkası uzay (koyu petrol); yakında harita karoları zaten her yeri kaplıyor */
+.tur-harita { background: radial-gradient(ellipse at 50% 42%, #123f43 0%, #0a2528 55%, #061416 100%); }
 .tur-harita .maplibregl-canvas { transition: opacity .45s ease; }
 .tur-harita.harita-acilis .maplibregl-canvas { opacity: 0; }
 .harita-yukleniyor { position: absolute; top: 0; left: 0; right: 0; height: 3px; z-index: 3; pointer-events: none; overflow: hidden;

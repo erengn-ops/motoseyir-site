@@ -357,6 +357,15 @@
     if (h0) { h0.on('move', istek); h0.on('resize', istek); h0.on('zoom', istek); }
 
     /* ------------------------------------------------------------ dış arayüz */
+    function cerceveHedef() {
+      var d = o.durum(), h = o.harita();
+      if (!d.S || !h) return null;
+      olc(); yaricap();
+      var pxKm = s.R / G.capKm(d.km, d.seviye);
+      var z = Math.log2(pxKm * 40075.016 * Math.cos(d.S.latitude * Math.PI / 180) / 512);
+      z = klamp(z, h.getMinZoom(), 14.5);
+      return { center: [d.S.longitude, d.S.latitude], zoom: z };
+    }
     var api = {
       guncelle: istek,
       ciz: function () { if (s.goster) ciz(); },
@@ -367,15 +376,13 @@
       ipucu: function (var_) { s.ipucu = !!var_; kok.classList.toggle('ipucu', !!var_ && s.etkin); },
       /* Halka kadrana otursun: harita ölçeği = kadran yarıçapı / turun kuş uçuşu çapı; başlangıç boş alanın ortasında. */
       cerceve: function (sure) {
-        var d = o.durum(), h = o.harita();
-        if (!d.S || !h) return;
-        olc(); yaricap();
-        var pxKm = s.R / G.capKm(d.km, d.seviye);
-        var z = Math.log2(pxKm * 40075.016 * Math.cos(d.S.latitude * Math.PI / 180) / 512);
-        z = klamp(z, h.getMinZoom(), 14.5);
-        var hedef = { center: [d.S.longitude, d.S.latitude], zoom: z, bearing: 0, duration: reduce ? 0 : (sure == null ? 600 : sure), easing: ease3 };
-        if (o.kamera) o.kamera('easeTo', hedef); else h.easeTo(hedef);   // tur.js kameraGit: önce hedefin karoları (28 Eki)
+        var hedef = cerceveHedef();
+        if (!hedef) return;
+        hedef.bearing = 0; hedef.duration = reduce ? 0 : (sure == null ? 600 : sure); hedef.easing = ease3;
+        if (o.kamera) o.kamera('easeTo', hedef); else o.harita().easeTo(hedef);   // tur.js kameraGit: önce hedefin karoları (28 Eki)
       },
+      /* Aynı hedef, kamerayı oynatmadan (1 Kas 2026: açılışta küreden bu görünüme uçulur) */
+      hedef: cerceveHedef,
       yok: function () { cancelAnimationFrame(raf); kok.innerHTML = ''; }
     };
     return api;

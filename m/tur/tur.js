@@ -126,7 +126,8 @@
   var bos = { type: 'FeatureCollection', features: [] };
   // En az 6. düzey (25 Eki): harita dosyasında 4–5. düzeydeki bazı parçalar boş çiziliyor (veri sağlam, MapLibre'de bucket 0);
   // Türkiye'yi 5'te açınca yalnız bir kare dolu kalıyordu. Sebep bulunana kadar daha uzağa izin yok.
-  var EN_AZ_YAKINLIK = 3; // 26 Eki: /web/k karo ucuyla 4–5. düzeydeki boş karo sorunu kalktı (eski pmtiles istemci yolu)
+  // 1 Kas 2026: KÜRE görünümü (MapLibre 5, projection globe) — tüm dünya görünsün diye 0,5'e kadar uzaklaşılır (/web/k z0–3 karoları sağlam).
+  var EN_AZ_YAKINLIK = 0.5;
   var MERKEZ = A.dil === 'tr' ? { c: [32.9, 39.9], z: 6 } : A.dil === 'de' ? { c: [11.0, 47.9], z: 6 }
     : /^America\//.test(tz) ? { c: [-105.5, 39.5], z: 6 } : { c: [8.5, 46.7], z: 6 };
 
@@ -201,6 +202,48 @@
     if (window.requestIdleCallback) requestIdleCallback(go, { timeout: 1500 }); else setTimeout(go, 300);
   }
 
+  /* ------------------------------------------------- açılış: küreden başlangıç bölgesine uçuş (1 Kas 2026)
+     Harita küre olarak açılır (dünyanın tamamı, uzayda), karolar inince başlangıç bölgesine kadranın oturduğu düzeye uçar.
+     Hareket azaltma açıksa uçuş yok: doğrudan hedef görünümde açılır. Uçuş sürerken kadran gizli, kadranın kendi kamera istekleri
+     bekler; haritaya dokunulursa uçuş durur (kullanıcı elini koydu). */
+  var giris = { bekliyor: false, suruyor: false, zaman: 0 };
+  var UCUS_SURE = 4600;
+  function girisAktif() { return giris.bekliyor || giris.suruyor; }
+  function kureZoomu() { // küre kapsayıcıya ~%78 sığsın (küre çapı = 512·2^z/π)
+    var el = document.getElementById('tur-harita');
+    var m = Math.min((el && el.clientWidth) || window.innerWidth, (el && el.clientHeight) || window.innerHeight);
+    var enlem = st.S ? st.S.latitude : MERKEZ.c[1];          // küre yarıçapı merkez enlemine göre 1/cos büyür (MapLibre ölçeği düz haritayla eşler)
+    return Math.max(0.6, Math.min(2.3, Math.log2(m * 0.78 * Math.PI * Math.cos(Math.min(70, Math.abs(enlem)) * Math.PI / 180) / 512)));
+  }
+  function dunyaKaroOnYukle() { for (var z = 0; z <= 2; z++) karoOnYukle([-180, -85, 180, 85], z); }
+  function girisBitir(tam) {
+    if (!girisAktif()) return;
+    giris.bekliyor = false; giris.suruyor = false; clearTimeout(giris.zaman);
+    if (!harita) return;
+    kadranMod();
+    if (kadran) { kadran.ipucu(!kadranDokunuldu); if (tam && st.evre === 'ayar' && st.kip === 'uret' && st.S) kadran.cerceve(380); }
+  }
+  function girisBaslat() {
+    if (!giris.bekliyor || !harita) return;
+    giris.bekliyor = false; clearTimeout(giris.zaman);
+    var h = kadran && kadran.hedef();
+    if (!h) { girisBitir(false); return; }
+    giris.suruyor = true;
+    var kap = harita.getCanvasContainer();
+    var dur = function () { // elle dokunuldu: uçuş durur, kadran olduğu yerde açılır
+      ['mousedown', 'touchstart', 'wheel'].forEach(function (a) { kap.removeEventListener(a, dur, true); });
+      if (!giris.suruyor) return;
+      harita.stop(); girisBitir(false);
+    };
+    ['mousedown', 'touchstart', 'wheel'].forEach(function (a) { kap.addEventListener(a, dur, { capture: true, passive: true }); });
+    harita.once('moveend', function () {
+      ['mousedown', 'touchstart', 'wheel'].forEach(function (a) { kap.removeEventListener(a, dur, true); });
+      girisBitir(true);
+    });
+    kameraGit('flyTo', { center: h.center, zoom: h.zoom, bearing: 0, duration: UCUS_SURE, curve: 1.5, essential: true,
+      easing: function (t) { return t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; } }, undefined, 900);
+  }
+
   function daire(c, rKm, n) {
     var kx = 111.32 * Math.cos(c.latitude * Math.PI / 180), ky = 110.574, hal = [];
     for (var i = 0; i <= n; i++) {
@@ -238,7 +281,7 @@
     kadran = TurKadran.kur({
       kok: $('#tur-kadran'), reduce: reduce, pay: pay, ipucuYazi: T.kadran_ipucu,
       harita: function () { return hazir ? harita : null; },
-      kamera: function (tur, hedef) { kameraGit(tur, hedef, undefined, 200); },
+      kamera: function (tur, hedef) { if (girisAktif()) return; kameraGit(tur, hedef, undefined, 200); },   // açılış uçuşu sürerken kadran kamerayı oynatmaz
       durum: function () { return { S: st.S, yon: st.yon, herYon: st.herYon, km: st.kmCanli != null ? st.kmCanli : st.km, seviye: st.seviye, sure: st.sure }; },
       yazilar: function () {
         var buyuk, kucuk, adim = M.cetvelAdimi(st.sure, st.seviye), km = M.adimaOturt(st.km, adim);
@@ -269,11 +312,12 @@
       jestBasladi: function () { if (window.TurPanel && window.innerWidth < 900 && window.TurPanel.durum() === 'acik') window.TurPanel.ayarla('yarim'); },
       dokunuldu: function () { kadranDokunuldu = true; var ip = $('#tur-ipucu'); if (ip && st.S) ip.hidden = true; }
     });
-    kadran.mod(st.evre === 'araniyor' ? 'ara' : st.evre === 'sonuc' || st.kip === 'rotalar' ? 'gizli' : 'ayar');
+    kadran.mod(girisAktif() || st.evre === 'sonuc' || st.kip === 'rotalar' ? 'gizli' : st.evre === 'araniyor' ? 'ara' : 'ayar');
   }
   function kadranMod() {
     if (!kadran) return;
     var m = st.kip !== 'uret' ? 'gizli' : st.evre === 'araniyor' ? 'ara' : st.evre === 'sonuc' ? 'gizli' : 'ayar';
+    if (giris.suruyor || giris.bekliyor) m = 'gizli';          // küreden uçarken kadran yok (inince açılır)
     kadran.mod(m);
     pinGuncelle();
   }
@@ -303,8 +347,16 @@
   function haritaKur() {
     if (!window.maplibregl) { durum(T.hata_harita, 'hata'); return; }
     var ilkMerkez = st.S ? [st.S.longitude, st.S.latitude] : MERKEZ.c, ilkZ = st.S ? 9.5 : MERKEZ.z;
+    // Açılış (1 Kas 2026): hareket azaltma kapalıysa ve başlangıç biliniyorsa harita KÜRE olarak açılır, başlangıç bölgesine uçar.
+    var ucusla = !reduce && !!st.S && st.kip === 'uret';
+    var acilisZ = ucusla ? kureZoomu() : ilkZ;
+    giris.bekliyor = ucusla;
     // İlk görünümün karoları stil inerken paralel istenir (yoksa sıra: stil → harita → karolar).
-    if (!reduce) { var ik = gorunumKutusu(ilkMerkez, ilkZ); karoOnYukle(ik, ilkZ); }
+    if (!reduce) {
+      if (ucusla) dunyaKaroOnYukle();                           // önce küre (z0–2), sonra hedef, sonra uçuş yolundaki düzeyler (z3–8, merkez çevresi)
+      var ik = gorunumKutusu(ilkMerkez, ilkZ); karoOnYukle(ik, ilkZ);
+      if (ucusla) for (var uz = 3; uz <= 8; uz++) karoOnYukle(gorunumKutusu(ilkMerkez, uz), uz);
+    }
     fetch('/m/tur/harita/stil.json?v=k2').then(function (r) { return r.json(); }).then(function (stil) {
       stil.glyphs = location.origin + stil.glyphs;
       stil.sprite = location.origin + stil.sprite;
@@ -319,8 +371,14 @@
         var j = JSON.stringify(tf);
         if (j.indexOf('name:tr') >= 0) l.layout['text-field'] = JSON.parse(j.split('name:tr').join('name:' + A.dil));
       });
+      // Küre (MapLibre 5): uzaklaşınca küre, yakınlaşınca (z 11–12) kendiliğinden düz harita. Atmosfer petrol/kara tonlarında, uzay koyu petrol.
+      stil.projection = { type: 'globe' };
+      stil.sky = {
+        'sky-color': '#2f8f93', 'horizon-color': '#a9e0d8', 'fog-color': '#e2dfda', 'sky-horizon-blend': 0.55, 'horizon-fog-blend': 0.6,
+        'fog-ground-blend': 0.2, 'atmosphere-blend': ['interpolate', ['linear'], ['zoom'], 0, 1, 4, 1, 7.5, 0]
+      };
       harita = new maplibregl.Map({
-        container: 'tur-harita', style: stil, center: ilkMerkez, zoom: ilkZ, minZoom: EN_AZ_YAKINLIK, maxZoom: 16.5,
+        container: 'tur-harita', style: stil, center: ilkMerkez, zoom: acilisZ, minZoom: EN_AZ_YAKINLIK, maxZoom: 16.5,
         attributionControl: false, dragRotate: false, pitchWithRotate: false, cooperativeGestures: false, fadeDuration: reduce ? 0 : 260,
         // Yakınlaşırken yarım kalan karo istekleri iptal edilmesin: iptal edilen karo varışta yeniden isteniyordu. Karolar sürümlü (?v=)
         // ve değişmiyor: süresi dolunca yeniden istenmesin.
@@ -410,7 +468,14 @@
     ekle({ id: 'rota-secili', type: 'line', source: 'secili', layout: cizgi, paint: { 'line-gradient': gradyan(0, '#0E6E73'), 'line-width': 5.5, 'line-opacity': 1, 'line-opacity-transition': GEC } });
     ekle({ id: 'bas-halka', type: 'circle', source: 'bas', paint: { 'circle-radius': 11, 'circle-color': '#F4B63F', 'circle-opacity': 0.35, 'circle-blur': 0.6 } });
     ekle({ id: 'bas-nokta', type: 'circle', source: 'bas', paint: { 'circle-radius': 5.5, 'circle-color': '#ffffff', 'circle-stroke-color': '#0E6E73', 'circle-stroke-width': 3 } });
-    if (st.S) { isaretKur(); halkaGuncelle(); kadranMod(); if (kadran) { kadran.ipucu(!kadranDokunuldu); kadran.cerceve(0); } }
+    if (st.S) {
+      isaretKur(); halkaGuncelle(); kadranMod();
+      if (kadran && !girisAktif()) { kadran.ipucu(!kadranDokunuldu); kadran.cerceve(0); }
+      else if (giris.bekliyor) {                                    // karolar inince (en geç 3,5 sn sonra) küreden uç
+        harita.once('idle', function () { setTimeout(girisBaslat, 250); });
+        giris.zaman = setTimeout(girisBaslat, 3500);
+      }
+    }
     if (st.kip === 'rotalar' && kes.veri) kesKatmanGoster(true);
     $('#tur-harita').classList.add('hazir');
   }
@@ -720,8 +785,10 @@
     asamaYaz(oran >= 1 ? 3 : oran >= 0.55 ? 2 : oran >= 0.2 ? 1 : 0);
     $('#tur-ilerleme-yazi').textContent = doldur(T.araniyor_adim, { b: b, t: t });
   }
+  function girisKes() { if (girisAktif()) { if (harita) harita.stop(); girisBitir(false); } }
   function evre(e) {
     st.evre = e;
+    if (e !== 'ayar') girisKes();                                  // tur aranıyor/sonuç: açılış uçuşu biter
     kok.dataset.evre = e;
     var sonucVar = st.sonuc.length > 0;
     $('#tur-form').hidden = e === 'sonuc' || (e === 'araniyor' && sonucVar);
@@ -1404,6 +1471,7 @@
   var KIPLER = ['uret', 'duzen', 'rotalar'];
   function kipSec(k, odak) {
     if (k === st.kip) return;
+    girisKes();
     olay('tur:iptal');
     st.kip = k;
     $$('.tur-kip-dugme').forEach(function (b) { var on = (b.id === 'tur-kip-' + k); b.setAttribute('aria-selected', on); b.tabIndex = on ? 0 : -1; });
