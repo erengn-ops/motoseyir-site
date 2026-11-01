@@ -1869,8 +1869,27 @@
       VARSAYILAN_BASLANGIC = { p: { latitude: b[0], longitude: b[1] }, ad: (q.get('ad') || '').slice(0, 80) };
     }
   } catch (e) { /* eski tarayıcı: varsayılan şehir */ }
+  var basAdresten = /[?&]bas=/.test(location.search);
   evre('ayar');
   baslangicKoy(VARSAYILAN_BASLANGIC.p, false, true, VARSAYILAN_BASLANGIC.ad);
   haritaKur();
+  /* Açılışta yaklaşık şehir (1 Kas 2026, kullanıcı: "sadece ankaradan başlıyor o her ülkede farklı di mi?"): konum izni İSTENMEZ;
+     vekilin /web/nerede ucu Cloudflare'in IP tabanlı şehrini 1 ondalıkla verir (hiçbir yerde saklanmaz). Geçit sayfasından başlangıç
+     geldiyse, kullanıcı başlangıcı/kadranı değiştirdiyse ya da açılış uçuşu başladıysa dokunulmaz; gelmezse dil/saat dilimi varsayılanı
+     kalır. Uçuş beklerken başlangıç yerinde değişir (uçuş yeni hedefe gider); hareket azaltmada kamera yeni şehre geçer. */
+  if (!basAdresten) {
+    var neredeIptal = window.AbortController ? new AbortController() : null;
+    setTimeout(function () { if (neredeIptal) neredeIptal.abort(); }, 2500);
+    fetch(vekilTaban() + '/web/nerede', neredeIptal ? { signal: neredeIptal.signal } : {})
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (n) {
+        if (!n || !isFinite(n.lat) || !isFinite(n.lon)) return;
+        if (giris.suruyor || kadranDokunuldu || st.evre !== 'ayar' || st.kip !== 'uret' || st.baslangicAdi !== VARSAYILAN_BASLANGIC.ad) return;
+        var bekliyor = giris.bekliyor || !harita;
+        baslangicKoy({ latitude: n.lat, longitude: n.lon }, false, bekliyor, n.sehir || '');
+        if (!reduce) for (var uz = 3; uz <= 9; uz++) karoOnYukle(gorunumKutusu([n.lon, n.lat], uz), uz);
+      })
+      .catch(function () { /* varsayılan şehir kalır */ });
+  }
   kok.classList.add('js');
 })();
