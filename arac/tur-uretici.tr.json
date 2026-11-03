@@ -1,7 +1,7 @@
 {
   "dizin": "tur-olusturucu",
   "baslik": "Motosiklet Rota Oluşturucu: Başladığın Yere Dönen Tur",
-  "aciklama": "Ücretsiz motosiklet rota oluşturucu: Başlangıcı, uzunluğu ve virajı seç, 1000 km'ye kadar en fazla üç tur gör, beğendiğini QR kodla telefonuna gönder ve Motoseyir'de sür.",
+  "aciklama": "Ücretsiz motosiklet rota oluşturucu: başlangıcı, uzunluğu ve virajı seç, 1000 km'ye kadar üç tur gör, beğendiğini QR kodla telefonuna gönder.",
   "h1": "Motosiklet rota ve tur oluşturucu",
   "eyebrow": "Tur planlayıcı",
   "lead": "Başlangıç noktanı, ne kadar süreceğini ve yolların ne kadar virajlı olacağını seç. Oluşturucu, başladığın yere dönen en fazla üç tur çizer. Beğendiğin turu QR kodla telefonuna gönderip Motoseyir'de sürebilirsin.",
