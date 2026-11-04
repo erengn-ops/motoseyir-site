@@ -1,0 +1,102 @@
+{
+  "slug": "stelvio-pass-motorcycle",
+  "sira": 4,
+  "baslik": "Stelvio Pass by Motorcycle: Hairpins, Season, Routes",
+  "aciklama": "Stelvio Pass by motorcycle: 2,758 m, 48 hairpins from Prad and 41 from Bormio, no toll, usual open months, the Umbrail descent and how to plan the ride.",
+  "h1": "Stelvio Pass by motorcycle: the two sides, the season and the plan",
+  "eyebrow": "Passes · Italy",
+  "lead": "The Stelvio is one of the best-known motorcycle roads in the Alps, with a hairpin staircase on the South Tyrol side and a longer, more varied climb from Bormio. This guide sets out what the tourist boards say about height, hairpins, access and season, and how to turn it into a ride you draw yourself.",
+  "yayin": "2026-11-04",
+  "guncelleme": "2026-11-04",
+  "ozet": "Stelvio Pass for riders: height, the 48 hairpins from Prad, the 41 turns from Bormio, no toll, usual open months and the Umbrail descent.",
+  "bolumler": [
+    {
+      "id": "facts",
+      "h2": "Stelvio Pass at a glance",
+      "icerik": [
+        {"p": "Bormio Turismo gives the summit as 2,758 m and calls the Stelvio the highest mountain pass for vehicles in Italy and the second highest in Europe. Wikipedia lists 2,757 m and describes it as the highest paved pass in the Eastern Alps, 7 m below the Col de l’Iseran. The one-metre difference between the two sources is a matter of measurement; either way, it is a high road where weather changes quickly."},
+        {"tablo": {
+          "baslik_metni": "Stelvio Pass key figures",
+          "baslik": ["Item", "Figure", "Source"],
+          "satirlar": [
+            ["Summit height", "2,758 m (Wikipedia: 2,757 m)", "Bormio Turismo; Wikipedia"],
+            ["Hairpin bends, Prad side", "48 over 25 km", "IDM Südtirol"],
+            ["Hairpin bends, Bormio side", "41 turns (Wikipedia counts 34 hairpins and six tunnels)", "Bormio Turismo; Wikipedia"],
+            ["Climb from Prad", "1,838 m of ascent", "IDM Südtirol"],
+            ["Toll", "None, free access", "Bormio Turismo"],
+            ["Usual season", "Late May to early November, depending on snow", "Bormio Turismo"],
+            ["Built", "1820 to 1825, engineer Carlo Donegani", "Wikipedia; Bormio Turismo"]
+          ],
+          "not": "Sources: Bormio Turismo, IDM Südtirol, Wikipedia. The two sources count the Bormio side differently: 41 turns against 34 hairpins plus six tunnels."
+        }}
+      ]
+    },
+    {
+      "id": "sides",
+      "h2": "Prad or Bormio: which side first?",
+      "icerik": [
+        {"h3": "From Prad (South Tyrol)"},
+        {"p": "IDM Südtirol describes the Stelvio tour from Prato allo Stelvio (Prad am Stilfser Joch) as 25 km with 48 hairpin bends, passing Gomagoi, Trafoi and Franzenshöhe. Wikipedia numbers these bends with stones along the road. Near Trafoi the Ortles glacier and rock faces come into view and stay in view up to the pass, according to IDM Südtirol."},
+        {"h3": "From Bormio (Lombardy)"},
+        {"p": "Bormio Turismo counts 41 turns on this side. Wikipedia describes the Bormio side as more sweeping, with six tunnels near the town. Neither source gives a figure for the length of this side that we could cite, so check the distance on the map when you plan."},
+        {"p": "The sources describe two different characters: the Prad side as a staircase of numbered hairpins, the Bormio side as longer and more sweeping. Look at both on the map and decide which one you want for the climb."}
+      ]
+    },
+    {
+      "id": "access",
+      "h2": "Access, limits and closed days",
+      "icerik": [
+        {"p": "Bormio Turismo states the Stelvio is open only in the summer season, with free access. Its FAQ gives late May to early November, depending on snow, and elsewhere mid or late May to the end of October or early November, with dates still to be defined each year. Treat these as a window, not a promise."},
+        {"p": "Bormio Turismo lists a height limit of 3.30 m on the Lombard side and does not mention motorcycles in its restrictions. The same page contains two contradictory answers about winter tyres and chains in the Province of Sondrio, so for late-season rides check the current rules with the local authority rather than relying on either."},
+        {"p": "Wikipedia notes that once a year, usually on the last Saturday of August or the first Saturday of September, the roads to the pass are closed to all traffic except bicycles, with about 12,000 cyclists on average; the Umbrail Pass is closed on that day too. Look up the date for the year you ride and avoid it."}
+      ]
+    },
+    {
+      "id": "umbrail",
+      "h2": "Umbrail Pass and the loop back",
+      "icerik": [
+        {"p": "Bormio Turismo lists the Umbrail Pass at 2,503 m, reached from the Stelvio side, and the descent leads towards Santa Maria in the Val Müstair in Switzerland. IDM Südtirol recommends going down via the Umbrail Pass and Switzerland back to Prato for the return. That makes a loop: up the Stelvio from Prad, over the Umbrail into Switzerland and back to the Vinschgau."},
+        {"p": "Wikipedia adds that the Stelvio National Park, founded in 1935, is the largest national park in the Italian Alps and covers the Ortles-Cevedale massif. The road runs along its edge, so expect wildlife and sudden weather rather than services at the top."}
+      ]
+    },
+    {
+      "id": "plan",
+      "h2": "Planning the Stelvio ride",
+      "icerik": [
+        {"liste": [
+          "Choose the side and the direction first, then the base: Bormio on the Lombard side, Prad or Trafoi on the South Tyrol side.",
+          "Allow time for the descent as well: the sources give the climb from Prad as 1,838 m of ascent over 25 km.",
+          "Keep a second route ready in case the pass is closed that morning, for example towards the Gavia.",
+          "Check the operator’s or local authority’s current notice on the day you ride."
+        ]},
+        {"p": "For other passes within reach of Bormio, see the <a href=\"{@alpler}\">Alpine passes overview</a>, which compares heights, usual months and tolls, and the <a href=\"{@gecitler}\">pass pages by country</a>."}
+      ]
+    }
+  ],
+  "sss": [
+    {"s": "How high is the Stelvio Pass?", "c": "Bormio Turismo gives 2,758 m; Wikipedia lists 2,757 m. It is the highest paved pass in the Eastern Alps."},
+    {"s": "How many hairpins does the Stelvio have?", "c": "From Prad, IDM Südtirol counts 48 hairpin bends over 25 km. On the Bormio side Bormio Turismo counts 41 turns, while Wikipedia counts 34 hairpins and six tunnels."},
+    {"s": "Is there a toll on the Stelvio?", "c": "No. Bormio Turismo says access is free."},
+    {"s": "When is the Stelvio open?", "c": "Usually from late May to early November according to Bormio Turismo, depending on snow. Check the current notice before you ride."}
+  ],
+  "kaynaklar": [
+    {"ad": "Bormio Turismo: Stelvio Pass, Bormio side", "url": "https://www.bormio.eu/en/pois/stelvio-pass-bormio-mountainside"},
+    {"ad": "IDM Südtirol: Stelvio tour from Prad", "url": "https://www.suedtirol.info/en/en/experiences-and-events/plp-experiences/experiences-south-tyrol/pdp-experience.smgpoie5a44a21ea25eb190b69ada46443f3c2.stelvio-tour.prato--prad"},
+    {"ad": "Stelvio Pass, Wikipedia", "url": "https://en.wikipedia.org/wiki/Stelvio_Pass"}
+  ],
+  "urun": {
+    "h2": "Draw your own Stelvio ride",
+    "p": [
+      "Choose your start and end, add the Stelvio and the Umbrail as stops and set the order yourself. A long press on the map lets you add a place that has no name. Motoseyir hands the stops to navigation in the order you chose."
+    ],
+    "adimlar": [
+      "Open My Tours → Legendary → Mountain passes and filter by region, for example the Alps.",
+      "Look at the height and the closed months, and add the pass to your tour.",
+      "Add your start, your end and the stops in between.",
+      "Tap Start; the stops are handed to navigation in order."
+    ],
+    "ikincil": "The Stelvio also exists as a ready-made route in the Legendary tab. Tap it and it is copied into your tours, where you can change it.",
+    "gorsel": "efsane",
+    "gorsel_alt": "Motoseyir’s Legendary tab with ready-made routes and a map preview for each"
+  }
+}
