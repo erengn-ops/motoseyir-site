@@ -86,7 +86,19 @@
     "hub_baglanti": "Alle Alpenpässe {bolge_in} →",
     "index_baglanti": "Alle Alpenpässe →",
     "siralama_ilk": "Nach Höhe liegt {ad} auf Platz 1 der {n} Pässe {bolge_in} auf der Motoseyir-Karte.",
-    "foto_atif_genel": "Foto: Wikimedia Commons, {lisans}"
+    "foto_atif_genel": "Foto: Wikimedia Commons, {lisans}",
+    "tur_ust": [
+      "Rundtour über {ad} planen – Motorrad-Routenplaner",
+      "{ad}: Motorradtour planen und Rundtour berechnen",
+      "Motorradrunde über {ad} im Routenplaner zeichnen"
+    ],
+    "tur_ust_arac": [
+      "Motorrad-Routenplaner",
+      "Motorradtour planen",
+      "Rundtouren-Planer fürs Motorrad"
+    ],
+    "tur_alt": "{ad} in den Routenplaner laden und eine Rundtour berechnen",
+    "tur_hub": "Rundtour über diese Pässe mit dem Motorrad-Routenplaner planen"
   },
   "yonler": [
     "N",
@@ -147,5 +159,10 @@
     "tonale": "Tonalepass",
     "buyuk-st-bernard": "Großer Sankt Bernhard",
     "kucuk-st-bernard": "Kleiner Sankt Bernhard"
+  },
+  "populer": {
+    "h2": "Beliebte Pässe",
+    "p": "Um den Planer an einem Pass zu starten, öffne die Passseite; dort lädt ein Link den Pass als Startpunkt.",
+    "tum": "Alle Alpenpässe →"
   }
 }

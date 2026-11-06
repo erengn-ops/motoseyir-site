@@ -769,3 +769,6 @@ a:hover { text-decoration-thickness: 2px; }
   .gecit-tablo td { white-space: nowrap; }
   .gecit-yakin-bilgi { white-space: normal; }
 }
+
+.gecit-tur-ust { margin: 1rem 0 0; font-size: 1.02rem; }
+.gecit-tur-ust .gecit-tur-ok { font-weight: 700; }

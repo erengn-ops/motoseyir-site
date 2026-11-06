@@ -73,7 +73,19 @@
     "hub_baglanti": "Bütün Türkiye geçitleri →",
     "index_baglanti": "Bütün Türkiye geçitleri →",
     "siralama_ilk": "Motoseyir haritasındaki {n} Türkiye geçidinin en yükseği.",
-    "foto_atif_genel": "Fotoğraf: Wikimedia Commons, {lisans}"
+    "foto_atif_genel": "Fotoğraf: Wikimedia Commons, {lisans}",
+    "tur_ust": [
+      "{ad} üzerinden tur oluştur",
+      "{ad} için motosiklet rotası çiz",
+      "{ad} üzerinden geçen bir turu planla"
+    ],
+    "tur_ust_arac": [
+      "Motosiklet rota oluşturucu",
+      "Tur oluşturucu",
+      "Motosiklet rota planlayıcı"
+    ],
+    "tur_alt": "{ad} başlangıçlı turu rota oluşturucuda aç",
+    "tur_hub": "Bu geçitlerden geçen turu motosiklet rota oluşturucuyla planla"
   },
   "yonler": [
     "K",
@@ -103,5 +115,10 @@
     "TR": "Türkiye"
   },
   "ulke_slug": {},
-  "eksonim": {}
+  "eksonim": {},
+  "populer": {
+    "h2": "Popüler geçitler",
+    "p": "Rota oluşturucuyu bir geçitten başlatmak için sayfasını aç; her geçit sayfasından, geçidin konumu başlangıç seçili olarak tur çizebilirsin.",
+    "tum": "Bütün Türkiye geçitleri →"
+  }
 }

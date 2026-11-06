@@ -692,12 +692,38 @@ def arac_ayrinti(kod: str, v: dict, kaynak_goster: bool = True) -> str:
     return f'<section class="ayr"><div class="kap">{sol}{sag}</div></section>'
 
 
+ARAC_POPULER = {
+    "tr": ("karabet", "ovit", "sahara", "kop", "soganli", "zigana", "ilgaz", "sertavul"),
+    "en": ("stelvio", "hochtor", "furka", "grimsel", "susten", "gotthard", "timmelsjoch", "galibier", "iseran", "gavia",
+           "independence", "beartooth", "tioga", "red-mountain"),
+    "de": ("stelvio", "hochtor", "furka", "grimsel", "susten", "gotthard", "timmelsjoch", "nufenen", "galibier", "iseran", "bonette", "gavia", "sella", "pordoi"),
+}
+
+
+def arac_populer(kod: str) -> str:
+    """Araç sayfasında bilinen geçitlere sade bağlantı listesi (geçit sayfalarından araca verilen bağlantının karşılığı)."""
+    if kod not in GECIT_KAPSAM or kod not in ARAC_POPULER:
+        return ""
+    v = gecit_veri()[kod]
+    kimlik = {g["id"]: g for g in v["gecitler"]}
+    sec = []
+    for i in ARAC_POPULER[kod]:
+        if i not in kimlik:
+            raise SystemExit(f"HATA: ARAC_POPULER[{kod}] geçidi yok: {i}")
+        sec.append(kimlik[i])
+    pm = v["metin"]["populer"]
+    e = _html.escape
+    liste = "".join(f'<li><a href="{gecit_yol(kod, g)}">{e(g["gad"])}</a></li>' for g in sec)
+    return (f'<section class="ayr" id="populer-gecitler"><div class="kap"><div class="rehber-ilgili"><h2>{e(pm["h2"])}</h2>'
+            f'<p>{e(pm["p"])}</p><ul class="d">{liste}</ul><a class="ok" href="{gecit_kok(kod)}">{e(pm["tum"])}</a></div></div></section>\n')
+
+
 def arac_varis(kod: str, v: dict) -> str:
     u = v["urun"]
     govde = "".join(f'<p class="metin">{p}</p>' for p in u["p"])
     if u.get("ikincil"):
         govde += f'<p class="metin kucuk">{u["ikincil"]}</p>'
-    return (f'<section class="varis" data-ton aria-labelledby="urun-h2"><div class="kap" data-r><h2 id="urun-h2">{u["h2"]}</h2>{govde}'
+    return (arac_populer(kod) + f'<section class="varis" data-ton aria-labelledby="urun-h2"><div class="kap" data-r><h2 id="urun-h2">{u["h2"]}</h2>{govde}'
             f'<div class="cta-satir"><a class="btn" href="{arac_magaza(kod)}">{v["urun_dugme"]}</a></div></div></section>\n'
             + arac_ayrinti(kod, v))
 
@@ -1248,7 +1274,9 @@ def r_makale_govde(kod: str, grup: str, v: dict, ui: dict, metin: dict) -> str:
     if digerleri:
         parca.append(f'<section class="rehber-bolum rehber-ilgili"><h2>{ui["ilgili"]}</h2><ul>'
                      + "".join(f'<li><a href="{rehber_yol(kod, g)}">{makale[g][kod]["h1"]}</a></li>' for _, g in digerleri)
-                     + f'</ul><p><a href="{rehber_hub_yolu(kod)}">{ui["tum_yazilar"]}</a></p></section>')
+                     + f'</ul><p><a href="{rehber_hub_yolu(kod)}">{ui["tum_yazilar"]}</a></p>'
+                     + (f'<p><a href="{arac_yol(kod)}">{ui["arac_baglanti"]}</a></p>' if kod in arac_veri() and "arac_baglanti" in ui else "")
+                     + '</section>')
     kaynak_liste = "".join(f'<li><a href="{k["url"]}" rel="noopener">{k["ad"]}</a></li>' for k in v["kaynaklar"])
     parca.append(f'<section id="kaynaklar" class="rehber-bolum rehber-kaynaklar"><h2>{ui["kaynaklar"]}</h2>'
                  f'<p class="kucuk">{ui["kaynaklar_not"]}</p><ul>{kaynak_liste}</ul></section>')
@@ -1573,6 +1601,20 @@ def gecit_arac_baglanti(kod: str, g: dict) -> str:
     return f'{arac_yol(kod)}?bas={g["lat"]:.5f},{g["lon"]:.5f}&amp;ad={quote(g["gad"])}'
 
 
+def _gecit_varyant(liste: list, g: dict, kaydir: int = 0) -> str:
+    """Çapa metni çeşitliliği: geçit kimliğinden kararlı seçim (1.500 sayfada aynı çapa tekrarlanmasın)."""
+    import zlib
+    return liste[(zlib.crc32(g["id"].encode()) + kaydir) % len(liste)]
+
+
+def gecit_ust_tur(kod: str, g: dict, m: dict, p: dict) -> str:
+    """Geçit sayfasının üstünde: aracın derin bağlantısı (başlangıç=geçit) + parametresiz kanonik adres (2. varyant)."""
+    gm = m["gecit"]
+    e = _html.escape
+    return (f'<p class="gecit-tur-ust"><a class="gecit-tur-ok" href="{gecit_arac_baglanti(kod, g)}">{e(_gecit_varyant(gm["tur_ust"], g).format(**p))}</a>'
+            f' · <a href="{arac_yol(kod)}">{e(_gecit_varyant(gm["tur_ust_arac"], g, 1))}</a></p>')
+
+
 def gecit_footer(kod: str) -> str:
     if kod not in GECIT_KAPSAM:
         return ""
@@ -1631,7 +1673,7 @@ def gecit_govde(kod: str, g: dict, m: dict, ui: dict, metin: dict) -> tuple:
     ekmek = f'<nav class="rehber-ekmek" aria-label="{ui["ekmek"]}">' + ' <span aria-hidden="true">›</span> '.join(ek) + "</nav>"
     parca = ['<section class="section rehber-ust"><div class="wrap">', ekmek,
              f'<span class="eyebrow">{e(gm["eyebrow"].format(**p))}</span>', f"<h1>{e(h1)}</h1>",
-             f'<p class="section-lead">{e(gm["lead"].format(**p)).replace("  ", " ")}</p>', "</div></section>",
+             f'<p class="section-lead">{e(gm["lead"].format(**p)).replace("  ", " ")}</p>', gecit_ust_tur(kod, g, m, p), "</div></section>",
              '<section class="section section-2 rehber-govde"><div class="wrap"><div class="rehber-kolon">']
     # fotoğraf
     foto = KOK / "m" / "gecit" / f'{g["id"]}.webp'
@@ -1686,7 +1728,8 @@ def gecit_govde(kod: str, g: dict, m: dict, ui: dict, metin: dict) -> tuple:
     if h0["sayfa"] and h0["slug"]:
         alt.append(f'<a href="{gecit_hub_yol(kod, h0)}">{e(gm["hub_baglanti"].format(bolge=p["bolge"], bolge_in=p["bolge_in"]))}</a>')
     alt.append(f'<a href="{gecit_kok(kod)}">{gm["index_baglanti"]}</a>')
-    parca.append(f'<section class="rehber-bolum"><p>{" · ".join(dict.fromkeys(alt))}</p><p class="kucuk">{gm["veri_not"]}</p></section>')
+    parca.append(f'<section class="rehber-bolum"><p><a href="{gecit_arac_baglanti(kod, g)}">{e(gm["tur_alt"].format(**p))}</a></p>'
+                 f'<p>{" · ".join(dict.fromkeys(alt))}</p><p class="kucuk">{gm["veri_not"]}</p></section>')
     parca.append("</div></div></section>")
     return "\n".join(parca), baslik, aciklama, h1, p
 
@@ -1737,7 +1780,8 @@ def gecit_hub_govde(kod: str, h: dict, m: dict, ui: dict, metin: dict) -> tuple:
     ekmek = f'<nav class="rehber-ekmek" aria-label="{ui["ekmek"]}">' + ' <span aria-hidden="true">›</span> '.join(ek) + "</nav>"
     govde = "\n".join([
         '<section class="section rehber-ust"><div class="wrap">', ekmek, f'<span class="eyebrow">{e(hm["eyebrow"])}</span>',
-        f"<h1>{e(h1)}</h1>", f'<p class="section-lead">{e(lead)}</p>', "</div></section>",
+        f"<h1>{e(h1)}</h1>", f'<p class="section-lead">{e(lead)}</p>',
+        f'<p class="gecit-tur-ust"><a class="gecit-tur-ok" href="{arac_yol(kod)}">{e(m["gecit"]["tur_hub"])}</a></p>', "</div></section>",
         '<section class="section section-2 rehber-govde"><div class="wrap"><div class="rehber-kolon">',
         gecit_tablo(kod, gecitler, m, ui),
         f'<section class="rehber-urun" aria-labelledby="urun-h2"><div><h2 id="urun-h2">Motoseyir</h2>'
@@ -1760,7 +1804,7 @@ def gecit_index_govde(kod: str, m: dict, ui: dict, metin: dict) -> tuple:
              f'<nav class="rehber-ekmek" aria-label="{ui["ekmek"]}"><a href="{sayfa_yolu(kod, "index.html")}">{metin["nav_anasayfa"]}</a>'
              f' <span aria-hidden="true">›</span> <span aria-current="page">{m["ad"]}</span></nav>',
              f'<span class="eyebrow">{e(im["eyebrow"])}</span>', f'<h1>{e(im["h1"])}</h1>', f'<p class="section-lead">{e(im["lead"])}</p>',
-             "</div></section>", '<section class="section section-2 rehber-govde"><div class="wrap"><div class="rehber-kolon">']
+             f'<p class="gecit-tur-ust"><a class="gecit-tur-ok" href="{arac_yol(kod)}">{e(m["gecit"]["tur_hub"])}</a></p>', "</div></section>", '<section class="section section-2 rehber-govde"><div class="wrap"><div class="rehber-kolon">']
     for bolge, h2a, pa in (("abd", "abd_h2", "abd_p"), ("alp", "alp_h2", "alp_p")):
         if bolge not in GECIT_KAPSAM[kod]:
             continue

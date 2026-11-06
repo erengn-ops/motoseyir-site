@@ -99,7 +99,19 @@
     "hub_baglanti": "All passes in {bolge} →",
     "index_baglanti": "All mountain passes →",
     "siralama_ilk": "It is the highest of the {n} passes in {bolge} on the Motoseyir map.",
-    "foto_atif_genel": "Photo: Wikimedia Commons, {lisans}"
+    "foto_atif_genel": "Photo: Wikimedia Commons, {lisans}",
+    "tur_ust": [
+      "Plan a loop over {ad} with the motorcycle route planner",
+      "{ad}: plan a motorcycle trip around the pass",
+      "Build a round trip over {ad} in the route planner"
+    ],
+    "tur_ust_arac": [
+      "Motorcycle route planner",
+      "Motorcycle trip planner",
+      "Motorcycle route generator"
+    ],
+    "tur_alt": "Open {ad} in the route planner and generate a loop",
+    "tur_hub": "Plan a motorcycle tour over these passes with the route planner"
   },
   "yonler": [
     "N",
@@ -147,5 +159,10 @@
     "gavia": "Gavia Pass",
     "buyuk-st-bernard": "Great St Bernard Pass",
     "kucuk-st-bernard": "Little St Bernard Pass"
+  },
+  "populer": {
+    "h2": "Popular mountain passes",
+    "p": "To start the planner from a pass, open its page; each pass page has a link that loads the pass as the start point.",
+    "tum": "All mountain passes →"
   }
 }
