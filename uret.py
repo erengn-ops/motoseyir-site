@@ -39,7 +39,7 @@ ALAN = "https://motoseyir-app.com"
 UYGULAMA_ID = "6792549131"
 SAGLAYICI = "128439797"  # App Store Connect kampanya sağlayıcı kimliği (pt)
 YIL = "2026"
-GUNCELLEME = "2026-10-20"  # sitemap lastmod + JSON-LD dateModified
+GUNCELLEME = "2026-11-08"  # sitemap lastmod + JSON-LD dateModified
 
 # Şablon adı -> (çıktı dosya adı, sitemap changefreq, sitemap priority)
 SAYFALAR = {
@@ -129,12 +129,15 @@ X_DEFAULT = "en"
 
 # /indir/ ve /get/ reklam yönlendirme sayfaları `noindex`; robots.txt ile ENGELLENMEZ (engellenirse
 # arama motoru noindex etiketini göremez). Sitemap'te de yoklar.
-ROBOTS = f"""# Motoseyir tanıtım sitesi — {ALAN}/
-User-agent: *
-Allow: /
-
-Sitemap: {ALAN}/sitemap.xml
-"""
+# 8 Kas 2026 (GEO): yapay zekâ arama/yanıt robotları AÇIKÇA izinli. Yalnız bunlar: eğitim robotlarının (GPTBot, ClaudeBot,
+# Google-Extended, CCBot …) kararı bilerek verilmedi; `User-agent: *` kuralına bağlı kalırlar (şu an serbest). Değiştirmek için
+# o robotlara ayrı `Disallow` bloğu yaz. Bu bloklar `*` ile aynı sonucu verir; amaç niyeti belgelemek ve genel kuralın ileride
+# daraltılması hâlinde bu robotların dışarıda kalmaması.
+AI_ARAMA_ROBOTLARI = ("OAI-SearchBot", "ChatGPT-User", "PerplexityBot", "Perplexity-User", "Claude-SearchBot", "Claude-User", "Applebot")
+ROBOTS = (f"# Motoseyir tanıtım sitesi — {ALAN}/\nUser-agent: *\nAllow: /\n\n"
+          "# Yapay zekâ arama ve yanıt robotları: izinli\n"
+          + "".join(f"User-agent: {r}\nAllow: /\n\n" for r in AI_ARAMA_ROBOTLARI)
+          + f"Sitemap: {ALAN}/sitemap.xml\n")
 
 
 def dil_bilgisi(kod: str) -> dict:
@@ -391,7 +394,7 @@ SEO_ANAHTAR = {
 }
 # Breadcrumb'ta sayfanın adı: (dil anahtarı veya sabit metin)
 SEO_AD = {"ozellikler.html": "nav_ozellikler", "nasil-yapilir.html": "nav_nasil", "corider.html": "AI CoRider"}
-SAMEAS = ["https://www.instagram.com/motoseyir.app/", "https://www.instagram.com/motoseyir.app.en/"]
+SAMEAS = ["https://www.instagram.com/motoseyir.app/", "https://www.instagram.com/motoseyir.app.en/", f"https://apps.apple.com/app/id{UYGULAMA_ID}"]
 # Arama motoru sahiplik doğrulaması (HTML etiketi yöntemi). Search Console / Bing "URL öneki" mülkü için sahibi etiketin
 # `content` değerini verince buraya yazılır; yalnız Türkçe anasayfaya (https://motoseyir-app.com/) konur. Alan adı (DNS)
 # yöntemi kullanılıyorsa boş kalır. Bkz. SEO.md.
@@ -844,7 +847,8 @@ def tanitim_yaz() -> int:
             ic = r_bloklar(b["icerik"], {"tablo_etiket": ""}).replace("{arac}", arac_yol(kod))
             govde.append(f'<section class="bolum" id="{b["id"]}"><div class="kap"><div class="tur-yazi" data-r><h2>{b["h2"]}</h2>\n{ic}</div></div></section>')
         govde.append(f'<section class="bolum" id="sss" aria-labelledby="sss-h"><div class="kap"><h2 id="sss-h">{hub[kod]["ui"]["sss"]}</h2><ul class="izgara tur-sss" data-r>'
-                     + "".join(f"<li><h3>{x['s']}</h3><p>{x['c']}</p></li>" for x in v["sss"]) + "</ul></div></section>")
+                     + "".join(f"<li><h3>{x['s']}</h3><p>{x['c']}</p></li>" for x in v["sss"]) + "</ul>"
+                     + f'<div data-r>{guncel_satir(kod, v)}</div></div></section>')
         vr = v["varis"]
         varis = (f'<section class="varis" data-ton aria-labelledby="urun-h2"><div class="kap" data-r><h2 id="urun-h2">{vr["h2"]}</h2>'
                  + "".join(f'<p class="metin">{p}</p>' for p in vr["p"])
@@ -910,7 +914,7 @@ def arac_yaz() -> int:
             "corider_url": sayfa_yolu(kod, "corider.html"), "ozellikler_url": sayfa_yolu(kod, "ozellikler.html"),
             "nasil_url": sayfa_yolu(kod, "nasil-yapilir.html"), "hub_url": rehber_hub_yolu(kod), "arac_url": arac_yol(kod),
             "tanitim_url": tanitim_yol(kod), "p_ad": tanitim_veri()[kod]["ad"], "ui_rehber": hub[kod]["ui"]["rehber"], "uygulama_id": UYGULAMA_ID, "yil": YIL, "vekil": ARAC_VEKIL,
-            "eyebrow": v["eyebrow"], "h1": v["h1"], "lead": v["lead"], "adimlar_h2": v["adimlar_h2"],
+            "eyebrow": v["eyebrow"], "h1": v["h1"], "lead": v["lead"], "adimlar_h2": v["adimlar_h2"], "guncel_satir": guncel_satir(kod, v),
             "arac_icerik": arac_icerik_govde(kod, v),
             "arac_varis": arac_varis(kod, v),
             "dil_kodu": kod,
@@ -1217,6 +1221,13 @@ def r_bloklar(bloklar: list, ui: dict) -> str:
 def r_tarih(iso: str, ui: dict) -> str:
     y, a, g = iso.split("-")
     return f"{int(g)} {ui['aylar'][int(a) - 1]} {y}"
+
+
+def guncel_satir(kod: str, v: dict) -> str:
+    """Araç ve tanıtım sayfalarında görünür "Güncelleme: <tarih>" satırı (rehber yazılarındakiyle aynı etiketler)."""
+    hub, _ = rehber_veri()
+    ui = hub[kod]["ui"]
+    return f'<p class="tur-nasil rehber-meta">{ui["guncelleme"]}: <time datetime="{v["guncelleme"]}">{r_tarih(v["guncelleme"], ui)}</time></p>'
 
 
 def r_urun(urun: dict, kod: str, metin: dict) -> str:
@@ -2000,6 +2011,56 @@ def gecit_yaz() -> int:
     return yazilan
 
 
+# ---------------------------------------------------------------------------------------------------------------------
+# /llms.txt (8 Kas 2026, GEO): yapay zekâ yanıt motorları için kısa, düz metin site özeti (llmstxt.org biçimi). Her koşuda
+# sitenin kendi metinlerinden üretilir (elle düzenlenmez): olgular `dil/en.json` SSS'sinden, sayfa açıklamaları meta
+# açıklamalardan, rehber listesi `icerik/`ten. Yeni yazı/araç eklenince kendiliğinden girer.
+# ---------------------------------------------------------------------------------------------------------------------
+def llms_txt() -> str:
+    en = {**json.loads((DIL / "en.json").read_text(encoding="utf-8")), **json.loads((DIL / "anasayfa.en.json").read_text(encoding="utf-8")),
+          **json.loads((DIL / "corider.en.json").read_text(encoding="utf-8"))}
+    hub, makale = rehber_veri()
+    arac = arac_veri()
+    tan = tanitim_veri()
+    k = lambda x: duz(x).replace("\n", " ")
+    sat = ["# Motoseyir", "",
+           f"> {k(en['faq_a1'])} It is an iOS app, available on the App Store.", "",
+           "Motoseyir is made for motorcyclists, not for cars: it calculates by distance instead of minutes, so it can pick back roads and "
+           "shorter alternatives that a car-oriented sat nav skips. The site is available in 14 languages; the English pages are listed below.", "",
+           "## Key facts", ""]
+    for i in range(2, 7):
+        sat.append(f"- **{k(en[f'faq_q{i}'])}** {k(en[f'faq_a{i}'])}")
+    sat += [f"- Platform: iOS (App Store): {ALAN}/en/ has the download link.",
+            f"- Data: routes and maps are based on OpenStreetMap; sources and credits at {ALAN}/veri-kaynaklari/.", ""]
+    sat += ["## Main pages", ""]
+    sat.append(f"- [Home]({ALAN}/en/): {k(en['aciklama'])}")
+    sat.append(f"- [Features]({ALAN}/en/ozellikler.html): {k(en['oz_aciklama'])}")
+    sat.append(f"- [How to use Motoseyir]({ALAN}/en/nasil-yapilir.html): {k(en['ny_aciklama'])}")
+    sat.append(f"- [AI CoRider]({ALAN}/en/corider.html): {k(en['cr_aciklama'])}")
+    if "en" in arac:
+        sat.append(f"- [Motorcycle route generator (web)]({ALAN}{arac_yol('en')}): {k(arac['en']['aciklama'])}")
+    if "en" in tan:
+        sat.append(f"- [Tour generator in the app]({ALAN}{tanitim_yol('en')}): {k(tan['en']['aciklama'])}")
+    sat.append(f"- [Mountain passes]({ALAN}/en/passes/): one page per pass in the US and the Alps with elevation, location, surface and usual closing months, from the app's own pass data.")
+    sat += ["", "## Guides (English)", "", f"- [All guides]({ALAN}{rehber_hub_yolu('en')}): {k(hub['en']['aciklama'])}"]
+    for grup, m in sorted(makale.items(), key=lambda x: x[1].get("en", {}).get("sira", 99)):
+        if "en" in m:
+            sat.append(f"- [{k(m['en']['h1'])}]({ALAN}{rehber_yol('en', grup)}): {k(m['en']['aciklama'])} Updated {m['en']['guncelleme']}.")
+    sat += ["", "## Guides in other languages", ""]
+    for kk in hub:
+        if kk != "en":
+            sat.append(f"- {dil_bilgisi(kk)['ad']}: {ALAN}{rehber_hub_yolu(kk)}")
+    sat += ["", "## Language entry points", ""]
+    for d in DILLER:
+        sat.append(f"- {d['ad']}: {ALAN}{sayfa_yolu(d['kod'], 'index.html')}")
+    sat += ["", "## Other", "",
+            f"- Instagram: https://www.instagram.com/motoseyir.app.en/ (English), https://www.instagram.com/motoseyir.app/ (Turkish)",
+            f"- Sitemap: {ALAN}/sitemap.xml",
+            f"- Privacy and support: {ALAN}/gizlilik/en/", ""]
+    return "\n".join(sat)
+
+
+
 def main() -> None:
     sablonlar = {}
     for ad in SAYFALAR:
@@ -2079,10 +2140,11 @@ def main() -> None:
 
     (KOK / "sitemap.xml").write_text(sitemap(), encoding="utf-8")
     (KOK / "robots.txt").write_text(ROBOTS, encoding="utf-8")
+    (KOK / "llms.txt").write_text(llms_txt(), encoding="utf-8")
 
     diller = ", ".join(d["kod"] for d in DILLER)
     print(f"{yazilan} sayfa yazıldı — {len(DILLER)} dil ({diller}); bunların {rehber_yazilan}'i rehber, {arac_yazilan}'i araç sayfası, {gecit_yazilan}'i geçit sayfası")
-    print("sitemap.xml ve robots.txt yenilendi")
+    print("sitemap.xml, robots.txt ve llms.txt yenilendi")
 
 
 if __name__ == "__main__":

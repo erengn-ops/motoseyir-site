@@ -115,6 +115,9 @@ h1 i,h2 i,.plan h3 i{font-style:normal}
 .ana{position:relative}
 .ana>section:nth-of-type(even){background:var(--yuksek)}
 .kap{max-width:1200px;margin:0 auto;padding:0 var(--gutter)}
+.nedir{padding:44px 0 4px}
+.nedir h2{font:800 1.2rem/1.3 var(--sans);margin-bottom:8px}
+.nedir p{max-width:46rem;color:var(--yazi-2);font-size:1.05rem}
 .bolum{padding:72px 0}
 .km{font:700 .86rem/1.3 var(--sans);color:var(--vurgu);margin-bottom:12px}
 h2{font:800 clamp(1.9rem,5.6vw,3rem)/1.1 var(--sans);letter-spacing:-.025em;text-wrap:balance}

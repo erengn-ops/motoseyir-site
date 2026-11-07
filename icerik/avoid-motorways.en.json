@@ -1,0 +1,91 @@
+{
+  "slug": "motorcycle-route-avoid-motorways",
+  "sira": 6,
+  "baslik": "Motorcycle Route Without Motorways: How to Plan One",
+  "aciklama": "How to plan a motorcycle route that avoids motorways and tolls: set stops on back roads by hand, or use Motoseyir's Back roads mode and the route generator.",
+  "h1": "How to plan a motorcycle route without motorways",
+  "eyebrow": "Back roads",
+  "lead": "To get a motorcycle route without motorways, either set stops on the small roads yourself so the route cannot slip back onto the main road, or use a planner that has a back roads setting. Motoseyir's Back roads mode and its route generator do the second; this guide covers both ways.",
+  "yayin": "2026-11-08",
+  "guncelleme": "2026-11-08",
+  "ozet": "Planning a motorcycle route that avoids motorways and toll roads: manual stops on small roads, Motoseyir's Back roads mode and the route generator's No motorways option.",
+  "bolumler": [
+    {
+      "id": "neden",
+      "h2": "Why most routes end up on the motorway",
+      "icerik": [
+        {"p": "Most navigation works out the route by time. When minutes are the measure, motorways and main roads win, and the thin tarmac links between valleys often never make it into the route. For a rider that gap is real: more kilometres mean more fuel and more tyre wear, and many riders do not set out to sit on the straight lane of a motorway anyway."},
+        {"p": "In Motoseyir's own example, Ayder to Hemşin comes out at 24.1 km in Back roads mode, while general maps show 49.9 km for the same two points. That is a single example, not a ratio that holds for every route, but it shows how much a small road can shorten a trip."}
+      ]
+    },
+    {
+      "id": "elle",
+      "h2": "Planning it by hand",
+      "icerik": [
+        {"p": "You can build a route without motorways in any planner. The method is always the same: leave the big road between your start and end, and make the small places in between your stops."},
+        {"adimlar": [
+          "Mark the start and the end on the map and ignore the main road between them.",
+          "Zoom in and look for thin lines running beside the big road. Roads that join villages, with no number or a thin one, are what you are after.",
+          "Add several villages as stops, in order. The more often you place a stop, the less likely the navigation is to pull you back to the main road.",
+          "When the route appears, switch to the satellite view and check that the road is paved and does not turn into a field or forest track."
+        ]},
+        {"p": "The weak point of this method is effort: you scan the map for every stop, and between two stops the navigation can still choose the main road."}
+      ]
+    },
+    {
+      "id": "modu",
+      "h2": "Back roads mode in Motoseyir",
+      "icerik": [
+        {"p": "The mode button at the top left of a tour switches between Standard, Back roads and Coast. Back roads mode avoids motorways and toll roads and uses valley links and paved village roads that a classic map skips. In Turkey and Greece the route is calculated on Motoseyir's own server, with data based on OpenStreetMap. Choosing a mode is part of Pro; Standard is free."},
+        {"p": "For a single route, the sign button on the right of the Start screen switches between Shortest and Back roads. Shortest picks the alternative with the least distance, even if it takes a little longer."},
+        {"p": "Outside Turkey and Greece, and on big pass roads such as the Alps, Motoseyir uses Standard mode. On those roads the main route is usually the road you came for."}
+      ]
+    },
+    {
+      "id": "uret",
+      "h2": "Generating a tour without motorways",
+      "icerik": [
+        {"p": "The Generate a tour screen in the app and the <a href=\"{@arac}\">route generator on this site</a> work from a start point, a length and how twisty you want the roads. Curviness has three steps: Relaxed (flowing roads), Twisty (back roads) and Very twisty (hairpins). Under Options you can switch off motorways, tolls and dirt roads one by one, or ask for the loop to cross a mountain pass."},
+        {"p": "You get up to three round trips that bring you back to the start. If none of them suits you, <em>Another one</em> draws new loops with the same settings. The route generator on the site is free and needs no account; you send the loop you like to your phone with a QR code and ride it in the app."}
+      ]
+    },
+    {
+      "id": "dikkat",
+      "h2": "What to check before you ride",
+      "icerik": [
+        {"liste": [
+          "Road quality varies. Some small roads are narrow or unpaved in places; if you do not want dirt, switch it off in the generator's options.",
+          "Time grows. Average speed drops on small roads, so plan by hours and treat kilometres as the second measure.",
+          "Fuel stations can be far apart on a back roads route. Fill up before you leave the main road.",
+          "Road data comes from OpenStreetMap contributors. A closed bridge or a damaged stretch may not be on the map, so check local road conditions separately.",
+          "If the area has no other road, a card can still show a motorway, ferry or toll section; the card says so."
+        ]}
+      ]
+    }
+  ],
+  "sss": [
+    {"s": "Is there a motorcycle route planner that avoids motorways?", "c": "Yes. Motoseyir's Back roads mode avoids motorways and toll roads, and its route generator has a No motorways option. Back roads mode is part of Pro; the route generator on the website is free."},
+    {"s": "Can I avoid tolls and dirt roads as well?", "c": "In the Generate a tour screen and in the website's route generator, motorways, tolls and dirt roads can each be switched off separately. For a tour you build by hand, check from the satellite view whether the road is paved."},
+    {"s": "Does Back roads mode work in every country?", "c": "In Turkey and Greece the route is calculated on Motoseyir's own server. On big pass roads such as the Alps, Motoseyir uses Standard mode, because the main route there is the road you came for."}
+  ],
+  "kaynaklar": [
+    {"ad": "Motoseyir features page (Back roads mode, Ayder example, generate a tour)", "url": "https://motoseyir-app.com/en/ozellikler.html"},
+    {"ad": "Motoseyir route generator (options: No motorways, No tolls, No dirt)", "url": "https://motoseyir-app.com/en/motorcycle-route-generator/"},
+    {"ad": "Motoseyir data sources and credits (OpenStreetMap)", "url": "https://motoseyir-app.com/veri-kaynaklari/"}
+  ],
+  "urun": {
+    "h2": "Draw a back roads tour yourself",
+    "p": [
+      "In Motoseyir the plan is yours. You pick the start and end, add the villages in between as stops and switch the mode to Back roads. A long press on the map turns an unnamed junction into a stop as well."
+    ],
+    "adimlar": [
+      "On My Tours, type a name and tap Create.",
+      "Add your start, the village stops and your end.",
+      "Choose Back roads with the mode button at the top left (Pro).",
+      "Tap Start; between the stops the route picks the small roads."
+    ],
+    "ikincil": "To try it first, tap a ready-made route in the Legendary tab; its stops are copied into your tours, where you can change them.",
+    "gorsel": "tur",
+    "gorsel_alt": "Motoseyir's Generate a tour screen: direction dial and the Relaxed, Twisty and Very twisty options"
+  }
+}
