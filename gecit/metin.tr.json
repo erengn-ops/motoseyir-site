@@ -85,7 +85,35 @@
       "Motosiklet rota planlayıcı"
     ],
     "tur_alt": "{ad} başlangıçlı turu rota oluşturucuda aç",
-    "tur_hub": "Bu geçitlerden geçen turu motosiklet rota oluşturucuyla planla"
+    "tur_hub": "Bu geçitlerden geçen turu motosiklet rota oluşturucuyla planla",
+    "baslik_il": [
+      "{ad} Rakım {rakim}, {il} – Motosikletle Geçilir mi?",
+      "{ad} Rakım {rakim} – {il}, Motosikletle Geçit",
+      "{ad} Rakım {rakim}, {il} – Motosiklet Rehberi",
+      "{ad} Rakım {rakim}, {il}",
+      "{ad} Rakım {rakim}"
+    ],
+    "aciklama_bas_il": "{ad} nerede, rakımı kaç metre? {il}, rakım {rakim_tam}{yuzey_kisa_il}.",
+    "aciklama_kuyruk_il": [
+      " Motosikletle geçilir mi, yakındaki geçitler ve ücretsiz tur Motoseyir'de.",
+      " Motosikletle geçilir mi, yakındaki geçitler ve ücretsiz tur burada.",
+      " Yakındaki geçitler ve üstünden geçen ücretsiz motosiklet turu burada.",
+      " Yakındaki geçitler ve ücretsiz tur Motoseyir'de.",
+      " Yakındaki geçitler ve tur burada.",
+      " Ücretsiz tur Motoseyir'de."
+    ],
+    "yuzey_il_asfalt": ", yol asfalt",
+    "yuzey_il_toprak": ", yol toprak ya da stabilize",
+    "lead_il": "{ad}, {yer_cumle} Rakımı {rakim_tam}. {gecilir} {siralama}",
+    "yer_ilce": "{il} ili {ilce} ilçesi sınırları içinde.",
+    "yer_il": "{il} ili sınırları içinde.",
+    "gecilir_asfalt": "Motosikletle geçilir mi? Kayıtlarımıza göre yol asfalt",
+    "gecilir_toprak": "Motosikletle geçilir mi? Kayıtlarımıza göre yol toprak ya da stabilize; geçilebilir ama asfalt yola göre daha dikkat ister",
+    "gecilir_acik": ", mevsimlik kapanış kaydı yok, yani geçilebilir görünüyor. Yüksek yollar kar yağınca yine kapanabilir; yola çıkmadan yol durumuna bak.",
+    "gecilir_kapali": "; yol genellikle {ay1}–{ay2} arası motorlu taşıta kapalı, geri kalan aylarda geçilebilir. Tarihler her yıl kara göre değişir; yola çıkmadan yol durumuna bak.",
+    "b_il": "İl / ilçe",
+    "b_alt": "Diğer adı",
+    "il_not": "İl ve ilçe, noktanın OpenStreetMap idari sınırlarındaki yerine göre."
   },
   "yonler": [
     "K",

@@ -1441,6 +1441,14 @@ GECIT_HUB_EN_AZ = 3  # bu sayıdan az geçidi olan eyaletin liste sayfası yok (
 GECIT_YAKIN = 6
 GECIT_YAKIN_KM = 120
 GECIT_GUNCELLEME = "2026-10-27"
+# TR geçit sayfalarının görünür ilk paragrafı ve "Kısaca" tablosu 8 Kas 2026'da gerçekten değişti (il/ilçe, motosikletle geçilir mi cevabı):
+# yalnız TR geçit sayfaları bu tarihi taşır; EN/DE geçit sayfaları ve TR liste sayfası metni değişmediği için 27 Eki'de kalır.
+GECIT_GUNCELLEME_TR = "2026-11-08"
+GECIT_YER_TR = GECIT_DIZIN / "yer.tr.json"  # {id: {il, ilce, alt:[...]}}; üretici: gecit/yer.py (OpenStreetMap Nominatim + düğüm etiketleri)
+
+
+def gecit_tarih(kod: str, tur: str) -> str:
+    return GECIT_GUNCELLEME_TR if (kod == "tr" and tur == "gecit") else GECIT_GUNCELLEME
 # Kalkan geçit sayfalarının adresi → yeni adres (GitHub Pages'te sunucu yönlendirmesi yok: canonical + anında meta yenileme,
 # noindex; Google bunu kalıcı yönlendirme sayar). 28 Eki 2026: etiketi kopyalanmış üç ABD düğümü uygulamadan elendi
 # (moto-rota f18cf0c9); sahte Newfound Gap gidince gerçeğinin adı da "-tennessee" ekinden kurtuldu.
@@ -1485,6 +1493,9 @@ def gecit_veri() -> dict:
                 g["hublar"] = [("alp-" + u, m["ulkeler"][u]) for u in g["ulkeler"] if u in m["ulkeler"]]
             else:
                 g["hublar"] = [("tr", m["ulkeler"]["TR"])]
+            if kod == "tr" and GECIT_YER_TR.exists():
+                y = json.loads(GECIT_YER_TR.read_text(encoding="utf-8")).get(g["id"], {})
+                g["il"], g["ilce"], g["alt"] = y.get("il"), y.get("ilce"), y.get("alt", [])
             liste.append(g)
         liste.sort(key=lambda g: (-g["rakimM"], g["ad"]))
         # slug: adın ASCII'si; aynı ad iki kez varsa eyalet/ülke eklenir, yine çakışırsa rakım
@@ -1600,13 +1611,13 @@ def _kaynak_ad(url: str) -> str:
     return re.sub(r"^https?://(www\.)?", "", url).split("/")[0]
 
 
-def _aciklama_sec(bas: str, kuyruklar: list) -> str:
+def _aciklama_sec(bas: str, kuyruklar: list, ust: int = 160) -> str:
     """140–160 karakterlik açıklama: gövde + sığan ilk kuyruk (yoksa iki kuyruk); hiçbiri sığmazsa 160'ı aşmayan en uzunu."""
     adaylar = [bas + k for k in kuyruklar] + [bas + k1 + k2 for i, k1 in enumerate(kuyruklar) for k2 in kuyruklar[i + 1:]]
     for a in adaylar:
-        if 140 <= len(a) <= 160:
+        if 140 <= len(a) <= ust:
             return a
-    sigan = [a for a in adaylar if len(a) <= 160]
+    sigan = [a for a in adaylar if len(a) <= ust]
     return max(sigan, key=len) if sigan else adaylar[0]
 
 
@@ -1679,6 +1690,18 @@ def _gecit_yapi(kod: str, g: dict, m: dict, ui: dict) -> dict:
         kis = gm["kis_yok"]
     p["yuzey_kisa"] = gm["yuzey_kisa_toprak"] if g.get("toprak") else ""
     p["kis"] = kis
+    # TR (8 Kas 2026): "nerede, rakımı kaç, motosikletle geçilir mi" sorgularının cevabı ilk paragrafta; il/ilçe gecit/yer.tr.json'dan
+    if g.get("il") and "lead_il" in gm:
+        p["il"] = g["il"]
+        p["yer_cumle"] = gm["yer_ilce" if g.get("ilce") else "yer_il"].format(il=g["il"], ilce=g.get("ilce") or "")
+        yuzey_c = gm["gecilir_toprak" if g.get("toprak") else "gecilir_asfalt"]
+        if g.get("kapaliAylar"):
+            a1, a2 = g["kapaliAylar"]
+            kapanis_c = gm["gecilir_kapali"].format(ay1=ui["aylar"][a1 - 1], ay2=ui["aylar"][a2 - 1])
+        else:
+            kapanis_c = gm["gecilir_acik"]
+        p["gecilir"] = yuzey_c + kapanis_c
+        p["yuzey_kisa_il"] = gm["yuzey_il_toprak"] if g.get("toprak") else gm["yuzey_il_asfalt"]
     return p
 
 
@@ -1689,8 +1712,12 @@ def gecit_govde(kod: str, g: dict, m: dict, ui: dict, metin: dict) -> tuple:
     p = _gecit_yapi(kod, g, m, ui)
     h0 = v["hub"][g["hublar"][0][0]]
     ad = g["gad"]
-    baslik = _baslik_sec([b.format(**p) for b in gm["baslik"]])
-    aciklama = _aciklama_sec(gm["aciklama_bas"].format(**p), gm["aciklama_kuyruk"])
+    il_var = "gecilir" in p
+    baslik = _baslik_sec([b.format(**p) for b in gm["baslik_il" if il_var else "baslik"]])
+    if il_var:
+        aciklama = _aciklama_sec(gm["aciklama_bas_il"].format(**p), gm["aciklama_kuyruk_il"], 155)
+    else:
+        aciklama = _aciklama_sec(gm["aciklama_bas"].format(**p), gm["aciklama_kuyruk"])
     h1 = gm["h1"].format(**p)
     e = _html.escape
     # sayfa yolu
@@ -1705,7 +1732,7 @@ def gecit_govde(kod: str, g: dict, m: dict, ui: dict, metin: dict) -> tuple:
     ekmek = f'<nav class="rehber-ekmek" aria-label="{ui["ekmek"]}">' + ' <span aria-hidden="true">›</span> '.join(ek) + "</nav>"
     parca = ['<section class="section rehber-ust"><div class="wrap">', ekmek,
              f'<span class="eyebrow">{e(gm["eyebrow"].format(**p))}</span>', f"<h1>{e(h1)}</h1>",
-             f'<p class="section-lead">{e(gm["lead"].format(**p)).replace("  ", " ")}</p>', gecit_ust_tur(kod, g, m, p), "</div></section>",
+             f'<p class="section-lead">{e(gm["lead_il" if il_var else "lead"].format(**p)).replace("  ", " ")}</p>', gecit_ust_tur(kod, g, m, p), "</div></section>",
              '<section class="section section-2 rehber-govde"><div class="wrap"><div class="rehber-kolon">']
     # fotoğraf
     foto = KOK / "m" / "gecit" / f'{g["id"]}.webp'
@@ -1728,12 +1755,17 @@ def gecit_govde(kod: str, g: dict, m: dict, ui: dict, metin: dict) -> tuple:
     kaynaklar = [f'<a href="{e(g["kaynak"], quote=True)}" rel="noopener">{_kaynak_ad(g["kaynak"])}</a>']
     if "openstreetmap.org" not in g["kaynak"]:
         kaynaklar.append(f'<a href="{osm}" rel="noopener">OpenStreetMap</a>')
-    satirlar = [(gm["b_rakim"], e(p["rakim_tam"])), (gm["b_yer"], yer), (gm["b_yuzey"], yuzey), (gm["b_kis"], e(p["kis"])),
+    satirlar = [(gm["b_rakim"], e(p["rakim_tam"])), (gm["b_yer"], yer)]
+    if il_var:
+        satirlar.append((gm["b_il"], e(f'{g["il"]} / {g["ilce"]}' if g.get("ilce") else g["il"])))
+    if g.get("alt"):
+        satirlar.append((gm["b_alt"], e(", ".join(g["alt"]))))
+    satirlar += [(gm["b_yuzey"], yuzey), (gm["b_kis"], e(p["kis"])),
                 (gm["b_konum"], f'<a href="{osm}" rel="noopener">{g["lat"]:.4f}, {g["lon"]:.4f}</a>'),
                 (gm["b_kaynak"], " · ".join(kaynaklar))]
     parca.append(f'<section id="kisaca" class="rehber-bolum"><h2>{gm["bilgi_h2"]}</h2><dl class="gecit-bilgi">'
                  + "".join(f"<dt>{a}</dt><dd>{b}</dd>" for a, b in satirlar)
-                 + f'</dl><p class="kucuk">{gm["rakim_not"]}</p></section>')
+                 + f'</dl><p class="kucuk">{gm["rakim_not"]}{(" " + gm["il_not"]) if il_var else ""}</p></section>')
     # tur
     parca.append(f'<section id="tur" class="rehber-bolum gecit-tur"><h2>{e(gm["tur_h2"].format(**p))}</h2><p>{e(gm["tur_p"].format(**p))}</p>'
                  f'<p><a class="btn btn-primary" href="{gecit_arac_baglanti(kod, g)}">{e(gm["tur_dugme"].format(**p))}</a></p></section>')
@@ -1873,7 +1905,7 @@ def gecit_json_ld(kod: str, tur: str, url: str, baslik: str, aciklama: str, ekme
             "publisher": {"@id": f"{ALAN}/#organization"}}
     sayfa = {"@type": "WebPage" if tur == "gecit" else "CollectionPage", "@id": f"{url}#sayfa", "url": url, "name": baslik,
              "description": aciklama, "inLanguage": lang, "isPartOf": {"@id": f"{ALAN}/#website"},
-             "dateModified": GECIT_GUNCELLEME, "breadcrumb": {"@id": f"{url}#ekmek"}}
+             "dateModified": gecit_tarih(kod, tur), "breadcrumb": {"@id": f"{url}#ekmek"}}
     graf = [org, site, sayfa, {"@type": "BreadcrumbList", "@id": f"{url}#ekmek", "itemListElement": [
         {"@type": "ListItem", "position": i + 1, "name": ad, "item": f"{ALAN}{yol}"} for i, (ad, yol) in enumerate(ekmek)]}]
     if g:
@@ -1881,8 +1913,11 @@ def gecit_json_ld(kod: str, tur: str, url: str, baslik: str, aciklama: str, ekme
                "geo": {"@type": "GeoCoordinates", "latitude": round(g["lat"], 6), "longitude": round(g["lon"], 6), "elevation": g["rakimM"]},
                "sameAs": [g["kaynak"], f'https://www.openstreetmap.org/node/{g["osm"]}'] if "openstreetmap.org" not in g["kaynak"] else [g["kaynak"]],
                "containedInPlace": {"@type": "Country", "name": g["ulkeler"][0]}}
-        if g["gad"] != g["ad"]:
-            yer["alternateName"] = g["ad"]
+        diger = ([g["ad"]] if g["gad"] != g["ad"] else []) + [a for a in g.get("alt", []) if a != g["gad"]]
+        if diger:
+            yer["alternateName"] = diger[0] if len(diger) == 1 else diger
+        if g.get("il"):
+            yer["containedInPlace"] = {"@type": "AdministrativeArea", "name": g["il"], "containedInPlace": yer["containedInPlace"]}
         if (KOK / "m" / "gecit" / f'{g["id"]}.webp').exists():
             yer["image"] = f'{ALAN}/m/gecit/{g["id"]}.webp'
             sayfa["primaryImageOfPage"] = {"@type": "ImageObject", "url": yer["image"]}
@@ -1933,7 +1968,7 @@ def gecit_sitemap() -> list:
     parca = []
     for kod, yol, tur, nesne in gecit_sayfalari():
         alt = gecit_alternatifler(kod, tur, nesne)
-        satir = ["  <url>", f"    <loc>{ALAN}{yol}</loc>", f"    <lastmod>{GECIT_GUNCELLEME}</lastmod>",
+        satir = ["  <url>", f"    <loc>{ALAN}{yol}</loc>", f"    <lastmod>{gecit_tarih(kod, tur)}</lastmod>",
                  "    <changefreq>monthly</changefreq>", f'    <priority>{"0.6" if tur != "gecit" else "0.5"}</priority>']
         if alt:
             satir += [f'    <xhtml:link rel="alternate" hreflang="{k}" href="{ALAN}{y}"/>' for k, y in alt]

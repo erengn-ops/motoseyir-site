@@ -1,0 +1,586 @@
+{
+ "karabet": {
+  "il": "Van",
+  "ilce": "Bahçesaray",
+  "alt": []
+ },
+ "guzeldere": {
+  "il": "Van",
+  "ilce": "Gürpınar",
+  "alt": []
+ },
+ "tendurek": {
+  "il": "Van",
+  "ilce": "Çaldıran",
+  "alt": []
+ },
+ "ovit": {
+  "il": "Rize",
+  "ilce": "İkizdere",
+  "alt": []
+ },
+ "tahir": {
+  "il": "Ağrı",
+  "ilce": "Eleşkirt",
+  "alt": []
+ },
+ "sahara": {
+  "il": "Artvin",
+  "ilce": "Şavşat",
+  "alt": []
+ },
+ "kop": {
+  "il": "Erzurum",
+  "ilce": "Aşkale",
+  "alt": []
+ },
+ "soganli": {
+  "il": "Bayburt",
+  "ilce": "Aydıntepe",
+  "alt": []
+ },
+ "kizildag": {
+  "il": "Sivas",
+  "ilce": "İmranlı",
+  "alt": []
+ },
+ "zigana": {
+  "il": "Gümüşhane",
+  "ilce": "Torul",
+  "alt": []
+ },
+ "ilgaz": {
+  "il": "Kastamonu",
+  "ilce": "Kastamonu Merkez",
+  "alt": []
+ },
+ "sertavul": {
+  "il": "Mersin",
+  "ilce": "Mut",
+  "alt": []
+ },
+ "kolsuz": {
+  "il": "Niğde",
+  "ilce": "Ulukışla",
+  "alt": []
+ },
+ "gulek": {
+  "il": "Mersin",
+  "ilce": "Tarsus",
+  "alt": []
+ },
+ "caykavak": {
+  "il": "Niğde",
+  "ilce": "Ulukışla",
+  "alt": []
+ },
+ "cetibeli": {
+  "il": "Muğla",
+  "ilce": "Ula",
+  "alt": []
+ },
+ "osm-13593201817": {
+  "il": "Bayburt",
+  "ilce": "Bayburt Merkez",
+  "alt": []
+ },
+ "osm-5728762298": {
+  "il": "Bayburt",
+  "ilce": "Bayburt Merkez",
+  "alt": []
+ },
+ "osm-3944809217": {
+  "il": "Rize",
+  "ilce": "Çamlıhemşin",
+  "alt": []
+ },
+ "osm-7097584059": {
+  "il": "Artvin",
+  "ilce": "Ardanuç",
+  "alt": []
+ },
+ "osm-2914126244": {
+  "il": "Bayburt",
+  "ilce": "Aydıntepe",
+  "alt": []
+ },
+ "osm-160358065": {
+  "il": "Ardahan",
+  "ilce": "Damal",
+  "alt": []
+ },
+ "osm-8931286771": {
+  "il": "Erzurum",
+  "ilce": "Narman",
+  "alt": []
+ },
+ "osm-1074628153": {
+  "il": "Erzincan",
+  "ilce": "Çayırlı",
+  "alt": []
+ },
+ "osm-1074627016": {
+  "il": "Gümüşhane",
+  "ilce": "Kelkit",
+  "alt": []
+ },
+ "osm-7097584057": {
+  "il": "Kars",
+  "ilce": "Susuz",
+  "alt": []
+ },
+ "osm-13990291471": {
+  "il": "Ağrı",
+  "ilce": "Eleşkirt",
+  "alt": []
+ },
+ "osm-5570679760": {
+  "il": "Gümüşhane",
+  "ilce": "Gümüşhane Merkez",
+  "alt": []
+ },
+ "osm-1865413674": {
+  "il": "Ağrı",
+  "ilce": "Ağrı Merkez",
+  "alt": []
+ },
+ "osm-1970540961": {
+  "il": "Erzurum",
+  "ilce": "Aziziye",
+  "alt": []
+ },
+ "osm-6675808686": {
+  "il": "Kayseri",
+  "ilce": "Melikgazi",
+  "alt": []
+ },
+ "osm-873449545": {
+  "il": "Giresun",
+  "ilce": "Şebinkarahisar",
+  "alt": []
+ },
+ "osm-1629931363": {
+  "il": "Niğde",
+  "ilce": "Niğde Merkez",
+  "alt": []
+ },
+ "osm-1836131744": {
+  "il": "Giresun",
+  "ilce": "Alucra",
+  "alt": []
+ },
+ "osm-1108889451": {
+  "il": "Hakkâri",
+  "ilce": "Şemdinli",
+  "alt": [
+   "Haruna Geçiti"
+  ]
+ },
+ "osm-2049508445": {
+  "il": "Erzurum",
+  "ilce": "Hınıs",
+  "alt": []
+ },
+ "osm-9165587510": {
+  "il": "Erzurum",
+  "ilce": "Şenkaya",
+  "alt": []
+ },
+ "osm-639517250": {
+  "il": "Ağrı",
+  "ilce": "Diyadin",
+  "alt": []
+ },
+ "osm-12408104262": {
+  "il": "Kars",
+  "ilce": "Selim",
+  "alt": []
+ },
+ "osm-13357137183": {
+  "il": "Kars",
+  "ilce": "Arpaçay",
+  "alt": []
+ },
+ "osm-1836756549": {
+  "il": "Gümüşhane",
+  "ilce": "Gümüşhane Merkez",
+  "alt": []
+ },
+ "osm-6031950947": {
+  "il": "Adana",
+  "ilce": "Tufanbeyli",
+  "alt": [
+   "Gezbeli Geçidi",
+   "Gez Beli"
+  ]
+ },
+ "osm-3718477915": {
+  "il": "Artvin",
+  "ilce": "Yusufeli",
+  "alt": []
+ },
+ "osm-702222488": {
+  "il": "Mersin",
+  "ilce": "Toroslar",
+  "alt": []
+ },
+ "osm-4036480500": {
+  "il": "Kayseri",
+  "ilce": "Tomarza",
+  "alt": [
+   "Kurubel"
+  ]
+ },
+ "osm-527844068": {
+  "il": "Malatya",
+  "ilce": "Pütürge",
+  "alt": []
+ },
+ "osm-1828446570": {
+  "il": "Sivas",
+  "ilce": "Gürün",
+  "alt": []
+ },
+ "osm-1823097056": {
+  "il": "Kayseri",
+  "ilce": "Sarız",
+  "alt": []
+ },
+ "osm-2046700365": {
+  "il": "Gümüşhane",
+  "ilce": "Köse",
+  "alt": []
+ },
+ "osm-878273300": {
+  "il": "Kayseri",
+  "ilce": "Pınarbaşı",
+  "alt": []
+ },
+ "osm-1108889485": {
+  "il": "Hakkâri",
+  "ilce": "Şemdinli",
+  "alt": []
+ },
+ "osm-1273238237": {
+  "il": "Antalya",
+  "ilce": "Elmalı",
+  "alt": []
+ },
+ "osm-310597772": {
+  "il": "Antalya",
+  "ilce": "Akseki",
+  "alt": []
+ },
+ "osm-3838403167": {
+  "il": "Artvin",
+  "ilce": "Borçka",
+  "alt": []
+ },
+ "osm-11594277812": {
+  "il": "Erzurum",
+  "ilce": "Horasan",
+  "alt": []
+ },
+ "osm-1213392657": {
+  "il": "Sivas",
+  "ilce": "Zara",
+  "alt": []
+ },
+ "osm-1788583967": {
+  "il": "Bingöl",
+  "ilce": "Bingöl Merkez",
+  "alt": []
+ },
+ "osm-3401587415": {
+  "il": "Aksaray",
+  "ilce": "Güzelyurt",
+  "alt": []
+ },
+ "osm-2446149647": {
+  "il": "Erzurum",
+  "ilce": "Horasan",
+  "alt": [
+   "Valibaba"
+  ]
+ },
+ "osm-8420147213": {
+  "il": "Sivas",
+  "ilce": "Gürün",
+  "alt": []
+ },
+ "osm-146282344": {
+  "il": "Sivas",
+  "ilce": "Kangal",
+  "alt": []
+ },
+ "osm-6335944003": {
+  "il": "Kayseri",
+  "ilce": "Tomarza",
+  "alt": []
+ },
+ "osm-1103329420": {
+  "il": "Şırnak",
+  "ilce": "Uludere",
+  "alt": []
+ },
+ "osm-1041131751": {
+  "il": "Sivas",
+  "ilce": "Yıldızeli",
+  "alt": []
+ },
+ "osm-4903816487": {
+  "il": "Kayseri",
+  "ilce": "Develi",
+  "alt": []
+ },
+ "osm-1788583963": {
+  "il": "Muş",
+  "ilce": "Muş Merkez",
+  "alt": []
+ },
+ "osm-1170127430": {
+  "il": "Mersin",
+  "ilce": "Anamur",
+  "alt": []
+ },
+ "osm-8259488001": {
+  "il": "Sivas",
+  "ilce": "Yıldızeli",
+  "alt": []
+ },
+ "osm-1838822338": {
+  "il": "Adana",
+  "ilce": "Kozan",
+  "alt": []
+ },
+ "osm-11917402132": {
+  "il": "Konya",
+  "ilce": "Doğanhisar",
+  "alt": []
+ },
+ "osm-1099522969": {
+  "il": "Siirt",
+  "ilce": "Pervari",
+  "alt": []
+ },
+ "osm-27049382": {
+  "il": "Antalya",
+  "ilce": "Kaş",
+  "alt": []
+ },
+ "osm-946570946": {
+  "il": "Kastamonu",
+  "ilce": "Daday",
+  "alt": []
+ },
+ "osm-6345634818": {
+  "il": "Konya",
+  "ilce": "Meram",
+  "alt": []
+ },
+ "osm-3070377103": {
+  "il": "Yozgat",
+  "ilce": "Sorgun",
+  "alt": []
+ },
+ "osm-5165677573": {
+  "il": "Kayseri",
+  "ilce": "Talas",
+  "alt": []
+ },
+ "osm-8420144446": {
+  "il": "Kayseri",
+  "ilce": "Felahiye",
+  "alt": []
+ },
+ "osm-779109767": {
+  "il": "Çankırı",
+  "ilce": "Çerkeş",
+  "alt": []
+ },
+ "osm-8532143301": {
+  "il": "Kayseri",
+  "ilce": "Bünyan",
+  "alt": []
+ },
+ "osm-2192392599": {
+  "il": "Ankara",
+  "ilce": "Kızılcahamam",
+  "alt": []
+ },
+ "osm-10229999427": {
+  "il": "Konya",
+  "ilce": "Selçuklu",
+  "alt": []
+ },
+ "osm-2906214635": {
+  "il": "Malatya",
+  "ilce": "Arapgir",
+  "alt": []
+ },
+ "osm-946578775": {
+  "il": "Kastamonu",
+  "ilce": "Bozkurt",
+  "alt": []
+ },
+ "osm-946578605": {
+  "il": "Kastamonu",
+  "ilce": "Devrekani",
+  "alt": []
+ },
+ "osm-1041131280": {
+  "il": "Sivas",
+  "ilce": "Yıldızeli",
+  "alt": []
+ },
+ "osm-313901398": {
+  "il": "Afyonkarahisar",
+  "ilce": "Şuhut",
+  "alt": []
+ },
+ "osm-946522003": {
+  "il": "Çankırı",
+  "ilce": "Orta",
+  "alt": []
+ },
+ "osm-799496525": {
+  "il": "Kayseri",
+  "ilce": "Yeşilhisar",
+  "alt": []
+ },
+ "osm-912329832": {
+  "il": "Ankara",
+  "ilce": "Kızılcahamam",
+  "alt": []
+ },
+ "osm-11917519589": {
+  "il": "Konya",
+  "ilce": "Bozkır",
+  "alt": []
+ },
+ "osm-872366358": {
+  "il": "Kayseri",
+  "ilce": "Bünyan",
+  "alt": []
+ },
+ "osm-7865137776": {
+  "il": "Antalya",
+  "ilce": "Korkuteli",
+  "alt": []
+ },
+ "osm-5167403913": {
+  "il": "Kayseri",
+  "ilce": "Sarıoğlan",
+  "alt": []
+ },
+ "osm-779109568": {
+  "il": "Çankırı",
+  "ilce": "Orta",
+  "alt": []
+ },
+ "osm-1203608889": {
+  "il": "Kayseri",
+  "ilce": "Kocasinan",
+  "alt": []
+ },
+ "osm-1378373401": {
+  "il": "Denizli",
+  "ilce": "Tavas",
+  "alt": []
+ },
+ "osm-2654237877": {
+  "il": "Isparta",
+  "ilce": "Keçiborlu",
+  "alt": []
+ },
+ "osm-946825631": {
+  "il": "Kastamonu",
+  "ilce": "Devrekani",
+  "alt": []
+ },
+ "osm-946825550": {
+  "il": "Kastamonu",
+  "ilce": "Küre",
+  "alt": []
+ },
+ "osm-946522005": {
+  "il": "Ankara",
+  "ilce": "Çubuk",
+  "alt": []
+ },
+ "osm-9408727490": {
+  "il": "Erzurum",
+  "ilce": "Uzundere",
+  "alt": []
+ },
+ "osm-8592105123": {
+  "il": "Kayseri",
+  "ilce": "Yeşilhisar",
+  "alt": []
+ },
+ "osm-197280375": {
+  "il": "Antalya",
+  "ilce": "Elmalı",
+  "alt": []
+ },
+ "osm-2397477763": {
+  "il": "Gaziantep",
+  "ilce": "Nurdağı",
+  "alt": []
+ },
+ "osm-313869791": {
+  "il": "Antalya",
+  "ilce": "Kaş",
+  "alt": []
+ },
+ "osm-1884299532": {
+  "il": "Adana",
+  "ilce": "Aladağ",
+  "alt": []
+ },
+ "osm-599958163": {
+  "il": "Mardin",
+  "ilce": "Yeşilli",
+  "alt": []
+ },
+ "osm-1378890953": {
+  "il": "Batman",
+  "ilce": "Gercüş",
+  "alt": []
+ },
+ "osm-313891646": {
+  "il": "Muğla",
+  "ilce": "Fethiye",
+  "alt": []
+ },
+ "osm-2399750624": {
+  "il": "Karabük",
+  "ilce": "Safranbolu",
+  "alt": []
+ },
+ "osm-12944211812": {
+  "il": "Antalya",
+  "ilce": "Döşemealtı",
+  "alt": []
+ },
+ "osm-611140967": {
+  "il": "Artvin",
+  "ilce": "Borçka",
+  "alt": []
+ },
+ "osm-8818064536": {
+  "il": "Manisa",
+  "ilce": "Yunus Emre",
+  "alt": []
+ },
+ "osm-8757660104": {
+  "il": "Hatay",
+  "ilce": "Belen",
+  "alt": []
+ },
+ "osm-2425661008": {
+  "il": "İzmir",
+  "ilce": "Kemalpaşa",
+  "alt": []
+ }
+}
