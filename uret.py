@@ -29,6 +29,7 @@ CNAME.
 from __future__ import annotations
 
 import json
+import statistics
 import re
 from pathlib import Path
 
@@ -329,6 +330,7 @@ def sitemap() -> str:
     parca.extend(arac_sitemap())
     parca.extend(tanitim_sitemap())
     parca.extend(gecit_sitemap())
+    parca.extend(ozel_sitemap())
 
     # Elle tutulan sayfalar: gizlilik (TR tam metin + EN + DE) ve Impressum (DE + EN).
     GZ = [("tr", "/gizlilik/"), ("en", "/gizlilik/en/"), ("de", "/gizlilik/de/")]
@@ -465,8 +467,7 @@ def json_ld(dosya: str, v: dict, kod: str) -> str:
     url, lang = v["kanonik"], v["lang"]
     ana = f"{ALAN}/"
     anasayfa_url = f"{ALAN}{sayfa_yolu(kod, 'index.html')}"
-    org = {"@type": "Organization", "@id": f"{ALAN}/#organization", "name": "Motoseyir", "url": ana,
-           "logo": {"@type": "ImageObject", "url": LOGO, "width": 512, "height": 512}, "sameAs": SAMEAS}
+    org = org_dugumu(kod)
     site = {"@type": "WebSite", "@id": f"{ALAN}/#website", "url": ana, "name": "Motoseyir", "inLanguage": lang,
             "publisher": {"@id": f"{ALAN}/#organization"}}
     uyg = {"@type": "MobileApplication", "@id": f"{ALAN}/#uygulama", "name": "Motoseyir", "operatingSystem": "iOS",
@@ -565,7 +566,7 @@ def arac_footer(kod: str) -> str:
     if kod not in arac_veri():
         return ""
     return (f'<li><a href="{arac_yol(kod)}">{arac_veri()[kod]["ui"]["ekmek_son"]}</a></li>'
-            + f'<li><a href="{tanitim_yol(kod)}">{tanitim_veri()[kod]["ad"]}</a></li>' + gecit_footer(kod))
+            + f'<li><a href="{tanitim_yol(kod)}">{tanitim_veri()[kod]["ad"]}</a></li>' + gecit_footer(kod) + ozel_footer(kod))
 
 
 def arac_baglanti(kod: str) -> str:
@@ -645,8 +646,7 @@ def uygulama_dugumu(kod: str, magaza: str) -> dict:
 def arac_json_ld(kod: str, v: dict, hub_ui: dict, metin: dict, baslik: str, aciklama: str, url: str) -> str:
     lang = dil_bilgisi(kod)["lang"]
     ana = f"{ALAN}/"
-    org = {"@type": "Organization", "@id": f"{ALAN}/#organization", "name": "Motoseyir", "url": ana,
-           "logo": {"@type": "ImageObject", "url": LOGO, "width": 512, "height": 512}, "sameAs": SAMEAS}
+    org = org_dugumu(kod)
     site = {"@type": "WebSite", "@id": f"{ALAN}/#website", "url": ana, "name": "Motoseyir", "inLanguage": lang,
             "publisher": {"@id": f"{ALAN}/#organization"}}
     sayfa = {"@type": "WebPage", "@id": f"{url}#sayfa", "url": url, "name": baslik, "description": aciklama, "inLanguage": lang,
@@ -661,7 +661,9 @@ def arac_json_ld(kod: str, v: dict, hub_ui: dict, metin: dict, baslik: str, acik
                 "publisher": {"@id": f"{ALAN}/#organization"}, "datePublished": v["yayin"], "dateModified": v["guncelleme"]}
     sss = {"@type": "FAQPage", "@id": f"{url}#sss", "inLanguage": lang, "mainEntity": [
         {"@type": "Question", "name": duz(s["s"]), "acceptedAnswer": {"@type": "Answer", "text": duz(s["c"])}} for s in v["sss"]]}
-    govde = json.dumps({"@context": "https://schema.org", "@graph": [org, site, sayfa, ekmek, uygulama, uygulama_dugumu(kod, arac_magaza(kod)), sss]},
+    nasil = {"@type": "HowTo", "@id": f"{url}#nasil", "name": duz(v["adimlar_h2"]), "inLanguage": lang,
+             "step": [{"@type": "HowToStep", "position": i + 1, "name": duz(b), "text": duz(p)} for i, (b, p) in enumerate(v["adimlar"])]}
+    govde = json.dumps({"@context": "https://schema.org", "@graph": [org, site, sayfa, ekmek, uygulama, uygulama_dugumu(kod, arac_magaza(kod)), nasil, sss]},
                        ensure_ascii=False, indent=2)
     return '<script type="application/ld+json">\n' + govde.replace("</", "<\\/") + "\n</script>"
 
@@ -808,8 +810,7 @@ def tanitim_sitemap() -> list:
 def tanitim_json_ld(kod: str, v: dict, metin: dict, baslik: str, aciklama: str, url: str) -> str:
     lang = dil_bilgisi(kod)["lang"]
     ana = f"{ALAN}/"
-    org = {"@type": "Organization", "@id": f"{ALAN}/#organization", "name": "Motoseyir", "url": ana,
-           "logo": {"@type": "ImageObject", "url": LOGO, "width": 512, "height": 512}, "sameAs": SAMEAS}
+    org = org_dugumu(kod)
     site = {"@type": "WebSite", "@id": f"{ALAN}/#website", "url": ana, "name": "Motoseyir", "inLanguage": lang, "publisher": {"@id": f"{ALAN}/#organization"}}
     sayfa = {"@type": "WebPage", "@id": f"{url}#sayfa", "url": url, "name": baslik, "description": aciklama, "inLanguage": lang,
              "isPartOf": {"@id": f"{ALAN}/#website"}, "primaryImageOfPage": {"@type": "ImageObject", "url": SOSYAL_GORSEL, "width": 1200, "height": 630},
@@ -1287,6 +1288,7 @@ def r_makale_govde(kod: str, grup: str, v: dict, ui: dict, metin: dict) -> str:
                      + "".join(f'<li><a href="{rehber_yol(kod, g)}">{makale[g][kod]["h1"]}</a></li>' for _, g in digerleri)
                      + f'</ul><p><a href="{rehber_hub_yolu(kod)}">{ui["tum_yazilar"]}</a></p>'
                      + (f'<p><a href="{arac_yol(kod)}">{ui["arac_baglanti"]}</a></p>' if kod in arac_veri() and "arac_baglanti" in ui else "")
+                     + (f'<p>{ozel_baglanti("veri", kod)}</p>' if kod in OZEL_DILLER else "")
                      + '</section>')
     kaynak_liste = "".join(f'<li><a href="{k["url"]}" rel="noopener">{k["ad"]}</a></li>' for k in v["kaynaklar"])
     parca.append(f'<section id="kaynaklar" class="rehber-bolum rehber-kaynaklar"><h2>{ui["kaynaklar"]}</h2>'
@@ -1306,7 +1308,8 @@ def r_hub_govde(kod: str, v: dict, ui: dict, metin: dict) -> str:
         '<section class="section rehber-ust"><div class="wrap">', r_ekmek(kod, ui, metin, None),
         f'<span class="eyebrow">{v["eyebrow"]}</span>', f"<h1>{v['h1']}</h1>", f'<p class="section-lead">{v["lead"]}</p>',
         '</div></section>', '<section class="section section-2 rehber-govde"><div class="wrap">',
-        f'<ul class="rehber-kartlar">{kartlar}</ul>', '<div class="rehber-kolon">', r_urun(v["urun"], kod, metin), "</div>",
+        f'<ul class="rehber-kartlar">{kartlar}</ul>', '<div class="rehber-kolon">',
+        (f'<p>{ozel_baglanti("veri", kod)} · {ozel_baglanti("hakkinda", kod)}</p>' if kod in OZEL_DILLER else ""), r_urun(v["urun"], kod, metin), "</div>",
         "</div></section>"])
 
 
@@ -1332,8 +1335,7 @@ def rehber_json_ld(kod: str, grup: str, v: dict, ui: dict, metin: dict, baslik: 
     """Organization + WebSite + WebPage + BreadcrumbList; yazıda Article (+ görünür SSS varsa FAQPage), ana sayfada CollectionPage."""
     lang = dil_bilgisi(kod)["lang"]
     ana = f"{ALAN}/"
-    org = {"@type": "Organization", "@id": f"{ALAN}/#organization", "name": "Motoseyir", "url": ana,
-           "logo": {"@type": "ImageObject", "url": LOGO, "width": 512, "height": 512}, "sameAs": SAMEAS}
+    org = org_dugumu(kod)
     site = {"@type": "WebSite", "@id": f"{ALAN}/#website", "url": ana, "name": "Motoseyir", "inLanguage": lang,
             "publisher": {"@id": f"{ALAN}/#organization"}}
     sayfa = {"@type": "CollectionPage" if grup == "hub" else "WebPage", "@id": f"{url}#sayfa", "url": url, "name": baslik,
@@ -1348,6 +1350,12 @@ def rehber_json_ld(kod: str, grup: str, v: dict, ui: dict, metin: dict, baslik: 
         ogeler.append({"@type": "ListItem", "position": 3, "name": duz(v["h1"]), "item": url})
     graf = [org, site, sayfa, {"@type": "BreadcrumbList", "@id": f"{url}#ekmek", "itemListElement": ogeler}]
     if grup != "hub":
+        for b in v["bolumler"]:
+            ad = next((x["adimlar"] for x in b["icerik"] if "adimlar" in x), None)
+            if ad:
+                graf.append({"@type": "HowTo", "@id": f"{url}#nasil", "name": duz(b["h2"]), "inLanguage": lang,
+                             "step": [{"@type": "HowToStep", "position": i + 1, "text": duz(x)} for i, x in enumerate(ad)]})
+                break
         graf.append({"@type": "Article", "@id": f"{url}#makale", "headline": duz(v["h1"]), "description": aciklama,
                      "inLanguage": lang, "datePublished": v["yayin"], "dateModified": v["guncelleme"],
                      "author": {"@id": f"{ALAN}/#organization"}, "publisher": {"@id": f"{ALAN}/#organization"},
@@ -1797,7 +1805,7 @@ def gecit_hub_govde(kod: str, h: dict, m: dict, ui: dict, metin: dict) -> tuple:
         gecit_tablo(kod, gecitler, m, ui),
         f'<section class="rehber-urun" aria-labelledby="urun-h2"><div><h2 id="urun-h2">Motoseyir</h2>'
         f'<p>{e(m["gecit"]["uyg_p2"])}</p><p><a class="btn btn-primary" href="{gecit_magaza(kod)}">{metin["btn_store"]}</a></p></div></section>',
-        (f'<p><a href="{gecit_kok(kod)}">{m["gecit"]["index_baglanti"]}</a></p>' if h["slug"] else ""),
+        (f'<p><a href="{gecit_kok(kod)}">{m["gecit"]["index_baglanti"]}</a></p>' if h["slug"] else (f'<p>{ozel_baglanti("veri", kod)}</p>' if kod in OZEL_DILLER else "")),
         f'<p class="kucuk">{m["gecit"]["veri_not"]}</p>',
         "</div></div></section>"])
     return govde, baslik, aciklama, h1
@@ -1835,6 +1843,8 @@ def gecit_index_govde(kod: str, m: dict, ui: dict, metin: dict) -> tuple:
         parca.append(f'<h3>{im["en_yuksek_h2"]}</h3>' + gecit_tablo(kod, en_yuksek, m, ui) + "</section>")
     parca.append(f'<section class="rehber-urun" aria-labelledby="urun-h2"><div><h2 id="urun-h2">Motoseyir</h2>'
                  f'<p>{e(m["gecit"]["uyg_p2"])}</p><p><a class="btn btn-primary" href="{gecit_magaza(kod)}">{metin["btn_store"]}</a></p></div></section>')
+    if kod in OZEL_DILLER:
+        parca.append(f'<p>{ozel_baglanti("veri", kod)}</p>')
     parca.append(f'<p class="kucuk">{m["gecit"]["veri_not"]}</p>')
     parca.append("</div></div></section>")
     baslik = im["baslik"]
@@ -1845,8 +1855,7 @@ def gecit_json_ld(kod: str, tur: str, url: str, baslik: str, aciklama: str, ekme
     """Organization + WebSite + WebPage/CollectionPage + BreadcrumbList; geçitte TouristAttraction (GeoCoordinates), listede ItemList."""
     lang = dil_bilgisi(kod)["lang"]
     ana = f"{ALAN}/"
-    org = {"@type": "Organization", "@id": f"{ALAN}/#organization", "name": "Motoseyir", "url": ana,
-           "logo": {"@type": "ImageObject", "url": LOGO, "width": 512, "height": 512}, "sameAs": SAMEAS}
+    org = org_dugumu(kod)
     site = {"@type": "WebSite", "@id": f"{ALAN}/#website", "url": ana, "name": "Motoseyir", "inLanguage": lang,
             "publisher": {"@id": f"{ALAN}/#organization"}}
     sayfa = {"@type": "WebPage" if tur == "gecit" else "CollectionPage", "@id": f"{url}#sayfa", "url": url, "name": baslik,
@@ -2012,6 +2021,315 @@ def gecit_yaz() -> int:
 
 
 # ---------------------------------------------------------------------------------------------------------------------
+# VERİ VE HAKKINDA SAYFALARI (8 Kas 2026, SEO+GEO ikinci tur). Metin: sayfalar/veri.<kod>.json, sayfalar/hakkinda.<kod>.json (TR/EN/DE).
+#   "Dağ geçitleri sayılarla": gecit/gecitler.json'dan hesaplanan TOPLU tablolar (ham koordinat yayımlanmaz; ODbL türev verisi, atıf
+#   sayfada) + Dataset JSON-LD + alıntı satırı + toplu CSV. "Hakkında": kim yayımlıyor (impressum'daki bilgi), veri kaynağı, düzeltme.
+#   Sayı yazılmaz, hesaplanır; uydurma kişi/yorum/puan YOK. Organization düğümü hakkında sayfasına `subjectOf` ile bağlanır.
+# ---------------------------------------------------------------------------------------------------------------------
+OZEL_DIZIN = KOK / "sayfalar"
+OZEL_DILLER = ("tr", "en", "de")
+OZEL_YAYIN = "2026-11-08"
+OZEL_YOL = {"veri": {"tr": "/gecitler/sayilarla/", "en": "/en/passes/in-numbers/", "de": "/de/paesse/in-zahlen/"},
+            "hakkinda": {"tr": "/hakkinda/", "en": "/en/about/", "de": "/de/ueber-uns/"}}
+OZEL_CSV = "/veri/passes-by-country.csv"
+OZEL_KAYNAKLAR = "/veri-kaynaklari/"
+ODBL = "https://opendatacommons.org/licenses/odbl/1-0/"
+BOLGE_AD = {
+    "en": {"alp": "Alps", "avrupa": "Rest of Europe", "abd": "United States", "tr": "Türkiye", "pirene": "Pyrenees", "karpat": "Carpathians",
+           "ortaasya": "Central Asia", "balkan": "Balkans", "kafkasya": "Caucasus", "iskandinav": "Scandinavia"},
+    "tr": {"alp": "Alpler", "avrupa": "Avrupa'nın geri kalanı", "abd": "ABD", "tr": "Türkiye", "pirene": "Pireneler", "karpat": "Karpatlar",
+           "ortaasya": "Orta Asya", "balkan": "Balkanlar", "kafkasya": "Kafkasya", "iskandinav": "İskandinavya"},
+    "de": {"alp": "Alpen", "avrupa": "Übriges Europa", "abd": "USA", "tr": "Türkei", "pirene": "Pyrenäen", "karpat": "Karpaten",
+           "ortaasya": "Zentralasien", "balkan": "Balkan", "kafkasya": "Kaukasus", "iskandinav": "Skandinavien"}}
+ULKE_AD = {
+    "en": {"FR": "France", "US": "United States", "IT": "Italy", "AT": "Austria", "ES": "Spain", "TR": "Türkiye", "CH": "Switzerland", "DE": "Germany",
+           "KG": "Kyrgyzstan", "PL": "Poland", "SK": "Slovakia", "BG": "Bulgaria", "CZ": "Czechia", "TJ": "Tajikistan", "GE": "Georgia",
+           "GB": "United Kingdom", "MK": "North Macedonia", "SI": "Slovenia", "AM": "Armenia", "RO": "Romania", "AL": "Albania", "GR": "Greece",
+           "HR": "Croatia", "BE": "Belgium", "KZ": "Kazakhstan", "NO": "Norway", "AD": "Andorra", "IS": "Iceland", "BA": "Bosnia and Herzegovina",
+           "AZ": "Azerbaijan", "XK": "Kosovo", "RS": "Serbia", "PT": "Portugal", "IE": "Ireland", "CN": "China", "UZ": "Uzbekistan"},
+    "tr": {"FR": "Fransa", "US": "ABD", "IT": "İtalya", "AT": "Avusturya", "ES": "İspanya", "TR": "Türkiye", "CH": "İsviçre", "DE": "Almanya",
+           "KG": "Kırgızistan", "PL": "Polonya", "SK": "Slovakya", "BG": "Bulgaristan", "CZ": "Çekya", "TJ": "Tacikistan", "GE": "Gürcistan",
+           "GB": "Birleşik Krallık", "MK": "Kuzey Makedonya", "SI": "Slovenya", "AM": "Ermenistan", "RO": "Romanya", "AL": "Arnavutluk", "GR": "Yunanistan",
+           "HR": "Hırvatistan", "BE": "Belçika", "KZ": "Kazakistan", "NO": "Norveç", "AD": "Andorra", "IS": "İzlanda", "BA": "Bosna-Hersek",
+           "AZ": "Azerbaycan", "XK": "Kosova", "RS": "Sırbistan", "PT": "Portekiz", "IE": "İrlanda", "CN": "Çin", "UZ": "Özbekistan"},
+    "de": {"FR": "Frankreich", "US": "USA", "IT": "Italien", "AT": "Österreich", "ES": "Spanien", "TR": "Türkei", "CH": "Schweiz", "DE": "Deutschland",
+           "KG": "Kirgisistan", "PL": "Polen", "SK": "Slowakei", "BG": "Bulgarien", "CZ": "Tschechien", "TJ": "Tadschikistan", "GE": "Georgien",
+           "GB": "Vereinigtes Königreich", "MK": "Nordmazedonien", "SI": "Slowenien", "AM": "Armenien", "RO": "Rumänien", "AL": "Albanien", "GR": "Griechenland",
+           "HR": "Kroatien", "BE": "Belgien", "KZ": "Kasachstan", "NO": "Norwegen", "AD": "Andorra", "IS": "Island", "BA": "Bosnien und Herzegowina",
+           "AZ": "Aserbaidschan", "XK": "Kosovo", "RS": "Serbien", "PT": "Portugal", "IE": "Irland", "CN": "China", "UZ": "Usbekistan"}}
+_ozel_onbellek: dict = {}
+
+
+def ozel_yol(tur: str, kod: str) -> str:
+    return OZEL_YOL[tur][kod]
+
+
+def ozel_metin(tur: str, kod: str) -> dict:
+    if (tur, kod) not in _ozel_onbellek:
+        _ozel_onbellek[(tur, kod)] = json.loads((OZEL_DIZIN / f"{tur}.{kod}.json").read_text(encoding="utf-8"))
+    return _ozel_onbellek[(tur, kod)]
+
+
+def ozel_baglanti(tur: str, kod: str) -> str:
+    """Sayfaya düz bağlantı (dil yoksa boş)."""
+    if kod not in OZEL_DILLER:
+        return ""
+    return f'<a href="{ozel_yol(tur, kod)}">{ozel_metin(tur, kod)["ekmek"]}</a>'
+
+
+def ozel_footer(kod: str) -> str:
+    if kod not in OZEL_DILLER:
+        return ""
+    return "".join(f"<li>{ozel_baglanti(t, kod)}</li>" for t in ("veri", "hakkinda"))
+
+
+def org_dugumu(kod: str) -> dict:
+    """Tek Organization düğümü (her sayfa türünde aynı); yayımcı bilgisi impressum'daki gerçek bilgiden. Hakkında sayfası olan dillerde ona bağlanır."""
+    org = {"@type": "Organization", "@id": f"{ALAN}/#organization", "name": "Motoseyir", "url": f"{ALAN}/",
+           "logo": {"@type": "ImageObject", "url": LOGO, "width": 512, "height": 512}, "sameAs": SAMEAS,
+           "founder": {"@type": "Person", "name": "Batuhan Eren Engin"},
+           "address": {"@type": "PostalAddress", "addressLocality": "İstanbul", "addressCountry": "TR"}}
+    if kod in OZEL_DILLER:
+        org["subjectOf"] = {"@type": "AboutPage", "@id": f"{ALAN}{ozel_yol('hakkinda', kod)}#sayfa", "url": f"{ALAN}{ozel_yol('hakkinda', kod)}"}
+    return org
+
+
+def ozel_istatistik() -> dict:
+    """gecit/gecitler.json'dan toplu sayılar (dilden bağımsız)."""
+    if "ist" in _ozel_onbellek:
+        return _ozel_onbellek["ist"]
+    ham = json.loads((GECIT_DIZIN / "gecitler.json").read_text(encoding="utf-8"))["gecitler"]
+    med = lambda l: statistics.median(l)
+    ulke: dict = {}
+    bolge: dict = {}
+    for g in ham:
+        for u in g["ulkeler"]:
+            ulke.setdefault(u, []).append(g)
+        bolge.setdefault(g["bolge"], []).append(g)
+    ist = {"ham": ham, "n": len(ham), "ulke": ulke, "bolge": bolge,
+           "yuksek": max(ham, key=lambda g: (g["rakimM"], g["ad"])), "alcak": min(ham, key=lambda g: (g["rakimM"], g["ad"])),
+           "med": med([g["rakimM"] for g in ham]), "ust2000": sum(1 for g in ham if g["rakimM"] > 2000),
+           "sinir": sum(1 for g in ham if len(g["ulkeler"]) > 1), "toprak": sum(1 for g in ham if g.get("toprak")),
+           "kapali": [g for g in ham if g.get("kapaliAylar")], "sayfa_med": med}
+    _ozel_onbellek["ist"] = ist
+    return ist
+
+
+def ozel_csv() -> str:
+    ist = ozel_istatistik()
+    satir = ["country_code,country,passes,highest_m,median_m"]
+    for u, l in sorted(ist["ulke"].items(), key=lambda x: (-len(x[1]), x[0])):
+        satir.append(f'{u},"{ULKE_AD["en"][u]}",{len(l)},{max(g["rakimM"] for g in l)},{int(round(statistics.median([g["rakimM"] for g in l])))}')
+    return "\n".join(satir) + "\n"
+
+
+def ozel_veri_govde(kod: str, t: dict, ui: dict, metin: dict) -> tuple:
+    e = _html.escape
+    ist = ozel_istatistik()
+    m = gecit_veri()[kod]["metin"]
+    ulk, bol = ULKE_AD[kod], BOLGE_AD[kod]
+    S = lambda n: _sayi(n, m)
+    ond = lambda x: f"{x:.1f}".replace(".", m["ondalik"])
+    tarih = r_tarih(GECIT_GUNCELLEME, ui)
+    url = f"{ALAN}{ozel_yol('veri', kod)}"
+    n = ist["n"]
+    hi, lo = ist["yuksek"], ist["alcak"]
+    p = {"n": S(n), "c": len(ist["ulke"]), "tarih": tarih, "url": url,
+         "hi_ad": hi["ad"], "hi_m": S(hi["rakimM"]), "hi_ulke": ulk[hi["ulkeler"][0]],
+         "lo_ad": lo["ad"], "lo_m": S(lo["rakimM"]), "lo_ulke": ulk[lo["ulkeler"][0]], "med": S(ist["med"]),
+         "n_abd": len(ist["bolge"]["abd"]), "n_alp": len(ist["bolge"]["alp"]), "n_tr": len(ist["bolge"]["tr"]), "kapali": len(ist["kapali"])}
+    pct = lambda x: t["pct"].format(p=ond(100 * x / n))
+    kisa = t["kisa"]
+    satirlar = [
+        [kisa["n"], p["n"]], [kisa["c"], p["c"]],
+        [kisa["hi"], f'{e(hi["ad"])}, {e(p["hi_ulke"])}: {p["hi_m"]} m'], [kisa["lo"], f'{e(lo["ad"])}, {e(p["lo_ulke"])}: {p["lo_m"]} m'],
+        [kisa["med"], f'{p["med"]} m'], [kisa["ust"], f'{S(ist["ust2000"])} ({pct(ist["ust2000"])})'],
+        [kisa["sinir"], S(ist["sinir"])], [kisa["toprak"], S(ist["toprak"])], [kisa["kapali"], S(len(ist["kapali"]))]]
+    parca = ['<section class="section rehber-ust"><div class="wrap">',
+             f'<nav class="rehber-ekmek" aria-label="{ui["ekmek"]}"><a href="{sayfa_yolu(kod, "index.html")}">{metin["nav_anasayfa"]}</a>'
+             f' <span aria-hidden="true">›</span> <a href="{gecit_kok(kod)}">{m["ad"]}</a> <span aria-hidden="true">›</span> '
+             f'<span aria-current="page">{t["ekmek"]}</span></nav>',
+             f'<span class="eyebrow">{t["eyebrow"]}</span>', f'<h1>{t["h1"]}</h1>', f'<p class="section-lead">{e(t["lead"].format(**p))}</p>',
+             f'<p class="rehber-meta">{ui["yayin"]}: <time datetime="{OZEL_YAYIN}">{r_tarih(OZEL_YAYIN, ui)}</time> · '
+             f'{ui["guncelleme"]}: <time datetime="{GUNCELLEME}">{r_tarih(GUNCELLEME, ui)}</time></p>',
+             "</div></section>", '<section class="section section-2 rehber-govde"><div class="wrap"><div class="rehber-kolon">']
+    parca.append(f'<section id="sayilar" class="rehber-bolum"><h2>{t["kisa_h2"]}</h2>' + r_tablo({"baslik": t["kisa_baslik"], "satirlar": satirlar}, ui) + "</section>")
+    # bölge
+    br = []
+    for b, l in sorted(ist["bolge"].items(), key=lambda x: (-len(x[1]), x[0])):
+        h = max(l, key=lambda g: g["rakimM"])
+        br.append([bol[b], S(len(l)), f'{e(h["ad"])} ({S(h["rakimM"])} m)', f'{S(statistics.median([g["rakimM"] for g in l]))} m',
+                   S(sum(1 for g in l if g.get("toprak"))), S(sum(1 for g in l if g.get("kapaliAylar")))])
+    parca.append(f'<section id="bolge" class="rehber-bolum"><h2>{t["bolge_h2"]}</h2><p>{e(t["bolge_p"])}</p>'
+                 + r_tablo({"baslik": t["bolge_baslik"], "satirlar": br}, ui) + "</section>")
+    # ülke
+    ur = []
+    for u, l in sorted(ist["ulke"].items(), key=lambda x: (-len(x[1]), ulk[x[0]])):
+        h = max(l, key=lambda g: g["rakimM"])
+        ur.append([ulk[u], S(len(l)), f'{e(h["ad"])} ({S(h["rakimM"])} m)', f'{S(statistics.median([g["rakimM"] for g in l]))} m'])
+    parca.append(f'<section id="ulke" class="rehber-bolum"><h2>{t["ulke_h2"]}</h2><p>{e(t["ulke_p"].format(**p))}</p>'
+                 + r_tablo({"baslik": t["ulke_baslik"], "satirlar": ur}, ui) + "</section>")
+    # 500 m bantları (üst bant 3.000 m ve üstü)
+    bantlar = []
+    for a in range(0, 3500, 500):
+        son = a == 3000
+        sayi = sum(1 for g in ist["ham"] if (g["rakimM"] >= a if son else a <= g["rakimM"] < a + 500))
+        ad = t["bant_ust"].format(a=S(a)) if son else t["bant_alt"].format(a=S(a), b=S(a + 499))
+        bantlar.append([ad, S(sayi), pct(sayi)])
+    parca.append(f'<section id="rakim" class="rehber-bolum"><h2>{t["bant_h2"]}</h2>' + r_tablo({"baslik": t["bant_baslik"], "satirlar": bantlar}, ui) + "</section>")
+    # kapanış ayları
+    grup: dict = {}
+    for g in ist["kapali"]:
+        grup[tuple(g["kapaliAylar"])] = grup.get(tuple(g["kapaliAylar"]), 0) + 1
+    ilk = sorted(grup.items(), key=lambda x: (-x[1], x[0]))[:5]
+    kr = [[t["kis_aralik"].format(a=m["ay_kisa"][a - 1], b=m["ay_kisa"][b - 1]), S(c)] for (a, b), c in ilk]
+    diger = len(ist["kapali"]) - sum(c for _, c in ilk)
+    if diger:
+        kr.append([t["kis_diger"], S(diger)])
+    parca.append(f'<section id="kis" class="rehber-bolum"><h2>{t["kis_h2"]}</h2><p>{e(t["kis_p"].format(**p))}</p>'
+                 + r_tablo({"baslik": t["kis_baslik"], "satirlar": kr, "not": t["kis_not"]}, ui) + "</section>")
+    # en yüksek on (veri kapsamındaki)
+    on = sorted(ist["ham"], key=lambda g: (-g["rakimM"], g["ad"]))[:10]
+    parca.append(f'<section id="en-yuksek" class="rehber-bolum"><h2>{t["en_h2"]}</h2>' + r_tablo({"baslik": t["en_baslik"], "satirlar": [
+        [str(i + 1), e(g["ad"]), e(", ".join(ulk[u] for u in g["ulkeler"])), f'{S(g["rakimM"])} m'] for i, g in enumerate(on)]}, ui) + "</section>")
+    # kendi sayfası olan en yüksek on (bu dilin kapsamında)
+    sayfali = gecit_veri()[kod]["gecitler"][:10]
+    parca.append(f'<section id="sayfali" class="rehber-bolum"><h2>{t["sayfa_h2"]}</h2><p>{e(t["sayfa_p"])}</p>' + r_tablo({"baslik": t["sayfa_baslik"], "satirlar": [
+        [str(i + 1), f'<a href="{gecit_yol(kod, g)}">{e(g["gad"])}</a>', e(", ".join(ulk[u] for u in g["ulkeler"])), f'{S(g["rakimM"])} m']
+        for i, g in enumerate(sayfali)]}, ui) + "</section>")
+    # yöntem + atıf
+    parca.append(f'<section id="yontem" class="rehber-bolum"><h2>{t["metot_h2"]}</h2>' + "".join(f"<p>{e(x)}</p>" for x in t["metot"]) + "</section>")
+    kisa_atif = t["cite_kisa"].format(**p)
+    parca.append(f'<section id="atif" class="rehber-bolum"><h2>{t["cite_h2"]}</h2><p>{e(t["cite_p"].format(**p))}<em>{e(kisa_atif)}</em></p>'
+                 f'<p>{e(t["cite_csv"])}<a href="{OZEL_CSV}">{t["cite_csv_ad"]}</a></p><p class="kucuk">{e(t["cite_atif"])} '
+                 f'<a href="{OZEL_KAYNAKLAR}">{e(metin["nav_veri_kaynaklari"]) if "nav_veri_kaynaklari" in metin else "OpenStreetMap"}</a></p></section>')
+    sss = [{"s": x["s"], "c": x["c"].format(**p)} for x in t["sss"]]
+    parca.append(f'<section id="sss" class="rehber-bolum"><h2>{t["sss_h2"]}</h2><ul class="rehber-sss-liste">'
+                 + "".join(f"<li><h3>{e(s['s'])}</h3><p>{e(s['c'])}</p></li>" for s in sss) + "</ul></section>")
+    ilg = {"{@gecitler}": gecit_kok(kod), "{@hub}": rehber_hub_yolu(kod), "{@arac}": arac_yol(kod), "{@hakkinda}": ozel_yol("hakkinda", kod)}
+    parca.append(f'<section class="rehber-bolum rehber-ilgili"><h2>{t["ilgili_h2"]}</h2><ul>'
+                 + "".join(f'<li><a href="{ilg[a]}">{e(b)}</a></li>' for a, b in t["ilgili_baglantilar"]) + "</ul></section>")
+    parca.append("</div></div></section>")
+    ek = {"p": p, "sss": sss, "atif": kisa_atif, "tarih": GECIT_GUNCELLEME}
+    return "\n".join(parca), t["baslik"].format(**p), t["aciklama"].format(**p), t["h1"], ek
+
+
+def ozel_hakkinda_govde(kod: str, t: dict, ui: dict, metin: dict) -> tuple:
+    e = _html.escape
+    adr = {"impressum": impressum_url(kod), "kaynaklar": OZEL_KAYNAKLAR, "veri": ozel_yol("veri", kod)}
+    parca = ['<section class="section rehber-ust"><div class="wrap">',
+             f'<nav class="rehber-ekmek" aria-label="{ui["ekmek"]}"><a href="{sayfa_yolu(kod, "index.html")}">{metin["nav_anasayfa"]}</a>'
+             f' <span aria-hidden="true">›</span> <span aria-current="page">{t["ekmek"]}</span></nav>',
+             f'<span class="eyebrow">{t["eyebrow"]}</span>', f'<h1>{t["h1"]}</h1>', f'<p class="section-lead">{e(t["lead"])}</p>',
+             f'<p class="rehber-meta">{ui["guncelleme"]}: <time datetime="{GUNCELLEME}">{r_tarih(GUNCELLEME, ui)}</time></p>',
+             "</div></section>", '<section class="section section-2 rehber-govde"><div class="wrap"><div class="rehber-kolon">']
+    for b in t["bolumler"]:
+        parca.append(f'<section class="rehber-bolum"><h2>{b["h2"]}</h2>' + "".join(f"<p>{x.format(**adr)}</p>" for x in b["p"]) + "</section>")
+    ilg = {"gecitler": gecit_kok(kod), "veri": ozel_yol("veri", kod), "hub": rehber_hub_yolu(kod), "arac": arac_yol(kod)}
+    parca.append(f'<section class="rehber-bolum rehber-ilgili"><h2>{t["ilgili_h2"]}</h2><ul>'
+                 + "".join(f'<li><a href="{ilg[a]}">{e(b)}</a></li>' for a, b in t["ilgili"]) + "</ul></section>")
+    parca.append("</div></div></section>")
+    return "\n".join(parca), t["baslik"], t["aciklama"], t["h1"], {}
+
+
+def ozel_json_ld(tur: str, kod: str, url: str, baslik: str, aciklama: str, t: dict, ekmek: list, ek: dict) -> str:
+    lang = dil_bilgisi(kod)["lang"]
+    ana = f"{ALAN}/"
+    site = {"@type": "WebSite", "@id": f"{ALAN}/#website", "url": ana, "name": "Motoseyir", "inLanguage": lang, "publisher": {"@id": f"{ALAN}/#organization"}}
+    sayfa = {"@type": "AboutPage" if tur == "hakkinda" else "WebPage", "@id": f"{url}#sayfa", "url": url, "name": baslik, "description": aciklama,
+             "inLanguage": lang, "isPartOf": {"@id": f"{ALAN}/#website"}, "dateModified": GUNCELLEME, "datePublished": OZEL_YAYIN,
+             "primaryImageOfPage": {"@type": "ImageObject", "url": SOSYAL_GORSEL, "width": 1200, "height": 630},
+             "breadcrumb": {"@id": f"{url}#ekmek"}}
+    graf = [org_dugumu(kod), site, sayfa, {"@type": "BreadcrumbList", "@id": f"{url}#ekmek", "itemListElement": [
+        {"@type": "ListItem", "position": i + 1, "name": ad, "item": f"{ALAN}{yol}"} for i, (ad, yol) in enumerate(ekmek)]}]
+    if tur == "hakkinda":
+        sayfa["about"] = {"@id": f"{ALAN}/#organization"}
+    else:
+        sayfa["mainEntity"] = {"@id": f"{url}#veri"}
+        graf.append({"@type": "Dataset", "@id": f"{url}#veri", "name": duz(t["h1"]), "description": aciklama, "url": url, "inLanguage": lang,
+                     "datePublished": OZEL_YAYIN, "dateModified": GUNCELLEME, "isAccessibleForFree": True, "license": ODBL,
+                     "creator": {"@id": f"{ALAN}/#organization"}, "publisher": {"@id": f"{ALAN}/#organization"},
+                     "isBasedOn": ["https://www.openstreetmap.org/copyright"], "citation": duz(ek["atif"]),
+                     "creditText": duz(t["cite_atif"]),
+                     "variableMeasured": [duz(x) for x in t["ulke_baslik"][1:]],
+                     "distribution": [{"@type": "DataDownload", "encodingFormat": "text/csv", "contentUrl": f"{ALAN}{OZEL_CSV}",
+                                       "name": t["cite_csv_ad"]}]})
+        graf.append({"@type": "FAQPage", "@id": f"{url}#sss", "inLanguage": lang, "mainEntity": [
+            {"@type": "Question", "name": duz(s["s"]), "acceptedAnswer": {"@type": "Answer", "text": duz(s["c"])}} for s in ek["sss"]]})
+    govde = json.dumps({"@context": "https://schema.org", "@graph": graf}, ensure_ascii=False, indent=1)
+    return '<script type="application/ld+json">\n' + govde.replace("</", "<\\/") + "\n</script>"
+
+
+def ozel_alt(tur: str) -> list:
+    return [(dil_bilgisi(k)["lang"], ozel_yol(tur, k)) for k in OZEL_DILLER]
+
+
+def ozel_sitemap() -> list:
+    parca = []
+    for tur in ("veri", "hakkinda"):
+        alt = [f'    <xhtml:link rel="alternate" hreflang="{l}" href="{ALAN}{y}"/>' for l, y in ozel_alt(tur)]
+        alt.append(f'    <xhtml:link rel="alternate" hreflang="x-default" href="{ALAN}{ozel_yol(tur, "en")}"/>')
+        for k in OZEL_DILLER:
+            parca += ["  <url>", f"    <loc>{ALAN}{ozel_yol(tur, k)}</loc>", f"    <lastmod>{GUNCELLEME}</lastmod>",
+                      "    <changefreq>monthly</changefreq>", "    <priority>0.7</priority>"] + alt + ["  </url>"]
+    return parca
+
+
+def ozel_yaz() -> int:
+    hub_r, _ = rehber_veri()
+    sablon = (SABLON / "rehber.html").read_text(encoding="utf-8")
+    csv = KOK / OZEL_CSV.strip("/")
+    csv.parent.mkdir(parents=True, exist_ok=True)
+    csv.write_text(ozel_csv(), encoding="utf-8")
+    yazilan = 0
+    for tur in ("veri", "hakkinda"):
+        for kod in OZEL_DILLER:
+            t = ozel_metin(tur, kod)
+            d = dil_bilgisi(kod)
+            metin = json.loads((DIL / f"{kod}.json").read_text(encoding="utf-8"))
+            ui = hub_r[kod]["ui"]
+            yol = ozel_yol(tur, kod)
+            url = f"{ALAN}{yol}"
+            if tur == "veri":
+                govde, baslik, aciklama, h1, ek = ozel_veri_govde(kod, t, ui, metin)
+                m = gecit_veri()[kod]["metin"]
+                ekmek = [(duz(metin["nav_anasayfa"]), sayfa_yolu(kod, "index.html")), (m["ad"], gecit_kok(kod)), (duz(t["ekmek"]), yol)]
+            else:
+                govde, baslik, aciklama, h1, ek = ozel_hakkinda_govde(kod, t, ui, metin)
+                ekmek = [(duz(metin["nav_anasayfa"]), sayfa_yolu(kod, "index.html")), (duz(t["ekmek"]), yol)]
+            baslik, aciklama = duz(baslik), duz(aciklama)
+            tam = f"{baslik} — Motoseyir"
+            baslik_tam = tam if len(tam) <= 60 else baslik
+            alt = ozel_alt(tur)
+            alternatif = "\n".join([f'<link rel="alternate" hreflang="{l}" href="{ALAN}{y}">' for l, y in alt]
+                                   + [f'<link rel="alternate" hreflang="x-default" href="{ALAN}{ozel_yol(tur, "en")}">'])
+            es = {k: ozel_yol(tur, k) for k in OZEL_DILLER}
+
+            def dil_yolu(k, es=es):
+                return es.get(k) or sayfa_yolu(k, "index.html")
+            degerler = {
+                **metin,
+                "lang": d["lang"], "baslik_tam": _html.escape(baslik_tam, quote=False),
+                "aciklama_nitelik": _html.escape(aciklama, quote=True), "kanonik": url,
+                "alternatifler": alternatif, "seo_head": rehber_seo_head({}, baslik_tam, aciklama, url, d["og"], False),
+                "json_ld": ozel_json_ld(tur, kod, url, baslik_tam, aciklama, t, ekmek, ek),
+                "dil_secici": dil_secici(kod, "", metin, dil_yolu), "dil_altbilgi": dil_altbilgi(kod, "", dil_yolu),
+                "store": gecit_magaza(kod), "gizlilik_url": gizlilik_url(kod),
+                "impressum_url": impressum_url(kod), "anasayfa_url": sayfa_yolu(kod, "index.html"),
+                "corider_url": sayfa_yolu(kod, "corider.html"), "ozellikler_url": sayfa_yolu(kod, "ozellikler.html"),
+                "nasil_url": sayfa_yolu(kod, "nasil-yapilir.html"), "hub_url": rehber_hub_yolu(kod),
+                "ui_rehber": ui["rehber"], "uygulama_id": UYGULAMA_ID, "yil": YIL, "rehber_icerik": govde,
+                "arac_footer": arac_footer(kod),
+            }
+            html = varliklari_surumle(doldur(sablon, degerler, f"{kod}{yol}"))
+            hedef = KOK / yol.strip("/") / "index.html"
+            hedef.parent.mkdir(parents=True, exist_ok=True)
+            hedef.write_text(html, encoding="utf-8")
+            yazilan += 1
+    return yazilan
+
+
+# ---------------------------------------------------------------------------------------------------------------------
 # /llms.txt (8 Kas 2026, GEO): yapay zekâ yanıt motorları için kısa, düz metin site özeti (llmstxt.org biçimi). Her koşuda
 # sitenin kendi metinlerinden üretilir (elle düzenlenmez): olgular `dil/en.json` SSS'sinden, sayfa açıklamaları meta
 # açıklamalardan, rehber listesi `icerik/`ten. Yeni yazı/araç eklenince kendiliğinden girer.
@@ -2042,6 +2360,8 @@ def llms_txt() -> str:
     if "en" in tan:
         sat.append(f"- [Tour generator in the app]({ALAN}{tanitim_yol('en')}): {k(tan['en']['aciklama'])}")
     sat.append(f"- [Mountain passes]({ALAN}/en/passes/): one page per pass in the US and the Alps with elevation, location, surface and usual closing months, from the app's own pass data.")
+    sat.append(f"- [Mountain passes in numbers]({ALAN}{ozel_yol('veri', 'en')}): original aggregate data from the Motoseyir pass database ({ozel_istatistik()['n']} passes, {len(ozel_istatistik()['ulke'])} countries): tables by region, country, elevation and winter closure, with a citation line and a CSV.")
+    sat.append(f"- [About Motoseyir]({ALAN}{ozel_yol('hakkinda', 'en')}): who publishes the app and site, where the data comes from, how guides are written and corrected.")
     sat += ["", "## Guides (English)", "", f"- [All guides]({ALAN}{rehber_hub_yolu('en')}): {k(hub['en']['aciklama'])}"]
     for grup, m in sorted(makale.items(), key=lambda x: x[1].get("en", {}).get("sira", 99)):
         if "en" in m:
@@ -2137,6 +2457,7 @@ def main() -> None:
     yazilan += izle_yaz()
     gecit_yazilan = gecit_yaz()
     yazilan += gecit_yazilan
+    yazilan += ozel_yaz()
 
     (KOK / "sitemap.xml").write_text(sitemap(), encoding="utf-8")
     (KOK / "robots.txt").write_text(ROBOTS, encoding="utf-8")

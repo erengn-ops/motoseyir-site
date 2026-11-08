@@ -46,6 +46,12 @@ TANITIM_YOLLARI = {"tur-uret/index.html", "en/tour-generator/index.html", "de/to
 ARAC_YOLLARI = {"tur-olusturucu/index.html", "en/motorcycle-route-generator/index.html", "de/motorrad-rundtour-planen/index.html"} | TANITIM_YOLLARI
 
 
+# Veri ve hakkında sayfaları (uret.py › ozel_yaz): TR/EN/DE, tek hreflang kümesi; veri sayfasında Dataset + FAQPage, hakkındada AboutPage.
+OZEL_VERI = {"gecitler/sayilarla/index.html", "en/passes/in-numbers/index.html", "de/paesse/in-zahlen/index.html"}
+OZEL_HAKKINDA = {"hakkinda/index.html", "en/about/index.html", "de/ueber-uns/index.html"}
+OZEL_YOLLARI = OZEL_VERI | OZEL_HAKKINDA
+
+
 GECIT_DIZIN = {("tr", "gecitler"), ("en", "passes"), ("de", "paesse")}
 
 
@@ -240,7 +246,9 @@ def main() -> int:
         aciklamalar.setdefault((dil, desc), []).append(rel)
         # hreflang
         hl = {l["hreflang"]: l["href"] for l in p.links if l.get("rel") == "alternate" and "hreflang" in l}
-        if rehber_mi(rel) or gecit_mi(rel):
+        if rel in OZEL_YOLLARI:
+            beklenen = {"tr", "en", "de", "x-default"}
+        elif rehber_mi(rel) or gecit_mi(rel):
             beklenen = set(hl)  # eşler yazıya göre değişir; kümenin kendi içinde tutarlılığı aşağıda
             if hl and (dil not in hl or "x-default" not in hl):
                 hatalar.append(f"{rel}: hreflang kümesi kendi dilini ({dil}) ya da x-default'u içermiyor")
@@ -288,6 +296,10 @@ def main() -> int:
                 hatalar.append(f"{rel}: aggregateRating/review yasak")
         if not tipler:
             hatalar.append(f"{rel}: JSON-LD yok")
+        elif rel in OZEL_YOLLARI:
+            gerekli = {"Organization", "WebSite", "BreadcrumbList"} | ({"WebPage", "Dataset", "FAQPage"} if rel in OZEL_VERI else {"AboutPage"})
+            if not gerekli <= set(tipler):
+                hatalar.append(f"{rel}: veri/hakkında JSON-LD türleri eksik: {tipler}")
         elif gecit_mi(rel):
             if not {"Organization", "WebSite", "BreadcrumbList"} <= set(tipler) or not ({"WebPage", "TouristAttraction"} <= set(tipler) or "CollectionPage" in tipler):
                 hatalar.append(f"{rel}: geçit JSON-LD türleri eksik: {tipler}")
@@ -299,9 +311,9 @@ def main() -> int:
                 hatalar.append(f"{rel}: araç JSON-LD türleri eksik: {tipler}")
         elif "WebPage" not in tipler:
             hatalar.append(f"{rel}: JSON-LD'de WebPage yok")
-        if rel not in ARAC_YOLLARI and not rehber_mi(rel) and not gecit_mi(rel) and not rel.startswith(("gizlilik/", "impressum/")) and not {"Organization", "WebSite", "MobileApplication"} <= set(tipler):
+        if rel not in ARAC_YOLLARI and rel not in OZEL_YOLLARI and not rehber_mi(rel) and not gecit_mi(rel) and not rel.startswith(("gizlilik/", "impressum/")) and not {"Organization", "WebSite", "MobileApplication"} <= set(tipler):
             hatalar.append(f"{rel}: JSON-LD türleri eksik: {tipler}")
-        if rel not in ("index.html",) and (not rel.endswith("/index.html") or rehber_mi(rel) or gecit_mi(rel) or rel in ARAC_YOLLARI) and not rel.startswith(("gizlilik/", "impressum/")) and "BreadcrumbList" not in tipler:
+        if rel not in ("index.html",) and (not rel.endswith("/index.html") or rehber_mi(rel) or gecit_mi(rel) or rel in ARAC_YOLLARI or rel in OZEL_YOLLARI) and not rel.startswith(("gizlilik/", "impressum/")) and "BreadcrumbList" not in tipler:
             hatalar.append(f"{rel}: BreadcrumbList yok")
         # görseller
         for im in p.imgs:

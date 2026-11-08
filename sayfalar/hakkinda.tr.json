@@ -1,0 +1,17 @@
+{
+  "baslik": "Motoseyir Hakkında: Kim Yapıyor, Veri Nasıl Hazırlanıyor",
+  "aciklama": "Motoseyir, iPhone için motosiklet navigasyon uygulamasıdır. Siteyi kimin yayımladığı, rota ve geçit verisinin kaynağı, rehberlerin nasıl yazılıp düzeltildiği.",
+  "h1": "Motoseyir hakkında",
+  "ekmek": "Hakkında",
+  "eyebrow": "Hakkında ve yöntem",
+  "lead": "Motoseyir, iPhone için bir motosiklet navigasyon uygulamasıdır. Bu sayfa uygulamayı ve bu siteyi kimin yayımladığını, verinin nereden geldiğini ve rehberlerin nasıl yazıldığını anlatır; ne kadar güveneceğine sen karar verirsin.",
+  "bolumler": [
+    {"h2": "Motoseyir nedir", "p": ["Motoseyir motosikletliler için rota planlar. Dakikaya göre değil mesafeye göre hesaplar; böylece araba navigasyonunun atladığı ara yolları ve kısa alternatifleri seçebilir, bir başlangıç noktasından dönüş turu da kurar. iOS uygulamasıdır, App Store’dan indirilir."]},
+    {"h2": "Kim yayımlıyor", "p": ["Uygulamayı ve bu siteyi İstanbul’da bireysel geliştirici Batuhan Eren Engin yayımlıyor. Sağlayıcının bilgileri <a href=\"{impressum}\">yasal bildirimde</a> yazılı. Site, 14 dilde tek bir kaynak dosya kümesinden üretilir; bir düzeltme bir kez yapılır, bütün dillere geçer."]},
+    {"h2": "Veri nereden geliyor", "p": ["Harita ve rotalama OpenStreetMap’e dayanır, © OpenStreetMap katkıcıları, ODbL lisansı. Dağ geçidi listesi elle tutulan bir listeyle Avrupa, Asya ve ABD derlemelerini birleştirir; kayıtların çoğu bir Wikipedia ya da Wikidata sayfasına bağlıdır. Kaynaklar ve atıflar <a href=\"{kaynaklar}\">veri kaynakları sayfasında</a>.", "Bu listenin toplu sayıları <a href=\"{veri}\">dağ geçitleri sayılarla</a> sayfasında; veri tarihi ve alıntı yaparken kopyalayabileceğin bir kaynak satırıyla birlikte."]},
+    {"h2": "Rehberler nasıl yazılıyor", "p": ["Her rehberde yayın tarihi ve son güncelleme tarihi görünür, sayfa dayandığı kaynaklarla biter. Kurallar ve fiyatlar değişir; bu yüzden rehber olduğu gibi bırakılmaz, güncellenir. Bir sayı bir kaynağa bağlanamıyorsa yuvarlanmaz ya da tahmin edilmez, yazıdan çıkarılır.", "Geçit sayfaları yalnız verinin içerdiğini yazar: rakım, ülke ya da eyalet, yolun toprak olup olmadığı, olağan kapanış ayları ve koordinat. Veride bir şey yoksa sayfa bunu söyler."]},
+    {"h2": "Düzeltmeler", "p": ["Bir geçit, bir sayı ya da bir rehber yanlışsa <a href=\"{impressum}\">yasal bildirimdeki</a> adrese yaz. Doğrulanan hata kaynakta düzeltilir ve sayfa yeniden üretilir; sayfadaki güncelleme tarihi de değişir."]}
+  ],
+  "ilgili_h2": "İlgili sayfalar",
+  "ilgili": [["gecitler", "Türkiye geçit sayfaları"], ["veri", "Dağ geçitleri sayılarla"], ["hub", "Motosiklet rehberleri"], ["arac", "Motosiklet rota oluşturucu"]]
+}

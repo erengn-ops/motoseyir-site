@@ -23,6 +23,8 @@ Motoseyir is made for motorcyclists, not for cars: it calculates by distance ins
 - [Motorcycle route generator (web)](https://motoseyir-app.com/en/motorcycle-route-generator/): Free motorcycle route and trip planner: pick a start, length and how twisty you want it, get up to three round trips of up to 1000 km, send one to your phone.
 - [Tour generator in the app](https://motoseyir-app.com/en/tour-generator/): The Motoseyir app's Tour generator takes your start, direction, length and curviness and draws up to three loops to your start. See it in a screen recording.
 - [Mountain passes](https://motoseyir-app.com/en/passes/): one page per pass in the US and the Alps with elevation, location, surface and usual closing months, from the app's own pass data.
+- [Mountain passes in numbers](https://motoseyir-app.com/en/passes/in-numbers/): original aggregate data from the Motoseyir pass database (1635 passes, 36 countries): tables by region, country, elevation and winter closure, with a citation line and a CSV.
+- [About Motoseyir](https://motoseyir-app.com/en/about/): who publishes the app and site, where the data comes from, how guides are written and corrected.
 
 ## Guides (English)
 

@@ -13764,6 +13764,66 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://motoseyir-app.com/gecitler/sayilarla/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://motoseyir-app.com/gecitler/sayilarla/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://motoseyir-app.com/en/passes/in-numbers/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://motoseyir-app.com/de/paesse/in-zahlen/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://motoseyir-app.com/en/passes/in-numbers/"/>
+  </url>
+  <url>
+    <loc>https://motoseyir-app.com/en/passes/in-numbers/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://motoseyir-app.com/gecitler/sayilarla/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://motoseyir-app.com/en/passes/in-numbers/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://motoseyir-app.com/de/paesse/in-zahlen/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://motoseyir-app.com/en/passes/in-numbers/"/>
+  </url>
+  <url>
+    <loc>https://motoseyir-app.com/de/paesse/in-zahlen/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://motoseyir-app.com/gecitler/sayilarla/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://motoseyir-app.com/en/passes/in-numbers/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://motoseyir-app.com/de/paesse/in-zahlen/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://motoseyir-app.com/en/passes/in-numbers/"/>
+  </url>
+  <url>
+    <loc>https://motoseyir-app.com/hakkinda/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://motoseyir-app.com/hakkinda/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://motoseyir-app.com/en/about/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://motoseyir-app.com/de/ueber-uns/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://motoseyir-app.com/en/about/"/>
+  </url>
+  <url>
+    <loc>https://motoseyir-app.com/en/about/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://motoseyir-app.com/hakkinda/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://motoseyir-app.com/en/about/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://motoseyir-app.com/de/ueber-uns/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://motoseyir-app.com/en/about/"/>
+  </url>
+  <url>
+    <loc>https://motoseyir-app.com/de/ueber-uns/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://motoseyir-app.com/hakkinda/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://motoseyir-app.com/en/about/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://motoseyir-app.com/de/ueber-uns/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://motoseyir-app.com/en/about/"/>
+  </url>
+  <url>
     <loc>https://motoseyir-app.com/gizlilik/</loc>
     <lastmod>2026-11-08</lastmod>
     <changefreq>yearly</changefreq>

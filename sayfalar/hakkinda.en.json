@@ -1,0 +1,17 @@
+{
+  "baslik": "About Motoseyir: Who Makes It and How the Data Is Built",
+  "aciklama": "Motoseyir is an iOS motorcycle navigation app. Who publishes this site, where the route and pass data come from, and how guides are written and corrected.",
+  "h1": "About Motoseyir",
+  "ekmek": "About",
+  "eyebrow": "About and method",
+  "lead": "Motoseyir is a motorcycle navigation app for iPhone. This page says who publishes the app and this site, where its data comes from and how the guides are written, so you can judge how far to trust them.",
+  "bolumler": [
+    {"h2": "What Motoseyir is", "p": ["Motoseyir plans routes for motorcyclists. It calculates by distance instead of minutes, so it can choose back roads and shorter alternatives that a car-oriented navigation app skips, and it can build a loop tour from a start point. It is an iOS app and is downloaded from the App Store."]},
+    {"h2": "Who publishes it", "p": ["The app and this site are published by Batuhan Eren Engin, an individual developer in Istanbul, Türkiye. The full provider details are in the <a href=\"{impressum}\">legal notice</a>. The site is generated from one set of source files in 14 languages, so a correction made once reaches every language."]},
+    {"h2": "Where the data comes from", "p": ["Maps and routing are based on OpenStreetMap, © OpenStreetMap contributors, under the ODbL licence. The mountain pass list combines a hand-kept list with compilations for Europe, Asia and the United States, and most entries link to a Wikipedia or Wikidata page. The sources and credits are on the <a href=\"{kaynaklar}\">data sources page</a>.", "The aggregate figures from that list are published on <a href=\"{veri}\">mountain passes in numbers</a>, with the date of the data snapshot and a line you can copy when you cite them."]},
+    {"h2": "How the guides are written", "p": ["Each guide shows the date it was published and the date it was last updated, and ends with the sources it relies on. Rules and prices change, so a guide is updated rather than left as it was. When a figure cannot be traced to a source, it is left out instead of rounded or estimated.", "Pass pages state only what the data holds: elevation, country or state, whether the road is unpaved, the usual closing months and the coordinates. Where the data has nothing, the page says so."]},
+    {"h2": "Corrections", "p": ["If a pass, a figure or a guide is wrong, write to the address in the <a href=\"{impressum}\">legal notice</a>. A confirmed error is fixed in the source and the page is regenerated; the update date on the page changes with it."]}
+  ],
+  "ilgili_h2": "Related pages",
+  "ilgili": [["gecitler", "Mountain pass pages"], ["veri", "Mountain passes in numbers"], ["hub", "Motorcycle guides"], ["arac", "Motorcycle route generator"]]
+}

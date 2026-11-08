@@ -1,0 +1,17 @@
+{
+  "baslik": "Über Motoseyir: Wer dahintersteht, wie die Daten entstehen",
+  "aciklama": "Motoseyir ist eine Motorrad-Navigations-App für iOS. Wer die Website betreibt, woher Routen- und Passdaten stammen, wie Ratgeber entstehen und korrigiert werden",
+  "h1": "Über Motoseyir",
+  "ekmek": "Über uns",
+  "eyebrow": "Über uns und Methode",
+  "lead": "Motoseyir ist eine Motorrad-Navigations-App für das iPhone. Diese Seite sagt, wer App und Website herausgibt, woher die Daten stammen und wie die Ratgeber entstehen, damit du einschätzen kannst, wie weit du ihnen traust.",
+  "bolumler": [
+    {"h2": "Was Motoseyir ist", "p": ["Motoseyir plant Routen für Motorradfahrer. Es rechnet nach Strecke statt nach Minuten, kann also Nebenstraßen und kürzere Alternativen wählen, die eine Auto-Navigation auslässt, und baut aus einem Startpunkt eine Rundtour. Es ist eine iOS-App und kommt aus dem App Store."]},
+    {"h2": "Wer es herausgibt", "p": ["App und Website gibt Batuhan Eren Engin heraus, ein Einzelentwickler in Istanbul, Türkei. Die vollständigen Anbieterangaben stehen im <a href=\"{impressum}\">Impressum</a>. Die Website wird in 14 Sprachen aus einem gemeinsamen Satz Quelldateien erzeugt; eine Korrektur wird einmal gemacht und erreicht alle Sprachen."]},
+    {"h2": "Woher die Daten stammen", "p": ["Karten und Routing beruhen auf OpenStreetMap, © OpenStreetMap-Mitwirkende, Lizenz ODbL. Die Passliste verbindet eine von Hand gepflegte Liste mit Zusammenstellungen für Europa, Asien und die USA; die meisten Einträge verweisen auf eine Wikipedia- oder Wikidata-Seite. Quellen und Nachweise stehen auf der Seite <a href=\"{kaynaklar}\">Datenquellen</a>.", "Die Summenzahlen dieser Liste stehen auf <a href=\"{veri}\">Bergpässe in Zahlen</a>, mit Datenstand und einer Quellenzeile zum Kopieren."]},
+    {"h2": "Wie die Ratgeber entstehen", "p": ["Jeder Ratgeber zeigt Veröffentlichungs- und Aktualisierungsdatum und endet mit den Quellen, auf die er sich stützt. Regeln und Preise ändern sich, deshalb wird ein Ratgeber aktualisiert statt so gelassen. Lässt sich eine Zahl keiner Quelle zuordnen, wird sie nicht gerundet oder geschätzt, sondern weggelassen.", "Passseiten nennen nur, was die Daten enthalten: Höhe, Land oder Bundesstaat, ob die Straße unbefestigt ist, die übliche Sperrzeit und die Koordinaten. Wo die Daten nichts haben, sagt die Seite das."]},
+    {"h2": "Korrekturen", "p": ["Ist ein Pass, eine Zahl oder ein Ratgeber falsch, schreib an die Adresse im <a href=\"{impressum}\">Impressum</a>. Ein bestätigter Fehler wird an der Quelle behoben und die Seite neu erzeugt; das Aktualisierungsdatum ändert sich mit."]}
+  ],
+  "ilgili_h2": "Verwandte Seiten",
+  "ilgili": [["gecitler", "Passseiten"], ["veri", "Bergpässe in Zahlen"], ["hub", "Motorrad-Ratgeber"], ["arac", "Motorrad-Routenplaner"]]
+}
