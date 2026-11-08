@@ -40,7 +40,20 @@ ALAN = "https://motoseyir-app.com"
 UYGULAMA_ID = "6792549131"
 SAGLAYICI = "128439797"  # App Store Connect kampanya sağlayıcı kimliği (pt)
 YIL = "2026"
-GUNCELLEME = "2026-11-08"  # sitemap lastmod + JSON-LD dateModified
+# DÜRÜST TARİHLER (8 Kas 2026): küresel "bugün" sabiti YOK. Her sayfanın dateModified/lastmod değeri O SAYFANIN gerçek içerik
+# değişikliğinin tarihidir (git: `git log -1 --format=%cs -- <kaynak>`); yalnız CSS/şablon/JSON-LD düzeltmesi tarihi ilerletmez.
+# Rehber/araç/tanıtım sayfalarında tarih kendi içerik dosyasındaki `guncelleme` alanında; aşağıdakiler elle tutulan sayfalar.
+# Bir sayfanın METNİ gerçekten değişince ilgili satırı o günün tarihine çek.
+STATIK_GUNCELLEME = {
+    "index.html": "2026-11-08",         # "Nedir" cevap bölümü eklendi (sablon/anasayfa.html, 192deaf)
+    "ozellikler.html": "2026-10-20",    # metin son 20 Eki'de değişti; sonraki commit'ler yalnız altbilgi/sayaç
+    "nasil-yapilir.html": "2026-10-20",
+    "corider.html": "2026-10-20",
+}
+ELLE_GUNCELLEME = {  # elle tutulan sayfalar (gizlilik, impressum): son içerik commit'i
+    "/gizlilik/": "2026-10-28", "/gizlilik/en/": "2026-10-28", "/gizlilik/de/": "2026-10-28",
+    "/impressum/": "2026-10-21", "/impressum/en/": "2026-10-21",
+}
 
 # Şablon adı -> (çıktı dosya adı, sitemap changefreq, sitemap priority)
 SAYFALAR = {
@@ -320,7 +333,7 @@ def sitemap() -> str:
         for d in DILLER:
             parca.append("  <url>")
             parca.append(f'    <loc>{ALAN}{sayfa_yolu(d["kod"], dosya)}</loc>')
-            parca.append(f"    <lastmod>{GUNCELLEME}</lastmod>")
+            parca.append(f"    <lastmod>{STATIK_GUNCELLEME[dosya]}</lastmod>")
             parca.append(f"    <changefreq>{sik}</changefreq>")
             parca.append(f"    <priority>{oncelik}</priority>")
             parca.extend(alt)
@@ -344,7 +357,7 @@ def sitemap() -> str:
     ):
         parca.append("  <url>")
         parca.append(f"    <loc>{ALAN}{yol}</loc>")
-        parca.append(f"    <lastmod>{GUNCELLEME}</lastmod>")
+        parca.append(f"    <lastmod>{ELLE_GUNCELLEME[yol]}</lastmod>")
         parca.append("    <changefreq>yearly</changefreq>")
         parca.append("    <priority>0.3</priority>")
         for lang, hedef in esler:
@@ -483,7 +496,7 @@ def json_ld(dosya: str, v: dict, kod: str) -> str:
     sayfa = {"@type": "WebPage", "@id": f"{url}#sayfa", "url": url, "name": duz(v[ba]), "description": duz(v[ac]),
              "inLanguage": lang, "isPartOf": {"@id": f"{ALAN}/#website"}, "about": {"@id": f"{ALAN}/#uygulama"},
              "primaryImageOfPage": {"@type": "ImageObject", "url": SOSYAL_GORSEL, "width": 1200, "height": 630},
-             "dateModified": GUNCELLEME}
+             "dateModified": STATIK_GUNCELLEME[dosya]}
     graf = [org, site, sayfa]
     if dosya != "index.html":
         ad = SEO_AD[dosya]
@@ -2029,6 +2042,7 @@ def gecit_yaz() -> int:
 OZEL_DIZIN = KOK / "sayfalar"
 OZEL_DILLER = ("tr", "en", "de")
 OZEL_YAYIN = "2026-11-08"
+OZEL_GUNCELLEME = "2026-11-08"  # sayfalar 8 Kas 2026'da yazıldı; metin değişince bu satırı çek
 OZEL_YOL = {"veri": {"tr": "/gecitler/sayilarla/", "en": "/en/passes/in-numbers/", "de": "/de/paesse/in-zahlen/"},
             "hakkinda": {"tr": "/hakkinda/", "en": "/en/about/", "de": "/de/ueber-uns/"}}
 OZEL_CSV = "/veri/passes-by-country.csv"
@@ -2151,7 +2165,7 @@ def ozel_veri_govde(kod: str, t: dict, ui: dict, metin: dict) -> tuple:
              f'<span aria-current="page">{t["ekmek"]}</span></nav>',
              f'<span class="eyebrow">{t["eyebrow"]}</span>', f'<h1>{t["h1"]}</h1>', f'<p class="section-lead">{e(t["lead"].format(**p))}</p>',
              f'<p class="rehber-meta">{ui["yayin"]}: <time datetime="{OZEL_YAYIN}">{r_tarih(OZEL_YAYIN, ui)}</time> · '
-             f'{ui["guncelleme"]}: <time datetime="{GUNCELLEME}">{r_tarih(GUNCELLEME, ui)}</time></p>',
+             f'{ui["guncelleme"]}: <time datetime="{OZEL_GUNCELLEME}">{r_tarih(OZEL_GUNCELLEME, ui)}</time></p>',
              "</div></section>", '<section class="section section-2 rehber-govde"><div class="wrap"><div class="rehber-kolon">']
     parca.append(f'<section id="sayilar" class="rehber-bolum"><h2>{t["kisa_h2"]}</h2>' + r_tablo({"baslik": t["kisa_baslik"], "satirlar": satirlar}, ui) + "</section>")
     # bölge
@@ -2221,7 +2235,7 @@ def ozel_hakkinda_govde(kod: str, t: dict, ui: dict, metin: dict) -> tuple:
              f'<nav class="rehber-ekmek" aria-label="{ui["ekmek"]}"><a href="{sayfa_yolu(kod, "index.html")}">{metin["nav_anasayfa"]}</a>'
              f' <span aria-hidden="true">›</span> <span aria-current="page">{t["ekmek"]}</span></nav>',
              f'<span class="eyebrow">{t["eyebrow"]}</span>', f'<h1>{t["h1"]}</h1>', f'<p class="section-lead">{e(t["lead"])}</p>',
-             f'<p class="rehber-meta">{ui["guncelleme"]}: <time datetime="{GUNCELLEME}">{r_tarih(GUNCELLEME, ui)}</time></p>',
+             f'<p class="rehber-meta">{ui["guncelleme"]}: <time datetime="{OZEL_GUNCELLEME}">{r_tarih(OZEL_GUNCELLEME, ui)}</time></p>',
              "</div></section>", '<section class="section section-2 rehber-govde"><div class="wrap"><div class="rehber-kolon">']
     for b in t["bolumler"]:
         parca.append(f'<section class="rehber-bolum"><h2>{b["h2"]}</h2>' + "".join(f"<p>{x.format(**adr)}</p>" for x in b["p"]) + "</section>")
@@ -2237,7 +2251,7 @@ def ozel_json_ld(tur: str, kod: str, url: str, baslik: str, aciklama: str, t: di
     ana = f"{ALAN}/"
     site = {"@type": "WebSite", "@id": f"{ALAN}/#website", "url": ana, "name": "Motoseyir", "inLanguage": lang, "publisher": {"@id": f"{ALAN}/#organization"}}
     sayfa = {"@type": "AboutPage" if tur == "hakkinda" else "WebPage", "@id": f"{url}#sayfa", "url": url, "name": baslik, "description": aciklama,
-             "inLanguage": lang, "isPartOf": {"@id": f"{ALAN}/#website"}, "dateModified": GUNCELLEME, "datePublished": OZEL_YAYIN,
+             "inLanguage": lang, "isPartOf": {"@id": f"{ALAN}/#website"}, "dateModified": OZEL_GUNCELLEME, "datePublished": OZEL_YAYIN,
              "primaryImageOfPage": {"@type": "ImageObject", "url": SOSYAL_GORSEL, "width": 1200, "height": 630},
              "breadcrumb": {"@id": f"{url}#ekmek"}}
     graf = [org_dugumu(kod), site, sayfa, {"@type": "BreadcrumbList", "@id": f"{url}#ekmek", "itemListElement": [
@@ -2247,7 +2261,7 @@ def ozel_json_ld(tur: str, kod: str, url: str, baslik: str, aciklama: str, t: di
     else:
         sayfa["mainEntity"] = {"@id": f"{url}#veri"}
         graf.append({"@type": "Dataset", "@id": f"{url}#veri", "name": duz(t["h1"]), "description": aciklama, "url": url, "inLanguage": lang,
-                     "datePublished": OZEL_YAYIN, "dateModified": GUNCELLEME, "isAccessibleForFree": True, "license": ODBL,
+                     "datePublished": OZEL_YAYIN, "dateModified": OZEL_GUNCELLEME, "isAccessibleForFree": True, "license": ODBL,
                      "creator": {"@id": f"{ALAN}/#organization"}, "publisher": {"@id": f"{ALAN}/#organization"},
                      "isBasedOn": ["https://www.openstreetmap.org/copyright"], "citation": duz(ek["atif"]),
                      "creditText": duz(t["cite_atif"]),
@@ -2270,7 +2284,7 @@ def ozel_sitemap() -> list:
         alt = [f'    <xhtml:link rel="alternate" hreflang="{l}" href="{ALAN}{y}"/>' for l, y in ozel_alt(tur)]
         alt.append(f'    <xhtml:link rel="alternate" hreflang="x-default" href="{ALAN}{ozel_yol(tur, "en")}"/>')
         for k in OZEL_DILLER:
-            parca += ["  <url>", f"    <loc>{ALAN}{ozel_yol(tur, k)}</loc>", f"    <lastmod>{GUNCELLEME}</lastmod>",
+            parca += ["  <url>", f"    <loc>{ALAN}{ozel_yol(tur, k)}</loc>", f"    <lastmod>{OZEL_GUNCELLEME}</lastmod>",
                       "    <changefreq>monthly</changefreq>", "    <priority>0.7</priority>"] + alt + ["  </url>"]
     return parca
 

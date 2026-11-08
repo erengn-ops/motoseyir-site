@@ -93,7 +93,7 @@
     "uyg_h2": "{ad} in the Motoseyir app",
     "uyg_p1": "{ad} is on Motoseyir’s pass map with its altitude and exact location, along with 1,600+ passes in 36 countries. Add it to your tour and go.",
     "uyg_p2": "If your route crosses a pass that may be closed this month, the app tells you before you set off, and Generate a tour skips closed passes. Passes you ride over are ticked off from your ride log automatically.",
-    "foto_alt": "{ad}",
+    "foto_alt": "Photo of {ad}, a mountain pass at {rakim} elevation (Wikimedia Commons)",
     "foto_atif": "Photo: {yazar}, {lisans}, via Wikimedia Commons",
     "veri_not": "Pass data: Motoseyir’s pass list, compiled from OpenStreetMap (© OpenStreetMap contributors, ODbL) and the source page linked above.",
     "hub_baglanti": "All passes in {bolge} →",
