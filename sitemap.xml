@@ -1290,10 +1290,21 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://motoseyir-app.com/en/guides/motorcycle-route-planner/"/>
   </url>
   <url>
+    <loc>https://motoseyir-app.com/rehber/alp-gecitleri-motosiklet/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://motoseyir-app.com/rehber/alp-gecitleri-motosiklet/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://motoseyir-app.com/en/guides/alpine-passes-motorcycle/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://motoseyir-app.com/de/ratgeber/alpenpaesse-motorrad/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://motoseyir-app.com/en/guides/alpine-passes-motorcycle/"/>
+  </url>
+  <url>
     <loc>https://motoseyir-app.com/en/guides/alpine-passes-motorcycle/</loc>
     <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://motoseyir-app.com/rehber/alp-gecitleri-motosiklet/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://motoseyir-app.com/en/guides/alpine-passes-motorcycle/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://motoseyir-app.com/de/ratgeber/alpenpaesse-motorrad/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://motoseyir-app.com/en/guides/alpine-passes-motorcycle/"/>
@@ -1303,6 +1314,7 @@
     <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://motoseyir-app.com/rehber/alp-gecitleri-motosiklet/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://motoseyir-app.com/en/guides/alpine-passes-motorcycle/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://motoseyir-app.com/de/ratgeber/alpenpaesse-motorrad/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://motoseyir-app.com/en/guides/alpine-passes-motorcycle/"/>

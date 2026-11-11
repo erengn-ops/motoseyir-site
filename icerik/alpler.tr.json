@@ -1,0 +1,147 @@
+{
+  "slug": "alp-gecitleri-motosiklet",
+  "sira": 7,
+  "baslik": "Alp Geçitleri Motosikletle: Rakım, Sezon ve Ücret",
+  "aciklama": "Iseran, Stelvio, Galibier, Gavia, Großglockner ve diğer Alp geçitleri motosikletle: rakım, genellikle açık olduğu aylar, 2026 geçiş ücretleri ve yol notları.",
+  "h1": "Alp geçitleri motosikletle: rakım, sezon ve geçiş ücreti",
+  "eyebrow": "Geçitler · Alpler",
+  "lead": "Alpler’in en bilinen on geçit yolu bu yazıda yan yana duruyor: ne kadar yüksek oldukları, hangi aylarda genellikle açık kaldıkları, motosikletin ne ödediği ve yolda nelere dikkat etmek gerektiği. Her sayı işletmenin, turizm kurulunun ya da ansiklopedinin sayfasından alındı; sayfaların listesi en altta.",
+  "yayin": "2026-11-11",
+  "guncelleme": "2026-11-11",
+  "ozet": "On Alp geçidinin rakımı, genellikle açık olduğu aylar, 2026 geçiş ücretleri ve yol notları: Iseran, Stelvio, Galibier, Gavia, Großglockner ve ötekiler.",
+  "bolumler": [
+    {
+      "id": "tablo",
+      "h2": "On Alp geçidi tek tabloda",
+      "icerik": [
+        {"p": "Tablodaki aylar her işletmenin ya da turizm kurulunun verdiği olağan dönemdir. Kesin tarih her yıl karla belirleniyor; yaz başındaki bir fırtına da geçidi bir iki gün kapatabiliyor. Tarihlerin ne kadar kaydığını bir sonraki bölümde görebilirsin."},
+        {"tablo": {
+          "baslik_metni": "Motosikletle on Alp geçidi",
+          "baslik": ["Geçit", "Ülke", "Rakım", "Genellikle açık olduğu aylar"],
+          "satirlar": [
+            ["Col de l’Iseran", "Fransa", "2.764 m (tepedeki levha: 2.770 m)", "Haziran başı – ekim sonu"],
+            ["Stelvio Geçidi", "İtalya", "2.758 m", "Mayıs sonu – kasım başı"],
+            ["Col du Galibier", "Fransa", "2.642 m", "Haziran – ekim başı"],
+            ["Passo di Gavia", "İtalya", "2.621 m", "Haziran başı – ekim ortası ya da sonu"],
+            ["Großglockner Alp Yolu (Hochtor)", "Avusturya", "2.504 m", "Mayıs başı – kasım başı"],
+            ["Nufenenpass", "İsviçre", "2.478 m", "Güncel duyuruya bak"],
+            ["Timmelsjoch Alp Yolu", "Avusturya / İtalya", "2.474 m", "Açık olduğu günlerde 07.00–20.00"],
+            ["Furkapass", "İsviçre", "2.429 m", "Haziran – ekim"],
+            ["Passo Pordoi (Dolomitler)", "İtalya", "2.239 m", "Yıl boyu açık, kış kuralları geçerli"],
+            ["Gotthardpass (Tremola)", "İsviçre", "2.106 m", "Mayıs – ekim"]
+          ],
+          "not": "Kaynaklar: Route des Grandes Alpes, Bormio Turismo, Grossglockner Hochalpenstraßen AG, Goms Tourismus, Timmelsjoch Hochalpenstraße, İsviçre Turizm, IDM Südtirol. Açık olduğu aylar yıldan yıla birkaç hafta değişebiliyor."
+        }}
+      ]
+    },
+    {
+      "id": "tarihler",
+      "h2": "Geçitler gerçekte ne zaman açılıyor?",
+      "icerik": [
+        {"p": "Olağan dönemle gerçek açılış tarihi aynı şey sayılmaz. Val d’Isère Turizm’in duyurusuna göre Col de l’Iseran 2026’da 12 Haziran Cuma günü öğleden kısa süre önce açıldı. Valloire Turizm ise Galibier tünelinin 29 Mayıs’ta, zirve kesiminin 5 Haziran’da açılmasını bekliyordu. Fransız Alpleri’nin aynı bölgesindeki iki geçidin açılışı arasında bir iki hafta fark var."},
+        {"p": "Arabba Fodom Turizm’e göre Dolomitler’deki geçitler hava bozunca haber verilmeden geçici olarak kapatılabiliyor; 15 Kasım – 15 Nisan arasında bu geçit ağında araçlarda kış lastiği ya da zincir bulunması zorunlu. IDM Südtirol Passo Pordoi’nin yıl boyu ziyaret edilebildiğini yazıyor, ama kasım ortasından itibaren bu kış kuralı orada da geçerli."},
+        {"p": "Pratikte geçidi yaz ortasına ya da sonbahar başına koymak, yedekte bir alternatif yol tutmak ve yola çıktığın sabah işletmenin güncel duyurusuna bakmak yeterli. İşletmelerin sayfaları kaynaklar listesinde duruyor."}
+      ]
+    },
+    {
+      "id": "en-yuksek",
+      "h2": "En yüksek iki yol: Iseran ve Stelvio",
+      "icerik": [
+        {"h3": "Col de l’Iseran (Fransa)"},
+        {"p": "Val d’Isère Turizm, Iseran’ı Alpler’in en yüksek karayolu geçidi olarak tanıtıyor ve rakımını 2.770 m diye veriyor. Route des Grandes Alpes derneğine göre geçidin gerçek rakımı 2.764 m, tepedeki levhada yazan 2.770 m ise hatalı. Geçit Route des Grandes Alpes’in en yüksek noktası ve genellikle haziran başından ekim sonuna kadar geçilebiliyor."},
+        {"h3": "Stelvio Geçidi (İtalya)"},
+        {"p": "Bormio Turismo’ya göre Stelvio 2.758 m’ye çıkıyor, geçişi ücretsiz ve kar durumuna bağlı olarak genellikle mayıs sonunda açılıp kasım başında kapanıyor. IDM Südtirol, Prad tarafındaki 25 km’lik yolda 48 viraj sayıyor; Bormio Turismo ise Bormio’dan çıkan Lombardiya tarafında 41 viraj veriyor. Vikipedi Stelvio’yu Doğu Alpler’in en yüksek asfalt geçidi olarak anıyor."}
+      ]
+    },
+    {
+      "id": "fransa-italya",
+      "h2": "Galibier ve Gavia",
+      "icerik": [
+        {"h3": "Col du Galibier (Fransa)"},
+        {"p": "Galibier 2.642 m yükseklikte. Valloire Turizm’e göre Saint-Michel-de-Maurienne’den geçide 34,8 km yol ve 2.085 m tırmanış var; yol Col du Télégraphe’tan ve Valloire’dan geçiyor. Tour de France bu geçidi ilk kez 1911’de aştı. Route des Grandes Alpes geçidin genellikle haziran ile ekim başı arasında açık olduğunu, yaz ortasında bile kar görülebileceğini yazıyor."},
+        {"h3": "Passo di Gavia (İtalya)"},
+        {"p": "2.621 m’deki Gavia, Bormio ile Ponte di Legno’yu birbirine bağlıyor. Bormio Turismo, Valcamonica tarafına inişte yaklaşık on kilometre boyunca yolun karşılıklı iki otomobilin geçemeyeceği kadar daraldığını ve üç virajdan sonra aydınlatmasız bir tünel bulunduğunu belirtiyor. Bu kesimde vizörün temiz olsun, tünele yavaş gir ve karşıdan gelene yol vermeye hazırlıklı ol."}
+      ]
+    },
+    {
+      "id": "avusturya",
+      "h2": "Avusturya: Großglockner ve Timmelsjoch",
+      "icerik": [
+        {"h3": "Großglockner Alp Yolu"},
+        {"p": "Yol, işletmenin verdiği bilgiye göre 48 km uzunlukta ve inişli çıkışlı 36 viraj içeriyor. Hochtor geçidi 2.504 m’de; yan yoldan çıkılan Edelweiß-Spitze ise 2.571 m ile araçla ulaşılabilen en yüksek nokta. Yol mayıs başından kasım başına kadar açık; 2026 sezonu kapandı, yeniden açılış 2027 mayıs başında bekleniyor."},
+        {"p": "2026’da motosiklet için günlük bilet 36,50 €, saat 18.00’den sonraki girişlerde 30 € oldu. Açık kalma saatleri sezon içinde değişiyor: 31 Mayıs’a kadar 06.00–20.00, 1 Haziran – 31 Ağustos arasında 05.30–21.00, 1 Eylül’den itibaren 06.00–19.30. Son giriş kapanıştan 45 dakika önce."},
+        {"h3": "Timmelsjoch Alp Yolu"},
+        {"p": "Timmelsjoch, Avusturya–İtalya sınırını 2.474 m’de aşıyor. Untergurgl’den geçide 11,9 km, geçitten Passeier vadisindeki Moos’a 22,7 km yol var ve yol her gün 07.00–20.00 arasında açık. Motosiklet 2026’da tek yön için 18 €, gidiş-dönüş için 25 € ödedi; dönüş bileti bütün sezon geçerli ve aynı gün kullanılması gerekmiyor."}
+      ]
+    },
+    {
+      "id": "isvicre",
+      "h2": "İsviçre: Nufenen, Furka ve Gotthard",
+      "icerik": [
+        {"p": "Goms Tourismus’a göre Nufenenpass, 2.478 m ile tamamı İsviçre topraklarında kalan en yüksek dağ geçidi; Valais’yi Ticino’ya bağlıyor ve 1969’da açılmış. Furkapass 2.429 m’ye çıkıyor, Uri kantonundaki Realp’i Valais’deki Oberwald’a bağlıyor ve İsviçre Turizm’e göre haziran–ekim arasında açık. Yolun kenarındaki Rhône Buzulu buz mağarası havaya bağlı olarak haziran ile ekim ortası arasında ziyarete açık."},
+        {"p": "Gotthardpass 2.106 m yükseklikte ve genellikle mayıs ile ekim arasında açık. Güney yamaçtaki tarihî Tremola yolunda parke taşı üzerinde 24 viraj var. Furka ve Gotthard, Andermatt çevresinde tek günde bağlanabilen geçitlerin ikisi."}
+      ]
+    },
+    {
+      "id": "dolomitler",
+      "h2": "Dolomitler: Sellaronda ve Pordoi",
+      "icerik": [
+        {"p": "Sellaronda, Sella dağ kütlesinin çevresini Gardena, Sella, Pordoi ve Campolongo geçitleri üzerinden dolaşıyor. Alta Badia turu Corvara’dan saat yönünün tersine 50,7 km olarak veriyor. 2.239 m’deki Passo Pordoi, Trentino’daki Val di Fassa ile Belluno’daki Buchenstein vadisini birbirine bağlıyor. IDM Südtirol yaz aylarında en kalabalık saatlerin 09.00–12.00 arası olduğunu yazıyor; bu saatlerin dışında geçmek daha rahat."},
+        {"p": "Kendi başlangıç noktandan bu geçitlerden birine uğrayan bir tur istersen <a href=\"{@arac}\">tur oluşturucu</a> geçitten geçen bir gidiş-dönüş çıkarabilir; <a href=\"{@arac}#kesfet\">bölgendeki rotalar</a> bölümü Alpler’in efsane yollarını haritada gösteriyor."}
+      ]
+    },
+    {
+      "id": "plan",
+      "h2": "Geçitleri bir tura yerleştirmek",
+      "icerik": [
+        {"liste": [
+          "Stelvio, Gavia ve Bormio birbirine yakın; ikisi için de Bormio’yu üs yapabilirsin.",
+          "Galibier ve Iseran ikisi de Route des Grandes Alpes üzerinde; daha yüksek olanı Iseran.",
+          "Großglockner ve Timmelsjoch ücretli; bileti 2026 fiyatlarıyla bütçeye yaz, yeni sezonda işletmenin sayfasından güncelle.",
+          "Hava için bir gün boşluk bırak. Vadide açık görünen bir hava tahmini 2.500 m’deki geçitte kar anlamına gelebiliyor."
+        ]},
+        {"p": "Turu baştan sona kurmanın adımlarını <a href=\"{@tur-planlama}\">motor turu planlama rehberinde</a> anlattık. Alpler’e gitmeden önce Türkiye’de yüksek bir geçitte deneme yapmak istersen <a href=\"{@turkiye-gecitleri}\">Türkiye’nin dağ geçitleri</a> yazısı Zigana, Kop ve Güzeldere’yi anlatıyor."}
+      ]
+    }
+  ],
+  "sss": [
+    {"s": "Motosikletle geçilen en yüksek Alp geçidi hangisi?", "c": "Fransa’daki Col de l’Iseran: Route des Grandes Alpes rakımını 2.764 m veriyor, tepedeki levhada 2.770 m yazıyor. Bormio Turismo’ya göre 2.758 m’deki Stelvio birkaç metre daha alçak ve Doğu Alpler’in en yüksek asfalt geçidi."},
+    {"s": "Alp geçitleri hangi aylarda açık?", "c": "Yüksek geçitlerin çoğu genellikle mayıs sonu ya da haziran ile ekim arasında açık, ama kesin tarihler her yıl karla değişiyor. Iseran 2026’da 12 Haziran’da açıldı. Yola çıkmadan işletmenin güncel duyurusuna bak."},
+    {"s": "Alp geçitlerinde motosiklet geçiş ücreti ödüyor mu?", "c": "Bazılarında ödüyor. 2026’da Großglockner Alp Yolu’nda motosiklet günlük bileti 36,50 €, Timmelsjoch’ta tek yön 18 €, gidiş-dönüş 25 € oldu. Stelvio’nun geçişi ücretsiz."}
+  ],
+  "kaynaklar": [
+    {"ad": "Route des Grandes Alpes: Col de l’Iseran", "url": "https://www.routedesgrandesalpes.com/grands-cols/iseran"},
+    {"ad": "Route des Grandes Alpes: Col du Galibier", "url": "https://www.routedesgrandesalpes.com/grands-cols/col-du-galibier"},
+    {"ad": "Val d’Isère Turizm: Col de l’Iseran’ın açılışı", "url": "https://www.valdisere.com/en/press/press-releases/opening-of-the-col-de-liseran/"},
+    {"ad": "Bormio Turismo: Stelvio Geçidi, Bormio tarafı", "url": "https://www.bormio.eu/en/pois/stelvio-pass-bormio-mountainside"},
+    {"ad": "Bormio Turismo: Gavia Geçidi", "url": "https://www.bormio.eu/en/pois/gavia-pass"},
+    {"ad": "IDM Südtirol: Prad’dan Stelvio turu", "url": "https://www.suedtirol.info/en/en/experiences-and-events/plp-experiences/experiences-south-tyrol/pdp-experience.smgpoie5a44a21ea25eb190b69ada46443f3c2.stelvio-tour.prato--prad"},
+    {"ad": "Valloire Turizm: Galibier Geçidi", "url": "https://www.valloire.net/en/discover-Valloire/unavoidable/the-Galibier-pass/"},
+    {"ad": "Grossglockner Hochalpenstraßen AG: yol hakkında", "url": "https://www.grossglockner.at/en/"},
+    {"ad": "Grossglockner Hochalpenstraßen AG: fiyatlar ve açık saatler", "url": "https://www.grossglockner.at/en/for-your-visit/prices-opening-times"},
+    {"ad": "Timmelsjoch Hochalpenstraße: yol", "url": "https://www.timmelsjoch.com/de/timmelsjoch-hochalpenstrasse/"},
+    {"ad": "Timmelsjoch Hochalpenstraße: tarifeler", "url": "https://www.timmelsjoch.com/de/timmelsjoch-tarife/"},
+    {"ad": "İsviçre Turizm: Furka Geçidi", "url": "https://www.myswitzerland.com/en/experiences/furka-pass/"},
+    {"ad": "Goms Tourismus: Nufenen", "url": "https://www.goms.ch/en/nufenen"},
+    {"ad": "İsviçre Turizm: Gotthard Geçidi ve Tremola", "url": "https://www.myswitzerland.com/de/erlebnisse/st-gotthard-pass-nostalgie-tremola/"},
+    {"ad": "Alta Badia: Sellaronda turu", "url": "https://www.altabadia.org/en/bike/cycling-tours-dolomites/detail/oa/sellaronda-road-bike-tour"},
+    {"ad": "IDM Südtirol: Pordoi Geçidi", "url": "https://www.suedtirol.info/en/en/information/mobility/mountain-passes-in-south-tyrol/pordoijoch-pass"},
+    {"ad": "Arabba Fodom Turizm: Dolomit geçitleri trafik bilgisi", "url": "https://www.arabba.it/en/info-events/infrastructure-useful-information/traffic-mountain-passes/80-0.html"},
+    {"ad": "Stelvio Pass, Vikipedi (İngilizce)", "url": "https://en.wikipedia.org/wiki/Stelvio_Pass"}
+  ],
+  "urun": {
+    "h2": "Alp turunu geçit geçit kendin kur",
+    "p": [
+      "Motoseyir’in geçit haritasında 36 ülkeden 1.600’ü aşkın geçit var; her birinin rakımı ve yeri, bilinenlerde de kapalı olduğu aylar yazıyor. Başlangıcı ve bitişi sen seçiyorsun, gitmek istediğin geçitleri durak olarak ekleyip sıralarını kendin belirliyorsun. Adı olmayan bir noktayı haritada uzun basarak da ekleyebilirsin."
+    ],
+    "adimlar": [
+      "Turlarım → Efsane → Dağ geçitleri’ni aç, bölge olarak Alpler’i seç.",
+      "Rakımı ve kapalı ayları kontrol ettiğin geçidi Tura ekle ile turuna al.",
+      "Başlangıç ve bitiş noktanı, aradaki konaklama duraklarını yerleştir.",
+      "Başlat’a dokunduğunda duraklar sırasıyla navigasyona aktarılır."
+    ],
+    "ikincil": "Stelvio, Großglockner ve Galibier gibi yolların bir kısmı Efsane sekmesinde hazır rota olarak da var; birini seçtiğinde turlarına kopyalanıyor ve üzerinde istediğin değişikliği yapabiliyorsun.",
+    "gorsel": "efsane",
+    "gorsel_alt": "Motoseyir’de Efsane sekmesi: hazır rotalar ve her birinin harita önizlemesi"
+  }
+}

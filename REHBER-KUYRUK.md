@@ -27,8 +27,9 @@ buradaki "Hedef sorgu" sütunu GERÇEK sorgularla güncellenir — önce Perform
 | 2026-10-25 | es | `/es/guias/`, `/es/guias/rutas-en-moto-picos-de-europa/` | rutas en moto, picos de europa moto | Wikipedia (es), Ayto. Posada de Valdeón, Turismo Asturias |
 | 2026-10-28 | de | `/de/ratgeber/motorrad-navi-worauf-achten/` | motorrad navi, motorrad navigation | Motoseyir özellikler ve nasıl yapılır sayfaları (DE) |
 | 2026-11-04 | en | `/en/guides/stelvio-pass-motorcycle/` | stelvio pass motorcycle | Bormio Turismo, IDM Südtirol, Wikipedia (de: Stilfser Joch yazısı hâlâ sırada) |
+| 2026-11-11 | tr | `/rehber/alp-gecitleri-motosiklet/` | alp geçitleri motosiklet, alpler motor turu | Route des Grandes Alpes, Val d’Isère Turizm, Bormio Turismo, IDM Südtirol, Valloire, Grossglockner AG, Timmelsjoch, İsviçre Turizm, Goms, Alta Badia, Arabba Fodom, Vikipedi (11 Kas'ta yeniden açılıp doğrulandı; Großglockner sonbahar tarifesi ve 27 Eki saatleri sayfada artık yok → yazılmadı) |
 
-hreflang grupları (`icerik/<grup>.<kod>.json` dosya adındaki grup): `hub` (6 dil), `tur-planlama` (tr, en, de), `alpler` (en, de), `uc-gecit` (en, de); `de-motorrad-navi` tek dillidir;
+hreflang grupları (`icerik/<grup>.<kod>.json` dosya adındaki grup): `hub` (6 dil), `tur-planlama` (tr, en, de), `alpler` (tr, en, de), `uc-gecit` (en, de); `de-motorrad-navi` tek dillidir;
 `turkiye-rotalari`, `koy-yolu`, `turkiye-gecitleri`, `fr-cols`, `it-passi`, `es-rutas` tek dillidir (hreflang yok).
 
 ## Sırada (öncelik sırasıyla)
@@ -37,7 +38,6 @@ Veri kaynağı sütunundaki "app" = `~/Claude/moto-rota/src/data/` (bkz. `REHBER
 
 | # | Dil | Grup / çalışma adı | Hedef sorgu | Veri / kaynak | Not |
 |---|---|---|---|---|---|
-| 3 | tr | `alpler` — Alp geçitleri motosiklet | alp geçitleri motosiklet, alpler motor turu | `icerik/alpler.en.json` olguları aynen (tablo + kaynaklar); Türkçeye UYARLA | `alpler` grubuna tr eklenir → hreflang 3 dil |
 | 4 | en+de | `grossglockner` — Großglockner by motorcycle | grossglockner motorcycle toll, großglockner motorrad maut | grossglockner.at (fiyat ve saatler her yıl değişir: güncelle) | Fiyatlar yıla bağlı; yazıya yıl yaz |
 | 5 | en | `us-legendary-roads` — Tail of the Dragon, Beartooth, Blue Ridge | tail of the dragon motorcycle | app `abdEfsaneYollari` (NPS, eyalet DOT kaynakları) | ABD vitrininde uygulama durumunu kontrol et (`SEO.md` eski notu) |
 | 6 | tr | `karadeniz` — Karadeniz motosiklet rotası | karadeniz motosiklet rotası, ayder zigana motor | app: Ayder–Çamlıhemşin, Trabzon–Zigana–Torul, Hemşin 24,1 km örneği; Vikipedi Zigana/Kop/Ovit | Yayla yollarının yol durumu için Karayolları (KGM) kaynağı bul |
