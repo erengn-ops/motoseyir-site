@@ -841,3 +841,18 @@ body.tur-sayfa { --border: var(--cizgi); --surface: var(--yuzey); --surface-2: v
 .dz-alan:has(.dz-hava:not(:empty)) .dz-girdi { padding-right: 74px; }
 
 .tur-chipler-ad { align-self: center; font: 700 .8rem/1 var(--sans); color: var(--yazi-3); margin-right: 2px; }
+
+/* Geçiş noktası (11 Kas 2026): rotayı şekillendiren, durak olmayan nokta — numarasız küçük beyaz elmas; durak yuvarlağından açıkça ayrı. */
+.tur-nokta.gecis .ic { width: 16px; height: 16px; justify-content: center; border-radius: 3px; background: #fff; border: 3px solid var(--petrol); box-shadow: 0 1px 4px rgba(0, 0, 0, .4); transform: rotate(45deg) scale(.7); }
+.tur-nokta.gecis.goster .ic { transform: rotate(45deg); }
+.tur-nokta.gecis.git .ic { transform: rotate(45deg) scale(.85); }
+.tur-nokta.gecis.surukle { cursor: grab; }
+.tur-nokta.gecis.surukle.tutuldu { cursor: grabbing; }
+.tur-nokta.gecis.surukle::before { content: ''; position: absolute; left: 50%; top: 50%; width: 36px; height: 36px; transform: translate(-50%, -50%); }   /* parmak için geniş dokunma alanı */
+.tur-nokta.gecis.surukle:hover .ic, .tur-nokta.gecis.tutuldu .ic { transform: rotate(45deg) scale(1.2); box-shadow: 0 5px 12px rgba(0, 0, 0, .4); }
+.tur-nokta.gecis:focus-visible .ic { outline: 3px solid #F4B63F; outline-offset: 2px; }
+.tur-gecis-popup .maplibregl-popup-content { padding: 4px; border-radius: 12px; box-shadow: 0 6px 18px rgba(0, 0, 0, .3); }
+.tur-gecis-popup .maplibregl-popup-tip { display: none; }
+.gecis-kaldir { font: inherit; font-weight: 700; font-size: .85rem; min-height: 40px; padding: 0 16px; border: 0; border-radius: 9px; background: #fff; color: #9a2a14; cursor: pointer; }
+.gecis-kaldir:hover, .gecis-kaldir:focus-visible { background: #fbeae6; }
+@media (prefers-reduced-motion: reduce) { .tur-nokta.gecis .ic { transition: none; } }

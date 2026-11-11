@@ -16,7 +16,7 @@
   var K = window.TurDuzenKancasi;
   if (!K) return;
   var st = K.st, M = K.M, T = K.T, A = K.A, $ = K.$, $$ = K.$$, esc = K.esc, doldur = K.doldur, reduce = K.reduce;
-  var D = document, W = window;
+  var D = document, W = window, G = W.TurGecis;
   var MAX_DURAK = 26;                 // uygulamadaki MAX_DURAK (TourScreen)
   var ROTA_BEKLEME = 650;
   var HAVA_TTL = 30 * 60 * 1000;
@@ -34,6 +34,7 @@
     var a = adlarListe.slice();
     if (donus(t) && a.length) a.push(a[0]);
     st.adlar.set(t, a);
+    t.gecisler = G.bagla(t.duraklar, t.gecisler);          // geçiş noktaları: bacağı değiştiyse en yakın bacağa
   }
   function modu(t) { return t.mod || (t.efsane ? t.efsane.mod : null) || M.turKipi(st.seviye); }
   function modAdi(m) { return m === 'sahil' ? T.rk_sahil : m === 'koy' || m === 'enduro' ? T.rk_koy : T.rk_standart; }
@@ -300,7 +301,7 @@
     t.hesapla = true; t.hesapHata = false; ciz();
     M.sayaciSifirla();
     var pts = t.duraklar.map(function (c) { return { latitude: c.latitude, longitude: c.longitude }; });
-    M.rotaKur(pts, st.seviye, t.kacin, modu(t), idx != null ? idx : undefined).then(function (r) {
+    M.rotaKur(pts, st.seviye, t.kacin, modu(t), idx != null ? idx : undefined, G.bacakli(t.duraklar, t.gecisler)).then(function (r) {
       if (no !== rotaNo || tur() !== t) return;
       t.coordinates = r.coordinates; t.rota = r.rota; t.olcu = r.olcu; t.gecitler = r.gecitler; t.hesapla = false;
       K.turuYenidenCiz(); ciz(); havaYukle(); sigdirGerekirse(t);
@@ -429,10 +430,12 @@
     yaz(t, l, a); baslangicEsitle(t); degisti();
   }
   /* Geri alınabilir değişiklikler için anlık görüntü (nokta listesi + adlar + dönüş) */
-  function anlik(t) { var l = liste(t); return { l: l.map(function (c) { return { latitude: c.latitude, longitude: c.longitude, _id: c._id }; }), a: adlar(t).slice(0, l.length), donus: donus(t) }; }
+  function anlik(t) { var l = liste(t); return { l: l.map(function (c) { return { latitude: c.latitude, longitude: c.longitude, _id: c._id }; }), a: adlar(t).slice(0, l.length), donus: donus(t), g: gecisKopya(t) }; }
+  function gecisKopya(t) { return (t.gecisler || []).map(function (g) { return { latitude: g.latitude, longitude: g.longitude, _id: g._id, once: g.once, sonra: g.sonra }; }); }
   function anlikGeri(t, s) {
     if (tur() !== t) return;
-    t.donus = s.donus; yaz(t, s.l, s.a);
+    t.donus = s.donus; t.gecisler = s.g || []; yaz(t, s.l, s.a);
+    t.gecisler = G.bagla(t.duraklar, s.g || []);
     if (s.l.length) baslangicEsitle(t);
     degisti();
   }
@@ -748,6 +751,38 @@
   /* ---------------------------------------------------------------- rotadan tutup araya durak ekleme + haritadaki işaret sürükleme */
   W.addEventListener('tur:durak-tasindi', function (e) { if (st.kip === 'duzen') tasi(e.detail.k, e.detail.lat, e.detail.lng); });
 
+  /* ---------------------------------------------------------------- geçiş noktaları: rotadan tutup çek → rota oradan geçer (durak eklenmez) */
+  /* bacak: t.duraklar dizininde bacağın başlangıç durağı; konum: noktanın tutulduğu yerin rota üstündeki mesafesi (bacaktaki sırayı belirler). */
+  function gecisEkle(bacak, lat, lng, konum) {
+    var t = tur(); if (!t) return;
+    var d = t.duraklar; if (bacak < 0 || bacak >= d.length - 1) return;
+    var ham = t.coordinates, cum = K.kumulatif(ham), g = t.gecisler || [], yer = g.length;
+    for (var k = 0; k < g.length; k++) {
+      if (g[k].once !== d[bacak]._id || g[k].sonra !== d[bacak + 1]._id) continue;
+      if (cum[K.enYakinIndeks(ham, g[k].latitude, g[k].longitude)] > konum) { yer = k; break; }
+      yer = k + 1;
+    }
+    g = g.slice(); g.splice(yer, 0, { latitude: yuvarla(lat), longitude: yuvarla(lng), _id: kimlik(), once: d[bacak]._id, sonra: d[bacak + 1]._id });
+    t.gecisler = g;
+    degisti();
+  }
+  function gecisTasi(id, lat, lng) {
+    var t = tur(); if (!t) return;
+    var an = anlik(t), g = (t.gecisler || []).filter(function (x) { return x._id === id; })[0]; if (!g) return;
+    g.latitude = yuvarla(lat); g.longitude = yuvarla(lng);
+    degisti();
+    toast(T.dz_gecis_tasindi, function () { anlikGeri(t, an); });
+  }
+  function gecisKaldir(id) {
+    var t = tur(); if (!t) return;
+    var an = anlik(t);
+    t.gecisler = (t.gecisler || []).filter(function (x) { return x._id !== id; });
+    degisti();
+    toast(T.dz_gecis_kaldirildi, function () { anlikGeri(t, an); });
+  }
+  W.addEventListener('tur:gecis-tasindi', function (e) { if (st.kip === 'duzen') gecisTasi(e.detail.id, e.detail.lat, e.detail.lng); });
+  W.addEventListener('tur:gecis-kaldir', function (e) { if (st.kip === 'duzen') gecisKaldir(e.detail.id); });
+
   /* ---------------------------------------------------------------- haritada: rotadan tutup araya durak */
   function haritaModu() { return !!ui.haritada || ui.bos >= 0; }
   var rotaDinleniyor = false;
@@ -773,11 +808,11 @@
         h.dragPan.enable();
         if (gm) gm.remove();
         if (oynadi) {
-          var ham = t.coordinates, cum = K.kumulatif(ham), konum = cum[K.enYakinIndeks(ham, bas.lat, bas.lng)], l = liste(t), idx = l.length;
-          for (var k = 1; k < l.length; k++) { if (cum[K.enYakinIndeks(ham, l[k].latitude, l[k].longitude)] >= konum) { idx = k; break; } }
+          var ham = t.coordinates, cum = K.kumulatif(ham), konum = cum[K.enYakinIndeks(ham, bas.lat, bas.lng)], d = t.duraklar, sonraki = d.length - 1;
+          for (var k = 1; k < d.length; k++) { if (cum[K.enYakinIndeks(ham, d[k].latitude, d[k].longitude)] >= konum) { sonraki = k; break; } }
           var an = anlik(t);
-          ekle(son.lat, son.lng, '', idx);
-          toast(T.dz_durak_eklendi, function () { anlikGeri(t, an); });
+          gecisEkle(sonraki - 1, son.lat, son.lng, konum);
+          toast(T.dz_gecis_eklendi, function () { anlikGeri(t, an); });
         }
       };
       h.on('mousemove', hareket); h.on('touchmove', hareket); h.on('mouseup', birak); h.on('touchend', birak); h.on('touchcancel', birak);
@@ -836,15 +871,20 @@
       b.disabled = false;
       if (!r || !r.tur || !r.tur.stops || r.tur.stops.length < 2) { K.durum(T.kod_hata, 'hata'); return; }
       K.durum('');
-      var t0 = r.tur, pts = t0.stops.map(function (s) { return { latitude: s.coords.latitude, longitude: s.coords.longitude, _id: kimlik() }; });
+      var t0 = r.tur, ayrik = G.ayir(t0.stops), gstops = ayrik.gercek;
+      var pts = gstops.map(function (s) { return { latitude: s.coords.latitude, longitude: s.coords.longitude, _id: kimlik() }; });
       var d0 = pts[0], dn = pts[pts.length - 1];
       var don = pts.length > 2 && Math.hypot((d0.latitude - dn.latitude) * 111, (d0.longitude - dn.longitude) * 111 * Math.cos(d0.latitude * Math.PI / 180)) < 0.3;
       if (don) pts[pts.length - 1] = { latitude: d0.latitude, longitude: d0.longitude, _id: d0._id + 'b' };
+      /* Geçiş noktaları (gecis / araNokta bayraklı): durak olmadan, geçileceği bacakta. */
+      var gec = ayrik.gecis.filter(function (x) { return x.onceki >= 0 && x.onceki < pts.length - 1; }).map(function (x) {
+        return { latitude: x.s.coords.latitude, longitude: x.s.coords.longitude, _id: kimlik(), once: pts[x.onceki]._id, sonra: pts[x.onceki + 1]._id };
+      });
       var mod = t0.mode === 'enduro' ? 'koy' : t0.mode || 'standart';
       M.sayaciSifirla();
-      return M.rotaKur(pts.map(function (c) { return { latitude: c.latitude, longitude: c.longitude }; }), st.seviye, t0.kacin, mod).then(function (rr) {
-        var t = { duraklar: pts, coordinates: rr.coordinates, rota: rr.rota, olcu: rr.olcu, yon: 0, gecitler: rr.gecitler, donus: don, mod: mod, ad: t0.name || '', kacin: t0.kacin };
-        var a = t0.stops.map(function (s) { return s.name || ''; });
+      return M.rotaKur(pts.map(function (c) { return { latitude: c.latitude, longitude: c.longitude }; }), st.seviye, t0.kacin, mod, undefined, G.bacakli(pts, gec)).then(function (rr) {
+        var t = { duraklar: pts, coordinates: rr.coordinates, rota: rr.rota, olcu: rr.olcu, yon: 0, gecitler: rr.gecitler, donus: don, mod: mod, ad: t0.name || '', kacin: t0.kacin, gecisler: gec };
+        var a = gstops.map(function (s) { return s.name || ''; });
         girdi.value = ''; kodAc(false);
         K.baslangicKoy({ latitude: d0.latitude, longitude: d0.longitude }, false, true, a[0]);
         K.turuYerlestir(t, a, true);

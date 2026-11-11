@@ -141,15 +141,16 @@ export function turKaydi(
   seviye: VirajSeviyesi,
   ad: string,
   /** Efsane rotadan açılan tur: kendi modu ve `presetId` (uygulamadaki presetToTour ile aynı alanlar). */
-  ek?: { mod?: TourMode; presetId?: string }
+  ek?: { mod?: TourMode; presetId?: string; gecisler?: GecisNoktasi[] }
 ): Tour {
   const son = uretilen.duraklar.length - 1;
-  const stops = uretilen.duraklar.map((c, i) => ({
+  const gercek = uretilen.duraklar.map((c, i) => ({
     id: `stop-${Date.now()}-${rastgele()}`,
     name: adlar[i] || (i === 0 ? 'Start' : i === son ? 'Finish' : `Stop ${i}`),
     coords: { latitude: yuvarla(c.latitude), longitude: yuvarla(c.longitude) },
     visited: false,
   }));
+  const stops = gecisleriKat(gercek, ek?.gecisler);
   const shape = simplifyForPreview(uretilen.coordinates).map(([a, b]) => [yuvarla(a), yuvarla(b)] as [number, number]);
   return {
     id: `tour-${Date.now()}-${rastgele()}`,
@@ -165,6 +166,38 @@ export function turKaydi(
     routeDurationSeconds: uretilen.rota.totalDurationSeconds,
     shape,
   } as Tour;
+}
+
+/**
+ * GEÇİŞ NOKTASI (11 Kas 2026): rotayı şekillendiren, durak OLMAYAN nokta. Veri sözleşmesi telefonla ortak: tur durak dizisinde, geçileceği
+ * yerde `{ ..., gecis: true }`. Uygulamadaki mevcut `araNokta` (TourStop.araNokta, 4 Eki) aynı anlam: telefonun sürümüne bağlı olmadan
+ * çalışsın diye ikisi birlikte yazılıyor. `bacak`: noktanın ait olduğu bacağın başlangıç durağının dizindeki yeri (0 tabanlı, gerçek duraklar).
+ */
+export interface GecisNoktasi { latitude: number; longitude: number; bacak: number }
+
+function gecisleriKat<T extends { id: string; name: string; coords: { latitude: number; longitude: number }; visited: boolean }>(
+  duraklar: T[],
+  gecisler?: GecisNoktasi[]
+): (T | (T & { gecis: true; araNokta: true }))[] {
+  if (!gecisler?.length) return duraklar;
+  const cikti: (T | (T & { gecis: true; araNokta: true }))[] = [];
+  duraklar.forEach((d, i) => {
+    cikti.push(d);
+    if (i >= duraklar.length - 1) return;
+    gecisler
+      .filter((g) => g.bacak === i)
+      .forEach((g, k) =>
+        cikti.push({
+          id: `via-${Date.now()}-${rastgele()}`,
+          name: `Via ${i + 1}.${k + 1}`,
+          coords: { latitude: yuvarla(g.latitude), longitude: yuvarla(g.longitude) },
+          visited: false,
+          gecis: true,
+          araNokta: true,
+        } as T & { gecis: true; araNokta: true })
+      );
+  });
+  return cikti;
 }
 
 export type PaylasSonuc = { ok: true; kod: string; gun: number } | { ok: false; hata: 'gunluk' | 'ag' | 'buyuk' | 'sunucu' };
@@ -212,10 +245,13 @@ export interface YenidenRota {
  * Verilen duraklardan gerçek rotayı yeniden hesaplar (efsane rotayı açarken, bir yeri durak olarak eklerken). Aynı motor ve
  * aynı ölçü (turOlc: viraj, örtüşme) — kartlar üretilen turlarla aynı alanları okuyor. Yalnız gösterim için gereken alanlar döner.
  */
-export async function rotaKur(duraklar: LatLng[], seviye: VirajSeviyesi, kacin?: TurKacin, mod?: TourMode, yeniSira?: number): Promise<YenidenRota> {
+export async function rotaKur(duraklar: LatLng[], seviye: VirajSeviyesi, kacin?: TurKacin, mod?: TourMode, yeniSira?: number, gecisler?: GecisNoktasi[]): Promise<YenidenRota> {
+  /* Geçiş noktaları bacak başına, sırayla (viasByLeg): rota oradan geçiyor, bacak ve numara açmıyor. */
+  const araBacak: LatLng[][] | undefined = gecisler?.length ? duraklar.slice(1).map(() => []) : undefined;
+  gecisler?.forEach((g) => { if (araBacak && araBacak[g.bacak]) araBacak[g.bacak].push({ latitude: g.latitude, longitude: g.longitude }); });
   /* Eklenen durak (bir yer) yola uzak olabilir: o durakta yol sınıfı süzgeci, uç denetimi yok (valhallaApi YOLA_OTURTMA) — motor onu en yakın uygun yola oturtuyor. */
   const yolaOturt = yeniSira != null ? duraklar.map((_, i) => i === yeniSira) : undefined;
-  const rota = await fetchTourRoute(duraklar, mod ?? turKipi(seviye), undefined, undefined, undefined, yolaOturt, undefined, maliyetKacini(kacin));
+  const rota = await fetchTourRoute(duraklar, mod ?? turKipi(seviye), araBacak, undefined, undefined, yolaOturt, undefined, maliyetKacini(kacin));
   const km = rota.totalDistanceMeters / 1000;
   return {
     coordinates: rota.coordinates,
@@ -267,6 +303,7 @@ export {
   ORTALAMA_KMSA, KM_EN_AZ, KM_EN_COK, YON_ADLARI, adimSiniri,
 };
 export { GECITLER, kapaliOlabilirMi };
+export { gecisleriKat };
 export const surum = __KAYNAK_SURUM__;
 export const vekil = __VEKIL__;
 export type { UretilenTur, VirajSeviyesi, LatLng, Tour, TurKacin };

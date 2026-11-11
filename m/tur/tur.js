@@ -1032,6 +1032,7 @@
   }
   var secilCiz = null, isaretler = [], isaretZamanlari = [];
   function isaretleriTemizle(hemen) {
+    gecisPopupKapat();
     isaretZamanlari.forEach(clearTimeout); isaretZamanlari = [];
     var eski = isaretler; isaretler = [];
     eski.forEach(function (m) {
@@ -1055,6 +1056,34 @@
     if (surukle) {
       m.on('dragstart', function () { el.classList.add('tutuldu'); });
       m.on('dragend', function () { el.classList.remove('tutuldu'); var p = m.getLngLat(); olay('tur:durak-tasindi', { k: k, lat: p.lat, lng: p.lng }); });
+    }
+    isaretler.push(m);
+    if (reduce || !(gecikme > 0)) el.classList.add('goster'); else isaretZamanlari.push(setTimeout(function () { el.classList.add('goster'); }, gecikme));
+  }
+  /* GEÇİŞ NOKTASI işareti (11 Kas 2026): durak değil — numarasız küçük elmas; düzenleme kipinde sürüklenebilir, dokununca/tıklayınca "Kaldır". */
+  var gecisPopup = null;
+  function gecisPopupKapat() { if (gecisPopup) { gecisPopup.remove(); gecisPopup = null; } }
+  function gecisIsareti(g, gecikme, duzen) {
+    var el = document.createElement('div');
+    el.className = 'tur-nokta gecis' + (duzen ? ' surukle' : '');
+    el.setAttribute('role', 'button'); el.setAttribute('aria-label', T.dz_gecis_ad); el.tabIndex = duzen ? 0 : -1;
+    el.title = duzen ? T.dz_gecis_surukle : T.dz_gecis_ad;
+    el.innerHTML = '<span class="ic"></span>';
+    var m = new maplibregl.Marker({ element: el, anchor: 'center', draggable: !!duzen }).setLngLat([g.longitude, g.latitude]).addTo(harita);
+    var surukluyor = false;
+    if (duzen) {
+      m.on('dragstart', function () { surukluyor = true; gecisPopupKapat(); el.classList.add('tutuldu'); });
+      m.on('dragend', function () { el.classList.remove('tutuldu'); var p = m.getLngLat(); setTimeout(function () { surukluyor = false; }, 0); olay('tur:gecis-tasindi', { id: g._id, lat: p.lat, lng: p.lng }); });
+      var ac = function () {
+        if (surukluyor) return;
+        gecisPopupKapat();
+        var b = document.createElement('button'); b.type = 'button'; b.className = 'gecis-kaldir'; b.textContent = T.dz_gecis_kaldir;
+        b.addEventListener('click', function () { gecisPopupKapat(); olay('tur:gecis-kaldir', { id: g._id }); });
+        gecisPopup = new maplibregl.Popup({ closeButton: false, offset: 16, className: 'tur-gecis-popup', maxWidth: '200px' }).setLngLat(m.getLngLat()).setDOMContent(b).addTo(harita);
+        try { b.focus({ preventScroll: true }); } catch (x) { /* odak desteklenmiyor */ }
+      };
+      el.addEventListener('click', function (e) { e.stopPropagation(); ac(); });
+      el.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); ac(); } else if (e.key === 'Delete' || e.key === 'Backspace') { e.preventDefault(); olay('tur:gecis-kaldir', { id: g._id }); } });
     }
     isaretler.push(m);
     if (reduce || !(gecikme > 0)) el.classList.add('goster'); else isaretZamanlari.push(setTimeout(function () { el.classList.add('goster'); }, gecikme));
@@ -1087,6 +1116,9 @@
       if (!duzenKipi && !tur.efsane && k === 0) return;          // sarı iğne başlangıcı gösteriyor
       var f = cum[enYakinIndeks(ham, c.latitude, c.longitude)] / top;
       durakIsareti(duzenKipi ? durakEtiketi(tur, k) : tur.efsane ? k + 1 : k, k, c, zaman(f), duzenKipi, duzenKipi && durakBitis(tur, k));
+    });
+    (tur.gecisler || []).forEach(function (g) {
+      gecisIsareti(g, zaman(cum[enYakinIndeks(ham, g.latitude, g.longitude)] / top) + 40, duzenKipi);
     });
     tur.gecitler.forEach(function (g) {
       var f = cum[enYakinIndeks(ham, g.lat, g.lon)] / top;
@@ -1205,7 +1237,10 @@
       var adlar = tur.duraklar.map(function (_, k) { return a[k] || (k === 0 ? T.baslangic : k === son ? T.bitis : doldur(T.durak, { n: k })); });
       var yon = yonAdiOf(tur.yon);
       var ad = tur.ad || (tur.efsane ? tur.efsane.ad : a[0] ? doldur(T.tur_ad, { v0: a[0], v1: yon }) : doldur(T.tur_ad_yedek, { n: 1 }));
-      return M.turPaylas(M.turKaydi(tur, adlar, st.seviye, ad, tur.efsane ? { mod: tur.mod || tur.efsane.mod, presetId: tur.efsane.id } : tur.mod ? { mod: tur.mod } : undefined));
+      var ek = tur.efsane ? { mod: tur.mod || tur.efsane.mod, presetId: tur.efsane.id } : tur.mod ? { mod: tur.mod } : {};
+      var gec = window.TurGecis ? window.TurGecis.bacakli(tur.duraklar, tur.gecisler) : [];     // geçiş noktaları: durak dizisinde gecis:true (telefonla ortak sözleşme)
+      if (gec.length) ek.gecisler = gec;
+      return M.turPaylas(M.turKaydi(tur, adlar, st.seviye, ad, Object.keys(ek).length ? ek : undefined));
     }).then(function (s) {
       btn.disabled = false; btn.classList.remove('bekle'); yazi.textContent = eskiYazi;
       if (!s.ok) { durum(s.hata === 'gunluk' ? T.paylas_tavan : s.hata === 'buyuk' ? T.paylas_buyuk : T.paylas_hata, 'hata'); return; }
@@ -1422,9 +1457,10 @@
       if (p >= konum) { idx = k; break; }
     }
     var yeni = tur.duraklar.slice();
-    yeni.splice(idx, 0, { latitude: y.lat, longitude: y.lon });
-    M.rotaKur(yeni, st.seviye, tur.kacin, tur.mod || (tur.efsane ? tur.efsane.mod : undefined), idx).then(function (r) {
-      tur.duraklar = yeni; tur.coordinates = r.coordinates; tur.rota = r.rota; tur.olcu = r.olcu; tur.gecitler = r.gecitler;
+    yeni.splice(idx, 0, { latitude: y.lat, longitude: y.lon, _id: Math.random().toString(36).slice(2, 9) });
+    var gecisler = window.TurGecis ? window.TurGecis.bagla(yeni, tur.gecisler) : [];          // bacak bölünürse geçiş noktaları en yakın bacağa
+    M.rotaKur(yeni, st.seviye, tur.kacin, tur.mod || (tur.efsane ? tur.efsane.mod : undefined), idx, window.TurGecis ? window.TurGecis.bacakli(yeni, gecisler) : undefined).then(function (r) {
+      tur.duraklar = yeni; tur.gecisler = gecisler; tur.coordinates = r.coordinates; tur.rota = r.rota; tur.olcu = r.olcu; tur.gecitler = r.gecitler;
       var a = st.adlar.get(tur); if (a) a.splice(idx, 0, y.ad);
       olay('tur:degisti');
       tur.eklenenYerler = tur.eklenenYerler || {}; tur.eklenenYerler[y.id] = 1;
