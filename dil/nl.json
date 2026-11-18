@@ -26,14 +26,14 @@
   "baslik": "Motornavigatie en routeplanner — Motoseyir",
   "aciklama": "Navigatie voor motorrijders die kilometers telt: kortste route, binnenwegen, toertochten met meerdere stops, groepsritten, intercom en legendarische routes. Motoseyir, in de App Store.",
   "jsonld_aciklama": "Navigatie-app voor motorrijders die op afstand rekent: kortste route, binnenwegen, toertochten met meerdere stops, groepsritten, intercom en legendarische routes.",
-  "jsonld_ucretsiz": "7 dagen gratis proberen van alle Pro-functies bij het 3-maands- en jaarabonnement, voor nieuwe abonnees, waar beschikbaar.",
+  "jsonld_ucretsiz": "Onbeperkt routeren en navigeren in Turkije, Europa en de VS, 1 opgeslagen tocht.",
   "jsonld_pro": "Beste volgorde bij meerdere stops, onbeperkte toertochten en tracks, binnenwegen- en kustmodus, Discover, groepen maken, intercom en AI CoRider.",
 
   "hero_alt": "Een motorrijder op een bochtige bergweg langs de kust in het licht van de zonsondergang",
   "hero_eyebrow": "Motoseyir · De navigatie van de motorrijder",
   "hero_h1": "De enige navigatie die de kilometers meerekent.",
   "hero_lead": "Motoseyir berekent de route op afstand, niet op minuten. Tussen dezelfde twee punten vergelijkt de app meerdere varianten en stelt de kortste voor. Bij een toertocht met meerdere stops bepaalt hij ook de volgorde van de stops.",
-  "hero_micro": "Begin met 7 dagen gratis proberen met het 3-maands- of jaarabonnement.<br>De app zelf is in het Engels, Duits, Frans, Italiaans en Turks.",
+  "hero_micro": "Routeren en navigeren zijn gratis en onbeperkt in Turkije, Europa en de VS; een account heb je niet nodig.<br>De app zelf is in het Engels, Duits, Frans, Italiaans en Turks.",
 
   "neden_eyebrow": "Waarom anders",
   "neden_soz": "Andere navigatie-apps zoeken de <span class=\"vurgu\">snelste</span> weg.<br>Motoseyir zoekt de <span class=\"vurgu\">kortste</span>.",
@@ -106,12 +106,12 @@
   "d5_p": "Je icoon op de kaart kies je in het raster in de instellingen: motor, chopper, maxiscooter, touring, pijl of helm. Bij de drie uit de laatste update zit de rijder er ook op.",
 
   "fiyat_eyebrow": "Prijzen",
-  "fiyat_h2": "Probeer alle Pro-functies 7 dagen gratis",
-  "fiyat_lead": "Geen account nodig. Motoseyir werkt met een Pro-abonnement; het 3-maands- en het jaarabonnement beginnen voor nieuwe abonnees met 7 dagen gratis proberen, en je kunt altijd opzeggen in je store-account.",
-  "plan_ucretsiz_ad": "7 dagen gratis proberen",
+  "fiyat_h2": "Gratis rijden, Pro als je meer wilt.",
+  "fiyat_lead": "Routeplanning en navigatie met afslaginstructies zijn onbeperkt in Turkije, Europa en de VS. Geen account nodig; gratis bewaar je 1 tocht.",
+  "plan_ucretsiz_ad": "Gratis",
   "plan_ucretsiz_notu": "Bij het 3-maands- en jaarabonnement, voor nieuwe abonnees, waar beschikbaar.",
-  "pu1": "Alle Pro-functies, 7 dagen lang",
-  "pu2": "AI CoRider: 5 minuten om te proberen",
+  "pu1": "Onbeperkt routeren",
+  "pu2": "1 opgeslagen tocht",
   "pu3": "Navigatie stap voor stap met spraakbegeleiding",
   "pu4": "Regenwaarschuwing op de route",
   "pu5": "Deelnemen aan een groep met uitnodiging of code",
@@ -319,10 +319,10 @@
   "ayar6": "Draai de telefoon liggend → kaartjes en lijsten schuiven naar links en de kaart neemt de rest; in navigatie precies zo.",
 
   "k_abonelik": "Abonnement",
-  "abo1": "3-maands- en jaarabonnement → nieuwe abonnees proberen 7 dagen gratis; zeg je minstens 24 uur voor het einde op, dan betaal je niets.",
+  "abo1": "3-maands- en jaarabonnement → worden automatisch verlengd; zeg je minstens 24 uur voor het einde van de periode op, dan betaal je de volgende niet.",
   "abo2": "Uitgenodigd voor een groepsrit → met de uitnodigingslink doe je gratis mee.",
   "abo3": "Motoseyir Pro → onbeperkte toertochten en tracks, toermodi, Discover, groepen maken, CarPlay en AI CoRider.",
-  "abo4": "AI CoRider → 10 minuten per maand met Pro, 5 minuten in de proefperiode; minutenpakketten geven meer.",
+  "abo4": "AI CoRider → 10 minuten per maand met Pro; minutenpakketten geven meer.",
   "abo5": "Settings → Restore purchases: op een nieuwe telefoon haal je je abonnement terug.",
 
   "ny_dip": "Staat je vraag hier niet bij? Schrijf ons in de app via Settings → «Something wrong, or an idea?»; het antwoord komt op dezelfde plek terug."

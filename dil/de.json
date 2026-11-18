@@ -26,14 +26,14 @@
   "baslik": "Motorrad-Navigation und Routenplaner — Motoseyir",
   "aciklama": "Navigation für Motorradfahrer, die nach Kilometern rechnet: kürzeste Route, Nebenstraßen, Touren mit mehreren Stopps, Gruppenfahrt, Intercom und legendäre Routen. Motoseyir im App Store.",
   "jsonld_aciklama": "Navigations-App für Motorradfahrer, die nach Strecke rechnet: kürzeste Route, Nebenstraßen, Touren mit mehreren Stopps, Gruppenfahrt, Intercom und legendäre Routen.",
-  "jsonld_ucretsiz": "7 Tage kostenloser Test aller Pro-Funktionen im 3-Monats- und im Jahresabo, für neue Abonnenten, wo verfügbar.",
+  "jsonld_ucretsiz": "Unbegrenzte Routenplanung und Navigation in der Türkei, Europa und den USA, 1 gespeicherte Tour.",
   "jsonld_pro": "Beste Reihenfolge bei mehreren Stopps, unbegrenzte Touren und Trails, Nebenstraßen- und Küstenmodus, Entdecken, Gruppen erstellen, Intercom und AI CoRider.",
 
   "hero_alt": "Ein Motorradfahrer auf einer kurvigen Bergstraße an der Küste im Licht des Sonnenuntergangs",
   "hero_eyebrow": "Motoseyir · Die Navigation für Motorradfahrer",
   "hero_h1": "Die einzige Navigation, die die Kilometer mitrechnet.",
   "hero_lead": "Motoseyir berechnet die Route nach Strecke, nicht nach Minuten. Zwischen denselben zwei Punkten vergleicht sie mehrere Varianten und schlägt die kürzeste vor. Bei einer Tour mit mehreren Stopps legt sie auch die Reihenfolge fest.",
-  "hero_micro": "Starte mit 7 Tagen kostenlosem Test im 3-Monats- oder Jahresabo.",
+  "hero_micro": "Routenplanung und Navigation sind in der Türkei, Europa und den USA kostenlos und unbegrenzt, ohne Konto.",
 
   "neden_eyebrow": "Warum sie anders ist",
   "neden_soz": "Andere Navis finden den <span class=\"vurgu\">schnellsten</span> Weg.<br>Motoseyir findet den <span class=\"vurgu\">kürzesten</span>.",
@@ -106,12 +106,12 @@
   "d5_p": "Dein Symbol auf der Karte wählst du im Raster in den Einstellungen: Motorrad, Chopper, Maxi-Scooter, Touring, Pfeil oder Helm. Bei den drei neuen sitzt auch der Fahrer drauf.",
 
   "fiyat_eyebrow": "Preise",
-  "fiyat_h2": "Alle Pro-Funktionen 7 Tage kostenlos testen",
-  "fiyat_lead": "Kein Konto nötig. Motoseyir wird mit einem Pro-Abonnement genutzt; das 3-Monats- und das Jahresabo beginnen für neue Abonnenten mit 7 Tagen kostenlosem Test, und du kannst jederzeit in deinem Store-Konto kündigen.",
-  "plan_ucretsiz_ad": "7 Tage kostenlos",
+  "fiyat_h2": "Kostenlos fahren, Pro, wenn du mehr willst.",
+  "fiyat_lead": "Routenplanung und Abbiegenavigation sind in der Türkei, Europa und den USA unbegrenzt. Kein Konto nötig; in der kostenlosen Stufe bleibt 1 Tour gespeichert.",
+  "plan_ucretsiz_ad": "Kostenlos",
   "plan_ucretsiz_notu": "Im 3-Monats- und im Jahresabo, für neue Abonnenten, wo verfügbar.",
-  "pu1": "Alle Pro-Funktionen für 7 Tage",
-  "pu2": "AI CoRider: 5 Minuten zum Ausprobieren",
+  "pu1": "Unbegrenzte Routenplanung",
+  "pu2": "1 gespeicherte Tour",
   "pu3": "Navigation Schritt für Schritt mit Sprachführung",
   "pu4": "Regenwarnung entlang der Route",
   "pu5": "Einer Gruppe per Einladung oder Code beitreten",
@@ -319,10 +319,10 @@
   "ayar6": "Dreh das Telefon ins Querformat → Karten und Listen sammeln sich links, die Karte nimmt den Rest; in der Navigation genauso.",
 
   "k_abonelik": "Abo",
-  "abo1": "3-Monats- und Jahresabo → neue Abonnenten testen 7 Tage kostenlos; kündigst du mindestens 24 Stunden vor Ende, zahlst du nichts.",
+  "abo1": "3-Monats- und Jahresabo → verlängern sich automatisch; kündigst du mindestens 24 Stunden vor Ende des Zeitraums, zahlst du für den nächsten nichts.",
   "abo2": "Zu einer Gruppenfahrt eingeladen → mit dem Einladungslink trittst du kostenlos bei.",
   "abo3": "Motoseyir Pro → unbegrenzte Touren und Trails, Tourmodi, Entdecken, Gruppen erstellen, CarPlay und AI CoRider.",
-  "abo4": "AI CoRider → mit Pro 10 Minuten im Monat, im Test 5 Minuten; Minutenpakete geben mehr.",
+  "abo4": "AI CoRider → mit Pro 10 Minuten im Monat; Minutenpakete geben mehr.",
   "abo5": "Einstellungen → „Käufe wiederherstellen“: auf einem neuen Handy holst du dein Abo zurück.",
 
   "ny_dip": "Etwas, das hier nicht steht? Schreib uns in der App über Einstellungen → „Etwas kaputt oder eine Idee?“; die Antwort kommt an derselben Stelle zurück."

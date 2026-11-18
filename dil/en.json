@@ -26,7 +26,7 @@
   "baslik": "Motorcycle Navigation and Route Planner — Motoseyir",
   "aciklama": "Distance-first navigation for motorcyclists: shortest route, back roads, multi-stop tours, group riding, intercom and legendary routes. Motoseyir, on the App Store.",
   "jsonld_aciklama": "Distance-first navigation app for motorcyclists: shortest route, back roads, multi-stop tours, group riding, intercom and legendary routes.",
-  "jsonld_ucretsiz": "Unlimited routing and navigation in Türkiye, Europe and the USA, 1 saved tour; Pro’s 3-month and yearly plans include a 7-day free trial outside Türkiye, for new subscribers.",
+  "jsonld_ucretsiz": "Unlimited routing and navigation in Türkiye, Europe and the USA, 1 saved tour.",
   "jsonld_pro": "Best order for multiple stops, unlimited tours and trails, Back roads and Coast modes, Discover, group creation, intercom and AI CoRider.",
 
   "hero_alt": "A motorcyclist riding a twisty mountain road along the coast in the light of sunset",
@@ -107,11 +107,11 @@
 
   "fiyat_eyebrow": "Pricing",
   "fiyat_h2": "Free to ride, Pro when you want more",
-  "fiyat_lead": "No account needed. Routing and navigation are free and unlimited in Türkiye, Europe and the USA, with 1 saved tour. Pro’s 3-month and yearly plans start with a 7-day free trial outside Türkiye, for new subscribers; cancel anytime in your store account.",
-  "plan_ucretsiz_ad": "7-day free trial",
+  "fiyat_lead": "Route planning and turn-by-turn navigation are unlimited in Türkiye, Europe and the USA. No account needed; the free tier keeps 1 saved tour.",
+  "plan_ucretsiz_ad": "Free",
   "plan_ucretsiz_notu": "On the 3-month and yearly plans, for new subscribers where available.",
-  "pu1": "Every Pro feature for 7 days",
-  "pu2": "AI CoRider: 5 minutes to try",
+  "pu1": "Unlimited route planning",
+  "pu2": "1 saved tour",
   "pu3": "Turn-by-turn navigation with voice guidance",
   "pu4": "Rain warning along the route",
   "pu5": "Joining a group by invite or code",
@@ -319,10 +319,10 @@
   "ayar6": "Turn the phone to landscape → cards and lists gather on the left and the map takes the rest; navigation works the same way.",
 
   "k_abonelik": "Subscription",
-  "abo1": "3-month and yearly plans → new subscribers get a 7-day free trial; cancel at least 24 hours before it ends and you won't be charged.",
+  "abo1": "3-month and yearly plans → renew automatically; cancel at least 24 hours before the period ends and you won't be charged for the next one.",
   "abo2": "Invited to a group ride → you can join free with the invite link.",
   "abo3": "Motoseyir Pro → unlimited tours and trails, tour modes, Discover, creating groups, CarPlay and AI CoRider.",
-  "abo4": "AI CoRider → 10 minutes a month with Pro, 5 minutes in the trial; minute packs add more.",
+  "abo4": "AI CoRider → 10 minutes a month with Pro; minute packs add more.",
   "abo5": "Settings → Restore purchases: you get your subscription back on a new phone.",
 
   "ny_dip": "Something not covered here? Write to us inside the app from Settings → “Something wrong, or an idea?”; the reply comes back in the same place."

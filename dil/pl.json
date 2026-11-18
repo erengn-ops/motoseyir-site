@@ -26,14 +26,14 @@
   "baslik": "Nawigacja motocyklowa i planer trasy — Motoseyir",
   "aciklama": "Nawigacja dla motocyklistów liczona w kilometrach: najkrótsza trasa, boczne drogi, wycieczki z wieloma przystankami, jazda w grupie, interkom i legendarne trasy. Motoseyir w App Store.",
   "jsonld_aciklama": "Aplikacja nawigacyjna dla motocyklistów liczona na dystansie: najkrótsza trasa, boczne drogi, wycieczki z wieloma przystankami, jazda w grupie, interkom i legendarne trasy.",
-  "jsonld_ucretsiz": "7 dni bezpłatnego okresu próbnego wszystkich funkcji Pro w planie 3-miesięcznym i rocznym, dla nowych subskrybentów, tam gdzie to dostępne.",
+  "jsonld_ucretsiz": "Nieograniczone wyznaczanie tras i nawigacja w Turcji, Europie i USA, 1 zapisana wycieczka.",
   "jsonld_pro": "Najlepsza kolejność przystanków, nieograniczone wycieczki i ślady, tryb bocznych dróg i wybrzeża, Discover, tworzenie grup, interkom i AI CoRider.",
 
   "hero_alt": "Motocyklista na krętej górskiej drodze nad brzegiem morza w świetle zachodzącego słońca",
   "hero_eyebrow": "Motoseyir · Nawigacja motocyklisty",
   "hero_h1": "Jedyna nawigacja, która liczy kilometry.",
   "hero_lead": "Motoseyir wyznacza trasę według dystansu, nie według minut. Między tymi samymi dwoma punktami porównuje kilka wariantów i proponuje najkrótszy. W wycieczce z wieloma przystankami ustawia też ich kolejność.",
-  "hero_micro": "Zacznij od 7 dni bezpłatnego okresu próbnego w planie 3-miesięcznym lub rocznym.<br>Interfejs aplikacji jest w języku angielskim, niemieckim, francuskim, włoskim i tureckim.",
+  "hero_micro": "Wyznaczanie tras i nawigacja są w Turcji, Europie i USA bezpłatne i bez limitu; konto nie jest potrzebne.<br>Interfejs aplikacji jest w języku angielskim, niemieckim, francuskim, włoskim i tureckim.",
 
   "neden_eyebrow": "Dlaczego inaczej",
   "neden_soz": "Inne nawigacje szukają <span class=\"vurgu\">najszybszej</span> drogi.<br>Motoseyir szuka <span class=\"vurgu\">najkrótszej</span>.",
@@ -106,12 +106,12 @@
   "d5_p": "Ikonę na mapie wybierasz z siatki w ustawieniach: motocykl, chopper, maxi skuter, touring, strzałka albo kask. W trzech dodanych w ostatniej aktualizacji widać też kierowcę.",
 
   "fiyat_eyebrow": "Cennik",
-  "fiyat_h2": "Wypróbuj bezpłatnie wszystkie funkcje Pro przez 7 dni",
-  "fiyat_lead": "Konto nie jest potrzebne. Motoseyir działa w ramach subskrypcji Pro; plany 3-miesięczny i roczny zaczynają się dla nowych subskrybentów od 7 dni bezpłatnego okresu próbnego, a zrezygnować możesz w każdej chwili na koncie w sklepie.",
-  "plan_ucretsiz_ad": "7 dni za darmo",
+  "fiyat_h2": "Jazda za darmo, Pro, gdy chcesz więcej.",
+  "fiyat_lead": "Planowanie tras i nawigacja zakręt po zakręcie są w Turcji, Europie i USA bez limitu. Konto nie jest potrzebne; w wersji bezpłatnej zapiszesz 1 wycieczkę.",
+  "plan_ucretsiz_ad": "Za darmo",
   "plan_ucretsiz_notu": "W planie 3-miesięcznym i rocznym, dla nowych subskrybentów, tam gdzie to dostępne.",
-  "pu1": "Wszystkie funkcje Pro przez 7 dni",
-  "pu2": "AI CoRider: 5 minut na próbę",
+  "pu1": "Nieograniczone wyznaczanie tras",
+  "pu2": "1 zapisana wycieczka",
   "pu3": "Nawigacja krok po kroku z prowadzeniem głosowym",
   "pu4": "Ostrzeżenie o deszczu na trasie",
   "pu5": "Dołączenie do grupy z zaproszenia albo kodem",
@@ -319,10 +319,10 @@
   "ayar6": "Obróć telefon w poziom → karty i listy zbierają się po lewej, a mapa bierze resztę; w nawigacji dokładnie tak samo.",
 
   "k_abonelik": "Subskrypcja",
-  "abo1": "Plan 3-miesięczny i roczny → nowi subskrybenci mają 7 dni za darmo; jeśli zrezygnujesz co najmniej 24 godziny przed końcem, nic nie zapłacisz.",
+  "abo1": "Plan 3-miesięczny i roczny → odnawiają się automatycznie; jeśli zrezygnujesz co najmniej 24 godziny przed końcem okresu, za kolejny nie zapłacisz.",
   "abo2": "Zaproszenie na wspólną jazdę → dołączasz za darmo z linku zaproszenia.",
   "abo3": "Motoseyir Pro → nieograniczone wycieczki i ślady, tryby wycieczki, Discover, tworzenie grup, CarPlay i AI CoRider.",
-  "abo4": "AI CoRider → 10 minut miesięcznie z Pro, 5 minut w okresie próbnym; pakiety minut dają więcej.",
+  "abo4": "AI CoRider → 10 minut miesięcznie z Pro; pakiety minut dają więcej.",
   "abo5": "Settings → Restore purchases: na nowym telefonie odzyskujesz subskrypcję.",
 
   "ny_dip": "Nie ma tu tego, o co chcesz zapytać? Napisz do nas w aplikacji z Settings → „Something wrong, or an idea?”; odpowiedź wraca w to samo miejsce."

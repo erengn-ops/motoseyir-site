@@ -26,14 +26,14 @@
   "baslik": "Motocyklová navigace a plánovač trasy — Motoseyir",
   "aciklama": "Navigace pro motorkáře, která počítá kilometry: nejkratší trasa, vedlejší cesty, výlety s více zastávkami, jízda ve skupině, intercom a legendární trasy. Motoseyir v App Store.",
   "jsonld_aciklama": "Navigační aplikace pro motorkáře počítaná na vzdálenost: nejkratší trasa, vedlejší cesty, výlety s více zastávkami, jízda ve skupině, intercom a legendární trasy.",
-  "jsonld_ucretsiz": "7 dní na zkoušku zdarma se všemi funkcemi Pro u čtvrtletního a ročního předplatného, pro nové předplatitele, kde je to dostupné.",
+  "jsonld_ucretsiz": "Neomezené plánování tras a navigace v Turecku, Evropě a USA, 1 uložený výlet.",
   "jsonld_pro": "Nejlepší pořadí zastávek, neomezené výlety a stopy, režim vedlejších cest a pobřeží, Discover, zakládání skupin, intercom a AI CoRider.",
 
   "hero_alt": "Motorkář na klikaté horské cestě u pobřeží ve světle zapadajícího slunce",
   "hero_eyebrow": "Motoseyir · Navigace motorkáře",
   "hero_h1": "Jediná navigace, která počítá kilometry.",
   "hero_lead": "Motoseyir počítá trasu podle vzdálenosti, ne podle minut. Mezi stejnými dvěma body porovná několik variant a nabídne tu nejkratší. U výletu s více zastávkami určí i jejich pořadí.",
-  "hero_micro": "Začni 7 dny na zkoušku zdarma se čtvrtletním nebo ročním předplatným.<br>Rozhraní aplikace je v angličtině, němčině, francouzštině, italštině a turečtině.",
+  "hero_micro": "Plánování tras a navigace jsou v Turecku, Evropě a USA zdarma a bez omezení; účet nepotřebuješ.<br>Rozhraní aplikace je v angličtině, němčině, francouzštině, italštině a turečtině.",
 
   "neden_eyebrow": "Proč je jiná",
   "neden_soz": "Ostatní navigace hledají <span class=\"vurgu\">nejrychlejší</span> cestu.<br>Motoseyir hledá <span class=\"vurgu\">nejkratší</span>.",
@@ -106,12 +106,12 @@
   "d5_p": "Ikonu na mapě vybíráš z mřížky v nastavení: motorka, chopper, maxi skútr, touring, šipka nebo helma. U tří přidaných v poslední aktualizaci je vidět i jezdec.",
 
   "fiyat_eyebrow": "Ceny",
-  "fiyat_h2": "Vyzkoušej všechny funkce Pro 7 dní zdarma",
-  "fiyat_lead": "Účet není potřeba. Motoseyir funguje s předplatným Pro; čtvrtletní a roční předplatné začíná pro nové předplatitele 7 dny na zkoušku zdarma a zrušit ho můžeš kdykoli ve svém účtu v obchodě.",
-  "plan_ucretsiz_ad": "7 dní zdarma",
+  "fiyat_h2": "Jezdit se dá zdarma, Pro přijde, až budeš chtít víc.",
+  "fiyat_lead": "Plánování tras a navigace odbočku po odbočce jsou v Turecku, Evropě a USA bez omezení. Účet nepotřebuješ; zdarma si uložíš 1 výlet.",
+  "plan_ucretsiz_ad": "Zdarma",
   "plan_ucretsiz_notu": "U čtvrtletního a ročního předplatného, pro nové předplatitele, kde je to dostupné.",
-  "pu1": "Všechny funkce Pro na 7 dní",
-  "pu2": "AI CoRider: 5 minut na vyzkoušení",
+  "pu1": "Neomezené plánování tras",
+  "pu2": "1 uložený výlet",
   "pu3": "Navigace krok za krokem s hlasovou navigací",
   "pu4": "Varování před deštěm na trase",
   "pu5": "Připojení do skupiny přes pozvánku nebo kód",
@@ -319,10 +319,10 @@
   "ayar6": "Otoč telefon na šířku → kartičky a seznamy se seberou vlevo a mapa si vezme zbytek; v navigaci úplně stejně.",
 
   "k_abonelik": "Předplatné",
-  "abo1": "Čtvrtletní a roční předplatné → noví předplatitelé mají 7 dní zdarma; když zrušíš aspoň 24 hodin před koncem, nic nezaplatíš.",
+  "abo1": "Čtvrtletní a roční předplatné → obnovuje se automaticky; když ho zrušíš aspoň 24 hodin před koncem období, za další nezaplatíš.",
   "abo2": "Pozvánka na skupinovou jízdu → přes odkaz v pozvánce se připojíš zdarma.",
   "abo3": "Motoseyir Pro → neomezené výlety a stopy, režimy výletu, Discover, zakládání skupin, CarPlay a AI CoRider.",
-  "abo4": "AI CoRider → s Pro 10 minut měsíčně, na zkoušku 5 minut; balíčky minut přidají další.",
+  "abo4": "AI CoRider → s Pro 10 minut měsíčně; balíčky minut přidají další.",
   "abo5": "Settings → Restore purchases: na novém telefonu si předplatné vrátíš.",
 
   "ny_dip": "Není tu něco, na co se chceš zeptat? Napiš nám v aplikaci přes Settings → „Something wrong, or an idea?“; odpověď se vrátí na stejné místo."

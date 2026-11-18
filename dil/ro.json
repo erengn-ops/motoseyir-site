@@ -26,14 +26,14 @@
   "baslik": "Navigație pentru motociclete și planificator de trasee — Motoseyir",
   "aciklama": "Navigație pentru motocicliști calculată în kilometri: cel mai scurt traseu, drumuri secundare, tururi cu mai multe opriri, mers în grup, interfon și trasee legendare. Motoseyir, în App Store.",
   "jsonld_aciklama": "Aplicație de navigație pentru motocicliști calculată pe distanță: cel mai scurt traseu, drumuri secundare, tururi cu mai multe opriri, mers în grup, interfon și trasee legendare.",
-  "jsonld_ucretsiz": "7 zile de probă gratuită a tuturor funcțiilor Pro la abonamentele de 3 luni și anual, pentru abonații noi, acolo unde este disponibil.",
+  "jsonld_ucretsiz": "Planificare și navigație nelimitate în Turcia, Europa și SUA, 1 tur salvat.",
   "jsonld_pro": "Cea mai bună ordine pentru mai multe opriri, tururi și trasee GPX nelimitate, modurile drumuri secundare și coastă, Discover, crearea de grupuri, interfon și AI CoRider.",
 
   "hero_alt": "Un motociclist pe un drum de munte cu serpentine, de-a lungul coastei, în lumina apusului",
   "hero_eyebrow": "Motoseyir · Navigația motociclistului",
   "hero_h1": "Singura navigație care pune kilometrii la socoteală.",
   "hero_lead": "Motoseyir calculează traseul după distanță, nu după minute. Între aceleași două puncte compară mai multe variante și propune pe cea mai scurtă. Într-un tur cu mai multe opriri, stabilește și ordinea opririlor.",
-  "hero_micro": "Începe cu 7 zile de probă gratuită la abonamentul de 3 luni sau anual.<br>Interfața aplicației este în engleză, germană, franceză, italiană și turcă.",
+  "hero_micro": "Planificarea traseului și navigația sunt gratuite și nelimitate în Turcia, Europa și SUA; nu ai nevoie de cont.<br>Interfața aplicației este în engleză, germană, franceză, italiană și turcă.",
 
   "neden_eyebrow": "De ce e altfel",
   "neden_soz": "Celelalte navigații caută drumul <span class=\"vurgu\">cel mai rapid</span>.<br>Motoseyir caută pe <span class=\"vurgu\">cel mai scurt</span>.",
@@ -106,12 +106,12 @@
   "d5_p": "Pictograma de pe hartă o alegi din grila din setări: motocicletă, chopper, maxi scuter, touring, săgeată sau cască. La cele trei adăugate la ultima actualizare se vede și pilotul.",
 
   "fiyat_eyebrow": "Prețuri",
-  "fiyat_h2": "Încearcă gratuit 7 zile toate funcțiile Pro",
-  "fiyat_lead": "Nu ai nevoie de cont. Motoseyir se folosește cu un abonament Pro; abonamentele de 3 luni și anual încep pentru abonații noi cu 7 zile de probă gratuită și poți anula oricând din contul tău din magazin.",
-  "plan_ucretsiz_ad": "7 zile gratuit",
+  "fiyat_h2": "Gratuit la drum, Pro când vrei mai mult.",
+  "fiyat_lead": "Planificarea traseului și navigația pas cu pas sunt nelimitate în Turcia, Europa și SUA. Nu ai nevoie de cont; nivelul gratuit păstrează 1 tur salvat.",
+  "plan_ucretsiz_ad": "Gratuit",
   "plan_ucretsiz_notu": "La abonamentele de 3 luni și anual, pentru abonații noi, acolo unde este disponibil.",
-  "pu1": "Toate funcțiile Pro timp de 7 zile",
-  "pu2": "AI CoRider: 5 minute de încercat",
+  "pu1": "Planificare nelimitată a traseului",
+  "pu2": "1 tur salvat",
   "pu3": "Navigație pas cu pas, cu ghidare vocală",
   "pu4": "Avertizare de ploaie pe traseu",
   "pu5": "Intrarea într-un grup prin invitație sau cod",
@@ -319,10 +319,10 @@
   "ayar6": "Întoarce telefonul pe lat → fișele și listele se strâng în stânga, iar harta ia restul; în navigație la fel.",
 
   "k_abonelik": "Abonament",
-  "abo1": "Abonamentele de 3 luni și anual → abonații noi au 7 zile de probă gratuită; dacă anulezi cu cel puțin 24 de ore înainte de final, nu plătești nimic.",
+  "abo1": "Abonamentele de 3 luni și anual → se reînnoiesc automat; dacă anulezi cu cel puțin 24 de ore înainte de finalul perioadei, nu plătești perioada următoare.",
   "abo2": "Invitat la o tură în grup → intri gratuit cu linkul de invitație.",
   "abo3": "Motoseyir Pro → tururi și urme nelimitate, modurile de tur, Discover, crearea de grupuri, CarPlay și AI CoRider.",
-  "abo4": "AI CoRider → 10 minute pe lună cu Pro, 5 minute în perioada de probă; pachetele de minute adaugă mai multe.",
+  "abo4": "AI CoRider → 10 minute pe lună cu Pro; pachetele de minute adaugă mai multe.",
   "abo5": "Settings → Restore purchases: pe un telefon nou îți recuperezi abonamentul.",
 
   "ny_dip": "Nu e aici ce voiai să întrebi? Scrie-ne în aplicație din Settings → „Something wrong, or an idea?”; răspunsul vine în același loc."

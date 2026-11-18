@@ -26,14 +26,14 @@
   "baslik": "Navigatore per moto e pianificatore di percorsi — Motoseyir",
   "aciklama": "Navigazione per motociclisti calcolata sui chilometri: percorso più corto, strade secondarie, tour con più tappe, giro in gruppo, interfono e percorsi leggendari. Motoseyir sull’App Store.",
   "jsonld_aciklama": "App di navigazione per motociclisti calcolata sulla distanza: percorso più corto, strade secondarie, tour con più tappe, giro in gruppo, interfono e percorsi leggendari.",
-  "jsonld_ucretsiz": "7 giorni di prova gratuita di tutte le funzioni Pro con i piani trimestrale e annuale, per i nuovi abbonati, dove disponibile.",
+  "jsonld_ucretsiz": "Percorsi e navigazione illimitati in Turchia, Europa e Stati Uniti, 1 tour salvato.",
   "jsonld_pro": "Ordine migliore con più tappe, tour e piste illimitati, modalità Strade secondarie e Costa, Esplora, creazione di gruppi, interfono e AI CoRider.",
 
   "hero_alt": "Un motociclista su una strada di montagna tortuosa lungo la costa, nella luce del tramonto",
   "hero_eyebrow": "Motoseyir · Il navigatore del motociclista",
   "hero_h1": "L’unico navigatore che conta i chilometri.",
   "hero_lead": "Motoseyir calcola il percorso sulla distanza, non sui minuti. Tra gli stessi due punti confronta più alternative e propone la più corta. In un tour con più tappe decide anche l’ordine delle tappe.",
-  "hero_micro": "Inizia con 7 giorni di prova gratuita con il piano trimestrale o annuale.",
+  "hero_micro": "Percorsi e navigazione sono gratis e illimitati in Turchia, Europa e Stati Uniti, senza account.",
 
   "neden_eyebrow": "Perché è diversa",
   "neden_soz": "Gli altri navigatori trovano la strada <span class=\"vurgu\">più veloce</span>.<br>Motoseyir trova quella <span class=\"vurgu\">più corta</span>.",
@@ -106,12 +106,12 @@
   "d5_p": "L’icona sulla mappa la scegli dalla griglia nelle impostazioni: moto, chopper, maxi scooter, touring, freccia o casco. Nelle tre aggiunte con l’ultimo aggiornamento si vede anche il pilota.",
 
   "fiyat_eyebrow": "Prezzi",
-  "fiyat_h2": "Prova gratis per 7 giorni tutte le funzioni Pro",
-  "fiyat_lead": "Non serve nessun account. Motoseyir si usa con un abbonamento Pro; i piani trimestrale e annuale iniziano con 7 giorni di prova gratuita per i nuovi abbonati, e puoi disdire quando vuoi dal tuo account dello store.",
-  "plan_ucretsiz_ad": "7 giorni di prova gratuita",
+  "fiyat_h2": "Gratis per guidare, Pro quando vuoi di più.",
+  "fiyat_lead": "La pianificazione dei percorsi e la navigazione svolta per svolta sono illimitate in Turchia, Europa e Stati Uniti. Non serve un account; il piano gratuito conserva 1 tour salvato.",
+  "plan_ucretsiz_ad": "Gratis",
   "plan_ucretsiz_notu": "Con i piani trimestrale e annuale, per i nuovi abbonati, dove disponibile.",
-  "pu1": "Tutte le funzioni Pro per 7 giorni",
-  "pu2": "AI CoRider: 5 minuti per provarlo",
+  "pu1": "Percorsi illimitati",
+  "pu2": "1 tour salvato",
   "pu3": "Navigazione passo passo con guida vocale",
   "pu4": "Avviso pioggia sul percorso",
   "pu5": "Entrare in un gruppo con invito o codice",
@@ -319,10 +319,10 @@
   "ayar6": "Ruota il telefono in orizzontale → schede ed elenchi si raccolgono a sinistra e la mappa prende il resto; in navigazione è uguale.",
 
   "k_abonelik": "Abbonamento",
-  "abo1": "Piani trimestrale e annuale → i nuovi abbonati hanno 7 giorni di prova gratuita; disdici almeno 24 ore prima della fine e non paghi nulla.",
+  "abo1": "Piani trimestrale e annuale → si rinnovano automaticamente; disdici almeno 24 ore prima della fine del periodo e il successivo non ti viene addebitato.",
   "abo2": "Invitato a un giro in gruppo → entri gratis con il link d’invito.",
   "abo3": "Motoseyir Pro → tour e piste illimitati, modalità tour, Esplora, creazione di gruppi, CarPlay e AI CoRider.",
-  "abo4": "AI CoRider → 10 minuti al mese con Pro, 5 minuti durante la prova; i pacchetti di minuti ne aggiungono altri.",
+  "abo4": "AI CoRider → 10 minuti al mese con Pro; i pacchetti di minuti ne aggiungono altri.",
   "abo5": "Impostazioni → Ripristina gli acquisti: recuperi l’abbonamento su un telefono nuovo.",
 
   "ny_dip": "C’è qualcosa che qui non trovi? Scrivici nell’app da Impostazioni → “Qualcosa non va, o hai un’idea?”; la risposta torna nello stesso posto."

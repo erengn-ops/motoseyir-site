@@ -35,7 +35,7 @@ import xml.etree.ElementTree as ET
 KOK = Path(__file__).resolve().parent
 ALAN = "https://motoseyir-app.com"
 DILLER = ["tr", "en", "de", "fr", "it", "es", "nl", "pl", "cs", "sk", "hu", "ro", "hr", "el"]
-HARIC_DIZIN = {"sablon", "_kanit", "node_modules", ".git", "m", "img", "dil", "tur-araci", "arac"}
+HARIC_DIZIN = {"sablon", "_kanit", "node_modules", ".git", ".claude", "m", "img", "dil", "tur-araci", "arac"}  # .claude: ajan worktree kopyaları (18 Kas: 20 bin yanlış hata)
 NOINDEX_BEKLENEN = {"indir/index.html", "get/index.html", "404.html", "izle/index.html"}  # izle: kişisel canlı sürüş sayfası (25 Eki 2026)
 # Rehber sayfaları (uret.py › REHBER): her dilin kendi dizini; hreflang yalnız var olan eşleri kapsar (tek dilli yazıda hiç yok).
 REHBER_DIZIN = {"rehber", "guides", "ratgeber", "guide", "guias"}
@@ -196,6 +196,10 @@ def main() -> int:
         if "{{" in src and rel != "404.html":
             hatalar.append(f"{rel}: çözülmemiş {{{{yer tutucu}}}} kalmış")
 
+    # Yönlendirme taslakları (uret.py › GECIT_YONLENDIRME: meta refresh + noindex) beklenen noindex sayfasıdır, hata değil (18 Kas 2026).
+    for rel, (p, src) in veri.items():
+        if re.search(r'http-equiv=["\']refresh', src, re.I) and "noindex" in (meta(p, "robots") or ""):
+            NOINDEX_BEKLENEN.add(rel)
     basliklar, aciklamalar = {}, {}
     for rel, (p, src) in veri.items():
         noindex = rel in NOINDEX_BEKLENEN
@@ -260,6 +264,8 @@ def main() -> int:
             beklenen = {"tr", "en", "de", "x-default"}
         elif rel.startswith("impressum/"):
             beklenen = {"de", "en", "x-default"}
+        elif rel == "veri-kaynaklari/index.html":
+            beklenen = set()  # elle tutulan, yalnız Türkçe; eşi yok
         else:
             beklenen = set(DILLER) | {"x-default"}
         if set(hl) != beklenen:
@@ -311,9 +317,9 @@ def main() -> int:
                 hatalar.append(f"{rel}: araç JSON-LD türleri eksik: {tipler}")
         elif "WebPage" not in tipler:
             hatalar.append(f"{rel}: JSON-LD'de WebPage yok")
-        if rel not in ARAC_YOLLARI and rel not in OZEL_YOLLARI and not rehber_mi(rel) and not gecit_mi(rel) and not rel.startswith(("gizlilik/", "impressum/")) and not {"Organization", "WebSite", "MobileApplication"} <= set(tipler):
+        if rel not in ARAC_YOLLARI and rel not in OZEL_YOLLARI and not rehber_mi(rel) and not gecit_mi(rel) and not rel.startswith(("gizlilik/", "impressum/", "veri-kaynaklari/")) and not {"Organization", "WebSite", "MobileApplication"} <= set(tipler):
             hatalar.append(f"{rel}: JSON-LD türleri eksik: {tipler}")
-        if rel not in ("index.html",) and (not rel.endswith("/index.html") or rehber_mi(rel) or gecit_mi(rel) or rel in ARAC_YOLLARI or rel in OZEL_YOLLARI) and not rel.startswith(("gizlilik/", "impressum/")) and "BreadcrumbList" not in tipler:
+        if rel not in ("index.html",) and (not rel.endswith("/index.html") or rehber_mi(rel) or gecit_mi(rel) or rel in ARAC_YOLLARI or rel in OZEL_YOLLARI) and not rel.startswith(("gizlilik/", "impressum/", "veri-kaynaklari/")) and "BreadcrumbList" not in tipler:
             hatalar.append(f"{rel}: BreadcrumbList yok")
         # görseller
         for im in p.imgs:

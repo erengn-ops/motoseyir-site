@@ -39,20 +39,25 @@ DIL = KOK / "dil"
 ALAN = "https://motoseyir-app.com"
 UYGULAMA_ID = "6792549131"
 SAGLAYICI = "128439797"  # App Store Connect kampanya sağlayıcı kimliği (pt)
+# MobileApplication düğümü (18 Kas 2026): `inLanguage` sayfanın dili DEĞİL, uygulama arayüzünün dilleri (pl/el… sayfada
+# arayüz İngilizce); `operatingSystem` Xcode IPHONEOS_DEPLOYMENT_TARGET ile aynı. Android Play'de üretimde değil.
+UYGULAMA_DILLERI = ["tr", "en", "de", "fr", "it"]
+UYGULAMA_OS = "iOS 16.4+"
 YIL = "2026"
 # DÜRÜST TARİHLER (8 Kas 2026): küresel "bugün" sabiti YOK. Her sayfanın dateModified/lastmod değeri O SAYFANIN gerçek içerik
 # değişikliğinin tarihidir (git: `git log -1 --format=%cs -- <kaynak>`); yalnız CSS/şablon/JSON-LD düzeltmesi tarihi ilerletmez.
 # Rehber/araç/tanıtım sayfalarında tarih kendi içerik dosyasındaki `guncelleme` alanında; aşağıdakiler elle tutulan sayfalar.
 # Bir sayfanın METNİ gerçekten değişince ilgili satırı o günün tarihine çek.
 STATIK_GUNCELLEME = {
-    "index.html": "2026-11-08",         # "Nedir" cevap bölümü eklendi (sablon/anasayfa.html, 192deaf)
+    "index.html": "2026-11-18",         # 18 Kas: olmayan "7 gün ücretsiz deneme" sözü kaldırıldı (plan_p_p, a4_6_d)
     "ozellikler.html": "2026-10-20",    # metin son 20 Eki'de değişti; sonraki commit'ler yalnız altbilgi/sayaç
-    "nasil-yapilir.html": "2026-10-20",
-    "corider.html": "2026-10-20",
+    "nasil-yapilir.html": "2026-11-18",  # 18 Kas: abo1/abo4 deneme sözü kaldırıldı
+    "corider.html": "2026-11-18",        # 18 Kas: "ücretsiz denemede 5 dk" kartı ve SSS cümlesi kaldırıldı
 }
 ELLE_GUNCELLEME = {  # elle tutulan sayfalar (gizlilik, impressum): son içerik commit'i
-    "/gizlilik/": "2026-10-28", "/gizlilik/en/": "2026-10-28", "/gizlilik/de/": "2026-10-28",
+    "/gizlilik/": "2026-11-18", "/gizlilik/en/": "2026-11-18", "/gizlilik/de/": "2026-11-18",
     "/impressum/": "2026-10-21", "/impressum/en/": "2026-10-21",
+    "/veri-kaynaklari/": "2026-10-23",  # yalnız TR, hreflang eşi yok (18 Kas: sitemap'e alındı)
 }
 
 # Şablon adı -> (çıktı dosya adı, sitemap changefreq, sitemap priority)
@@ -368,6 +373,9 @@ def sitemap() -> str:
             f'    <xhtml:link rel="alternate" hreflang="x-default" href="{ALAN}{varsayilan}"/>'
         )
         parca.append("  </url>")
+    # Veri kaynakları ve atıflar (elle tutulan, tek dil): hreflang yok.
+    parca += ["  <url>", f"    <loc>{ALAN}/veri-kaynaklari/</loc>", f"    <lastmod>{ELLE_GUNCELLEME['/veri-kaynaklari/']}</lastmod>",
+              "    <changefreq>yearly</changefreq>", "    <priority>0.3</priority>", "  </url>"]
 
     parca.append("</urlset>")
     return "\n".join(parca) + "\n"
@@ -483,8 +491,8 @@ def json_ld(dosya: str, v: dict, kod: str) -> str:
     org = org_dugumu(kod)
     site = {"@type": "WebSite", "@id": f"{ALAN}/#website", "url": ana, "name": "Motoseyir", "inLanguage": lang,
             "publisher": {"@id": f"{ALAN}/#organization"}}
-    uyg = {"@type": "MobileApplication", "@id": f"{ALAN}/#uygulama", "name": "Motoseyir", "operatingSystem": "iOS",
-           "applicationCategory": "NavigationApplication", "inLanguage": lang, "url": anasayfa_url,
+    uyg = {"@type": "MobileApplication", "@id": f"{ALAN}/#uygulama", "name": "Motoseyir", "operatingSystem": UYGULAMA_OS,
+           "applicationCategory": "NavigationApplication", "inLanguage": UYGULAMA_DILLERI, "url": anasayfa_url,
            "image": SOSYAL_GORSEL, "description": duz(v["jsonld_aciklama"]),
            "screenshot": [m_gorsel(a, kod) for a in ("nav", "tur", "gecit", "corider")],
            "offers": [
@@ -650,8 +658,8 @@ def arac_magaza(kod: str) -> str:
 def uygulama_dugumu(kod: str, magaza: str) -> dict:
     """Araç ve tanıtım sayfalarındaki MobileApplication (27 Eki 2026, SEO): anasayfadakiyle aynı @id; indirme ücretsiz, Pro uygulama
     içi abonelik. aggregateRating / review YOK (uydurma puan yazılmaz)."""
-    return {"@type": "MobileApplication", "@id": f"{ALAN}/#uygulama", "name": "Motoseyir", "operatingSystem": "iOS",
-            "applicationCategory": "NavigationApplication", "inLanguage": dil_bilgisi(kod)["lang"],
+    return {"@type": "MobileApplication", "@id": f"{ALAN}/#uygulama", "name": "Motoseyir", "operatingSystem": UYGULAMA_OS,
+            "applicationCategory": "NavigationApplication", "inLanguage": UYGULAMA_DILLERI,
             "url": f"{ALAN}{sayfa_yolu(kod, 'index.html')}", "image": SOSYAL_GORSEL, "downloadUrl": _html.unescape(magaza),
             "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "publisher": {"@id": f"{ALAN}/#organization"}}
 
@@ -2363,7 +2371,8 @@ def ozel_yaz() -> int:
                 "alternatifler": alternatif, "seo_head": rehber_seo_head({}, baslik_tam, aciklama, url, d["og"], False),
                 "json_ld": ozel_json_ld(tur, kod, url, baslik_tam, aciklama, t, ekmek, ek),
                 "dil_secici": dil_secici(kod, "", metin, dil_yolu), "dil_altbilgi": dil_altbilgi(kod, "", dil_yolu),
-                "store": gecit_magaza(kod), "gizlilik_url": gizlilik_url(kod),
+                # hakkında: ct=site-<dil>-hakkinda (18 Kas; önce seo-gecit'ti); veri sayfası geçit verisini anlattığı için seo-gecit kalır
+                "store": magaza_baglantisi(kod, "hakkinda") if tur == "hakkinda" else gecit_magaza(kod), "gizlilik_url": gizlilik_url(kod),
                 "impressum_url": impressum_url(kod), "anasayfa_url": sayfa_yolu(kod, "index.html"),
                 "corider_url": sayfa_yolu(kod, "corider.html"), "ozellikler_url": sayfa_yolu(kod, "ozellikler.html"),
                 "nasil_url": sayfa_yolu(kod, "nasil-yapilir.html"), "hub_url": rehber_hub_yolu(kod),
@@ -2397,7 +2406,12 @@ def llms_txt() -> str:
            "## Key facts", ""]
     for i in range(2, 7):
         sat.append(f"- **{k(en[f'faq_q{i}'])}** {k(en[f'faq_a{i}'])}")
-    sat += [f"- Platform: iOS (App Store): {ALAN}/en/ has the download link.",
+    # 18 Kas 2026: fiyat ASC API'den (ABD vitrini, Pro); hiçbir abonelikte ücretsiz deneme (FREE_TRIAL) yok. Android Play'de üretimde
+    # DEĞİL (herkese açık sayfa 404) — yayına çıkınca bu iki satırı güncelle.
+    sat += [f"- Platform: iPhone only (iOS 16.4 or later), with Apple CarPlay; App Store id {UYGULAMA_ID}. There is no Android version on Google Play yet. {ALAN}/en/ has the download link.",
+            "- Price: the app and its routing are free to download and use; Pro is an auto-renewing in-app subscription. In the US Pro costs "
+            "$8.99 a month, $22.99 for 3 months or $39.99 a year; prices differ by country and are shown in the app before purchase. "
+            "There is no free trial.",
             f"- Data: routes and maps are based on OpenStreetMap; sources and credits at {ALAN}/veri-kaynaklari/.", ""]
     sat += ["## Main pages", ""]
     sat.append(f"- [Home]({ALAN}/en/): {k(en['aciklama'])}")

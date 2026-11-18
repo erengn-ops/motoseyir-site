@@ -60,6 +60,11 @@
   function hevcVar() {
     try { var t = D.createElement("video"); return !!(t.canPlayType && t.canPlayType('video/mp4; codecs="hvc1.1.6.L150.B0"') === "probably"); } catch (e) { return false; }
   }
+  /* AV1 (18 Kas 2026): yatay kahraman 14,4 MB H.264 yerine 8,7 MB AV1 (SVT-AV1 crf 55, 24 Mbps ana kopyadan [git 96f014f9];
+     VMAF 81,1 — mevcut H.264 80,5). Chrome/Edge/Firefox ve AV1 çözen Safari bunu alır; HEVC ve H.264 yedek kalır. Dikey değişmedi. */
+  function av1Var() {
+    try { var t = D.createElement("video"); return !!(t.canPlayType && t.canPlayType('video/mp4; codecs="av01.0.08M.08"') === "probably"); } catch (e) { return false; }
+  }
   var hv = $("#hv");
   function videoBaslat() {
     if (azalt || !hv) return;
@@ -76,7 +81,7 @@
     var basla = function () {
       var dikey = matchMedia("(max-width:700px)").matches;
       var url = hv.getAttribute("data-src") ? (dikey && hv.getAttribute("data-src-dikey")) || hv.getAttribute("data-src")   /* tur sayfası: hafif 8 sn'lik döngü */
-        : "/m/sahne-" + (dikey ? "dikey-hd" : "hd") + (hevcVar() ? "-hevc" : "") + ".mp4";
+        : "/m/sahne-" + (dikey ? "dikey-hd" : "hd") + (!dikey && av1Var() ? "-av1" : hevcVar() ? "-hevc" : "") + ".mp4";
       var gorunur = true;
       hv.addEventListener("playing", function () { hv.classList.add("oynuyor"); }, { once: true });
       tamponla(hv, url, function () { if (gorunur && !D.hidden) { var p = hv.play(); if (p && p.catch) p.catch(function () {}); } });

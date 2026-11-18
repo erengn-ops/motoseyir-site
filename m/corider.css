@@ -2,7 +2,7 @@
    Renkler uygulamanın AI CoRider yüzeylerinden (moto-rota/src/components/CoRiderKipKartlari.tsx): lacivert zemin #0B1A2B,
    tek mavi #3EC9FF, derin mavi #1B6AD6, yazı #EAF6FF, sönük yazı #9FC2DA. Tek parıltı: yüzün arkasındaki mavi hale.
    Hareket sakin: yavaş nefes, sade solma; yay yok, zıplama yok. Tek yazı ailesi: Manrope (kendi sunucumuzda). */
-@font-face{font-family:"Manrope";src:url(/m/font/Manrope.woff) format("woff");font-weight:200 800;font-display:swap}
+@font-face{font-family:"Manrope";src:url(/m/font/Manrope.woff2) format("woff2"),url(/m/font/Manrope.woff) format("woff");font-weight:200 800;font-display:swap}
 
 :root{
   --z0:#050B13;--z1:#0B1A2B;--z2:#102338;--kenar:rgba(62,201,255,.2);--kenar-2:rgba(234,246,255,.1);
@@ -223,7 +223,7 @@ h1{font-weight:800;font-size:clamp(2.45rem,10.6vw,6rem);line-height:1.02;letter-
 
 /* ---------- Süre ve paket ---------- */
 .sureler{display:grid;gap:14px}
-@media(min-width:760px){.sureler{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:760px){.sureler{grid-template-columns:repeat(2,1fr)}}
 .sure{border-top:1px solid var(--cy);padding:22px 0 0}
 .sure b{display:block;font:800 clamp(2.4rem,9vw,3.8rem)/1 var(--sans);letter-spacing:-.03em}
 .sure h3{font-size:1.05rem;font-weight:800;margin:14px 0 8px}

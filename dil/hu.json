@@ -26,14 +26,14 @@
   "baslik": "Motoros navigáció és útvonaltervező — Motoseyir",
   "aciklama": "Kilométerben számoló navigáció motorosoknak: legrövidebb útvonal, mellékutak, több megállós túrák, csoportos menet, intercom és legendás útvonalak. A Motoseyir az App Store-ban.",
   "jsonld_aciklama": "Távolság alapján számoló navigációs app motorosoknak: legrövidebb útvonal, mellékutak, több megállós túrák, csoportos menet, intercom és legendás útvonalak.",
-  "jsonld_ucretsiz": "7 napos ingyenes próba az összes Pro funkcióval a háromhavi és az éves csomagnál, új előfizetőknek, ahol elérhető.",
+  "jsonld_ucretsiz": "Korlátlan útvonaltervezés és navigáció Törökországban, Európában és az USA-ban, 1 mentett túra.",
   "jsonld_pro": "Legjobb sorrend több megállóhoz, korlátlan túra és nyomvonal, mellékutas és tengerparti mód, Discover, csoport létrehozása, intercom és AI CoRider.",
 
   "hero_alt": "Motoros egy kanyargós hegyi úton a tengerpart mentén, naplemente fényében",
   "hero_eyebrow": "Motoseyir · A motoros navigációja",
   "hero_h1": "Az egyetlen navigáció, amely a kilométert is beszámítja.",
   "hero_lead": "A Motoseyir távolság szerint számolja az útvonalat, nem perc szerint. Ugyanazon két pont között több változatot hasonlít össze, és a legrövidebbet ajánlja. Több megállós túrán a megállók sorrendjét is ő rakja ki.",
-  "hero_micro": "Kezdd 7 napos ingyenes próbával a háromhavi vagy az éves csomaggal.<br>Az app felülete angol, német, francia, olasz és török nyelven van.",
+  "hero_micro": "Az útvonaltervezés és a navigáció ingyenes és korlátlan Törökországban, Európában és az USA-ban; nem kell hozzá fiók.<br>Az app felülete angol, német, francia, olasz és török nyelven van.",
 
   "neden_eyebrow": "Miért más",
   "neden_soz": "A többi navigáció a <span class=\"vurgu\">leggyorsabb</span> utat keresi.<br>A Motoseyir a <span class=\"vurgu\">legrövidebbet</span>.",
@@ -106,12 +106,12 @@
   "d5_p": "A térképen látható jelölőt a beállításokban lévő rácsból választod: motor, chopper, maxi scooter, touring, nyíl vagy bukósisak. A legutóbbi frissítéssel jött hármon a vezető is látszik.",
 
   "fiyat_eyebrow": "Árak",
-  "fiyat_h2": "Próbáld ki ingyen 7 napig az összes Pro funkciót",
-  "fiyat_lead": "Nem kell fiók. A Motoseyir Pro-előfizetéssel használható; a háromhavi és az éves csomag az új előfizetőknek 7 napos ingyenes próbával indul, és bármikor lemondhatod az áruházi fiókodban.",
-  "plan_ucretsiz_ad": "7 nap ingyen",
+  "fiyat_h2": "Ingyen motorozhatsz, többért ott a Pro.",
+  "fiyat_lead": "Az útvonaltervezés és a lépésenkénti navigáció korlátlan Törökországban, Európában és az USA-ban. Nem kell fiók; az ingyenes szint 1 mentett túrát tárol.",
+  "plan_ucretsiz_ad": "Ingyenes",
   "plan_ucretsiz_notu": "A háromhavi és az éves csomagnál, új előfizetőknek, ahol elérhető.",
-  "pu1": "Minden Pro funkció 7 napig",
-  "pu2": "AI CoRider: 5 perc kipróbálásra",
+  "pu1": "Korlátlan útvonaltervezés",
+  "pu2": "1 mentett túra",
   "pu3": "Lépésenkénti navigáció hangos útmutatással",
   "pu4": "Esőfigyelmeztetés az útvonalon",
   "pu5": "Csatlakozás csoporthoz meghívóval vagy kóddal",
@@ -319,10 +319,10 @@
   "ayar6": "Fordítsd fekvőbe a telefont → a kártyák és a listák balra gyűlnek, a térkép elfoglalja a maradékot; navigációban is ugyanígy.",
 
   "k_abonelik": "Előfizetés",
-  "abo1": "Háromhavi és éves csomag → az új előfizetőknek 7 nap ingyenes; ha legalább 24 órával a vége előtt lemondod, nem fizetsz semmit.",
+  "abo1": "Háromhavi és éves csomag → automatikusan megújul; ha legalább 24 órával az időszak vége előtt lemondod, a következőért nem fizetsz.",
   "abo2": "Meghívtak egy csoportos túrára → a meghívó linkjével ingyen csatlakozol.",
   "abo3": "Motoseyir Pro → korlátlan túra és nyomvonal, túramódok, Discover, csoport létrehozása, CarPlay és AI CoRider.",
-  "abo4": "AI CoRider → Próval havi 10 perc, a próbában 5 perc; a perccsomagok többet adnak.",
+  "abo4": "AI CoRider → Próval havi 10 perc; a perccsomagok többet adnak.",
   "abo5": "Settings → Restore purchases: új telefonon visszakapod az előfizetésedet.",
 
   "ny_dip": "Nincs itt, amit kérdezni szeretnél? Írj nekünk az appban a Settings → „Something wrong, or an idea?” menüpontból; a válasz ugyanoda érkezik."

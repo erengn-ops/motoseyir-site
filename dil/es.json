@@ -26,14 +26,14 @@
   "baslik": "Navegación para moto y planificador de rutas — Motoseyir",
   "aciklama": "Navegación para motoristas calculada por kilómetros: ruta más corta, carreteras secundarias, viajes con varias paradas, salidas en grupo, intercomunicador y rutas legendarias. Motoseyir, en el App Store.",
   "jsonld_aciklama": "App de navegación para motoristas calculada por distancia: ruta más corta, carreteras secundarias, viajes con varias paradas, salidas en grupo, intercomunicador y rutas legendarias.",
-  "jsonld_ucretsiz": "7 días de prueba gratis de todas las funciones Pro en los planes trimestral y anual, para nuevos suscriptores, donde esté disponible.",
+  "jsonld_ucretsiz": "Rutas y navegación ilimitadas en Turquía, Europa y EE. UU., 1 tour guardado.",
   "jsonld_pro": "El mejor orden para varias paradas, viajes y tracks ilimitados, modos de carreteras secundarias y costa, Discover, crear grupos, intercomunicador y AI CoRider.",
 
   "hero_alt": "Un motorista por una carretera de montaña con curvas junto a la costa, con la luz del atardecer",
   "hero_eyebrow": "Motoseyir · El navegador del motorista",
   "hero_h1": "El único navegador que cuenta los kilómetros.",
   "hero_lead": "Motoseyir calcula la ruta por distancia, no por minutos. Entre los mismos dos puntos compara varias alternativas y propone la más corta. En un viaje con varias paradas también decide el orden de las paradas.",
-  "hero_micro": "Empieza con 7 días de prueba gratis en el plan trimestral o anual.<br>La interfaz de la app está en inglés, alemán, francés, italiano y turco.",
+  "hero_micro": "La ruta y la navegación son gratis e ilimitadas en Turquía, Europa y EE. UU., sin cuenta.<br>La interfaz de la app está en inglés, alemán, francés, italiano y turco.",
 
   "neden_eyebrow": "Por qué es diferente",
   "neden_soz": "Los demás navegadores buscan la carretera <span class=\"vurgu\">más rápida</span>.<br>Motoseyir busca la <span class=\"vurgu\">más corta</span>.",
@@ -106,12 +106,12 @@
   "d5_p": "El icono del mapa lo eliges en la cuadrícula de los ajustes: moto, chopper, maxiscooter, touring, flecha o casco. En los tres que llegaron con la última actualización se ve también al piloto.",
 
   "fiyat_eyebrow": "Precios",
-  "fiyat_h2": "Prueba gratis 7 días todas las funciones Pro",
-  "fiyat_lead": "No hace falta cuenta. Motoseyir se usa con una suscripción Pro; los planes trimestral y anual empiezan con 7 días de prueba gratis para nuevos suscriptores, y puedes cancelar cuando quieras desde tu cuenta de la tienda.",
-  "plan_ucretsiz_ad": "7 días de prueba gratis",
+  "fiyat_h2": "Gratis para rodar, Pro cuando quieras más.",
+  "fiyat_lead": "La planificación de rutas y la navegación paso a paso son ilimitadas en Turquía, Europa y EE. UU. No hace falta cuenta; el plan gratuito guarda 1 tour.",
+  "plan_ucretsiz_ad": "Gratis",
   "plan_ucretsiz_notu": "En los planes trimestral y anual, para nuevos suscriptores, donde esté disponible.",
-  "pu1": "Todas las funciones Pro durante 7 días",
-  "pu2": "AI CoRider: 5 minutos para probarlo",
+  "pu1": "Rutas ilimitadas",
+  "pu2": "1 tour guardado",
   "pu3": "Navegación paso a paso con guía por voz",
   "pu4": "Aviso de lluvia en la ruta",
   "pu5": "Entrar en un grupo por invitación o con código",
@@ -319,10 +319,10 @@
   "ayar6": "Gira el teléfono a horizontal → las tarjetas y las listas se agrupan a la izquierda y el mapa se queda con el resto; en navegación, igual.",
 
   "k_abonelik": "Suscripción",
-  "abo1": "Planes trimestral y anual → los nuevos suscriptores tienen 7 días de prueba gratis; si cancelas al menos 24 horas antes del final, no pagas nada.",
+  "abo1": "Planes trimestral y anual → se renuevan automáticamente; si cancelas al menos 24 horas antes de que acabe el periodo, no se te cobra el siguiente.",
   "abo2": "Te invitan a una salida en grupo → entras gratis con el enlace de invitación.",
   "abo3": "Motoseyir Pro → viajes y tracks ilimitados, Tour modes, Discover, crear grupos, CarPlay y AI CoRider.",
-  "abo4": "AI CoRider → 10 minutos al mes con Pro, 5 minutos durante la prueba; los paquetes de minutos añaden más.",
+  "abo4": "AI CoRider → 10 minutos al mes con Pro; los paquetes de minutos añaden más.",
   "abo5": "Settings → Restore purchases: recuperas tu suscripción en un teléfono nuevo.",
 
   "ny_dip": "¿Falta algo que quieras preguntar? Escríbenos dentro de la app desde Settings → «Something wrong, or an idea?»; la respuesta llega al mismo sitio."

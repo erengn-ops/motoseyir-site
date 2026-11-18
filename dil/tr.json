@@ -26,7 +26,7 @@
   "baslik": "Motosiklet Navigasyonu ve Rota Planlayıcı — Motoseyir",
   "aciklama": "Motosiklet sürücüleri için mesafe odaklı navigasyon: en kısa rota, köy yolları, çok duraklı turlar, grup sürüşü, interkom ve efsane rotalar. Motoseyir, App Store’da.",
   "jsonld_aciklama": "Motosiklet sürücüleri için mesafe odaklı navigasyon uygulaması: en kısa rota, köy yolları, çok duraklı turlar, grup sürüşü, interkom ve efsane rotalar.",
-  "jsonld_ucretsiz": "Türkiye, Avrupa ve ABD’de sınırsız rota ve navigasyon, 1 kayıtlı tur; Pro’nun 3 aylık ve yıllık planlarında (Türkiye hariç) 7 gün ücretsiz deneme.",
+  "jsonld_ucretsiz": "Türkiye, Avrupa ve ABD’de sınırsız rota ve navigasyon, 1 kayıtlı tur.",
   "jsonld_pro": "Çok duraklıda en uygun sıralama, sınırsız tur ve parkur, köy yolları/sahil modları, Keşfet, grup kurma, interkom ve AI CoRider.",
 
   "hero_alt": "Kıyı boyunca uzanan virajlı bir dağ yolunda, gün batımı ışığında ilerleyen bir motosikletli",
@@ -107,7 +107,7 @@
 
   "fiyat_eyebrow": "Fiyatlandırma",
   "fiyat_h2": "Ücretsiz başla, istersen Pro’ya geç",
-  "fiyat_lead": "Hesap açmana gerek yok. Türkiye, Avrupa ve ABD’de rota ve navigasyon ücretsiz ve sınırsız; ücretsiz kademede 1 kayıtlı tur kalır. Pro’nun 3 aylık ve yıllık planları Türkiye dışında 7 gün ücretsiz denemeyle başlar.",
+  "fiyat_lead": "Türkiye, Avrupa ve ABD’de rota hesaplama ve adım adım navigasyon sınırsız. Hesap açman gerekmez; ücretsiz kademede 1 kayıtlı tur tutabilirsin.",
   "plan_ucretsiz_ad": "Ücretsiz",
   "plan_ucretsiz_notu": "Kurulumla birlikte, süresiz.",
   "pu1": "Sınırsız rota hesaplama",
@@ -319,10 +319,10 @@
   "ayar6": "Telefonu yatay çevir → kartlar ve listeler sola toplanır, harita kalan alanı alır; navigasyonda da böyle.",
 
   "k_abonelik": "Abonelik",
-  "abo1": "3 aylık ve yıllık planlar → varsa 7 günlük ücretsiz deneme abonelik ekranında yazar; bitmesinden en az 24 saat önce iptal edersen ücret çıkmaz.",
+  "abo1": "3 aylık ve yıllık planlar → kendiliğinden yenilenir; dönem bitmeden en az 24 saat önce iptal edersen bir sonraki dönem için ücret çıkmaz.",
   "abo2": "Ücretsiz kademe → sınırsız rota ve 1 kayıtlı tur.",
   "abo3": "Motoseyir Pro → sınırsız tur ve parkur, tur modları, Keşfet, grup kurma, CarPlay ve AI CoRider.",
-  "abo4": "AI CoRider → Pro’da ayda 10 dakika, denemede 5 dakika; dakika paketleri daha fazlasını ekler.",
+  "abo4": "AI CoRider → Pro’da ayda 10 dakika; dakika paketleri daha fazlasını ekler.",
   "abo5": "Ayarlar → Satın alımları geri yükle: yeni telefonda aboneliğini geri alırsın.",
 
   "ny_dip": "Burada olmayan bir şey mi soracaksın? Uygulama içinde Ayarlar → “Bir sorun mu var, bir fikrin mi?” bölümünden yazabilirsin; yanıt yine oradan gelir."
