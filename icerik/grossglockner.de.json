@@ -1,0 +1,129 @@
+{
+  "slug": "grossglockner-motorrad",
+  "sira": 5,
+  "baslik": "Großglockner mit dem Motorrad: Maut, Zeiten, Saison",
+  "aciklama": "Großglockner Hochalpenstraße mit dem Motorrad: Maut 2026 ab 36,50 €, Öffnungszeiten, übliche Saison, 48 km mit 36 Kehren, Biker Points und Helmsafes.",
+  "h1": "Großglockner Hochalpenstraße mit dem Motorrad: Maut, Öffnungszeiten und Saison",
+  "eyebrow": "Pässe · Österreich",
+  "lead": "Die Großglockner Hochalpenstraße führt zwischen Salzburg und Kärnten über den Alpenhauptkamm, und sie ist mautpflichtig mit festen Öffnungszeiten. Hier steht, was die Betreibergesellschaft zu den Motorradtickets 2026, den Tageszeiten, der Saison und den Haltepunkten für Motorradfahrer angibt, und wie du die Straße in eine selbst gezeichnete Tour einbaust.",
+  "yayin": "2026-11-18",
+  "guncelleme": "2026-11-18",
+  "ozet": "Der Großglockner für Motorradfahrer: Motorradtickets 2026, Öffnungszeiten, Saison von Mai bis November, Hochtor und Edelweiß-Spitze, Biker Points und Helmsafes.",
+  "bolumler": [
+    {
+      "id": "ueberblick",
+      "h2": "Die Straße auf einen Blick",
+      "icerik": [
+        {"p": "Die Grossglockner Hochalpenstraßen AG beschreibt die Straße mit 48 km Länge und 36 Kehren, von Fusch auf der Salzburger Seite bis Heiligenblut am Großglockner in Kärnten. Der Kilometer null liegt im Zentrum von Bruck; Granitsteine am rechten Fahrbahnrand zeigen den jeweiligen Kilometerstand. Der eigentliche Pass ist das Hochtor auf 2.504 m."},
+        {"tablo": {
+          "baslik_metni": "Großglockner Hochalpenstraße in Zahlen",
+          "baslik": ["Punkt", "Wert", "Quelle"],
+          "satirlar": [
+            ["Länge", "48 km, Fusch bis Heiligenblut", "Grossglockner Hochalpenstraßen AG"],
+            ["Kehren", "36", "Grossglockner Hochalpenstraßen AG"],
+            ["Hochtor (Passhöhe)", "2.504 m", "Grossglockner Hochalpenstraßen AG; Wikipedia"],
+            ["Edelweiß-Spitze", "2.571 m, höchster befahrbarer Punkt", "Grossglockner Hochalpenstraßen AG; Wikipedia"],
+            ["Fuscher Törl", "2.428 m", "Wikipedia"],
+            ["Kaiser-Franz-Josefs-Höhe", "2.369 m", "Wikipedia"],
+            ["Übliche Saison", "Anfang Mai bis Anfang November", "Grossglockner Hochalpenstraßen AG"],
+            ["Eröffnet", "3. August 1935 (Baubeginn 30. August 1930)", "Grossglockner Hochalpenstraßen AG; Wikipedia"]
+          ],
+          "not": "Für Fuscher Törl und Kaiser-Franz-Josefs-Höhe nennt die Betreibergesellschaft keine Höhe; diese beiden Werte stammen aus Wikipedia."
+        }},
+        {"p": "Geplant hat die Straße der Ingenieur Franz Wallack; eröffnet wurde sie laut Betreiber am 3. August 1935. Die Gesellschaft spricht von rund einer Million Besuchern im Jahr, an Sommerwochenenden ist also mit Verkehr zu rechnen."}
+      ]
+    },
+    {
+      "id": "maut",
+      "h2": "Motorrad-Maut 2026",
+      "icerik": [
+        {"p": "Für jede Fahrt braucht es ein Ticket. Diese Motorradpreise stehen in der Preisliste der Betreibergesellschaft für 2026:"},
+        {"tablo": {
+          "baslik_metni": "Großglockner Motorradtickets 2026",
+          "baslik": ["Ticket", "Preis 2026"],
+          "satirlar": [
+            ["Tageskarte Motorrad", "36,50 € (30,00 € für Fahrten nach 18 Uhr)"],
+            ["Tageskarte E-Motorrad", "32,50 €"],
+            ["Aufpreis für einen zweiten Tag", "17,50 €"],
+            ["3-Wochen-Karte", "73,00 €"],
+            ["Saisonkarte", "130,00 €"],
+            ["Rundfahrtkarte (Großglockner und Felbertauern innerhalb von 30 Tagen)", "46,00 €"],
+            ["Tourenkarte (Großglockner, Nockalm und Gerlos)", "55,50 €; 51,50 € im Vorverkauf bei ÖAMTC, ARBÖ oder ADAC"]
+          ],
+          "not": "Quelle: Grossglockner Hochalpenstraßen AG, Preise 2026. Die Preise ändern sich jedes Jahr; vor Saisonbeginn die Liste für 2027 prüfen."
+        }},
+        {"p": "Laut Betreiber werden Motorradfahrer an den Mautstellen bevorzugt abgefertigt, und an starken Tagen ist eine eigene Kasse für Motorräder geöffnet. Mit der Tourenkarte gibt es außerdem eine Ermäßigung auf der Villacher Alpenstraße."}
+      ]
+    },
+    {
+      "id": "zeiten",
+      "h2": "Öffnungszeiten und Saison",
+      "icerik": [
+        {"p": "Üblicherweise ist die Straße von Anfang Mai bis Anfang November befahrbar. Im November 2026 meldet der Betreiber eine Wintersperre bis Anfang Mai 2027; die nächste Gelegenheit kommt also im Frühjahr. Der genaue Öffnungstag hängt von der Schneeräumung ab, deshalb vor der Fahrt den Straßenzustand auf grossglockner.at nachsehen."},
+        {"tablo": {
+          "baslik_metni": "Tägliche Öffnungszeiten 2026",
+          "baslik": ["Zeitraum", "Geöffnet", "Letzte Einfahrt"],
+          "satirlar": [
+            ["Bis 31. Mai", "06:00 bis 20:00", "19:15"],
+            ["1. Juni bis 31. August", "05:30 bis 21:00", "20:15"],
+            ["Ab 1. September", "06:00 bis 19:30", "18:45"]
+          ],
+          "not": "Quelle: Grossglockner Hochalpenstraßen AG. Außerhalb dieser Zeiten gilt ein Nachtfahrverbot."
+        }},
+        {"p": "Der frühe Beginn im Sommer lohnt sich, wenn du vor den Reisebussen oben sein willst; für eine späte Überquerung gibt es den günstigeren Abendpreis nach 18 Uhr. Rechne die Fahrzeit so, dass du die Mautstelle auf der anderen Seite vor Betriebsschluss erreichst."}
+      ]
+    },
+    {
+      "id": "stopps",
+      "h2": "Haltepunkte für Motorradfahrer",
+      "icerik": [
+        {"h3": "Edelweiß-Spitze"},
+        {"p": "Eine gepflasterte Stichstraße führt zur Edelweiß-Spitze auf 2.571 m, dem höchsten Punkt, den man mit dem Fahrzeug erreicht; Wikipedia gibt die Abzweigung am Fuscher Törl mit 1,5 km an. Der Betreiber beschreibt dort einen Biker Point mit reservierten Parkplätzen in der ersten Reihe und Blick auf 30 Dreitausender."},
+        {"h3": "Kaiser-Franz-Josefs-Höhe"},
+        {"p": "Ein zweiter Biker Point liegt auf der Kaiser-Franz-Josefs-Höhe, mit Blick auf Großglockner, Pasterze und Johannisberg. Die Straße dorthin ist eine Sackgasse: als eigenen Stopp einplanen und auf demselben Weg zurückfahren."},
+        {"h3": "Helmsafes und Details an der Strecke"},
+        {"p": "Biker-Safes für Helm und Jacke gibt es am Biker Point der Kaiser-Franz-Josefs-Höhe und am Südende des Hochtortunnels. In unübersichtlichen Linkskurven setzt der Betreiber elliptische Bodenmarkierungen ein, besondere Kehren sind mit blauen Infotafeln beschildert."}
+      ]
+    },
+    {
+      "id": "planung",
+      "h2": "Die Fahrt planen",
+      "icerik": [
+        {"liste": [
+          "Zuerst die Richtung festlegen: von Bruck und Fusch im Norden oder von Heiligenblut im Süden.",
+          "Die beiden Stichstraßen als eigene Stopps eintragen, Edelweiß-Spitze und Kaiser-Franz-Josefs-Höhe, damit sie nicht ausgelassen werden.",
+          "Wetter und Straßenzustand am Fahrtag prüfen; im Frühsommer kann die Straße bei Unwetter für einen Tag gesperrt sein.",
+          "Bei spätem Start die letzte Einfahrt im Blick behalten."
+        ]},
+        {"p": "Das Hochtor mit den Pässen in der Umgebung zeigt die <a href=\"/de/paesse/hochtor-grossglockner/\">Passseite Hochtor (Großglockner)</a>, dazu die Übersicht <a href=\"/de/paesse/oesterreich/\">Alpenpässe in Österreich</a>. Für eine längere Tour vergleicht der <a href=\"{@alpler}\">Überblick über die Alpenpässe</a> Höhen, übliche Monate und Mautstraßen, darunter das Timmelsjoch."}
+      ]
+    }
+  ],
+  "sss": [
+    {"s": "Was kostet die Großglockner-Maut für Motorräder?", "c": "2026 kostet die Tageskarte für Motorräder 36,50 €, für Fahrten nach 18 Uhr 30,00 €. Die Tageskarte für E-Motorräder kostet 32,50 €, die Saisonkarte 130,00 €. Die Preise ändern sich jedes Jahr."},
+    {"s": "Wann ist die Großglockner Hochalpenstraße geöffnet?", "c": "Üblicherweise von Anfang Mai bis Anfang November. Laut Betreiber gilt die Wintersperre bis Anfang Mai 2027."},
+    {"s": "Wie sind die Öffnungszeiten?", "c": "2026: bis 31. Mai von 06:00 bis 20:00, vom 1. Juni bis 31. August von 05:30 bis 21:00 und ab 1. September von 06:00 bis 19:30. Außerhalb dieser Zeiten gilt ein Nachtfahrverbot."},
+    {"s": "Wie lang und wie hoch ist die Straße?", "c": "Der Betreiber nennt 48 km mit 36 Kehren. Das Hochtor liegt auf 2.504 m, die Edelweiß-Spitze an einer Stichstraße auf 2.571 m."}
+  ],
+  "kaynaklar": [
+    {"ad": "Grossglockner Hochalpenstraßen AG: Preise und Öffnungszeiten 2026", "url": "https://www.grossglockner.at/en/for-your-visit/prices-opening-times"},
+    {"ad": "Grossglockner Hochalpenstraßen AG: mit dem Motorrad", "url": "https://www.grossglockner.at/en/the-high-alpine-road/motorcycle"},
+    {"ad": "Grossglockner Hochalpenstraßen AG: Geschichte der Straße", "url": "https://www.grossglockner.at/en/the-high-alpine-road/history-high-alpine-road"},
+    {"ad": "Grossglockner High Alpine Road, Wikipedia", "url": "https://en.wikipedia.org/wiki/Grossglockner_High_Alpine_Road"}
+  ],
+  "urun": {
+    "h2": "Den Großglockner in die eigene Tour einbauen",
+    "p": [
+      "Lege Start und Ziel fest und füge Fuscher Törl, Edelweiß-Spitze und Kaiser-Franz-Josefs-Höhe als Stopps hinzu, damit die Route neben dem Pass auch die Stichstraßen nimmt. Fährst du von Süden, änderst du einfach die Reihenfolge. Mit langem Druck auf die Karte lässt sich auch ein Ort ohne Namen hinzufügen, etwa ein Aussichtspunkt."
+    ],
+    "adimlar": [
+      "Öffne Meine Touren → Legendär → Bergpässe, filtere nach Alpen und sieh dir Höhe und Sperrmonate des Hochtors an.",
+      "Füge den Pass und die beiden Stichstraßen deiner Tour hinzu.",
+      "Ergänze Start, Ziel und die Stopps davor und danach.",
+      "Tippe auf Starten; die Stopps gehen in deiner Reihenfolge an die Navigation."
+    ],
+    "ikincil": "Den Großglockner gibt es auch als fertige Route im Tab Legendär; ein Tipp kopiert sie in deine Touren, wo du sie ändern kannst.",
+    "gorsel": "efsane",
+    "gorsel_alt": "Der Tab Legendär in Motoseyir mit fertigen Routen und Kartenvorschau"
+  }
+}

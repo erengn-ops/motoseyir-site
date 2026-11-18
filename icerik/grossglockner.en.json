@@ -1,0 +1,129 @@
+{
+  "slug": "grossglockner-motorcycle",
+  "sira": 5,
+  "baslik": "Grossglockner by Motorcycle: Toll, Hours, Season",
+  "aciklama": "Grossglockner High Alpine Road by motorcycle: 2026 toll from €36.50, opening hours, usual season, 48 km and 36 bends, biker points and helmet lockers.",
+  "h1": "Grossglockner High Alpine Road by motorcycle: toll, hours and season",
+  "eyebrow": "Passes · Austria",
+  "lead": "The Grossglockner High Alpine Road crosses the main ridge of the Austrian Alps between Salzburg and Carinthia, and it is a toll road with fixed opening hours. This guide collects what the operator publishes about the 2026 motorcycle tickets, the daily hours, the season and the stops made for riders, and shows how to fit the road into a tour you draw yourself.",
+  "yayin": "2026-11-18",
+  "guncelleme": "2026-11-18",
+  "ozet": "The Grossglockner for riders: 2026 motorcycle tickets, daily opening hours, the May to November season, Hochtor and Edelweiss-Spitze, biker points and lockers.",
+  "bolumler": [
+    {
+      "id": "facts",
+      "h2": "The road at a glance",
+      "icerik": [
+        {"p": "Grossglockner Hochalpenstraßen AG, which runs the road, describes it as 48 km long with 36 bends, from Fusch on the Salzburg side to Heiligenblut am Grossglockner in Carinthia. The kilometre count starts in the centre of Bruck, and granite stones on the right-hand edge show the current kilometre. The pass itself is the Hochtor at 2,504 m."},
+        {"tablo": {
+          "baslik_metni": "Grossglockner High Alpine Road key figures",
+          "baslik": ["Item", "Figure", "Source"],
+          "satirlar": [
+            ["Length", "48 km, Fusch to Heiligenblut", "Grossglockner Hochalpenstraßen AG"],
+            ["Bends", "36", "Grossglockner Hochalpenstraßen AG"],
+            ["Hochtor (pass)", "2,504 m", "Grossglockner Hochalpenstraßen AG; Wikipedia"],
+            ["Edelweiss-Spitze", "2,571 m, highest drivable point", "Grossglockner Hochalpenstraßen AG; Wikipedia"],
+            ["Fuscher Törl", "2,428 m", "Wikipedia"],
+            ["Kaiser-Franz-Josefs-Höhe", "2,369 m", "Wikipedia"],
+            ["Usual season", "Early May to early November", "Grossglockner Hochalpenstraßen AG"],
+            ["Opened", "3 August 1935 (construction began 30 August 1930)", "Grossglockner Hochalpenstraßen AG; Wikipedia"]
+          ],
+          "not": "Heights for Fuscher Törl and Kaiser-Franz-Josefs-Höhe are not given by the operator; those two figures come from Wikipedia."
+        }},
+        {"p": "Franz Wallack, a young construction engineer, planned the road, and it opened on 3 August 1935. The operator puts the number of visitors at around a million a year. Expect company on summer weekends."}
+      ]
+    },
+    {
+      "id": "toll",
+      "h2": "Motorcycle toll in 2026",
+      "icerik": [
+        {"p": "Every crossing needs a ticket. These are the motorcycle prices in the operator’s 2026 list:"},
+        {"tablo": {
+          "baslik_metni": "Grossglockner motorcycle tickets, 2026",
+          "baslik": ["Ticket", "Price 2026"],
+          "satirlar": [
+            ["Day ticket, motorcycle", "€36.50 (€30.00 for trips after 6 p.m.)"],
+            ["Day ticket, e-motorcycle", "€32.50"],
+            ["Extra charge for a second day", "€17.50"],
+            ["3-week ticket", "€73.00"],
+            ["Season ticket", "€130.00"],
+            ["Round-trip ticket (Grossglockner and Felbertauern roads within 30 days)", "€46.00"],
+            ["Tour ticket (Grossglockner, Nockalm and Gerlos roads)", "€55.50; €51.50 bought in advance at ÖAMTC, ARBÖ or ADAC"]
+          ],
+          "not": "Source: Grossglockner Hochalpenstraßen AG, prices 2026. Prices change every year; check the 2027 list before the season opens."
+        }},
+        {"p": "According to the operator, riders get preferential check-in at the pay desks, and at busy times an extra pay point is open for motorcycles. The tour ticket also gives a discount on the Villach Alpine Road."}
+      ]
+    },
+    {
+      "id": "hours",
+      "h2": "Opening hours and the season",
+      "icerik": [
+        {"p": "Usually the season runs from the start of May to the start of November. In November 2026 the operator’s notice reads “Winter closure until early May 2027”, so the next chance to ride it is next spring. The exact opening day depends on snow clearing; look up the road status on grossglockner.at before you go."},
+        {"tablo": {
+          "baslik_metni": "Daily opening hours, 2026",
+          "baslik": ["Period", "Open", "Last entry"],
+          "satirlar": [
+            ["Until 31 May", "06:00 to 20:00", "19:15"],
+            ["1 June to 31 August", "05:30 to 21:00", "20:15"],
+            ["From 1 September", "06:00 to 19:30", "18:45"]
+          ],
+          "not": "Source: Grossglockner Hochalpenstraßen AG. Outside these hours driving at night is officially banned."
+        }},
+        {"p": "The early start in summer is useful: a ride before the coaches arrive, and the reduced evening price after 6 p.m. if you only want a late crossing. Plan the crossing so that you reach the far pay desk before closing time."}
+      ]
+    },
+    {
+      "id": "stops",
+      "h2": "Stops made for riders",
+      "icerik": [
+        {"h3": "Edelweiss-Spitze"},
+        {"p": "A cobbled spur leads to the Edelweiss-Spitze at 2,571 m, the highest point you can drive to; Wikipedia gives the branch from Fuscher Törl as 1.5 km. A Biker Point there offers reserved front-row parking with views of 30 peaks above 3,000 m."},
+        {"h3": "Kaiser-Franz-Josefs-Höhe"},
+        {"p": "A second Biker Point sits at Kaiser-Franz-Josefs-Höhe, facing the Grossglockner, the Pasterze glacier and the Johannisberg. This spur is a dead end, so add it as a stop and come back the same way."},
+        {"h3": "Helmet lockers and road details"},
+        {"p": "Biker safes for helmets and jackets are at the Biker Point on Kaiser-Franz-Josefs-Höhe and at the southern end of the Hochtor tunnel. Blind left-hand bends carry elliptical road markings, and notable bends are signposted with blue information boards."}
+      ]
+    },
+    {
+      "id": "plan",
+      "h2": "Planning the ride",
+      "icerik": [
+        {"liste": [
+          "Decide the direction first: from Bruck and Fusch in the north or from Heiligenblut in the south.",
+          "Add the two spurs as separate stops, Edelweiss-Spitze and Kaiser-Franz-Josefs-Höhe, so they are not skipped.",
+          "Check the day’s weather and the road status page; high-altitude roads can close for a day in early summer storms.",
+          "Keep an eye on the last entry time if you start late in the day."
+        ]},
+        {"p": "For the Hochtor on the map with its neighbours, see the <a href=\"/en/passes/hochtor-grossglockner/\">Hochtor (Grossglockner) pass page</a> and the <a href=\"/en/passes/austria/\">Alpine passes in Austria</a>. To combine it with other high roads, the <a href=\"{@alpler}\">Alpine passes overview</a> compares heights, usual months and tolls, including the Timmelsjoch."}
+      ]
+    }
+  ],
+  "sss": [
+    {"s": "How much is the Grossglockner toll for a motorcycle?", "c": "In 2026 a motorcycle day ticket costs €36.50, or €30.00 for trips after 6 p.m. An e-motorcycle day ticket costs €32.50 and a season ticket €130.00. Prices change every year."},
+    {"s": "When is the Grossglockner High Alpine Road open?", "c": "Usually from early May to early November. In November 2026 the road is closed for winter until early May 2027."},
+    {"s": "What are the opening hours?", "c": "In 2026: until 31 May from 06:00 to 20:00, from 1 June to 31 August from 05:30 to 21:00, and from 1 September from 06:00 to 19:30. Driving at night outside these hours is banned."},
+    {"s": "How long is the road and how high does it go?", "c": "It is 48 km long with 36 bends, according to the operator. The Hochtor pass is at 2,504 m and the Edelweiss-Spitze, reached by a spur road, at 2,571 m."}
+  ],
+  "kaynaklar": [
+    {"ad": "Grossglockner Hochalpenstraßen AG: prices and opening times 2026", "url": "https://www.grossglockner.at/en/for-your-visit/prices-opening-times"},
+    {"ad": "Grossglockner Hochalpenstraßen AG: the road by motorcycle", "url": "https://www.grossglockner.at/en/the-high-alpine-road/motorcycle"},
+    {"ad": "Grossglockner Hochalpenstraßen AG: history of the road", "url": "https://www.grossglockner.at/en/the-high-alpine-road/history-high-alpine-road"},
+    {"ad": "Grossglockner High Alpine Road, Wikipedia", "url": "https://en.wikipedia.org/wiki/Grossglockner_High_Alpine_Road"}
+  ],
+  "urun": {
+    "h2": "Put the Grossglockner into your own tour",
+    "p": [
+      "Set your start and end, then add Fuscher Törl, the Edelweiss-Spitze and Kaiser-Franz-Josefs-Höhe as stops so the route takes the spurs as well as the pass. Change the order if you ride from the south. A long press on the map adds a place without a name, such as a viewpoint you spotted on the map."
+    ],
+    "adimlar": [
+      "Open My Tours → Legendary → Mountain passes, filter by the Alps and look at the Hochtor’s height and closed months.",
+      "Add the pass and the two spurs to your tour.",
+      "Add your start, your end and any stops before and after.",
+      "Tap Start and navigation follows your stops one after another."
+    ],
+    "ikincil": "You will also find the Grossglockner as a ready-made route in the Legendary tab; one tap copies it into your tours, where you can change it.",
+    "gorsel": "efsane",
+    "gorsel_alt": "Motoseyir’s Legendary tab with ready-made routes and a map preview for each"
+  }
+}
