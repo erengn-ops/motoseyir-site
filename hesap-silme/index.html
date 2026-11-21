@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Delete your Motoseyir data — Motoseyir</title>
+<meta name="description" content="How to delete your Motoseyir community membership and the data stored on our servers, in the app or by email.">
+<link rel="canonical" href="https://motoseyir-app.com/hesap-silme/">
+<meta name="robots" content="index,follow">
+<link rel="icon" href="/img/favicon.png">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+</head>
+<body>
+<!-- Hesap/veri silme sayfası (22 Kas 2026). Google Play "Delete account URL" alanı bu adresi gösterir.
+     Kaynak: uygulamadaki "Verilerimi sil" (AyarlarScreen.verileriSil) ve "Üyeliği sil" (ToplulukProfil.hesapSil),
+     gizlilik/en "Our servers" bölümü. Uygulamadaki silme akışı değişirse burayı da güncelle. Stil gizlilik/en'den. -->
+<style>
+  :root {
+    --paper: #F3F6F6;
+    --surface: #FFFFFF;
+    --line: #DCE4E5;
+    --ink: #13252C;
+    --ink-dim: #5C7078;
+    --accent: #0B6E7F;
+    --accent-soft: #E3F0F2;
+    --sans: ui-sans-serif, -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #0C1A20; --surface: #13272F; --line: #23414B;
+      --ink: #E6EFF0; --ink-dim: #93A9B1; --accent: #4BB3C7; --accent-soft: #123039;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #0C1A20; --surface: #13272F; --line: #23414B;
+    --ink: #E6EFF0; --ink-dim: #93A9B1; --accent: #4BB3C7; --accent-soft: #123039;
+  }
+
+  * { box-sizing: border-box; }
+  body { background: var(--paper); }
+
+  .page {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.65;
+    padding: clamp(28px, 6vw, 72px) clamp(20px, 6vw, 48px) 80px;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+  }
+  h1 { font-size: clamp(28px, 5vw, 40px); letter-spacing: -.025em; margin: 10px 0 4px; text-wrap: balance; }
+  h2 { font-size: 20px; letter-spacing: -.015em; margin: 0; text-wrap: balance; }
+  h3 { font-size: 16px; margin: 0; }
+  p, li { color: var(--ink-dim); margin: 0; }
+  p.lead { color: var(--ink); }
+  a { color: var(--accent); }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  .updated { font-family: var(--mono); font-size: 12px; color: var(--ink-dim); }
+
+  section {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: clamp(18px, 3vw, 26px);
+    margin-top: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  ul { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 7px; }
+
+  .summary { background: var(--accent-soft); border-color: transparent; }
+  .summary li { color: var(--ink); }
+
+  table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+  th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { font-family: var(--mono); font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-dim); font-weight: 600; }
+  td { color: var(--ink-dim); }
+  .tablewrap { overflow-x: auto; }
+
+  .contact { font-family: var(--mono); font-size: 15px; color: var(--ink); }
+  footer { margin-top: 26px; font-family: var(--mono); font-size: 12px; color: var(--ink-dim); }
+</style>
+
+<div class="page">
+  <div class="wrap">
+    <div class="eyebrow">Motoseyir · The rider’s sat nav</div>
+    <h1>Delete your Motoseyir data</h1>
+    <p>This page explains how to delete your data from <strong>Motoseyir</strong>, the motorcycle navigation app by Batuhan Eren Engin (Google Play and App Store). Motoseyir does not ask for your name, email address or password. The only account is the optional Community membership, which is tied to your phone and a username you choose.</p>
+
+    <section>
+      <h2>In the app</h2>
+      <ol>
+        <li><strong>Community membership:</strong> open Community › My profile › “Delete membership”. Your username, icon or profile photo, shared tours, comments, likes, event participations, the photos you added to mountain passes and your leaderboard entry are deleted from our server immediately.</li>
+        <li><strong>Everything else:</strong> open Settings › “Delete my data”. Your tours, ride recordings, journal links, offline maps and preferences are deleted from the phone; your community membership and posts, support chat, notification record, group membership and last shared location are deleted from our server.</li>
+      </ol>
+      <p>Deleting the app also removes everything stored on the phone.</p>
+    </section>
+
+    <section>
+      <h2>By email</h2>
+      <p>If you no longer have the app or the phone, write to <a href="mailto:erengn@gmail.com?subject=Motoseyir%20data%20deletion">erengn@gmail.com</a> with the subject “Motoseyir data deletion”. Tell us your Community username if you had one. We delete the data within 30 days and reply when it is done. On request we also delete the remaining records tied to your device ID digest: trial and offer records, AI CoRider session and minute-pack records.</p>
+    </section>
+
+    <section>
+      <h2>What is kept, and for how long</h2>
+      <ul>
+        <li>Records of purchases are kept by Google Play or the App Store, not by us; we cannot delete them. Cancel subscriptions in Google Play › Subscriptions or in your Apple ID settings.</li>
+        <li>Crash reports in Sentry contain no name, email or location and are deleted automatically when Sentry’s retention period ends.</li>
+        <li>Data that expires on its own: group ride locations when the ride ends, tour codes after 30 days, ride recordings sent to a group after 14 days, support chats after one year.</li>
+      </ul>
+    </section>
+
+    <section lang="tr">
+      <h2>Türkçe: Verilerinizi silme</h2>
+      <p>Topluluk üyeliğinizi Topluluk › Profilim › “Üyeliği sil” ile silersiniz: kullanıcı adınız, paylaşımlarınız, yorumlarınız, beğenileriniz ve geçitlere eklediğiniz fotoğraflar sunucudan hemen silinir. Ayarlar › “Verilerimi sil” ise telefondaki turları, sürüş kayıtlarını ve tercihleri siler; sunucudaki üyeliğinizi, destek sohbetinizi, bildirim kaydınızı ve grup üyeliğinizi de kaldırır.</p>
+      <p>Uygulamaya artık erişemiyorsanız “Motoseyir veri silme” konulu bir e-postayı <a href="mailto:erengn@gmail.com?subject=Motoseyir%20veri%20silme">erengn@gmail.com</a> adresine gönderin; varsa kullanıcı adınızı yazın. Verileriniz 30 gün içinde silinir ve size haber verilir. Satın alma kayıtları Google Play ya da App Store'da durur, biz silemeyiz.</p>
+    </section>
+
+    <footer>Motoseyir · Batuhan Eren Engin · Istanbul, Türkiye · <a href="/gizlilik/en/">Privacy policy</a> · <a href="/impressum/en/">Legal notice</a></footer>
+  </div>
+</div>
+</body>
+</html>
