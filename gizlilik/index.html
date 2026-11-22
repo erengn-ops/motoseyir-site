@@ -187,7 +187,7 @@
         <li><strong>Grup sürüşüne</strong> katılırsanız, seçtiğiniz takma ad ve anlık konumunuz sürüş kaydı ya da navigasyon sürerken (ekran kapalıyken de) grubunuzdakilerle paylaşılmak üzere sunucumuzda tutulur; sürüş bitince silinir. Grupta başlattığınız rota da gruptakiler açabilsin diye sürüş bitene kadar (en geç 12 saat) sunucuda durur.</li>
         <li><strong>Topluluğa</strong> katılırsanız seçtiğiniz kullanıcı adı ve simge, paylaştığınız turlar, beğenileriniz ve yorumlarınız sunucumuzda tutulur ve <strong>uygulamayı kullanan herkese görünür</strong>. Katılmak isteğe bağlıdır.</li>
         <li><strong>Rozet liderliği isteğe bağlıdır ve varsayılan olarak kapalıdır:</strong> açarsanız yalnız <strong>rozet ve geçit sayılarınız</strong> kullanıcı adınızla bölgenizdeki tabloda görünür; <strong>konumunuz, rotalarınız ve sürüş kayıtlarınız gitmez</strong>, kapatınca satırınız silinir.</li>
-        <li>Deneme haklarının kötüye kullanılmasını önlemek için cihazınızın <strong>anonim bir kimlik özeti</strong> sunucumuza gönderilir.</li>
+        <li>Hoş geldin teklifi, kampanya ve davet haklarının kötüye kullanılmasını önlemek için cihazınızın <strong>anonim bir kimlik özeti</strong> sunucumuza gönderilir.</li>
         <li>Uygulama çökerse teknik bir <strong>çökme raporu</strong> gönderilir; konum veya kişisel bilgi içermez.</li>
         <li><strong>Reklam yoktur</strong>; hiçbir reklam ağıyla veri paylaşılmaz.</li>
       </ul>
@@ -420,7 +420,7 @@
 
       <h3>Cihaz kimliği özeti</h3>
       <p>
-        Deneme süresinin ve lansman kampanyasının, uygulama silinip yeniden kurularak defalarca alınmasını
+        Hoş geldin teklifinin, lansman kampanyasının ve davet haklarının, uygulama silinip yeniden kurularak defalarca alınmasını
         önlemek için cihazınıza ait sabit bir tanımlayıcıdan <strong>tek yönlü özet (SHA-256)</strong> üretip
         sunucumuza gönderiyoruz. Aynı özet grup sürüşünde "hangi cihaz hangi gruba üye" bilgisini tutmak için
         kullanılır.
@@ -483,7 +483,7 @@
         profilinize ya da bir geçide eklemek üzere seçtiğinizde erişilir; galeriniz taranmaz.
       </p>
       <p>
-        Ücretsiz denemenin ve hoş geldin teklifinin bir cihazda bir kez verilebilmesi için uygulama, sunucuya ilk
+        Hoş geldin teklifinin bir cihazda bir kez verilebilmesi için uygulama, sunucuya ilk
         bağlandığı anı ve hoş geldin teklifinin başladığı anı <strong>iOS Anahtar Zinciri</strong>'nde saklar. Bu bilgiler
         telefonunuzdan çıkmaz ve <strong>uygulamayı silseniz de durur</strong>.
       </p>
@@ -526,15 +526,15 @@
             <tr><td>Ses; metin olarak rota bilgisi, bulunan yerlerin adı, hava, “neredeyim” yanıtı, rehber eşleşmeleri (AI CoRider, yalnız siz açarsanız)</td><td>Bulut tabanlı yapay zekâ ses servisi (üçüncü taraf)</td><td>Sesli yanıt üretme</td><td>Bizde tutulmaz</td></tr>
             <tr><td>Sürüş kaydı izi (yalnız gruba gönderirseniz)</td><td>Takip servisimiz</td><td>Gruptakilerin kaydı görmesi</td><td>14 gün</td></tr>
             <tr><td>Destek mesajları (yalnız siz yazarsanız)</td><td>Destek servisimiz</td><td>Sorununuza yanıt</td><td>En çok 1 yıl</td></tr>
-            <tr><td>Cihaz kimliği özeti</td><td>Sayaç ve takip servisimiz</td><td>Deneme hakkının korunması, grup üyeliği</td><td>Evet — yalnızca özet</td></tr>
+            <tr><td>Cihaz kimliği özeti</td><td>Sayaç ve takip servisimiz</td><td>Teklif ve kampanya haklarının korunması, grup üyeliği</td><td>Evet — yalnızca özet</td></tr>
             <tr><td>Bildirim adresi (jeton), uygulama sürümü, dil, saat dilimi farkı, izin ve tercih (yalnız bildirim izni verirseniz)</td><td>Bildirim servisimiz; iletim Apple (APNs) ve Google (FCM) üzerinden</td><td>Yeni sürüm, duyuru, beğeni ve yorum bildirimi</td><td>Evet — kapatınca pasif, “Verilerimi sil” ile silinir, 180 gün yenilenmezse silinir</td></tr>
             <tr><td>Satın alma kanıtı (AI CoRider aboneliği ve dakika paketi)</td><td>AI CoRider servisimiz (Android'de Google Play'e de sorulur)</td><td>Dakika hakkının tanınması</td><td>Kanıtın kendisi hayır; cihaz kimliği özeti, işlem kimliği, ürün, süre ve bakiye evet</td></tr>
             <tr><td>Kurulumun bir reklamdan geldiği (yalnız reklama dokunarak kurduysanız)</td><td>Reklam ağı — bildirimi iOS gönderir (SKAdNetwork), kimliksiz, gecikmeli ve toplu</td><td>Reklam ölçümü</td><td>Bizde tutulmaz</td></tr>
             <tr><td>Çökme raporu</td><td>Sentry</td><td>Hata düzeltme</td><td>90 gün</td></tr>
             <tr><td>IP adresi (iPhone'da bağlantı yoklaması; iki platformda Google Haritalar kısa bağlantısı açılırken; Android'de Google harita parçaları)</td><td>Google</td><td>Bağlantı denetimi, bağlantının gerçek adresini öğrenme, harita gösterimi</td><td>Bizde tutulmaz</td></tr>
             <tr><td>Bir noktanın koordinatı (haritada dokunulan yer, bulunduğunuz yer, tur durakları)</td><td>Cihazın ters coğrafi kodlama servisi (iPhone'da Apple, Android'de sistem servisi); sunucularımızdan geçmez</td><td>Yerin adı ya da adresi</td><td>Bizde tutulmaz</td></tr>
-            <tr><td>Sunucuya ilk bağlanma anı, hoş geldin teklifinin başladığı an (iPhone)</td><td>Sadece cihaz (iOS Anahtar Zinciri)</td><td>Deneme ve hoş geldin teklifinin cihaz başına bir kez verilmesi</td><td>Cihazda; uygulama silinse de kalır</td></tr>
-            <tr><td>Sunucuya ilk bağlanma anı, hoş geldin teklifinin başladığı an (Android)</td><td>Sadece cihaz (uygulamanın kendi verisi)</td><td>Deneme ve hoş geldin teklifinin cihaz başına bir kez verilmesi</td><td>Cihazda; uygulama silinince gider</td></tr>
+            <tr><td>Sunucuya ilk bağlanma anı, hoş geldin teklifinin başladığı an (iPhone)</td><td>Sadece cihaz (iOS Anahtar Zinciri)</td><td>Hoş geldin teklifinin cihaz başına bir kez verilmesi</td><td>Cihazda; uygulama silinse de kalır</td></tr>
+            <tr><td>Sunucuya ilk bağlanma anı, hoş geldin teklifinin başladığı an (Android)</td><td>Sadece cihaz (uygulamanın kendi verisi)</td><td>Hoş geldin teklifinin cihaz başına bir kez verilmesi</td><td>Cihazda; uygulama silinince gider</td></tr>
             <tr><td>Turlar, sürüşler, günlük, fotoğraflar</td><td>Sadece cihaz</td><td>Uygulama işlevselliği</td><td>Cihazda</td></tr>
           </tbody>
         </table>
@@ -548,7 +548,7 @@
         <li><strong>Rota servisi</strong> — rota hesaplar. Gönderilen: başlangıç, varış ve ara nokta koordinatları. Hesap yapılır, sonuç döner, kayıt tutulmaz. Uygulama açılışta ayarlarını da sunucumuzdan alır; bu istekte yalnız cihaz kimliği özeti gider ve kaydedilmez. İzi olan bir turu — içe aktardığınız bir rota dosyasından (GPX, KML ya da GeoJSON), bir sürüş kaydınızdan ya da size paylaşılan bir parkurdan — başlattığınızda, izin yollara oturup oturmadığını anlamak ve iz boyunca yönlendirme verebilmek için izden seçilen noktaların koordinatları da gönderilir (içe aktarılan bir dosyada en çok 600, öteki izlerde yaklaşık 1.500'e kadar nokta); bunlar da saklanmaz.</li>
         <li><strong>Arama servisi</strong> — yer arar. Gönderilen: yazdığınız metin ve konumunuz. Yalnız sonucu üretmek için işlenir, kayıt tutulmaz. Cihaz kimliği özeti yalnız aşırı istekleri sınırlamak için bir dakikalık bir sayaçta kullanılır; sunucuda yalnız sorgu türlerinin (yer, adres, işletme) saatlik toplamı kalır.</li>
         <li><strong>Çevrimdışı harita servisi</strong> — yalnız Pro abonelerde ve yalnız iPhone'da, siz bir turun ya da bölgenin haritasını indirirseniz çalışır. Bir turun haritasını indirdiğinizde turun rota çizgisi, bir bölgenin haritasını indirdiğinizde ise haritada çerçevelediğiniz alanın köşe koordinatları Motoseyir sunucularına gönderilir; sunucu o alanın haritasını hazırlar. Rota çizgisi ve köşe koordinatları <strong>saklanmaz</strong>; hazırlanan harita dosyası kime ait olduğu bilinmeden tutulur. Bölgeye verdiğiniz ad telefonunuzda kalır, sunucuya gönderilmez. Dosya <strong>Cloudflare</strong>'de (ABD) durur ve telefonunuza oradan iner; Cloudflare indirme sırasında IP adresinizi görür. Kötüye kullanımı önlemek için cihaz kimliğinizin ve IP adresinizin geri çevrilemeyen özetiyle o gün kaç yeni harita hazırlatıldığı sayılır; bu sayı yalnız bellekte tutulur ve gün bitince silinir. İndirilen harita yalnız telefonunuzda durur ve iCloud yedeğine girmez; Ayarlar › Çevrimdışı haritalar sayfasından ya da “Verilerimi sil” ile silebilirsiniz.</li>
-        <li><strong>Sayaç servisi</strong> — deneme, kampanya ve davet haklarını yönetir. Gönderilen: cihaz kimliği özeti ve davet kodu.</li>
+        <li><strong>Sayaç servisi</strong> — hoş geldin teklifi, kampanya ve davet haklarını yönetir. Gönderilen: cihaz kimliği özeti ve davet kodu.</li>
         <li><strong>Takip servisi</strong> — grup sürüşünü yürütür. Gönderilen: cihaz kimliği özeti, grup kodu, takma ad, avatar ve navigasyon ya da sürüş kaydı sırasında anlık konum. Konum yalnızca son değer olarak tutulur, geçmiş biriktirilmez, sürüş bitince silinir. Grupta başlattığınız rota da burada durur; sürüş bitince, en geç 12 saat sonra silinir. Grup uyarıları (10 dakika) ve &ldquo;Sürüşümü paylaş&rdquo; bağlantıları da bu servisten geçer (yukarıda).</li>
         <li><strong>Topluluk servisi</strong> — yalnız siz katılırsanız çalışır. Yukarıdaki &ldquo;Topluluk&rdquo; bölümünde tek tek yazılı olanlar burada tutulur ve <strong>herkese açıktır</strong>; &ldquo;yalnız arkadaşlarım görsün&rdquo; diye bir ayar yoktur. &ldquo;Yakınımda&rdquo; sıralaması için gönderilen konum yalnızca sıralamada kullanılır, kaydedilmez.</li>
         <li><strong>İnterkom servisi</strong> — yalnız siz açarsanız çalışır. Grup sürüşünde sesli sohbet için takip servisi size grubun ses odasına kısa ömürlü bir giriş bileti verir; ses kendi medya sunucumuz (LiveKit) üzerinden yalnız o anda odadaki üyelere aktarılır, <strong>kaydedilmez ve saklanmaz</strong>. Odaya yalnız gruba katılmış kişiler girebilir; oda navigasyon bitince kapanır.</li>
@@ -635,7 +635,7 @@
         Rozet liderliğine katıldıysanız satırınız, <strong>&ldquo;Liderlik tablosunda görün&rdquo;</strong> anahtarını kapattığınızda ya da topluluk üyeliğinizi sildiğinizde sunucudan <strong>anında</strong> silinir.
       </p>
       <p>
-        Sunucumuzda cihaz kimliği özetinize bağlı şunlar durabilir: deneme/kampanya kayıtlarınız; grup sürüşünü kullandıysanız grup üyeliğiniz ile takma adınız; bildirim izni verdiyseniz bildirim kaydınız; AI CoRider oturum, abonelik ve dakika paketi kayıtlarınız. Gruptan uygulamadan çıkabilir ya da “Verilerimi sil” ile üyeliğinizi sonlandırabilirsiniz; çıktığınız anda kimse sizi göremez. “Verilerimi sil” bildirim kaydınızı da sunucudan siler. Öteki kayıtların silinmesini isterseniz destek adresine yazın; talebiniz üzerine sileriz. Bu durumda deneme hakkınızın yeniden başlayabileceğini hatırlatırız.
+        Sunucumuzda cihaz kimliği özetinize bağlı şunlar durabilir: teklif ve kampanya kayıtlarınız (eski sürümlerden kalan deneme kayıtları dahil); grup sürüşünü kullandıysanız grup üyeliğiniz ile takma adınız; bildirim izni verdiyseniz bildirim kaydınız; AI CoRider oturum, abonelik ve dakika paketi kayıtlarınız. Gruptan uygulamadan çıkabilir ya da “Verilerimi sil” ile üyeliğinizi sonlandırabilirsiniz; çıktığınız anda kimse sizi göremez. “Verilerimi sil” bildirim kaydınızı da sunucudan siler. Öteki kayıtların silinmesini isterseniz destek adresine yazın; talebiniz üzerine sileriz. Bu durumda deneme hakkınızın yeniden başlayabileceğini hatırlatırız.
       </p>
     </section>
 
