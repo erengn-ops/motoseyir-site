@@ -7,7 +7,7 @@
   "h1": "Tourengenerator: Zeichne die Runde zurück zum Start auf dem Handy",
   "lead": "Der Tourengenerator ist der Planer in der Motoseyir-App, der nach Start, Richtung, Länge und Kurvigkeit fragt. Du drehst und ziehst den Griff des Zifferblatts auf der Karte, und die App zeichnet bis zu drei Rundtouren, die dort enden, wo sie begonnen haben.",
   "yayin": "2026-10-27",
-  "guncelleme": "2026-10-27",
+  "guncelleme": "2026-11-22",
   "indir": "Im App Store laden",
   "web": "Im Browser testen",
   "bolumler": [
@@ -45,7 +45,7 @@
     },
     {
       "s": "Auf welchen Handys gibt es den Tourengenerator?",
-      "c": "Motoseyir gibt es vorerst im App Store für das iPhone. Die Android-Version ist bei Google Play noch nicht verfügbar."
+      "c": "Motoseyir gibt es für iPhone und Android: im App Store für das iPhone und bei Google Play für Android."
     },
     {
       "s": "Kann ich ihn im Browser ausprobieren?",

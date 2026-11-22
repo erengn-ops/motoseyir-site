@@ -436,7 +436,10 @@
     });
   });
   Array.prototype.forEach.call(document.querySelectorAll('[data-magaza]'), function (e) { e.setAttribute('href', A.magaza.ios); });
-  if (A.magaza.play) { /* Android sürümü Google Play'de yayına girince uret.py PLAY_BAGLANTISI'nı doldurur. */ }
+  /* 22 Kas 2026: Android Google Play'de; Android'de tek düğmeli yerler (üst menü "İndir") Play'e gider. */
+  if (android && A.magaza.play) {
+    Array.prototype.forEach.call(document.querySelectorAll('[data-play]'), function (e) { e.setAttribute('href', A.magaza.play); });
+  }
   if (android && !A.magaza.play) {
     $('izle-magaza').hidden = true; $('izle-magaza').parentNode.hidden = true; $('izle-cta-android').hidden = false;
   }

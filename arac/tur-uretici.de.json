@@ -6,7 +6,7 @@
   "eyebrow": "Motorradtour planen",
   "lead": "Plane deine Motorradtour mit Startpunkt, Fahrzeit und Kurvigkeit. Der Routenplaner zeichnet bis zu drei Rundtouren, die dich zum Start zurückbringen. Die Tour, die dir gefällt, schickst du per QR-Code aufs Handy und fährst sie in Motoseyir.",
   "yayin": "2026-10-25",
-  "guncelleme": "2026-10-25",
+  "guncelleme": "2026-11-22",
   "ondalik": ",",
   "ui": {
     "ekmek": "Brotkrumen-Navigation",
@@ -113,13 +113,13 @@
     "magaza_play": "Bei Google Play laden",
     "qr_etiket": "QR-Code der Tour. Scanne ihn mit der Handykamera.",
     "telefon_baslik": "Mit dem Handy scannen",
-    "telefon_acikla": "Richte die Handykamera auf den Code. Ist Motoseyir installiert, öffnet sich die Tour unter „Meine Touren“; sonst landest du im App Store.",
+    "telefon_acikla": "Richte die Handykamera auf den Code. Ist Motoseyir installiert, öffnet sich die Tour unter „Meine Touren“; sonst landest du im Store deines Handys (App Store oder Google Play).",
     "telefon_baslik_mobil": "Tour in der App öffnen",
     "telefon_acikla_mobil": "Tippe auf den Button, dann öffnet sich die Tour unter „Meine Touren“. Du kannst den Code auch unter „Meine Touren“ → „Mit Code“ eingeben.",
     "kod_etiket": "Tourcode",
     "baglanti_kopyala": "Link kopieren",
     "kopyalandi": "Kopiert",
-    "android_not": "Motoseyir gibt es vorerst im App Store für das iPhone. Die Android-Version ist noch nicht bei Google Play.",
+    "android_not": "Motoseyir gibt es im App Store für das iPhone und bei Google Play für Android.",
     "uygulama_yok": "Hat sich nichts geöffnet? Installiere zuerst Motoseyir und tippe dann noch einmal auf den Button.",
     "kod_gecerlilik": "Der Code gilt {gun} Tage. Beim Öffnen wird die Tour auf dein Handy kopiert.",
     "asama_1": "Routen werden gesucht",
@@ -395,7 +395,7 @@
     },
     {
       "s": "Ich habe die App nicht oder nutze Android. Was passiert?",
-      "c": "Der Link führt iPhone-Nutzer in den App Store. Motoseyir gibt es vorerst im App Store für das iPhone; die Android-Version ist noch nicht bei Google Play. Der Tourcode bleibt 30 Tage gültig."
+      "c": "Der Link führt auf dem iPhone in den App Store und auf Android zu Google Play; ist die App installiert, legt der Tourcode die Tour unter „Meine Touren“ ab. Der Tourcode bleibt 30 Tage gültig."
     },
     {
       "s": "Kann ich Autobahn und Maut vermeiden?",

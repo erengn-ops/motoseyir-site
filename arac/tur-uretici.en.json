@@ -6,7 +6,7 @@
   "eyebrow": "Round trip generator",
   "lead": "Plan a motorcycle ride from a start point, how long you want to ride and how twisty the roads should be. The planner draws up to three round trips that bring you back to where you started. Send the one you like to your phone with a QR code and ride it in Motoseyir.",
   "yayin": "2026-10-25",
-  "guncelleme": "2026-10-25",
+  "guncelleme": "2026-11-22",
   "ondalik": ".",
   "ui": {
     "ekmek": "Breadcrumb",
@@ -113,13 +113,13 @@
     "magaza_play": "Get it on Google Play",
     "qr_etiket": "QR code for the tour. Scan it with your phone camera.",
     "telefon_baslik": "Scan with your phone",
-    "telefon_acikla": "Point your phone camera at the code. If Motoseyir is installed, the tour opens in My Tours; if not, you land on the App Store.",
+    "telefon_acikla": "Point your phone camera at the code. If Motoseyir is installed, the tour opens in My Tours; if not, you land on your phone's store (App Store or Google Play).",
     "telefon_baslik_mobil": "Open the tour in the app",
     "telefon_acikla_mobil": "Tap the button and the tour opens in My Tours. You can also enter the code under My Tours → With a code.",
     "kod_etiket": "Tour code",
     "baglanti_kopyala": "Copy link",
     "kopyalandi": "Copied",
-    "android_not": "Motoseyir is on the App Store for iPhone for now. The Android version is not on Google Play yet.",
+    "android_not": "Motoseyir is on the App Store for iPhone and on Google Play for Android.",
     "uygulama_yok": "Nothing opened? Install Motoseyir first, then tap the button again.",
     "kod_gecerlilik": "The code works for {gun} days. The tour is copied to your phone when you open it.",
     "asama_1": "Searching routes",
@@ -395,7 +395,7 @@
     },
     {
       "s": "I do not have the app or I use Android. What happens?",
-      "c": "The link takes iPhone users to the App Store. Motoseyir is on the App Store for iPhone for now; the Android version is not on Google Play yet. The tour code stays valid for 30 days."
+      "c": "The link takes you to the App Store on iPhone and to Google Play on Android; once the app is installed, the tour code adds the tour to My Tours. The tour code stays valid for 30 days."
     },
     {
       "s": "Can it avoid motorways and tolls?",

@@ -31,7 +31,8 @@
     "cta_baslik": "Sen de Motoseyir'le sür",
     "cta_metin": "Motoseyir, motosikletçiler için bir navigasyon uygulaması. Turunu kendin çizersin, köy yollarını seçersin, sürüşünü böyle canlı paylaşırsın.",
     "cta_dugme": "App Store'dan indir",
-    "cta_android": "Motoseyir şimdilik iPhone için App Store'da. Android sürümü Google Play'de henüz yok."
+    "cta_play": "Google Play’den Alın",
+    "cta_android": "Motoseyir iPhone için App Store'da, Android için Google Play'de."
   },
   "en": {
     "lang": "en", "yerel": "en", "ad": "English",
@@ -64,7 +65,8 @@
     "cta_baslik": "Ride with Motoseyir too",
     "cta_metin": "Motoseyir is a navigation app for motorcyclists. You draw your own tour, pick the back roads and share your ride live, just like this.",
     "cta_dugme": "Get Motoseyir on the App Store",
-    "cta_android": "Motoseyir is on the App Store for iPhone for now. The Android version is not on Google Play yet."
+    "cta_play": "Get it on Google Play",
+    "cta_android": "Motoseyir is on the App Store for iPhone and on Google Play for Android."
   },
   "de": {
     "lang": "de", "yerel": "de", "ad": "Deutsch",
@@ -97,7 +99,8 @@
     "cta_baslik": "Fahr auch mit Motoseyir",
     "cta_metin": "Motoseyir ist eine Navigations-App für Motorradfahrer. Du zeichnest deine Tour selbst, wählst Landstraßen und teilst deine Fahrt live, so wie hier.",
     "cta_dugme": "Motoseyir im App Store",
-    "cta_android": "Motoseyir gibt es vorerst im App Store für das iPhone. Die Android-Version ist noch nicht bei Google Play."
+    "cta_play": "Jetzt bei Google Play",
+    "cta_android": "Motoseyir gibt es im App Store für das iPhone und bei Google Play für Android."
   },
   "fr": {
     "lang": "fr", "yerel": "fr", "ad": "Français",
@@ -130,7 +133,8 @@
     "cta_baslik": "Roule aussi avec Motoseyir",
     "cta_metin": "Motoseyir est une application de navigation pour motards. Tu traces ta propre balade, tu choisis les petites routes et tu partages ton trajet en direct, comme ici.",
     "cta_dugme": "Télécharger sur l’App Store",
-    "cta_android": "Pour l'instant, Motoseyir n'existe que sur iPhone, dans l'App Store. La version Android n'est pas encore sur Google Play."
+    "cta_play": "Disponible sur Google Play",
+    "cta_android": "Motoseyir est sur l'App Store pour iPhone et sur Google Play pour Android."
   },
   "it": {
     "lang": "it", "yerel": "it", "ad": "Italiano",
@@ -163,6 +167,7 @@
     "cta_baslik": "Vai anche tu con Motoseyir",
     "cta_metin": "Motoseyir è un'app di navigazione per motociclisti. Disegni tu il tuo giro, scegli le strade secondarie e condividi il giro in diretta, come qui.",
     "cta_dugme": "Scarica sull’App Store",
-    "cta_android": "Per ora Motoseyir è solo per iPhone, sull'App Store. La versione Android non è ancora su Google Play."
+    "cta_play": "Disponibile su Google Play",
+    "cta_android": "Motoseyir è sull'App Store per iPhone e su Google Play per Android."
   }
 }

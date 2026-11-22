@@ -7,6 +7,12 @@
  * (?ct=), geldiği sitenin alan adı (yalnız alan adı, tam adres değil). Sunucu IP'yi yazmaz; ülke kodu ve o güne özel
  * geri çevrilemez bir iz tutar, 30 günde siler. Gizlilik metni: gizlilik/ ("Site ziyaret sayacı").
  */
+/* 22 Kas 2026: Android Google Play'de. Tek düğmeli yerler (üst menüdeki "İndir") `data-play` taşır; Android'de Play'e gider. */
+(function () {
+  if (!/Android/i.test(navigator.userAgent)) return;
+  var l = document.querySelectorAll('a[data-play]');
+  for (var i = 0; i < l.length; i++) l[i].setAttribute('href', l[i].getAttribute('data-play'));
+})();
 (function () {
   var U = 'https://rota.motoseyir-app.com/olcum/z';
   if (!navigator.sendBeacon || navigator.webdriver || !/motoseyir-app\.com$/.test(location.hostname)) return;

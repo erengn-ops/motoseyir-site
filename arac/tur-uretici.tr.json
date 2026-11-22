@@ -6,7 +6,7 @@
   "eyebrow": "Tur planlayıcı",
   "lead": "Başlangıç noktanı, ne kadar süreceğini ve yolların ne kadar virajlı olacağını seç. Oluşturucu, başladığın yere dönen en fazla üç tur çizer. Beğendiğin turu QR kodla telefonuna gönderip Motoseyir'de sürebilirsin.",
   "yayin": "2026-10-25",
-  "guncelleme": "2026-10-25",
+  "guncelleme": "2026-11-22",
   "ondalik": ",",
   "ui": {
     "ekmek": "Sayfa yolu",
@@ -113,13 +113,13 @@
     "magaza_play": "Google Play'den indir",
     "qr_etiket": "Turun QR kodu. Telefon kamerasıyla okut.",
     "telefon_baslik": "Telefonunla okut",
-    "telefon_acikla": "Telefonun kamerasını koda tut. Motoseyir kuruluysa tur Turlarım'da açılır; kurulu değilse App Store'a gidersin.",
+    "telefon_acikla": "Telefonun kamerasını koda tut. Motoseyir kuruluysa tur Turlarım'da açılır; kurulu değilse telefonunun mağazasına (App Store ya da Google Play) gidersin.",
     "telefon_baslik_mobil": "Turu uygulamada aç",
     "telefon_acikla_mobil": "Düğmeye dokun, tur Turlarım'da açılır. Kodu Turlarım → “Kod ile” bölümünden elle de girebilirsin.",
     "kod_etiket": "Tur kodu",
     "baglanti_kopyala": "Bağlantıyı kopyala",
     "kopyalandi": "Kopyalandı",
-    "android_not": "Motoseyir şimdilik iPhone için App Store'da. Android sürümü Google Play'de henüz yok.",
+    "android_not": "Motoseyir iPhone için App Store'da, Android için Google Play'de.",
     "uygulama_yok": "Hiçbir şey açılmadı mı? Önce Motoseyir'i kur, sonra düğmeye yeniden dokun.",
     "kod_gecerlilik": "Kod {gun} gün geçerli. Turu açtığında telefonuna kopyalanır.",
     "asama_1": "Rota aranıyor",
@@ -395,7 +395,7 @@
     },
     {
       "s": "Uygulamam yok ya da Android kullanıyorum, ne olur?",
-      "c": "iPhone kullananlar bağlantıdan App Store'a gider. Motoseyir şimdilik iPhone için App Store'da; Android sürümü Google Play'de henüz yok. Tur kodu 30 gün geçerli kalır."
+      "c": "Bağlantı iPhone'da App Store'a, Android'de Google Play'e götürür; uygulamayı kurunca tur kodu Turlarım'a ekler. Tur kodu 30 gün geçerli kalır."
     },
     {
       "s": "Otoyoldan ve gişeden kaçınabilir miyim?",

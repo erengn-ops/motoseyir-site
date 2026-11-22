@@ -49,7 +49,7 @@
     </nav>
     <div class="header-cta">
       {{dil_secici}}
-      <a class="btn btn-ghost btn-sm" href="{{store}}" data-c="indir" data-magaza>{{btn_indir}}</a>
+      <a class="btn btn-ghost btn-sm" href="{{store}}" data-play="{{play}}" data-c="indir" data-magaza>{{btn_indir}}</a>
     </div>
   </div>
 </header>
@@ -101,7 +101,8 @@
     <aside class="izle-kart izle-cta" aria-labelledby="izle-cta-baslik">
       <h2 id="izle-cta-baslik" data-i="cta_baslik">{{cta_baslik}}</h2>
       <p data-i="cta_metin">{{cta_metin}}</p>
-      <p><a class="btn btn-primary" id="izle-magaza" href="{{store}}" rel="noopener" data-magaza data-i="cta_dugme">{{cta_dugme}}</a></p>
+      <p><a class="btn btn-primary" id="izle-magaza" href="{{store}}" rel="noopener" data-magaza data-i="cta_dugme">{{cta_dugme}}</a>
+        <a class="btn btn-primary" id="izle-play" href="{{play}}" rel="noopener" data-i="cta_play">{{cta_play}}</a></p>
       <p class="izle-cta-not" id="izle-cta-android" hidden data-i="cta_android">{{cta_android}}</p>
     </aside>
   </div>
@@ -126,6 +127,7 @@
         <li><a href="/#iletisim" data-c="iletisim">{{nav_iletisim}}</a></li>
         <li><a href="https://www.instagram.com/motoseyir.app/">Instagram</a></li>
         <li><a href="{{store}}" data-magaza>App Store</a></li>
+        <li><a href="{{play}}">Google Play</a></li>
       </ul>
     </div>
     <p>© {{yil}} Motoseyir. <span data-c="haklar">{{footer_haklar}}</span></p>

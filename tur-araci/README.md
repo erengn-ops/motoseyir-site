@@ -53,4 +53,4 @@ node test/sema-testi.mjs     # web turu == uygulamanın paylasilacakTur çıktı
 * Dışarı alma YOK: GPX/KML/GeoJSON indirme, başka haritada açma, koordinat kopyalama, yol tarifi listesi yok. Tek çıkış Motoseyir tur kodu
   (`motoseyir://tur/<KOD>`, `/k/<KOD>`, QR). Sayfada ham rota cevabı tutulmuyor (adım ve bacak bilgisi atılıyor); çizgi tarayıcıya gösterim için
   gelir, teknik biri yine çıkarabilir.
-* Google/Apple anahtarı tarayıcıda yok. Android: Play'de yayın yok (`uret.py` `PLAY_BAGLANTISI`).
+* Google/Apple anahtarı tarayıcıda yok. Android: 22 Kas 2026'dan beri Google Play'de; Play bağlantısı `uret.py` `play_esi()` ile App Store bağlantısından türetilir.

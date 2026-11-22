@@ -121,6 +121,8 @@ a:hover { text-decoration-thickness: 2px; }
   font-family: var(--sans);
 }
 .btn-primary { background: var(--kiremit); color: #fff; }
+/* App Store + Google Play yan yana (22 Kas 2026); dar ekranda alt alta */
+.magaza-dugmeleri { display: flex; flex-wrap: wrap; gap: .6rem; }
 .btn-primary:hover { background: color-mix(in srgb, var(--kiremit) 85%, black); }
 .btn-ghost { background: transparent; color: var(--text); border-color: var(--border); }
 .btn-ghost:hover { border-color: var(--petrol); color: var(--petrol); }

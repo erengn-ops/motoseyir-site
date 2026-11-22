@@ -147,6 +147,10 @@ python3 -m http.server 8099   # http://127.0.0.1:8099/
 Bakılacaklar: dil seçici (dar ekranda da), `/`, `/en/`, `/de/` sayfaları,
 altbilgideki gizlilik bağlantısı, App Store bağlantısında `pt=` ve `ct=`.
 
+Google Play (22 Kas 2026): her App Store düğmesinin yanında aynı ağırlıkta bir Play düğmesi var (metin `btn_play`, Google'ın resmî
+rozet ifadesi). Bağlantı `uret.py` `play_esi()` ile App Store bağlantısından türetilir: `ct` → `referrer=utm_source=<ct>`, `hl` = sayfanın dili.
+Şablonlarda `{{play}}`, `{{play_svg}}`; üst menüdeki tek "İndir" düğmesi `data-play` taşır ve Android'de `m/z.js` onu Play'e çevirir.
+
 
 ## Web tur üreticisi
 

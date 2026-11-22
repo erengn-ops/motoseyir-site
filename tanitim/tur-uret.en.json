@@ -7,7 +7,7 @@
   "h1": "Tour generator: draw a loop back to your start on your phone",
   "lead": "The Tour generator is the planner inside the Motoseyir app that asks for your start, direction, length and curviness. You turn and stretch the dial's handle on the map, and the app draws up to three round trips that end where they began.",
   "yayin": "2026-10-27",
-  "guncelleme": "2026-10-27",
+  "guncelleme": "2026-11-22",
   "indir": "Download on the App Store",
   "web": "Try it on the web",
   "bolumler": [
@@ -45,7 +45,7 @@
     },
     {
       "s": "Which phones have the Tour generator?",
-      "c": "Motoseyir is on the App Store for iPhone for now. The Android version is not on Google Play yet."
+      "c": "Motoseyir is on iPhone and Android: get it on the App Store for iPhone or on Google Play for Android."
     },
     {
       "s": "Can I try it in the browser?",

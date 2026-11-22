@@ -40,16 +40,17 @@ ALAN = "https://motoseyir-app.com"
 UYGULAMA_ID = "6792549131"
 SAGLAYICI = "128439797"  # App Store Connect kampanya sağlayıcı kimliği (pt)
 # MobileApplication düğümü (18 Kas 2026): `inLanguage` sayfanın dili DEĞİL, uygulama arayüzünün dilleri (pl/el… sayfada
-# arayüz İngilizce); `operatingSystem` Xcode IPHONEOS_DEPLOYMENT_TARGET ile aynı. Android Play'de üretimde değil.
+# arayüz İngilizce); `operatingSystem` iOS tarafı Xcode IPHONEOS_DEPLOYMENT_TARGET ile aynı. Android 22 Kas 2026'dan beri
+# Google Play'de yayında (PLAY_PAKET).
 UYGULAMA_DILLERI = ["tr", "en", "de", "fr", "it"]
-UYGULAMA_OS = "iOS 16.4+"
+UYGULAMA_OS = "iOS 16.4+, Android"
 YIL = "2026"
 # DÜRÜST TARİHLER (8 Kas 2026): küresel "bugün" sabiti YOK. Her sayfanın dateModified/lastmod değeri O SAYFANIN gerçek içerik
 # değişikliğinin tarihidir (git: `git log -1 --format=%cs -- <kaynak>`); yalnız CSS/şablon/JSON-LD düzeltmesi tarihi ilerletmez.
 # Rehber/araç/tanıtım sayfalarında tarih kendi içerik dosyasındaki `guncelleme` alanında; aşağıdakiler elle tutulan sayfalar.
 # Bir sayfanın METNİ gerçekten değişince ilgili satırı o günün tarihine çek.
 STATIK_GUNCELLEME = {
-    "index.html": "2026-11-18",         # 18 Kas: olmayan "7 gün ücretsiz deneme" sözü kaldırıldı (plan_p_p, a4_6_d)
+    "index.html": "2026-11-22",         # 22 Kas: Google Play (Android) düğmesi ve "App Store'daki" fiyat/iptal cümleleri
     "ozellikler.html": "2026-10-20",    # metin son 20 Eki'de değişti; sonraki commit'ler yalnız altbilgi/sayaç
     "nasil-yapilir.html": "2026-11-18",  # 18 Kas: abo1/abo4 deneme sözü kaldırıldı
     "corider.html": "2026-11-18",        # 18 Kas: "ücretsiz denemede 5 dk" kartı ve SSS cümlesi kaldırıldı
@@ -191,6 +192,31 @@ def magaza_baglantisi(kod: str, etiket: str = "") -> str:
     return f"https://apps.apple.com{yol}?pt={SAGLAYICI}&amp;ct={ct}&amp;mt=8"
 
 
+# GOOGLE PLAY (22 Kas 2026): Android sürümü Play'de yayında. Her App Store düğmesinin yanında aynı ağırlıkta bir Play düğmesi
+# durur. Play bağlantısı App Store bağlantısından türetilir: aynı kampanya etiketi (`ct`) Play'de `referrer=utm_source=<ct>`
+# olur, `hl` sayfanın dili. Düğme metni dil dosyasındaki `btn_play` (Google'ın resmî rozet ifadesi).
+PLAY_PAKET = "com.batuhanengin.motorota"
+PLAY_BAGLANTISI = f"https://play.google.com/store/apps/details?id={PLAY_PAKET}"
+APPLE_SVG = ('<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.6c0-2.4 2-3.5 2-3.6-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.15-2.8.85-3.5.85s-1.8-.8-3-.8c-1.5 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.700 2.400 2.900 2.300 1.200 0 1.600-.7 3-.7s1.800.7 3 .7 2-1.100 2.800-2.300c.9-1.300 1.200-2.500 1.300-2.600-.1 0-2.500-1-2.500-3.600zM14.200 5.500c.6-.8 1.100-1.800.9-2.900-.9 0-2 .6-2.700 1.400-.6.700-1.100 1.800-1 2.800 1 .1 2.100-.5 2.800-1.300z"/></svg>')
+PLAY_SVG = ('<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.61 1.81 13.79 12 3.61 22.19a1 1 0 0 1-.61-.92V2.73a1 1 0 0 1 .61-.92zm10.89 10.9 2.3 2.3-10.94 6.33 8.64-8.63zm3.2-3.2 2.8 1.62a1 1 0 0 1 0 1.73l-2.8 1.63L15.2 12l2.5-2.49zM5.86 2.66 16.8 8.99l-2.3 2.3-8.64-8.63z"/></svg>')
+
+
+def play_esi(magaza: str, kod: str | None = None) -> str:
+    """App Store bağlantısının Google Play eşi (HTML'e yazılacak biçimde, `&amp;`). `ct` → `referrer=utm_source=<ct>`."""
+    m = re.search(r"[?&](?:amp;)?ct=([A-Za-z0-9_-]+)", magaza)
+    ek = f"&amp;hl={kod}" if kod else ""
+    if m:
+        ek += f"&amp;referrer=utm_source%3D{m.group(1)}"
+    return PLAY_BAGLANTISI + ek
+
+
+def magaza_dugmeleri(magaza: str, kod: str | None, metin: dict, sinif: str = "btn", ikon: bool = False) -> str:
+    """Yan yana App Store + Google Play düğmeleri (aynı sınıf, aynı ağırlık)."""
+    a, g = (APPLE_SVG, PLAY_SVG) if ikon else ("", "")
+    return (f'<a class="{sinif}" href="{magaza}">{a}{metin["btn_store"]}</a>'
+            f'<a class="{sinif}" href="{play_esi(magaza, kod)}">{g}{metin["btn_play"]}</a>')
+
+
 def gizlilik_url(kod: str) -> str:
     """Gizlilik politikası TR; İngilizce ve Almanca (21 Eki 2026) ayrı sayfalarda."""
     return {"en": "/gizlilik/en/", "de": "/gizlilik/de/"}.get(kod, "/gizlilik/")
@@ -295,6 +321,10 @@ def doldur(sablon: str, degerler: dict, nerede: str) -> str:
     <strong>, <span class="vurgu">, <br> gibi satır içi HTML var (bkz.
     README). Kullanıcıdan gelen veri yok.
     """
+    if "store" in degerler and "play" not in degerler:
+        degerler = {**degerler, "play": play_esi(str(degerler["store"]), degerler.get("dil_kodu") or degerler.get("lang"))}
+    if "{{apple_svg}}" in sablon or "{{play_svg}}" in sablon:
+        degerler = {"apple_svg": APPLE_SVG, "play_svg": PLAY_SVG, **degerler}
     cikti = sablon
     for anahtar, deger in degerler.items():
         cikti = cikti.replace("{{" + anahtar + "}}", str(deger))
@@ -417,7 +447,8 @@ SEO_ANAHTAR = {
 }
 # Breadcrumb'ta sayfanın adı: (dil anahtarı veya sabit metin)
 SEO_AD = {"ozellikler.html": "nav_ozellikler", "nasil-yapilir.html": "nav_nasil", "corider.html": "AI CoRider"}
-SAMEAS = ["https://www.instagram.com/motoseyir.app/", "https://www.instagram.com/motoseyir.app.en/", f"https://apps.apple.com/app/id{UYGULAMA_ID}"]
+SAMEAS = ["https://www.instagram.com/motoseyir.app/", "https://www.instagram.com/motoseyir.app.en/", f"https://apps.apple.com/app/id{UYGULAMA_ID}",
+          PLAY_BAGLANTISI]
 # Arama motoru sahiplik doğrulaması (HTML etiketi yöntemi). Search Console / Bing "URL öneki" mülkü için sahibi etiketin
 # `content` değerini verince buraya yazılır; yalnız Türkçe anasayfaya (https://motoseyir-app.com/) konur. Alan adı (DNS)
 # yöntemi kullanılıyorsa boş kalır. Bkz. SEO.md.
@@ -500,7 +531,8 @@ def json_ld(dosya: str, v: dict, kod: str) -> str:
                 "description": duz(v["jsonld_ucretsiz"])},
                {"@type": "Offer", "name": "Motoseyir Pro", "category": "subscription", "description": duz(v["jsonld_pro"])},
            ],
-           "downloadUrl": _html.unescape(v["store"]), "publisher": {"@id": f"{ALAN}/#organization"}}
+           "downloadUrl": [_html.unescape(v["store"]), _html.unescape(play_esi(v["store"], kod))],
+           "installUrl": [_html.unescape(v["store"]), _html.unescape(play_esi(v["store"], kod))], "publisher": {"@id": f"{ALAN}/#organization"}}
     sayfa = {"@type": "WebPage", "@id": f"{url}#sayfa", "url": url, "name": duz(v[ba]), "description": duz(v[ac]),
              "inLanguage": lang, "isPartOf": {"@id": f"{ALAN}/#website"}, "about": {"@id": f"{ALAN}/#uygulama"},
              "primaryImageOfPage": {"@type": "ImageObject", "url": SOSYAL_GORSEL, "width": 1200, "height": 630},
@@ -550,7 +582,6 @@ ARAC_ICERIK = KOK / "arac"
 ARAC_ETIKET = "web-tur"  # App Store `ct`: site-web-tur (hangi dil olursa olsun aynı etiket)
 ARAC_VEKIL = "https://motorota-rota.erengn.workers.dev"  # Cloudflare Worker (server/rota-worker): rota + tur kodu, CORS yalnız bu site
 ARAC_KOD_KOKU = "https://rota.motoseyir-app.com"  # QR/bağlantı /k/<KOD> sayfası (sunucu tur kodunu uygulamaya yönlendiriyor)
-PLAY_BAGLANTISI = None  # Android sürümü Google Play'de yayına girince buraya mağaza adresi yazılır (25 Eki 2026'da sayfa 404)
 ARAC_ZORUNLU = ("anasayfa_baglanti", "dizin", "baslik", "aciklama", "h1", "eyebrow", "lead", "yayin", "guncelleme", "ondalik", "ui", "adimlar_h2", "adimlar",
                 "bolumler", "sss", "urun", "urun_dugme", "ilgili_baslik", "ilgili", "kaynaklar_baslik", "kaynaklar", "tasarim")
 _arac_onbellek: list = []
@@ -660,7 +691,9 @@ def uygulama_dugumu(kod: str, magaza: str) -> dict:
     içi abonelik. aggregateRating / review YOK (uydurma puan yazılmaz)."""
     return {"@type": "MobileApplication", "@id": f"{ALAN}/#uygulama", "name": "Motoseyir", "operatingSystem": UYGULAMA_OS,
             "applicationCategory": "NavigationApplication", "inLanguage": UYGULAMA_DILLERI,
-            "url": f"{ALAN}{sayfa_yolu(kod, 'index.html')}", "image": SOSYAL_GORSEL, "downloadUrl": _html.unescape(magaza),
+            "url": f"{ALAN}{sayfa_yolu(kod, 'index.html')}", "image": SOSYAL_GORSEL,
+            "downloadUrl": [_html.unescape(magaza), _html.unescape(play_esi(magaza, kod))],
+            "installUrl": [_html.unescape(magaza), _html.unescape(play_esi(magaza, kod))],
             "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "publisher": {"@id": f"{ALAN}/#organization"}}
 
 
@@ -750,7 +783,8 @@ def arac_varis(kod: str, v: dict) -> str:
     if u.get("ikincil"):
         govde += f'<p class="metin kucuk">{u["ikincil"]}</p>'
     return (arac_populer(kod) + f'<section class="varis" data-ton aria-labelledby="urun-h2"><div class="kap" data-r><h2 id="urun-h2">{u["h2"]}</h2>{govde}'
-            f'<div class="cta-satir"><a class="btn" href="{arac_magaza(kod)}">{v["urun_dugme"]}</a></div></div></section>\n'
+            f'<div class="cta-satir"><a class="btn" href="{arac_magaza(kod)}">{v["urun_dugme"]}</a>'
+            f'<a class="btn" href="{play_esi(arac_magaza(kod), kod)}">{v["ui"]["magaza_play"]}</a></div></div></section>\n'
             + arac_ayrinti(kod, v))
 
 
@@ -874,7 +908,8 @@ def tanitim_yaz() -> int:
         vr = v["varis"]
         varis = (f'<section class="varis" data-ton aria-labelledby="urun-h2"><div class="kap" data-r><h2 id="urun-h2">{vr["h2"]}</h2>'
                  + "".join(f'<p class="metin">{p}</p>' for p in vr["p"])
-                 + f'<div class="cta-satir"><a class="btn" href="{magaza}">{v["indir"]}</a><a class="btn btn-hayalet" href="{arac_yol(kod)}">{v["web"]}</a></div></div></section>')
+                 + f'<div class="cta-satir"><a class="btn" href="{magaza}">{v["indir"]}</a><a class="btn" href="{play_esi(magaza, kod)}">{metin["btn_play"]}</a>'
+                   f'<a class="btn btn-hayalet" href="{arac_yol(kod)}">{v["web"]}</a></div></div></section>')
         degerler = {
             **metin, **{f"u_{x}": y for x, y in a["ui"].items() if isinstance(y, str)}, **{f"t_{x}": y for x, y in a["tasarim"].items() if isinstance(y, str)},
             "lang": d["lang"], "baslik_tam": _html.escape(baslik_tam, quote=False), "aciklama_nitelik": _html.escape(aciklama, quote=True), "kanonik": url,
@@ -920,7 +955,7 @@ def arac_yaz() -> int:
         aciklama = duz(v["aciklama"])
         hk_ad, hk_video = arac_hikaye(kod, v)
         ayar = {"dil": kod, "ui": v["ui"], "ondalik": v["ondalik"], "kok": ARAC_KOD_KOKU, "vekil": ARAC_VEKIL,
-                "magaza": {"ios": arac_magaza(kod).replace("&amp;", "&"), "play": PLAY_BAGLANTISI}}
+                "magaza": {"ios": arac_magaza(kod).replace("&amp;", "&"), "play": play_esi(arac_magaza(kod), kod).replace("&amp;", "&")}}
         degerler = {
             **metin,
             **{f"u_{a}": b for a, b in v["ui"].items() if isinstance(b, str)},
@@ -996,7 +1031,7 @@ def izle_yaz() -> int:
     v = json.loads(dosya.read_text(encoding="utf-8"))
     v.pop("_not", None)
     zorunlu = ("lang", "yerel", "ad", "baslik", "eyebrow", "aciklama", "harita_etiket", "durum", "etiket", "ortala", "ag_hata", "harita_hata", "alt",
-               "iz_not", "js_gerekli", "cta_baslik", "cta_metin", "cta_dugme", "cta_android", "kod")
+               "iz_not", "js_gerekli", "cta_baslik", "cta_metin", "cta_dugme", "cta_play", "cta_android", "kod")
     durumlar = ("canli", "bekliyor", "bekliyor_alt", "kopuk", "kopuk_alt", "bitti", "bitti_alt", "varis", "kapatildi", "sessiz", "yok", "yok_alt")
     for k in IZLE_DILLER:
         eksik = [a for a in zorunlu if a not in v.get(k, {})] + [f"durum.{a}" for a in durumlar if a not in v.get(k, {}).get("durum", {})]
@@ -1024,7 +1059,7 @@ def izle_yaz() -> int:
         }
     tr, metin_tr = v["tr"], json.loads((DIL / "tr.json").read_text(encoding="utf-8"))
     ayar = {"metin": {k: v[k] for k in IZLE_DILLER}, "chrome": chrome, "api": IZLE_API,
-            "magaza": {"ios": IZLE_MAGAZA, "play": PLAY_BAGLANTISI}}
+            "magaza": {"ios": IZLE_MAGAZA, "play": _html.unescape(play_esi(IZLE_MAGAZA))}}
     degerler = {
         **metin_tr,
         **{a: b for a, b in tr.items() if isinstance(b, str)},
@@ -1259,7 +1294,7 @@ def r_urun(urun: dict, kod: str, metin: dict) -> str:
         govde += r_liste(urun["adimlar"], True) + "\n"
     if urun.get("ikincil"):
         govde += f'<p class="kucuk">{urun["ikincil"]}</p>\n'
-    govde += f'<p><a class="btn btn-primary" href="{magaza_baglantisi(kod, REHBER_ETIKET)}">{metin["btn_store"]}</a></p>\n'
+    govde += f'<p class="magaza-dugmeleri">{magaza_dugmeleri(magaza_baglantisi(kod, REHBER_ETIKET), kod, metin, "btn btn-primary")}</p>\n'
     gorsel = ""
     if urun.get("gorsel"):
         ad = urun["gorsel"]
@@ -1794,7 +1829,7 @@ def gecit_govde(kod: str, g: dict, m: dict, ui: dict, metin: dict) -> tuple:
     # uygulama
     parca.append(f'<section class="rehber-urun" aria-labelledby="urun-h2"><div><h2 id="urun-h2">{e(gm["uyg_h2"].format(**p))}</h2>'
                  f'<p>{e(gm["uyg_p1"].format(**p))}</p><p>{e(gm["uyg_p2"].format(**p))}</p>'
-                 f'<p><a class="btn btn-primary" href="{gecit_magaza(kod)}">{metin["btn_store"]}</a></p></div></section>')
+                 f'<p class="magaza-dugmeleri">{magaza_dugmeleri(gecit_magaza(kod), kod, metin, "btn btn-primary")}</p></div></section>')
     # alt bağlantılar + veri notu
     alt = []
     if h0["sayfa"] and h0["slug"]:
@@ -1857,7 +1892,7 @@ def gecit_hub_govde(kod: str, h: dict, m: dict, ui: dict, metin: dict) -> tuple:
         '<section class="section section-2 rehber-govde"><div class="wrap"><div class="rehber-kolon">',
         gecit_tablo(kod, gecitler, m, ui),
         f'<section class="rehber-urun" aria-labelledby="urun-h2"><div><h2 id="urun-h2">Motoseyir</h2>'
-        f'<p>{e(m["gecit"]["uyg_p2"])}</p><p><a class="btn btn-primary" href="{gecit_magaza(kod)}">{metin["btn_store"]}</a></p></div></section>',
+        f'<p>{e(m["gecit"]["uyg_p2"])}</p><p class="magaza-dugmeleri">{magaza_dugmeleri(gecit_magaza(kod), kod, metin, "btn btn-primary")}</p></div></section>',
         (f'<p><a href="{gecit_kok(kod)}">{m["gecit"]["index_baglanti"]}</a></p>' if h["slug"] else (f'<p>{ozel_baglanti("veri", kod)}</p>' if kod in OZEL_DILLER else "")),
         f'<p class="kucuk">{m["gecit"]["veri_not"]}</p>',
         "</div></div></section>"])
@@ -1895,7 +1930,7 @@ def gecit_index_govde(kod: str, m: dict, ui: dict, metin: dict) -> tuple:
         en_yuksek = [g for g in v["gecitler"] if g["bolge"] == bolge][:10]
         parca.append(f'<h3>{im["en_yuksek_h2"]}</h3>' + gecit_tablo(kod, en_yuksek, m, ui) + "</section>")
     parca.append(f'<section class="rehber-urun" aria-labelledby="urun-h2"><div><h2 id="urun-h2">Motoseyir</h2>'
-                 f'<p>{e(m["gecit"]["uyg_p2"])}</p><p><a class="btn btn-primary" href="{gecit_magaza(kod)}">{metin["btn_store"]}</a></p></div></section>')
+                 f'<p>{e(m["gecit"]["uyg_p2"])}</p><p class="magaza-dugmeleri">{magaza_dugmeleri(gecit_magaza(kod), kod, metin, "btn btn-primary")}</p></div></section>')
     if kod in OZEL_DILLER:
         parca.append(f'<p>{ozel_baglanti("veri", kod)}</p>')
     parca.append(f'<p class="kucuk">{m["gecit"]["veri_not"]}</p>')
@@ -2400,15 +2435,16 @@ def llms_txt() -> str:
     tan = tanitim_veri()
     k = lambda x: duz(x).replace("\n", " ")
     sat = ["# Motoseyir", "",
-           f"> {k(en['faq_a1'])} It is an iOS app, available on the App Store.", "",
+           f"> {k(en['faq_a1'])} It is available for iPhone on the App Store and for Android on Google Play.", "",
            "Motoseyir is made for motorcyclists, not for cars: it calculates by distance instead of minutes, so it can pick back roads and "
            "shorter alternatives that a car-oriented sat nav skips. The site is available in 14 languages; the English pages are listed below.", "",
            "## Key facts", ""]
     for i in range(2, 7):
         sat.append(f"- **{k(en[f'faq_q{i}'])}** {k(en[f'faq_a{i}'])}")
-    # 18 Kas 2026: fiyat ASC API'den (ABD vitrini, Pro); hiçbir abonelikte ücretsiz deneme (FREE_TRIAL) yok. Android Play'de üretimde
-    # DEĞİL (herkese açık sayfa 404) — yayına çıkınca bu iki satırı güncelle.
-    sat += [f"- Platform: iPhone only (iOS 16.4 or later), with Apple CarPlay; App Store id {UYGULAMA_ID}. There is no Android version on Google Play yet. {ALAN}/en/ has the download link.",
+    # 18 Kas 2026: fiyat ASC API'den (ABD vitrini, Pro); hiçbir abonelikte ücretsiz deneme (FREE_TRIAL) yok.
+    # 22 Kas 2026: Android Google Play'de yayında. CarPlay yalnız iPhone'da.
+    sat += [f"- Platform: iPhone (iOS 16.4 or later; App Store id {UYGULAMA_ID}) and Android (Google Play, package {PLAY_PAKET}). "
+            f"Apple CarPlay support is on iPhone. {ALAN}/en/ has both download links.",
             "- Price: the app and its routing are free to download and use; Pro is an auto-renewing in-app subscription. In the US Pro costs "
             "$8.99 a month, $22.99 for 3 months or $39.99 a year; prices differ by country and are shown in the app before purchase. "
             "There is no free trial.",
