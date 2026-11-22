@@ -83,12 +83,12 @@
  "k8_ad": "Jij op de kaart",
  "k8_alt": "De motor die jou op de kaart voorstelt; sleep naar links of rechts om hem te draaien",
  "k8_h2": "Jij staat <i>ook op de kaart.</i>",
- "k8_p": "Terwijl je rijdt, staat er een markering voor jou op de kaart. Er zijn er zes: Supersport, Chopper, Maxi scooter, Touring, Arrow en Helmet. Je kiest er een bij Settings, en CarPlay toont dezelfde.",
+ "k8_p": "Terwijl je rijdt, staat er een markering voor jou op de kaart. Er zijn er negen: Supersport, Chopper, Maxi scooter, Touring, Naked, Scrambler, Bagger, Arrow en Helmet. Je kiest er een bij Settings, en CarPlay toont dezelfde.",
  "k8_not": "Sleep om te draaien",
  "a8_etiket": "Details rijdersmarkering",
- "a8_s1_b": "6",
+ "a8_s1_b": "9",
  "a8_s1_t": "markeringen naar keuze",
- "a8_s2_b": "4",
+ "a8_s2_b": "7",
  "a8_s2_t": "daarvan zijn 3D, met een rijder, en leunen de bocht in",
  "a8_s3_b": "CarPlay",
  "a8_s3_t": "de markering die je kiest staat ook op het autoscherm",
@@ -98,16 +98,19 @@
  "k8_m4": "Touring",
  "k8_m5": "Arrow",
  "k8_m6": "Helmet",
+ "k8_m7": "Naked",
+ "k8_m8": "Scrambler",
+ "k8_m9": "Bagger",
  "a8_1_t": "Waar je hem kiest",
- "a8_1_d": "Settings → Map → Navigation marker. Er opent een raster met zes pictogrammen en wat je aantikt, is geselecteerd. Je kunt hem ook kiezen als je de app voor het eerst opent.",
- "a8_2_t": "Vier zijn 3D",
- "a8_2_d": "Supersport, Chopper, Maxi scooter en Touring zijn vanuit 72 hoeken getekend, met een rijder erop, en leunen de bocht in. Arrow en Helmet zijn platte tekeningen.",
+ "a8_1_d": "Settings → Map → Navigation marker. Er opent een raster van negen, en de markering die je aantikt wordt gekozen. Je kunt hem ook kiezen als je de app voor het eerst opent.",
+ "a8_2_t": "Zeven zijn 3D",
+ "a8_2_d": "De zeven motoren zijn vanuit 72 hoeken getekend met een rijder erop, en ze hellen in bochten. Arrow en Helmet zijn platte tekeningen.",
  "a8_3_t": "Overal bij je",
  "a8_3_d": "Op de hoofdkaart en in de navigatie, als je live positie op de tochtkaart, in de 3D-replay en in de reiskaartvideo, en ook op CarPlay en in het CarPlay Dashboard.",
  "a8_4_t": "In een groep",
  "a8_4_d": "In een groep zie je je vrienden met een vaste, kleinere markering; jouw keuze wordt niet aan hen doorgegeven.",
- "a8_5_t": "Gratis",
- "a8_5_d": "Een markering kiezen kan zonder Pro.",
+ "a8_5_t": "Wat gratis is",
+ "a8_5_d": "Maxi scooter en Arrow zijn gratis voor iedereen; de andere markeringen horen bij Pro.",
  "a8_6_t": "Draai de Touring",
  "a8_6_d": "Sleep de motor hierboven naar links of rechts. Laat je los, dan glijdt hij uit tot hij stilstaat; raak je hem niet aan, dan draait hij langzaam uit zichzelf.",
  "k9_ad": "Legendarische wegen",
@@ -123,7 +126,7 @@
  "plan_u_p": "Routeplanning en navigatie met afslaginstructies zijn onbeperkt in Turkije, Europa en de VS. Geen account nodig; gratis bewaar je 1 tocht.",
  "plan_p_p": "Pro ontgrendelt:",
  "pp1": "AI CoRider",
- "pp2": "Apple CarPlay",
+ "pp2": "Apple CarPlay (iPhone)",
  "pp3": "Groepen maken",
  "pp4": "Discover",
  "pp5": "Onbeperkte tochten en tracks",
@@ -140,27 +143,144 @@
  "faq_q4": "Waar werkt het?",
  "faq_a4": "Routeplanning en navigatie werken in Turkije, Europa en de VS. De bergpassenkaart telt meer dan 1.600 bergpassen in 36 landen.",
  "faq_q5": "Werkt het met CarPlay?",
- "faq_a5": "Ja. Apple CarPlay hoort bij Pro; je route vult het hele autoscherm.",
+ "faq_a5": "Ja, op de iPhone. Apple CarPlay hoort bij Pro, en je route vult het scherm in de auto. Android Auto wordt niet ondersteund.",
  "faq_q6": "Kan ik met vrienden rijden?",
  "faq_a6": "Ja. Jullie rijden dezelfde route, zien iedereen op de kaart en praten via de groepsintercom. Aansluiten bij een groep met een uitnodiging of code is gratis; een groep maken hoort bij Pro.",
  "varis_h2": "De weg is <i>klaar.</i>",
  "varis_nasil": "Hoe het werkt",
  "ayr_etiket": "Privacy, release-notes en contact",
  "yeni_lead": "Recente updates, nieuwste eerst.",
- "y118_tarih": "oktober 2026",
- "y117_tarih": "oktober 2026",
- "y116_tarih": "oktober 2026",
- "y118_1": "Een crash opgelost bij het wisselen van Blog naar Feed in Community.",
- "y118_2": "Een video opnemen van je 3D-replay start nu betrouwbaarder.",
- "y118_3": "“Klaar” verschijnt niet meer voordat de kaart is geladen, en de camera springt niet meer als je na het zoomen met twee vingers loslaat.",
- "y117_1": "Reiskaart: bekijk een lange tocht of rit als video op een schone kaart. Terwijl je route zich tekent, verschijnen de plaatsen die je passeerde en je foto’s een voor een.",
- "y117_2": "Nieuwe snelkoppelingen op het startscherm: thuis en werk, een rit opnemen, een rondje van een uur vanaf hier, een legendarische weg in de buurt.",
- "y117_3": "298 bergpassen en zes nieuwe legendarische wegen in de VS, en de kustmodus werkt nu ook in veel Europese kustlanden.",
- "y117_4": "“Maak kennis met Motoseyir” in Instellingen is een korte videotour door de app, tabblad voor tabblad.",
- "y116_1": "Kijk in 3D: speel een opgenomen rit af alsof je in een helikopter meevliegt; je foto’s verschijnen waar je ze nam.",
- "y116_2": "Delen als video: maak een verticale video van 15, 30 of 60 seconden, klaar voor Instagram. Geen Pro nodig.",
- "y116_3": "Ritanalyse: rijtijd, echte pauzes, scherpe bochten, totale stijging en hoeveel van de weg nieuw voor je was.",
- "y116_4": "In de toergenerator brengt “Another one” drie nieuwe rondjes over andere wegen, en je kunt “No motorways”, “No tolls” en “No dirt” kiezen.",
+ "yeni_onceki": "Eerdere versies",
+ "surumler": [
+  {
+   "no": "1.3.0",
+   "tarih": "november 2026",
+   "maddeler": [
+    "Nieuw tabblad Nieuws in de Community: beurzen, ritten, nieuwe uitrusting en racen, gekozen voor jouw land.",
+    "Motorvriendelijke hotels: kies in Ontdekken voor Hotel en vink „Motorvriendelijk” aan om hotels met een motorgarage of parkeerplek op de kaart te zien. Je kunt zelf ook hotels voorstellen."
+   ]
+  },
+  {
+   "no": "1.2.9",
+   "tarih": "november 2026",
+   "maddeler": [
+    "Opgelost: afslagen vlak na een wijziging van de straatnaam worden nu op tijd aangekondigd en getoond."
+   ]
+  },
+  {
+   "no": "1.2.8",
+   "tarih": "november 2026",
+   "maddeler": [
+    "Kies je eigen weg: tik op het stuk tussen twee stops om een andere weg te kiezen, of houd de kaart ingedrukt en tik op 'Hier langs' om de route over jouw weg te sturen. Werkt ook in de tourgenerator op het web."
+   ]
+  },
+  {
+   "no": "1.2.7",
+   "tarih": "november 2026",
+   "maddeler": [
+    "Meer routeopties: vraag een route en je krijgt nu tot drie verschillende wegen; de voorgestelde is nog steeds de kortste.",
+    "Australië en Nieuw-Zeeland: 200 bergpassen en 7 legendarische wegen, waaronder de Great Ocean Road en de Milford Road.",
+    "Plannen op je laptop: open via Instellingen de tourgenerator op onze website en plan je tour op een groot scherm."
+   ]
+  },
+  {
+   "no": "1.2.6",
+   "tarih": "november 2026",
+   "maddeler": [
+    "Hellingshoek: speel een opgenomen rit opnieuw af en zie hoe diep je in elke bocht ging. Je diepste hoek speelt in slow motion, precies waar de band het asfalt raakt, en de bandenkaart laat zien hoeveel rand je nog over hebt.",
+    "Mijn kaart: al je opgenomen ritten en voltooide tochten op één kaart, bovenaan Mijn ritten.",
+    "Routeopties: een alternatief zonder snelweg wordt nu apart getoond, en dezelfde weg wordt niet meer twee keer voorgesteld."
+   ]
+  },
+  {
+   "no": "1.2.5",
+   "tarih": "oktober 2026",
+   "maddeler": [
+    "Drie nieuwe motoren op de kaart: Bagger, Naked en Scrambler. Settings › Navigation marker."
+   ]
+  },
+  {
+   "no": "1.2.4",
+   "tarih": "oktober 2026",
+   "maddeler": [
+    "Opgelost: introductie bij de eerste start vernieuwd; bochtdichtheid op tourkaarten nu in jouw eenheid (per mijl waar mijlen gelden); kleine verbeteringen."
+   ]
+  },
+  {
+   "no": "1.2.3",
+   "tarih": "oktober 2026",
+   "maddeler": [
+    "Drukken om te praten en een windvaste intercom-microfoon die pas opent als je praat. Een korte toon als iemand erbij komt of wegvalt; zet een vriend zachter of harder; de groepsleider kan omroepen.",
+    "Verbeteringen: duidelijkere tekst bij de contactentoestemming; routes zijn ook gratis in Zuidoost-Azië."
+   ]
+  },
+  {
+   "no": "1.2.2",
+   "tarih": "oktober 2026",
+   "maddeler": [
+    "Routekeuze: korte stadsroutes vallen niet meer af. Is er een duidelijk kortere weg, dan verschijnt die als optie ‘Korter’.",
+    "In de zoekkaart wissel je start en bestemming met één tik of wis je ze met ×.",
+    "Pro is nu goedkoper. Probeer AI CoRider 5 minuten met Pro en ga daarna verder met minutenpakketten."
+   ]
+  },
+  {
+   "no": "1.2.1",
+   "tarih": "oktober 2026",
+   "maddeler": [
+    "Reacties bij evenementen: schrijf onder een meetup en beantwoord vragen. De organisator kan elke reactie verwijderen.",
+    "Duidelijkere teksten op het Pro-scherm en kleine verbeteringen."
+   ]
+  },
+  {
+   "no": "1.2.0",
+   "tarih": "oktober 2026",
+   "maddeler": [
+    "In Instellingen kies je de stem van CoRider en de luide modus nu in één rij.",
+    "Bij routes met meerdere stops overlappen de stoplijst, regenmelding en kaartknoppen niet meer.",
+    "Op kleine schermen zoals de iPhone SE passen de introductie en het welkomstscherm nu helemaal."
+   ]
+  },
+  {
+   "no": "1.1.9",
+   "tarih": "oktober 2026",
+   "maddeler": [
+    "Offline kaarten (Pro): download de kaart van een rit of van een gebied dat je op de kaart afbakent. Als het signaal een tijdje weg is, schakelt de navigatie vanzelf over op de gedownloade kaart; bij korte tunnels blijft de kaart zoals hij is.",
+    "Je kiest nu zelf de eenheden (km of mijl) en de taal van de app in Settings.",
+    "Afslagen op CarPlay zijn beter te lezen: een label met de afstand zolang je nog ver weg bent, en een pijl op het wegdek als je dichterbij komt.",
+    "Tussenstops zijn duidelijker: de chip tussen twee stops toont afstand en tijd, en met \"+ Add stop\" voeg je er een toe tussendoor of aan het eind.",
+    "In \"Discover\" zoek je in de buurt van de route of op één etappe, en plekkaarten hebben meer foto's."
+   ]
+  },
+  {
+   "no": "1.1.8",
+   "tarih": "oktober 2026",
+   "maddeler": [
+    "Een crash opgelost bij het wisselen van Blog naar Feed in Community.",
+    "Een video opnemen van je 3D-replay start nu betrouwbaarder.",
+    "“Klaar” verschijnt niet meer voordat de kaart is geladen, en de camera springt niet meer als je na het zoomen met twee vingers loslaat."
+   ]
+  },
+  {
+   "no": "1.1.7",
+   "tarih": "oktober 2026",
+   "maddeler": [
+    "Reiskaart: bekijk een lange tocht of rit als video op een schone kaart. Terwijl je route zich tekent, verschijnen de plaatsen die je passeerde en je foto’s een voor een.",
+    "Nieuwe snelkoppelingen op het startscherm: thuis en werk, een rit opnemen, een rondje van een uur vanaf hier, een legendarische weg in de buurt.",
+    "298 bergpassen en zes nieuwe legendarische wegen in de VS, en de kustmodus werkt nu ook in veel Europese kustlanden.",
+    "“Maak kennis met Motoseyir” in Instellingen is een korte videotour door de app, tabblad voor tabblad."
+   ]
+  },
+  {
+   "no": "1.1.6",
+   "tarih": "oktober 2026",
+   "maddeler": [
+    "Kijk in 3D: speel een opgenomen rit af alsof je in een helikopter meevliegt; je foto’s verschijnen waar je ze nam.",
+    "Delen als video: maak een verticale video van 15, 30 of 60 seconden, klaar voor Instagram. Geen Pro nodig.",
+    "Ritanalyse: rijtijd, echte pauzes, scherpe bochten, totale stijging en hoeveel van de weg nieuw voor je was.",
+    "In de toergenerator brengt “Another one” drie nieuwe rondjes over andere wegen, en je kunt “No motorways”, “No tolls” en “No dirt” kiezen."
+   ]
+  }
+ ],
  "insta_url": "https://www.instagram.com/motoseyir.app.en/",
  "insta_ad": "@motoseyir.app.en",
  "v_etiket": "Passendata",
@@ -219,8 +339,8 @@
  "a1_s1_t": "gratis navigatie in Turkije, Europa en de VS",
  "a1_s2_b": "26",
  "a1_s2_t": "stops in één tocht",
- "a1_s3_b": "2",
- "a1_s3_t": "alternatieve routes, met de kortste gemarkeerd",
+ "a1_s3_b": "3",
+ "a1_s3_t": "hoofdroutes om uit te kiezen, de kortste gemarkeerd",
  "a1_s4_b": "726",
  "a1_s4_t": "snelheidscamera’s in Turkije",
  "a1_1_t": "Rijstrookadvies",
@@ -234,7 +354,7 @@
  "a1_5_t": "“No toll roads”",
  "a1_5_d": "Eén tik haalt tolwegen uit de route.",
  "a1_6_t": "Op het vergrendelscherm",
- "a1_6_d": "Je volgende afslag staat op het vergrendelscherm en in het Dynamic Island, dus je hoeft de telefoon niet te ontgrendelen.",
+ "a1_6_d": "Op de iPhone staat je volgende afslag op het toegangsscherm en in het Dynamic Island. Op Android staan afslag, resterende tijd en aankomsttijd in een melding.",
  "a2_etiket": "Details toergenerator",
  "a2_s1_b": "30–300 km",
  "a2_s1_t": "tochtlengte, of kies in uren",
@@ -272,7 +392,7 @@
  "a4_5_t": "Regelt de rit",
  "a4_5_d": "Start of stopt de navigatie, zet ritregistratie aan en brengt je naar huis.",
  "a4_6_t": "Spreektijd",
- "a4_6_d": "Pro vernieuwt elke 30 dagen 10 minuten spreektijd. Heb je meer nodig, neem dan een pakket van 30, 60 of 180 minuten dat nooit verloopt.",
+ "a4_6_d": "Met Pro probeer je AI CoRider 5 minuten uit. Daarna neem je een pakket van 30, 60 of 180 minuten dat nooit verloopt.",
  "a5_etiket": "Details groep, intercom en CarPlay",
  "a5_s1_b": "12",
  "a5_s1_t": "rijders in één groep",
@@ -284,11 +404,11 @@
  "a5_1_d": "Typ de code van 8 tekens of tik op de link. Een groep maken hoort bij Pro.",
  "a5_2_t": "Locatie alleen tijdens het rijden",
  "a5_2_d": "Je locatie wordt alleen gedeeld zolang de navigatie of een ritregistratie loopt. Beëindig je die, dan stopt het delen ook.",
- "a5_3_t": "Open microfoon",
- "a5_3_d": "Geen push-to-talk op de intercom: je praat gewoon. Demp wie je wilt. Er wordt niets opgenomen.",
+ "a5_3_t": "Drie microfoonstanden",
+ "a5_3_d": "Always on, When I talk of Push to talk. Je zet een vriend harder of zachter, en de leider kan een mededeling aan de groep doen. Er wordt niets opgenomen.",
  "a5_4_t": "CoRider in de groep",
  "a5_4_d": "Nodig CoRider uit in de ruimte van de groep en iedereen hoort hem.",
- "a5_5_t": "Navigatie op CarPlay",
+ "a5_5_t": "Navigatie op CarPlay (iPhone)",
  "a5_5_d": "Kaart en afslagen op het autoscherm. Sla een stop over, neem de rit op, open de intercom of zoek een adres in de lijst “Destinations”.",
  "a5_6_t": "Dashboard",
  "a5_6_d": "De kaart staat ook in het CarPlay Dashboard, naast je andere apps, met je positie en route.",
@@ -303,12 +423,12 @@
  "a6_s1_t": "baaien en stranden in Turkije",
  "a6_s2_b": "20.106",
  "a6_s2_t": "camping- en natuurplekken in Turkije",
- "a6_s3_b": "6",
- "a6_s3_t": "categorieën",
+ "a6_s3_b": "5",
+ "a6_s3_t": "hoofdcategorieën, elk met eigen opties",
  "a6_1_t": "Categorieën",
- "a6_1_d": "“All”, “Bay & beach”, “Camping & nature”, “Food & drink”, “Fuel” en “Passes”.",
+ "a6_1_d": "On the road, Food, Stay, See & do en Highlights. Daarin vind je tanken, cafés, campings, hotels, stranden en baaien, bergpassen en meer.",
  "a6_2_t": "Waar je het vindt",
- "a6_2_d": "Open een tocht in “My Tours” en kies “Discover” op de tabbladen Stops | Discover | Journal. De tocht heeft minstens twee stops nodig, en zoeken zit in Pro.",
+ "a6_2_d": "Open een tocht in “My Tours” en kies “Discover” op de tabbladen Stops | Discover | Journal. Je zoekt bij de route of op één etappe. De tocht heeft minstens twee stops nodig, en zoeken zit in Pro.",
  "a6_3_t": "“Explore this area”",
  "a6_3_d": "Verplaats de kaart waar je maar wilt en zoek rond die plek.",
  "a6_4_t": "“Camping & nature”",
@@ -375,8 +495,8 @@
  "dg_6_d": "Op de routekaart staat de geschatte hoeveelheid brandstof (liters, in de VS gallons). Tik op het verbruik om je eigen waarde in te vullen.",
  "dg_7_t": "Zonsondergang",
  "dg_7_d": "Loopt de rit door tot na zonsondergang, dan komt er op de routekaart een regel als “Arrive 19:40 · sunset 19:12”.",
- "dg_8_t": "Offline routekopie",
- "dg_8_d": "Van je tochten staat de route als kopie op je telefoon. Valt de verbinding weg, dan opent de tocht vanaf die kopie; raak je van de route af, dan wijst een pijl “Back to route” de weg. De kaart zelf heeft nog wel internet nodig.",
+ "dg_8_t": "Offline kaarten",
+ "dg_8_d": "Download de kaart van een tocht of van een gebied dat je op de kaart afbakent. Is het signaal een tijdje weg, dan schakelt de navigatie vanzelf naar de gedownloade kaart; met de wolk schakel je ook zelf. Kaarten downloaden hoort bij Pro.",
  "dg_9_t": "Als je van de route afwijkt",
  "dg_9_d": "Bij Settings → Riding → When you leave the route kies je “New route” of “Back to route”, en je kunt de app een gemiste stop vanzelf laten overslaan.",
  "dg_10_t": "Thuis en werk",
@@ -393,16 +513,28 @@
  "dg_15_d": "Importeer een GPX-bestand en de track komt in het tabblad Trails, met afstand, totale stijging, steilste stuk en hoogteprofiel. Schuif je vinger over het profiel en de stip op de kaart schuift mee.",
  "dg_16_t": "Een tocht delen",
  "dg_16_d": "Stuur een tocht als link, video of GPX-bestand. De link is 30 dagen geldig; de ontvanger tikt erop of gaat naar My Tours → With a code → Add tour. Het is gratis.",
- "dg_17_t": "Community en Blog",
- "dg_17_d": "Community heeft de tabbladen Blog, Feed en My Ride Group. In de feed zie je de tochten en ritten van andere rijders, kun je liken, reageren en antwoorden, en filter je op land. In Blog stuur je met “Write a post” zelf een bericht in. Een gebruikersnaam is genoeg.",
+ "dg_17_t": "Community en nieuws",
+ "dg_17_d": "Het tabblad News brengt beurzen, treffens, nieuwe uitrusting en racen, gekozen voor het land waar je bent. In de Feed zie je de tochten en ritten van andere rijders, kun je liken, reageren en antwoorden, en filter je op land. Een gebruikersnaam is genoeg.",
  "dg_18_t": "Evenementen",
- "dg_18_d": "Maak in Community een meetup of tik op “I’m going”. Een event heeft een verzamelpunt, een maximaal aantal deelnemers en, als je wilt, een route; je locatie wordt niet gedeeld.",
+ "dg_18_d": "Maak in Community een meetup of tik op “I’m going”. Een event heeft een verzamelpunt, een maximaal aantal deelnemers en, als je wilt, een route; je locatie wordt niet gedeeld. Onder een treffen schrijf je reacties en beantwoord je vragen; de organisator kan een ongewenste reactie weghalen.",
  "dg_19_t": "Foto bij een pas",
  "dg_19_d": "Op de pagina van een pas kun je met “Add photo” je eigen foto toevoegen (maximaal drie per pas); je gebruikersnaam staat eronder als maker.",
  "dg_20_t": "Liggend gebruik",
  "dg_20_d": "Draai je telefoon op zijn kant en de kaartjes schuiven naar links terwijl de kaart de rest van het scherm krijgt; My Tours gaat naar twee kolommen.",
  "dg_21_t": "Eenheden en taal",
- "dg_21_d": "De eenheden volgen waar je bent: mijlen, mph en voet in de VS, mijlen en yards in het VK, kilometers overal elders. De app spreekt Turks, Engels, Duits, Frans en Italiaans en volgt de taal van je telefoon.",
+ "dg_21_d": "Eenheden (km of mijl) en taal kies je bij Settings → Appearance. Op Automatic volgen de eenheden waar je bent en volgt de taal je telefoon. De app spreekt Turks, Engels, Duits, Frans en Italiaans.",
+ "dg_22_t": "Tussen twee stops",
+ "dg_22_d": "De chip tussen twee stops toont afstand en tijd. Tik erop om er een stop tussen te zetten, op die etappe te zoeken of er een andere weg voor te kiezen.",
+ "dg_23_t": "Hier langs",
+ "dg_23_d": "Houd de kaart ingedrukt en tik op “Pass through here”: de route gaat over de weg die jij wilt. De routeplanner op deze site kan dat ook.",
+ "dg_24_t": "Hellingshoek",
+ "dg_24_d": "Speel een opgenomen rit af en zie hoe ver je in elke bocht helde; je diepste hoek speelt in slow motion. De bandenkaart laat zien hoeveel rand er aan elke kant over is. De hoek wordt uit je GPS-spoor berekend en werkt dus ook op oudere ritten.",
+ "dg_25_t": "Mijn kaart",
+ "dg_25_d": "Alle opgenomen ritten en voltooide tochten op één kaart, bovenaan in My Rides. Filter op dit jaar of deze maand.",
+ "dg_26_t": "Motorvriendelijke hotels",
+ "dg_26_d": "Kies in Discover Stay → Hotel en vink “Biker-friendly” aan om hotels met motorgarage of -parkeerplek apart te zien. Hotels waar je zelf sliep kun je voorstellen.",
+ "dg_27_t": "Verder op CarPlay",
+ "dg_27_d": "Zodra je met CarPlay verbindt, toont de telefoon een eenvoudig scherm en vergrendelt hij zichzelf, zodat je accu langer meegaat. Alleen op de iPhone.",
  "c_say_h": "Wat je kunt zeggen",
  "c_say_p": "Dit zijn voorbeelden. Je hoeft geen commando’s te leren, zeg het gewoon in je eigen woorden.",
  "c_s1": "Hoe ver is het nog? Gaat het onderweg regenen?",

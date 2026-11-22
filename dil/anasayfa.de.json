@@ -83,12 +83,12 @@
  "k8_ad": "Du auf der Karte",
  "k8_alt": "Das Motorrad, das dich auf der Karte darstellt; nach links oder rechts ziehen, um es zu drehen",
  "k8_h2": "Du bist <i>auch auf der Karte.</i>",
- "k8_p": "Während der Fahrt steht ein Marker für dich auf der Karte. Es gibt sechs: Supersport, Chopper, Maxi-Scooter, Touring, Pfeil und Helm. Du wählst ihn in den Einstellungen, und CarPlay zeigt denselben.",
+ "k8_p": "Während du fährst, steht ein Marker auf der Karte für dich. Es gibt neun: Supersport, Chopper, Maxi-Scooter, Touring, Naked, Scrambler, Bagger, Pfeil und Helm. Du wählst ihn in den Einstellungen, und CarPlay zeigt denselben.",
  "k8_not": "Ziehen zum Drehen",
  "a8_etiket": "Details zum Fahrer-Marker",
- "a8_s1_b": "6",
+ "a8_s1_b": "9",
  "a8_s1_t": "Marker zur Auswahl",
- "a8_s2_b": "4",
+ "a8_s2_b": "7",
  "a8_s2_t": "davon in 3D, mit Fahrer, und sie legen sich in die Kurve",
  "a8_s3_b": "CarPlay",
  "a8_s3_t": "dein gewählter Marker erscheint auch auf dem Autodisplay",
@@ -98,16 +98,19 @@
  "k8_m4": "Touring",
  "k8_m5": "Pfeil",
  "k8_m6": "Helm",
+ "k8_m7": "Naked",
+ "k8_m8": "Scrambler",
+ "k8_m9": "Bagger",
  "a8_1_t": "Wo du ihn wählst",
- "a8_1_d": "Einstellungen → Karte → Navigationssymbol. Es öffnet sich ein Raster mit sechs Symbolen; was du antippst, ist gewählt. Du kannst den Marker auch beim ersten Öffnen der App wählen.",
- "a8_2_t": "Vier in 3D",
- "a8_2_d": "Supersport, Chopper, Maxi-Scooter und Touring sind mit Fahrer aus 72 Blickwinkeln gezeichnet und legen sich in die Kurve. Pfeil und Helm sind schlichte Zeichnungen.",
+ "a8_1_d": "Einstellungen → Karte → Navigationssymbol. Ein Raster mit neun Symbolen öffnet sich; das, auf das du tippst, ist ausgewählt. Du kannst es auch beim ersten Start der App wählen.",
+ "a8_2_t": "Sieben sind 3D",
+ "a8_2_d": "Die sieben Motorräder sind mit Fahrer aus 72 Winkeln gezeichnet und legen sich in die Kurve. Pfeil und Helm sind flache Zeichnungen.",
  "a8_3_t": "Überall dabei",
  "a8_3_d": "Auf der Hauptkarte und in der Navigation, als deine Live-Position auf der Tourkarte, in der 3D-Wiedergabe und im Reisekarten-Video sowie in CarPlay und im CarPlay-Dashboard.",
  "a8_4_t": "In der Gruppe",
  "a8_4_d": "In einer Gruppe siehst du deine Freunde als festen, kleineren Marker; deine Wahl wird nicht an sie weitergegeben.",
- "a8_5_t": "Kostenlos",
- "a8_5_d": "Einen Marker wählen geht auch ohne Pro.",
+ "a8_5_t": "Was kostenlos ist",
+ "a8_5_d": "Maxi-Scooter und Pfeil sind für alle frei; die übrigen Marker gehören zu Pro.",
  "a8_6_t": "Touring drehen",
  "a8_6_d": "Zieh das Motorrad oben nach links oder rechts. Lässt du los, gleitet es aus und bleibt stehen; rührst du es nicht an, dreht es sich langsam von selbst.",
  "k9_ad": "Legendäre Straßen",
@@ -123,7 +126,7 @@
  "plan_u_p": "Routenplanung und Abbiegenavigation sind in der Türkei, Europa und den USA unbegrenzt. Kein Konto nötig; in der kostenlosen Stufe bleibt 1 Tour gespeichert.",
  "plan_p_p": "Pro schaltet frei:",
  "pp1": "AI CoRider",
- "pp2": "Apple CarPlay",
+ "pp2": "Apple CarPlay (iPhone)",
  "pp3": "Gruppen erstellen",
  "pp4": "Entdecken",
  "pp5": "Unbegrenzt Touren und Strecken",
@@ -140,27 +143,144 @@
  "faq_q4": "Wo funktioniert die Navigation?",
  "faq_a4": "Routenplanung und Navigation funktionieren in der Türkei, Europa und den USA. Die Passkarte enthält über 1.600 Bergpässe in 36 Ländern.",
  "faq_q5": "Funktioniert Motoseyir mit CarPlay?",
- "faq_a5": "Ja. Apple CarPlay gehört zu Pro; deine Route erscheint im Vollbild auf dem Autodisplay.",
+ "faq_a5": "Ja, auf dem iPhone. Apple CarPlay gehört zu Pro, und deine Route füllt den Bildschirm im Auto. Android Auto wird nicht unterstützt.",
  "faq_q6": "Kann ich mit Freunden zusammen fahren?",
  "faq_a6": "Ja. Ihr fahrt dieselbe Route, seht alle auf der Karte und redet über das Gruppen-Intercom. Einer Gruppe per Einladung oder Code beizutreten ist kostenlos; Gruppen erstellen gehört zu Pro.",
  "varis_h2": "Die Straße <i>wartet.</i>",
  "varis_nasil": "So geht’s",
  "ayr_etiket": "Datenschutz, Neuigkeiten und Kontakt",
  "yeni_lead": "Die letzten Updates, das neueste zuerst.",
- "y118_tarih": "Oktober 2026",
- "y117_tarih": "Oktober 2026",
- "y116_tarih": "Oktober 2026",
- "y118_1": "Ein Absturz beim Wechsel von Blog zu Feed in der Community ist behoben.",
- "y118_2": "Die Videoaufnahme deiner 3D-Wiedergabe startet zuverlässiger.",
- "y118_3": "„Bereit“ erscheint nicht mehr, bevor die Karte geladen ist, und die Kamera springt nicht mehr, wenn du das Zoomen mit zwei Fingern beendest.",
- "y117_1": "Reisekarte: Sieh dir eine lange Tour oder Fahrt als Video auf einer ruhigen Karte an. Während sich deine Route zeichnet, erscheinen nacheinander die Orte, die du passiert hast, und deine Fotos.",
- "y117_2": "Neue Kurzbefehle auf dem Start-Bildschirm: Zuhause und Arbeit, Fahrt aufzeichnen, eine Stunde Runde von hier aus, eine legendäre Straße in der Nähe.",
- "y117_3": "298 Bergpässe und sechs neue legendäre Straßen in den USA, und der Küstenmodus funktioniert jetzt auch in vielen Küstenländern Europas.",
- "y117_4": "„Motoseyir kennenlernen“ in den Einstellungen ist eine kurze Videotour durch die App, Tab für Tab.",
- "y116_1": "In 3D ansehen: Spiel eine aufgezeichnete Fahrt ab, als würdest du im Hubschrauber hinterherfliegen; deine Fotos tauchen dort auf, wo du sie gemacht hast.",
- "y116_2": "Als Video teilen: Erstelle ein Hochformat-Video mit 15, 30 oder 60 Sekunden, bereit für Instagram. Kein Pro nötig.",
- "y116_3": "Fahrtanalyse: Fahrzeit, echte Pausen, scharfe Kurven, Höhenmeter gesamt und wie viel der Strecke neu für dich war.",
- "y116_4": "Im Tourengenerator bringt „Noch eine“ drei neue Runden auf anderen Straßen, und du kannst Autobahnen, Maut und Schotterwege meiden.",
+ "yeni_onceki": "Frühere Versionen",
+ "surumler": [
+  {
+   "no": "1.3.0",
+   "tarih": "November 2026",
+   "maddeler": [
+    "Neuer News-Tab in der Community: Messen, Treffen, neue Ausrüstung und Rennsport, passend zu deinem Land.",
+    "Motorradfreundliche Hotels: Wähl in Entdecken „Hotel“ und hak „Motorradfreundlich“ an, dann siehst du Hotels mit Motorradgarage oder -parkplatz auf der Karte. Hotels, in denen du übernachtet hast, kannst du selbst vorschlagen."
+   ]
+  },
+  {
+   "no": "1.2.9",
+   "tarih": "November 2026",
+   "maddeler": [
+    "Behoben: Abbiegungen direkt nach einem Wechsel des Straßennamens werden jetzt rechtzeitig angesagt und angezeigt."
+   ]
+  },
+  {
+   "no": "1.2.8",
+   "tarih": "November 2026",
+   "maddeler": [
+    "Wähl deine Straße: Tippe auf den Abschnitt zwischen zwei Stopps, um eine andere Straße zu wählen, oder drück lange auf die Karte und tippe auf „Hier durchfahren“, damit die Route über deine Straße führt. Geht auch im Tourengenerator im Web."
+   ]
+  },
+  {
+   "no": "1.2.7",
+   "tarih": "November 2026",
+   "maddeler": [
+    "Mehr Routenoptionen: Bei einer Wegbeschreibung bekommst du jetzt bis zu drei verschiedene Strecken; vorgeschlagen wird weiter die kürzeste.",
+    "Australien und Neuseeland: 200 Bergpässe und 7 legendäre Straßen, darunter die Great Ocean Road und die Milford Road.",
+    "Am Laptop planen: Öffne in den Einstellungen den Tourengenerator auf unserer Website und plane deine Tour am großen Bildschirm."
+   ]
+  },
+  {
+   "no": "1.2.6",
+   "tarih": "November 2026",
+   "maddeler": [
+    "Schräglage: Spiel eine aufgezeichnete Fahrt ab und sieh, wie tief du in jeder Kurve lagst. Die tiefste Schräglage läuft in Zeitlupe, genau dort, wo der Reifen den Asphalt berührt; die Reifenkarte zeigt, wie viel Rand dir noch bleibt.",
+    "Meine Karte: alle aufgezeichneten Fahrten und abgeschlossenen Touren auf einer Karte, ganz oben in Meine Fahrten.",
+    "Routenoptionen: Eine Alternative ohne Autobahn wird jetzt eigens angezeigt, und dieselbe Straße wird nicht mehr doppelt vorgeschlagen."
+   ]
+  },
+  {
+   "no": "1.2.5",
+   "tarih": "Oktober 2026",
+   "maddeler": [
+    "Drei neue Motorräder auf der Karte: Bagger, Naked und Scrambler. Einstellungen › Navigationssymbol."
+   ]
+  },
+  {
+   "no": "1.2.4",
+   "tarih": "Oktober 2026",
+   "maddeler": [
+    "Behoben: Einführung beim ersten Start überarbeitet; Kurvendichte auf Tourkarten jetzt in deiner Einheit (pro Meile, wo Meilen gelten); kleine Korrekturen."
+   ]
+  },
+  {
+   "no": "1.2.3",
+   "tarih": "Oktober 2026",
+   "maddeler": [
+    "Drücken & Sprechen und ein windfestes Intercom-Mikro. Ein kurzer Ton, wenn jemand dazukommt oder rausfällt; Stimmen leiser oder lauter; der Gruppenleiter kann Durchsagen machen.",
+    "Behoben: klarerer Text zur Kontakte-Berechtigung; Routen auch in Südostasien kostenlos."
+   ]
+  },
+  {
+   "no": "1.2.2",
+   "tarih": "Oktober 2026",
+   "maddeler": [
+    "Routenwahl: Kurze Stadtrouten fallen nicht mehr weg. Gibt es einen deutlich kürzeren Weg, erscheint er als Option „Kürzer“.",
+    "In der Suchkarte tauschst du Start und Ziel mit einem Tipp oder löschst sie mit ×.",
+    "Pro ist jetzt günstiger. AI CoRider kannst du mit Pro 5 Minuten testen und danach mit Minutenpaketen weiter nutzen."
+   ]
+  },
+  {
+   "no": "1.2.1",
+   "tarih": "Oktober 2026",
+   "maddeler": [
+    "Kommentare bei Events: Schreib unter ein Treffen und antworte auf Fragen. Der Organisator kann jeden Kommentar entfernen.",
+    "Klarere Texte im Pro-Bereich und kleine Korrekturen."
+   ]
+  },
+  {
+   "no": "1.2.0",
+   "tarih": "Oktober 2026",
+   "maddeler": [
+    "CoRiders Stimme und den lauten Modus wählst du in den Einstellungen jetzt in einer Zeile.",
+    "Bei Routen mit mehreren Stopps überlappen Stoppliste, Regenhinweis und Kartentasten nicht mehr.",
+    "Auf kleinen Bildschirmen wie dem iPhone SE passen Einführung und Willkommensbildschirm jetzt komplett."
+   ]
+  },
+  {
+   "no": "1.1.9",
+   "tarih": "Oktober 2026",
+   "maddeler": [
+    "Offline-Karten (Pro): Lade die Karte einer Tour oder eines Bereichs herunter, den du auf der Karte aufziehst. Wenn das Signal länger weg ist, wechselt die Navigation von selbst auf die heruntergeladene Karte; bei kurzen Tunneln bleibt die Karte, wie sie ist.",
+    "Einheiten (km oder Meilen) und die Sprache der App wählst du jetzt selbst in den Einstellungen.",
+    "Abbiegungen auf CarPlay sind besser zu lesen: Aus der Ferne siehst du ein Schild mit der Entfernung, kurz vor dem Abbiegen einen Pfeil, der auf der Straße liegt.",
+    "Stopps sind übersichtlicher: Der Chip zwischen zwei Stopps zeigt Entfernung und Zeit, und mit „+ Stopp hinzufügen“ fügst du einen dazwischen oder am Ende ein.",
+    "In „Entdecken“ suchst du in der Nähe der Route oder auf einer einzelnen Etappe, und die Ortskarten haben mehr Fotos."
+   ]
+  },
+  {
+   "no": "1.1.8",
+   "tarih": "Oktober 2026",
+   "maddeler": [
+    "Ein Absturz beim Wechsel von Blog zu Feed in der Community ist behoben.",
+    "Die Videoaufnahme deiner 3D-Wiedergabe startet zuverlässiger.",
+    "„Bereit“ erscheint nicht mehr, bevor die Karte geladen ist, und die Kamera springt nicht mehr, wenn du das Zoomen mit zwei Fingern beendest."
+   ]
+  },
+  {
+   "no": "1.1.7",
+   "tarih": "Oktober 2026",
+   "maddeler": [
+    "Reisekarte: Sieh dir eine lange Tour oder Fahrt als Video auf einer ruhigen Karte an. Während sich deine Route zeichnet, erscheinen nacheinander die Orte, die du passiert hast, und deine Fotos.",
+    "Neue Kurzbefehle auf dem Start-Bildschirm: Zuhause und Arbeit, Fahrt aufzeichnen, eine Stunde Runde von hier aus, eine legendäre Straße in der Nähe.",
+    "298 Bergpässe und sechs neue legendäre Straßen in den USA, und der Küstenmodus funktioniert jetzt auch in vielen Küstenländern Europas.",
+    "„Motoseyir kennenlernen“ in den Einstellungen ist eine kurze Videotour durch die App, Tab für Tab."
+   ]
+  },
+  {
+   "no": "1.1.6",
+   "tarih": "Oktober 2026",
+   "maddeler": [
+    "In 3D ansehen: Spiel eine aufgezeichnete Fahrt ab, als würdest du im Hubschrauber hinterherfliegen; deine Fotos tauchen dort auf, wo du sie gemacht hast.",
+    "Als Video teilen: Erstelle ein Hochformat-Video mit 15, 30 oder 60 Sekunden, bereit für Instagram. Kein Pro nötig.",
+    "Fahrtanalyse: Fahrzeit, echte Pausen, scharfe Kurven, Höhenmeter gesamt und wie viel der Strecke neu für dich war.",
+    "Im Tourengenerator bringt „Noch eine“ drei neue Runden auf anderen Straßen, und du kannst Autobahnen, Maut und Schotterwege meiden."
+   ]
+  }
+ ],
  "insta_url": "https://www.instagram.com/motoseyir.app.en/",
  "insta_ad": "@motoseyir.app.en",
  "v_etiket": "Passdaten",
@@ -219,8 +339,8 @@
  "a1_s1_t": "kostenlose Navigation in der Türkei, Europa und den USA",
  "a1_s2_b": "26",
  "a1_s2_t": "Stopps in einer einzigen Tour",
- "a1_s3_b": "2",
- "a1_s3_t": "Alternativrouten, die kürzeste ist markiert",
+ "a1_s3_b": "3",
+ "a1_s3_t": "Hauptrouten zur Auswahl, die kürzeste markiert",
  "a1_s4_b": "726",
  "a1_s4_t": "Blitzer in der Türkei",
  "a1_1_t": "Spurassistent",
@@ -234,7 +354,7 @@
  "a1_5_t": "Keine Mautstraßen",
  "a1_5_d": "Mit einem Tipp nimmst du Mautstraßen aus der Route.",
  "a1_6_t": "Auf dem Sperrbildschirm",
- "a1_6_d": "Deine nächste Abbiegung erscheint auf dem Sperrbildschirm und in der Dynamic Island, du musst das Handy also nicht entsperren.",
+ "a1_6_d": "Auf dem iPhone erscheint die nächste Abbiegung auf dem Sperrbildschirm und in der Dynamic Island. Auf Android stehen Abbiegung, Restzeit und Ankunft in einer Mitteilung.",
  "a2_etiket": "Details zum Tourengenerator",
  "a2_s1_b": "30–300 km",
  "a2_s1_t": "Tourlänge, oder wähl sie in Stunden",
@@ -272,7 +392,7 @@
  "a4_5_t": "Steuert die Fahrt",
  "a4_5_d": "Startet oder beendet die Navigation, schaltet die Fahrtaufzeichnung ein und bringt dich nach Hause.",
  "a4_6_t": "Sprechzeit",
- "a4_6_d": "Pro erneuert alle 30 Tage 10 Minuten Sprechzeit. Brauchst du mehr, holst du dir ein Paket mit 30, 60 oder 180 Minuten, das nie verfällt.",
+ "a4_6_d": "Mit Pro probierst du AI CoRider 5 Minuten lang aus. Danach kaufst du ein Paket mit 30, 60 oder 180 Minuten, das nicht verfällt.",
  "a5_etiket": "Details zu Gruppe, Intercom und CarPlay",
  "a5_s1_b": "12",
  "a5_s1_t": "Fahrer in einer Gruppe",
@@ -284,11 +404,11 @@
  "a5_1_d": "Gib den 8-stelligen Code ein oder tipp auf den Link. Eine Gruppe zu erstellen gehört zu Pro.",
  "a5_2_t": "Standort nur während der Fahrt",
  "a5_2_d": "Dein Standort wird nur geteilt, solange die Navigation oder eine Fahrtaufzeichnung läuft; mit ihrem Ende hört das Teilen auf.",
- "a5_3_t": "Offenes Mikro",
- "a5_3_d": "Kein Push-to-Talk im Intercom: einfach reden. Stumm schalten kannst du, wen du willst. Nichts wird aufgezeichnet.",
+ "a5_3_t": "Drei Mikrofon-Modi",
+ "a5_3_d": "Immer an, Beim Sprechen oder Drücken & sprechen. Du machst Freunde lauter oder leiser, und der Leiter kann eine Durchsage an die Gruppe machen. Nichts wird aufgezeichnet.",
  "a5_4_t": "CoRider in der Gruppe",
  "a5_4_d": "Lad CoRider in den Raum der Gruppe ein, und alle hören ihn.",
- "a5_5_t": "Navigation in CarPlay",
+ "a5_5_t": "Navigation in CarPlay (iPhone)",
  "a5_5_d": "Karte und Abbiegungen auf dem Autodisplay. Du überspringst einen Stopp, zeichnest die Fahrt auf, öffnest das Intercom oder suchst in der Liste „Ziele“ eine Adresse.",
  "a5_6_t": "Dashboard",
  "a5_6_d": "Die Karte steht auch im CarPlay-Dashboard neben deinen anderen Apps und zeigt deine Position und deine Route.",
@@ -303,12 +423,12 @@
  "a6_s1_t": "Buchten und Strände in der Türkei",
  "a6_s2_b": "20.106",
  "a6_s2_t": "Camping- und Naturorte in der Türkei",
- "a6_s3_b": "6",
- "a6_s3_t": "Kategorien",
+ "a6_s3_b": "5",
+ "a6_s3_t": "Hauptkategorien, jede mit eigenen Optionen",
  "a6_1_t": "Kategorien",
- "a6_1_d": "Alle, Bucht & Strand, Camping & Natur, Essen & Trinken, Tanken und Pässe.",
+ "a6_1_d": "Unterwegs, Essen, Übernachten, Entdecken und Highlights. Darin findest du Tanken, Café, Campingplätze, Hotel, Strände & Buchten, Pässe und mehr.",
  "a6_2_t": "Wo du es findest",
- "a6_2_d": "Öffne in „Meine Touren“ eine Tour und wähl bei den Tabs Stopps | Entdecken | Tagebuch „Entdecken“. Die Tour braucht mindestens zwei Stopps; die Suche gehört zu Pro.",
+ "a6_2_d": "Öffne eine Tour in Meine Touren und wähle Entdecken aus den Tabs Stopps | Entdecken | Tagebuch. Du suchst nahe der Route oder auf einer einzelnen Etappe. Die Tour braucht mindestens zwei Stopps; die Suche gehört zu Pro.",
  "a6_3_t": "In dieser Gegend entdecken",
  "a6_3_d": "Schieb die Karte, wohin du willst, und such rund um diese Stelle.",
  "a6_4_t": "Camping & Natur",
@@ -375,8 +495,8 @@
  "dg_6_d": "Die Routenkarte zeigt die geschätzte Spritmenge (Liter, in den USA Gallonen). Tipp auf den Verbrauch, um deinen eigenen Wert einzugeben.",
  "dg_7_t": "Sonnenuntergang",
  "dg_7_d": "Reicht die Fahrt über den Sonnenuntergang hinaus, ergänzt die Routenkarte eine Zeile wie „Ankunft 19:40 · Sonnenuntergang 19:12“.",
- "dg_8_t": "Offline-Routenkopie",
- "dg_8_d": "Deine Touren behalten eine Kopie ihrer Route auf dem Handy. Bricht die Verbindung ab, öffnet sich die Tour aus dieser Kopie, und wenn du von der Route abkommst, zeigt dir ein Pfeil „Zurück zur Route“ den Weg. Die Karte selbst braucht weiter Internet.",
+ "dg_8_t": "Offline-Karten",
+ "dg_8_d": "Lade die Karte einer Tour oder eines Bereichs herunter, den du auf der Karte aufziehst. Ist das Signal länger weg, wechselt die Navigation von selbst auf die heruntergeladene Karte; mit der Wolke wechselst du auch von Hand. Karten herunterladen gehört zu Pro.",
  "dg_9_t": "Wenn du die Route verlässt",
  "dg_9_d": "Unter Einstellungen → Fahren → „Wenn du die Route verlässt“ wählst du „Neue Route“ oder „Zurück zur Route“; einen verpassten Stopp kann die App auch von selbst überspringen.",
  "dg_10_t": "Zuhause und Arbeit",
@@ -393,16 +513,28 @@
  "dg_15_d": "Importierst du eine GPX-Datei, landet der Track im Tab „Trails“, mit Distanz, Gesamtanstieg, steilster Steigung und Höhenprofil. Fährst du mit dem Finger über das Profil, wandert der Punkt auf der Karte mit.",
  "dg_16_t": "Tour teilen",
  "dg_16_d": "Du schickst eine Tour als Link, Video oder GPX-Datei. Der Link gilt 30 Tage; die andere Person tippt darauf oder geht zu Meine Touren → Mit Code → Tour übernehmen. Kostenlos.",
- "dg_17_t": "Community und Blog",
- "dg_17_d": "Die Community hat die Tabs Blog, Feed und Meine Fahrgruppe. Im Feed siehst du Touren und Fahrten anderer Fahrer, kannst liken, kommentieren und antworten, und der Feed lässt sich nach Land filtern. Im Blog schickst du mit „Beitrag schreiben“ einen eigenen Beitrag. Ein Benutzername genügt.",
+ "dg_17_t": "Community und News",
+ "dg_17_d": "Der Tab News bringt Messen, Treffen, neue Ausrüstung und Rennsport, passend zu deinem Land. Im Feed siehst du Touren und Fahrten anderer, likest, kommentierst und antwortest und filterst nach Land. Ein Benutzername reicht.",
  "dg_18_t": "Events",
- "dg_18_d": "Erstelle in der Community ein Treffen oder tipp auf „Ich bin dabei“. Ein Event hat einen Treffpunkt, eine Platzzahl und, wenn du willst, eine Route; dein Standort wird nicht geteilt.",
+ "dg_18_d": "Erstelle in der Community ein Treffen oder tipp auf „Ich bin dabei“. Ein Event hat einen Treffpunkt, eine Platzzahl und, wenn du willst, eine Route; dein Standort wird nicht geteilt. Unter einem Treffen schreibst du Kommentare und beantwortest Fragen; der Veranstalter kann unerwünschte Kommentare entfernen.",
  "dg_19_t": "Foto zum Pass hinzufügen",
  "dg_19_d": "Auf der Passseite lädst du mit „Foto hinzufügen“ ein eigenes Foto hoch (höchstens drei pro Pass); darunter steht dein Benutzername.",
  "dg_20_t": "Querformat",
  "dg_20_d": "Dreh das Handy quer, dann sammeln sich die Karten links, und die Karte nimmt den Rest; Meine Touren wechselt auf zwei Spalten.",
  "dg_21_t": "Einheiten und Sprache",
- "dg_21_d": "Die Einheiten folgen deinem Standort: in den USA Meilen, mph und Fuß, in Großbritannien Meilen und Yards, sonst Kilometer. Die App spricht Türkisch, Englisch, Deutsch, Französisch und Italienisch und folgt der Sprache deines Handys.",
+ "dg_21_d": "Einheiten (km oder Meilen) und Sprache wählst du unter Einstellungen → Darstellung. Auf Automatisch richten sich die Einheiten nach deinem Standort und die Sprache nach dem Handy. Die App spricht Türkisch, Englisch, Deutsch, Französisch und Italienisch.",
+ "dg_22_t": "Zwischen den Stopps",
+ "dg_22_d": "Der Chip zwischen zwei Stopps zeigt Entfernung und Zeit. Tipp darauf, um einen Stopp dazwischen einzufügen, auf dieser Etappe zu suchen oder eine andere Straße zu wählen.",
+ "dg_23_t": "Hier durchfahren",
+ "dg_23_d": "Drück lange auf die Karte und tippe auf „Hier durchfahren“, dann führt die Route über die Straße, die du willst. Der Tourengenerator auf dieser Website kann das auch.",
+ "dg_24_t": "Schräglage",
+ "dg_24_d": "Spiel eine aufgezeichnete Fahrt ab und sieh, wie tief du in jeder Kurve lagst; die tiefste Schräglage läuft in Zeitlupe. Die Reifenkarte zeigt, wie viel Rand auf jeder Seite bleibt. Der Winkel wird aus deinem GPS-Track berechnet und funktioniert auch bei älteren Fahrten.",
+ "dg_25_t": "Meine Karte",
+ "dg_25_d": "Alle aufgezeichneten Fahrten und abgeschlossenen Touren auf einer Karte, ganz oben in Meine Fahrten. Filtern kannst du nach diesem Jahr oder diesem Monat.",
+ "dg_26_t": "Motorradfreundliche Hotels",
+ "dg_26_d": "Wähl in Entdecken Übernachten → Hotel und hak „Motorradfreundlich“ an, dann siehst du Hotels mit Motorradgarage oder -parkplatz gesondert. Hotels, in denen du übernachtet hast, kannst du selbst vorschlagen.",
+ "dg_27_t": "Weiter auf CarPlay",
+ "dg_27_d": "Sobald du mit CarPlay verbunden bist, zeigt das Handy einen schlichten Bildschirm und sperrt sich von selbst. So hält der Akku länger. Nur auf dem iPhone.",
  "c_say_h": "Was du sagen kannst",
  "c_say_p": "Das sind Beispiele. Du musst keine Befehle auswendig lernen, sag es einfach in deinen Worten.",
  "c_s1": "Wie weit ist es noch? Regnet es unterwegs?",

@@ -83,12 +83,12 @@
  "k8_ad": "Tu pe hartă",
  "k8_alt": "Motocicleta care te reprezintă pe hartă; trage la stânga sau la dreapta ca s-o rotești",
  "k8_h2": "Ești și tu <i>pe hartă.</i>",
- "k8_p": "Cât mergi, un marcaj te reprezintă pe hartă. Sunt șase: Supersport, Chopper, Maxi scooter, Touring, Arrow și Helmet. Îl alegi din „Settings”, iar pe CarPlay apare același.",
+ "k8_p": "Cât mergi, un marcaj te reprezintă pe hartă. Sunt nouă: Supersport, Chopper, Maxi scooter, Touring, Naked, Scrambler, Bagger, Arrow și Helmet. Îl alegi din „Settings”, iar pe CarPlay apare același.",
  "k8_not": "Trage ca să rotești",
  "a8_etiket": "Detalii despre marcaj",
- "a8_s1_b": "6",
+ "a8_s1_b": "9",
  "a8_s1_t": "marcaje din care alegi",
- "a8_s2_b": "4",
+ "a8_s2_b": "7",
  "a8_s2_t": "dintre ele sunt 3D, cu motociclist, și se înclină în curbe",
  "a8_s3_b": "CarPlay",
  "a8_s3_t": "marcajul ales apare și pe ecranul mașinii",
@@ -98,16 +98,19 @@
  "k8_m4": "Touring",
  "k8_m5": "Arrow",
  "k8_m6": "Helmet",
+ "k8_m7": "Naked",
+ "k8_m8": "Scrambler",
+ "k8_m9": "Bagger",
  "a8_1_t": "Unde îl alegi",
- "a8_1_d": "Settings → Map → Navigation marker. Se deschide o grilă cu șase, iar cel pe care îl atingi rămâne selectat. Îl poți alege și la prima deschidere a aplicației.",
- "a8_2_t": "Patru sunt 3D",
- "a8_2_d": "Supersport, Chopper, Maxi scooter și Touring sunt desenate din 72 de unghiuri, cu motociclist pe ele, și se înclină în curbe. Arrow și Helmet sunt desene simple.",
+ "a8_1_d": "„Settings → Map → Navigation marker”. Se deschide o grilă cu nouă marcaje, iar cel pe care îl atingi e selectat. Îl poți alege și prima dată când deschizi aplicația.",
+ "a8_2_t": "Șapte sunt 3D",
+ "a8_2_d": "Cele șapte motociclete sunt desenate din 72 de unghiuri, cu motociclist, și se înclină în viraje. Arrow și Helmet sunt desene plate.",
  "a8_3_t": "Cu tine peste tot",
  "a8_3_d": "Pe harta principală și în navigație, ca poziție în direct pe harta turului, în reluarea 3D și în videoclipul turului, precum și pe CarPlay și în Tabloul de bord CarPlay.",
  "a8_4_t": "Într-un grup",
  "a8_4_d": "Într-un grup îți vezi prietenii cu un marcaj fix, mai mic; alegerea ta nu li se transmite.",
- "a8_5_t": "Gratuit",
- "a8_5_d": "Pentru a alege un marcaj nu ai nevoie de Pro.",
+ "a8_5_t": "Ce e gratuit",
+ "a8_5_d": "Maxi scooter și Arrow sunt gratuite pentru toți; celelalte marcaje țin de Pro.",
  "a8_6_t": "Rotește modelul Touring",
  "a8_6_d": "Trage motocicleta de mai sus la stânga sau la dreapta. Când îi dai drumul, se oprește lin, iar dacă n-o atingi, se rotește singură, încet.",
  "k9_ad": "Drumuri legendare",
@@ -123,7 +126,7 @@
  "plan_u_p": "Planificarea traseului și navigația pas cu pas sunt nelimitate în Turcia, Europa și SUA. Nu ai nevoie de cont; nivelul gratuit păstrează 1 tur salvat.",
  "plan_p_p": "Pro deblochează:",
  "pp1": "AI CoRider",
- "pp2": "Apple CarPlay",
+ "pp2": "Apple CarPlay (iPhone)",
  "pp3": "Crearea de grupuri",
  "pp4": "Discover",
  "pp5": "Tururi și urme nelimitate",
@@ -140,27 +143,144 @@
  "faq_q4": "Unde funcționează?",
  "faq_a4": "Planificarea traseului și navigația funcționează în Turcia, Europa și SUA. Harta pasurilor cuprinde peste 1.600 de pasuri montane în 36 de țări.",
  "faq_q5": "Funcționează cu CarPlay?",
- "faq_a5": "Da. Apple CarPlay face parte din Pro; traseul tău apare pe tot ecranul mașinii.",
+ "faq_a5": "Da, pe iPhone. Apple CarPlay ține de Pro, iar traseul tău umple ecranul mașinii. Android Auto nu e suportat.",
  "faq_q6": "Pot merge cu prietenii?",
  "faq_a6": "Da. Mergeți pe același traseu, vă vedeți pe hartă și vorbiți prin interfonul de grup. Intrarea într-un grup cu invitație sau cod este gratuită; crearea unui grup este în Pro.",
  "varis_h2": "Drumul e <i>gata.</i>",
  "varis_nasil": "Cum funcționează",
  "ayr_etiket": "Confidențialitate, note de versiune și contact",
  "yeni_lead": "Ultimele actualizări, cea mai nouă prima.",
- "y118_tarih": "octombrie 2026",
- "y117_tarih": "octombrie 2026",
- "y116_tarih": "octombrie 2026",
- "y118_1": "Am rezolvat o închidere bruscă a aplicației la trecerea de la Blog la Feed în Community.",
- "y118_2": "Înregistrarea video a reluării 3D a cursei pornește mai sigur.",
- "y118_3": "„Ready” nu mai apare înainte să se încarce harta, iar camera nu mai sare când termini un zoom cu două degete.",
- "y117_1": "Harta turului: vezi un tur lung sau o cursă ca videoclip, pe o hartă curată. Pe măsură ce traseul se desenează singur, apar pe rând localitățile prin care ai trecut și pozele tale.",
- "y117_2": "Scurtături noi pe ecranul Start: acasă și serviciu, înregistrarea unei curse, o buclă de o oră de aici, un drum legendar din apropiere.",
- "y117_3": "298 de pasuri montane și șase drumuri legendare noi în SUA, iar modul Coastă funcționează acum în multe țări de coastă din Europa.",
- "y117_4": "„Get to know Motoseyir” din „Settings” este un tur video scurt al aplicației, filă cu filă.",
- "y116_1": "Vezi în 3D: reia o cursă înregistrată ca și cum ai urmări-o dintr-un elicopter; pozele tale apar acolo unde le-ai făcut.",
- "y116_2": "Distribuie ca videoclip: fă un videoclip vertical de 15, 30 sau 60 de secunde, gata pentru Instagram. Nu ai nevoie de Pro.",
- "y116_3": "Analiza cursei: timp în mișcare, pauze reale, curbe strânse, urcare totală și cât din drum a fost nou pentru tine.",
- "y116_4": "În „Generate a tour”, „Another one” aduce trei bucle noi pe alte drumuri și poți evita autostrăzile, drumurile cu taxă și drumurile de pământ.",
+ "yeni_onceki": "Versiuni anterioare",
+ "surumler": [
+  {
+   "no": "1.3.0",
+   "tarih": "noiembrie 2026",
+   "maddeler": [
+    "Filă nouă Știri în Comunitate: târguri, întâlniri, echipament nou și curse, alese pentru țara ta.",
+    "Hoteluri prietenoase cu motocicliștii: în Explorează alege Hotel și bifează „Prietenos cu motocicliștii” ca să vezi pe hartă hotelurile cu garaj sau parcare pentru motociclete. Poți propune și tu locurile în care ai stat."
+   ]
+  },
+  {
+   "no": "1.2.9",
+   "tarih": "noiembrie 2026",
+   "maddeler": [
+    "Remedieri: virajele care urmează imediat după schimbarea numelui drumului sunt acum anunțate și afișate la timp."
+   ]
+  },
+  {
+   "no": "1.2.8",
+   "tarih": "noiembrie 2026",
+   "maddeler": [
+    "Alege-ți drumul: atinge porțiunea dintre două opriri ca să iei alt drum sau ține apăsat pe hartă și atinge „Treci pe aici” ca traseul să meargă pe unde vrei. Merge și în generatorul de ture de pe web."
+   ]
+  },
+  {
+   "no": "1.2.7",
+   "tarih": "noiembrie 2026",
+   "maddeler": [
+    "Mai multe opțiuni de traseu: când ceri indicații, primești acum până la trei drumuri diferite; cel propus rămâne cel mai scurt.",
+    "Australia și Noua Zeelandă: 200 de pasuri montane și 7 drumuri legendare, printre care Great Ocean Road și Milford Road.",
+    "Planifică pe laptop: din Setări deschide generatorul de ture de pe site-ul nostru și planifică pe ecran mare."
+   ]
+  },
+  {
+   "no": "1.2.6",
+   "tarih": "noiembrie 2026",
+   "maddeler": [
+    "Unghi de înclinare: redă o tură înregistrată și vezi cât de mult te-ai înclinat în fiecare curbă. Înclinarea maximă rulează cu încetinitorul, exact unde anvelopa atinge asfaltul, iar harta anvelopei arată cât spațiu ți-a mai rămas pe margini.",
+    "Harta mea: toate turele înregistrate și traseele terminate pe o singură hartă, în partea de sus a Turelor mele.",
+    "Opțiuni de rută: o variantă fără autostradă apare separat, iar același drum nu mai e propus de două ori."
+   ]
+  },
+  {
+   "no": "1.2.5",
+   "tarih": "octombrie 2026",
+   "maddeler": [
+    "Trei motociclete noi pe hartă: Bagger, Naked și Scrambler. Settings › Navigation marker."
+   ]
+  },
+  {
+   "no": "1.2.4",
+   "tarih": "octombrie 2026",
+   "maddeler": [
+    "Remedieri: prezentarea de la prima pornire a fost reînnoită; densitatea virajelor din cardurile de tur în unitatea ta (pe milă unde se folosesc mile); mici remedieri."
+   ]
+  },
+  {
+   "no": "1.2.3",
+   "tarih": "octombrie 2026",
+   "maddeler": [
+    "Apasă și vorbește și un microfon de intercom care se deschide doar când vorbești – fără zgomotul vântului. Un sunet scurt când cineva intră sau se deconectează; poți da mai încet sau mai tare un prieten, iar liderul grupului poate face anunțuri.",
+    "Corecturi: text mai clar pentru permisiunea la contacte; traseele sunt gratuite și în Asia de Sud-Est."
+   ]
+  },
+  {
+   "no": "1.2.2",
+   "tarih": "octombrie 2026",
+   "maddeler": [
+    "Alegerea traseului: drumurile scurte prin oraș nu mai sunt eliminate. Când există un drum vizibil mai scurt, apare ca opțiunea „Mai scurt”.",
+    "În cardul de căutare schimbi plecarea și destinația cu o atingere sau le ștergi cu ×.",
+    "Pro costă acum mai puțin. Încearcă AI CoRider 5 minute cu Pro, apoi continuă cu pachete de minute."
+   ]
+  },
+  {
+   "no": "1.2.1",
+   "tarih": "octombrie 2026",
+   "maddeler": [
+    "Comentarii la evenimente: scrie sub o întâlnire și răspunde la întrebări. Organizatorul poate șterge orice comentariu.",
+    "Texte mai clare pe ecranul Pro și mici remedieri."
+   ]
+  },
+  {
+   "no": "1.2.0",
+   "tarih": "octombrie 2026",
+   "maddeler": [
+    "În Setări alegi vocea lui CoRider și modul tare dintr-un singur rând.",
+    "Pe rutele cu mai multe opriri, lista, alerta de ploaie și butoanele hărții nu se mai suprapun.",
+    "Pe ecranele mici, precum iPhone SE, prezentarea și ecranul de bun venit încap acum complet."
+   ]
+  },
+  {
+   "no": "1.1.9",
+   "tarih": "octombrie 2026",
+   "maddeler": [
+    "Hărți offline (Pro): descarcă harta unui tur sau a unei zone pe care o încadrezi pe hartă. Când semnalul dispare pentru mai mult timp, navigația trece singură pe harta descărcată; la tunelurile scurte harta nu se schimbă.",
+    "Unitățile de măsură (km sau mile) și limba aplicației le alegi acum singur în Settings.",
+    "Virajele din CarPlay se citesc mai ușor: o insignă cu distanța cât ești departe, apoi o săgeată așezată pe drum când te apropii.",
+    "Opririle se văd mai clar: eticheta dintre două opriri arată distanța și timpul, iar cu \"+ Add stop\" adaugi o oprire între ele sau la final.",
+    "În \"Discover\" cauți aproape de rută sau pe un singur segment, iar fișele locurilor au mai multe fotografii."
+   ]
+  },
+  {
+   "no": "1.1.8",
+   "tarih": "octombrie 2026",
+   "maddeler": [
+    "Am rezolvat o închidere bruscă a aplicației la trecerea de la Blog la Feed în Community.",
+    "Înregistrarea video a reluării 3D a cursei pornește mai sigur.",
+    "„Ready” nu mai apare înainte să se încarce harta, iar camera nu mai sare când termini un zoom cu două degete."
+   ]
+  },
+  {
+   "no": "1.1.7",
+   "tarih": "octombrie 2026",
+   "maddeler": [
+    "Harta turului: vezi un tur lung sau o cursă ca videoclip, pe o hartă curată. Pe măsură ce traseul se desenează singur, apar pe rând localitățile prin care ai trecut și pozele tale.",
+    "Scurtături noi pe ecranul Start: acasă și serviciu, înregistrarea unei curse, o buclă de o oră de aici, un drum legendar din apropiere.",
+    "298 de pasuri montane și șase drumuri legendare noi în SUA, iar modul Coastă funcționează acum în multe țări de coastă din Europa.",
+    "„Get to know Motoseyir” din „Settings” este un tur video scurt al aplicației, filă cu filă."
+   ]
+  },
+  {
+   "no": "1.1.6",
+   "tarih": "octombrie 2026",
+   "maddeler": [
+    "Vezi în 3D: reia o cursă înregistrată ca și cum ai urmări-o dintr-un elicopter; pozele tale apar acolo unde le-ai făcut.",
+    "Distribuie ca videoclip: fă un videoclip vertical de 15, 30 sau 60 de secunde, gata pentru Instagram. Nu ai nevoie de Pro.",
+    "Analiza cursei: timp în mișcare, pauze reale, curbe strânse, urcare totală și cât din drum a fost nou pentru tine.",
+    "În „Generate a tour”, „Another one” aduce trei bucle noi pe alte drumuri și poți evita autostrăzile, drumurile cu taxă și drumurile de pământ."
+   ]
+  }
+ ],
  "insta_url": "https://www.instagram.com/motoseyir.app.en/",
  "insta_ad": "@motoseyir.app.en",
  "v_etiket": "Date despre pasuri",
@@ -219,8 +339,8 @@
  "a1_s1_t": "navigație gratuită în Turcia, Europa și SUA",
  "a1_s2_b": "26",
  "a1_s2_t": "opriri într-un singur tur",
- "a1_s3_b": "2",
- "a1_s3_t": "trasee alternative, cu cel mai scurt marcat",
+ "a1_s3_b": "3",
+ "a1_s3_t": "trasee principale din care alegi, cel mai scurt marcat",
  "a1_s4_b": "726",
  "a1_s4_t": "radare de viteză în Turcia",
  "a1_1_t": "Ghidare pe benzi",
@@ -234,7 +354,7 @@
  "a1_5_t": "„No toll roads”",
  "a1_5_d": "O atingere scoate drumurile cu taxă din traseu.",
  "a1_6_t": "Pe ecranul de blocare",
- "a1_6_d": "Următoarea curbă apare pe ecranul de blocare și în Dynamic Island, așa că nu trebuie să deblochezi telefonul.",
+ "a1_6_d": "Pe iPhone, următorul viraj apare pe ecranul blocat și în Dynamic Island. Pe Android, virajul, timpul rămas și ora sosirii stau într-o notificare.",
  "a2_etiket": "Detalii despre generatorul de tururi",
  "a2_s1_b": "30–300 km",
  "a2_s1_t": "lungimea turului, sau o alegi în ore",
@@ -272,7 +392,7 @@
  "a4_5_t": "Conduce cursa",
  "a4_5_d": "Pornește sau oprește navigația, activează înregistrarea cursei și te duce acasă.",
  "a4_6_t": "Timp de vorbit",
- "a4_6_d": "Pro reînnoiește la fiecare 30 de zile 10 minute de vorbit. Dacă ai nevoie de mai mult, adaugă un pachet de 30, 60 sau 180 de minute care nu expiră niciodată.",
+ "a4_6_d": "Cu Pro încerci AI CoRider 5 minute. După aceea adaugi un pachet de 30, 60 sau 180 de minute care nu expiră niciodată.",
  "a5_etiket": "Detalii despre grup, interfon și CarPlay",
  "a5_s1_b": "12",
  "a5_s1_t": "motocicliști într-un grup",
@@ -284,11 +404,11 @@
  "a5_1_d": "Scrie codul de 8 caractere sau atinge linkul. Crearea unui grup ține de Pro.",
  "a5_2_t": "Locația doar cât mergi",
  "a5_2_d": "Locația ta se partajează doar cât rulează navigația sau o înregistrare a cursei, iar partajarea se oprește când termini.",
- "a5_3_t": "Microfon deschis",
- "a5_3_d": "Fără push-to-talk pe interfon: pur și simplu vorbești. Dezactivezi sunetul oricui. Nimic nu se înregistrează.",
+ "a5_3_t": "Trei moduri de microfon",
+ "a5_3_d": "„Always on”, „When I talk” sau „Push to talk”. Dai mai tare sau mai încet vocea unui prieten, iar liderul poate face un anunț pentru grup. Nimic nu se înregistrează.",
  "a5_4_t": "CoRider în grup",
  "a5_4_d": "Invită CoRider în camera grupului și îl aude toată lumea.",
- "a5_5_t": "Navigație pe CarPlay",
+ "a5_5_t": "Navigație pe CarPlay (iPhone)",
  "a5_5_d": "Harta și virajele pe ecranul mașinii. De acolo poți sări peste o oprire, înregistra cursa, deschide interfonul sau căuta o adresă din lista „Destinations”.",
  "a5_6_t": "Tablou de bord",
  "a5_6_d": "Harta apare și în Tabloul de bord CarPlay, lângă celelalte aplicații ale tale, cu poziția și traseul tău.",
@@ -303,12 +423,12 @@
  "a6_s1_t": "golfuri și plaje în Turcia",
  "a6_s2_b": "20.106",
  "a6_s2_t": "locuri de camping și natură în Turcia",
- "a6_s3_b": "6",
- "a6_s3_t": "categorii",
+ "a6_s3_b": "5",
+ "a6_s3_t": "categorii principale, fiecare cu opțiunile ei",
  "a6_1_t": "Categorii",
- "a6_1_d": "„All”, „Bay & beach”, „Camping & nature”, „Food & drink”, „Fuel” și „Passes”.",
+ "a6_1_d": "„On the road”, „Food”, „Stay”, „See & do” și „Highlights”. Înăuntru găsești benzinării, cafenele, campinguri, hoteluri, plaje și golfuri, pasuri montane și altele.",
  "a6_2_t": "Unde o găsești",
- "a6_2_d": "Deschide un tur în My Tours și alege Discover din filele Stops | Discover | Journal. Turul trebuie să aibă cel puțin două opriri, iar căutarea ține de Pro.",
+ "a6_2_d": "Deschide un tur în My Tours și alege Discover din filele Stops | Discover | Journal. Cauți aproape de traseu sau pe un singur segment. Turul trebuie să aibă cel puțin două opriri, iar căutarea ține de Pro.",
  "a6_3_t": "„Explore this area”",
  "a6_3_d": "Mută harta oriunde și caută în jurul acelui punct.",
  "a6_4_t": "„Camping & nature”",
@@ -375,8 +495,8 @@
  "dg_6_d": "Fișa traseului arată combustibilul estimat (litri, galoane în SUA). Atinge consumul ca să-l introduci pe al tău.",
  "dg_7_t": "Notă despre apus",
  "dg_7_d": "Dacă drumul trece de apus, fișa traseului adaugă un rând de forma „Arrive 19:40 · sunset 19:12”.",
- "dg_8_t": "Copie offline a traseului",
- "dg_8_d": "Tururile tale păstrează pe telefon o copie a traseului. Dacă se pierde conexiunea, turul se deschide din acea copie, iar dacă ieși de pe traseu, o săgeată „Back to route” îți arată drumul. Harta în sine are nevoie în continuare de internet.",
+ "dg_8_t": "Hărți offline",
+ "dg_8_d": "Descarcă harta unui tur sau a unei zone pe care o încadrezi pe hartă. Când semnalul dispare pentru mai mult timp, navigația trece singură pe harta descărcată; atingând norul treci și manual. Descărcarea hărților ține de Pro.",
  "dg_9_t": "Când ieși de pe traseu",
  "dg_9_d": "La Settings → Riding → When you leave the route alegi între „New route” și „Back to route” și poți lăsa aplicația să sară singură peste o oprire ratată.",
  "dg_10_t": "Scurtături pentru acasă și serviciu",
@@ -393,16 +513,28 @@
  "dg_15_d": "Importă un fișier GPX și urma ajunge în fila Trails, cu distanța, urcarea totală, cea mai abruptă pantă și profilul de altitudine. Plimbă degetul pe profil și punctul de pe hartă îl urmează.",
  "dg_16_t": "Distribuie un tur",
  "dg_16_d": "Trimite un tur ca link, videoclip sau fișier GPX. Linkul e valabil 30 de zile; cealaltă persoană îl atinge sau merge la My Tours → With a code → Add tour. Este gratuit.",
- "dg_17_t": "Community și Blog",
- "dg_17_d": "Community are filele Blog, Feed și My Ride Group. În Feed vezi tururile și cursele altor motocicliști, poți da like, comenta și răspunde și poți filtra după țară. În Blog îți trimiți propria postare cu „Write a post”. Îți trebuie doar un nume de utilizator.",
+ "dg_17_t": "Comunitate și știri",
+ "dg_17_d": "Fila „News” aduce târguri, întâlniri, echipament nou și curse, alese după țara în care ești. În „Feed” vezi tururile și cursele altor motocicliști, poți da like, comenta, răspunde și filtra după țară. Îți trebuie doar un nume de utilizator.",
  "dg_18_t": "Evenimente",
- "dg_18_d": "Creează o întâlnire în Community sau atinge „I’m going”. Un eveniment are un punct de întâlnire, o capacitate și, dacă vrei, un traseu; locația ta nu se partajează.",
+ "dg_18_d": "Creează o întâlnire în Community sau atinge „I’m going”. Un eveniment are un punct de întâlnire, o capacitate și, dacă vrei, un traseu; locația ta nu se partajează. Sub o întâlnire scrii comentarii și răspunzi la întrebări; organizatorul poate șterge un comentariu nedorit.",
  "dg_19_t": "Adaugă o fotografie la un pas",
  "dg_19_d": "Pe pagina unui pas, „Add photo” îți permite să adaugi propria fotografie (cel mult trei pe pas), cu numele tău de utilizator dedesubt.",
  "dg_20_t": "Mod peisaj",
  "dg_20_d": "Întoarce telefonul pe lat și fișele se strâng în stânga, iar harta ocupă restul; My Tours trece pe două coloane.",
  "dg_21_t": "Unități și limbă",
- "dg_21_d": "Unitățile urmează locul în care te afli: mile, mph și picioare în SUA, mile și yarzi în Regatul Unit, kilometri în rest. Aplicația vorbește turca, engleza, germana, franceza și italiana și urmează limba telefonului tău.",
+ "dg_21_d": "Unitățile (km sau mile) și limba le alegi din „Settings → Appearance”. Pe „Automatic”, unitățile urmează locul unde ești, iar limba urmează telefonul. Aplicația vorbește turcă, engleză, germană, franceză și italiană.",
+ "dg_22_t": "Între opriri",
+ "dg_22_d": "Eticheta dintre două opriri arată distanța și timpul. Atinge-o ca să adaugi o oprire între ele, să cauți pe acel segment sau să alegi alt drum pentru el.",
+ "dg_23_t": "Treci pe aici",
+ "dg_23_d": "Ține apăsat pe hartă și atinge „Pass through here”: traseul trece pe drumul pe care îl vrei. Îl are și generatorul de tururi de pe acest site.",
+ "dg_24_t": "Unghi de înclinare",
+ "dg_24_d": "Redă o cursă înregistrată și vezi cât te-ai înclinat în fiecare viraj; înclinarea maximă rulează cu încetinitorul. Harta anvelopei arată câtă margine a rămas pe fiecare parte. Unghiul se calculează din traseul GPS, deci merge și la cursele mai vechi.",
+ "dg_25_t": "Harta mea",
+ "dg_25_d": "Toate cursele înregistrate și tururile terminate pe o singură hartă, sus de tot în „My Rides”. Filtrezi după anul acesta sau luna aceasta.",
+ "dg_26_t": "Hoteluri prietenoase cu motocicliștii",
+ "dg_26_d": "În „Discover” alege „Stay → Hotel” și bifează „Biker-friendly” ca să vezi separat hotelurile cu garaj sau parcare pentru motociclete. Poți propune și tu hotelurile în care ai stat.",
+ "dg_27_t": "Continuă pe CarPlay",
+ "dg_27_d": "Când te conectezi la CarPlay, telefonul arată un ecran simplu și se blochează singur, așa că bateria ține mai mult. Doar pe iPhone.",
  "c_say_h": "Ce poți spune",
  "c_say_p": "Sunt doar exemple. Nu ai comenzi de învățat, spune-o cu cuvintele tale.",
  "c_s1": "Cât mai e? Plouă pe drum?",

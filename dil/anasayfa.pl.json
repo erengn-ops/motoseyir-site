@@ -83,12 +83,12 @@
  "k8_ad": "Ty na mapie",
  "k8_alt": "Motocykl, który oznacza Cię na mapie; przeciągnij w lewo lub w prawo, aby go obrócić",
  "k8_h2": "Na mapie <i>jesteś też Ty.</i>",
- "k8_p": "W czasie jazdy na mapie widać znacznik, który oznacza Ciebie. Jest ich sześć: Supersport, Chopper, Maxi scooter, Touring, Arrow i Helmet. Wybierasz go w Settings, a CarPlay pokazuje ten sam.",
+ "k8_p": "W czasie jazdy na mapie widać znacznik, który oznacza Ciebie. Jest ich dziewięć: Supersport, Chopper, Maxi scooter, Touring, Naked, Scrambler, Bagger, Arrow i Helmet. Wybierasz go w Settings, a CarPlay pokazuje ten sam.",
  "k8_not": "Przeciągnij, aby obrócić",
  "a8_etiket": "Szczegóły znacznika",
- "a8_s1_b": "6",
+ "a8_s1_b": "9",
  "a8_s1_t": "znaczników do wyboru",
- "a8_s2_b": "4",
+ "a8_s2_b": "7",
  "a8_s2_t": "z nich jest w 3D, z motocyklistą, i pochyla się w zakrętach",
  "a8_s3_b": "CarPlay",
  "a8_s3_t": "znacznik, który wybierzesz, widać też na ekranie samochodu",
@@ -98,16 +98,19 @@
  "k8_m4": "Touring",
  "k8_m5": "Arrow",
  "k8_m6": "Helmet",
+ "k8_m7": "Naked",
+ "k8_m8": "Scrambler",
+ "k8_m9": "Bagger",
  "a8_1_t": "Gdzie go wybierasz",
- "a8_1_d": "Settings → Map → Navigation marker. Otwiera się siatka sześciu ikon, a ta, której dotkniesz, zostaje wybrana. Możesz też wybrać znacznik przy pierwszym uruchomieniu aplikacji.",
- "a8_2_t": "Cztery w 3D",
- "a8_2_d": "Supersport, Chopper, Maxi scooter i Touring są narysowane z 72 kątów, z motocyklistą na pokładzie, i pochylają się w zakrętach. Arrow i Helmet to płaskie rysunki.",
+ "a8_1_d": "Settings → Map → Navigation marker. Otwiera się siatka dziewięciu ikon, a ta, której dotkniesz, zostaje wybrana. Możesz też wybrać znacznik przy pierwszym uruchomieniu aplikacji.",
+ "a8_2_t": "Siedem jest w 3D",
+ "a8_2_d": "Siedem motocykli narysowano z 72 kątów razem z motocyklistą; w zakrętach się pochylają. Arrow i Helmet to płaskie rysunki.",
  "a8_3_t": "Z Tobą wszędzie",
  "a8_3_d": "Na głównej mapie i w nawigacji, jako Twoja pozycja na żywo na mapie wycieczki, w odtwarzaniu 3D i w filmie z mapy podróży, a także w CarPlay i CarPlay Dashboard.",
  "a8_4_t": "W grupie",
  "a8_4_d": "W grupie znajomych widzisz jako stały, mniejszy znacznik; Twój wybór nie jest im przekazywany.",
- "a8_5_t": "Za darmo",
- "a8_5_d": "Wybór znacznika nie wymaga Pro.",
+ "a8_5_t": "Co jest za darmo",
+ "a8_5_d": "Maxi scooter i Arrow są darmowe dla wszystkich; pozostałe znaczniki należą do Pro.",
  "a8_6_t": "Obróć Touring",
  "a8_6_d": "Przeciągnij motocykl powyżej w lewo lub w prawo. Po puszczeniu zatrzymuje się płynnie, a jeśli go nie dotykasz, sam powoli się obraca.",
  "k9_ad": "Legendarne drogi",
@@ -123,7 +126,7 @@
  "plan_u_p": "Planowanie tras i nawigacja zakręt po zakręcie są w Turcji, Europie i USA bez limitu. Konto nie jest potrzebne; w wersji bezpłatnej zapiszesz 1 wycieczkę.",
  "plan_p_p": "Pro odblokowuje:",
  "pp1": "AI CoRider",
- "pp2": "Apple CarPlay",
+ "pp2": "Apple CarPlay (iPhone)",
  "pp3": "Tworzenie grup",
  "pp4": "Discover",
  "pp5": "Nieograniczone wycieczki i ślady",
@@ -140,27 +143,144 @@
  "faq_q4": "Gdzie działa?",
  "faq_a4": "Wyznaczanie tras i nawigacja działają w Turcji, Europie i USA. Mapa przełęczy zawiera ponad 1 600 przełęczy w 36 krajach.",
  "faq_q5": "Czy działa z CarPlay?",
- "faq_a5": "Tak. Apple CarPlay jest częścią Pro; Twoja trasa wyświetla się na pełnym ekranie samochodu.",
+ "faq_a5": "Tak, na iPhonie. Apple CarPlay należy do Pro, a trasa wypełnia ekran w aucie. Android Auto nie jest obsługiwane.",
  "faq_q6": "Czy mogę jechać ze znajomymi?",
  "faq_a6": "Tak. Jedziecie tą samą trasą, widzicie wszystkich na mapie i rozmawiacie przez interkom grupowy. Dołączenie do grupy z zaproszenia albo kodem jest bezpłatne; tworzenie grup jest w Pro.",
  "varis_h2": "Droga jest <i>gotowa.</i>",
  "varis_nasil": "Jak to działa",
  "ayr_etiket": "Prywatność, informacje o wydaniach i kontakt",
  "yeni_lead": "Ostatnie aktualizacje, najnowsze na górze.",
- "y118_tarih": "październik 2026",
- "y117_tarih": "październik 2026",
- "y116_tarih": "październik 2026",
- "y118_1": "Naprawiono awarię przy przełączaniu z Bloga na Feed w Community.",
- "y118_2": "Nagrywanie filmu z odtwarzania jazdy w 3D startuje pewniej.",
- "y118_3": "„Gotowe” nie pojawia się już, zanim mapa się wczyta, a kamera nie skacze po zakończeniu powiększania dwoma palcami.",
- "y117_1": "Mapa podróży: obejrzyj długą wycieczkę lub jazdę jako film na czystej mapie. Gdy trasa się rysuje, mijane miasta i Twoje zdjęcia pojawiają się po kolei.",
- "y117_2": "Nowe skróty na ekranie startowym: dom i praca, nagranie jazdy, godzinna pętla stąd, legendarna droga w pobliżu.",
- "y117_3": "298 przełęczy i sześć nowych legendarnych dróg w USA, a tryb wybrzeża działa teraz także w wielu europejskich krajach nadmorskich.",
- "y117_4": "„Poznaj Motoseyir” w Ustawieniach to krótki wideoprzewodnik po aplikacji, zakładka po zakładce.",
- "y116_1": "Oglądaj w 3D: odtwórz nagraną jazdę tak, jakbyś śledził ją z helikoptera; zdjęcia pojawiają się tam, gdzie zostały zrobione.",
- "y116_2": "Udostępnij jako film: zrób pionowy film na 15, 30 lub 60 sekund, gotowy na Instagram. Pro nie jest potrzebne.",
- "y116_3": "Analiza jazdy: czas w ruchu, prawdziwe postoje, ostre zakręty, łączne podjazdy i to, ile drogi było dla Ciebie nowe.",
- "y116_4": "W generatorze wycieczek „Another one” przynosi trzy nowe pętle innymi drogami, a możesz włączyć „No motorways”, „No tolls” i „No dirt”.",
+ "yeni_onceki": "Wcześniejsze wersje",
+ "surumler": [
+  {
+   "no": "1.3.0",
+   "tarih": "listopad 2026",
+   "maddeler": [
+    "Nowa karta Wiadomości w Społeczności: targi, zloty, nowy sprzęt i wyścigi, dobrane do Twojego kraju.",
+    "Hotele przyjazne motocyklistom: w Odkrywaj wybierz Hotel i zaznacz „Przyjazne motocyklistom”, aby zobaczyć na mapie hotele z garażem lub parkingiem dla motocykli. Możesz też polecać miejsca, w których nocowałeś."
+   ]
+  },
+  {
+   "no": "1.2.9",
+   "tarih": "listopad 2026",
+   "maddeler": [
+    "Poprawki: skręty tuż po zmianie nazwy drogi są teraz zapowiadane i pokazywane na czas."
+   ]
+  },
+  {
+   "no": "1.2.8",
+   "tarih": "listopad 2026",
+   "maddeler": [
+    "Wybierz własną drogę: dotknij odcinka między dwoma przystankami, by wybrać inną drogę, albo przytrzymaj mapę i dotknij „Przejedź tędy”, by poprowadzić trasę tam, gdzie chcesz. Działa też w generatorze tras w sieci."
+   ]
+  },
+  {
+   "no": "1.2.7",
+   "tarih": "listopad 2026",
+   "maddeler": [
+    "Więcej opcji trasy: po zapytaniu o drogę dostajesz teraz do trzech różnych tras; proponowana nadal jest najkrótsza.",
+    "Australia i Nowa Zelandia: 200 przełęczy i 7 legendarnych dróg, w tym Great Ocean Road i Milford Road.",
+    "Planuj na komputerze: w Ustawieniach otwórz generator tras na naszej stronie i zaplanuj trasę na dużym ekranie."
+   ]
+  },
+  {
+   "no": "1.2.6",
+   "tarih": "listopad 2026",
+   "maddeler": [
+    "Kąt złożenia: odtwórz nagraną jazdę i zobacz, jak mocno złożyłeś się w każdym zakręcie. Największe złożenie leci w zwolnionym tempie, dokładnie tam, gdzie opona dotyka asfaltu, a mapa opony pokazuje, ile zapasu zostało na krawędziach.",
+    "Moja mapa: wszystkie nagrane jazdy i ukończone wycieczki na jednej mapie, na górze Moich jazd.",
+    "Opcje trasy: wariant bez autostrady pojawia się osobno, a ta sama droga nie jest już proponowana dwa razy."
+   ]
+  },
+  {
+   "no": "1.2.5",
+   "tarih": "październik 2026",
+   "maddeler": [
+    "Trzy nowe motocykle na mapie: Bagger, Naked i Scrambler. Settings › Navigation marker."
+   ]
+  },
+  {
+   "no": "1.2.4",
+   "tarih": "październik 2026",
+   "maddeler": [
+    "Poprawki: odświeżone wprowadzenie przy pierwszym uruchomieniu; gęstość zakrętów na kartach tras w Twojej jednostce (na milę tam, gdzie liczy się w milach); drobne poprawki."
+   ]
+  },
+  {
+   "no": "1.2.3",
+   "tarih": "październik 2026",
+   "maddeler": [
+    "Naciśnij i mów oraz mikrofon interkomu, który włącza się dopiero, gdy mówisz – bez szumu wiatru. Krótki dźwięk, gdy ktoś dołącza lub się rozłącza; możesz ściszyć lub podgłośnić znajomego, a lider grupy może robić ogłoszenia.",
+    "Poprawki: jaśniejszy tekst zgody na kontakty; trasy są darmowe także w Azji Południowo-Wschodniej."
+   ]
+  },
+  {
+   "no": "1.2.2",
+   "tarih": "październik 2026",
+   "maddeler": [
+    "Wybór trasy: krótkie trasy w mieście nie są już odrzucane. Gdy jest wyraźnie krótsza droga, pojawia się jako opcja „Krótsza”.",
+    "W karcie wyszukiwania zamienisz start i cel jednym dotknięciem albo wyczyścisz je przyciskiem ×.",
+    "Pro jest teraz tańsze. Wypróbuj AI CoRider przez 5 minut z Pro, a potem korzystaj dalej z pakietów minut."
+   ]
+  },
+  {
+   "no": "1.2.1",
+   "tarih": "październik 2026",
+   "maddeler": [
+    "Komentarze przy wydarzeniach: pisz pod spotkaniem i odpowiadaj na pytania. Organizator może usunąć każdy komentarz.",
+    "Czytelniejsze teksty na ekranie Pro i drobne poprawki."
+   ]
+  },
+  {
+   "no": "1.2.0",
+   "tarih": "październik 2026",
+   "maddeler": [
+    "W Ustawieniach głos CoRidera i tryb głośny wybierasz teraz w jednym wierszu.",
+    "Na trasach z kilkoma przystankami lista, alert o deszczu i przyciski mapy już na siebie nie nachodzą.",
+    "Na małych ekranach, takich jak iPhone SE, wprowadzenie i ekran powitalny mieszczą się w całości."
+   ]
+  },
+  {
+   "no": "1.1.9",
+   "tarih": "październik 2026",
+   "maddeler": [
+    "Mapy offline (Pro): pobierz mapę trasy albo obszaru, który zaznaczysz na mapie. Gdy zasięg znika na dłużej, nawigacja sama przełącza się na pobraną mapę; przy krótkich tunelach mapa się nie zmienia.",
+    "Jednostki (km albo mile) i język aplikacji wybierasz teraz sam w Settings.",
+    "Skręty w CarPlay łatwiej odczytać: z daleka widzisz odznakę z odległością, a przy zbliżaniu się strzałkę położoną na jezdni.",
+    "Przystanki są czytelniejsze: plakietka między dwoma przystankami pokazuje odległość i czas, a przyciskiem \"+ Add stop\" dodasz przystanek pomiędzy nimi albo na końcu.",
+    "W \"Discover\" szukasz w pobliżu trasy albo na jednym odcinku, a karty miejsc mają więcej zdjęć."
+   ]
+  },
+  {
+   "no": "1.1.8",
+   "tarih": "październik 2026",
+   "maddeler": [
+    "Naprawiono awarię przy przełączaniu z Bloga na Feed w Community.",
+    "Nagrywanie filmu z odtwarzania jazdy w 3D startuje pewniej.",
+    "„Gotowe” nie pojawia się już, zanim mapa się wczyta, a kamera nie skacze po zakończeniu powiększania dwoma palcami."
+   ]
+  },
+  {
+   "no": "1.1.7",
+   "tarih": "październik 2026",
+   "maddeler": [
+    "Mapa podróży: obejrzyj długą wycieczkę lub jazdę jako film na czystej mapie. Gdy trasa się rysuje, mijane miasta i Twoje zdjęcia pojawiają się po kolei.",
+    "Nowe skróty na ekranie startowym: dom i praca, nagranie jazdy, godzinna pętla stąd, legendarna droga w pobliżu.",
+    "298 przełęczy i sześć nowych legendarnych dróg w USA, a tryb wybrzeża działa teraz także w wielu europejskich krajach nadmorskich.",
+    "„Poznaj Motoseyir” w Ustawieniach to krótki wideoprzewodnik po aplikacji, zakładka po zakładce."
+   ]
+  },
+  {
+   "no": "1.1.6",
+   "tarih": "październik 2026",
+   "maddeler": [
+    "Oglądaj w 3D: odtwórz nagraną jazdę tak, jakbyś śledził ją z helikoptera; zdjęcia pojawiają się tam, gdzie zostały zrobione.",
+    "Udostępnij jako film: zrób pionowy film na 15, 30 lub 60 sekund, gotowy na Instagram. Pro nie jest potrzebne.",
+    "Analiza jazdy: czas w ruchu, prawdziwe postoje, ostre zakręty, łączne podjazdy i to, ile drogi było dla Ciebie nowe.",
+    "W generatorze wycieczek „Another one” przynosi trzy nowe pętle innymi drogami, a możesz włączyć „No motorways”, „No tolls” i „No dirt”."
+   ]
+  }
+ ],
  "insta_url": "https://www.instagram.com/motoseyir.app.en/",
  "insta_ad": "@motoseyir.app.en",
  "v_etiket": "Dane o przełęczach",
@@ -219,8 +339,8 @@
  "a1_s1_t": "bezpłatna nawigacja w Turcji, Europie i USA",
  "a1_s2_b": "26",
  "a1_s2_t": "przystanków w jednej wycieczce",
- "a1_s3_b": "2",
- "a1_s3_t": "trasy alternatywne, z oznaczoną najkrótszą",
+ "a1_s3_b": "3",
+ "a1_s3_t": "główne trasy do wyboru, najkrótsza zaznaczona",
  "a1_s4_b": "726",
  "a1_s4_t": "fotoradarów w Turcji",
  "a1_1_t": "Pasy ruchu",
@@ -234,7 +354,7 @@
  "a1_5_t": "„No toll roads”",
  "a1_5_d": "Jedno dotknięcie wyrzuca drogi płatne z trasy.",
  "a1_6_t": "Na ekranie blokady",
- "a1_6_d": "Następny skręt widać na ekranie blokady i w Dynamic Island, więc nie musisz odblokowywać telefonu.",
+ "a1_6_d": "Na iPhonie następny skręt widać na ekranie blokady i w Dynamic Island. Na Androidzie skręt, pozostały czas i godzina przyjazdu zostają w powiadomieniu.",
  "a2_etiket": "Szczegóły generatora wycieczek",
  "a2_s1_b": "30–300 km",
  "a2_s1_t": "długość wycieczki albo wybór w godzinach",
@@ -272,7 +392,7 @@
  "a4_5_t": "Prowadzi jazdę",
  "a4_5_d": "Włącza i kończy nawigację, uruchamia nagrywanie jazdy i prowadzi do domu.",
  "a4_6_t": "Czas rozmowy",
- "a4_6_d": "Pro odnawia co 30 dni 10 minut czasu rozmowy. Jeśli potrzebujesz więcej, dokup pakiet 30, 60 lub 180 minut, który nie wygasa.",
+ "a4_6_d": "Z Pro wypróbujesz AI CoRider przez 5 minut. Potem dokupisz pakiet 30, 60 lub 180 minut, który nie wygasa.",
  "a5_etiket": "Szczegóły grupy, interkomu i CarPlay",
  "a5_s1_b": "12",
  "a5_s1_t": "motocyklistów w jednej grupie",
@@ -284,11 +404,11 @@
  "a5_1_d": "Wpisz 8-znakowy kod albo dotknij linku. Tworzenie grupy należy do Pro.",
  "a5_2_t": "Lokalizacja tylko w czasie jazdy",
  "a5_2_d": "Twoja lokalizacja jest udostępniana tylko wtedy, gdy działa nawigacja albo nagrywanie jazdy; gdy je zakończysz, kończy się też udostępnianie.",
- "a5_3_t": "Otwarty mikrofon",
- "a5_3_d": "Na interkomie nie ma push-to-talk: po prostu mówisz. Wyciszaj, kogo chcesz. Nic nie jest nagrywane.",
+ "a5_3_t": "Trzy tryby mikrofonu",
+ "a5_3_d": "„Always on”, „When I talk” albo „Push to talk”. Pogłośnisz albo ściszysz kolegę, a lider może wygłosić komunikat do grupy. Nic nie jest nagrywane.",
  "a5_4_t": "CoRider w grupie",
  "a5_4_d": "Zaproś CoRider do pokoju grupy, a wszyscy go usłyszą.",
- "a5_5_t": "Nawigacja w CarPlay",
+ "a5_5_t": "Nawigacja w CarPlay (iPhone)",
  "a5_5_d": "Mapa i skręty na ekranie samochodu. Pomiń przystanek, nagraj jazdę, włącz interkom albo wyszukaj adres z listy „Destinations”.",
  "a5_6_t": "Dashboard",
  "a5_6_d": "Mapa jest też w CarPlay Dashboard, obok innych aplikacji, z Twoją pozycją i trasą.",
@@ -303,12 +423,12 @@
  "a6_s1_t": "zatok i plaż w Turcji",
  "a6_s2_b": "20 106",
  "a6_s2_t": "miejsc na kemping i na łonie natury w Turcji",
- "a6_s3_b": "6",
- "a6_s3_t": "kategorii",
+ "a6_s3_b": "5",
+ "a6_s3_t": "głównych kategorii, każda z własnymi opcjami",
  "a6_1_t": "Kategorie",
- "a6_1_d": "„All”, „Bay & beach”, „Camping & nature”, „Food & drink”, „Fuel” oraz „Passes”.",
+ "a6_1_d": "„On the road”, „Food”, „Stay”, „See & do” i „Highlights”. W środku znajdziesz stacje paliw, kawiarnie, kempingi, hotele, plaże i zatoki, przełęcze i więcej.",
  "a6_2_t": "Gdzie to znaleźć",
- "a6_2_d": "Otwórz wycieczkę w „My Tours” i wybierz „Discover” spośród zakładek Stops | Discover | Journal. Wycieczka musi mieć co najmniej dwa przystanki, a wyszukiwanie jest w Pro.",
+ "a6_2_d": "Otwórz wycieczkę w „My Tours” i wybierz „Discover” spośród zakładek Stops | Discover | Journal. Szukasz w pobliżu trasy albo na jednym odcinku. Wycieczka musi mieć co najmniej dwa przystanki, a wyszukiwanie jest w Pro.",
  "a6_3_t": "„Explore this area”",
  "a6_3_d": "Przesuń mapę, gdzie chcesz, i szukaj wokół tego miejsca.",
  "a6_4_t": "„Camping & nature”",
@@ -375,8 +495,8 @@
  "dg_6_d": "Na karcie trasy widać szacowaną ilość paliwa (litry, w USA galony). Dotknij zużycia, aby wpisać własną wartość.",
  "dg_7_t": "Zachód słońca",
  "dg_7_d": "Jeśli jazda trwa dłużej niż do zachodu słońca, na karcie trasy pojawia się wiersz w rodzaju „Arrive 19:40 · sunset 19:12”.",
- "dg_8_t": "Kopia trasy offline",
- "dg_8_d": "Wycieczki trzymają w telefonie kopię swojej trasy. Gdy połączenie zniknie, wycieczka otwiera się z tej kopii, a gdy zjedziesz z trasy, strzałka „Back to route” pokazuje kierunek. Sama mapa nadal wymaga internetu.",
+ "dg_8_t": "Mapy offline",
+ "dg_8_d": "Pobierz mapę wycieczki albo obszaru, który zaznaczysz na mapie. Gdy zasięg znika na dłużej, nawigacja sama przełącza się na pobraną mapę; dotykając chmurki, przełączysz też ręcznie. Pobieranie map należy do Pro.",
  "dg_9_t": "Gdy zjedziesz z trasy",
  "dg_9_d": "W Settings → Riding → When you leave the route wybierasz „New route” albo „Back to route”; możesz też pozwolić aplikacji, by sama pomijała przystanek, który Ci umknął.",
  "dg_10_t": "Dom i praca",
@@ -393,16 +513,28 @@
  "dg_15_d": "Zaimportuj plik GPX, a ślad trafi do zakładki Trails, z dystansem, łącznym przewyższeniem, najostrzejszym podjazdem i profilem wysokości. Przesuwaj palcem po profilu, a punkt na mapie podąża za nim.",
  "dg_16_t": "Udostępnij wycieczkę",
  "dg_16_d": "Wyślij wycieczkę jako link, film albo plik GPX. Link działa 30 dni; druga osoba go dotyka albo wchodzi w My Tours → With a code → Add tour. Jest bezpłatne.",
- "dg_17_t": "Community i Blog",
- "dg_17_d": "W Community są zakładki Blog, Feed i My Ride Group. W feedzie widzisz wycieczki i jazdy innych motocyklistów, możesz je polubić, skomentować i odpowiedzieć oraz filtrować według kraju. W Blog wyślesz własny wpis przez „Write a post”. Wystarczy nazwa użytkownika.",
+ "dg_17_t": "Społeczność i wiadomości",
+ "dg_17_d": "Zakładka „News” przynosi targi, zloty, nowy sprzęt i wyścigi dobrane do kraju, w którym jesteś. W „Feed” widzisz wycieczki i jazdy innych motocyklistów, możesz je polubić, skomentować, odpowiedzieć i filtrować według kraju. Wystarczy nazwa użytkownika.",
  "dg_18_t": "Wydarzenia",
- "dg_18_d": "W Community zorganizuj spotkanie albo dotknij „I’m going”. Wydarzenie ma miejsce zbiórki, limit miejsc i, jeśli chcesz, trasę; Twoja lokalizacja nie jest udostępniana.",
+ "dg_18_d": "W Community zorganizuj spotkanie albo dotknij „I’m going”. Wydarzenie ma miejsce zbiórki, limit miejsc i, jeśli chcesz, trasę; Twoja lokalizacja nie jest udostępniana. Pod spotkaniem piszesz komentarze i odpowiadasz na pytania; organizator może usunąć niechciany komentarz.",
  "dg_19_t": "Zdjęcie przy przełęczy",
  "dg_19_d": "Na stronie przełęczy dodasz przez „Add photo” własne zdjęcie (do trzech na przełęcz); pod nim widnieje Twoja nazwa użytkownika.",
  "dg_20_t": "Tryb poziomy",
  "dg_20_d": "Gdy obrócisz telefon na bok, karty zbierają się po lewej, a mapa zajmuje resztę; My Tours przechodzi na dwie kolumny.",
  "dg_21_t": "Jednostki i język",
- "dg_21_d": "Jednostki zależą od miejsca, w którym jesteś: mile, mph i stopy w USA, mile i jardy w Wielkiej Brytanii, kilometry gdzie indziej. Aplikacja mówi po turecku, angielsku, niemiecku, francusku i włosku i trzyma się języka telefonu.",
+ "dg_21_d": "Jednostki (km albo mile) i język wybierasz w „Settings → Appearance”. W trybie „Automatic” jednostki zależą od miejsca, w którym jesteś, a język od telefonu. Aplikacja mówi po turecku, angielsku, niemiecku, francusku i włosku.",
+ "dg_22_t": "Między przystankami",
+ "dg_22_d": "Plakietka między dwoma przystankami pokazuje odległość i czas. Dotknij jej, aby dodać przystanek pomiędzy, szukać na tym odcinku albo wybrać dla niego inną drogę.",
+ "dg_23_t": "Jedź tędy",
+ "dg_23_d": "Przytrzymaj mapę i dotknij „Pass through here”: trasa pobiegnie drogą, którą chcesz. Ma to też generator tras na tej stronie.",
+ "dg_24_t": "Kąt złożenia",
+ "dg_24_d": "Odtwórz zapisaną jazdę i zobacz, jak mocno złożyłeś się w każdym zakręcie; największe złożenie leci w zwolnionym tempie. Mapa opony pokazuje, ile krawędzi zostało z każdej strony. Kąt liczony jest ze śladu GPS, więc działa też na starszych jazdach.",
+ "dg_25_t": "Moja mapa",
+ "dg_25_d": "Wszystkie zapisane jazdy i ukończone wycieczki na jednej mapie, na samej górze „My Rides”. Filtrujesz według tego roku albo tego miesiąca.",
+ "dg_26_t": "Hotele przyjazne motocyklistom",
+ "dg_26_d": "W „Discover” wybierz „Stay → Hotel” i zaznacz „Biker-friendly”, aby osobno zobaczyć hotele z garażem albo parkingiem dla motocykli. Możesz też polecić te, w których nocowałeś.",
+ "dg_27_t": "Dalej w CarPlay",
+ "dg_27_d": "Po połączeniu z CarPlay telefon pokazuje prosty ekran i sam się blokuje, więc bateria wytrzymuje dłużej. Tylko na iPhonie.",
  "c_say_h": "Co możesz powiedzieć",
  "c_say_p": "To tylko przykłady. Nie ma komend do wykucia, powiedz to po swojemu.",
  "c_s1": "Ile jeszcze zostało? Będzie padać po drodze?",

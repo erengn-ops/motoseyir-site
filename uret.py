@@ -50,10 +50,10 @@ YIL = "2026"
 # Rehber/araç/tanıtım sayfalarında tarih kendi içerik dosyasındaki `guncelleme` alanında; aşağıdakiler elle tutulan sayfalar.
 # Bir sayfanın METNİ gerçekten değişince ilgili satırı o günün tarihine çek.
 STATIK_GUNCELLEME = {
-    "index.html": "2026-11-22",         # 22 Kas: Google Play (Android) düğmesi ve "App Store'daki" fiyat/iptal cümleleri
-    "ozellikler.html": "2026-10-20",    # metin son 20 Eki'de değişti; sonraki commit'ler yalnız altbilgi/sayaç
-    "nasil-yapilir.html": "2026-11-18",  # 18 Kas: abo1/abo4 deneme sözü kaldırıldı
-    "corider.html": "2026-11-18",        # 18 Kas: "ücretsiz denemede 5 dk" kartı ve SSS cümlesi kaldırıldı
+    "index.html": "2026-11-22",         # 22 Kas: Google Play düğmesi; 1.1.9–1.3.0 sürüm notları ve özellikleri
+    "ozellikler.html": "2026-11-22",    # 22 Kas: 1.1.9–1.3.0 özellikleri (çevrimdışı harita, yatış açısı, yolu sen seç, dokuz işaretçi)
+    "nasil-yapilir.html": "2026-11-22",  # 22 Kas: abo4 — Pro'yla 5 dk CoRider tadımı
+    "corider.html": "2026-11-22",        # 22 Kas: Pro'da 5 dk tadım, sonrası paket (1.2.2'den beri)
 }
 ELLE_GUNCELLEME = {  # elle tutulan sayfalar (gizlilik, impressum): son içerik commit'i
     "/gizlilik/": "2026-11-18", "/gizlilik/en/": "2026-11-18", "/gizlilik/de/": "2026-11-18",
@@ -119,6 +119,25 @@ HEVC_KODEK = "hvc1.1.6.L150.B0"
 DEMO_IMG = re.compile(r'<img\b[^>]*?\bdata-demo="([a-z0-9-]+)"[^>]*>')
 DEMO_ISARET = re.compile(r'\s+data-demo(?:-ilk)?(?:="[^"]*")?')
 ALT = re.compile(r'\balt="([^"]*)"')
+
+
+# Sürüm notları (22 Kas 2026): anasayfanın #yenilikler bölümü `dil/anasayfa.<kod>.json` içindeki "surumler" listesinden
+# üretilir — [{"no": "1.3.0", "tarih": "Kasım 2026", "maddeler": [...]}, ...], en yenisi başta. Metinler App Store
+# Connect'teki o sürümün "Yenilikler" metninden (her dilin kendi yereli). İlk YENILIK_GORUNUR sürüm açık, kalanı katlanır kutuda.
+YENILIK_GORUNUR = 4
+
+
+def yenilikler_html(v: dict) -> str:
+    def surum(s: dict) -> str:
+        maddeler = "".join(f"<li>{m}</li>" for m in s["maddeler"])
+        return (f'<article class="surum" data-g><header><b>{s["no"]}</b><time>{s["tarih"]}</time></header>\n'
+                f'        <ul class="d">{maddeler}</ul></article>')
+    liste = v["surumler"]
+    ust = "\n      ".join(surum(s) for s in liste[:YENILIK_GORUNUR])
+    if len(liste) <= YENILIK_GORUNUR:
+        return ust
+    alt = "\n        ".join(surum(s) for s in liste[YENILIK_GORUNUR:])
+    return f'{ust}\n      <details class="surum-eski"><summary>{v["yeni_onceki"]}</summary>\n        {alt}\n      </details>'
 
 
 def demolari_yerlestir(html: str, kod: str) -> str:
@@ -2536,6 +2555,8 @@ def main() -> None:
             else:
                 metin_d = metin
             degerler = {**metin_d, **ortak}
+            if sablon_metni is hareketli:
+                degerler["yenilikler_liste"] = yenilikler_html(degerler)
             degerler["seo_head"] = seo_head(dosya, degerler)
             degerler["json_ld"] = json_ld(dosya, degerler, kod)
             html = doldur(sablon_metni, degerler, f"{kod}/{dosya}")

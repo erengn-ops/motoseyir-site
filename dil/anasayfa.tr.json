@@ -83,12 +83,12 @@
  "k8_ad": "Haritada sen",
  "k8_alt": "Haritada seni temsil eden motosiklet; sağa sola sürükleyerek döndürebilirsin",
  "k8_h2": "Haritada <i>sen de varsın.</i>",
- "k8_p": "Sürerken haritada seni bir işaretçi temsil eder. Altı tane var: Supersport, Chopper, Maksi scooter, Touring, Ok ve Kask. Ayarlar’dan seçersin; CarPlay’de de aynısı görünür.",
+ "k8_p": "Sürerken haritada seni bir işaretçi temsil eder. Dokuz tane var: Supersport, Chopper, Maksi scooter, Touring, Naked, Scrambler, Bagger, Ok ve Kask. Ayarlar’dan seçersin; CarPlay’de de aynısı görünür.",
  "k8_not": "Sürükleyerek döndür",
  "a8_etiket": "Haritada sen ayrıntıları",
- "a8_s1_b": "6",
+ "a8_s1_b": "9",
  "a8_s1_t": "işaretçi arasından seçersin",
- "a8_s2_b": "4",
+ "a8_s2_b": "7",
  "a8_s2_t": "tanesi üç boyutlu ve sürücülü; virajda yatar",
  "a8_s3_b": "CarPlay",
  "a8_s3_t": "seçtiğin işaretçi araç ekranında da görünür",
@@ -98,16 +98,19 @@
  "k8_m4": "Touring",
  "k8_m5": "Ok",
  "k8_m6": "Kask",
+ "k8_m7": "Naked",
+ "k8_m8": "Scrambler",
+ "k8_m9": "Bagger",
  "a8_1_t": "Nereden seçersin",
- "a8_1_d": "Ayarlar → Harita → Navigasyon işaretçisi. Altı simgenin ızgarası açılır, dokunduğun seçili olur. Uygulamayı ilk açtığında da seçebilirsin.",
- "a8_2_t": "Dördü üç boyutlu",
- "a8_2_d": "Supersport, Chopper, Maksi scooter ve Touring gerçek bir sürücüyle, 72 açıdan çizildi; virajda yatarlar. Ok ve Kask sade çizim.",
+ "a8_1_d": "Ayarlar → Harita → Navigasyon işaretçisi. Dokuz simgenin ızgarası açılır, dokunduğun seçili olur. Uygulamayı ilk açtığında da seçebilirsin.",
+ "a8_2_t": "Yedisi üç boyutlu",
+ "a8_2_d": "Yedi motor gerçek bir sürücüyle, 72 açıdan çizildi; virajda yatarlar. Ok ve Kask sade çizim.",
  "a8_3_t": "Her yerde seninle",
  "a8_3_d": "Ana haritada ve navigasyonda, tur haritasındaki canlı konumunda, 3B tekrarda ve gezi videosunda; CarPlay’de ve CarPlay Dashboard’da da.",
  "a8_4_t": "Grupta",
  "a8_4_d": "Gruptaki arkadaşlarını sabit, daha küçük bir işaretçiyle görürsün; senin seçimin onlara yansımaz.",
- "a8_5_t": "Ücretsiz",
- "a8_5_d": "İşaretçi seçmek için Pro gerekmez.",
+ "a8_5_t": "Ücretsiz olanlar",
+ "a8_5_d": "Maksi scooter ve Ok herkese açık; öteki işaretçiler Pro’da.",
  "a8_6_t": "Touring’i döndür",
  "a8_6_d": "Yukarıdaki motoru sağa sola sürükle. Bırakınca süzülerek durur; dokunmazsan kendi kendine yavaşça döner.",
  "k9_ad": "Efsane yollar",
@@ -123,7 +126,7 @@
  "plan_u_p": "Türkiye, Avrupa ve ABD’de rota hesaplama ve adım adım navigasyon sınırsız. Hesap açman gerekmez; ücretsiz kademede 1 kayıtlı tur tutabilirsin.",
  "plan_p_p": "Pro şunları açar:",
  "pp1": "AI CoRider",
- "pp2": "Apple CarPlay",
+ "pp2": "Apple CarPlay (iPhone)",
  "pp3": "Grup kurma",
  "pp4": "Keşfet",
  "pp5": "Sınırsız tur ve parkur",
@@ -140,27 +143,144 @@
  "faq_q4": "Hangi ülkelerde çalışır?",
  "faq_a4": "Rota hesaplama ve navigasyon Türkiye, Avrupa ve ABD’de çalışır. Dağ geçidi haritasında 36 ülkeden 1.600’ü aşkın geçit var.",
  "faq_q5": "CarPlay ile kullanabilir miyim?",
- "faq_a5": "Evet. Apple CarPlay Pro ile açılır; rotan araç ekranında tam ekran görünür.",
+ "faq_a5": "Evet, iPhone’da. Apple CarPlay Pro ile açılır; rotan araç ekranında tam ekran görünür. Android Auto desteği yok.",
  "faq_q6": "Arkadaşlarımla birlikte sürebilir miyim?",
  "faq_a6": "Evet. Aynı rotaya çıkarsınız, herkes haritada görünür, grup interkomuyla konuşursunuz. Davetle ya da kodla bir gruba katılmak ücretsiz; grup kurmak Pro’da.",
  "varis_h2": "Yol <i>hazır.</i>",
  "varis_nasil": "Nasıl yapılır",
  "ayr_etiket": "Gizlilik, sürüm notları ve iletişim",
  "yeni_lead": "Son güncellemeler, en yenisi en üstte.",
- "y118_tarih": "Ekim 2026",
- "y117_tarih": "Ekim 2026",
- "y116_tarih": "Ekim 2026",
- "y118_1": "Topluluk'ta Blog'dan Akış'a geçerken uygulamanın kapanması giderildi.",
- "y118_2": "Sürüşünü 3B izlerken video kaydı daha güvenilir başlıyor.",
- "y118_3": "Harita tam yüklenmeden “Hazır” görünmüyor; iki parmakla yakınlaştırıp bırakınca kamera artık zıplamıyor.",
- "y117_1": "Gezi haritası: uzun bir turu ya da sürüşü sade bir haritada video olarak izle. Rotan çizilirken geçtiğin şehirler ve fotoğrafların sırayla belirir.",
- "y117_2": "Başla ekranında yeni kısayollar: ev ve iş, sürüşü kaydet, buradan bir saatlik tur, yakındaki efsane yol.",
- "y117_3": "ABD’de 298 dağ geçidi ve altı yeni efsane yol eklendi; Sahil modu artık Avrupa’nın birçok kıyı ülkesinde de çalışıyor.",
- "y117_4": "Ayarlar'daki “Motoseyir'i tanı” videosu uygulamayı sekme sekme gösteriyor.",
- "y116_1": "3B izle: kaydettiğin sürüşü helikopterden izler gibi yeniden izle; eklediğin fotoğraflar çekildikleri yerde açılır.",
- "y116_2": "Video olarak paylaş: 15, 30 ya da 60 saniyelik dikey video çıkar, Instagram'a hazır. Pro gerekmez.",
- "y116_3": "Sürüş analizi: hareket süresi, gerçek molalar, sert virajlar, toplam tırmanış ve yolun ne kadarını ilk kez sürdüğün.",
- "y116_4": "Tur üret'te “Başka bir tane” farklı yollardan üç yeni tur getiriyor; otoyol, gişe ve toprak yoldan kaçınabilirsin.",
+ "yeni_onceki": "Önceki sürümler",
+ "surumler": [
+  {
+   "no": "1.3.0",
+   "tarih": "Kasım 2026",
+   "maddeler": [
+    "Topluluk'ta yeni Haberler sekmesi: fuarlar, buluşmalar, yeni ekipman ve yarışlar. Haberler bulunduğun ülkeye göre seçiliyor.",
+    "Motorcu dostu oteller: Keşfet'te Otel'i seçip \"Motorcu dostu\" işaretini açınca motor garajı ya da parkı olan oteller haritada ayrı görünüyor. Kaldığın oteli sen de önerebilirsin."
+   ]
+  },
+  {
+   "no": "1.2.9",
+   "tarih": "Kasım 2026",
+   "maddeler": [
+    "Düzeltmeler: Yol adı değiştikten hemen sonra gelen dönüşler artık zamanında söyleniyor ve ekranda görünüyor."
+   ]
+  },
+  {
+   "no": "1.2.8",
+   "tarih": "Kasım 2026",
+   "maddeler": [
+    "Yolu sen seç: iki durak arasındaki bölüme dokunup başka bir yolu seçebilir ya da haritaya uzun basıp \"Buradan geç\" diyerek rotayı istediğin yoldan geçirebilirsin. Web tur oluşturucuda da var."
+   ]
+  },
+  {
+   "no": "1.2.7",
+   "tarih": "Kasım 2026",
+   "maddeler": [
+    "Daha fazla rota seçeneği: tarif istediğinde artık üç seçeneğe kadar farklı yol çıkıyor; önerilen yine en kısası.",
+    "Avustralya ve Yeni Zelanda: 200 dağ geçidi ile Great Ocean Road ve Milford Road gibi 7 efsane yol eklendi.",
+    "Bilgisayarında tur üret: Ayarlar'dan sitedeki tur üreticiye geç, turunu büyük ekranda planla."
+   ]
+  },
+  {
+   "no": "1.2.6",
+   "tarih": "Kasım 2026",
+   "maddeler": [
+    "Yatış açısı: kaydettiğin sürüşü yeniden oynat, her virajda ne kadar yattığını gör. En yatık an yavaş çekimde, lastiğin asfalta değdiği yerle geliyor; lastik haritası kenarda ne kadar pay kaldığını gösteriyor.",
+    "Haritam: kaydettiğin bütün sürüşler ve tamamladığın turlar tek haritada, Sürüşlerim'in en üstünde.",
+    "Rota seçenekleri: otoyolsuz bir alternatif varsa ayrıca gösteriliyor, aynı yol iki kez önerilmiyor."
+   ]
+  },
+  {
+   "no": "1.2.5",
+   "tarih": "Ekim 2026",
+   "maddeler": [
+    "Haritada üç yeni motor: Bagger, Naked ve Scrambler. Ayarlar › Navigasyon işaretçisi."
+   ]
+  },
+  {
+   "no": "1.2.4",
+   "tarih": "Ekim 2026",
+   "maddeler": [
+    "Düzeltmeler: ilk açılış tanıtımı yenilendi; tur kartında viraj yoğunluğu artık kendi biriminle (mil kullananlarda mil başına); küçük düzeltmeler."
+   ]
+  },
+  {
+   "no": "1.2.3",
+   "tarih": "Ekim 2026",
+   "maddeler": [
+    "İnterkomda bas-konuş ve rüzgârı kesen “konuşunca aç” kipi. Biri katılınca ya da kopunca kısa bir ses duyarsın, arkadaşının sesini kısıp yükseltebilirsin, grup lideri duyuru yapabilir.",
+    "Düzeltmeler: rehber izni metni netleşti; rota Güneydoğu Asya'da da ücretsiz."
+   ]
+  },
+  {
+   "no": "1.2.2",
+   "tarih": "Ekim 2026",
+   "maddeler": [
+    "Rota seçimi: şehir içindeki kısa yollar artık elenmiyor. Belirgin biçimde daha kısa bir yol varsa 'Daha kısa' seçeneği olarak karşına çıkıyor.",
+    "Arama kartında başlangıçla varışı tek dokunuşla yer değiştirebilir, × ile temizleyebilirsin.",
+    "Pro artık daha uygun. AI CoRider'ı Pro'yla 5 dakika deneyebilir, sonra dakika paketiyle kullanmaya devam edebilirsin."
+   ]
+  },
+  {
+   "no": "1.2.1",
+   "tarih": "Ekim 2026",
+   "maddeler": [
+    "Etkinliklere yorum: buluşmanın altına mesaj yazabilir, sorulara yanıt verebilirsin. Düzenleyen istemediği yorumu kaldırabilir.",
+    "Pro ekranındaki metinler sadeleşti, küçük düzeltmeler yapıldı."
+   ]
+  },
+  {
+   "no": "1.2.0",
+   "tarih": "Ekim 2026",
+   "maddeler": [
+    "Ayarlar'da CoRider'ın sesini ve yüksek sesi artık tek satırdan seçiyorsun.",
+    "Çok duraklı rotada durak listesi, yağış uyarısı ve harita düğmeleri üst üste binmiyor.",
+    "iPhone SE gibi küçük ekranlarda tanıtım ve hoş geldin ekranı tam sığıyor."
+   ]
+  },
+  {
+   "no": "1.1.9",
+   "tarih": "Ekim 2026",
+   "maddeler": [
+    "Çevrimdışı harita (Pro): bir turun ya da haritada seçtiğin bir bölgenin haritasını indir. Sinyal uzun süre gidince navigasyon kendiliğinden indirilen haritaya geçer, kısa tünellerde harita değişmez.",
+    "Birimleri (km ya da mil) ve uygulamanın dilini artık Ayarlar'dan kendin seçebilirsin.",
+    "CarPlay'de dönüşler daha net: uzaktayken mesafeli bir rozet, yaklaşınca yola yatan bir ok görürsün.",
+    "Duraklar daha net: iki durak arasındaki çipte mesafe ve süre görünür, \"+ Durak ekle\" ile araya ya da sona durak eklersin.",
+    "Keşfet'te ister rotanın yakınında, ister tek bir bacakta ararsın; yer kartlarında daha çok fotoğraf var."
+   ]
+  },
+  {
+   "no": "1.1.8",
+   "tarih": "Ekim 2026",
+   "maddeler": [
+    "Topluluk'ta Blog'dan Akış'a geçerken uygulamanın kapanması giderildi.",
+    "Sürüşünü 3B izlerken video kaydı daha güvenilir başlıyor.",
+    "Harita tam yüklenmeden “Hazır” görünmüyor; iki parmakla yakınlaştırıp bırakınca kamera artık zıplamıyor."
+   ]
+  },
+  {
+   "no": "1.1.7",
+   "tarih": "Ekim 2026",
+   "maddeler": [
+    "Gezi haritası: uzun bir turu ya da sürüşü sade bir haritada video olarak izle. Rotan çizilirken geçtiğin şehirler ve fotoğrafların sırayla belirir.",
+    "Başla ekranında yeni kısayollar: ev ve iş, sürüşü kaydet, buradan bir saatlik tur, yakındaki efsane yol.",
+    "ABD’de 298 dağ geçidi ve altı yeni efsane yol eklendi; Sahil modu artık Avrupa’nın birçok kıyı ülkesinde de çalışıyor.",
+    "Ayarlar'daki “Motoseyir'i tanı” videosu uygulamayı sekme sekme gösteriyor."
+   ]
+  },
+  {
+   "no": "1.1.6",
+   "tarih": "Ekim 2026",
+   "maddeler": [
+    "3B izle: kaydettiğin sürüşü helikopterden izler gibi yeniden izle; eklediğin fotoğraflar çekildikleri yerde açılır.",
+    "Video olarak paylaş: 15, 30 ya da 60 saniyelik dikey video çıkar, Instagram'a hazır. Pro gerekmez.",
+    "Sürüş analizi: hareket süresi, gerçek molalar, sert virajlar, toplam tırmanış ve yolun ne kadarını ilk kez sürdüğün.",
+    "Tur üret'te “Başka bir tane” farklı yollardan üç yeni tur getiriyor; otoyol, gişe ve toprak yoldan kaçınabilirsin."
+   ]
+  }
+ ],
  "insta_url": "https://www.instagram.com/motoseyir.app/",
  "insta_ad": "@motoseyir.app",
  "v_etiket": "Geçit verisi",
@@ -219,8 +339,8 @@
  "a1_s1_t": "ücretsiz navigasyon; Türkiye, Avrupa ve ABD",
  "a1_s2_b": "26",
  "a1_s2_t": "durağa kadar tek turda",
- "a1_s3_b": "2",
- "a1_s3_t": "alternatif rota; en kısası işaretli",
+ "a1_s3_b": "3",
+ "a1_s3_t": "ana rota seçeneği; en kısası işaretli",
  "a1_s4_b": "726",
  "a1_s4_t": "hız kamerası, Türkiye’de",
  "a1_1_t": "Şerit rehberi",
@@ -234,7 +354,7 @@
  "a1_5_t": "Paralı yol yok",
  "a1_5_d": "Gişeli yolları tek dokunuşla rotadan çıkarırsın.",
  "a1_6_t": "Kilit ekranında",
- "a1_6_d": "Sıradaki dönüş kilit ekranında ve Dynamic Island’da görünür; telefonu açman gerekmez.",
+ "a1_6_d": "iPhone’da sıradaki dönüş kilit ekranında ve Dynamic Island’da görünür. Android’de dönüş, kalan süre ve varış saati bildirimde durur.",
  "a2_etiket": "Tur üret ayrıntıları",
  "a2_s1_b": "30–300 km",
  "a2_s1_t": "tur uzunluğu; istersen saatle seç",
@@ -272,7 +392,7 @@
  "a4_5_t": "Sürüşü yönetir",
  "a4_5_d": "Navigasyonu başlatır ya da bitirir, sürüş kaydını açar, seni eve götürür.",
  "a4_6_t": "Konuşma süresi",
- "a4_6_d": "Pro’da her 30 günde 10 dakika konuşma süresi yenilenir. Yetmezse süresi dolmayan 30, 60 ya da 180 dakikalık paket alırsın.",
+ "a4_6_d": "Pro’yla AI CoRider’ı 5 dakika denersin. Sonrası için süresi dolmayan 30, 60 ya da 180 dakikalık paket alırsın.",
  "a5_etiket": "Grup, interkom ve CarPlay ayrıntıları",
  "a5_s1_b": "12",
  "a5_s1_t": "sürücüye kadar bir grupta",
@@ -284,11 +404,11 @@
  "a5_1_d": "8 haneli kodu yazarsın ya da bağlantıya dokunursun. Grubu kurmak Pro’da.",
  "a5_2_t": "Konum yalnız yoldayken",
  "a5_2_d": "Konumun yalnız navigasyon ya da sürüş kaydı sürerken paylaşılır; bitirince paylaşım da biter.",
- "a5_3_t": "Açık mikrofon",
- "a5_3_d": "İnterkomda bas-konuş yok, normal konuşursun. İstediğin kişiyi sessize alırsın; konuşmalar kaydedilmez.",
+ "a5_3_t": "Üç mikrofon kipi",
+ "a5_3_d": "Sürekli açık, Konuşunca ya da Bas-konuş. Bir arkadaşının sesini kısıp açarsın, lider gruba duyuru yapar; konuşmalar kaydedilmez.",
  "a5_4_t": "CoRider grupta",
  "a5_4_d": "CoRider’ı grubun odasına çağırırsan herkes onu duyar.",
- "a5_5_t": "CarPlay’de navigasyon",
+ "a5_5_t": "CarPlay’de navigasyon (iPhone)",
  "a5_5_d": "Harita ve dönüşler araç ekranında. Durağı atlar, sürüşü kaydeder, interkomu açar, Hedefler listesinden adres ararsın.",
  "a5_6_t": "Gösterge paneli",
  "a5_6_d": "Harita CarPlay Dashboard’da da durur; başka uygulamaların yanında konumunu ve rotanı görürsün.",
@@ -303,12 +423,12 @@
  "a6_s1_t": "koy ve plaj, Türkiye’de",
  "a6_s2_b": "20.106",
  "a6_s2_t": "kamp ve doğa noktası, Türkiye’de",
- "a6_s3_b": "6",
- "a6_s3_t": "kategori",
+ "a6_s3_b": "5",
+ "a6_s3_t": "ana kategori, her birinin alt seçenekleri var",
  "a6_1_t": "Kategoriler",
- "a6_1_d": "Hepsi, Koy & Plaj, Kamp & Doğa, Yeme-içme, Benzin ve Geçitler.",
+ "a6_1_d": "Yolda, Yemek, Konaklama, Gez-gör ve Öne çıkanlar. Altlarında Benzin, Kafe, Kamp, Otel, Plaj & Koy, Geçitler gibi seçenekler var.",
  "a6_2_t": "Nerede",
- "a6_2_d": "Turlarım’da bir turu aç, Duraklar | Keşfet | Günlük sekmelerinden Keşfet’i seç. Turda en az iki durak olmalı; arama Pro’da.",
+ "a6_2_d": "Turlarım’da bir turu aç, Duraklar | Keşfet | Günlük sekmelerinden Keşfet’i seç. Rotanın yakınında ya da tek bir bacakta ararsın. Turda en az iki durak olmalı; arama Pro’da.",
  "a6_3_t": "Bu bölgede keşfet",
  "a6_3_d": "Haritayı istediğin yere kaydır, o çevreyi tarasın.",
  "a6_4_t": "Kamp & Doğa",
@@ -375,8 +495,8 @@
  "dg_6_d": "Rota kartında tahmini yakıt miktarı görünür (litre, ABD’de galon). Tüketime dokunup kendi değerini girersin.",
  "dg_7_t": "Gün batımı notu",
  "dg_7_d": "Yolculuk gün batımını geçiyorsa rota kartında “Varış 19:40 · gün batımı 19:12” gibi bir satır çıkar.",
- "dg_8_t": "Çevrimdışı rota kopyası",
- "dg_8_d": "Turlarının rotası telefonda kopya olarak durur. Bağlantı koptuğunda tur kopyadan açılır; rotadan çıkarsan “Rotaya dön” oku yönünü gösterir. Haritanın kendisi internet ister.",
+ "dg_8_t": "Çevrimdışı harita",
+ "dg_8_d": "Bir turun ya da haritada çerçevelediğin bir alanın haritasını indirirsin. Sinyal uzun süre gidince navigasyon kendiliğinden indirilen haritaya geçer; buluta dokunup elle de geçebilirsin. Harita indirmek Pro’da.",
  "dg_9_t": "Rotadan çıkınca",
  "dg_9_d": "Ayarlar → Sürüş → Rotadan çıkınca bölümünde Yeni rota çiz ya da Rotaya geri götür’ü seçersin; kaçırdığın durağı kendiliğinden atlatabilirsin.",
  "dg_10_t": "Ev ve iş kısayolları",
@@ -393,16 +513,28 @@
  "dg_15_d": "Bir GPX dosyasını içe aktarınca iz Parkur sekmesine gelir; mesafesini, toplam tırmanışını, en dik yokuşunu ve yükseklik profilini çıkarır. Profilde parmağını gezdirdikçe haritadaki nokta da oynar.",
  "dg_16_t": "Turu paylaş",
  "dg_16_d": "Turu bağlantı, video ya da GPX olarak gönderirsin. Bağlantı 30 gün geçerli; alan kişi bağlantıya dokunur ya da Turlarım → Kod ile → Turu al der. Ücretsiz.",
- "dg_17_t": "Topluluk ve Blog",
- "dg_17_d": "Topluluk’ta Blog, Akış ve Sürüş Grubum sekmeleri var. Akışta başka sürücülerin turlarını ve sürüşlerini görür, beğenir, yorumlar ve yanıtlarsın; ülkeye göre süzersin. Blog’da “Yazı hazırla” ile sen de yazı gönderirsin. Kullanıcı adı yeter.",
+ "dg_17_t": "Topluluk ve Haberler",
+ "dg_17_d": "Haberler sekmesi bulunduğun ülkeye göre fuarları, buluşmaları, yeni ekipmanı ve yarışları getirir. Akış’ta başka sürücülerin turlarını ve sürüşlerini görür, beğenir, yorumlar ve yanıtlarsın; ülkeye göre süzersin. Kullanıcı adı yeter.",
  "dg_18_t": "Etkinlikler",
- "dg_18_d": "Topluluk’ta bir buluşma kurar ya da “Katılıyorum” dersin. Etkinliğin toplanma noktası, kontenjanı ve isteğe bağlı bir rotası olur; konumun paylaşılmaz.",
+ "dg_18_d": "Topluluk’ta bir buluşma kurar ya da “Katılıyorum” dersin. Etkinliğin toplanma noktası, kontenjanı ve isteğe bağlı bir rotası olur; konumun paylaşılmaz. Buluşmanın altına yorum yazar, soruları yanıtlarsın; düzenleyen istemediği yorumu kaldırır.",
  "dg_19_t": "Geçide fotoğraf ekle",
  "dg_19_d": "Geçit sayfasında Fotoğraf ekle’yle kendi fotoğrafını koyarsın (geçit başına en çok üç); altında kullanıcı adın yazar.",
  "dg_20_t": "Yatay kullanım",
  "dg_20_d": "Telefonu yan çevirince kartlar sola toplanır, harita kalan alanı alır; Turlarım iki sütuna geçer.",
  "dg_21_t": "Birimler ve dil",
- "dg_21_d": "Birimler bulunduğun bölgeden gelir: ABD’de mil, mph ve fit, Birleşik Krallık’ta mil ve yarda, başka yerlerde kilometre. Uygulama Türkçe, İngilizce, Almanca, Fransızca ve İtalyanca konuşur; telefonun dilini izler.",
+ "dg_21_d": "Birimi (km ya da mil) ve dili Ayarlar → Görünüm’den seçersin. Otomatik’te birim bulunduğun bölgeden gelir, dil telefonu izler. Uygulama Türkçe, İngilizce, Almanca, Fransızca ve İtalyanca konuşur.",
+ "dg_22_t": "Duraklar arası",
+ "dg_22_d": "İki durak arasındaki çipte mesafe ve süre yazar. Çipe dokunup araya durak ekler, o bacakta yer arar ya da o bacağın yolunu değiştirirsin.",
+ "dg_23_t": "Buradan geç",
+ "dg_23_d": "Haritaya uzun basıp “Buradan geç” dersin, rota istediğin yoldan geçer. Sitedeki tur oluşturucuda da var.",
+ "dg_24_t": "Yatış açısı",
+ "dg_24_d": "Kaydettiğin sürüşü yeniden oynatınca her virajda ne kadar yattığını görürsün; en sert viraj yavaş çekimde gelir. Lastik haritası iki yanda ne kadar pay kaldığını gösterir. Açı GPS izinden hesaplanır, eski sürüşlerde de çalışır.",
+ "dg_25_t": "Haritam",
+ "dg_25_d": "Kaydettiğin bütün sürüşler ve tamamladığın turlar tek haritada, Sürüşlerim’in en üstünde. Bu yıla ya da bu aya göre süzersin.",
+ "dg_26_t": "Motorcu dostu oteller",
+ "dg_26_d": "Keşfet’te Konaklama → Otel’i seçip “Motorcu dostu”yu işaretlersen motor garajı ya da parkı olan oteller ayrı görünür. Kaldığın oteli sen de önerebilirsin.",
+ "dg_27_t": "CarPlay’de devam ediyor",
+ "dg_27_d": "CarPlay’e bağlanınca telefonda sade bir ekran kalır ve telefon kendiliğinden kilitlenir, böylece pilin daha uzun gider. Yalnız iPhone’da.",
  "c_say_h": "Ne diyebilirsin",
  "c_say_p": "Bunlar örnek. Ezberlenecek komut yok, kendi cümlenle söylemen yeter.",
  "c_s1": "Varışa ne kadar kaldı? Yolda yağmur var mı?",

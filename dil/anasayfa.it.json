@@ -83,12 +83,12 @@
  "k8_ad": "Tu sulla mappa",
  "k8_alt": "La moto che ti rappresenta sulla mappa; trascina a sinistra o a destra per girarla",
  "k8_h2": "Ci sei <i>anche tu, sulla mappa.</i>",
- "k8_p": "Mentre guidi, sulla mappa ti rappresenta un’icona. Ce ne sono sei: Supersport, Chopper, Maxi scooter, Touring, Freccia e Casco. La scegli nelle Impostazioni e su CarPlay compare la stessa.",
+ "k8_p": "Mentre guidi, sulla mappa ti rappresenta un’icona. Ce ne sono nove: Supersport, Chopper, Maxi scooter, Touring, Naked, Scrambler, Bagger, Freccia e Casco. La scegli nelle Impostazioni e su CarPlay compare la stessa.",
  "k8_not": "Trascina per girare",
  "a8_etiket": "Dettagli dell’icona sulla mappa",
- "a8_s1_b": "6",
+ "a8_s1_b": "9",
  "a8_s1_t": "icone tra cui scegliere",
- "a8_s2_b": "4",
+ "a8_s2_b": "7",
  "a8_s2_t": "sono in 3D con il pilota e si inclinano in curva",
  "a8_s3_b": "CarPlay",
  "a8_s3_t": "l’icona che scegli compare anche sullo schermo dell’auto",
@@ -98,16 +98,19 @@
  "k8_m4": "Touring",
  "k8_m5": "Freccia",
  "k8_m6": "Casco",
+ "k8_m7": "Naked",
+ "k8_m8": "Scrambler",
+ "k8_m9": "Bagger",
  "a8_1_t": "Dove la scegli",
- "a8_1_d": "Impostazioni → Mappa → Icona di navigazione. Si apre una griglia di sei icone e quella che tocchi viene selezionata. Puoi sceglierla anche la prima volta che apri l’app.",
- "a8_2_t": "Quattro in 3D",
- "a8_2_d": "Supersport, Chopper, Maxi scooter e Touring sono disegnati da 72 angolazioni, con un pilota in sella, e si inclinano in curva. Freccia e Casco sono disegni semplici.",
+ "a8_1_d": "Impostazioni → Mappa → Icona di navigazione. Si apre una griglia di nove icone e quella che tocchi viene selezionata. Puoi sceglierla anche la prima volta che apri l’app.",
+ "a8_2_t": "Sette sono in 3D",
+ "a8_2_d": "Le sette moto sono disegnate da 72 angolazioni con il pilota in sella, e in curva si piegano. Freccia e Casco sono disegni piatti.",
  "a8_3_t": "Con te ovunque",
  "a8_3_d": "Sulla mappa principale e in navigazione, come tua posizione in tempo reale sulla mappa del tour, nel replay in 3D e nel video del viaggio; anche su CarPlay e nella Dashboard di CarPlay.",
  "a8_4_t": "In gruppo",
  "a8_4_d": "In gruppo vedi i tuoi amici con un’icona fissa e più piccola; la tua scelta non arriva a loro.",
- "a8_5_t": "Gratis",
- "a8_5_d": "Per scegliere l’icona non serve Pro.",
+ "a8_5_t": "Cosa è gratis",
+ "a8_5_d": "Maxi scooter e Freccia sono gratis per tutti; le altre icone fanno parte di Pro.",
  "a8_6_t": "Gira il Touring",
  "a8_6_d": "Trascina a sinistra o a destra la moto qui sopra. Quando la lasci, rallenta fino a fermarsi; se non la tocchi, gira lentamente da sola.",
  "k9_ad": "Strade leggendarie",
@@ -123,7 +126,7 @@
  "plan_u_p": "La pianificazione dei percorsi e la navigazione svolta per svolta sono illimitate in Turchia, Europa e Stati Uniti. Non serve un account; il piano gratuito conserva 1 tour salvato.",
  "plan_p_p": "Pro sblocca:",
  "pp1": "AI CoRider",
- "pp2": "Apple CarPlay",
+ "pp2": "Apple CarPlay (iPhone)",
  "pp3": "Creazione di gruppi",
  "pp4": "Esplora",
  "pp5": "Tour e tracce illimitati",
@@ -140,27 +143,144 @@
  "faq_q4": "Dove funziona?",
  "faq_a4": "Percorsi e navigazione funzionano in Turchia, Europa e Stati Uniti. La mappa dei passi comprende oltre 1.600 passi di montagna in 36 paesi.",
  "faq_q5": "Funziona con CarPlay?",
- "faq_a5": "Sì. Apple CarPlay fa parte di Pro; il tuo percorso appare a schermo intero sul display dell’auto.",
+ "faq_a5": "Sì, su iPhone. Apple CarPlay fa parte di Pro, e il percorso riempie lo schermo dell’auto. Android Auto non è supportato.",
  "faq_q6": "Posso guidare con gli amici?",
  "faq_a6": "Sì. Fate lo stesso percorso, vedete tutti sulla mappa e parlate con l’interfono di gruppo. Entrare in un gruppo con un invito o un codice è gratis; creare un gruppo è in Pro.",
  "varis_h2": "La strada è <i>pronta.</i>",
  "varis_nasil": "Come si fa",
  "ayr_etiket": "Privacy, novità e contatti",
  "yeni_lead": "Gli ultimi aggiornamenti, dal più recente.",
- "y118_tarih": "ottobre 2026",
- "y117_tarih": "ottobre 2026",
- "y116_tarih": "ottobre 2026",
- "y118_1": "Risolto un arresto anomalo passando da Blog a Feed in Community.",
- "y118_2": "La registrazione del video del tuo replay in 3D parte in modo più affidabile.",
- "y118_3": "«Pronto» non compare più prima che la mappa sia caricata, e la telecamera non salta più quando finisci uno zoom con due dita.",
- "y117_1": "Mappa del viaggio: guarda un tour lungo o un giro come video su una mappa pulita. Mentre il percorso si disegna, compaiono una a una le città che hai attraversato e le tue foto.",
- "y117_2": "Nuovi collegamenti rapidi nella schermata Parti: casa e lavoro, registra il giro, un anello di un’ora da dove ti trovi, una strada leggendaria vicina.",
- "y117_3": "Aggiunti 298 passi di montagna e sei nuove strade leggendarie negli Stati Uniti; la modalità Costa ora funziona anche in molti paesi costieri d’Europa.",
- "y117_4": "«Scopri Motoseyir» nelle Impostazioni è un breve tour video dell’app, scheda per scheda.",
- "y116_1": "Guarda in 3D: rivedi un giro registrato come se lo seguissi dall’elicottero; le tue foto compaiono dove le hai scattate.",
- "y116_2": "Condividi come video: crea un video verticale da 15, 30 o 60 secondi, pronto per Instagram. Non serve Pro.",
- "y116_3": "Analisi del giro: tempo in movimento, soste vere, curve strette, dislivello totale e quanta parte della strada era nuova per te.",
- "y116_4": "Nel generatore di giri «Un altro» porta tre nuovi anelli su strade diverse, e puoi evitare autostrade, pedaggi e sterrati.",
+ "yeni_onceki": "Versioni precedenti",
+ "surumler": [
+  {
+   "no": "1.3.0",
+   "tarih": "novembre 2026",
+   "maddeler": [
+    "Nuova scheda Notizie nella Community: fiere, raduni, nuova attrezzatura e gare, scelte in base al tuo paese.",
+    "Hotel amici dei motociclisti: in Esplora scegli Hotel e spunta «Amico dei motociclisti» per vedere sulla mappa gli hotel con garage o parcheggio moto. Puoi anche segnalare quelli in cui hai dormito."
+   ]
+  },
+  {
+   "no": "1.2.9",
+   "tarih": "novembre 2026",
+   "maddeler": [
+    "Corretto: le svolte subito dopo un cambio di nome della strada ora vengono annunciate e mostrate in tempo."
+   ]
+  },
+  {
+   "no": "1.2.8",
+   "tarih": "novembre 2026",
+   "maddeler": [
+    "Scegli la tua strada: tocca il tratto tra due tappe per prendere un'altra strada, oppure tieni premuto sulla mappa e tocca «Passa da qui» per far passare il percorso dove vuoi. Anche nel generatore di giri sul web."
+   ]
+  },
+  {
+   "no": "1.2.7",
+   "tarih": "novembre 2026",
+   "maddeler": [
+    "Più opzioni di percorso: chiedi indicazioni e ora ricevi fino a tre strade diverse; quella proposta resta la più corta.",
+    "Australia e Nuova Zelanda: 200 passi di montagna e 7 strade leggendarie, tra cui la Great Ocean Road e la Milford Road.",
+    "Pianifica dal computer: dalle Impostazioni apri il generatore di giri sul nostro sito e prepara il giro sul grande schermo."
+   ]
+  },
+  {
+   "no": "1.2.6",
+   "tarih": "novembre 2026",
+   "maddeler": [
+    "Angolo di piega: riguarda un'uscita registrata e scopri quanto hai piegato in ogni curva. La piega massima va al rallentatore, proprio dove la gomma tocca l'asfalto, e la mappa della gomma mostra quanto margine ti resta sui bordi.",
+    "La mia mappa: tutte le uscite registrate e i giri completati su un'unica mappa, in cima a Le mie uscite.",
+    "Opzioni di percorso: un'alternativa senza autostrada ora compare a parte e la stessa strada non viene più proposta due volte."
+   ]
+  },
+  {
+   "no": "1.2.5",
+   "tarih": "ottobre 2026",
+   "maddeler": [
+    "Tre nuove moto sulla mappa: Bagger, Naked e Scrambler. Impostazioni › Icona di navigazione."
+   ]
+  },
+  {
+   "no": "1.2.4",
+   "tarih": "ottobre 2026",
+   "maddeler": [
+    "Corretto: presentazione al primo avvio rinnovata; la densità di curve nelle schede dei giri segue la tua unità (per miglio dove si usano le miglia); piccole correzioni."
+   ]
+  },
+  {
+   "no": "1.2.3",
+   "tarih": "ottobre 2026",
+   "maddeler": [
+    "Premi e parla e un microfono d'interfono che taglia il vento. Un suono breve quando qualcuno entra o cade; alza o abbassa la voce di un amico; il leader del gruppo può fare annunci.",
+    "Corretto: testo del permesso contatti più chiaro; percorsi gratuiti anche nel Sud-est asiatico."
+   ]
+  },
+  {
+   "no": "1.2.2",
+   "tarih": "ottobre 2026",
+   "maddeler": [
+    "Scelta del percorso: i tragitti brevi in città non vengono più scartati. Se c'è una strada nettamente più corta, compare come opzione «Più breve».",
+    "Nella scheda di ricerca scambi partenza e arrivo con un tocco o li cancelli con ×.",
+    "Pro ora costa meno. Prova AI CoRider per 5 minuti con Pro, poi continua con i pacchetti di minuti."
+   ]
+  },
+  {
+   "no": "1.2.1",
+   "tarih": "ottobre 2026",
+   "maddeler": [
+    "Commenti agli eventi: scrivi sotto un raduno e rispondi alle domande. L'organizzatore può rimuovere qualsiasi commento.",
+    "Testi più chiari nella schermata Pro e piccole correzioni."
+   ]
+  },
+  {
+   "no": "1.2.0",
+   "tarih": "ottobre 2026",
+   "maddeler": [
+    "Nelle Impostazioni scegli la voce di CoRider e il volume alto da un'unica riga.",
+    "Sui percorsi con più tappe, l'elenco, l'avviso pioggia e i pulsanti della mappa non si sovrappongono più.",
+    "Sugli schermi piccoli come iPhone SE, la presentazione e la schermata di benvenuto ora entrano per intero."
+   ]
+  },
+  {
+   "no": "1.1.9",
+   "tarih": "ottobre 2026",
+   "maddeler": [
+    "Mappe offline (Pro): scarica la mappa di un tour o di una zona che inquadri sulla mappa. Quando il segnale manca per un po', la navigazione passa da sola alla mappa scaricata; nelle gallerie brevi la mappa non cambia.",
+    "Unità di misura (km o miglia) e lingua dell'app ora le scegli tu in Impostazioni.",
+    "Le svolte su CarPlay si leggono meglio: un badge con la distanza quando sei lontano, poi una freccia posata sulla strada quando ti avvicini.",
+    "Le tappe sono più chiare: la scheda tra due tappe mostra distanza e tempo, e con \"+ Aggiungi tappa\" ne inserisci una in mezzo o alla fine.",
+    "In Esplora cerchi vicino al percorso o su una singola tappa, e le schede dei luoghi hanno più foto."
+   ]
+  },
+  {
+   "no": "1.1.8",
+   "tarih": "ottobre 2026",
+   "maddeler": [
+    "Risolto un arresto anomalo passando da Blog a Feed in Community.",
+    "La registrazione del video del tuo replay in 3D parte in modo più affidabile.",
+    "«Pronto» non compare più prima che la mappa sia caricata, e la telecamera non salta più quando finisci uno zoom con due dita."
+   ]
+  },
+  {
+   "no": "1.1.7",
+   "tarih": "ottobre 2026",
+   "maddeler": [
+    "Mappa del viaggio: guarda un tour lungo o un giro come video su una mappa pulita. Mentre il percorso si disegna, compaiono una a una le città che hai attraversato e le tue foto.",
+    "Nuovi collegamenti rapidi nella schermata Parti: casa e lavoro, registra il giro, un anello di un’ora da dove ti trovi, una strada leggendaria vicina.",
+    "Aggiunti 298 passi di montagna e sei nuove strade leggendarie negli Stati Uniti; la modalità Costa ora funziona anche in molti paesi costieri d’Europa.",
+    "«Scopri Motoseyir» nelle Impostazioni è un breve tour video dell’app, scheda per scheda."
+   ]
+  },
+  {
+   "no": "1.1.6",
+   "tarih": "ottobre 2026",
+   "maddeler": [
+    "Guarda in 3D: rivedi un giro registrato come se lo seguissi dall’elicottero; le tue foto compaiono dove le hai scattate.",
+    "Condividi come video: crea un video verticale da 15, 30 o 60 secondi, pronto per Instagram. Non serve Pro.",
+    "Analisi del giro: tempo in movimento, soste vere, curve strette, dislivello totale e quanta parte della strada era nuova per te.",
+    "Nel generatore di giri «Un altro» porta tre nuovi anelli su strade diverse, e puoi evitare autostrade, pedaggi e sterrati."
+   ]
+  }
+ ],
  "insta_url": "https://www.instagram.com/motoseyir.app.en/",
  "insta_ad": "@motoseyir.app.en",
  "v_etiket": "Dati sui passi",
@@ -219,8 +339,8 @@
  "a1_s1_t": "navigazione gratuita in Turchia, Europa e Stati Uniti",
  "a1_s2_b": "26",
  "a1_s2_t": "tappe in un solo tour",
- "a1_s3_b": "2",
- "a1_s3_t": "percorsi alternativi, con il più corto segnalato",
+ "a1_s3_b": "3",
+ "a1_s3_t": "percorsi principali fra cui scegliere, il più corto segnato",
  "a1_s4_b": "726",
  "a1_s4_t": "autovelox in Turchia",
  "a1_1_t": "Indicazione della corsia",
@@ -234,7 +354,7 @@
  "a1_5_t": "Niente pedaggi",
  "a1_5_d": "Con un tocco togli le strade a pedaggio dal percorso.",
  "a1_6_t": "Sulla schermata di blocco",
- "a1_6_d": "La prossima svolta compare sulla schermata di blocco e nella Dynamic Island, così non devi sbloccare il telefono.",
+ "a1_6_d": "Su iPhone la prossima svolta compare sulla schermata di blocco e nella Dynamic Island. Su Android svolta, tempo rimanente e ora di arrivo restano in una notifica.",
  "a2_etiket": "Dettagli sul generatore di giri",
  "a2_s1_b": "30–300 km",
  "a2_s1_t": "lunghezza del giro, o sceglila in ore",
@@ -272,7 +392,7 @@
  "a4_5_t": "Gestisce il giro",
  "a4_5_d": "Avvia o termina la navigazione, attiva la registrazione del giro e ti porta a casa.",
  "a4_6_t": "Tempo di conversazione",
- "a4_6_d": "Pro rinnova ogni 30 giorni 10 minuti di conversazione. Se non bastano, aggiungi un pacchetto da 30, 60 o 180 minuti che non scade mai.",
+ "a4_6_d": "Con Pro provi AI CoRider per 5 minuti. Poi aggiungi un pacchetto da 30, 60 o 180 minuti che non scade.",
  "a5_etiket": "Dettagli su gruppo, interfono e CarPlay",
  "a5_s1_b": "12",
  "a5_s1_t": "motociclisti in un gruppo",
@@ -284,11 +404,11 @@
  "a5_1_d": "Scrivi il codice di 8 caratteri o tocca il link. Creare un gruppo fa parte di Pro.",
  "a5_2_t": "Posizione solo mentre guidi",
  "a5_2_d": "La tua posizione è condivisa solo mentre sono attive la navigazione o la registrazione del giro; quando finiscono, finisce anche la condivisione.",
- "a5_3_t": "Microfono aperto",
- "a5_3_d": "Niente push-to-talk sull’interfono: parli e basta. Silenzia chi vuoi. Non viene registrato nulla.",
+ "a5_3_t": "Tre modalità del microfono",
+ "a5_3_d": "Sempre attivo, Quando parlo o Premi e parla. Alzi o abbassi la voce di un amico, e il leader può fare un annuncio al gruppo. Non si registra nulla.",
  "a5_4_t": "CoRider nel gruppo",
  "a5_4_d": "Invita CoRider nella stanza del gruppo e lo sentono tutti.",
- "a5_5_t": "Navigazione su CarPlay",
+ "a5_5_t": "Navigazione su CarPlay (iPhone)",
  "a5_5_d": "Mappa e svolte sullo schermo dell’auto. Salti una tappa, registri il giro, apri l’interfono o cerchi un indirizzo dalla lista Destinazioni.",
  "a5_6_t": "Dashboard",
  "a5_6_d": "La mappa sta anche nella Dashboard di CarPlay, accanto alle altre app, con la tua posizione e il tuo percorso.",
@@ -303,12 +423,12 @@
  "a6_s1_t": "baie e spiagge in Turchia",
  "a6_s2_b": "20.106",
  "a6_s2_t": "luoghi per campeggio e natura in Turchia",
- "a6_s3_b": "6",
- "a6_s3_t": "categorie",
+ "a6_s3_b": "5",
+ "a6_s3_t": "categorie principali, ognuna con le sue opzioni",
  "a6_1_t": "Categorie",
- "a6_1_d": "Tutti, Baia e spiaggia, Campeggio e natura, Mangiare e bere, Carburante e Passi.",
+ "a6_1_d": "In viaggio, Ristoranti, Pernottamento, Da vedere e In evidenza. Dentro trovi Carburante, Caffè, Campeggi, Hotel, Spiagge e calette, Passi e altro.",
  "a6_2_t": "Dove lo trovi",
- "a6_2_d": "In I miei tour apri un tour e scegli Esplora tra le schede Tappe | Esplora | Diario. Il tour deve avere almeno due tappe; la ricerca è in Pro.",
+ "a6_2_d": "Apri un tour in I miei tour e scegli Esplora tra le schede Tappe | Esplora | Diario. Cerchi vicino al percorso o su una singola tappa. Il tour deve avere almeno due tappe, e la ricerca fa parte di Pro.",
  "a6_3_t": "Esplora questa zona",
  "a6_3_d": "Sposta la mappa dove vuoi e cerca intorno a quel punto.",
  "a6_4_t": "Campeggio e natura",
@@ -375,8 +495,8 @@
  "dg_6_d": "La scheda del percorso mostra il carburante stimato (litri, galloni negli Stati Uniti). Tocca il consumo per inserire il tuo valore.",
  "dg_7_t": "Nota tramonto",
  "dg_7_d": "Se il viaggio supera il tramonto, nella scheda del percorso compare una riga come «Arrivo 19:40 · tramonto 19:12».",
- "dg_8_t": "Percorso offline",
- "dg_8_d": "I tuoi tour conservano sul telefono una copia del percorso. Se la connessione cade, il tour si apre da quella copia e, se esci dal percorso, la freccia «Torna sul percorso» ti indica la direzione. La mappa invece richiede internet.",
+ "dg_8_t": "Mappe offline",
+ "dg_8_d": "Scarica la mappa di un tour o di una zona che inquadri sulla mappa. Quando il segnale manca per un po’, la navigazione passa da sola alla mappa scaricata; toccando la nuvola puoi passarci anche a mano. Scaricare le mappe fa parte di Pro.",
  "dg_9_t": "Quando esci dal percorso",
  "dg_9_d": "In Impostazioni → Guida → Quando esci dal percorso scegli Nuovo percorso o Torna al percorso, e puoi far saltare in automatico la tappa che hai mancato.",
  "dg_10_t": "Scorciatoie Casa e Lavoro",
@@ -393,16 +513,28 @@
  "dg_15_d": "Importi un file GPX e la traccia finisce nella scheda Piste, con distanza, dislivello totale, pendenza massima e profilo altimetrico. Scorri il dito sul profilo e il punto sulla mappa si muove.",
  "dg_16_t": "Condividi il tour",
  "dg_16_d": "Mandi il tour come link, video o file GPX. Il link vale 30 giorni; chi lo riceve lo tocca, oppure va in I miei tour → Con un codice → Aggiungi il tour. È gratis.",
- "dg_17_t": "Community e Blog",
- "dg_17_d": "Community ha le schede Blog, Feed e Il mio gruppo. Nel feed vedi i tour e i giri degli altri motociclisti, metti mi piace, commenti e rispondi, e filtri per paese. In Blog puoi mandare un tuo articolo con «Scrivi un articolo». Basta un nome utente.",
+ "dg_17_t": "Community e Notizie",
+ "dg_17_d": "La scheda Notizie porta fiere, raduni, nuova attrezzatura e gare, scelte in base al tuo paese. Nel Feed vedi tour e giri degli altri, metti mi piace, commenti, rispondi e filtri per paese. Basta un nome utente.",
  "dg_18_t": "Eventi",
- "dg_18_d": "Nella Community organizzi un ritrovo o tocchi «Partecipo». Un evento ha un punto di ritrovo, un numero di posti e, se vuoi, un percorso; la tua posizione non viene condivisa.",
+ "dg_18_d": "Nella Community organizzi un ritrovo o tocchi «Partecipo». Un evento ha un punto di ritrovo, un numero di posti e, se vuoi, un percorso; la tua posizione non viene condivisa. Sotto un raduno scrivi commenti e rispondi alle domande; l’organizzatore può togliere un commento che non vuole.",
  "dg_19_t": "Aggiungi foto a un passo",
  "dg_19_d": "Nella pagina di un passo, con Aggiungi foto metti la tua foto (fino a tre per passo); sotto compare il tuo nome utente.",
  "dg_20_t": "Orizzontale",
  "dg_20_d": "Se giri il telefono in orizzontale, le schede si raccolgono a sinistra e la mappa prende lo spazio rimasto; I miei tour passa a due colonne.",
  "dg_21_t": "Unità e lingua",
- "dg_21_d": "Le unità seguono dove ti trovi: miglia, mph e piedi negli Stati Uniti, miglia e yard nel Regno Unito, chilometri altrove. L’app parla turco, inglese, tedesco, francese e italiano e segue la lingua del telefono.",
+ "dg_21_d": "Unità (km o miglia) e lingua le scegli in Impostazioni → Aspetto. Su Automatico le unità seguono il luogo in cui sei e la lingua segue il telefono. L’app parla turco, inglese, tedesco, francese e italiano.",
+ "dg_22_t": "Tra due tappe",
+ "dg_22_d": "La scheda tra due tappe mostra distanza e tempo. Toccala per aggiungere una sosta in mezzo, cercare su quella tappa o sceglierne un’altra strada.",
+ "dg_23_t": "Passa da qui",
+ "dg_23_d": "Tieni premuto sulla mappa e tocca «Passa da qui»: il percorso passa dalla strada che vuoi. Lo fa anche il generatore di giri di questo sito.",
+ "dg_24_t": "Angolo di piega",
+ "dg_24_d": "Riguarda un giro registrato e scopri quanto hai piegato in ogni curva; la piega massima va al rallentatore. La mappa della gomma mostra quanto margine resta su ogni lato. L’angolo si calcola dalla traccia GPS, quindi funziona anche sui giri vecchi.",
+ "dg_25_t": "La mia mappa",
+ "dg_25_d": "Tutti i giri registrati e i tour completati su un’unica mappa, in cima a I miei giri. Filtri per quest’anno o questo mese.",
+ "dg_26_t": "Hotel amici dei motociclisti",
+ "dg_26_d": "In Esplora scegli Pernottamento → Hotel e spunta «Amico dei motociclisti» per vedere a parte gli hotel con garage o parcheggio moto. Puoi anche segnalare quelli in cui hai dormito.",
+ "dg_27_t": "Prosegue su CarPlay",
+ "dg_27_d": "Quando ti colleghi a CarPlay, il telefono mostra una schermata semplice e si blocca da solo, così la batteria dura di più. Solo su iPhone.",
  "c_say_h": "Cosa puoi dire",
  "c_say_p": "Sono esempi. Non ci sono comandi da imparare, dillo con parole tue.",
  "c_s1": "Quanto manca? Pioverà lungo la strada?",

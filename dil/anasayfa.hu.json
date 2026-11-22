@@ -83,12 +83,12 @@
  "k8_ad": "Te a térképen",
  "k8_alt": "A motor, amely téged jelöl a térképen; húzd balra vagy jobbra, hogy elforgasd",
  "k8_h2": "Te is <i>rajta vagy a térképen.</i>",
- "k8_p": "Motorozás közben egy jelölő mutatja, hol vagy a térképen. Hat van: Supersport, Chopper, Maxi scooter, Touring, Arrow és Helmet. A „Settings” képernyőn választod ki, CarPlayen pedig ugyanaz látszik.",
+ "k8_p": "Motorozás közben egy jelölő mutatja, hol vagy a térképen. Kilenc van: Supersport, Chopper, Maxi scooter, Touring, Naked, Scrambler, Bagger, Arrow és Helmet. A „Settings” képernyőn választod ki, CarPlayen pedig ugyanaz látszik.",
  "k8_not": "Húzd az elforgatáshoz",
  "a8_etiket": "A jelölő részletesen",
- "a8_s1_b": "6",
+ "a8_s1_b": "9",
  "a8_s1_t": "jelölő közül választhatsz",
- "a8_s2_b": "4",
+ "a8_s2_b": "7",
  "a8_s2_t": "közülük 3D-s, motorossal, és bedől a kanyarban",
  "a8_s3_b": "CarPlay",
  "a8_s3_t": "az általad választott jelölő az autó kijelzőjén is látszik",
@@ -98,16 +98,19 @@
  "k8_m4": "Touring",
  "k8_m5": "Arrow",
  "k8_m6": "Helmet",
+ "k8_m7": "Naked",
+ "k8_m8": "Scrambler",
+ "k8_m9": "Bagger",
  "a8_1_t": "Hol választod",
- "a8_1_d": "Settings → Map → Navigation marker. Megnyílik a hat jelölő rácsa, és amelyikre koppintasz, az lesz kiválasztva. Az app első megnyitásakor is választhatsz.",
- "a8_2_t": "Négy 3D-s",
- "a8_2_d": "A Supersport, a Chopper, a Maxi scooter és a Touring 72 szögből, motorossal együtt van megrajzolva, és bedől a kanyarban. Az Arrow és a Helmet egyszerű rajz.",
+ "a8_1_d": "„Settings → Map → Navigation marker”. Kilenc jelölőből álló rács nyílik meg, és amelyikre koppintasz, az lesz kiválasztva. Az alkalmazás első megnyitásakor is kiválaszthatod.",
+ "a8_2_t": "Hét 3D-s",
+ "a8_2_d": "A hét motort 72 szögből rajzolták meg motorossal együtt, és a kanyarban bedőlnek. Az Arrow és a Helmet egyszerű lapos rajz.",
  "a8_3_t": "Mindenhol veled",
  "a8_3_d": "A főtérképen és a navigációban, élő helyzetként a túra térképén, a 3D-s visszajátszásban és a túratérkép-videóban, valamint CarPlayen és a CarPlay Irányítópultján is.",
  "a8_4_t": "Csoportban",
  "a8_4_d": "Csoportban a barátaidat egy rögzített, kisebb jelölő mutatja; a te választásod nem jut el hozzájuk.",
- "a8_5_t": "Ingyenes",
- "a8_5_d": "A jelölő kiválasztásához nem kell Pro.",
+ "a8_5_t": "Ami ingyenes",
+ "a8_5_d": "A Maxi scooter és az Arrow mindenkinek ingyenes; a többi jelölő a Pro része.",
  "a8_6_t": "Forgasd el a Touringot",
  "a8_6_d": "Húzd balra vagy jobbra a fenti motort. Ha elengeded, lassan megáll, ha nem nyúlsz hozzá, magától lassan forog.",
  "k9_ad": "Legendás utak",
@@ -123,7 +126,7 @@
  "plan_u_p": "Az útvonaltervezés és a lépésenkénti navigáció korlátlan Törökországban, Európában és az USA-ban. Nem kell fiók; az ingyenes szint 1 mentett túrát tárol.",
  "plan_p_p": "A Pro ezeket nyitja meg:",
  "pp1": "AI CoRider",
- "pp2": "Apple CarPlay",
+ "pp2": "Apple CarPlay (iPhone)",
  "pp3": "Csoport létrehozása",
  "pp4": "Discover",
  "pp5": "Korlátlan túra és nyomvonal",
@@ -140,27 +143,144 @@
  "faq_q4": "Hol működik?",
  "faq_a4": "Az útvonaltervezés és a navigáció Törökországban, Európában és az USA-ban működik. A hágótérkép 36 ország több mint 1 600 hágóját tartalmazza.",
  "faq_q5": "Működik CarPlay-jel?",
- "faq_a5": "Igen. Az Apple CarPlay a Pro része; az útvonalad teljes képernyőn jelenik meg az autó kijelzőjén.",
+ "faq_a5": "Igen, iPhone-on. Az Apple CarPlay a Pro része, és az útvonalad betölti az autó kijelzőjét. Android Auto nem támogatott.",
  "faq_q6": "Motorozhatok a barátaimmal?",
  "faq_a6": "Igen. Ugyanazon az útvonalon mentek, mindenkit látsz a térképen, és a csoportos intercomon beszélgettek. A csoporthoz meghívóval vagy kóddal csatlakozni ingyenes; csoportot létrehozni a Pro része.",
  "varis_h2": "Az út <i>készen áll.</i>",
  "varis_nasil": "Hogyan működik",
  "ayr_etiket": "Adatvédelem, verziójegyzetek és kapcsolat",
  "yeni_lead": "A legutóbbi frissítések, legújabb elöl.",
- "y118_tarih": "2026. október",
- "y117_tarih": "2026. október",
- "y116_tarih": "2026. október",
- "y118_1": "Javítottuk az összeomlást, amely a Communityben a Blogról a Feedre váltáskor jelentkezett.",
- "y118_2": "A 3D-s visszajátszásról készülő videófelvétel megbízhatóbban indul.",
- "y118_3": "Már nem jelenik meg a „Ready” felirat, mielőtt a térkép betöltődne, és a kamera sem ugrik el, ha befejezed a csípéssel nagyítást.",
- "y117_1": "Túratérkép: nézz meg egy hosszú túrát vagy menetet videóként, letisztult térképen. Ahogy az útvonalad kirajzolja magát, egyenként jelennek meg az érintett települések és a fotóid.",
- "y117_2": "Új gyorsgombok a Start képernyőn: otthon és munkahely, menetrögzítés, egyórás kör innen, legendás út a közelben.",
- "y117_3": "298 hágó és hat új legendás út az USA-ban, a Tengerpart mód pedig már Európa több tengerparti országában is működik.",
- "y117_4": "A „Settings” képernyőn a „Get to know Motoseyir” egy rövid videós körút az appról, fülenként.",
- "y116_1": "Nézd 3D-ben: játszd vissza a rögzített menetet, mintha helikopterből követnéd; a fotóid ott bukkannak fel, ahol készítetted őket.",
- "y116_2": "Megosztás videóként: készíts 15, 30 vagy 60 másodperces álló videót, Instagramra készen. Pro nem kell hozzá.",
- "y116_3": "Menetelemzés: mozgásidő, valódi szünetek, éles kanyarok, összes emelkedés, és hogy az út mekkora része volt új neked.",
- "y116_4": "A „Generate a tour” fülön az „Another one” három új kört hoz más utakon, és kerülheted az autópályákat, az útdíjas és a földutakat.",
+ "yeni_onceki": "Korábbi verziók",
+ "surumler": [
+  {
+   "no": "1.3.0",
+   "tarih": "2026. november",
+   "maddeler": [
+    "Új Hírek lap a Közösségben: kiállítások, találkozók, új felszerelés és versenyek, az országodhoz igazítva.",
+    "Motorosbarát szállodák: a Felfedezésben válaszd a Szállodát, és pipáld be a „Motorosbarát” lehetőséget, így a térképen látod a motorgarázzsal vagy -parkolóval rendelkező szállodákat. Te is ajánlhatsz olyat, ahol megszálltál."
+   ]
+  },
+  {
+   "no": "1.2.9",
+   "tarih": "2026. november",
+   "maddeler": [
+    "Javítások: az útnévváltás után közvetlenül következő kanyarokat most időben bemondja és mutatja az alkalmazás."
+   ]
+  },
+  {
+   "no": "1.2.8",
+   "tarih": "2026. november",
+   "maddeler": [
+    "Válaszd ki az utat: koppints két megálló közötti szakaszra, hogy másik utat válassz, vagy nyomd hosszan a térképet, és koppints az „Erre menj” gombra, hogy az útvonal arra vezessen, amerre szeretnéd. A webes túratervezőben is működik."
+   ]
+  },
+  {
+   "no": "1.2.7",
+   "tarih": "2026. november",
+   "maddeler": [
+    "Több útvonal-lehetőség: útvonalkérésnél most legfeljebb három különböző utat kapsz; a javasolt továbbra is a legrövidebb.",
+    "Ausztrália és Új-Zéland: 200 hágó és 7 legendás út, köztük a Great Ocean Road és a Milford Road.",
+    "Tervezz laptopon: a Beállításokból nyisd meg a weboldalunk túratervezőjét, és tervezz nagy képernyőn."
+   ]
+  },
+  {
+   "no": "1.2.6",
+   "tarih": "2026. november",
+   "maddeler": [
+    "Dőlésszög: játszd vissza a rögzített utat, és nézd meg, mennyire döntötted be a motort minden kanyarban. A legnagyobb dőlés lassítva megy, pont ott, ahol a gumi az aszfalthoz ér, a gumitérkép pedig megmutatja, mennyi tartalék maradt a széleken.",
+    "Térképem: az összes rögzített utad és befejezett túrád egy térképen, a Saját utak tetején.",
+    "Útvonal-lehetőségek: az autópálya nélküli változat külön megjelenik, és ugyanazt az utat már nem ajánlja kétszer."
+   ]
+  },
+  {
+   "no": "1.2.5",
+   "tarih": "2026. október",
+   "maddeler": [
+    "Három új motor a térképen: Bagger, Naked és Scrambler. Settings › Navigation marker."
+   ]
+  },
+  {
+   "no": "1.2.4",
+   "tarih": "2026. október",
+   "maddeler": [
+    "Javítások: megújult bemutató az első indításkor; a túrakártyák kanyarsűrűsége a saját mértékegységedben (mérföldenként, ahol mérföldet használnak); apró javítások."
+   ]
+  },
+  {
+   "no": "1.2.3",
+   "tarih": "2026. október",
+   "maddeler": [
+    "Nyomd és beszélj, valamint szélálló interkom-mikrofon, ami csak beszédre nyílik. Rövid hang, ha valaki belép vagy kiesik; egy barátod hangját halkíthatod vagy hangosíthatod, a csoportvezető pedig bejelentést tehet.",
+    "Javítások: érthetőbb névjegy-engedély szöveg; az útvonalak Délkelet-Ázsiában is ingyenesek."
+   ]
+  },
+  {
+   "no": "1.2.2",
+   "tarih": "2026. október",
+   "maddeler": [
+    "Útvonalválasztás: a rövid városi utak már nem esnek ki. Ha van egyértelműen rövidebb út, „Rövidebb” lehetőségként jelenik meg.",
+    "A keresőkártyán egy koppintással felcserélheted az indulást és a célt, vagy törölheted őket a × gombbal.",
+    "A Pro most olcsóbb. Az AI CoRidert 5 percig kipróbálhatod a Próval, utána perccsomagokkal használhatod tovább."
+   ]
+  },
+  {
+   "no": "1.2.1",
+   "tarih": "2026. október",
+   "maddeler": [
+    "Hozzászólások az eseményekhez: írj egy találkozó alá, és válaszolj a kérdésekre. A szervező bármelyik hozzászólást eltávolíthatja.",
+    "Érthetőbb szövegek a Pro képernyőn és apró javítások."
+   ]
+  },
+  {
+   "no": "1.2.0",
+   "tarih": "2026. október",
+   "maddeler": [
+    "A Beállításokban a CoRider hangját és a hangos módot most egy sorban választod ki.",
+    "Több megállós útvonalon a megállólista, az esőfigyelmeztetés és a térkép gombjai már nem fedik egymást.",
+    "Kis kijelzőn, például iPhone SE-n, a bemutató és az üdvözlő képernyő most teljesen elfér."
+   ]
+  },
+  {
+   "no": "1.1.9",
+   "tarih": "2026. október",
+   "maddeler": [
+    "Offline térkép (Pro): töltsd le egy túra vagy egy általad a térképen bekeretezett terület térképét. Ha hosszabb időre elmegy a térerő, a navigáció magától átvált a letöltött térképre; rövid alagutaknál a térkép nem változik.",
+    "A mértékegységet (km vagy mérföld) és az alkalmazás nyelvét mostantól te magad választod ki a Settings alatt.",
+    "A kanyarok CarPlayen jobban olvashatók: messziről a távolságot mutató jelvényt látod, közeledve pedig az útra fektetett nyilat.",
+    "A megállók áttekinthetőbbek: a két megálló közti címke mutatja a távolságot és az időt, a \"+ Add stop\" gombbal pedig közéjük vagy a végére tehetsz új megállót.",
+    "A \"Discover\" részben az útvonal mentén vagy egyetlen szakaszon keresel, a helykártyákon pedig több a fotó."
+   ]
+  },
+  {
+   "no": "1.1.8",
+   "tarih": "2026. október",
+   "maddeler": [
+    "Javítottuk az összeomlást, amely a Communityben a Blogról a Feedre váltáskor jelentkezett.",
+    "A 3D-s visszajátszásról készülő videófelvétel megbízhatóbban indul.",
+    "Már nem jelenik meg a „Ready” felirat, mielőtt a térkép betöltődne, és a kamera sem ugrik el, ha befejezed a csípéssel nagyítást."
+   ]
+  },
+  {
+   "no": "1.1.7",
+   "tarih": "2026. október",
+   "maddeler": [
+    "Túratérkép: nézz meg egy hosszú túrát vagy menetet videóként, letisztult térképen. Ahogy az útvonalad kirajzolja magát, egyenként jelennek meg az érintett települések és a fotóid.",
+    "Új gyorsgombok a Start képernyőn: otthon és munkahely, menetrögzítés, egyórás kör innen, legendás út a közelben.",
+    "298 hágó és hat új legendás út az USA-ban, a Tengerpart mód pedig már Európa több tengerparti országában is működik.",
+    "A „Settings” képernyőn a „Get to know Motoseyir” egy rövid videós körút az appról, fülenként."
+   ]
+  },
+  {
+   "no": "1.1.6",
+   "tarih": "2026. október",
+   "maddeler": [
+    "Nézd 3D-ben: játszd vissza a rögzített menetet, mintha helikopterből követnéd; a fotóid ott bukkannak fel, ahol készítetted őket.",
+    "Megosztás videóként: készíts 15, 30 vagy 60 másodperces álló videót, Instagramra készen. Pro nem kell hozzá.",
+    "Menetelemzés: mozgásidő, valódi szünetek, éles kanyarok, összes emelkedés, és hogy az út mekkora része volt új neked.",
+    "A „Generate a tour” fülön az „Another one” három új kört hoz más utakon, és kerülheted az autópályákat, az útdíjas és a földutakat."
+   ]
+  }
+ ],
  "insta_url": "https://www.instagram.com/motoseyir.app.en/",
  "insta_ad": "@motoseyir.app.en",
  "v_etiket": "Hágóadatok",
@@ -219,8 +339,8 @@
  "a1_s1_t": "ingyenes navigáció Törökországban, Európában és az USA-ban",
  "a1_s2_b": "26",
  "a1_s2_t": "megálló egyetlen túrán",
- "a1_s3_b": "2",
- "a1_s3_t": "alternatív útvonal, a legrövidebb megjelölve",
+ "a1_s3_b": "3",
+ "a1_s3_t": "fő útvonal közül választhatsz, a legrövidebb jelölve",
  "a1_s4_b": "726",
  "a1_s4_t": "traffipax Törökországban",
  "a1_1_t": "Sávvezetés",
@@ -234,7 +354,7 @@
  "a1_5_t": "„No toll roads”",
  "a1_5_d": "Egy koppintással kikerülnek az útvonalból a fizetős utak.",
  "a1_6_t": "A zárolt képernyőn",
- "a1_6_d": "A következő kanyar megjelenik a zárolt képernyőn és a Dynamic Islanden, így nem kell feloldanod a telefont.",
+ "a1_6_d": "iPhone-on a következő kanyar a lezárási képernyőn és a Dynamic Islandben látszik. Androidon a kanyar, a hátralévő idő és az érkezés egy értesítésben marad.",
  "a2_etiket": "Túragenerátor részletesen",
  "a2_s1_b": "30–300 km",
  "a2_s1_t": "a túra hossza, vagy válaszd órában",
@@ -272,7 +392,7 @@
  "a4_5_t": "Viszi a menetet",
  "a4_5_d": "Elindítja vagy leállítja a navigációt, bekapcsolja a menetrögzítést, és hazavisz.",
  "a4_6_t": "Beszédidő",
- "a4_6_d": "A Pro 30 naponta 10 perc beszédidőt újít meg. Ha több kell, vegyél 30, 60 vagy 180 perces csomagot, amely nem jár le.",
+ "a4_6_d": "A Próval 5 percig kipróbálhatod az AI CoRidert. Utána vehetsz 30, 60 vagy 180 perces csomagot, amely nem jár le.",
  "a5_etiket": "Csoport, intercom és CarPlay részletesen",
  "a5_s1_b": "12",
  "a5_s1_t": "motoros egy csoportban",
@@ -284,11 +404,11 @@
  "a5_1_d": "Írd be a 8 karakteres kódot, vagy koppints a linkre. A csoport létrehozása a Pro része.",
  "a5_2_t": "Helyzet csak motorozás közben",
  "a5_2_d": "A helyzeted csak addig látszik, amíg fut a navigáció vagy a menetrögzítés, és a megosztás leáll, amint befejezed.",
- "a5_3_t": "Nyitott mikrofon",
- "a5_3_d": "Az intercomon nincs nyomógomb: csak beszélj. Bárkit lenémíthatsz. Semmi nem kerül rögzítésre.",
+ "a5_3_t": "Három mikrofonmód",
+ "a5_3_d": "„Always on”, „When I talk” vagy „Push to talk”. Egy barátod hangját felhangosíthatod vagy halkíthatod, a vezető pedig bejelentést tehet a csoportnak. Semmi nem kerül rögzítésre.",
  "a5_4_t": "CoRider a csoportban",
  "a5_4_d": "Hívd meg a CoRidert a csoport szobájába, és mindenki hallja.",
- "a5_5_t": "Navigáció CarPlayen",
+ "a5_5_t": "Navigáció CarPlayen (iPhone)",
  "a5_5_d": "Térkép és kanyarok az autó kijelzőjén. Kihagyhatsz egy megállót, rögzíthetsz menetet, megnyithatod az intercomot, és kereshetsz címet a „Destinations” listában.",
  "a5_6_t": "Irányítópult",
  "a5_6_d": "A térkép a CarPlay Irányítópultján is ott van a többi appod mellett, a helyzeteddel és az útvonaladdal.",
@@ -303,12 +423,12 @@
  "a6_s1_t": "öböl és strand Törökországban",
  "a6_s2_b": "20 106",
  "a6_s2_t": "kemping- és természeti hely Törökországban",
- "a6_s3_b": "6",
- "a6_s3_t": "kategória",
+ "a6_s3_b": "5",
+ "a6_s3_t": "fő kategória, mindegyik saját lehetőségekkel",
  "a6_1_t": "Kategóriák",
- "a6_1_d": "„All”, „Bay & beach”, „Camping & nature”, „Food & drink”, „Fuel” és „Passes”.",
+ "a6_1_d": "„On the road”, „Food”, „Stay”, „See & do” és „Highlights”. Ezeken belül benzinkutat, kávézót, kempinget, szállodát, strandot és öblöt, hágót és még sok mást találsz.",
  "a6_2_t": "Hol találod",
- "a6_2_d": "Nyiss meg egy túrát a My Tours alatt, és a Stops | Discover | Journal fülek közül válaszd a Discover fület. A túrának legalább két megállója legyen; a keresés a Pro része.",
+ "a6_2_d": "Nyiss meg egy túrát a My Tours alatt, és a Stops | Discover | Journal fülek közül válaszd a Discover fület. Kereshetsz az útvonal mentén vagy egyetlen szakaszon. A túrának legalább két megállója legyen; a keresés a Pro része.",
  "a6_3_t": "„Explore this area”",
  "a6_3_d": "Told a térképet bárhová, és keress a hely körül.",
  "a6_4_t": "„Camping & nature”",
@@ -375,8 +495,8 @@
  "dg_6_d": "Az útvonalkártyán látszik a becsült üzemanyagmennyiség (liter, az USA-ban gallon). Koppints a fogyasztásra, és add meg a sajátodat.",
  "dg_7_t": "Naplemente-jegyzet",
  "dg_7_d": "Ha a menet a naplementén túl tart, az útvonalkártyán megjelenik egy sor, például „Arrive 19:40 · sunset 19:12”.",
- "dg_8_t": "Offline útvonalmásolat",
- "dg_8_d": "A túráid útvonaláról másolat marad a telefonodon. Ha megszakad a kapcsolat, a túra a másolatból nyílik meg, és ha letérsz az útvonalról, a „Back to route” nyíl mutatja az irányt. Maga a térkép még így is internetet kér.",
+ "dg_8_t": "Offline térkép",
+ "dg_8_d": "Töltsd le egy túra vagy egy általad a térképen bekeretezett terület térképét. Ha hosszabb időre elmegy a térerő, a navigáció magától átvált a letöltött térképre; a felhőre koppintva kézzel is átválthatsz. A térképletöltés a Pro része.",
  "dg_9_t": "Amikor letérsz az útvonalról",
  "dg_9_d": "A Settings → Riding → When you leave the route alatt a „New route” és a „Back to route” közül választasz, és rábízhatod, hogy a kihagyott megállót magától átugorja.",
  "dg_10_t": "Otthon és munkahely gyorsgombjai",
@@ -393,16 +513,28 @@
  "dg_15_d": "Importálj egy GPX-fájlt, és a nyomvonal a Trails fülre kerül; kiszámolja a távolságát, a teljes szintemelkedést, a legmeredekebb szakaszt és a magassági profilt. Ha végighúzod az ujjad a profilon, a pont a térképen is követi.",
  "dg_16_t": "Túra megosztása",
  "dg_16_d": "Küldd el a túrát linkként, videóként vagy GPX-fájlként. A link 30 napig érvényes; a másik fél rákoppint, vagy a My Tours → With a code → Add tour úton veszi át. Ingyenes.",
- "dg_17_t": "Community és Blog",
- "dg_17_d": "A Communityben három fül van: Blog, Feed és My Ride Group. A Feedben mások túráit és meneteit látod, kedvelhetsz, kommentálhatsz és válaszolhatsz, országra is szűrhetsz. A Blogban a „Write a post” gombbal saját bejegyzést küldhetsz. Felhasználónév elég hozzá.",
+ "dg_17_t": "Közösség és hírek",
+ "dg_17_d": "A „News” fül kiállításokat, találkozókat, új felszerelést és versenyeket hoz, az országodhoz igazítva. A „Feed” fülön mások túráit és meneteit látod, kedvelhetsz, kommentálhatsz, válaszolhatsz és országra szűrhetsz. Felhasználónév elég hozzá.",
  "dg_18_t": "Események",
- "dg_18_d": "Hozz létre találkozót a Communityben, vagy koppints az „I’m going” gombra. Van hozzá találkozási pont, létszámkorlát és kívánság szerint útvonal; a helyzeted nem oszlik meg.",
+ "dg_18_d": "Hozz létre találkozót a Communityben, vagy koppints az „I’m going” gombra. Van hozzá találkozási pont, létszámkorlát és kívánság szerint útvonal; a helyzeted nem oszlik meg. Egy találkozó alá kommentet írhatsz és válaszolhatsz a kérdésekre; a szervező eltávolíthatja a nem kívánt kommentet.",
  "dg_19_t": "Fotó hozzáadása egy hágóhoz",
  "dg_19_d": "A hágó oldalán az „Add photo” gombbal saját fotót adhatsz hozzá (hágónként legfeljebb hármat); alatta a felhasználóneved szerepel.",
  "dg_20_t": "Fekvő tájolás",
  "dg_20_d": "Fordítsd oldalra a telefont: a kártyák balra gyűlnek, a térkép elfoglalja a maradékot; a My Tours két hasábra vált.",
  "dg_21_t": "Mértékegységek és nyelv",
- "dg_21_d": "A mértékegység onnan jön, ahol vagy: mérföld, mph és láb az USA-ban, mérföld és yard az Egyesült Királyságban, kilométer mindenhol máshol. Az app törökül, angolul, németül, franciául és olaszul beszél, és a telefonod nyelvét követi.",
+ "dg_21_d": "A mértékegységet (km vagy mérföld) és a nyelvet a „Settings → Appearance” alatt választod ki. „Automatic” beállításon a mértékegység a tartózkodási helyedhez, a nyelv a telefonodhoz igazodik. Az alkalmazás törökül, angolul, németül, franciául és olaszul beszél.",
+ "dg_22_t": "Megállók között",
+ "dg_22_d": "A két megálló közti címke mutatja a távolságot és az időt. Koppints rá, hogy közéjük tegyél egy megállót, azon a szakaszon keress, vagy másik utat válassz hozzá.",
+ "dg_23_t": "Erre menj",
+ "dg_23_d": "Nyomd hosszan a térképet, és koppints a „Pass through here” gombra: az útvonal arra az útra kerül, amerre szeretnéd. A webes túratervező is tudja.",
+ "dg_24_t": "Dőlésszög",
+ "dg_24_d": "Játszd vissza a rögzített utat, és nézd meg, mennyire döntötted be a motort minden kanyarban; a legnagyobb dőlés lassítva megy. A gumitérkép megmutatja, mennyi tartalék maradt mindkét oldalon. A szöget a GPS-nyomvonalból számolja, így régebbi utakon is működik.",
+ "dg_25_t": "Térképem",
+ "dg_25_d": "Az összes rögzített utad és befejezett túrád egy térképen, a „My Rides” tetején. Szűrhetsz idei évre vagy erre a hónapra.",
+ "dg_26_t": "Motorosbarát szállodák",
+ "dg_26_d": "A „Discover” alatt válaszd a „Stay → Hotel” lehetőséget, és pipáld be a „Biker-friendly” jelölőt, így külön látod a motorgarázzsal vagy -parkolóval rendelkező szállodákat. Te is ajánlhatsz olyat, ahol megszálltál.",
+ "dg_27_t": "Folytatás CarPlayen",
+ "dg_27_d": "Ha CarPlayhez csatlakozol, a telefon egyszerű képernyőt mutat és magától zárol, így tovább bírja az akksi. Csak iPhone-on.",
  "c_say_h": "Mit mondhatsz",
  "c_say_p": "Ezek csak példák. Nem kell parancsokat megtanulnod, mondd a saját szavaiddal.",
  "c_s1": "Mennyi van még hátra? Esni fog az úton?",

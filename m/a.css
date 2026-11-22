@@ -212,7 +212,8 @@ h2{font:800 clamp(1.9rem,5.6vw,3rem)/1.1 var(--sans);letter-spacing:-.025em;text
 .isaretler .ic{display:grid;place-items:center;width:min(96px,100%);aspect-ratio:1}
 .isaretler .ic img,.isaretler .ic svg{width:100%;height:auto}
 .isaretler b{font:700 .95rem/1.25 var(--sans);overflow-wrap:anywhere}
-@media(min-width:700px){.isaretler{grid-template-columns:repeat(6,minmax(0,1fr));gap:16px}}
+/* 22 Kas 2026: dokuz işaretçi — dar ekranda 3×3, genişte tek sıra */
+@media(min-width:1000px){.isaretler{grid-template-columns:repeat(9,minmax(0,1fr));gap:12px}.isaretler b{font-size:.85rem}}
 @media(hover:hover){.hm .isaretler li{transition:opacity .7s ease,translate .9s cubic-bezier(.2,.8,.2,1),box-shadow .3s,border-color .3s}.hm .isaretler li:hover{box-shadow:0 14px 28px -18px rgba(22,34,31,.45);border-color:var(--vurgu)}}
 .liste{list-style:none;margin-top:28px;max-width:34rem}
 .liste li{padding:15px 0;border-top:1px solid var(--cizgi)}
@@ -269,6 +270,13 @@ h2{font:800 clamp(1.9rem,5.6vw,3rem)/1.1 var(--sans);letter-spacing:-.025em;text
 .surum b{font:800 1.15rem/1 var(--sans);letter-spacing:-.01em}
 .surum time{font-size:.84rem;color:var(--yazi-3)}
 .surum ul.d{margin-top:14px}
+/* Eski sürümler katlanır kutuda (22 Kas 2026, uret.py yenilikler_html) */
+.surum-eski{margin-top:18px;max-width:46rem}
+.surum-eski summary{cursor:pointer;font:700 .9rem/1.4 var(--sans);color:var(--yazi-2);padding:10px 0;list-style:none;display:flex;gap:10px;align-items:center}
+.surum-eski summary::-webkit-details-marker{display:none}
+.surum-eski summary::before{content:"";width:7px;height:7px;border:solid currentColor;border-width:0 1.5px 1.5px 0;transform:rotate(-45deg);transition:transform .2s}
+.surum-eski[open] summary::before{transform:rotate(45deg)}
+.surum-eski summary:hover{color:var(--yazi)}
 .kartlar{display:grid;gap:16px;margin-top:20px;max-width:46rem}
 @media(min-width:900px){.ayr .kap{grid-template-columns:1fr 1fr;column-gap:96px;align-items:start}.ayr #iletisim{grid-column:1/-1}.kartlar{grid-template-columns:1fr 1fr}}
 .kart{background:var(--yuzey);border:1px solid var(--cizgi);border-radius:var(--r);padding:20px 22px}
@@ -354,6 +362,7 @@ footer{background:var(--yuksek);border-top:1px solid var(--cizgi);padding:34px 0
 .hm :is(.liste,.izgara,.pinler,.cr-soz,.cr-adim,.isaretler)>li:nth-child(4),.hm .veri-say>div:nth-child(4){--i:3}
 .hm :is(.liste,.izgara,.pinler,.cr-soz,.cr-adim,.isaretler)>li:nth-child(5){--i:4}
 .hm :is(.liste,.izgara,.pinler,.cr-soz,.cr-adim,.isaretler)>li:nth-child(6){--i:5}
+.hm .isaretler>li:nth-child(7){--i:6}.hm .isaretler>li:nth-child(8){--i:7}.hm .isaretler>li:nth-child(9){--i:8}
 .hm :is(.liste,.izgara,.pinler,.cr-soz,.cr-adim)>li:nth-child(n+7){--i:6}
 
 /* --- bölge çubukları: görününce soldan dolar --- */

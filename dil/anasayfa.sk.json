@@ -83,12 +83,12 @@
  "k8_ad": "Ty na mape",
  "k8_alt": "Motorka, ktorá ťa na mape zastupuje; ťahaním doľava alebo doprava ju otočíš",
  "k8_h2": "Na mape <i>si aj ty.</i>",
- "k8_p": "Počas jazdy ťa na mape zastupuje značka. Je ich šesť: Supersport, Chopper, Maxi scooter, Touring, Arrow a Helmet. Vyberieš si ju v „Settings“; CarPlay ukazuje tú istú.",
+ "k8_p": "Počas jazdy ťa na mape zastupuje značka. Je ich deväť: Supersport, Chopper, Maxi scooter, Touring, Naked, Scrambler, Bagger, Arrow a Helmet. Vyberieš si ju v „Settings“; CarPlay ukazuje tú istú.",
  "k8_not": "Ťahaním otáčaj",
  "a8_etiket": "Podrobnosti o značke",
- "a8_s1_b": "6",
+ "a8_s1_b": "9",
  "a8_s1_t": "značiek na výber",
- "a8_s2_b": "4",
+ "a8_s2_b": "7",
  "a8_s2_t": "z nich sú 3D s jazdcom a v zákrutách sa nakláňajú",
  "a8_s3_b": "CarPlay",
  "a8_s3_t": "vybraná značka je vidieť aj na displeji auta",
@@ -98,16 +98,19 @@
  "k8_m4": "Touring",
  "k8_m5": "Arrow",
  "k8_m6": "Helmet",
+ "k8_m7": "Naked",
+ "k8_m8": "Scrambler",
+ "k8_m9": "Bagger",
  "a8_1_t": "Kde ju vyberieš",
- "a8_1_d": "Settings → Map → Navigation marker. Otvorí sa mriežka šiestich značiek a tá, na ktorú ťukneš, sa vyberie. Môžeš ju zvoliť aj pri prvom spustení aplikácie.",
- "a8_2_t": "Štyri v 3D",
- "a8_2_d": "Supersport, Chopper, Maxi scooter a Touring sú nakreslené zo 72 uhlov s jazdcom v sedle a v zákrutách sa nakláňajú. Arrow a Helmet sú len ploché kresby.",
+ "a8_1_d": "„Settings → Map → Navigation marker“. Otvorí sa mriežka deviatich značiek a tá, na ktorú ťukneš, je vybraná. Vybrať si ju môžeš aj pri prvom spustení aplikácie.",
+ "a8_2_t": "Sedem je v 3D",
+ "a8_2_d": "Sedem motoriek je nakreslených zo 72 uhlov aj s jazdcom a v zákrutách sa nakláňajú. Arrow a Helmet sú ploché kresby.",
  "a8_3_t": "Všade s tebou",
  "a8_3_d": "Na hlavnej mape a v navigácii, ako tvoja živá poloha na mape výletu, v 3D prehrávaní a vo videu z mapy cesty; aj v CarPlay a CarPlay Dashboard.",
  "a8_4_t": "V skupine",
  "a8_4_d": "V skupine vidíš kamarátov s pevnou, menšou značkou; tvoj výber sa k nim neprenáša.",
- "a8_5_t": "Zadarmo",
- "a8_5_d": "Na výber značky nepotrebuješ Pro.",
+ "a8_5_t": "Čo je zadarmo",
+ "a8_5_d": "Maxi scooter a Arrow sú zadarmo pre všetkých; ostatné značky patria do Pro.",
  "a8_6_t": "Otoč Touring",
  "a8_6_d": "Potiahni motorku hore doľava alebo doprava. Keď ju pustíš, plynulo dobehne a zastaví sa; keď sa jej nedotkneš, sama sa pomaly otáča.",
  "k9_ad": "Legendárne cesty",
@@ -123,7 +126,7 @@
  "plan_u_p": "Plánovanie trás a navigácia odbočku po odbočke sú v Turecku, Európe a USA bez obmedzenia. Účet nepotrebuješ; zadarmo si uložíš 1 výlet.",
  "plan_p_p": "Pro odomyká:",
  "pp1": "AI CoRider",
- "pp2": "Apple CarPlay",
+ "pp2": "Apple CarPlay (iPhone)",
  "pp3": "Zakladanie skupín",
  "pp4": "„Discover“",
  "pp5": "Neobmedzené výlety a stopy",
@@ -140,27 +143,144 @@
  "faq_q4": "Kde funguje?",
  "faq_a4": "Plánovanie trás a navigácia fungujú v Turecku, Európe a USA. Mapa priesmykov obsahuje vyše 1 600 priesmykov v 36 krajinách.",
  "faq_q5": "Funguje s CarPlay?",
- "faq_a5": "Áno. Apple CarPlay je súčasťou Pro; tvoja trasa sa zobrazí na celej obrazovke auta.",
+ "faq_a5": "Áno, na iPhone. Apple CarPlay je súčasťou Pro a trasa vyplní obrazovku v aute. Android Auto podporované nie je.",
  "faq_q6": "Môžem jazdiť s kamarátmi?",
  "faq_a6": "Áno. Idete rovnakú trasu, všetkých vidíte na mape a rozprávate sa cez skupinový intercom. Pripojenie do skupiny cez pozvánku alebo kód je zadarmo; zakladanie skupín je v Pro.",
  "varis_h2": "Cesta je <i>pripravená.</i>",
  "varis_nasil": "Ako to funguje",
  "ayr_etiket": "Súkromie, poznámky k vydaniu a kontakt",
  "yeni_lead": "Posledné aktualizácie, najnovšie hore.",
- "y118_tarih": "október 2026",
- "y117_tarih": "október 2026",
- "y116_tarih": "október 2026",
- "y118_1": "Opravený pád pri prepnutí z Blogu na Feed v Community.",
- "y118_2": "Nahrávanie videa z 3D prehrávania jazdy sa spúšťa spoľahlivejšie.",
- "y118_3": "„Pripravené“ sa už neukazuje skôr, než sa načíta mapa, a kamera neskáče, keď prestaneš približovať dvoma prstami.",
- "y117_1": "Mapa cesty: sleduj dlhý výlet alebo jazdu ako video na čistej mape. Ako sa trasa kreslí, postupne sa objavujú prejdené mestá a tvoje fotky.",
- "y117_2": "Nové skratky na úvodnej obrazovke: domov a práca, záznam jazdy, hodinový okruh odtiaľto, legendárna cesta v okolí.",
- "y117_3": "V USA pribudlo 298 priesmykov a šesť nových legendárnych ciest a režim pobrežia teraz funguje aj v mnohých európskych pobrežných krajinách.",
- "y117_4": "„Spoznaj Motoseyir“ v Nastaveniach je krátka videoprehliadka aplikácie, záložku po záložke.",
- "y116_1": "Sleduj v 3D: prehraj si zaznamenanú jazdu ako z helikoptéry; fotky sa objavia tam, kde boli urobené.",
- "y116_2": "Zdieľaj ako video: urob zvislé video na 15, 30 alebo 60 sekúnd, hotové pre Instagram. Pro nepotrebuješ.",
- "y116_3": "Rozbor jazdy: čas v pohybe, skutočné pauzy, ostré zákruty, celkové prevýšenie a koľko cesty bolo pre teba nové.",
- "y116_4": "V generátore výletov prináša „Another one“ tri nové okruhy po iných cestách a môžeš zapnúť „No motorways“, „No tolls“ a „No dirt“.",
+ "yeni_onceki": "Staršie verzie",
+ "surumler": [
+  {
+   "no": "1.3.0",
+   "tarih": "november 2026",
+   "maddeler": [
+    "Nová karta Novinky v Komunite: veľtrhy, zrazy, nová výbava a preteky, vybrané podľa tvojej krajiny.",
+    "Hotely priateľské k motorkárom: v Objavovať vyber Hotel a zaškrtni „Pre motorkárov“, na mape potom uvidíš hotely s garážou alebo parkovaním pre motorky. Môžeš navrhnúť aj tie, kde si nocoval."
+   ]
+  },
+  {
+   "no": "1.2.9",
+   "tarih": "november 2026",
+   "maddeler": [
+    "Opravy: odbočky hneď po zmene názvu cesty sa teraz ohlasujú a zobrazujú včas."
+   ]
+  },
+  {
+   "no": "1.2.8",
+   "tarih": "november 2026",
+   "maddeler": [
+    "Vyber si cestu: ťukni na úsek medzi dvoma zastávkami a zvoľ inú cestu, alebo podrž prst na mape a ťukni na „Prejsť tadiaľto“, aby trasa viedla, kade chceš. Funguje aj vo webovom generátore výletov."
+   ]
+  },
+  {
+   "no": "1.2.7",
+   "tarih": "november 2026",
+   "maddeler": [
+    "Viac možností trasy: pri navigácii teraz dostaneš až tri rôzne cesty; navrhnutá je stále tá najkratšia.",
+    "Austrália a Nový Zéland: 200 horských priesmykov a 7 legendárnych ciest vrátane Great Ocean Road a Milford Road.",
+    "Plánuj na počítači: v Nastaveniach otvor generátor trás na našom webe a naplánuj trasu na veľkej obrazovke."
+   ]
+  },
+  {
+   "no": "1.2.6",
+   "tarih": "november 2026",
+   "maddeler": [
+    "Uhol náklonu: prehraj si nahranú jazdu a pozri sa, ako hlboko si sa naklonil v každej zákrute. Najväčší náklon beží spomalene, presne tam, kde sa pneumatika dotýka asfaltu, a mapa pneumatiky ukazuje, koľko rezervy ostalo na okrajoch.",
+    "Moja mapa: všetky nahrané jazdy a dokončené túry na jednej mape, hore v Mojich jazdách.",
+    "Možnosti trasy: variant bez diaľnice sa teraz zobrazuje osobitne a rovnaká cesta sa už neponúka dvakrát."
+   ]
+  },
+  {
+   "no": "1.2.5",
+   "tarih": "október 2026",
+   "maddeler": [
+    "Tri nové motorky na mape: Bagger, Naked a Scrambler. Settings › Navigation marker."
+   ]
+  },
+  {
+   "no": "1.2.4",
+   "tarih": "október 2026",
+   "maddeler": [
+    "Opravy: obnovený úvod pri prvom spustení; hustota zákrut na kartách trás vo vašej jednotke (na míľu, kde sa počíta v míľach); drobné opravy."
+   ]
+  },
+  {
+   "no": "1.2.3",
+   "tarih": "október 2026",
+   "maddeler": [
+    "Stlač a hovor a mikrofón interkomu, ktorý sa otvorí len keď hovoríš – bez hukotu vetra. Krátky tón, keď sa niekto pripojí alebo vypadne; kamaráta môžeš stlmiť alebo zosilniť a vedúci skupiny môže robiť oznámenia.",
+    "Opravy: zrozumiteľnejší text povolenia ku kontaktom; trasy sú zadarmo aj v juhovýchodnej Ázii."
+   ]
+  },
+  {
+   "no": "1.2.2",
+   "tarih": "október 2026",
+   "maddeler": [
+    "Výber trasy: krátke trasy v meste sa už nevyraďujú. Keď existuje zreteľne kratšia cesta, objaví sa ako možnosť „Kratšia“.",
+    "Na karte hľadania vymeníš štart a cieľ jedným ťuknutím alebo ich zmažeš krížikom ×.",
+    "Pro je teraz lacnejšie. AI CoRider si s Pro vyskúšaš na 5 minút, potom pokračuješ s balíčkami minút."
+   ]
+  },
+  {
+   "no": "1.2.1",
+   "tarih": "október 2026",
+   "maddeler": [
+    "Komentáre pri udalostiach: píš pod stretnutie a odpovedaj na otázky. Organizátor môže ktorýkoľvek komentár odstrániť.",
+    "Zrozumiteľnejšie texty na obrazovke Pro a drobné opravy."
+   ]
+  },
+  {
+   "no": "1.2.0",
+   "tarih": "október 2026",
+   "maddeler": [
+    "V Nastaveniach teraz vyberáš hlas CoRidera a hlasný režim v jednom riadku.",
+    "Na trasách s viacerými zastávkami sa zoznam, upozornenie na dážď a tlačidlá mapy už neprekrývajú.",
+    "Na malých displejoch, ako je iPhone SE, sa úvod a uvítacia obrazovka teraz zmestia celé."
+   ]
+  },
+  {
+   "no": "1.1.9",
+   "tarih": "október 2026",
+   "maddeler": [
+    "Offline mapy (Pro): stiahni si mapu trasy alebo oblasti, ktorú si na mape vymedzíš. Keď na dlhšie zmizne signál, navigácia sama prepne na stiahnutú mapu; pri krátkych tuneloch sa mapa nemení.",
+    "Jednotky (km alebo míle) a jazyk aplikácie si teraz vyberieš sám v Settings.",
+    "Odbočky v CarPlay sa čítajú lepšie: z diaľky vidíš odznak so vzdialenosťou, pri priblížení šípku položenú na ceste.",
+    "Zastávky sú prehľadnejšie: štítok medzi dvoma zastávkami ukazuje vzdialenosť a čas a cez \"+ Add stop\" pridáš zastávku medzi ne alebo na koniec.",
+    "V \"Discover\" hľadáš v blízkosti trasy alebo na jednom úseku a karty miest majú viac fotiek."
+   ]
+  },
+  {
+   "no": "1.1.8",
+   "tarih": "október 2026",
+   "maddeler": [
+    "Opravený pád pri prepnutí z Blogu na Feed v Community.",
+    "Nahrávanie videa z 3D prehrávania jazdy sa spúšťa spoľahlivejšie.",
+    "„Pripravené“ sa už neukazuje skôr, než sa načíta mapa, a kamera neskáče, keď prestaneš približovať dvoma prstami."
+   ]
+  },
+  {
+   "no": "1.1.7",
+   "tarih": "október 2026",
+   "maddeler": [
+    "Mapa cesty: sleduj dlhý výlet alebo jazdu ako video na čistej mape. Ako sa trasa kreslí, postupne sa objavujú prejdené mestá a tvoje fotky.",
+    "Nové skratky na úvodnej obrazovke: domov a práca, záznam jazdy, hodinový okruh odtiaľto, legendárna cesta v okolí.",
+    "V USA pribudlo 298 priesmykov a šesť nových legendárnych ciest a režim pobrežia teraz funguje aj v mnohých európskych pobrežných krajinách.",
+    "„Spoznaj Motoseyir“ v Nastaveniach je krátka videoprehliadka aplikácie, záložku po záložke."
+   ]
+  },
+  {
+   "no": "1.1.6",
+   "tarih": "október 2026",
+   "maddeler": [
+    "Sleduj v 3D: prehraj si zaznamenanú jazdu ako z helikoptéry; fotky sa objavia tam, kde boli urobené.",
+    "Zdieľaj ako video: urob zvislé video na 15, 30 alebo 60 sekúnd, hotové pre Instagram. Pro nepotrebuješ.",
+    "Rozbor jazdy: čas v pohybe, skutočné pauzy, ostré zákruty, celkové prevýšenie a koľko cesty bolo pre teba nové.",
+    "V generátore výletov prináša „Another one“ tri nové okruhy po iných cestách a môžeš zapnúť „No motorways“, „No tolls“ a „No dirt“."
+   ]
+  }
+ ],
  "insta_url": "https://www.instagram.com/motoseyir.app.en/",
  "insta_ad": "@motoseyir.app.en",
  "v_etiket": "Údaje o priesmykoch",
@@ -219,8 +339,8 @@
  "a1_s1_t": "bezplatná navigácia v Turecku, Európe a USA",
  "a1_s2_b": "26",
  "a1_s2_t": "zastávok v jednom výlete",
- "a1_s3_b": "2",
- "a1_s3_t": "alternatívne trasy, najkratšia je označená",
+ "a1_s3_b": "3",
+ "a1_s3_t": "hlavné trasy na výber, najkratšia označená",
  "a1_s4_b": "726",
  "a1_s4_t": "radarov v Turecku",
  "a1_1_t": "Jazdné pruhy",
@@ -234,7 +354,7 @@
  "a1_5_t": "„No toll roads“",
  "a1_5_d": "Jedným ťuknutím vyradíš z trasy spoplatnené cesty.",
  "a1_6_t": "Na zamknutej obrazovke",
- "a1_6_d": "Ďalšia odbočka sa ukazuje na zamknutej obrazovke aj v Dynamic Island, takže telefón nemusíš odomykať.",
+ "a1_6_d": "Na iPhone sa ďalšia odbočka ukazuje na zamknutej obrazovke a v Dynamic Islande. Na Androide zostáva odbočka, zostávajúci čas a čas príchodu v upozornení.",
  "a2_etiket": "Podrobnosti o generátore výletov",
  "a2_s1_b": "30–300 km",
  "a2_s1_t": "dĺžka výletu, alebo ju zvoľ v hodinách",
@@ -272,7 +392,7 @@
  "a4_5_t": "Riadi jazdu",
  "a4_5_d": "Spustí alebo ukončí navigáciu, zapne záznam jazdy a zavedie ťa domov.",
  "a4_6_t": "Čas hovoru",
- "a4_6_d": "Pro obnovuje každých 30 dní 10 minút hovorového času. Ak potrebuješ viac, pridaj si balík 30, 60 alebo 180 minút, ktorý nikdy nevyprší.",
+ "a4_6_d": "S Pro si AI CoRider vyskúšaš na 5 minút. Potom si pridáš balík 30, 60 alebo 180 minút, ktorý nikdy nevyprší.",
  "a5_etiket": "Podrobnosti o skupine, intercome a CarPlay",
  "a5_s1_b": "12",
  "a5_s1_t": "jazdcov v jednej skupine",
@@ -284,11 +404,11 @@
  "a5_1_d": "Zadaj 8-miestny kód alebo ťukni na odkaz. Založenie skupiny patrí do Pro.",
  "a5_2_t": "Poloha len počas jazdy",
  "a5_2_d": "Tvoja poloha sa zdieľa, len keď beží navigácia alebo záznam jazdy. Keď ich ukončíš, zdieľanie skončí.",
- "a5_3_t": "Otvorený mikrofón",
- "a5_3_d": "V intercome nie je push-to-talk: jednoducho rozprávaš. Kohokoľvek stlmíš. Nič sa nenahráva.",
+ "a5_3_t": "Tri režimy mikrofónu",
+ "a5_3_d": "„Always on“, „When I talk“ alebo „Push to talk“. Kamaráta zosilníš alebo stlmíš a vedúci môže skupine niečo oznámiť. Nič sa nenahráva.",
  "a5_4_t": "CoRider v skupine",
  "a5_4_d": "Pozvi CoRider do miestnosti skupiny a počuť ho budú všetci.",
- "a5_5_t": "Navigácia v CarPlay",
+ "a5_5_t": "Navigácia v CarPlay (iPhone)",
  "a5_5_d": "Mapa a odbočky na displeji auta. Preskočíš zastávku, nahráš jazdu, zapneš intercom alebo vyhľadáš adresu v zozname „Destinations“.",
  "a5_6_t": "Dashboard",
  "a5_6_d": "Mapa je aj v CarPlay Dashboard, vedľa tvojich ďalších aplikácií, a ukazuje tvoju polohu a trasu.",
@@ -303,12 +423,12 @@
  "a6_s1_t": "zátok a pláží v Turecku",
  "a6_s2_b": "20 106",
  "a6_s2_t": "miest na kempovanie a prírodu v Turecku",
- "a6_s3_b": "6",
- "a6_s3_t": "kategórií",
+ "a6_s3_b": "5",
+ "a6_s3_t": "hlavných kategórií, každá s vlastnými možnosťami",
  "a6_1_t": "Kategórie",
- "a6_1_d": "„All“, „Bay & beach“, „Camping & nature“, „Food & drink“, „Fuel“ a „Passes“.",
+ "a6_1_d": "„On the road“, „Food“, „Stay“, „See & do“ a „Highlights“. Vnútri nájdeš čerpačky, kaviarne, kempy, hotely, pláže a zátoky, horské priesmyky a ďalšie.",
  "a6_2_t": "Kde to nájdeš",
- "a6_2_d": "Otvor výlet v „My Tours“ a medzi kartami „Stops | Discover | Journal“ vyber „Discover“. Výlet musí mať aspoň dve zastávky; vyhľadávanie patrí do Pro.",
+ "a6_2_d": "Otvor výlet v „My Tours“ a medzi kartami „Stops | Discover | Journal“ vyber „Discover“. Hľadáš v blízkosti trasy alebo na jednom úseku. Výlet musí mať aspoň dve zastávky; vyhľadávanie patrí do Pro.",
  "a6_3_t": "„Explore this area“",
  "a6_3_d": "Posuň mapu kamkoľvek a hľadaj okolo toho miesta.",
  "a6_4_t": "„Camping & nature“",
@@ -375,8 +495,8 @@
  "dg_6_d": "Na kartičke trasy je odhadované množstvo paliva (litre, v USA galóny). Ťukni na spotrebu a zadaj vlastnú hodnotu.",
  "dg_7_t": "Západ slnka",
  "dg_7_d": "Keď jazda presiahne západ slnka, objaví sa na kartičke trasy riadok ako „Arrive 19:40 · sunset 19:12“.",
- "dg_8_t": "Kópia trasy offline",
- "dg_8_d": "Tvoje výlety majú trasu uloženú v telefóne. Keď vypadne pripojenie, výlet sa otvorí z tej kópie; a keď zídeš z trasy, ukáže ti smer šípka „Back to route“. Samotná mapa však internet potrebuje.",
+ "dg_8_t": "Offline mapy",
+ "dg_8_d": "Stiahni si mapu výletu alebo oblasti, ktorú si na mape vymedzíš. Keď na dlhšie zmizne signál, navigácia sama prepne na stiahnutú mapu; ťuknutím na obláčik prepneš aj ručne. Sťahovanie máp patrí do Pro.",
  "dg_9_t": "Keď zídeš z trasy",
  "dg_9_d": "V Settings → Riding → When you leave the route vyberieš „New route“ alebo „Back to route“ a môžeš nechať aplikáciu, aby zmeškanú zastávku preskočila sama.",
  "dg_10_t": "Skratky domov a do práce",
@@ -393,16 +513,28 @@
  "dg_15_d": "Naimportuj súbor GPX a stopa sa objaví v karte „Trails“ so vzdialenosťou, celkovým stúpaním, najprudším sklonom a výškovým profilom. Keď ideš prstom po profile, bod na mape sa hýbe s ním.",
  "dg_16_t": "Zdieľanie výletu",
  "dg_16_d": "Výlet pošleš ako odkaz, video alebo súbor GPX. Odkaz platí 30 dní; druhý človek naň ťukne, alebo zvolí My Tours → With a code → Add tour. Je to zadarmo.",
- "dg_17_t": "Community a Blog",
- "dg_17_d": "Community má karty Blog, Feed a My Ride Group. Vo feede vidíš výlety a jazdy ostatných jazdcov, môžeš lajkovať, komentovať, odpovedať a filtrovať podľa krajiny. V Blogu môžeš poslať vlastný príspevok cez „Write a post“. Stačí ti prezývka.",
+ "dg_17_t": "Komunita a novinky",
+ "dg_17_d": "Karta „News“ prináša veľtrhy, zrazy, novú výbavu a preteky podľa krajiny, v ktorej si. Vo „Feed“ vidíš výlety a jazdy ostatných jazdcov, môžeš lajkovať, komentovať, odpovedať a filtrovať podľa krajiny. Stačí ti prezývka.",
  "dg_18_t": "Akcie",
- "dg_18_d": "V Community založíš stretnutie alebo ťukneš na „I’m going“. Akcia má miesto stretnutia, kapacitu a podľa potreby trasu; tvoja poloha sa nezdieľa.",
+ "dg_18_d": "V Community založíš stretnutie alebo ťukneš na „I’m going“. Akcia má miesto stretnutia, kapacitu a podľa potreby trasu; tvoja poloha sa nezdieľa. Pod zraz môžeš písať komentáre a odpovedať na otázky; organizátor môže nechcený komentár odstrániť.",
  "dg_19_t": "Fotka k priesmyku",
  "dg_19_d": "Na stránke priesmyku pridáš cez „Add photo“ vlastnú fotku (najviac tri na priesmyk); pod ňou je uvedená tvoja prezývka.",
  "dg_20_t": "Na šírku",
  "dg_20_d": "Keď telefón otočíš na šírku, kartičky sa zoskupia vľavo a mapa zaberie zvyšok; „My Tours“ prejde na dva stĺpce.",
  "dg_21_t": "Jednotky a jazyk",
- "dg_21_d": "Jednotky sa riadia tým, kde si: v USA míle, mph a stopy, vo Veľkej Británii míle a yardy, inde kilometre. Aplikácia hovorí po turecky, po anglicky, po nemecky, po francúzsky a po taliansky a riadi sa jazykom telefónu.",
+ "dg_21_d": "Jednotky (km alebo míle) a jazyk si vyberieš v „Settings → Appearance“. V režime „Automatic“ sa jednotky riadia miestom, kde si, a jazyk telefónom. Aplikácia hovorí po turecky, anglicky, nemecky, francúzsky a taliansky.",
+ "dg_22_t": "Medzi zastávkami",
+ "dg_22_d": "Štítok medzi dvoma zastávkami ukazuje vzdialenosť a čas. Ťuknutím pridáš zastávku medzi ne, hľadáš na tom úseku alebo preň vyberieš inú cestu.",
+ "dg_23_t": "Prejdi tadiaľto",
+ "dg_23_d": "Podrž prst na mape a ťukni na „Pass through here“: trasa povedie po ceste, ktorú chceš. Vie to aj plánovač výletov na tomto webe.",
+ "dg_24_t": "Náklon",
+ "dg_24_d": "Prehraj si zaznamenanú jazdu a uvidíš, ako veľmi si sa v každej zákrute naklonil; najväčší náklon ide spomalene. Mapa pneumatiky ukazuje, koľko okraja ti zostáva na každej strane. Uhol sa počíta zo záznamu GPS, takže funguje aj pri starších jazdách.",
+ "dg_25_t": "Moja mapa",
+ "dg_25_d": "Všetky zaznamenané jazdy a dokončené výlety na jednej mape, úplne hore v „My Rides“. Filtruješ podľa tohto roka alebo tohto mesiaca.",
+ "dg_26_t": "Hotely priateľské k motorkárom",
+ "dg_26_d": "V „Discover“ vyber „Stay → Hotel“ a zaškrtni „Biker-friendly“, uvidíš zvlášť hotely s garážou alebo parkovaním pre motorky. Hotely, kde si spal, môžeš sám navrhnúť.",
+ "dg_27_t": "Pokračuje v CarPlay",
+ "dg_27_d": "Po pripojení k CarPlay ukáže telefón jednoduchú obrazovku a sám sa zamkne, takže batéria vydrží dlhšie. Len na iPhone.",
  "c_say_h": "Čo môžeš povedať",
  "c_say_p": "Sú to len príklady. Žiadne príkazy sa učiť nemusíš, povedz to po svojom.",
  "c_s1": "Koľko ešte zostáva? Bude cestou pršať?",

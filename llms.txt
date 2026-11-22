@@ -9,7 +9,7 @@ Motoseyir is made for motorcyclists, not for cars: it calculates by distance ins
 - **Is Motoseyir free?** Routing and step-by-step navigation are free and unlimited in Türkiye, Europe and the USA, and no account is needed. The free tier keeps 1 saved tour. AI CoRider, CarPlay, group creation, Discover and unlimited tours come with Pro.
 - **How is Motoseyir different from other sat navs?** It works out the route by distance, not by minutes: it compares the alternatives between the same two points and suggests the shortest one. On a multi-stop tour it works out the order of the stops, too.
 - **Where does it work?** Routing and navigation work in Türkiye, Europe and the USA. The mountain pass map covers 1,600+ passes in 36 countries.
-- **Does it work with CarPlay?** Yes. Apple CarPlay is part of Pro, and your route fills the car screen.
+- **Does it work with CarPlay?** Yes, on iPhone. Apple CarPlay is part of Pro, and your route fills the car screen. Android Auto isn’t supported.
 - **Can I ride with friends?** Yes. You take the same route, see everyone on the map and talk over the group intercom. Joining a group by invite or code is free; creating a group is part of Pro.
 - Platform: iPhone (iOS 16.4 or later; App Store id 6792549131) and Android (Google Play, package com.batuhanengin.motorota). Apple CarPlay support is on iPhone. https://motoseyir-app.com/en/ has both download links.
 - Price: the app and its routing are free to download and use; Pro is an auto-renewing in-app subscription. In the US Pro costs $8.99 a month, $22.99 for 3 months or $39.99 a year; prices differ by country and are shown in the app before purchase. There is no free trial.

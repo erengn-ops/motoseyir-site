@@ -83,12 +83,12 @@
  "k8_ad": "Ti na karti",
  "k8_alt": "Motocikl koji te predstavlja na karti; povuci ulijevo ili udesno da ga okreneš",
  "k8_h2": "I ti si <i>na karti.</i>",
- "k8_p": "Dok voziš, na karti te predstavlja oznaka. Ima ih šest: Supersport, Chopper, Maxi scooter, Touring, Arrow i Helmet. Biraš je u „Settings”, a ista se vidi i na CarPlayu.",
+ "k8_p": "Dok voziš, na karti te predstavlja oznaka. Ima ih devet: Supersport, Chopper, Maxi scooter, Touring, Naked, Scrambler, Bagger, Arrow i Helmet. Biraš je u „Settings”, a ista se vidi i na CarPlayu.",
  "k8_not": "Povuci za okretanje",
  "a8_etiket": "Ti na karti u detalje",
- "a8_s1_b": "6",
+ "a8_s1_b": "9",
  "a8_s1_t": "oznaka za odabir",
- "a8_s2_b": "4",
+ "a8_s2_b": "7",
  "a8_s2_t": "od njih su 3D, s vozačem, i naginju se u zavojima",
  "a8_s3_b": "CarPlay",
  "a8_s3_t": "oznaka koju odabereš vidi se i na zaslonu auta",
@@ -98,16 +98,19 @@
  "k8_m4": "Touring",
  "k8_m5": "Arrow",
  "k8_m6": "Helmet",
+ "k8_m7": "Naked",
+ "k8_m8": "Scrambler",
+ "k8_m9": "Bagger",
  "a8_1_t": "Gdje je biraš",
- "a8_1_d": "Settings → Map → Navigation marker. Otvori se mreža od šest ikona, a ona koju dodirneš postaje odabrana. Možeš je odabrati i pri prvom otvaranju aplikacije.",
- "a8_2_t": "Četiri su 3D",
- "a8_2_d": "Supersport, Chopper, Maxi scooter i Touring nacrtani su s pravim vozačem, iz 72 kuta, i naginju se u zavojima. Arrow i Helmet obični su plošni crteži.",
+ "a8_1_d": "„Settings → Map → Navigation marker”. Otvara se mreža od devet oznaka, a ona koju dodirneš postaje odabrana. Možeš je odabrati i kad prvi put otvoriš aplikaciju.",
+ "a8_2_t": "Sedam ih je u 3D-u",
+ "a8_2_d": "Sedam motocikala nacrtano je iz 72 kuta s vozačem i naginju se u zavojima. Arrow i Helmet su ravni crteži.",
  "a8_3_t": "Uz tebe svugdje",
  "a8_3_d": "Na glavnoj karti i u navigaciji, kao tvoj položaj uživo na karti ture, u 3D ponavljanju i u videu karte ture, te na CarPlayu i u nadzornoj ploči CarPlaya.",
  "a8_4_t": "U grupi",
  "a8_4_d": "U grupi prijatelje vidiš kao stalnu, manju oznaku; tvoj se odabir njima ne prenosi.",
- "a8_5_t": "Besplatno",
- "a8_5_d": "Za odabir oznake nije potreban Pro.",
+ "a8_5_t": "Što je besplatno",
+ "a8_5_d": "Maxi scooter i Arrow besplatni su za sve; ostale oznake dio su pretplate Pro.",
  "a8_6_t": "Okreni Touring",
  "a8_6_d": "Povuci motor iznad ulijevo ili udesno. Kad pustiš, polako se zaustavi, a ako ga ne diraš, sam se polako okreće.",
  "k9_ad": "Legendarne ceste",
@@ -123,7 +126,7 @@
  "plan_u_p": "Planiranje rute i navigacija korak po korak neograničeni su u Turskoj, Europi i SAD-u. Račun nije potreban; besplatna razina čuva 1 spremljenu turu.",
  "plan_p_p": "Pro otključava:",
  "pp1": "AI CoRider",
- "pp2": "Apple CarPlay",
+ "pp2": "Apple CarPlay (iPhone)",
  "pp3": "Stvaranje grupa",
  "pp4": "Discover",
  "pp5": "Neograničene ture i staze",
@@ -140,27 +143,144 @@
  "faq_q4": "Gdje radi?",
  "faq_a4": "Planiranje rute i navigacija rade u Turskoj, Europi i SAD-u. Karta prijevoja sadrži više od 1.600 planinskih prijevoja u 36 zemalja.",
  "faq_q5": "Radi li s CarPlayem?",
- "faq_a5": "Da. Apple CarPlay dio je Pro; tvoja ruta prikazuje se preko cijelog zaslona auta.",
+ "faq_a5": "Da, na iPhoneu. Apple CarPlay dio je pretplate Pro, a ruta ti ispunjava zaslon u autu. Android Auto nije podržan.",
  "faq_q6": "Mogu li voziti s prijateljima?",
  "faq_a6": "Da. Vozite istom rutom, sve vidite na karti i razgovarate preko grupnog interfona. Pridruživanje grupi pozivom ili kodom je besplatno; stvaranje grupe dio je Pro.",
  "varis_h2": "Cesta je <i>spremna.</i>",
  "varis_nasil": "Kako radi",
  "ayr_etiket": "Privatnost, napomene o verziji i kontakt",
  "yeni_lead": "Nedavna ažuriranja, najnovije prvo.",
- "y118_tarih": "listopad 2026.",
- "y117_tarih": "listopad 2026.",
- "y116_tarih": "listopad 2026.",
- "y118_1": "Ispravljen je pad aplikacije pri prebacivanju s Bloga na Feed u Communityju.",
- "y118_2": "Snimanje videa 3D ponavljanja vožnje pokreće se pouzdanije.",
- "y118_3": "„Ready” se više ne prikazuje prije nego što se karta učita, a kamera više ne skače kad završiš zumiranje prstima.",
- "y117_1": "Karta ture: pogledaj dugu turu ili vožnju kao video na čistoj karti. Dok se ruta sama crta, jedno po jedno pojavljuju se mjesta kroz koja si prošao i tvoje fotografije.",
- "y117_2": "Nove prečice na početnom zaslonu: dom i posao, snimanje vožnje, jednosatni krug odavde, legendarna cesta u blizini.",
- "y117_3": "298 planinskih prijevoja i šest novih legendarnih cesta u SAD-u, a način Obala sada radi i u mnogim europskim obalnim zemljama.",
- "y117_4": "„Get to know Motoseyir” u „Settings” kratka je video-tura kroz aplikaciju, karticu po karticu.",
- "y116_1": "Gledaj u 3D-u: ponovi snimljenu vožnju kao da je pratiš iz helikoptera; tvoje se fotografije pojavljuju na mjestu gdje su snimljene.",
- "y116_2": "Dijeli kao video: napravi okomit video od 15, 30 ili 60 sekundi, spreman za Instagram. Pro nije potreban.",
- "y116_3": "Analiza vožnje: vrijeme kretanja, prave pauze, oštri zavoji, ukupni uspon i koliko ti je ceste bilo novo.",
- "y116_4": "U „Generate a tour” „Another one” donosi tri nova kruga drugim cestama, a možeš izbjegavati autoceste, cestarine i makadam.",
+ "yeni_onceki": "Starije verzije",
+ "surumler": [
+  {
+   "no": "1.3.0",
+   "tarih": "studeni 2026.",
+   "maddeler": [
+    "Nova kartica Vijesti u Zajednici: sajmovi, okupljanja, nova oprema i utrke, odabrane prema tvojoj zemlji.",
+    "Hoteli prilagođeni motoristima: u Istraži odaberi Hotel i označi „Za motoriste” da na karti vidiš hotele s garažom ili parkingom za motocikle. Možeš predložiti i one u kojima si boravio."
+   ]
+  },
+  {
+   "no": "1.2.9",
+   "tarih": "studeni 2026.",
+   "maddeler": [
+    "Ispravci: skretanja odmah nakon promjene naziva ceste sada se najavljuju i prikazuju na vrijeme."
+   ]
+  },
+  {
+   "no": "1.2.8",
+   "tarih": "studeni 2026.",
+   "maddeler": [
+    "Odaberi svoju cestu: dodirni dionicu između dva stajališta za drugu cestu ili dugo pritisni kartu i dodirni „Prođi ovuda” da ruta ide kuda želiš. Radi i u web generatoru tura."
+   ]
+  },
+  {
+   "no": "1.2.7",
+   "tarih": "studeni 2026.",
+   "maddeler": [
+    "Više opcija rute: kad zatražiš upute, sada dobivaš do tri različite ceste; predložena je i dalje najkraća.",
+    "Australija i Novi Zeland: 200 planinskih prijevoja i 7 legendarnih cesta, među njima Great Ocean Road i Milford Road.",
+    "Planiraj na računalu: u Postavkama otvori generator tura na našoj stranici i planiraj na velikom zaslonu."
+   ]
+  },
+  {
+   "no": "1.2.6",
+   "tarih": "studeni 2026.",
+   "maddeler": [
+    "Kut nagiba: ponovno pogledaj snimljenu vožnju i vidi koliko si se nagnuo u svakom zavoju. Najveći nagib ide usporeno, točno ondje gdje guma dodiruje asfalt, a karta gume pokazuje koliko ti je ruba ostalo.",
+    "Moja karta: sve snimljene vožnje i završene ture na jednoj karti, na vrhu Mojih vožnji.",
+    "Opcije rute: alternativa bez autoceste sada se prikazuje zasebno, a ista se cesta više ne predlaže dvaput."
+   ]
+  },
+  {
+   "no": "1.2.5",
+   "tarih": "listopad 2026.",
+   "maddeler": [
+    "Tri nova motocikla na karti: Bagger, Naked i Scrambler. Settings › Navigation marker."
+   ]
+  },
+  {
+   "no": "1.2.4",
+   "tarih": "listopad 2026.",
+   "maddeler": [
+    "Ispravci: osvježen uvod pri prvom pokretanju; gustoća zavoja na karticama tura u tvojoj jedinici (po milji gdje se koriste milje); sitni ispravci."
+   ]
+  },
+  {
+   "no": "1.2.3",
+   "tarih": "listopad 2026.",
+   "maddeler": [
+    "Pritisni i govori te mikrofon interkoma koji se otvara tek kad govoriš – bez šuma vjetra. Kratak ton kad se netko pridruži ili ispadne; prijatelja možeš utišati ili pojačati, a vođa grupe može davati obavijesti.",
+    "Ispravci: jasniji tekst dopuštenja za kontakte; rute su besplatne i u jugoistočnoj Aziji."
+   ]
+  },
+  {
+   "no": "1.2.2",
+   "tarih": "listopad 2026.",
+   "maddeler": [
+    "Odabir rute: kratke gradske rute više se ne odbacuju. Ako postoji jasno kraći put, pojavljuje se kao opcija „Kraće”.",
+    "Na kartici pretraživanja jednim dodirom zamijeniš polazište i odredište ili ih obrišeš s ×.",
+    "Pro je sada povoljniji. AI CoRider isprobaj 5 minuta uz Pro, a zatim nastavi s paketima minuta."
+   ]
+  },
+  {
+   "no": "1.2.1",
+   "tarih": "listopad 2026.",
+   "maddeler": [
+    "Komentari na događajima: piši ispod okupljanja i odgovaraj na pitanja. Organizator može ukloniti bilo koji komentar.",
+    "Jasniji tekstovi na Pro zaslonu i sitni popravci."
+   ]
+  },
+  {
+   "no": "1.2.0",
+   "tarih": "listopad 2026.",
+   "maddeler": [
+    "U Postavkama sada biraš CoRiderov glas i glasni način u jednom retku.",
+    "Na rutama s više stajališta popis, upozorenje na kišu i gumbi karte više se ne preklapaju.",
+    "Na malim zaslonima poput iPhonea SE uvod i zaslon dobrodošlice sada stanu u cijelosti."
+   ]
+  },
+  {
+   "no": "1.1.9",
+   "tarih": "listopad 2026.",
+   "maddeler": [
+    "Offline karte (Pro): preuzmi kartu ture ili područja koje označiš na karti. Kad signal nestane na dulje, navigacija sama prelazi na preuzetu kartu; kod kratkih tunela karta se ne mijenja.",
+    "Mjerne jedinice (km ili milje) i jezik aplikacije sada biraš sam u Settings.",
+    "Skretanja na CarPlayu lakše se čitaju: izdaleka vidiš značku s udaljenošću, a pri približavanju strelicu položenu na cestu.",
+    "Stanke su preglednije: oznaka između dvije stanke prikazuje udaljenost i vrijeme, a preko \"+ Add stop\" dodaješ stanku između njih ili na kraju.",
+    "U \"Discover\" tražiš blizu rute ili na jednoj dionici, a kartice mjesta imaju više fotografija."
+   ]
+  },
+  {
+   "no": "1.1.8",
+   "tarih": "listopad 2026.",
+   "maddeler": [
+    "Ispravljen je pad aplikacije pri prebacivanju s Bloga na Feed u Communityju.",
+    "Snimanje videa 3D ponavljanja vožnje pokreće se pouzdanije.",
+    "„Ready” se više ne prikazuje prije nego što se karta učita, a kamera više ne skače kad završiš zumiranje prstima."
+   ]
+  },
+  {
+   "no": "1.1.7",
+   "tarih": "listopad 2026.",
+   "maddeler": [
+    "Karta ture: pogledaj dugu turu ili vožnju kao video na čistoj karti. Dok se ruta sama crta, jedno po jedno pojavljuju se mjesta kroz koja si prošao i tvoje fotografije.",
+    "Nove prečice na početnom zaslonu: dom i posao, snimanje vožnje, jednosatni krug odavde, legendarna cesta u blizini.",
+    "298 planinskih prijevoja i šest novih legendarnih cesta u SAD-u, a način Obala sada radi i u mnogim europskim obalnim zemljama.",
+    "„Get to know Motoseyir” u „Settings” kratka je video-tura kroz aplikaciju, karticu po karticu."
+   ]
+  },
+  {
+   "no": "1.1.6",
+   "tarih": "listopad 2026.",
+   "maddeler": [
+    "Gledaj u 3D-u: ponovi snimljenu vožnju kao da je pratiš iz helikoptera; tvoje se fotografije pojavljuju na mjestu gdje su snimljene.",
+    "Dijeli kao video: napravi okomit video od 15, 30 ili 60 sekundi, spreman za Instagram. Pro nije potreban.",
+    "Analiza vožnje: vrijeme kretanja, prave pauze, oštri zavoji, ukupni uspon i koliko ti je ceste bilo novo.",
+    "U „Generate a tour” „Another one” donosi tri nova kruga drugim cestama, a možeš izbjegavati autoceste, cestarine i makadam."
+   ]
+  }
+ ],
  "insta_url": "https://www.instagram.com/motoseyir.app.en/",
  "insta_ad": "@motoseyir.app.en",
  "v_etiket": "Podaci o prijevojima",
@@ -219,8 +339,8 @@
  "a1_s1_t": "besplatna navigacija u Turskoj, Europi i SAD-u",
  "a1_s2_b": "26",
  "a1_s2_t": "stanica u jednoj turi",
- "a1_s3_b": "2",
- "a1_s3_t": "alternativne rute, najkraća je označena",
+ "a1_s3_b": "3",
+ "a1_s3_t": "glavne rute za odabir, najkraća označena",
  "a1_s4_b": "726",
  "a1_s4_t": "radara za brzinu u Turskoj",
  "a1_1_t": "Navođenje po trakama",
@@ -234,7 +354,7 @@
  "a1_5_t": "„No toll roads”",
  "a1_5_d": "Jednim dodirom cestarinske ceste nestaju iz rute.",
  "a1_6_t": "Na zaključanom zaslonu",
- "a1_6_d": "Sljedeći zavoj prikazuje se na zaključanom zaslonu i u Dynamic Islandu, pa ne moraš otključavati telefon.",
+ "a1_6_d": "Na iPhoneu se sljedeće skretanje vidi na zaključanom zaslonu i u Dynamic Islandu. Na Androidu skretanje, preostalo vrijeme i vrijeme dolaska ostaju u obavijesti.",
  "a2_etiket": "Generator tura u detalje",
  "a2_s1_b": "30–300 km",
  "a2_s1_t": "duljina ture, ili je odaberi u satima",
@@ -272,7 +392,7 @@
  "a4_5_t": "Vodi vožnju",
  "a4_5_d": "Pokreće ili završava navigaciju, uključuje snimanje vožnje i vodi te kući.",
  "a4_6_t": "Vrijeme razgovora",
- "a4_6_d": "Pro svakih 30 dana obnavlja 10 minuta vremena razgovora. Ako trebaš više, dodaj paket od 30, 60 ili 180 minuta koji nikad ne istječe.",
+ "a4_6_d": "Uz Pro AI CoRider isprobavaš 5 minuta. Nakon toga dodaješ paket od 30, 60 ili 180 minuta koji nikad ne istječe.",
  "a5_etiket": "Grupa, interfon i CarPlay u detalje",
  "a5_s1_b": "12",
  "a5_s1_t": "vozača u jednoj grupi",
@@ -284,11 +404,11 @@
  "a5_1_d": "Upiši kod od 8 znakova ili dodirni poveznicu. Stvaranje grupe dio je pretplate Pro.",
  "a5_2_t": "Položaj samo u vožnji",
  "a5_2_d": "Tvoj se položaj dijeli samo dok traje navigacija ili snimanje vožnje, a čim ih završiš, dijeljenje staje.",
- "a5_3_t": "Otvoreni mikrofon",
- "a5_3_d": "Na interfonu nema push-to-talk: samo govoriš. Možeš utišati bilo koga. Ništa se ne snima.",
+ "a5_3_t": "Tri načina mikrofona",
+ "a5_3_d": "„Always on”, „When I talk” ili „Push to talk”. Prijatelja pojačaš ili utišaš, a vođa može dati obavijest grupi. Ništa se ne snima.",
  "a5_4_t": "CoRider u grupi",
  "a5_4_d": "Pozovi CoRider u sobu grupe i svi ga čuju.",
- "a5_5_t": "Navigacija na CarPlayu",
+ "a5_5_t": "Navigacija na CarPlayu (iPhone)",
  "a5_5_d": "Karta i zavoji na zaslonu auta. Možeš preskočiti stanicu, snimiti vožnju, otvoriti interfon ili potražiti adresu s popisa „Destinations”.",
  "a5_6_t": "Nadzorna ploča",
  "a5_6_d": "U nadzornoj ploči CarPlaya karta stoji uz tvoje ostale aplikacije, s tvojim položajem i rutom.",
@@ -303,12 +423,12 @@
  "a6_s1_t": "uvala i plaža u Turskoj",
  "a6_s2_b": "20.106",
  "a6_s2_t": "mjesta za kampiranje i prirodu u Turskoj",
- "a6_s3_b": "6",
- "a6_s3_t": "kategorija",
+ "a6_s3_b": "5",
+ "a6_s3_t": "glavnih kategorija, svaka sa svojim opcijama",
  "a6_1_t": "Kategorije",
- "a6_1_d": "„All”, „Bay & beach”, „Camping & nature”, „Food & drink”, „Fuel” i „Passes”.",
+ "a6_1_d": "„On the road”, „Food”, „Stay”, „See & do” i „Highlights”. U njima nalaziš benzinske, kafiće, kampove, hotele, plaže i uvale, planinske prijevoje i još toga.",
  "a6_2_t": "Gdje ga naći",
- "a6_2_d": "Otvori turu u „My Tours” i među karticama „Stops | Discover | Journal” odaberi „Discover”. Tura mora imati barem dvije stanice, a pretraga je dio pretplate Pro.",
+ "a6_2_d": "Otvori turu u „My Tours” i među karticama „Stops | Discover | Journal” odaberi „Discover”. Tražiš blizu rute ili na jednoj dionici. Tura mora imati barem dvije stanice, a pretraga je dio pretplate Pro.",
  "a6_3_t": "„Explore this area”",
  "a6_3_d": "Pomakni kartu bilo kamo i traži oko te točke.",
  "a6_4_t": "„Camping & nature”",
@@ -375,8 +495,8 @@
  "dg_6_d": "Na kartici rute vidi se procijenjena količina goriva (litre, u SAD-u galoni). Dodirni potrošnju da upišeš svoju.",
  "dg_7_t": "Zalazak sunca",
  "dg_7_d": "Ako vožnja traje nakon zalaska sunca, na kartici rute pojavi se redak poput „Arrive 19:40 · sunset 19:12”.",
- "dg_8_t": "Izvanmrežna kopija rute",
- "dg_8_d": "Tvoje ture čuvaju kopiju rute na telefonu. Ako veza padne, tura se otvara iz te kopije, a ako skreneš s rute, strelica „Back to route” pokazuje put. Sama karta i dalje traži internet.",
+ "dg_8_t": "Izvanmrežne karte",
+ "dg_8_d": "Preuzmi kartu ture ili područja koje označiš na karti. Kad signal na dulje nestane, navigacija sama prelazi na preuzetu kartu; dodirom oblačića prelaziš i ručno. Preuzimanje karata dio je pretplate Pro.",
  "dg_9_t": "Kad skreneš s rute",
  "dg_9_d": "U Settings → Riding → When you leave the route biraš „New route” ili „Back to route”, a možeš dopustiti da sam preskoči stanicu koju si propustio.",
  "dg_10_t": "Prečaci za dom i posao",
@@ -393,16 +513,28 @@
  "dg_15_d": "Uvezeš li GPX datoteku, trag dolazi u karticu „Trails”, s udaljenošću, ukupnim usponom, najstrmijim nagibom i visinskim profilom. Prijeđi prstom po profilu i točka na karti prati te.",
  "dg_16_t": "Podijeli turu",
  "dg_16_d": "Turu šalješ kao poveznicu, video ili GPX datoteku. Poveznica vrijedi 30 dana; druga osoba je dodirne ili ode u My Tours → With a code → Add tour. Besplatno je.",
- "dg_17_t": "Community i Blog",
- "dg_17_d": "Community ima kartice „Blog”, „Feed” i „My Ride Group”. U feedu vidiš ture i vožnje drugih vozača, lajkaš, komentiraš i odgovaraš te filtriraš po zemlji. U Blogu vlastiti tekst šalješ preko „Write a post”. Dovoljno je korisničko ime.",
+ "dg_17_t": "Zajednica i vijesti",
+ "dg_17_d": "Kartica „News” donosi sajmove, okupljanja, novu opremu i utrke prema zemlji u kojoj si. U „Feedu” vidiš ture i vožnje drugih vozača, lajkaš, komentiraš, odgovaraš i filtriraš po zemlji. Dovoljno je korisničko ime.",
  "dg_18_t": "Događaji",
- "dg_18_d": "U Communityju stvori susret ili dodirni „I’m going”. Događanje ima mjesto okupljanja, broj mjesta i, ako želiš, rutu; tvoj se položaj ne dijeli.",
+ "dg_18_d": "U Communityju stvori susret ili dodirni „I’m going”. Događanje ima mjesto okupljanja, broj mjesta i, ako želiš, rutu; tvoj se položaj ne dijeli. Ispod okupljanja pišeš komentare i odgovaraš na pitanja; organizator može ukloniti komentar koji ne želi.",
  "dg_19_t": "Fotografija za prijevoj",
  "dg_19_d": "Na stranici prijevoja pomoću „Add photo” dodaješ vlastitu fotografiju (najviše tri po prijevoju), a ispod nje piše tvoje korisničko ime.",
  "dg_20_t": "Vodoravni prikaz",
  "dg_20_d": "Okreni telefon vodoravno i kartice se skupe lijevo, a karta zauzme ostatak; „My Tours” prelazi na dva stupca.",
  "dg_21_t": "Jedinice i jezik",
- "dg_21_d": "Jedinice prate gdje se nalaziš: milje, mph i stope u SAD-u, milje i jardi u Ujedinjenom Kraljevstvu, drugdje kilometri. Aplikacija govori turski, engleski, njemački, francuski i talijanski i prati jezik tvog telefona.",
+ "dg_21_d": "Mjerne jedinice (km ili milje) i jezik biraš u „Settings → Appearance”. Na „Automatic” jedinice prate mjesto gdje si, a jezik prati mobitel. Aplikacija govori turski, engleski, njemački, francuski i talijanski.",
+ "dg_22_t": "Između stanica",
+ "dg_22_d": "Oznaka između dviju stanica prikazuje udaljenost i vrijeme. Dodirom dodaješ stanicu između njih, tražiš na toj dionici ili joj biraš drugu cestu.",
+ "dg_23_t": "Prođi ovuda",
+ "dg_23_d": "Dugo pritisni kartu i dodirni „Pass through here”: ruta ide cestom koju želiš. Ima to i generator tura na ovoj stranici.",
+ "dg_24_t": "Kut nagiba",
+ "dg_24_d": "Ponovno pusti snimljenu vožnju i vidi koliko si se nagnuo u svakom zavoju; najveći nagib ide usporeno. Karta gume pokazuje koliko ruba ti je ostalo sa svake strane. Kut se računa iz GPS traga, pa radi i na starijim vožnjama.",
+ "dg_25_t": "Moja karta",
+ "dg_25_d": "Sve snimljene vožnje i završene ture na jednoj karti, na vrhu „My Rides”. Filtriraš po ovoj godini ili ovom mjesecu.",
+ "dg_26_t": "Hoteli prilagođeni motoristima",
+ "dg_26_d": "U „Discover” odaberi „Stay → Hotel” i označi „Biker-friendly” da posebno vidiš hotele s garažom ili parkiralištem za motore. Hotele u kojima si boravio možeš i sam predložiti.",
+ "dg_27_t": "Nastavlja se na CarPlayu",
+ "dg_27_d": "Kad se spojiš na CarPlay, mobitel pokazuje jednostavan zaslon i sam se zaključa, pa baterija traje dulje. Samo na iPhoneu.",
  "c_say_h": "Što možeš reći",
  "c_say_p": "Ovo su samo primjeri. Ne treba učiti naredbe, reci to svojim riječima.",
  "c_s1": "Koliko je još ostalo? Hoće li kišiti usput?",
