@@ -237,7 +237,7 @@
   var tb = $("#tani-btn");
   if (tb) tb.addEventListener("click", function () {
     var v = D.createElement("video"); v.controls = true; v.autoplay = true; v.playsInline = true;
-    v.src = "https://motorota-rota.erengn.workers.dev/pro-video/motoseyir-whats-inside-" + dil + ".mp4";
+    v.src = "https://rota.motoseyir-app.com/w/pro-video/motoseyir-whats-inside-" + dil + ".mp4";
     v.setAttribute("aria-label", tb.getAttribute("aria-label"));
     $("#tani-kutu").replaceChildren(v); v.play().catch(function () {});
   });

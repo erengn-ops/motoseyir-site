@@ -137,7 +137,7 @@
      beliriyor. Çare: hedef görünümün karolarını kamera kalkmadan (tur üretilirken rota hesabı sürerken, açılışta stil inerken, boşta
      bir üst düzeyi) tarayıcı önbelleğine çek; MapLibre aynı adresi istediğinde yanıt önbellekten gelir. İstek MapLibre'ninkiyle aynı
      (cors, çerezsiz) ki önbellek kaydı paylaşılsın. Aynı karo bir kez istenir, aynı anda en çok 6, bir seferde en çok 48 karo. */
-  var KARO = 'https://motorota-rota.erengn.workers.dev/web/k/{z}/{x}/{y}.mvt?v=2';   // stil gelince oradaki adresle değişir
+  var KARO = 'https://rota.motoseyir-app.com/w/web/k/{z}/{x}/{y}.mvt?v=2';   // stil gelince oradaki adresle değişir
   var karoIstenen = new Set(), karoKuyruk = [], karoAkan = 0;
   function karoCek() {
     while (karoAkan < 6 && karoKuyruk.length) {

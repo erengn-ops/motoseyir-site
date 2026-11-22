@@ -599,7 +599,7 @@ def json_ld(dosya: str, v: dict, kod: str) -> str:
 # ---------------------------------------------------------------------------------------------------------------------
 ARAC_ICERIK = KOK / "arac"
 ARAC_ETIKET = "web-tur"  # App Store `ct`: site-web-tur (hangi dil olursa olsun aynı etiket)
-ARAC_VEKIL = "https://motorota-rota.erengn.workers.dev"  # Cloudflare Worker (server/rota-worker): rota + tur kodu, CORS yalnız bu site
+ARAC_VEKIL = "https://rota.motoseyir-app.com/w"  # rota sunucusu (Caddy /w vekili, 22 Kas: workers.dev TR'den erişilemiyor) → Cloudflare Worker (server/rota-worker): rota + tur kodu, CORS yalnız bu site
 ARAC_KOD_KOKU = "https://rota.motoseyir-app.com"  # QR/bağlantı /k/<KOD> sayfası (sunucu tur kodunu uygulamaya yönlendiriyor)
 ARAC_ZORUNLU = ("anasayfa_baglanti", "dizin", "baslik", "aciklama", "h1", "eyebrow", "lead", "yayin", "guncelleme", "ondalik", "ui", "adimlar_h2", "adimlar",
                 "bolumler", "sss", "urun", "urun_dugme", "ilgili_baslik", "ilgili", "kaynaklar_baslik", "kaynaklar", "tasarim")

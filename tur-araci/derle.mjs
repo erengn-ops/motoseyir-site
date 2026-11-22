@@ -20,7 +20,7 @@ import { homedir } from 'node:os';
 
 const BURASI = dirname(fileURLToPath(import.meta.url));
 const SRC = resolve(process.env.MOTO_ROTA_SRC || join(homedir(), 'Claude/moto-rota/src'));
-const VEKIL = process.env.VEKIL || 'https://motorota-rota.erengn.workers.dev';
+const VEKIL = process.env.VEKIL || 'https://rota.motoseyir-app.com/w';
 const DIS_ROTA = process.env.DIS_ROTA || 'https://valhalla1.openstreetmap.de/route';
 const CIKTI = resolve(BURASI, '../m/tur/motor.js');
 if (!existsSync(join(SRC, 'services/turUret.ts'))) throw new Error(`moto-rota kaynağı bulunamadı: ${SRC}`);
