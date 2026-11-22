@@ -163,7 +163,7 @@
     konumluKuruldu = !!konumlu;
     if (!window.maplibregl) { haritaHata(); return; }
     haritaKuruluyor = true;
-    fetch('/m/tur/harita/stil.json?v=k2').then(function (r) { return r.json(); }).then(function (stil) {
+    fetch('/m/tur/harita/stil.json?v=k3').then(function (r) { return r.json(); }).then(function (stil) {
       stil.glyphs = location.origin + stil.glyphs;
       stil.sprite = location.origin + stil.sprite;
       var m = MERKEZ[dil] || { c: [8.5, 46.7], z: 5 };

@@ -357,7 +357,7 @@
       var ik = gorunumKutusu(ilkMerkez, ilkZ); karoOnYukle(ik, ilkZ);
       if (ucusla) for (var uz = 3; uz <= 8; uz++) karoOnYukle(gorunumKutusu(ilkMerkez, uz), uz);
     }
-    fetch('/m/tur/harita/stil.json?v=k2').then(function (r) { return r.json(); }).then(function (stil) {
+    fetch('/m/tur/harita/stil.json?v=k3').then(function (r) { return r.json(); }).then(function (stil) {
       stil.glyphs = location.origin + stil.glyphs;
       stil.sprite = location.origin + stil.sprite;
       var kaynak = stil.sources && stil.sources.protomaps;
