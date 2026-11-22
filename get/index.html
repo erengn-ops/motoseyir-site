@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>Motoseyir · Download on the App Store</title>
+<title>Motoseyir · Download on the App Store and Google Play</title>
 <meta name="description" content="Motorcycle navigation built with AI: twisty round trips from a direction, and an AI co-rider in your helmet.">
 <style>
   :root{--paper:#F3F6F6;--ink:#13252C;--dim:#5C7078;--accent:#0B6E7F}
@@ -17,6 +17,7 @@
   p{margin:0;color:var(--dim)}
   .dugme{display:inline-block;margin-top:10px;padding:14px 22px;border-radius:12px;background:var(--accent);
          color:#fff;text-decoration:none;font-weight:600}
+  .ikinci{margin-top:0;background:transparent;color:var(--accent);box-shadow:inset 0 0 0 2px var(--accent)}
   footer{margin-top:26px;font-size:13px;color:var(--dim)}
   footer a{color:var(--accent)}
 </style>
@@ -27,6 +28,7 @@
   <h1>Motoseyir</h1>
   <p>Motorcycle navigation, built with AI. Pick a direction and a distance, get twisty round trips. Ask your AI CoRider for gas, coffee or weather without taking your hands off the bars.</p>
   <a id="indir" class="dugme" href="https://apps.apple.com/us/app/apple-store/id6792549131?pt=128439797&amp;ct=site-en&amp;mt=8">Download on the App Store</a>
+  <a id="play" class="dugme ikinci" href="https://play.google.com/store/apps/details?id=com.batuhanengin.motorota&amp;hl=en&amp;referrer=utm_source%3Dsite-en">Get it on Google Play</a>
   <footer><a href="/en/">motoseyir-app.com</a> · <a href="/gizlilik/en/">Privacy &amp; Support</a> · <a href="/impressum/en/">Legal notice</a></footer>
 </main>
 <script>
@@ -79,6 +81,12 @@
       setTimeout(function () { olay(document.visibilityState === "visible" ? "3sn-gorunur" : "3sn-gizli"); }, 3000);
       setTimeout(function () { if (document.visibilityState === "visible") olay("10sn-gorunur"); }, 10000);
     } catch (e) {}
+    var play = "https://play.google.com/store/apps/details?id=com.batuhanengin.motorota&hl=en&referrer=" + encodeURIComponent("utm_source=" + ct);
+    document.getElementById("play").href = play;
+    // Android (22 Kas 2026, Play'de yayında): Meta reklamı artık tüm telefonlara gidiyor; Android → Google Play.
+    if (/Android/i.test(ua) && !/facebookexternalhit|Facebot/i.test(ua)) {
+      setTimeout(function () { olay("yonlendi-play"); location.replace(play); }, 600);
+    }
     if (/iPhone|iPad|iPod/.test(ua) && !/facebookexternalhit|Facebot/i.test(ua)) {
       setTimeout(function () { olay("yonlendi"); location.replace(link); }, 600);
     }
