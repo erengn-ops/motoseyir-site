@@ -27,7 +27,7 @@ from pathlib import Path
 
 KOK = Path(__file__).resolve().parent
 RAKIP = ["google maps", "waze", "calimoto", "kurviger", "garmin", "tomtom", "rever", "komoot", "strava", "sygic", "scenic", "mapout",
-         "apple maps", "here wego", "yandex", "mapy.cz", "organic maps", "osmand", "cardo"]
+         "apple maps", "motoatlas", "here wego", "yandex", "mapy.cz", "organic maps", "osmand", "cardo"]
 YAZI_ALAN = ("baslik", "aciklama", "h1", "eyebrow", "lead", "ozet")
 
 

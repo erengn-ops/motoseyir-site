@@ -62,9 +62,9 @@ Yer tutucular (aynı dilin adresine çözülür; karşılığı yoksa derleme du
    En uygun sıra, Keşfet, Köy yolları ve Sahil modu, grup kurma Pro; rota hesaplama ve navigasyon TR/Avrupa/ABD'de ücretsiz ve sınırsız,
    ücretsiz kademede 1 kayıtlı tur. Köy yolları motoru yalnız Türkiye + Yunanistan'da; Alp'te standart mod.
 5. **Rakip uygulama adı yok** (başlık, açıklama, h1, gövde). `icerik-denetim.py` listeyi kontrol eder.
-   İstisna (24 Kas 2026): karşılaştırma yazıları (`icerik/navi-vergleich.{en,de}.json`) `"karsilastirma": true`, `"rakipler": [{ad, url, site}]`
+   İstisna (24 Kas 2026): karşılaştırma yazıları (`icerik/navi-vergleich.{en,de,tr}.json`) `"karsilastirma": true`, `"rakipler": [{ad, url, site}]`
    ve `"magaza_etiket": "seo-compare-<dil>"` taşır. Orada yalnız rakibin KENDİ App Store sayfasında ya da sitesinde yazan olgu, tarihli ve
-   kötülemesiz; puan/indirme sayısı yok; sayfada yazmayan özellik "not stated / keine Angabe". Denetim her rakibin `url` ve `site`
+   kötülemesiz; sayfada yazmayan özellik "not stated / keine Angabe / Belirtilmemiş" ve 0 puan. 24 Kas 2026'dan (kullanıcı: "detaylı kıyaslama ve puanlama … fiyat da koyalım … motoatlas'ı da koyalım") EN/DE/TR karşılaştırma ortak veriyi `veri/karsilastirma.json`dan çizer: kriterler + ağırlık (toplam 100) + 0–5 kuralı sayfada yayımlanır, toplam = Σ ağırlık × puan ÷ 5; ağırlığı sonuca bakarak değiştirme. App Store kullanıcı puanı (iTunes Lookup `averageUserRating` + `userRatingCount`, hep oy sayısıyla) ve fiyat (apps.apple.com "In-App Purchases", vitrin + tarih) görünür ama kriter puanından AYRI. Toplam puan / App Store puanı JSON-LD'ye YAZILMAZ (öz-puan şeması yasak). Yazıda `{"karsi": "matris|kurallar|magaza|fiyat"}` blokları, kahramanda puan kartları, sonda `r_karsi_cta`. Rehber ana sayfalarında öne çıkan kart (`r_hub_one_cikan`; karşılaştırması olmayan dil EN'e bağlanır). Veriyi yenilerken tarihi, `guncelleme`yi ve fiyat/puan cümlelerini birlikte güncelle. Denetim her rakibin `url` ve `site`
    adresini `kaynaklar`da arar. JSON-LD'ye MobileApplication + ItemList eklenir, llms.txt'te "App comparisons" bölümüne girer.
 6. **Uydurma yorum, sahte puan, "binlerce motorcu kullanıyor" gibi doğrulanamayan söz yok.**
 7. **Türkçe:** düz, "sen" hitabı, yüklem sonda, devrik cümle ve slogan kalıbı ("X değil, Y") yok; aynı cümle kalıbı (özellikle kapanış ve

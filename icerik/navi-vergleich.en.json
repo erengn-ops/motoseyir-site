@@ -1,90 +1,112 @@
 {
  "slug": "calimoto-alternative",
- "sira": 7,
+ "sira": 0,
  "karsilastirma": true,
  "magaza_etiket": "seo-compare-en",
  "rakipler": [
   {"ad": "calimoto", "url": "https://apps.apple.com/us/app/calimoto-motorcycle-navigation/id1209129603", "site": "https://calimoto.com/en"},
   {"ad": "Kurviger", "url": "https://apps.apple.com/us/app/kurviger-motorcycle-navigation/id6473445827", "site": "https://kurviger.com/en"},
   {"ad": "Scenic", "url": "https://apps.apple.com/us/app/scenic-motorcycle-navigation/id1089668246", "site": "https://scenic.app"},
-  {"ad": "REVER", "url": "https://apps.apple.com/us/app/rever-motorcycle-gps-rides/id975571447", "site": "https://www.rever.co"}
+  {"ad": "REVER", "url": "https://apps.apple.com/us/app/rever-motorcycle-gps-rides/id975571447", "site": "https://www.rever.co"},
+  {"ad": "MotoAtlas", "url": "https://apps.apple.com/tr/app/motoatlas-motosiklet-rota/id6798015161", "site": "https://motoatlas.app/"}
  ],
- "baslik": "calimoto alternative: motorcycle navigation apps compared",
- "aciklama": "Looking for a calimoto alternative? calimoto, Kurviger, Scenic, REVER and Motoseyir side by side: round trips, offline maps, CarPlay, GPX, from their own pages.",
- "h1": "Looking for a calimoto alternative? Five motorcycle navigation apps side by side",
- "eyebrow": "Comparison",
- "lead": "Every app in this comparison plans motorcycle routes and gives turn-by-turn directions on iPhone and Android. They differ in how they pick the road, what sits behind the paywall and what else they do on a ride. Each line below comes from the developer's own App Store page or website, linked under Sources, as checked on 24 November 2026.",
+ "baslik": "calimoto alternative: motorcycle navigation apps scored",
+ "aciklama": "calimoto, Kurviger, Scenic, REVER, MotoAtlas and Motoseyir scored on 12 published criteria, with US prices and App Store ratings checked on 24 Nov 2026.",
+ "h1": "Looking for a calimoto alternative? Six motorcycle navigation apps, scored feature by feature",
+ "eyebrow": "Comparison · updated 24 Nov 2026",
+ "lead": "Every app here plans motorcycle routes on iPhone and Android. We scored all six on twelve criteria with published weights, using only what each developer says on its own App Store page or website, and added US prices and App Store user ratings.",
+ "tarafsizlik": "We publish Motoseyir, so this page is not neutral. The rules and weights below were written before the scores were added up, and every fact links to the developer's own page.",
+ "hub_oku": "See the scores and prices",
  "yayin": "2026-11-24",
  "guncelleme": "2026-11-24",
- "ozet": "calimoto, Kurviger, Scenic, REVER and Motoseyir compared on round trips, offline maps, CarPlay, GPX and paid plans, using only the developers' own pages.",
+ "ozet": "Six motorcycle navigation apps scored on twelve published criteria, with prices and App Store ratings, from the developers' own pages.",
  "bolumler": [
-  {"id": "yontem", "h2": "How this comparison was made", "icerik": [
-   {"p": "We publish Motoseyir, so this page is not neutral. To keep it fair, it only states what each developer says about its own app on its App Store page or its website. Ratings, download counts and our opinion of other apps are left out. Where a page says nothing about a feature, the table says “not stated”; that does not mean the feature is missing."},
-   {"p": "Apps change every few weeks. Check the linked pages before you decide, and tell us through the support page if a line here is out of date."}
+  {"id": "tablo", "h2": "Feature by feature, with scores", "icerik": [
+   {"p": "Each cell says what the developer states, then the 0–5 score that rule gives. A dash means the developer's App Store page and website do not mention the feature; it scores 0, which can understate an app that has the feature but does not describe it."},
+   {"karsi": "matris"},
+   {"not": "Columns are ordered by our criteria score. Motoseyir's column is tinted only so you can find it; it follows the same rules as the others."}
   ]},
-  {"id": "tablo", "h2": "The five apps at a glance", "icerik": [
-   {"tablo": {"baslik_metni": "Motorcycle navigation apps compared (developers' own pages, 24 Nov 2026)",
-    "baslik": ["App", "Round trip generator", "Offline maps", "Car screen", "GPX", "Paid plan"],
-    "satirlar": [
-     ["Motoseyir", "Yes (Pro)", "Yes (Pro)", "Apple CarPlay on iPhone (Pro); no Android Auto", "Import and export", "Pro"],
-     ["calimoto", "Yes, Round Trip Planner (Premium)", "Yes (Premium)", "Apple CarPlay and Android Auto", "Import and export", "Premium"],
-     ["Kurviger", "Yes, up to 600 km", "Yes", "Apple CarPlay and Android Auto", "Import .gpx and .itn; export .gpx, .itn, .kml", "Tourer, Tourer+"],
-     ["Scenic", "Yes, in any direction", "Yes, global coverage", "Apple CarPlay", "Import GPX, KML, KMZ, GDB, ITN", "Premium (yearly)"],
-     ["REVER", "Not stated", "Yes (PRO)", "CarPlay badge on its website", "GPX download (PRO)", "PRO"]
-    ],
-    "not": "All five apps are on the App Store and Google Play. “Not stated” means the developer's App Store page and home page do not mention it."}}
+  {"id": "yontem", "h2": "How we score", "icerik": [
+   {"p": "Twelve criteria, each scored 0, 1, 3 or 5 by a fixed rule, then weighted. The weights add up to 100, so the total is out of 100: weight × score ÷ 5, summed. Curvy road choice carries the most weight because it is the reason most riders install a motorcycle app at all."},
+   {"karsi": "kurallar"},
+   {"p": "Prices, App Store ratings, the Turkish interface and what the free version does are shown but not scored. Prices differ by country and by offer, and a user rating measures something else."},
+   {"p": "The result is close at the top: Motoseyir 84 and calimoto 83. Weigh the criteria differently and the order changes. If curvy routing, worldwide coverage and Android Auto are what you care about, calimoto and Kurviger come out ahead of Motoseyir."}
+  ]},
+  {"id": "onde-geride", "h2": "Where Motoseyir is ahead, and where it is behind", "icerik": [
+   {"liste": [
+    "<strong>Ahead:</strong> voice turn-by-turn navigation in the free version, without a limit; a group ride with an intercom and the AI CoRider voice assistant; a database of 1,638 mountain passes in 36 countries; round trips by direction, length and twistiness.",
+    "<strong>Behind:</strong> no Android Auto; routing only in Türkiye, Europe and the USA; one small-road mode instead of several curviness levels; speed camera alerts only in Türkiye.",
+    "<strong>App Store ratings:</strong> far fewer than the others so far (see below)."
+   ]}
+  ]},
+  {"id": "magaza", "h2": "App Store user ratings: not our score", "icerik": [
+   {"p": "These are the average star ratings and the number of ratings in three App Store countries, read from Apple's public lookup on 24 November 2026. A 4.8 from 20 ratings says much less than a 4.6 from 20,000, so the count is always next to the stars."},
+   {"karsi": "magaza"},
+   {"p": "Motoseyir has a single rating on the US App Store, none yet in Germany and 3.8 from 21 ratings in Türkiye, the lowest of the six there. REVER, Scenic and calimoto have thousands of ratings. MotoAtlas is only on the Turkish App Store."}
+  ]},
+  {"id": "fiyat", "h2": "Prices on the US App Store", "icerik": [
+   {"p": "All six apps are free to download; the plans below are what each lists under In-App Purchases. None of them lists a lifetime purchase."},
+   {"karsi": "fiyat"}
+  ]},
+  {"id": "kime", "h2": "Which app suits which rider", "icerik": [
+   {"kartlar": [
+    {"ikon": "viraj", "h3": "You want the curviest road", "p": "calimoto, Kurviger and MotoAtlas offer more than one curviness level for an A-to-B route. Motoseyir's default is the shortest distance; Back roads is its one small-road mode."},
+    {"ikon": "araba", "h3": "Android Auto is a must", "p": "Pick calimoto, Kurviger or Scenic; all three list Android Auto. Motoseyir has Apple CarPlay on iPhone and no Android Auto."},
+    {"ikon": "dunya", "h3": "You ride outside Europe and the USA", "p": "calimoto, Kurviger, Scenic and REVER say they work anywhere in the world. Motoseyir routes in Türkiye, Europe and the USA only."},
+    {"ikon": "cuzdan", "h3": "You don't want to pay for navigation", "p": "Motoseyir gives voice turn-by-turn navigation free and without a limit in its three regions. MotoAtlas has it free on Fast and Balanced routes; the others keep turn-by-turn in the paid plan."},
+    {"ikon": "grup", "h3": "You ride with friends", "p": "Motoseyir and calimoto put the whole group live on one map. Motoseyir adds an intercom over the internet and the AI CoRider voice assistant."},
+    {"ikon": "dag", "h3": "You ride off-road or more than a motorcycle", "p": "REVER covers ATVs, snowmobiles and 4x4s with its off-road planner, and Scenic has an unpaved routing mode."}
+   ]}
   ]},
   {"id": "uygulamalar", "h2": "What each developer says its app does", "icerik": [
    {"h3": "calimoto"},
-   {"p": "Made by calimoto GmbH. Its App Store page describes a route algorithm that favours curvy roads and avoids highways, a route planner in the app and on the web, turn-by-turn voice navigation, points of interest, GPX import and export, and offline maps. A ride tracker records lean angle and acceleration. Premium adds worldwide offline maps, unlimited routes, speed limits and hazard warnings; the website lists the Round Trip Planner with eight directions and four routing profiles under Premium."},
+   {"p": "Made by calimoto GmbH. Four routing profiles (Fast, No highway, Winding, Twisty), a Round Trip Planner with eight directions, GPX, KML and ITN import, and a ride tracker with lean angle. Its pricing page puts turn-by-turn navigation, offline maps, Apple CarPlay and Android Auto, synchronised group rides with location sharing and speed camera alerts in Premium."},
    {"h3": "Kurviger"},
-   {"p": "KURVIGER GmbH publishes Kurviger. Its route planner connects your start, destination and stopovers along curvy roads and scenic passes; you can adjust the curviness and exclude motorways or toll roads, and it warns about closures and unpaved sections in advance. It generates round trips (up to 600 km, says its website), offers offline maps, cloud sync with the web planner and route transfer in GPX, ITN and KML. The premium options are called Tourer and Tourer+."},
+   {"p": "KURVIGER GmbH publishes Kurviger. Its planner lets you set how curvy the route is and exclude motorways, main roads, toll roads, ferries and unpaved roads. Round trips go up to 300 km free and 600 km with Tourer; navigation, offline maps and ride recording are in Tourer+. The website lists Android Auto and Apple CarPlay."},
    {"h3": "Scenic"},
-   {"p": "Scenic comes from Applified Life Ltd. It offers curvy, scenic and unpaved routing modes, a round trip generator, thousands of routes shared and rated by riders, imports from GPX and KML files and from shared map links, offline maps with global coverage, Apple CarPlay, speed camera alerts, and ride logs with speed and elevation. Premium is a yearly subscription."},
+   {"p": "Scenic comes from Applified Life Ltd. Its Premium page lists turn-by-turn voice navigation, offline maps, round trip generation, route import and GPX export, and speed and red-light camera alerts; the free version follows the route line, and Apple CarPlay and Android Auto are listed on the same page."},
    {"h3": "REVER"},
-   {"p": "REVER is published by Rever, LLC and covers motorcycles, ATVs, snowmobiles and 4x4s. Its App Store page lists three routing engines (an off-road planner, a twisty routing engine and A-to-B guidance), hand-picked routes, ride recording, challenges and community sharing. PRO adds Butler Maps road recommendations, voice navigation, weather radar, LiveRIDE safety features, offline maps and GPX downloads."},
+   {"p": "REVER is published by Rever, LLC and covers motorcycles, ATVs, snowmobiles and 4x4s. PRO adds Twisty Routing, turn-by-turn directions, offline maps, GPX export and live location sharing; GPX import and route line navigation are free."},
+   {"h3": "MotoAtlas"},
+   {"p": "MotoAtlas is a Turkish app by Caner Demir, on the Turkish App Store and Google Play, with a Turkish interface. It offers Fast, Balanced, Curvy and Very curvy routes, an automatic tour by distance or time, a 3D preview, weather every 35 km, Apple CarPlay, and GPX, FIT, TCX and KML import. Ride recording and navigation on Fast and Balanced routes are free; its site says there is no live group feature."},
    {"h3": "Motoseyir"},
-   {"p": "Motoseyir works out the route by distance rather than minutes: it compares the alternatives between two points and suggests the shortest. On a multi-stop route it finds the best order of the stops. Back roads and Coast modes, the tour generator, offline maps, Apple CarPlay, creating a group ride with intercom and the AI CoRider voice assistant are part of Pro. Routing and turn-by-turn navigation are free and unlimited in Türkiye, Europe and the USA, without an account."}
-  ]},
-  {"id": "fark", "h2": "Where the apps differ", "icerik": [
-   {"liste": [
-    "<strong>How the road is picked.</strong> calimoto, Kurviger and Scenic put curvy roads first. Motoseyir's default is the shortest distance, and you switch to Back roads when you want small roads.",
-    "<strong>Coverage.</strong> Kurviger and Scenic say they work anywhere in the world. Motoseyir routes in Türkiye, Europe and the USA.",
-    "<strong>Android Auto.</strong> calimoto and Kurviger support it. Motoseyir does not; its car-screen support is Apple CarPlay on iPhone.",
-    "<strong>Riding together.</strong> Motoseyir has a group ride with live positions and an intercom over the internet; REVER lists live friend tracking.",
-    "<strong>Voice assistant.</strong> Motoseyir's AI CoRider adds stops, finds places on the route and changes it by voice. None of the other four pages describe a conversational assistant.",
-    "<strong>Off-road and other vehicles.</strong> REVER covers ATVs, snowmobiles and 4x4s, and Scenic has an unpaved mode."
-   ]}
-  ]},
-  {"id": "secim", "h2": "How to choose", "icerik": [
-   {"p": "Start from the ride you do most. For long curvy loops anywhere in the world, the curvy-first planners are built around that. If you ride in Türkiye, Europe or the USA, plan multi-stop days, ride in a group or want to talk to the app through your helmet, Motoseyir covers that. All five are free to download, so install two and plan the same Sunday ride in both before you pay for anything."},
-   {"p": "For planning tips that work in any app, read <a href=\"{@tur-planlama}\">how to plan a motorcycle ride</a>; the full feature list of Motoseyir is on the <a href=\"{@ozellikler}\">features page</a>."}
+   {"p": "Motoseyir picks the route by distance rather than minutes and puts several stops in the best order. Routing and voice navigation are free and unlimited in Türkiye, Europe and the USA, without an account. Pro adds Back roads and Coast modes, round trips, offline maps, Apple CarPlay, creating a group ride with intercom and AI CoRider."}
   ]}
  ],
  "sss": [
-  {"s": "What is a good calimoto alternative?", "c": "Kurviger, Scenic, REVER and Motoseyir all plan motorcycle routes with turn-by-turn navigation on iPhone and Android. Kurviger and Scenic also put curvy roads first; Motoseyir plans by distance and adds stop ordering, group intercom and a voice assistant."},
-  {"s": "Is Motoseyir free?", "c": "Routing and turn-by-turn navigation are free and unlimited in Türkiye, Europe and the USA, without an account. The free tier keeps 1 saved tour; the tour generator, offline maps, CarPlay, group creation and AI CoRider are part of Pro."},
-  {"s": "Does Motoseyir support Android Auto?", "c": "No. Motoseyir runs on Android, but its car-screen support is Apple CarPlay on iPhone."},
-  {"s": "Can I bring my GPX routes from another app?", "c": "Yes. Motoseyir imports a GPX file as a trail and exports your rides as GPX. calimoto, Kurviger and Scenic also list GPX import on their own pages."}
+  {"s": "What is a good calimoto alternative?", "c": "Kurviger is closest if you want curvy routing worldwide with Android Auto. Motoseyir scores highest on our criteria because navigation is free, it has group rides with an intercom and a voice assistant, and a pass database, but it covers only Türkiye, Europe and the USA and has no Android Auto."},
+  {"s": "How were the apps scored?", "c": "Twelve criteria, each scored 0, 1, 3 or 5 by a published rule, weighted to a total out of 100. Only what the developer states on its own App Store page or website counts; a feature that is not mentioned scores 0."},
+  {"s": "Is Motoseyir free?", "c": "Routing and voice turn-by-turn navigation are free and unlimited in Türkiye, Europe and the USA, without an account. Round trips, offline maps, CarPlay, creating a group ride and AI CoRider are part of Pro, from $8.99 a month or $39.99 a year on the US App Store."},
+  {"s": "Does Motoseyir support Android Auto?", "c": "No. Motoseyir runs on Android phones, but its car-screen support is Apple CarPlay on iPhone."},
+  {"s": "What is MotoAtlas?", "c": "A Turkish motorcycle route app by Caner Demir with curvy routing modes, automatic tours and weather along the route. It is on the Turkish App Store and Google Play."}
  ],
  "kaynaklar": [
   {"ad": "calimoto on the App Store (calimoto GmbH)", "url": "https://apps.apple.com/us/app/calimoto-motorcycle-navigation/id1209129603"},
   {"ad": "calimoto website", "url": "https://calimoto.com/en"},
+  {"ad": "calimoto pricing and feature table", "url": "https://calimoto.com/en/pricing"},
   {"ad": "Kurviger on the App Store (KURVIGER GmbH)", "url": "https://apps.apple.com/us/app/kurviger-motorcycle-navigation/id6473445827"},
   {"ad": "Kurviger website", "url": "https://kurviger.com/en"},
+  {"ad": "Kurviger features", "url": "https://kurviger.com/en/features"},
+  {"ad": "Kurviger Tourer and Tourer+", "url": "https://kurviger.com/en/premium"},
   {"ad": "Scenic on the App Store (Applified Life Ltd.)", "url": "https://apps.apple.com/us/app/scenic-motorcycle-navigation/id1089668246"},
   {"ad": "Scenic website", "url": "https://scenic.app"},
+  {"ad": "Scenic Premium", "url": "https://scenic.app/premium"},
   {"ad": "REVER on the App Store (Rever, LLC)", "url": "https://apps.apple.com/us/app/rever-motorcycle-gps-rides/id975571447"},
   {"ad": "REVER website", "url": "https://www.rever.co"},
+  {"ad": "REVER PRO", "url": "https://www.rever.co/pro"},
+  {"ad": "MotoAtlas on the Turkish App Store (Caner Demir)", "url": "https://apps.apple.com/tr/app/motoatlas-motosiklet-rota/id6798015161"},
+  {"ad": "MotoAtlas website", "url": "https://motoatlas.app/"},
+  {"ad": "MotoAtlas app and membership page", "url": "https://motoatlas.app/uygulama"},
+  {"ad": "App Store ratings: Apple iTunes Lookup API (US storefront)", "url": "https://itunes.apple.com/lookup?id=6792549131,1209129603,6473445827,1089668246,975571447&country=us"},
   {"ad": "Motoseyir features", "url": "https://motoseyir-app.com/en/ozellikler.html"},
-  {"ad": "Motoseyir on the App Store", "url": "https://apps.apple.com/app/id6792549131"},
+  {"ad": "Motoseyir on the App Store", "url": "https://apps.apple.com/us/app/id6792549131"},
   {"ad": "Motoseyir on Google Play", "url": "https://play.google.com/store/apps/details?id=com.batuhanengin.motorota"}
  ],
  "urun": {
   "h2": "Plan your next ride in Motoseyir",
-  "p": ["Pick a start and an end, add your stops by search or with a long press on the map, and Motoseyir works out the shortest order. Turn the phone into a sat nav with voice guidance, or switch to Back roads for a slower day."],
+  "p": ["Pick a start and an end, add your stops by search or with a long press on the map, and Motoseyir works out the shortest order. Voice navigation is free and unlimited in Türkiye, Europe and the USA, without an account."],
   "ikincil": "For ideas, the Legendary tab has ready-made routes you can copy into your tours and change.",
-  "gorsel": "nav",
-  "gorsel_alt": "Motoseyir navigation with the next turn, distance left and arrival time"
+  "gorseller": ["nav", "grup"],
+  "gorsel_altlar": ["Motoseyir navigation with the next turn, distance left and arrival time", "Motoseyir group ride with riders on the map"]
  }
 }

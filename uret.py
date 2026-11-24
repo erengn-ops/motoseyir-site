@@ -1434,10 +1434,165 @@ def r_tablo(t: dict, ui: dict) -> str:
     return cikti
 
 
+# ---------------------------------------------------------------------------------------------------------------------
+# KARŞILAŞTIRMA SAYFALARI (24 Kas 2026; kullanıcı: "gerçekten detaylı bi kıyaslama ve puanlama … fiyat da koyalım … motoatlas'ı da
+# koyalım"). Ortak veri `veri/karsilastirma.json` (uygulamalar, kriterler + ağırlık + 0–5 kuralı, hücreler, fiyat, App Store puanı).
+# Yazı JSON'unda `{"karsi": "<parca>"}` blokları: puan_kartlari (kahramanda), matris, kurallar, magaza, fiyat. `{"kartlar": [...]}`
+# simgeli kart ızgarası (her yazıda kullanılabilir). Toplam = Σ ağırlık × puan / 5; sıralama toplam puana göre (eşitlikte veri sırası).
+# KURAL: toplam puan ve App Store puanı JSON-LD'ye YAZILMAZ (öz-puan şeması Google kurallarına aykırı); yalnız düz HTML.
+# ---------------------------------------------------------------------------------------------------------------------
+KARSI_DOSYA = KOK / "veri" / "karsilastirma.json"
+_karsi_onbellek: dict = {}
+
+
+def karsi_veri() -> dict:
+    if not _karsi_onbellek:
+        d = json.loads(KARSI_DOSYA.read_text(encoding="utf-8"))
+        agirlik = sum(k["agirlik"] for k in d["kriterler"])
+        if agirlik != 100:
+            raise SystemExit(f"HATA: veri/karsilastirma.json ağırlık toplamı {agirlik} (100 olmalı)")
+        for u in d["uygulamalar"]:
+            h = d["hucreler"][u["id"]]
+            for k in d["kriterler"]:
+                c = h[k["id"]]
+                if c["p"] not in (0, 1, 3, 5) or c["d"] not in ("v", "k", "x", "b"):
+                    raise SystemExit(f"HATA: karsilastirma {u['id']}/{k['id']}: puan {c['p']} / durum {c['d']}")
+                if c["d"] == "b" and c["p"]:
+                    raise SystemExit(f"HATA: karsilastirma {u['id']}/{k['id']}: 'not stated' hücre 0 puan almalı")
+            u["toplam"] = round(sum(k["agirlik"] * h[k["id"]]["p"] / 5 for k in d["kriterler"]))
+        d["sirali"] = sorted(d["uygulamalar"], key=lambda u: -u["toplam"])
+        _karsi_onbellek.update(d)
+    return _karsi_onbellek
+
+
+KARSI_DURUM_SVG = {
+    "v": '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    "k": '<svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 2.5a5.5 5.5 0 0 1 0 11z" fill="currentColor"/></svg>',
+    "x": '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 4.5l7 7m0-7l-7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>',
+    "b": '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 8h8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>',
+}
+KART_SVG = {
+    "viraj": '<path d="M5 20c0-6 14-4 14-10S9 5 9 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="5" cy="20" r="2" fill="currentColor"/><circle cx="9" cy="5" r="2" fill="currentColor"/>',
+    "bayrak": '<path d="M5 21V4m0 0h11l-2 4 2 4H5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>',
+    "araba": '<rect x="3" y="5" width="18" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 21h8M12 17v4M8 13l3-5 2 3 3-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>',
+    "grup": '<circle cx="8" cy="8" r="3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17" cy="9" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M2.5 20c.5-4 3-6 5.5-6s5 2 5.5 6M14 20c.3-3 1.6-4.6 3-4.6s3.2 1.6 3.5 4.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>',
+    "dunya": '<circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18" fill="none" stroke="currentColor" stroke-width="2"/>',
+    "cuzdan": '<rect x="3" y="6" width="18" height="13" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 12.5h2M3 9h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>',
+    "ses": '<rect x="9" y="3" width="6" height="11" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>',
+    "harita": '<path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2z M9 4v14M15 6v14" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>',
+    "dag": '<path d="M2 20l7-12 4 6 3-4 6 10z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>',
+}
+
+
+def r_kartlar(kartlar: list) -> str:
+    ogeler = []
+    for k in kartlar:
+        svg = KART_SVG.get(k.get("ikon", ""), "")
+        ik = f'<span class="kart-ikon" aria-hidden="true"><svg viewBox="0 0 24 24">{svg}</svg></span>' if svg else ""
+        ogeler.append(f'<li class="kart-kutu">{ik}<h3>{k["h3"]}</h3><p>{k["p"]}</p></li>')
+    return '<ul class="kart-izgara">' + "".join(ogeler) + "</ul>"
+
+
+def _karsi_ikon(u: dict, boyut: int = 40) -> str:
+    return f'<img class="karsi-ikon" src="/m/karsi/{u["id"]}.png" alt="" width="{boyut}" height="{boyut}" loading="lazy">'
+
+
+def _karsi_magaza_puan(u: dict, vitrin: str, t: dict, kod: str) -> str:
+    p = u.get("puan", {}).get(vitrin)
+    if p is None:
+        return f'<span class="karsi-yok">{t["magazada_yok"]}</span>'
+    puan, oy = p
+    if not oy:
+        return f'<span class="karsi-yok">{t["oy_yok"]}</span>'
+    ondalik = "," if kod in ("de", "tr") else "."
+    bin = "." if kod in ("de", "tr") else ","
+    ps = f"{puan:.1f}".replace(".", ondalik)
+    os_ = f"{oy:,}".replace(",", bin)
+    az = f' <span class="karsi-az">({t["az_oy"]})</span>' if oy < 50 else ""
+    return f'<span class="karsi-yildiz" aria-hidden="true">★</span> <strong>{ps}</strong> · {os_} {t["oy_tek"] if oy == 1 else t["oy"]}{az}'
+
+
+def r_karsi(parca: str, kod: str) -> str:
+    d = karsi_veri()
+    t = d["metin"][kod]
+    vitrin = d["vitrin"][kod]
+    if parca == "puan_kartlari":
+        ogeler = []
+        for i, u in enumerate(d["sirali"]):
+            biz = " biz" if u.get("biz") else ""
+            rozet = f'<span class="karsi-rozet">{t["biz"]}</span>' if u.get("biz") else ""
+            ogeler.append(
+                f'<li class="karsi-puan{biz}"><div class="karsi-puan-ust">{_karsi_ikon(u, 44)}<div><p class="karsi-ad">{u["ad"]}</p>{rozet}</div>'
+                f'<p class="karsi-sayi"><strong>{u["toplam"]}</strong><span>/100</span></p></div>'
+                f'<div class="karsi-cubuk" aria-hidden="true"><span style="width:{u["toplam"]}%"></span></div>'
+                f'<p class="karsi-magaza-satir"><span class="karsi-etiket">{t["magaza_puan"]} · {t["vitrin"]}</span>{_karsi_magaza_puan(u, vitrin, t, kod)}</p></li>')
+        return (f'<div class="karsi-puanlar"><p class="karsi-puanlar-baslik">{t["toplam"]} <span>({t["uzerinden"]})</span></p>'
+                f'<ol class="karsi-puan-liste">' + "".join(ogeler) + "</ol></div>")
+    if parca == "matris":
+        bas = f'<th scope="col" class="karsi-kriter-bas">{t["kriter"]}</th>' + "".join(
+            f'<th scope="col" class="{"biz" if u.get("biz") else ""}">{_karsi_ikon(u, 32)}<span>{u["ad"]}</span></th>' for u in d["sirali"])
+        satir = []
+        for k in d["kriterler"]:
+            hucre = []
+            for u in d["sirali"]:
+                c = d["hucreler"][u["id"]][k["id"]]
+                noktalar = "".join(f'<i class="{"dolu" if j < c["p"] else ""}"></i>' for j in range(5))
+                hucre.append(f'<td class="{"biz" if u.get("biz") else ""}"><span class="karsi-durum d-{c["d"]}" title="{t["dur"][c["d"]]}">'
+                             f'{KARSI_DURUM_SVG[c["d"]]}<span class="gorunmez">{t["dur"][c["d"]]}: </span></span>{c[kod]}'
+                             f'<span class="karsi-nokta" role="img" aria-label="{c["p"]}/5">{noktalar}<b>{c["p"]}/5</b></span></td>')
+            satir.append(f'<tr><th scope="row">{k["ad"][kod]}<span class="karsi-agirlik">{t["agirlik"]} {k["agirlik"]}</span></th>{"".join(hucre)}</tr>')
+        satir.append(f'<tr class="karsi-toplam"><th scope="row">{t["toplam"]}</th>' + "".join(
+            f'<td class="{"biz" if u.get("biz") else ""}"><strong>{u["toplam"]}</strong>/100</td>' for u in d["sirali"]) + "</tr>")
+        satir.append(f'<tr class="karsi-ara"><th scope="rowgroup" colspan="{len(d["sirali"]) + 1}">{t["bilgi_baslik"]}</th></tr>')
+        for b in d["bilgi"]:
+            satir.append(f'<tr><th scope="row">{b["ad"][kod]}</th>' + "".join(
+                f'<td class="{"biz" if u.get("biz") else ""}"><span class="karsi-durum d-{b["hucre"][u["id"]]["d"]}">{KARSI_DURUM_SVG[b["hucre"][u["id"]]["d"]]}</span>'
+                f'{b["hucre"][u["id"]][kod]}</td>' for u in d["sirali"]) + "</tr>")
+        return (f'<p class="karsi-ipucu">{t["mobil_ipucu"]} →</p>'
+                f'<div class="rehber-tablo karsi-matris" role="region" aria-label="{t["mtablo_etiket"]}" tabindex="0"><table>'
+                f'<thead><tr>{bas}</tr></thead><tbody>{"".join(satir)}</tbody></table></div>')
+    if parca == "kurallar":
+        satir = "".join(f'<tr><th scope="row">{k["ad"][kod]}</th><td class="karsi-agirlik-hucre">{k["agirlik"]}</td><td>{k["kural"][kod]}</td></tr>'
+                        for k in d["kriterler"])
+        return (f'<div class="rehber-tablo" role="region" aria-label="{t["kural_etiket"]}" tabindex="0"><table><thead><tr>'
+                f'<th scope="col">{t["kriter"]}</th><th scope="col">{t["agirlik"]}</th><th scope="col">{t["kural"]}</th></tr></thead>'
+                f'<tbody>{satir}</tbody></table></div>')
+    if parca == "magaza":
+        vitrinler = [("us", "US"), ("de", "DE"), ("tr", "TR")]
+        bas = f'<th scope="col">App</th>' + "".join(f'<th scope="col" class="{"secili" if v == vitrin else ""}">App Store {e}</th>' for v, e in vitrinler)
+        satir = "".join(f'<tr><th scope="row">{_karsi_ikon(u, 24)} {u["ad"]}</th>' + "".join(
+            f'<td class="{"secili" if v == vitrin else ""}">{_karsi_magaza_puan(u, v, t, kod)}</td>' for v, _ in vitrinler) + "</tr>"
+            for u in d["uygulamalar"])
+        return (f'<div class="rehber-tablo karsi-magaza" role="region" aria-label="{t["magaza_puan"]}" tabindex="0"><table>'
+                f'<thead><tr>{bas}</tr></thead><tbody>{satir}</tbody></table></div>')
+    if parca == "fiyat":
+        kartlar = []
+        for u in d["uygulamalar"]:
+            liste = u["fiyat"].get(vitrin)
+            if liste:
+                govde = "<dl>" + "".join(
+                    f'<div><dt>{(x[2] + " · ") if len(x) > 2 else ""}{t["plan"][x[0]]}</dt><dd>{x[1]}</dd></div>' for x in liste) + "</dl>"
+            else:
+                govde = f'<p class="karsi-yok">{t["magazada_yok"]}</p>'
+            not_ = u.get("fiyat_not", {}).get(kod, "")
+            magaza = u["magaza"].get(vitrin) or next(iter(u["magaza"].values()))
+            kartlar.append(f'<li class="karsi-fiyat{" biz" if u.get("biz") else ""}"><div class="karsi-fiyat-ust">{_karsi_ikon(u, 36)}<h3>{u["ad"]}</h3></div>'
+                           f'{govde}' + (f'<p class="kucuk">{not_}</p>' if not_ else "")
+                           + f'<p class="karsi-fiyat-link"><a href="{magaza}" rel="noopener">{t["magaza_link"]}</a></p></li>')
+        return f'<ul class="karsi-fiyatlar">{"".join(kartlar)}</ul><p class="kucuk">{t["fiyat_kaynak"]}</p>'
+    raise SystemExit(f"HATA: bilinmeyen karşılaştırma parçası: {parca}")
+
+
 def r_bloklar(bloklar: list, ui: dict) -> str:
     cikti = []
     for b in bloklar:
         (tur, deger), = b.items()
+        if tur == "karsi":
+            cikti.append(r_karsi(deger, ui["_kod"]))
+            continue
+        if tur == "kartlar":
+            cikti.append(r_kartlar(deger))
+            continue
         if tur == "p":
             cikti.append(f"<p>{deger}</p>")
         elif tur == "h3":
@@ -1487,6 +1642,21 @@ def r_urun(urun: dict, kod: str, metin: dict, magaza: str | None = None) -> str:
     return f'<section class="rehber-urun" aria-labelledby="urun-h2">\n<div>{govde}</div>\n{gorsel}\n</section>'
 
 
+def r_karsi_cta(urun: dict, kod: str, metin: dict, magaza: str) -> str:
+    """Karşılaştırma sayfasının kapanış çağrısı: petrol zeminli bant, App Store + Google Play, uygulamanın gerçek iki ekranı
+    (m/ekran-<ad>-<kod>.webp; o dilde yoksa en)."""
+    gorseller = []
+    for ad, alt in zip(urun.get("gorseller", []), urun.get("gorsel_altlar", [])):
+        k = kod if (KOK / f"m/ekran-{ad}-{kod}.webp").exists() else "en"
+        w, h = webp_boyut(KOK / f"m/ekran-{ad}-{k}.webp")
+        gorseller.append(f'<img src="/m/ekran-{ad}-{k}.webp" alt="{_html.escape(alt, quote=True)}" width="{w}" height="{h}" loading="lazy">')
+    govde = (f'<h2 id="urun-h2">{urun["h2"]}</h2>' + "".join(f"<p>{p}</p>" for p in urun["p"])
+             + f'<p class="magaza-dugmeleri">{magaza_dugmeleri(magaza, kod, metin, "btn btn-light")}</p>'
+             + f'<p class="kucuk">{urun["ikincil"]}</p>')
+    return (f'<section class="karsi-cta" aria-labelledby="urun-h2"><div class="karsi-cta-metin">{govde}</div>'
+            f'<div class="karsi-cta-ekran">{"".join(gorseller)}</div></section>')
+
+
 def r_ekmek(kod: str, ui: dict, metin: dict, son: str | None) -> str:
     hub = rehber_hub_yolu(kod)
     ogeler = [f'<a href="{sayfa_yolu(kod, "index.html")}">{metin["nav_anasayfa"]}</a>']
@@ -1505,16 +1675,20 @@ def r_makale_govde(kod: str, grup: str, v: dict, ui: dict, metin: dict) -> str:
     if len(bolumler) >= 4:
         icindekiler = (f'<nav class="rehber-icindekiler" aria-label="{ui["icindekiler"]}"><p class="rehber-icindekiler-baslik">{ui["icindekiler"]}</p><ol>'
                        + "".join(f'<li><a href="#{b["id"]}">{b["h2"]}</a></li>' for b in bolumler) + "</ol></nav>")
-    parca = [f'<section class="section rehber-ust"><div class="wrap">', r_ekmek(kod, ui, metin, duz(v["h1"])),
+    karsi = bool(v.get("karsilastirma"))
+    if karsi:
+        ui = {**ui, "_kod": kod}
+    parca = [f'<section class="section rehber-ust{" karsi-ust" if karsi else ""}"><div class="wrap">', r_ekmek(kod, ui, metin, duz(v["h1"])),
              f'<span class="eyebrow">{v["eyebrow"]}</span>', f"<h1>{v['h1']}</h1>", f'<p class="section-lead">{v["lead"]}</p>',
+             (f'<p class="karsi-tarafsiz">{v["tarafsizlik"]}</p>' + r_karsi("puan_kartlari", kod)) if karsi else "",
              f'<p class="rehber-meta">{ui["yayin"]}: <time datetime="{v["yayin"]}">{r_tarih(v["yayin"], ui)}</time> · '
              f'{ui["guncelleme"]}: <time datetime="{v["guncelleme"]}">{r_tarih(v["guncelleme"], ui)}</time></p>',
-             "</div></section>", '<section class="section section-2 rehber-govde"><div class="wrap"><div class="rehber-kolon">']
+             "</div></section>", f'<section class="section section-2 rehber-govde"><div class="wrap"><div class="rehber-kolon{" karsi-kolon" if karsi else ""}">']
     if icindekiler:
         parca.append(icindekiler)
     for b in bolumler:
         parca.append(f'<section id="{b["id"]}" class="rehber-bolum"><h2>{b["h2"]}</h2>\n{r_bloklar(b["icerik"], ui)}</section>')
-    parca.append(r_urun(v["urun"], kod, metin, rehber_magaza(kod, v)))
+    parca.append(r_karsi_cta(v["urun"], kod, metin, rehber_magaza(kod, v)) if karsi else r_urun(v["urun"], kod, metin, rehber_magaza(kod, v)))
     if v["sss"]:
         parca.append(f'<section id="sss" class="rehber-bolum"><h2>{ui["sss"]}</h2><ul class="rehber-sss-liste">'
                      + "".join(f"<li><h3>{s['s']}</h3><p>{s['c']}</p></li>" for s in v["sss"]) + "</ul></section>")
@@ -1533,9 +1707,40 @@ def r_makale_govde(kod: str, grup: str, v: dict, ui: dict, metin: dict) -> str:
     return "\n".join(parca)
 
 
+# Rehber ana sayfasında en üstte öne çıkan karşılaştırma kartı (24 Kas 2026, kullanıcı: "guides'ta en üste koyalım"). O dilde
+# karşılaştırma yazısı yoksa İngilizce yazıya bağlanır; kart metni o dilde (aşağıdaki sözlük), hedefin dili "(English)" diye belirtilir.
+HUB_KARSI_YEDEK = {
+    "fr": ("Comparatif", "Applications de navigation moto comparées", "Six applications notées sur douze critères publiés, avec leurs prix et leurs notes App Store.", "Lire le comparatif (en anglais)"),
+    "it": ("Confronto", "App di navigazione per moto a confronto", "Sei app valutate su dodici criteri pubblicati, con prezzi e voti dell'App Store.", "Leggi il confronto (in inglese)"),
+    "es": ("Comparativa", "Apps de navegación para moto comparadas", "Seis apps puntuadas en doce criterios publicados, con precios y valoraciones del App Store.", "Leer la comparativa (en inglés)"),
+}
+
+
+def r_hub_one_cikan(kod: str) -> str:
+    _, makale = rehber_veri()
+    grup = next((g for g, m in makale.items() if any(x.get("karsilastirma") for x in m.values())), None)
+    if not grup:
+        return ""
+    d = karsi_veri()
+    m = makale[grup]
+    if kod in m:
+        v = m[kod]
+        yol, ust, h, ozet, oku, hedef_kod = rehber_yol(kod, grup), v["eyebrow"], v["h1"], v["ozet"], v.get("hub_oku", ""), kod
+    elif kod in HUB_KARSI_YEDEK:
+        ust, h, ozet, oku = HUB_KARSI_YEDEK[kod]
+        yol, hedef_kod = rehber_yol("en", grup), "en"
+    else:
+        return ""
+    ikonlar = "".join(f'<li>{_karsi_ikon(u, 40)}<span>{u["ad"]}</span><b>{u["toplam"]}</b></li>' for u in d["sirali"])
+    return (f'<article class="hub-one-cikan"><div class="hub-one-cikan-metin"><span class="eyebrow">{ust}</span>'
+            f'<h2><a href="{yol}"{"" if hedef_kod == kod else " hreflang=" + chr(34) + "en" + chr(34)}>{h}</a></h2><p>{ozet}</p>'
+            f'<p class="hub-one-cikan-oku"><a class="btn" href="{yol}">{oku}</a></p></div>'
+            f'<ol class="hub-one-cikan-ikon" aria-hidden="true">{ikonlar}</ol></article>')
+
+
 def r_hub_govde(kod: str, v: dict, ui: dict, metin: dict) -> str:
     _, makale = rehber_veri()
-    yazilar = sorted((m[kod]["sira"], g) for g, m in makale.items() if kod in m)
+    yazilar = sorted((m[kod]["sira"], g) for g, m in makale.items() if kod in m and not m[kod].get("karsilastirma"))
     kartlar = "".join(
         f'<li><article class="rehber-kart"><h2><a href="{rehber_yol(kod, g)}">{makale[g][kod]["h1"]}</a></h2>'
         f'<p>{makale[g][kod]["ozet"]}</p><p class="rehber-kart-oku"><a href="{rehber_yol(kod, g)}">{ui["oku"]}</a></p></article></li>'
@@ -1544,7 +1749,7 @@ def r_hub_govde(kod: str, v: dict, ui: dict, metin: dict) -> str:
         '<section class="section rehber-ust"><div class="wrap">', r_ekmek(kod, ui, metin, None),
         f'<span class="eyebrow">{v["eyebrow"]}</span>', f"<h1>{v['h1']}</h1>", f'<p class="section-lead">{v["lead"]}</p>',
         '</div></section>', '<section class="section section-2 rehber-govde"><div class="wrap">',
-        f'<ul class="rehber-kartlar">{kartlar}</ul>', '<div class="rehber-kolon">',
+        r_hub_one_cikan(kod), f'<ul class="rehber-kartlar">{kartlar}</ul>', '<div class="rehber-kolon">',
         (f'<p>{ozel_baglanti("veri", kod)} · {ozel_baglanti("hakkinda", kod)}</p>' if kod in OZEL_DILLER else ""), r_urun(v["urun"], kod, metin), "</div>",
         "</div></section>"])
 

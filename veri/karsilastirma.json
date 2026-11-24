@@ -1,0 +1,1337 @@
+{
+ "_aciklama": "Karşılaştırma sayfalarının ortak verisi (24 Kas 2026). icerik/navi-vergleich.{en,de,tr}.json içindeki {\"karsi\": \"...\"} blokları bunu çizer. Her hücre o uygulamanın KENDİ App Store sayfasından ya da sitesinden; doğrulanamayan hücre d=\"b\" (not stated) ve 0 puan. Puan kuralı kriterlerde 'kural'; toplam = Σ ağırlık × puan / 5. Ağırlığı sonuca bakarak değiştirme. App Store puanları iTunes Lookup API (averageUserRating, userRatingCount), fiyatlar apps.apple.com 'In-App Purchases' listesi, ikisi de 24 Kas 2026. JSON-LD'ye puan YAZILMAZ.",
+ "tarih": "2026-11-24",
+ "vitrin": {
+  "en": "us",
+  "de": "de",
+  "tr": "tr"
+ },
+ "uygulamalar": [
+  {
+   "id": "motoseyir",
+   "ad": "Motoseyir",
+   "gelistirici": "Batuhan Eren Engin",
+   "biz": true,
+   "magaza": {
+    "us": "https://apps.apple.com/us/app/id6792549131",
+    "de": "https://apps.apple.com/de/app/id6792549131",
+    "tr": "https://apps.apple.com/tr/app/id6792549131"
+   },
+   "site": "https://motoseyir-app.com",
+   "puan": {
+    "us": [
+     5,
+     1
+    ],
+    "de": [
+     0,
+     0
+    ],
+    "tr": [
+     3.80952,
+     21
+    ]
+   },
+   "fiyat": {
+    "us": [
+     [
+      "ay",
+      "$8.99"
+     ],
+     [
+      "3ay",
+      "$19.99"
+     ],
+     [
+      "yil",
+      "$39.99"
+     ]
+    ],
+    "de": [
+     [
+      "ay",
+      "8,99 €"
+     ],
+     [
+      "3ay",
+      "19,99 €"
+     ],
+     [
+      "yil",
+      "39,99 €"
+     ]
+    ],
+    "tr": [
+     [
+      "ay",
+      "₺149,99"
+     ],
+     [
+      "3ay",
+      "₺399,99"
+     ],
+     [
+      "yil",
+      "₺1.099,99"
+     ]
+    ]
+   },
+   "fiyat_not": {
+    "en": "Also listed: yearly offer $35.99, monthly offer $7.99. AI CoRider minute packs $6.49–$21.99.",
+    "de": "Ebenfalls gelistet: Jahresangebot 35,99 €, Monatsangebot 7,99 €. AI-CoRider-Minutenpakete 4,99–22,99 €.",
+    "tr": "AI CoRider dakika paketleri ₺229,99–₺1.299,99."
+   }
+  },
+  {
+   "id": "calimoto",
+   "ad": "calimoto",
+   "gelistirici": "calimoto GmbH",
+   "magaza": {
+    "us": "https://apps.apple.com/us/app/calimoto-motorcycle-navigation/id1209129603",
+    "de": "https://apps.apple.com/de/app/id1209129603",
+    "tr": "https://apps.apple.com/tr/app/id1209129603"
+   },
+   "site": "https://calimoto.com/en",
+   "puan": {
+    "us": [
+     4.59229,
+     986
+    ],
+    "de": [
+     4.63471,
+     17742
+    ],
+    "tr": [
+     4.63636,
+     11
+    ]
+   },
+   "fiyat": {
+    "us": [
+     [
+      "hafta",
+      "$12.99"
+     ],
+     [
+      "yil",
+      "$79.99"
+     ],
+     [
+      "sezon",
+      "$53.00"
+     ],
+     [
+      "aile",
+      "$132.99"
+     ]
+    ],
+    "de": [
+     [
+      "hafta",
+      "9,99 €"
+     ],
+     [
+      "yil",
+      "59,99 €"
+     ],
+     [
+      "sezon",
+      "39,99 €"
+     ],
+     [
+      "aile",
+      "99,99 €"
+     ]
+    ],
+    "tr": [
+     [
+      "hafta",
+      "₺199,99"
+     ],
+     [
+      "yil",
+      "₺1.199,00"
+     ],
+     [
+      "sezon",
+      "₺799,00"
+     ],
+     [
+      "aile",
+      "₺1.999,00"
+     ]
+    ]
+   },
+   "fiyat_not": {
+    "en": "Also listed: yearly $39.99, weekly $6.99.",
+    "de": "Ebenfalls gelistet: jährlich 29,99 €, wöchentlich 4,99 €.",
+    "tr": "Listede ayrıca: yıllık ₺799,99, haftalık ₺99,99."
+   }
+  },
+  {
+   "id": "kurviger",
+   "ad": "Kurviger",
+   "gelistirici": "KURVIGER GmbH",
+   "magaza": {
+    "us": "https://apps.apple.com/us/app/kurviger-motorcycle-navigation/id6473445827",
+    "de": "https://apps.apple.com/de/app/id6473445827",
+    "tr": "https://apps.apple.com/tr/app/id6473445827"
+   },
+   "site": "https://kurviger.com/en",
+   "puan": {
+    "us": [
+     4.39394,
+     264
+    ],
+    "de": [
+     4.57446,
+     9992
+    ],
+    "tr": [
+     4.61538,
+     52
+    ]
+   },
+   "fiyat": {
+    "us": [
+     [
+      "ay",
+      "$2.99",
+      "Tourer"
+     ],
+     [
+      "yil",
+      "$12.99",
+      "Tourer"
+     ],
+     [
+      "ay",
+      "$5.99",
+      "Tourer+"
+     ],
+     [
+      "yil",
+      "$24.99",
+      "Tourer+"
+     ]
+    ],
+    "de": [
+     [
+      "ay",
+      "3,49 €",
+      "Tourer"
+     ],
+     [
+      "yil",
+      "14,99 €",
+      "Tourer"
+     ],
+     [
+      "ay",
+      "6,99 €",
+      "Tourer+"
+     ],
+     [
+      "yil",
+      "29,99 €",
+      "Tourer+"
+     ]
+    ],
+    "tr": [
+     [
+      "ay",
+      "₺99,99",
+      "Tourer"
+     ],
+     [
+      "yil",
+      "₺499,99",
+      "Tourer"
+     ],
+     [
+      "ay",
+      "₺229,99",
+      "Tourer+"
+     ],
+     [
+      "yil",
+      "₺999,99",
+      "Tourer+"
+     ]
+    ]
+   },
+   "fiyat_not": {
+    "en": "Turn-by-turn navigation and offline maps are in Tourer+.",
+    "de": "Navigation und Offline-Karten sind in Tourer+ enthalten.",
+    "tr": "Navigasyon ve çevrimdışı harita Tourer+ içinde."
+   }
+  },
+  {
+   "id": "scenic",
+   "ad": "Scenic",
+   "gelistirici": "Applified Life Ltd.",
+   "magaza": {
+    "us": "https://apps.apple.com/us/app/scenic-motorcycle-navigation/id1089668246",
+    "de": "https://apps.apple.com/de/app/id1089668246",
+    "tr": "https://apps.apple.com/tr/app/id1089668246"
+   },
+   "site": "https://scenic.app",
+   "puan": {
+    "us": [
+     4.65731,
+     7517
+    ],
+    "de": [
+     4.52175,
+     8939
+    ],
+    "tr": [
+     4.7619,
+     63
+    ]
+   },
+   "fiyat": {
+    "us": [
+     [
+      "ay",
+      "$14.90"
+     ],
+     [
+      "3ay",
+      "$29.90"
+     ],
+     [
+      "yil",
+      "$59.90"
+     ]
+    ],
+    "de": [
+     [
+      "ay",
+      "14,90 €"
+     ],
+     [
+      "3ay",
+      "29,90 €"
+     ],
+     [
+      "yil",
+      "59,90 €"
+     ]
+    ],
+    "tr": [
+     [
+      "ay",
+      "₺699,99"
+     ],
+     [
+      "3ay",
+      "₺1.299,99"
+     ],
+     [
+      "yil",
+      "₺2.499,99"
+     ]
+    ]
+   },
+   "fiyat_not": {
+    "en": "",
+    "de": "",
+    "tr": ""
+   }
+  },
+  {
+   "id": "rever",
+   "ad": "REVER",
+   "gelistirici": "Rever, LLC",
+   "magaza": {
+    "us": "https://apps.apple.com/us/app/rever-motorcycle-gps-rides/id975571447",
+    "de": "https://apps.apple.com/de/app/id975571447",
+    "tr": "https://apps.apple.com/tr/app/id975571447"
+   },
+   "site": "https://www.rever.co",
+   "puan": {
+    "us": [
+     4.67302,
+     16588
+    ],
+    "de": [
+     4.30128,
+     312
+    ],
+    "tr": [
+     4.65385,
+     156
+    ]
+   },
+   "fiyat": {
+    "us": [
+     [
+      "ay",
+      "$7.49"
+     ],
+     [
+      "yil",
+      "$19.99"
+     ]
+    ],
+    "de": [
+     [
+      "ay",
+      "6,49 €"
+     ],
+     [
+      "yil",
+      "29,99 €"
+     ]
+    ],
+    "tr": [
+     [
+      "ay",
+      "₺20,99"
+     ],
+     [
+      "yil",
+      "₺309,99"
+     ]
+    ]
+   },
+   "fiyat_not": {
+    "en": "",
+    "de": "",
+    "tr": ""
+   }
+  },
+  {
+   "id": "motoatlas",
+   "ad": "MotoAtlas",
+   "gelistirici": "Caner Demir",
+   "magaza": {
+    "tr": "https://apps.apple.com/tr/app/motoatlas-motosiklet-rota/id6798015161"
+   },
+   "site": "https://motoatlas.app/",
+   "puan": {
+    "tr": [
+     4.55999,
+     25
+    ]
+   },
+   "fiyat": {
+    "tr": [
+     [
+      "hafta",
+      "₺50,00"
+     ],
+     [
+      "ay",
+      "₺119,00"
+     ],
+     [
+      "yil",
+      "₺899,00"
+     ]
+    ]
+   },
+   "fiyat_not": {
+    "en": "Only on the Turkish App Store (checked 24 Nov 2026).",
+    "de": "Nur im türkischen App Store (Stand 24. Nov. 2026).",
+    "tr": "Sitesine göre yıllık üyelik ilk yıl ₺699, sonraki yıllar ₺899."
+   }
+  }
+ ],
+ "kriterler": [
+  {
+   "id": "yol",
+   "agirlik": 15,
+   "ad": {
+    "en": "Curvy or scenic road choice",
+    "de": "Kurvige oder landschaftliche Strecken",
+    "tr": "Virajlı ya da manzaralı yol seçimi"
+   },
+   "kural": {
+    "en": "5 = two or more curviness levels for an A-to-B route · 3 = one curvy, scenic or back-road mode · 0 = not stated",
+    "de": "5 = zwei oder mehr Kurvigkeitsstufen für eine A-nach-B-Route · 3 = ein Kurven-, Landschafts- oder Nebenstraßenmodus · 0 = keine Angabe",
+    "tr": "5 = A'dan B'ye rotada iki ya da daha fazla viraj seviyesi · 3 = tek bir virajlı, manzaralı ya da küçük yol modu · 0 = belirtilmemiş"
+   }
+  },
+  {
+   "id": "otoyol",
+   "agirlik": 5,
+   "ad": {
+    "en": "Avoid motorways",
+    "de": "Autobahnen meiden",
+    "tr": "Otoyoldan kaçınma"
+   },
+   "kural": {
+    "en": "5 = explicit option to avoid motorways · 3 = a routing mode that skips them · 0 = not stated",
+    "de": "5 = eigene Option „Autobahnen meiden“ · 3 = ein Routenmodus, der sie auslässt · 0 = keine Angabe",
+    "tr": "5 = otoyoldan kaçınma seçeneği var · 3 = otoyolu atlayan bir rota modu var · 0 = belirtilmemiş"
+   }
+  },
+  {
+   "id": "tur",
+   "agirlik": 10,
+   "ad": {
+    "en": "Round trip generator",
+    "de": "Rundtour-Generator",
+    "tr": "Dönüşlü tur üretimi"
+   },
+   "kural": {
+    "en": "5 = you choose length and direction · 3 = length (or time) only · 0 = not stated",
+    "de": "5 = Länge und Richtung wählbar · 3 = nur Länge (oder Dauer) · 0 = keine Angabe",
+    "tr": "5 = uzunluk ve yön seçilir · 3 = yalnız uzunluk (ya da süre) · 0 = belirtilmemiş"
+   }
+  },
+  {
+   "id": "nav",
+   "agirlik": 10,
+   "ad": {
+    "en": "Navigation in the free version",
+    "de": "Navigation in der Gratisversion",
+    "tr": "Ücretsiz sürümde navigasyon"
+   },
+   "kural": {
+    "en": "5 = voice turn-by-turn, free and unlimited · 3 = free voice navigation on some route types · 1 = follow-the-line only · 0 = paid plan only",
+    "de": "5 = Sprachnavigation, gratis und unbegrenzt · 3 = gratis nur für manche Routenarten · 1 = nur der Linie folgen · 0 = nur im Bezahlplan",
+    "tr": "5 = sesli adım adım navigasyon, ücretsiz ve sınırsız · 3 = yalnız bazı rota türlerinde ücretsiz · 1 = yalnız çizgiyi takip · 0 = yalnız ücretli planda"
+   }
+  },
+  {
+   "id": "offline",
+   "agirlik": 10,
+   "ad": {
+    "en": "Offline maps",
+    "de": "Offline-Karten",
+    "tr": "Çevrimdışı harita"
+   },
+   "kural": {
+    "en": "5 = stated (any plan) · 0 = not stated",
+    "de": "5 = angegeben (in irgendeinem Plan) · 0 = keine Angabe",
+    "tr": "5 = belirtilmiş (herhangi bir planda) · 0 = belirtilmemiş"
+   }
+  },
+  {
+   "id": "arac",
+   "agirlik": 10,
+   "ad": {
+    "en": "Apple CarPlay / Android Auto",
+    "de": "Apple CarPlay / Android Auto",
+    "tr": "Apple CarPlay / Android Auto"
+   },
+   "kural": {
+    "en": "5 = both · 3 = one of them · 0 = not stated",
+    "de": "5 = beide · 3 = eines davon · 0 = keine Angabe",
+    "tr": "5 = ikisi de · 3 = biri · 0 = belirtilmemiş"
+   }
+  },
+  {
+   "id": "gpx",
+   "agirlik": 5,
+   "ad": {
+    "en": "GPX import and export",
+    "de": "GPX-Import und -Export",
+    "tr": "GPX içe ve dışa aktarma"
+   },
+   "kural": {
+    "en": "5 = import and export · 3 = one direction · 0 = not stated",
+    "de": "5 = Import und Export · 3 = eine Richtung · 0 = keine Angabe",
+    "tr": "5 = içe ve dışa · 3 = tek yön · 0 = belirtilmemiş"
+   }
+  },
+  {
+   "id": "grup",
+   "agirlik": 10,
+   "ad": {
+    "en": "Group ride and live location",
+    "de": "Gruppenfahrt und Live-Standort",
+    "tr": "Grup sürüşü ve canlı konum"
+   },
+   "kural": {
+    "en": "5 = group ride with everyone live on the map · 3 = live location sharing only · 0 = not stated or stated as missing",
+    "de": "5 = Gruppenfahrt, alle live auf der Karte · 3 = nur Live-Standort teilen · 0 = keine Angabe oder als fehlend angegeben",
+    "tr": "5 = herkesin haritada canlı göründüğü grup sürüşü · 3 = yalnız canlı konum paylaşımı · 0 = belirtilmemiş ya da yok"
+   }
+  },
+  {
+   "id": "ses",
+   "agirlik": 5,
+   "ad": {
+    "en": "Intercom or voice assistant",
+    "de": "Intercom oder Sprachassistent",
+    "tr": "İnterkom ya da sesli asistan"
+   },
+   "kural": {
+    "en": "5 = built-in intercom or a voice assistant you talk to · 0 = not stated (voice directions alone do not count)",
+    "de": "5 = eingebautes Intercom oder ein Sprachassistent zum Sprechen · 0 = keine Angabe (Sprachansagen allein zählen nicht)",
+    "tr": "5 = uygulamada interkom ya da konuşulan sesli asistan · 0 = belirtilmemiş (sesli yön tarifi tek başına sayılmaz)"
+   }
+  },
+  {
+   "id": "kamera",
+   "agirlik": 5,
+   "ad": {
+    "en": "Speed camera alerts",
+    "de": "Blitzerwarnung",
+    "tr": "Hız kamerası uyarısı"
+   },
+   "kural": {
+    "en": "5 = stated with no country limit · 3 = one country only · 0 = not stated",
+    "de": "5 = angegeben, ohne Länderbeschränkung · 3 = nur ein Land · 0 = keine Angabe",
+    "tr": "5 = ülke sınırı olmadan belirtilmiş · 3 = yalnız bir ülke · 0 = belirtilmemiş"
+   }
+  },
+  {
+   "id": "gecit",
+   "agirlik": 5,
+   "ad": {
+    "en": "Mountain pass database",
+    "de": "Pass-Datenbank",
+    "tr": "Dağ geçidi veritabanı"
+   },
+   "kural": {
+    "en": "5 = searchable list of passes with details · 3 = passes shown as map points · 0 = not stated",
+    "de": "5 = durchsuchbare Passliste mit Details · 3 = Pässe als Kartenpunkte · 0 = keine Angabe",
+    "tr": "5 = ayrıntılı, aranabilir geçit listesi · 3 = geçitler haritada nokta olarak · 0 = belirtilmemiş"
+   }
+  },
+  {
+   "id": "kapsam",
+   "agirlik": 10,
+   "ad": {
+    "en": "Coverage",
+    "de": "Abdeckung",
+    "tr": "Kapsam (ülkeler)"
+   },
+   "kural": {
+    "en": "5 = worldwide stated · 3 = several regions · 1 = one country · 0 = not stated",
+    "de": "5 = weltweit angegeben · 3 = mehrere Regionen · 1 = ein Land · 0 = keine Angabe",
+    "tr": "5 = dünya geneli belirtilmiş · 3 = birkaç bölge · 1 = tek ülke · 0 = belirtilmemiş"
+   }
+  }
+ ],
+ "hucreler": {
+  "motoseyir": {
+   "yol": {
+    "p": 3,
+    "d": "k",
+    "en": "Back roads mode (Pro); default is the shortest distance",
+    "de": "Modus Nebenstraßen (Pro); Standard ist die kürzeste Strecke",
+    "tr": "Köy yolları modu (Pro); varsayılan en kısa mesafe"
+   },
+   "otoyol": {
+    "p": 5,
+    "d": "v",
+    "en": "No-motorway route option; Back roads also skips tolls",
+    "de": "Route ohne Autobahn; Nebenstraßen meidet auch Maut",
+    "tr": "Otoyolsuz rota seçeneği; Köy yolları ücretli yolu da atlar"
+   },
+   "tur": {
+    "p": 5,
+    "d": "v",
+    "en": "Direction, length and twistiness (Pro)",
+    "de": "Richtung, Länge und Kurvigkeit (Pro)",
+    "tr": "Yön, uzunluk ve virajlılık (Pro)"
+   },
+   "nav": {
+    "p": 5,
+    "d": "v",
+    "en": "Free and unlimited in Türkiye, Europe and the USA",
+    "de": "Gratis und unbegrenzt in der Türkei, Europa und den USA",
+    "tr": "Türkiye, Avrupa ve ABD'de ücretsiz ve sınırsız"
+   },
+   "offline": {
+    "p": 5,
+    "d": "v",
+    "en": "Yes (Pro)",
+    "de": "Ja (Pro)",
+    "tr": "Var (Pro)"
+   },
+   "arac": {
+    "p": 3,
+    "d": "k",
+    "en": "CarPlay (Pro); no Android Auto",
+    "de": "CarPlay (Pro); kein Android Auto",
+    "tr": "CarPlay (Pro); Android Auto yok"
+   },
+   "gpx": {
+    "p": 5,
+    "d": "v",
+    "en": "Import and export",
+    "de": "Import und Export",
+    "tr": "İçe ve dışa"
+   },
+   "grup": {
+    "p": 5,
+    "d": "v",
+    "en": "Group ride, everyone live on the map (create: Pro, join: free)",
+    "de": "Gruppenfahrt, alle live auf der Karte (erstellen: Pro, beitreten: gratis)",
+    "tr": "Grup sürüşü, herkes haritada canlı (kurmak Pro, katılmak ücretsiz)"
+   },
+   "ses": {
+    "p": 5,
+    "d": "v",
+    "en": "AI CoRider voice assistant and group intercom (Pro)",
+    "de": "Sprachassistent AI CoRider und Gruppen-Intercom (Pro)",
+    "tr": "AI CoRider sesli asistan ve grup interkomu (Pro)"
+   },
+   "kamera": {
+    "p": 3,
+    "d": "k",
+    "en": "Türkiye only (726 cameras)",
+    "de": "Nur Türkei (726 Blitzer)",
+    "tr": "Yalnız Türkiye (726 kamera)"
+   },
+   "gecit": {
+    "p": 5,
+    "d": "v",
+    "en": "1,638 passes in 36 countries",
+    "de": "1.638 Pässe in 36 Ländern",
+    "tr": "36 ülkede 1.638 geçit"
+   },
+   "kapsam": {
+    "p": 3,
+    "d": "k",
+    "en": "Türkiye, Europe and the USA",
+    "de": "Türkei, Europa und USA",
+    "tr": "Türkiye, Avrupa ve ABD"
+   }
+  },
+  "calimoto": {
+   "yol": {
+    "p": 5,
+    "d": "v",
+    "en": "Winding and Twisty profiles",
+    "de": "Profile Winding und Twisty",
+    "tr": "Winding ve Twisty profilleri"
+   },
+   "otoyol": {
+    "p": 5,
+    "d": "v",
+    "en": "“No highway” profile",
+    "de": "Profil „No highway“",
+    "tr": "“No highway” profili"
+   },
+   "tur": {
+    "p": 5,
+    "d": "v",
+    "en": "Eight directions, four profiles (Premium)",
+    "de": "Acht Richtungen, vier Profile (Premium)",
+    "tr": "Sekiz yön, dört profil (Premium)"
+   },
+   "nav": {
+    "p": 0,
+    "d": "x",
+    "en": "Premium only; free plan plans and saves routes",
+    "de": "Nur Premium; gratis: planen und speichern",
+    "tr": "Yalnız Premium; ücretsiz planda rota planlama ve kaydetme"
+   },
+   "offline": {
+    "p": 5,
+    "d": "v",
+    "en": "Worldwide (Premium)",
+    "de": "Weltweit (Premium)",
+    "tr": "Dünya geneli (Premium)"
+   },
+   "arac": {
+    "p": 5,
+    "d": "v",
+    "en": "Both (Premium)",
+    "de": "Beide (Premium)",
+    "tr": "İkisi de (Premium)"
+   },
+   "gpx": {
+    "p": 5,
+    "d": "v",
+    "en": "Import free, export Premium",
+    "de": "Import gratis, Export Premium",
+    "tr": "İçe ücretsiz, dışa Premium"
+   },
+   "grup": {
+    "p": 5,
+    "d": "v",
+    "en": "Synchronised group rides with location sharing (Premium)",
+    "de": "Synchronisierte Gruppenfahrten mit Standort (Premium)",
+    "tr": "Konum paylaşımlı senkron grup sürüşü (Premium)"
+   },
+   "ses": {
+    "p": 0,
+    "d": "b",
+    "en": "Not stated",
+    "de": "Keine Angabe",
+    "tr": "Belirtilmemiş"
+   },
+   "kamera": {
+    "p": 5,
+    "d": "v",
+    "en": "Speed cameras and caution points (Premium)",
+    "de": "Blitzer und Gefahrenstellen (Premium)",
+    "tr": "Hız kamerası ve dikkat noktası (Premium)"
+   },
+   "gecit": {
+    "p": 3,
+    "d": "k",
+    "en": "Passes as points on the map",
+    "de": "Pässe als Kartenpunkte",
+    "tr": "Geçitler haritada nokta olarak"
+   },
+   "kapsam": {
+    "p": 5,
+    "d": "v",
+    "en": "Worldwide",
+    "de": "Weltweit",
+    "tr": "Dünya geneli"
+   }
+  },
+  "kurviger": {
+   "yol": {
+    "p": 5,
+    "d": "v",
+    "en": "Curvy, Extra curvy and All curvy modes",
+    "de": "Modi Kurvig, Extra kurvig, Alle kurvig",
+    "tr": "Curvy, Extra curvy, All curvy modları"
+   },
+   "otoyol": {
+    "p": 5,
+    "d": "v",
+    "en": "Avoid motorways, toll roads, ferries and more",
+    "de": "Autobahnen, Maut, Fähren u. a. meiden",
+    "tr": "Otoyol, ücretli yol, feribot ve daha fazlasından kaçınma"
+   },
+   "tur": {
+    "p": 5,
+    "d": "v",
+    "en": "Distance and direction; 300 km free, 600 km in Tourer",
+    "de": "Distanz und Richtung; 300 km gratis, 600 km mit Tourer",
+    "tr": "Mesafe ve yön; ücretsiz 300 km, Tourer'da 600 km"
+   },
+   "nav": {
+    "p": 0,
+    "d": "x",
+    "en": "Tourer+ only; route planning is free",
+    "de": "Nur Tourer+; Routenplanung gratis",
+    "tr": "Yalnız Tourer+; rota planlama ücretsiz"
+   },
+   "offline": {
+    "p": 5,
+    "d": "v",
+    "en": "Yes (Tourer+)",
+    "de": "Ja (Tourer+)",
+    "tr": "Var (Tourer+)"
+   },
+   "arac": {
+    "p": 5,
+    "d": "v",
+    "en": "Both",
+    "de": "Beide",
+    "tr": "İkisi de"
+   },
+   "gpx": {
+    "p": 5,
+    "d": "v",
+    "en": "GPX/ITN in; GPX/ITN/KML out",
+    "de": "GPX/ITN rein; GPX/ITN/KML raus",
+    "tr": "GPX/ITN içe; GPX/ITN/KML dışa"
+   },
+   "grup": {
+    "p": 0,
+    "d": "b",
+    "en": "Not stated",
+    "de": "Keine Angabe",
+    "tr": "Belirtilmemiş"
+   },
+   "ses": {
+    "p": 0,
+    "d": "b",
+    "en": "Not stated",
+    "de": "Keine Angabe",
+    "tr": "Belirtilmemiş"
+   },
+   "kamera": {
+    "p": 0,
+    "d": "b",
+    "en": "Not stated",
+    "de": "Keine Angabe",
+    "tr": "Belirtilmemiş"
+   },
+   "gecit": {
+    "p": 0,
+    "d": "b",
+    "en": "Not stated",
+    "de": "Keine Angabe",
+    "tr": "Belirtilmemiş"
+   },
+   "kapsam": {
+    "p": 5,
+    "d": "v",
+    "en": "Anywhere in the world",
+    "de": "Überall auf der Welt",
+    "tr": "Dünyanın her yerinde"
+   }
+  },
+  "scenic": {
+   "yol": {
+    "p": 3,
+    "d": "k",
+    "en": "Curvy routing mode (Premium)",
+    "de": "Kurvenmodus (Premium)",
+    "tr": "Virajlı rota modu (Premium)"
+   },
+   "otoyol": {
+    "p": 0,
+    "d": "b",
+    "en": "Not stated",
+    "de": "Keine Angabe",
+    "tr": "Belirtilmemiş"
+   },
+   "tur": {
+    "p": 5,
+    "d": "v",
+    "en": "Distance, any direction (Premium)",
+    "de": "Distanz, beliebige Richtung (Premium)",
+    "tr": "Mesafe, istenen yön (Premium)"
+   },
+   "nav": {
+    "p": 1,
+    "d": "k",
+    "en": "Follow-the-line free; turn-by-turn Premium",
+    "de": "Linie folgen gratis; Abbiegehinweise Premium",
+    "tr": "Çizgiyi takip ücretsiz; adım adım Premium"
+   },
+   "offline": {
+    "p": 5,
+    "d": "v",
+    "en": "Global coverage (Premium)",
+    "de": "Weltweit (Premium)",
+    "tr": "Dünya geneli (Premium)"
+   },
+   "arac": {
+    "p": 5,
+    "d": "v",
+    "en": "Both",
+    "de": "Beide",
+    "tr": "İkisi de"
+   },
+   "gpx": {
+    "p": 5,
+    "d": "v",
+    "en": "Import and export (Premium)",
+    "de": "Import und Export (Premium)",
+    "tr": "İçe ve dışa (Premium)"
+   },
+   "grup": {
+    "p": 0,
+    "d": "b",
+    "en": "Not stated",
+    "de": "Keine Angabe",
+    "tr": "Belirtilmemiş"
+   },
+   "ses": {
+    "p": 0,
+    "d": "b",
+    "en": "Not stated",
+    "de": "Keine Angabe",
+    "tr": "Belirtilmemiş"
+   },
+   "kamera": {
+    "p": 5,
+    "d": "v",
+    "en": "Speed and red-light cameras (Premium)",
+    "de": "Blitzer und Rotlichtkameras (Premium)",
+    "tr": "Hız ve kırmızı ışık kamerası (Premium)"
+   },
+   "gecit": {
+    "p": 0,
+    "d": "b",
+    "en": "Not stated",
+    "de": "Keine Angabe",
+    "tr": "Belirtilmemiş"
+   },
+   "kapsam": {
+    "p": 5,
+    "d": "v",
+    "en": "Anywhere in the world",
+    "de": "Überall auf der Welt",
+    "tr": "Dünyanın her yerinde"
+   }
+  },
+  "rever": {
+   "yol": {
+    "p": 3,
+    "d": "k",
+    "en": "Twisty Routing (PRO)",
+    "de": "Twisty Routing (PRO)",
+    "tr": "Twisty Routing (PRO)"
+   },
+   "otoyol": {
+    "p": 0,
+    "d": "b",
+    "en": "Not stated",
+    "de": "Keine Angabe",
+    "tr": "Belirtilmemiş"
+   },
+   "tur": {
+    "p": 0,
+    "d": "b",
+    "en": "Not stated",
+    "de": "Keine Angabe",
+    "tr": "Belirtilmemiş"
+   },
+   "nav": {
+    "p": 1,
+    "d": "k",
+    "en": "Route line free; turn-by-turn PRO",
+    "de": "Routenlinie gratis; Abbiegehinweise PRO",
+    "tr": "Rota çizgisi ücretsiz; adım adım PRO"
+   },
+   "offline": {
+    "p": 5,
+    "d": "v",
+    "en": "Yes (PRO)",
+    "de": "Ja (PRO)",
+    "tr": "Var (PRO)"
+   },
+   "arac": {
+    "p": 3,
+    "d": "k",
+    "en": "CarPlay; Android Auto not stated",
+    "de": "CarPlay; Android Auto keine Angabe",
+    "tr": "CarPlay; Android Auto belirtilmemiş"
+   },
+   "gpx": {
+    "p": 5,
+    "d": "v",
+    "en": "Import free, export PRO",
+    "de": "Import gratis, Export PRO",
+    "tr": "İçe ücretsiz, dışa PRO"
+   },
+   "grup": {
+    "p": 3,
+    "d": "k",
+    "en": "Live location sharing (PRO)",
+    "de": "Live-Standort teilen (PRO)",
+    "tr": "Canlı konum paylaşımı (PRO)"
+   },
+   "ses": {
+    "p": 0,
+    "d": "b",
+    "en": "Not stated",
+    "de": "Keine Angabe",
+    "tr": "Belirtilmemiş"
+   },
+   "kamera": {
+    "p": 0,
+    "d": "b",
+    "en": "Not stated",
+    "de": "Keine Angabe",
+    "tr": "Belirtilmemiş"
+   },
+   "gecit": {
+    "p": 0,
+    "d": "b",
+    "en": "Not stated",
+    "de": "Keine Angabe",
+    "tr": "Belirtilmemiş"
+   },
+   "kapsam": {
+    "p": 5,
+    "d": "v",
+    "en": "Anywhere in the world",
+    "de": "Überall auf der Welt",
+    "tr": "Dünyanın her yerinde"
+   }
+  },
+  "motoatlas": {
+   "yol": {
+    "p": 5,
+    "d": "v",
+    "en": "Curvy and Very curvy (Pro)",
+    "de": "Kurvig und Sehr kurvig (Pro)",
+    "tr": "Virajlı ve Çok Virajlı (Pro)"
+   },
+   "otoyol": {
+    "p": 3,
+    "d": "k",
+    "en": "Very curvy skips motorways; no separate option",
+    "de": "Sehr kurvig lässt Autobahnen aus; keine eigene Option",
+    "tr": "Çok Virajlı otoyolu atlar; ayrı seçenek yok"
+   },
+   "tur": {
+    "p": 3,
+    "d": "k",
+    "en": "Distance or time (Pro)",
+    "de": "Distanz oder Dauer (Pro)",
+    "tr": "Mesafe ya da süre (Pro)"
+   },
+   "nav": {
+    "p": 3,
+    "d": "k",
+    "en": "Free on Fast and Balanced routes",
+    "de": "Gratis auf schnellen und ausgewogenen Routen",
+    "tr": "Hızlı ve Dengeli rotalarda ücretsiz"
+   },
+   "offline": {
+    "p": 0,
+    "d": "b",
+    "en": "Not stated",
+    "de": "Keine Angabe",
+    "tr": "Belirtilmemiş"
+   },
+   "arac": {
+    "p": 3,
+    "d": "k",
+    "en": "CarPlay; Android Auto not stated",
+    "de": "CarPlay; Android Auto keine Angabe",
+    "tr": "CarPlay; Android Auto belirtilmemiş"
+   },
+   "gpx": {
+    "p": 5,
+    "d": "v",
+    "en": "GPX/FIT/TCX/KML in (web), GPX out",
+    "de": "GPX/FIT/TCX/KML rein (Web), GPX raus",
+    "tr": "GPX/FIT/TCX/KML içe (web), GPX dışa"
+   },
+   "grup": {
+    "p": 0,
+    "d": "x",
+    "en": "No live group (its site); shared 4-digit ride code",
+    "de": "Keine Live-Gruppe (laut Website); 4-stelliger Fahrtcode",
+    "tr": "Canlı grup yok (sitesine göre); 4 haneli ortak sürüş kodu"
+   },
+   "ses": {
+    "p": 0,
+    "d": "b",
+    "en": "Not stated",
+    "de": "Keine Angabe",
+    "tr": "Belirtilmemiş"
+   },
+   "kamera": {
+    "p": 0,
+    "d": "b",
+    "en": "Not stated",
+    "de": "Keine Angabe",
+    "tr": "Belirtilmemiş"
+   },
+   "gecit": {
+    "p": 0,
+    "d": "b",
+    "en": "Not stated",
+    "de": "Keine Angabe",
+    "tr": "Belirtilmemiş"
+   },
+   "kapsam": {
+    "p": 0,
+    "d": "b",
+    "en": "Not stated; its site focuses on Türkiye",
+    "de": "Keine Angabe; Website zeigt die Türkei",
+    "tr": "Belirtilmemiş; sitesi Türkiye'yi anlatıyor"
+   }
+  }
+ },
+ "bilgi": [
+  {
+   "id": "turkce",
+   "ad": {
+    "en": "Turkish interface",
+    "de": "Türkische Oberfläche",
+    "tr": "Türkçe arayüz"
+   },
+   "hucre": {
+    "motoseyir": {
+     "d": "v",
+     "en": "Yes",
+     "de": "Ja",
+     "tr": "Var"
+    },
+    "calimoto": {
+     "d": "x",
+     "en": "No (13 languages, Turkish not among them)",
+     "de": "Nein (13 Sprachen, ohne Türkisch)",
+     "tr": "Yok (13 dil, Türkçe yok)"
+    },
+    "kurviger": {
+     "d": "x",
+     "en": "No (6 languages)",
+     "de": "Nein (6 Sprachen)",
+     "tr": "Yok (6 dil)"
+    },
+    "scenic": {
+     "d": "v",
+     "en": "Yes",
+     "de": "Ja",
+     "tr": "Var"
+    },
+    "rever": {
+     "d": "x",
+     "en": "No (6 languages)",
+     "de": "Nein (6 Sprachen)",
+     "tr": "Yok (6 dil)"
+    },
+    "motoatlas": {
+     "d": "v",
+     "en": "Yes (its site)",
+     "de": "Ja (laut Website)",
+     "tr": "Var (sitesine göre)"
+    }
+   }
+  },
+  {
+   "id": "ucretsiz",
+   "ad": {
+    "en": "What the free version does",
+    "de": "Was die Gratisversion kann",
+    "tr": "Ücretsiz sürümde ne var"
+   },
+   "hucre": {
+    "motoseyir": {
+     "d": "v",
+     "en": "Routing and voice navigation without limit, 1 saved tour",
+     "de": "Routen und Sprachnavigation ohne Limit, 1 gespeicherte Tour",
+     "tr": "Sınırsız rota ve sesli navigasyon, 1 kayıtlı tur"
+    },
+    "calimoto": {
+     "d": "k",
+     "en": "Plan and save routes, round trips, GPX import",
+     "de": "Routen planen und speichern, Rundtouren, GPX-Import",
+     "tr": "Rota planlama ve kaydetme, dönüşlü tur, GPX içe aktarma"
+    },
+    "kurviger": {
+     "d": "k",
+     "en": "Route planning, round trips up to 300 km",
+     "de": "Routenplanung, Rundtouren bis 300 km",
+     "tr": "Rota planlama, 300 km'ye kadar dönüşlü tur"
+    },
+    "scenic": {
+     "d": "k",
+     "en": "Follow-the-line navigation, CarPlay and Android Auto",
+     "de": "Navigation entlang der Linie, CarPlay und Android Auto",
+     "tr": "Çizgiyi takip eden navigasyon, CarPlay ve Android Auto"
+    },
+    "rever": {
+     "d": "k",
+     "en": "Route line navigation, GPX import, communities",
+     "de": "Navigation entlang der Linie, GPX-Import, Communities",
+     "tr": "Rota çizgisiyle navigasyon, GPX içe aktarma, topluluklar"
+    },
+    "motoatlas": {
+     "d": "k",
+     "en": "Ride recording, Fast and Balanced routes with navigation",
+     "de": "Fahrtaufzeichnung, schnelle und ausgewogene Routen mit Navigation",
+     "tr": "Sürüş kaydı, navigasyonlu Hızlı ve Dengeli rotalar"
+    }
+   }
+  }
+ ],
+ "metin": {
+  "en": {
+   "kriter": "Criterion",
+   "agirlik": "Weight",
+   "toplam": "Our criteria score",
+   "puan_kisa": "pts",
+   "uzerinden": "out of 100",
+   "magaza_puan": "App Store user rating",
+   "oy": "ratings",
+   "oy_yok": "No ratings yet",
+   "magazada_yok": "Not on this App Store",
+   "az_oy": "few ratings",
+   "vitrin": "US App Store",
+   "kural": "How 0–5 is given",
+   "bilgi_baslik": "Not scored",
+   "plan": {
+    "ay": "Monthly",
+    "3ay": "3 months",
+    "yil": "Yearly",
+    "hafta": "Weekly",
+    "sezon": "Season Pass",
+    "aile": "Family, yearly"
+   },
+   "dur": {
+    "v": "Yes",
+    "k": "Partly",
+    "x": "No",
+    "b": "Not stated"
+   },
+   "fiyat_kaynak": "Prices vary by country. Read from the US App Store “In-App Purchases” list on 24 November 2026; Apple shows up to ten items, so a plan may be missing.",
+   "biz": "Published by us",
+   "mtablo_etiket": "Feature matrix with scores",
+   "kural_etiket": "Scoring rules and weights",
+   "magaza_link": "App Store page",
+   "site_link": "Website",
+   "mobil_ipucu": "Swipe sideways to see every app",
+   "oy_tek": "rating"
+  },
+  "de": {
+   "kriter": "Kriterium",
+   "agirlik": "Gewicht",
+   "toplam": "Unsere Kriterienwertung",
+   "puan_kisa": "Pkt.",
+   "uzerinden": "von 100",
+   "magaza_puan": "App-Store-Bewertung der Nutzer",
+   "oy": "Bewertungen",
+   "oy_yok": "Noch keine Bewertungen",
+   "magazada_yok": "Nicht in diesem App Store",
+   "az_oy": "wenige Bewertungen",
+   "vitrin": "deutscher App Store",
+   "kural": "So werden 0–5 vergeben",
+   "bilgi_baslik": "Ohne Wertung",
+   "plan": {
+    "ay": "Monatlich",
+    "3ay": "3 Monate",
+    "yil": "Jährlich",
+    "hafta": "Wöchentlich",
+    "sezon": "Saisonpass",
+    "aile": "Familie, jährlich"
+   },
+   "dur": {
+    "v": "Ja",
+    "k": "Teilweise",
+    "x": "Nein",
+    "b": "Keine Angabe"
+   },
+   "fiyat_kaynak": "Preise unterscheiden sich je nach Land. Abgelesen aus der Liste „In-App-Käufe“ im deutschen App Store am 24. November 2026; Apple zeigt höchstens zehn Einträge, ein Tarif kann also fehlen.",
+   "biz": "Von uns veröffentlicht",
+   "mtablo_etiket": "Funktionsmatrix mit Wertung",
+   "kural_etiket": "Wertungsregeln und Gewichte",
+   "magaza_link": "App-Store-Seite",
+   "site_link": "Website",
+   "mobil_ipucu": "Seitlich wischen, um alle Apps zu sehen",
+   "oy_tek": "Bewertung"
+  },
+  "tr": {
+   "kriter": "Kriter",
+   "agirlik": "Ağırlık",
+   "toplam": "Kriter puanımız",
+   "puan_kisa": "puan",
+   "uzerinden": "100 üzerinden",
+   "magaza_puan": "App Store kullanıcı puanı",
+   "oy": "oy",
+   "oy_yok": "Henüz oy yok",
+   "magazada_yok": "Bu App Store'da yok",
+   "az_oy": "az oy",
+   "vitrin": "Türkiye App Store",
+   "kural": "0–5 nasıl verilir",
+   "bilgi_baslik": "Puana katılmayanlar",
+   "plan": {
+    "ay": "Aylık",
+    "3ay": "3 aylık",
+    "yil": "Yıllık",
+    "hafta": "Haftalık",
+    "sezon": "Sezon paketi",
+    "aile": "Aile, yıllık"
+   },
+   "dur": {
+    "v": "Var",
+    "k": "Kısmen",
+    "x": "Yok",
+    "b": "Belirtilmemiş"
+   },
+   "fiyat_kaynak": "Fiyatlar ülkeye göre değişir. 24 Kasım 2026'da Türkiye App Store'daki “Uygulama İçi Satın Alımlar” listesinden okundu; Apple en çok on kalem gösterdiği için bir plan eksik olabilir.",
+   "biz": "Bizim uygulamamız",
+   "mtablo_etiket": "Puanlı özellik tablosu",
+   "kural_etiket": "Puan kuralları ve ağırlıklar",
+   "magaza_link": "App Store sayfası",
+   "site_link": "Sitesi",
+   "mobil_ipucu": "Tüm uygulamaları görmek için yana kaydır",
+   "oy_tek": "oy"
+  }
+ }
+}
