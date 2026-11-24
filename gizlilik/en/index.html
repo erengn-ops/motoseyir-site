@@ -73,9 +73,41 @@
   ]
 }
 </script>
-<style>body{margin:0;font:16px ui-sans-serif,-apple-system,sans-serif}</style>
+<link rel="stylesheet" href="/m/kabuk.css?v=6db8b626">
+<style>body{margin:0;font:16px "Manrope",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}h1,h2{font-weight:800}</style>
 </head>
 <body>
+<!--kabuk-ust-->
+<header class="ust acik" id="ustbar">
+  <div class="ust-ic">
+    <a class="logo" href="/en/" aria-label="Motoseyir"><img src="/img/favicon.png" alt="" width="28" height="28">MOTO<em>SEYİR</em></a>
+    <nav class="ust-nav" aria-label="Main navigation"><ul class="menu"><li><a href="/en/motorcycle-route-generator/">Route generator</a></li><li><a href="/en/#rota">Routing</a></li><li><a href="/en/#gecit">Mountain passes</a></li><li><a href="/en/corider.html">AI CoRider</a></li><li><a href="/en/#fiyat">Pricing</a></li><li><a href="/en/nasil-yapilir.html">How it works</a></li><li><a href="/en/guides/">Guides</a></li></ul></nav>
+    <div class="ust-sag">
+      <details class="dil-sec">
+  <summary aria-label="Choose language"><span class="dil-kod">EN</span><span class="dil-ad">English</span></summary>
+  <ul>
+    <li><a href="/gizlilik/" lang="tr" hreflang="tr">Türkçe</a></li>
+    <li><span aria-current="true">English</span></li>
+    <li><a href="/gizlilik/de/" lang="de" hreflang="de">Deutsch</a></li>
+    <li><a href="/fr/" lang="fr" hreflang="fr">Français</a></li>
+    <li><a href="/it/" lang="it" hreflang="it">Italiano</a></li>
+    <li><a href="/es/" lang="es" hreflang="es">Español</a></li>
+    <li><a href="/nl/" lang="nl" hreflang="nl">Nederlands</a></li>
+    <li><a href="/pl/" lang="pl" hreflang="pl">Polski</a></li>
+    <li><a href="/cs/" lang="cs" hreflang="cs">Čeština</a></li>
+    <li><a href="/sk/" lang="sk" hreflang="sk">Slovenčina</a></li>
+    <li><a href="/hu/" lang="hu" hreflang="hu">Magyar</a></li>
+    <li><a href="/ro/" lang="ro" hreflang="ro">Română</a></li>
+    <li><a href="/hr/" lang="hr" hreflang="hr">Hrvatski</a></li>
+    <li><a href="/el/" lang="el" hreflang="el">Ελληνικά</a></li>
+  </ul>
+</details>
+      <a class="btn btn-kucuk" href="https://apps.apple.com/app/id6792549131?pt=128439797&amp;ct=site-en&amp;mt=8" data-play="https://play.google.com/store/apps/details?id=com.batuhanengin.motorota&amp;hl=en&amp;referrer=utm_source%3Dsite-en">Download</a>
+      <details class="mmenu"><summary aria-label="Main navigation"><span class="mmenu-ik"></span></summary><nav class="mmenu-panel" aria-label="Main navigation"><ul onclick="this.closest('details').open=false"><li><a href="/en/motorcycle-route-generator/">Route generator</a></li><li><a href="/en/#rota">Routing</a></li><li><a href="/en/#gecit">Mountain passes</a></li><li><a href="/en/corider.html">AI CoRider</a></li><li><a href="/en/#fiyat">Pricing</a></li><li><a href="/en/nasil-yapilir.html">How it works</a></li><li><a href="/en/guides/">Guides</a></li></ul></nav></details>
+    </div>
+  </div>
+</header>
+<!--/kabuk-ust-->
 
 <!--
   İNGİLİZCE GİZLİLİK METNİ — ELLE TUTULUYOR (uret.py bu dosyaya dokunmaz).
@@ -93,25 +125,15 @@
 
 <style>
   :root {
-    --paper: #F3F6F6;
+    --paper: #FCFDFD;
     --surface: #FFFFFF;
-    --line: #DCE4E5;
-    --ink: #13252C;
-    --ink-dim: #5C7078;
-    --accent: #0B6E7F;
-    --accent-soft: #E3F0F2;
-    --sans: ui-sans-serif, -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-    --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --paper: #0C1A20; --surface: #13272F; --line: #23414B;
-      --ink: #E6EFF0; --ink-dim: #93A9B1; --accent: #4BB3C7; --accent-soft: #123039;
-    }
-  }
-  :root[data-theme="dark"] {
-    --paper: #0C1A20; --surface: #13272F; --line: #23414B;
-    --ink: #E6EFF0; --ink-dim: #93A9B1; --accent: #4BB3C7; --accent-soft: #123039;
+    --line: #D3DBD9;
+    --ink: #16221F;
+    --ink-dim: #4A5A57;
+    --accent: #0E6E73;
+    --accent-soft: #E3F0F0;
+    --sans: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;  /* anasayfayla aynı (m/kabuk.css) */
+    --mono: var(--sans);  /* 24 Kas 2026: eşaralıklı yazı kalktı, anasayfa kimliği */
   }
 
   * { box-sizing: border-box; }
@@ -360,5 +382,34 @@
   </div>
 </div>
 
+<!--kabuk-alt-->
+<footer class="alt">
+  <div class="alt-ic">
+    <div>
+      <p><a class="logo" href="/en/" aria-label="Motoseyir"><img src="/img/favicon.png" alt="" width="28" height="28">MOTO<em>SEYİR</em></a></p>
+      <p style="margin-top:10px">© 2026 Motoseyir. All rights reserved.</p>
+    </div>
+    <ul><li><a href="/en/ozellikler.html">All features</a></li><li><a href="/en/corider.html">AI CoRider</a></li><li><a href="/en/guides/">Guides</a></li><li><a href="/en/motorcycle-route-generator/">Route generator</a></li><li><a href="/en/tour-generator/">Tour generator</a></li><li><a href="/en/passes/">Mountain passes</a></li><li><a href="/en/passes/in-numbers/">Mountain passes in numbers</a></li><li><a href="/en/about/">About</a></li><li><a href="/en/nasil-yapilir.html">How it works</a></li><li><a href="/gizlilik/en/">Privacy</a></li><li><a href="/impressum/en/">Legal notice</a></li><li><a href="/en/#yenilikler">What’s new</a></li><li><a href="/en/#iletisim">Contact</a></li><li><a href="https://www.instagram.com/motoseyir.app.en/">Instagram</a></li><li><a href="https://apps.apple.com/app/id6792549131?pt=128439797&amp;ct=site-en&amp;mt=8">App Store</a></li><li><a href="https://play.google.com/store/apps/details?id=com.batuhanengin.motorota&amp;hl=en&amp;referrer=utm_source%3Dsite-en">Google Play</a></li></ul>
+    <div class="dil-altbilgi"><span>Languages</span>
+      <ul class="dil-liste">
+  <li><a href="/gizlilik/" lang="tr" hreflang="tr">Türkçe</a></li>
+  <li><strong lang="en">English</strong></li>
+  <li><a href="/gizlilik/de/" lang="de" hreflang="de">Deutsch</a></li>
+  <li><a href="/fr/" lang="fr" hreflang="fr">Français</a></li>
+  <li><a href="/it/" lang="it" hreflang="it">Italiano</a></li>
+  <li><a href="/es/" lang="es" hreflang="es">Español</a></li>
+  <li><a href="/nl/" lang="nl" hreflang="nl">Nederlands</a></li>
+  <li><a href="/pl/" lang="pl" hreflang="pl">Polski</a></li>
+  <li><a href="/cs/" lang="cs" hreflang="cs">Čeština</a></li>
+  <li><a href="/sk/" lang="sk" hreflang="sk">Slovenčina</a></li>
+  <li><a href="/hu/" lang="hu" hreflang="hu">Magyar</a></li>
+  <li><a href="/ro/" lang="ro" hreflang="ro">Română</a></li>
+  <li><a href="/hr/" lang="hr" hreflang="hr">Hrvatski</a></li>
+  <li><a href="/el/" lang="el" hreflang="el">Ελληνικά</a></li>
+</ul>
+    </div>
+  </div>
+</footer>
+<!--/kabuk-alt-->
 </body>
 </html>

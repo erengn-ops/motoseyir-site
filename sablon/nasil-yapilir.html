@@ -12,6 +12,7 @@
 <meta name="theme-color" content="#0E6E73" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0E1315" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="{{kok}}img/favicon.png">
+<link rel="stylesheet" href="/m/kabuk.css">
 <link rel="stylesheet" href="{{kok}}style.css">
 
 {{json_ld}}
@@ -20,25 +21,7 @@
 <body>
 <a class="skip-link" href="#icerik">{{skip}}</a>
 
-<header class="site-header">
-  <div class="wrap header-inner">
-    <a class="logo" href="{{anasayfa_url}}">MOTO<em>SEYİR</em></a>
-    <nav aria-label="{{nav_etiket}}">
-      <ul class="nav">
-        <li><a href="{{anasayfa_url}}">{{nav_anasayfa}}</a></li>
-        <li><a href="{{anasayfa_url}}#ozellikler">{{nav_ozellikler}}</a></li>
-        <li><a href="{{ozellikler_url}}">{{footer_tum_ozellikler}}</a></li>
-        <li><a href="{{corider_url}}">AI CoRider</a></li>
-        <li><a href="{{anasayfa_url}}#gizlilik">{{nav_gizlilik}}</a></li>
-        <li><a href="{{anasayfa_url}}#iletisim">{{nav_iletisim}}</a></li>
-      </ul>
-    </nav>
-    <div class="header-cta">
-      {{dil_secici}}
-      <a class="btn btn-ghost btn-sm" href="{{store}}" data-play="{{play}}">{{btn_indir}}</a>
-    </div>
-  </div>
-</header>
+{{ust_kabuk_nasil}}
 
 <main id="icerik">
   <section class="section" style="padding-bottom:1rem;">
@@ -175,40 +158,17 @@
       </div>
 
       <p style="margin-top:2.5rem; color:var(--text-muted); font-size:.92rem;">{{ny_dip}}</p>
-      <p style="margin-top:1.5rem; display:flex; gap:1rem; flex-wrap:wrap;">
-        <a class="btn btn-ghost" href="{{anasayfa_url}}">{{btn_anasayfa}}</a>
-        <a class="btn btn-ghost" href="{{ozellikler_url}}">{{btn_tum_ozellikler}}</a>
+      <p class="magaza-dugmeleri" style="margin-top:1.5rem;">
+        <a class="btn" href="{{store}}">{{apple_svg}}{{btn_store}}</a>
+        <a class="btn" href="{{play}}">{{play_svg}}{{btn_play}}</a>
+        <a class="btn btn-hayalet" href="{{anasayfa_url}}">{{btn_anasayfa}}</a>
+        <a class="btn btn-hayalet" href="{{ozellikler_url}}">{{btn_tum_ozellikler}}</a>
       </p>
     </div>
   </section>
 </main>
 
-<footer class="site-footer">
-  <div class="wrap">
-    <div class="footer-ust">
-      <div>
-        <a class="logo" href="{{anasayfa_url}}" style="font-size:1.05rem;">MOTO<em>SEYİR</em></a>
-      </div>
-      <ul class="footer-links">
-        <li><a href="{{anasayfa_url}}">{{nav_anasayfa}}</a></li>
-        <li><a href="{{ozellikler_url}}">{{footer_tum_ozellikler}}</a></li>
-        <li><a href="{{corider_url}}">AI CoRider</a></li>{{rehber_footer}}
-        <li><a href="{{gizlilik_url}}">{{nav_gizlilik}}{{gizlilik_tr_notu}}</a></li>
-        <li><a href="{{impressum_url}}">{{nav_impressum}}</a></li>
-        <li><a href="{{anasayfa_url}}#yenilikler">{{nav_yenilikler}}</a></li>
-        <li><a href="{{anasayfa_url}}#iletisim">{{nav_iletisim}}</a></li>
-        <li><a href="https://www.instagram.com/motoseyir.app/">Instagram</a></li>
-        <li><a href="{{store}}">App Store</a></li>
-        <li><a href="{{play}}">Google Play</a></li>
-      </ul>
-    </div>
-    <p>© {{yil}} Motoseyir. {{footer_haklar}}</p>
-    <div class="dil-altbilgi">
-      <span class="dil-altbilgi-baslik">{{footer_diller}}</span>
-      {{dil_altbilgi}}
-    </div>
-  </div>
-</footer>
+{{alt_kabuk_nasil}}
 
 </body>
 </html>

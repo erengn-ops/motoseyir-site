@@ -26,6 +26,7 @@
 <meta name="theme-color" content="#0E6E73" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0E1315" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="/img/favicon.png">
+<link rel="stylesheet" href="/m/kabuk.css">
 <link rel="stylesheet" href="/style.css">
 <link rel="stylesheet" href="/m/tur/lib/maplibre-gl-5.24.0.css">
 <link rel="stylesheet" href="/m/izle/izle.css">
@@ -35,21 +36,16 @@
 <body>
 <a class="skip-link" href="#icerik" data-c="skip">{{skip}}</a>
 
-<header class="site-header">
-  <div class="wrap header-inner">
-    <a class="logo" href="/">MOTO<em>SEYİR</em></a>
-    <nav aria-label="{{nav_etiket}}" data-ca="nav_etiket">
-      <ul class="nav">
-        <li><a href="/" data-c="anasayfa">{{nav_anasayfa}}</a></li>
-        <li><a href="/ozellikler.html" data-c="ozellikler">{{footer_tum_ozellikler}}</a></li>
-        <li><a href="/rehber/" data-c="rehber">{{ui_rehber}}</a></li>
-        <li><a href="/corider.html" data-c="corider">AI CoRider</a></li>
-        <li><a href="/#iletisim" data-c="iletisim">{{nav_iletisim}}</a></li>
-      </ul>
-    </nav>
-    <div class="header-cta">
+<!-- Ortak kabuk (24 Kas 2026): uret.py ust_kabuk / alt_kabuk ile aynı işaretleme; bu sayfa dili tarayıcıdan seçtiği için
+     metin ve adresler data-c ile m/izle/izle.js tarafından değiştirilir (sözlük: uret.py izle_yaz `chrome`). -->
+<header class="ust acik" id="ustbar">
+  <div class="ust-ic">
+    <a class="logo" href="/" data-c="logo" data-keep aria-label="Motoseyir"><img src="/img/favicon.png" alt="" width="28" height="28">MOTO<em>SEYİR</em></a>
+    <nav class="ust-nav" aria-label="{{nav_etiket}}" data-ca="nav_etiket"><ul class="menu"><li><a href="/#rota" data-c="rota">{{m_rota}}</a></li><li><a href="/#gecit" data-c="gecit">{{m_gecit}}</a></li><li><a href="/corider.html" data-c="corider">AI CoRider</a></li><li><a href="/#fiyat" data-c="fiyat">{{m_fiyat}}</a></li><li><a href="/nasil-yapilir.html" data-c="nasil">{{nav_nasil}}</a></li><li><a href="/rehber/" data-c="rehber">{{ui_rehber}}</a></li></ul></nav>
+    <div class="ust-sag">
       {{dil_secici}}
-      <a class="btn btn-ghost btn-sm" href="{{store}}" data-play="{{play}}" data-c="indir" data-magaza>{{btn_indir}}</a>
+      <a class="btn btn-kucuk" href="{{store}}" data-play="{{play}}" data-c="indir" data-magaza>{{btn_indir}}</a>
+      <details class="mmenu"><summary aria-label="{{nav_etiket}}" data-ca="nav_etiket"><span class="mmenu-ik"></span></summary><nav class="mmenu-panel" aria-label="{{nav_etiket}}" data-ca="nav_etiket"><ul onclick="this.closest('details').open=false"><li><a href="/#rota" data-c="rota">{{m_rota}}</a></li><li><a href="/#gecit" data-c="gecit">{{m_gecit}}</a></li><li><a href="/corider.html" data-c="corider">AI CoRider</a></li><li><a href="/#fiyat" data-c="fiyat">{{m_fiyat}}</a></li><li><a href="/nasil-yapilir.html" data-c="nasil">{{nav_nasil}}</a></li><li><a href="/rehber/" data-c="rehber">{{ui_rehber}}</a></li></ul></nav></details>
     </div>
   </div>
 </header>
@@ -110,29 +106,14 @@
 </section>
 </main>
 
-<footer class="site-footer">
-  <div class="wrap">
-    <div class="footer-ust">
-      <div>
-        <a class="logo" href="/" style="font-size:1.05rem;">MOTO<em>SEYİR</em></a>
-      </div>
-      <ul class="footer-links">
-        <li><a href="/" data-c="anasayfa">{{nav_anasayfa}}</a></li>
-        <li><a href="/ozellikler.html" data-c="ozellikler">{{footer_tum_ozellikler}}</a></li>
-        <li><a href="/rehber/" data-c="rehber">{{ui_rehber}}</a></li>
-        <li><a href="/corider.html" data-c="corider">AI CoRider</a></li>
-        <li><a href="/nasil-yapilir.html" data-c="nasil">{{nav_nasil}}</a></li>
-        <li><a href="/gizlilik/" data-c="gizlilik">{{nav_gizlilik}}</a></li>
-        <li><a href="/impressum/" data-c="impressum">{{nav_impressum}}</a></li>
-        <li><a href="/#iletisim" data-c="iletisim">{{nav_iletisim}}</a></li>
-        <li><a href="https://www.instagram.com/motoseyir.app/">Instagram</a></li>
-        <li><a href="{{store}}" data-magaza>App Store</a></li>
-        <li><a href="{{play}}">Google Play</a></li>
-      </ul>
+<footer class="alt">
+  <div class="alt-ic">
+    <div>
+      <p><a class="logo" href="/" data-c="logo" data-keep aria-label="Motoseyir"><img src="/img/favicon.png" alt="" width="28" height="28">MOTO<em>SEYİR</em></a></p>
+      <p style="margin-top:10px">© {{yil}} Motoseyir. <span data-c="haklar">{{footer_haklar}}</span></p>
     </div>
-    <p>© {{yil}} Motoseyir. <span data-c="haklar">{{footer_haklar}}</span></p>
-    <div class="dil-altbilgi">
-      <span class="dil-altbilgi-baslik" data-c="diller">{{footer_diller}}</span>
+    <ul><li><a href="/ozellikler.html" data-c="ozellikler">{{footer_tum_ozellikler}}</a></li><li><a href="/corider.html" data-c="corider">AI CoRider</a></li><li><a href="/rehber/" data-c="rehber">{{ui_rehber}}</a></li><li><a href="/nasil-yapilir.html" data-c="nasil">{{nav_nasil}}</a></li><li><a href="/gizlilik/" data-c="gizlilik">{{nav_gizlilik}}</a></li><li><a href="/impressum/" data-c="impressum">{{nav_impressum}}</a></li><li><a href="/#yenilikler" data-c="yenilikler">{{nav_yenilikler}}</a></li><li><a href="/#iletisim" data-c="iletisim">{{nav_iletisim}}</a></li><li><a href="https://www.instagram.com/motoseyir.app/" data-c="instagram" data-keep>Instagram</a></li><li><a href="{{store}}" data-magaza>App Store</a></li><li><a href="{{play}}">Google Play</a></li></ul>
+    <div class="dil-altbilgi"><span data-c="diller">{{footer_diller}}</span>
       {{dil_altbilgi}}
     </div>
   </div>

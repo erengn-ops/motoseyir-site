@@ -37,7 +37,8 @@
 -->
 <script>!function(d,c){c=" js hazir";if(!matchMedia("(prefers-reduced-motion: reduce)").matches){c+=" hm";if(self.CSS&&CSS.supports&&CSS.supports("animation-timeline:view()"))c+=" sd"}d.className+=c}(document.documentElement)</script>
 <link rel="preload" as="font" type="font/woff2" href="/m/font/Manrope.woff2" crossorigin>
-<link rel="stylesheet" href="/m/a.css?v=7c07c22b">
+<link rel="stylesheet" href="/m/kabuk.css?v=73050efa">
+<link rel="stylesheet" href="/m/a.css?v=dcb9dd33">
 <link rel="stylesheet" href="/m/tur/lib/maplibre-gl-5.24.0.css?v=9ec5b480">
 <link rel="stylesheet" href="/m/tur/tur.css?v=e80abd04">
 <link rel="preconnect" href="https://rota.motoseyir-app.com/w" crossorigin>
@@ -324,9 +325,7 @@
 <header class="ust acik" id="ustbar">
   <div class="ust-ic">
     <a class="logo" href="/de/" aria-label="Motoseyir"><img src="/img/favicon.png" alt="" width="28" height="28">MOTO<em>SEYİR</em></a>
-    <nav aria-label="Hauptnavigation"><ul class="menu">
-      <li><a href="/de/">Start</a></li><li><a href="/de/motorrad-rundtour-planen/" aria-current="page">Tourengenerator</a></li><li><a href="/de/ozellikler.html">Alle Funktionen</a></li><li><a href="/de/corider.html">AI CoRider</a></li><li><a href="/de/ratgeber/">Ratgeber</a></li>
-    </ul></nav>
+    <nav class="ust-nav" aria-label="Hauptnavigation"><ul class="menu"><li><a href="/de/motorrad-rundtour-planen/" aria-current="page">Tourengenerator</a></li><li><a href="/de/#rota">Route</a></li><li><a href="/de/#gecit">Bergpässe</a></li><li><a href="/de/corider.html">AI CoRider</a></li><li><a href="/de/#fiyat">Preise</a></li><li><a href="/de/nasil-yapilir.html">So geht’s</a></li><li><a href="/de/ratgeber/">Ratgeber</a></li></ul></nav>
     <div class="ust-sag">
       <details class="dil-sec">
   <summary aria-label="Sprache wählen"><span class="dil-kod">DE</span><span class="dil-ad">Deutsch</span></summary>
@@ -348,6 +347,7 @@
   </ul>
 </details>
       <a class="btn btn-kucuk" href="https://apps.apple.com/de/app/id6792549131?pt=128439797&amp;ct=site-de-web-tur&amp;mt=8" data-play="https://play.google.com/store/apps/details?id=com.batuhanengin.motorota&amp;hl=de&amp;referrer=utm_source%3Dsite-de-web-tur">Laden</a>
+      <details class="mmenu"><summary aria-label="Hauptnavigation"><span class="mmenu-ik"></span></summary><nav class="mmenu-panel" aria-label="Hauptnavigation"><ul onclick="this.closest('details').open=false"><li><a href="/de/motorrad-rundtour-planen/" aria-current="page">Tourengenerator</a></li><li><a href="/de/#rota">Route</a></li><li><a href="/de/#gecit">Bergpässe</a></li><li><a href="/de/corider.html">AI CoRider</a></li><li><a href="/de/#fiyat">Preise</a></li><li><a href="/de/nasil-yapilir.html">So geht’s</a></li><li><a href="/de/ratgeber/">Ratgeber</a></li></ul></nav></details>
     </div>
   </div>
 </header>
@@ -592,27 +592,13 @@
 <section class="ayr"><div class="kap"><div class="rehber-ilgili"><p class="km">Verwandte Ratgeber und Quellen</p><h2>Passende Ratgeber</h2><ul class="d"><li><a href="/de/ratgeber/motorradtour-planen/">Motorradtour planen: so gehst du Schritt für Schritt vor</a></li><li><a href="/de/ratgeber/alpenpaesse-motorrad/">Alpenpässe mit dem Motorrad: Höhe, Saison und Maut</a></li><li><a href="/de/ratgeber/drei-paesse-runde-furka-grimsel-susten/">Furka, Grimsel und Susten: die Schweizer Drei-Pässe-Runde mit dem Motorrad</a></li></ul><a class="ok" href="/de/ratgeber/">Alle Beiträge →</a></div><div id="kaynaklar" class="rehber-kaynaklar"><h2>Daten und Quellen</h2><ul class="d"><li><a href="https://www.openstreetmap.org/copyright" rel="noopener">OpenStreetMap-Mitwirkende (Straßen- und Kartendaten, ODbL)</a></li><li><a href="https://protomaps.com/" rel="noopener">Protomaps (Kartenkacheln)</a></li><li><a href="https://github.com/valhalla/valhalla" rel="noopener">Valhalla Routing-Engine</a></li><li><a href="https://fossgis-routing-server.readthedocs.io/" rel="noopener">FOSSGIS-Routingdienst (Routen außerhalb der Türkei und Griechenlands)</a></li><li><a href="https://docs.overturemaps.org/attribution/" rel="noopener">Foursquare Open Source Places (Apache-2.0) und Overture Maps Foundation (Orte entlang der Route)</a></li><li><a href="https://photon.komoot.io/" rel="noopener">Photon-Geocoder (Ortssuche)</a></li></ul></div></div></section>
 </main>
 
-<footer>
+<footer class="alt">
   <div class="alt-ic">
     <div>
       <p><a class="logo" href="/de/" aria-label="Motoseyir"><img src="/img/favicon.png" alt="" width="28" height="28">MOTO<em>SEYİR</em></a></p>
       <p style="margin-top:10px">© 2026 Motoseyir. Alle Rechte vorbehalten.</p>
     </div>
-    <ul>
-      <li><a href="/de/">Start</a></li>
-      <li><a href="/de/ozellikler.html">Alle Funktionen</a></li>
-      <li><a href="/de/ratgeber/">Ratgeber</a></li>
-      <li><a href="/de/motorrad-rundtour-planen/" aria-current="page">Tourengenerator</a></li>
-      <li><a href="/de/tourengenerator/">Tourengenerator</a></li>
-      <li><a href="/de/corider.html">AI CoRider</a></li>
-      <li><a href="/de/nasil-yapilir.html">So geht’s</a></li>
-      <li><a href="/gizlilik/de/">Datenschutz</a></li>
-      <li><a href="/impressum/">Impressum</a></li>
-      <li><a href="/de/#iletisim">Kontakt</a></li>
-      <li><a href="https://www.instagram.com/motoseyir.app/">Instagram</a></li>
-      <li><a href="https://apps.apple.com/de/app/id6792549131?pt=128439797&amp;ct=site-de-web-tur&amp;mt=8">App Store</a></li>
-      <li><a href="https://play.google.com/store/apps/details?id=com.batuhanengin.motorota&amp;hl=de&amp;referrer=utm_source%3Dsite-de-web-tur">Google Play</a></li>
-    </ul>
+    <ul><li><a href="/de/ozellikler.html">Alle Funktionen</a></li><li><a href="/de/corider.html">AI CoRider</a></li><li><a href="/de/ratgeber/">Ratgeber</a></li><li><a href="/de/motorrad-rundtour-planen/">Tourengenerator</a></li><li><a href="/de/tourengenerator/">Tourengenerator</a></li><li><a href="/de/paesse/">Alpenpässe</a></li><li><a href="/de/paesse/in-zahlen/">Bergpässe in Zahlen</a></li><li><a href="/de/ueber-uns/">Über uns</a></li><li><a href="/de/nasil-yapilir.html">So geht’s</a></li><li><a href="/gizlilik/de/">Datenschutz</a></li><li><a href="/impressum/">Impressum</a></li><li><a href="/de/#yenilikler">Neu</a></li><li><a href="/de/#iletisim">Kontakt</a></li><li><a href="https://www.instagram.com/motoseyir.app.en/">Instagram</a></li><li><a href="https://apps.apple.com/de/app/id6792549131?pt=128439797&amp;ct=site-de-web-tur&amp;mt=8">App Store</a></li><li><a href="https://play.google.com/store/apps/details?id=com.batuhanengin.motorota&amp;hl=de&amp;referrer=utm_source%3Dsite-de-web-tur">Google Play</a></li></ul>
     <div class="dil-altbilgi"><span>Sprachen</span>
       <ul class="dil-liste">
   <li><a href="/tur-olusturucu/" lang="tr" hreflang="tr">Türkçe</a></li>

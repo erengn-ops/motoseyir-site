@@ -37,7 +37,8 @@
 -->
 <script>!function(d,c){c=" js hazir";if(!matchMedia("(prefers-reduced-motion: reduce)").matches){c+=" hm";if(self.CSS&&CSS.supports&&CSS.supports("animation-timeline:view()"))c+=" sd"}d.className+=c}(document.documentElement)</script>
 <link rel="preload" as="font" type="font/woff2" href="/m/font/Manrope.woff2" crossorigin>
-<link rel="stylesheet" href="/m/a.css?v=7c07c22b">
+<link rel="stylesheet" href="/m/kabuk.css?v=73050efa">
+<link rel="stylesheet" href="/m/a.css?v=dcb9dd33">
 <link rel="stylesheet" href="/m/tur/lib/maplibre-gl-5.24.0.css?v=9ec5b480">
 <link rel="stylesheet" href="/m/tur/tur.css?v=e80abd04">
 <link rel="preconnect" href="https://rota.motoseyir-app.com/w" crossorigin>
@@ -324,9 +325,7 @@
 <header class="ust acik" id="ustbar">
   <div class="ust-ic">
     <a class="logo" href="/" aria-label="Motoseyir"><img src="/img/favicon.png" alt="" width="28" height="28">MOTO<em>SEYİR</em></a>
-    <nav aria-label="Ana gezinme"><ul class="menu">
-      <li><a href="/">Anasayfa</a></li><li><a href="/tur-olusturucu/" aria-current="page">Tur oluşturucu</a></li><li><a href="/ozellikler.html">Tüm özellikler</a></li><li><a href="/corider.html">AI CoRider</a></li><li><a href="/rehber/">Rehber</a></li>
-    </ul></nav>
+    <nav class="ust-nav" aria-label="Ana gezinme"><ul class="menu"><li><a href="/tur-olusturucu/" aria-current="page">Tur oluşturucu</a></li><li><a href="/#rota">Rota</a></li><li><a href="/#gecit">Dağ geçitleri</a></li><li><a href="/corider.html">AI CoRider</a></li><li><a href="/#fiyat">Fiyat</a></li><li><a href="/nasil-yapilir.html">Nasıl Yapılır</a></li><li><a href="/rehber/">Rehber</a></li></ul></nav>
     <div class="ust-sag">
       <details class="dil-sec">
   <summary aria-label="Dil seç"><span class="dil-kod">TR</span><span class="dil-ad">Türkçe</span></summary>
@@ -348,6 +347,7 @@
   </ul>
 </details>
       <a class="btn btn-kucuk" href="https://apps.apple.com/tr/app/id6792549131?pt=128439797&amp;ct=site-tr-web-tur&amp;mt=8" data-play="https://play.google.com/store/apps/details?id=com.batuhanengin.motorota&amp;hl=tr&amp;referrer=utm_source%3Dsite-tr-web-tur">İndir</a>
+      <details class="mmenu"><summary aria-label="Ana gezinme"><span class="mmenu-ik"></span></summary><nav class="mmenu-panel" aria-label="Ana gezinme"><ul onclick="this.closest('details').open=false"><li><a href="/tur-olusturucu/" aria-current="page">Tur oluşturucu</a></li><li><a href="/#rota">Rota</a></li><li><a href="/#gecit">Dağ geçitleri</a></li><li><a href="/corider.html">AI CoRider</a></li><li><a href="/#fiyat">Fiyat</a></li><li><a href="/nasil-yapilir.html">Nasıl Yapılır</a></li><li><a href="/rehber/">Rehber</a></li></ul></nav></details>
     </div>
   </div>
 </header>
@@ -592,27 +592,13 @@
 <section class="ayr"><div class="kap"><div class="rehber-ilgili"><p class="km">İlgili rehberler ve kaynaklar</p><h2>İlgili rehberler</h2><ul class="d"><li><a href="/rehber/motor-turu-planlama/">Motor turu nasıl planlanır?</a></li><li><a href="/rehber/koy-yolu-motosiklet-rotasi/">Köy yoluyla motosiklet rotası nasıl çıkarılır?</a></li><li><a href="/rehber/turkiye-dag-gecitleri-motosiklet/">Türkiye’nin dağ geçitleri: motosikletle yedi geçit</a></li></ul><a class="ok" href="/rehber/">Bütün rehberler →</a></div><div id="kaynaklar" class="rehber-kaynaklar"><h2>Veri ve atıflar</h2><ul class="d"><li><a href="https://www.openstreetmap.org/copyright" rel="noopener">OpenStreetMap katkıcıları (yol ve harita verisi, ODbL)</a></li><li><a href="https://protomaps.com/" rel="noopener">Protomaps (harita parçaları)</a></li><li><a href="https://github.com/valhalla/valhalla" rel="noopener">Valhalla rota motoru</a></li><li><a href="https://fossgis-routing-server.readthedocs.io/" rel="noopener">FOSSGIS rota servisi (Türkiye ve Yunanistan dışındaki rotalar)</a></li><li><a href="https://docs.overturemaps.org/attribution/" rel="noopener">Foursquare Open Source Places (Apache-2.0) ve Overture Maps Foundation (rota üstündeki yerler)</a></li><li><a href="https://photon.komoot.io/" rel="noopener">Photon (yer arama)</a></li></ul></div></div></section>
 </main>
 
-<footer>
+<footer class="alt">
   <div class="alt-ic">
     <div>
       <p><a class="logo" href="/" aria-label="Motoseyir"><img src="/img/favicon.png" alt="" width="28" height="28">MOTO<em>SEYİR</em></a></p>
       <p style="margin-top:10px">© 2026 Motoseyir. Tüm hakları saklıdır.</p>
     </div>
-    <ul>
-      <li><a href="/">Anasayfa</a></li>
-      <li><a href="/ozellikler.html">Tüm özellikler</a></li>
-      <li><a href="/rehber/">Rehber</a></li>
-      <li><a href="/tur-olusturucu/" aria-current="page">Tur oluşturucu</a></li>
-      <li><a href="/tur-uret/">Tur üret</a></li>
-      <li><a href="/corider.html">AI CoRider</a></li>
-      <li><a href="/nasil-yapilir.html">Nasıl Yapılır</a></li>
-      <li><a href="/gizlilik/">Gizlilik</a></li>
-      <li><a href="/impressum/">Impressum</a></li>
-      <li><a href="/#iletisim">İletişim</a></li>
-      <li><a href="https://www.instagram.com/motoseyir.app/">Instagram</a></li>
-      <li><a href="https://apps.apple.com/tr/app/id6792549131?pt=128439797&amp;ct=site-tr-web-tur&amp;mt=8">App Store</a></li>
-      <li><a href="https://play.google.com/store/apps/details?id=com.batuhanengin.motorota&amp;hl=tr&amp;referrer=utm_source%3Dsite-tr-web-tur">Google Play</a></li>
-    </ul>
+    <ul><li><a href="/ozellikler.html">Tüm özellikler</a></li><li><a href="/corider.html">AI CoRider</a></li><li><a href="/rehber/">Rehber</a></li><li><a href="/tur-olusturucu/">Tur oluşturucu</a></li><li><a href="/tur-uret/">Tur üret</a></li><li><a href="/gecitler/">Dağ geçitleri</a></li><li><a href="/gecitler/sayilarla/">Dağ geçitleri sayılarla</a></li><li><a href="/hakkinda/">Hakkında</a></li><li><a href="/nasil-yapilir.html">Nasıl Yapılır</a></li><li><a href="/gizlilik/">Gizlilik</a></li><li><a href="/impressum/">Impressum</a></li><li><a href="/#yenilikler">Yenilikler</a></li><li><a href="/#iletisim">İletişim</a></li><li><a href="https://www.instagram.com/motoseyir.app/">Instagram</a></li><li><a href="https://apps.apple.com/tr/app/id6792549131?pt=128439797&amp;ct=site-tr-web-tur&amp;mt=8">App Store</a></li><li><a href="https://play.google.com/store/apps/details?id=com.batuhanengin.motorota&amp;hl=tr&amp;referrer=utm_source%3Dsite-tr-web-tur">Google Play</a></li></ul>
     <div class="dil-altbilgi"><span>Diller</span>
       <ul class="dil-liste">
   <li><strong lang="tr">Türkçe</strong></li>

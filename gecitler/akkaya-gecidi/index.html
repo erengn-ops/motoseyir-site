@@ -27,6 +27,7 @@
 <meta name="theme-color" content="#0E6E73" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0E1315" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="/img/favicon.png">
+<link rel="stylesheet" href="/m/kabuk.css?v=73050efa">
 <link rel="stylesheet" href="/style.css">
 
 <script type="application/ld+json">
@@ -148,19 +149,11 @@
 <body>
 <a class="skip-link" href="#icerik">İçeriğe geç</a>
 
-<header class="site-header">
-  <div class="wrap header-inner">
-    <a class="logo" href="/">MOTO<em>SEYİR</em></a>
-    <nav aria-label="Ana gezinme">
-      <ul class="nav">
-        <li><a href="/">Anasayfa</a></li>
-        <li><a href="/ozellikler.html">Tüm özellikler</a></li>
-        <li><a href="/rehber/">Rehber</a></li>
-        <li><a href="/corider.html">AI CoRider</a></li>
-        <li><a href="/#iletisim">İletişim</a></li>
-      </ul>
-    </nav>
-    <div class="header-cta">
+<header class="ust acik" id="ustbar">
+  <div class="ust-ic">
+    <a class="logo" href="/" aria-label="Motoseyir"><img src="/img/favicon.png" alt="" width="28" height="28">MOTO<em>SEYİR</em></a>
+    <nav class="ust-nav" aria-label="Ana gezinme"><ul class="menu"><li><a href="/tur-olusturucu/">Tur oluşturucu</a></li><li><a href="/#rota">Rota</a></li><li><a href="/#gecit">Dağ geçitleri</a></li><li><a href="/corider.html">AI CoRider</a></li><li><a href="/#fiyat">Fiyat</a></li><li><a href="/nasil-yapilir.html">Nasıl Yapılır</a></li><li><a href="/rehber/" aria-current="page">Rehber</a></li></ul></nav>
+    <div class="ust-sag">
       <details class="dil-sec">
   <summary aria-label="Dil seç"><span class="dil-kod">TR</span><span class="dil-ad">Türkçe</span></summary>
   <ul>
@@ -180,7 +173,8 @@
     <li><a href="/el/" lang="el" hreflang="el">Ελληνικά</a></li>
   </ul>
 </details>
-      <a class="btn btn-ghost btn-sm" href="https://apps.apple.com/tr/app/id6792549131?pt=128439797&amp;ct=seo-gecit&amp;mt=8" data-play="https://play.google.com/store/apps/details?id=com.batuhanengin.motorota&amp;hl=tr&amp;referrer=utm_source%3Dseo-gecit">İndir</a>
+      <a class="btn btn-kucuk" href="https://apps.apple.com/tr/app/id6792549131?pt=128439797&amp;ct=seo-gecit&amp;mt=8" data-play="https://play.google.com/store/apps/details?id=com.batuhanengin.motorota&amp;hl=tr&amp;referrer=utm_source%3Dseo-gecit">İndir</a>
+      <details class="mmenu"><summary aria-label="Ana gezinme"><span class="mmenu-ik"></span></summary><nav class="mmenu-panel" aria-label="Ana gezinme"><ul onclick="this.closest('details').open=false"><li><a href="/tur-olusturucu/">Tur oluşturucu</a></li><li><a href="/#rota">Rota</a></li><li><a href="/#gecit">Dağ geçitleri</a></li><li><a href="/corider.html">AI CoRider</a></li><li><a href="/#fiyat">Fiyat</a></li><li><a href="/nasil-yapilir.html">Nasıl Yapılır</a></li><li><a href="/rehber/" aria-current="page">Rehber</a></li></ul></nav></details>
     </div>
   </div>
 </header>
@@ -197,34 +191,19 @@
 <section id="kisaca" class="rehber-bolum"><h2>Kısaca</h2><dl class="gecit-bilgi"><dt>Rakım</dt><dd>1.630 m</dd><dt>Ülke</dt><dd>Türkiye</dd><dt>İl / ilçe</dt><dd>Adana / Kozan</dd><dt>Yol yüzeyi</dt><dd>Asfalt</dd><dt>Kış</dt><dd>Verimizde bu yol için mevsimlik kapanış kaydı yok. Yüksek yollar kar yağınca yine kapanabilir; yola çıkmadan yol durumuna bak.</dd><dt>Koordinat</dt><dd><a href="https://www.openstreetmap.org/node/1838822338" rel="noopener">37.7775, 35.6002</a></dd><dt>Kaynaklar</dt><dd><a href="https://www.openstreetmap.org/node/1838822338" rel="noopener">OpenStreetMap</a></dd></dl><p class="kucuk">Rakım, geçidin OpenStreetMap kaydındaki ya da kaynak sayfasındaki değer; nokta yolun üstündeki geçit tepesi. İl ve ilçe, noktanın OpenStreetMap idari sınırlarındaki yerine göre.</p></section>
 <section id="tur" class="rehber-bolum gecit-tur"><h2>Akkaya Geçidi üstünden geçen bir tur</h2><p>Tarayıcıdaki tur oluşturucu Akkaya Geçidi başlangıç noktası olarak seçili açılır. Yönü, ne kadar süreceğini ve yolların ne kadar virajlı olacağını seçersin; oluşturucu geçide dönen en fazla üç tur çizer. Beğendiğin turu QR kodla telefonuna gönderip Motoseyir&#x27;de sürebilirsin.</p><p><a class="btn btn-primary" href="/tur-olusturucu/?bas=37.77750,35.60018&amp;ad=Akkaya%20Ge%C3%A7idi">Akkaya Geçidi üstünden tur çiz</a></p></section>
 <section id="yakin" class="rehber-bolum"><h2>Yakındaki geçitler</h2><ul class="gecit-yakin"><li><a href="/gecitler/hasandede-gedigi/">Hasandede Gediği</a> <span class="gecit-yakin-bilgi">35 km GB · 1.076 m</span></li><li><a href="/gecitler/saraycikbeli-gecidi/">Saraycıkbeli Geçidi</a> <span class="gecit-yakin-bilgi">53 km KD · 1.706 m</span></li><li><a href="/gecitler/kisla-gedigi/">Kışla Gediği</a> <span class="gecit-yakin-bilgi">56 km KB · 1.124 m</span></li><li><a href="/gecitler/gezbeli/">Gezbeli</a> <span class="gecit-yakin-bilgi">59 km KD · 1.990 m</span></li><li><a href="/gecitler/arapli-gecidi/">Araplı Geçidi</a> <span class="gecit-yakin-bilgi">69 km KB · 1.400 m</span></li><li><a href="/gecitler/kurubel-gecidi/">Kurubel Geçidi</a> <span class="gecit-yakin-bilgi">83 km KD · 1.950 m</span></li></ul></section>
-<section class="rehber-urun" aria-labelledby="urun-h2"><div><h2 id="urun-h2">Motoseyir&#x27;de Akkaya Geçidi</h2><p>Akkaya Geçidi, Motoseyir&#x27;in geçit haritasında rakımı ve tam yeriyle duruyor; haritada 36 ülkeden 1.600&#x27;ü aşkın geçit var. Geçidi turuna ekleyip yola çıkabilirsin.</p><p>Rotan bu ay kapalı olabilecek bir geçitten geçiyorsa uygulama yola çıkmadan uyarır; Tur üret de kapalı geçitleri atlar. Geçtiğin geçitler sürüş kaydından kendiliğinden işaretlenir.</p><p class="magaza-dugmeleri"><a class="btn btn-primary" href="https://apps.apple.com/tr/app/id6792549131?pt=128439797&amp;ct=seo-gecit&amp;mt=8">App Store’da İndir</a><a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.batuhanengin.motorota&amp;hl=tr&amp;referrer=utm_source%3Dseo-gecit">Google Play’den Alın</a></p></div></section>
+<section class="rehber-urun" aria-labelledby="urun-h2"><div><h2 id="urun-h2">Motoseyir&#x27;de Akkaya Geçidi</h2><p>Akkaya Geçidi, Motoseyir&#x27;in geçit haritasında rakımı ve tam yeriyle duruyor; haritada 36 ülkeden 1.600&#x27;ü aşkın geçit var. Geçidi turuna ekleyip yola çıkabilirsin.</p><p>Rotan bu ay kapalı olabilecek bir geçitten geçiyorsa uygulama yola çıkmadan uyarır; Tur üret de kapalı geçitleri atlar. Geçtiğin geçitler sürüş kaydından kendiliğinden işaretlenir.</p><p class="magaza-dugmeleri"><a class="btn btn-primary" href="https://apps.apple.com/tr/app/id6792549131?pt=128439797&amp;ct=seo-gecit&amp;mt=8"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.6c0-2.4 2-3.5 2-3.6-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.15-2.8.85-3.5.85s-1.8-.8-3-.8c-1.5 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.700 2.400 2.900 2.300 1.200 0 1.600-.7 3-.7s1.800.7 3 .7 2-1.100 2.800-2.300c.9-1.300 1.200-2.500 1.300-2.600-.1 0-2.500-1-2.500-3.600zM14.200 5.500c.6-.8 1.100-1.800.9-2.900-.9 0-2 .6-2.700 1.400-.6.700-1.100 1.800-1 2.800 1 .1 2.100-.5 2.800-1.300z"/></svg>App Store’da İndir</a><a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.batuhanengin.motorota&amp;hl=tr&amp;referrer=utm_source%3Dseo-gecit"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.61 1.81 13.79 12 3.61 22.19a1 1 0 0 1-.61-.92V2.73a1 1 0 0 1 .61-.92zm10.89 10.9 2.3 2.3-10.94 6.33 8.64-8.63zm3.2-3.2 2.8 1.62a1 1 0 0 1 0 1.73l-2.8 1.63L15.2 12l2.5-2.49zM5.86 2.66 16.8 8.99l-2.3 2.3-8.64-8.63z"/></svg>Google Play’den Alın</a></p></div></section>
 <section class="rehber-bolum"><p><a href="/tur-olusturucu/?bas=37.77750,35.60018&amp;ad=Akkaya%20Ge%C3%A7idi">Akkaya Geçidi başlangıçlı turu rota oluşturucuda aç</a></p><p><a href="/gecitler/">Bütün Türkiye geçitleri →</a></p><p class="kucuk">Geçit verisi: Motoseyir'in geçit listesi; OpenStreetMap (© OpenStreetMap katkıcıları, ODbL) ve yukarıdaki kaynak sayfasından derlendi.</p></section>
 </div></div></section>
 </main>
 
-<footer class="site-footer">
-  <div class="wrap">
-    <div class="footer-ust">
-      <div>
-        <a class="logo" href="/" style="font-size:1.05rem;">MOTO<em>SEYİR</em></a>
-      </div>
-      <ul class="footer-links">
-        <li><a href="/">Anasayfa</a></li>
-        <li><a href="/ozellikler.html">Tüm özellikler</a></li>
-        <li><a href="/rehber/">Rehber</a></li><li><a href="/tur-olusturucu/">Tur oluşturucu</a></li><li><a href="/tur-uret/">Tur üret</a></li><li><a href="/gecitler/">Dağ geçitleri</a></li><li><a href="/gecitler/sayilarla/">Dağ geçitleri sayılarla</a></li><li><a href="/hakkinda/">Hakkında</a></li>
-        <li><a href="/corider.html">AI CoRider</a></li>
-        <li><a href="/nasil-yapilir.html">Nasıl Yapılır</a></li>
-        <li><a href="/gizlilik/">Gizlilik</a></li>
-        <li><a href="/impressum/">Impressum</a></li>
-        <li><a href="/#iletisim">İletişim</a></li>
-        <li><a href="https://www.instagram.com/motoseyir.app/">Instagram</a></li>
-        <li><a href="https://apps.apple.com/tr/app/id6792549131?pt=128439797&amp;ct=seo-gecit&amp;mt=8">App Store</a></li>
-        <li><a href="https://play.google.com/store/apps/details?id=com.batuhanengin.motorota&amp;hl=tr&amp;referrer=utm_source%3Dseo-gecit">Google Play</a></li>
-      </ul>
+<footer class="alt">
+  <div class="alt-ic">
+    <div>
+      <p><a class="logo" href="/" aria-label="Motoseyir"><img src="/img/favicon.png" alt="" width="28" height="28">MOTO<em>SEYİR</em></a></p>
+      <p style="margin-top:10px">© 2026 Motoseyir. Tüm hakları saklıdır.</p>
     </div>
-    <p>© 2026 Motoseyir. Tüm hakları saklıdır.</p>
-    <div class="dil-altbilgi">
-      <span class="dil-altbilgi-baslik">Diller</span>
+    <ul><li><a href="/ozellikler.html">Tüm özellikler</a></li><li><a href="/corider.html">AI CoRider</a></li><li><a href="/rehber/">Rehber</a></li><li><a href="/tur-olusturucu/">Tur oluşturucu</a></li><li><a href="/tur-uret/">Tur üret</a></li><li><a href="/gecitler/">Dağ geçitleri</a></li><li><a href="/gecitler/sayilarla/">Dağ geçitleri sayılarla</a></li><li><a href="/hakkinda/">Hakkında</a></li><li><a href="/nasil-yapilir.html">Nasıl Yapılır</a></li><li><a href="/gizlilik/">Gizlilik</a></li><li><a href="/impressum/">Impressum</a></li><li><a href="/#yenilikler">Yenilikler</a></li><li><a href="/#iletisim">İletişim</a></li><li><a href="https://www.instagram.com/motoseyir.app/">Instagram</a></li><li><a href="https://apps.apple.com/tr/app/id6792549131?pt=128439797&amp;ct=seo-gecit&amp;mt=8">App Store</a></li><li><a href="https://play.google.com/store/apps/details?id=com.batuhanengin.motorota&amp;hl=tr&amp;referrer=utm_source%3Dseo-gecit">Google Play</a></li></ul>
+    <div class="dil-altbilgi"><span>Diller</span>
       <ul class="dil-liste">
   <li><strong lang="tr">Türkçe</strong></li>
   <li><a href="/en/passes/" lang="en" hreflang="en">English</a></li>

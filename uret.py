@@ -229,8 +229,8 @@ def play_esi(magaza: str, kod: str | None = None) -> str:
     return PLAY_BAGLANTISI + ek
 
 
-def magaza_dugmeleri(magaza: str, kod: str | None, metin: dict, sinif: str = "btn", ikon: bool = False) -> str:
-    """Yan yana App Store + Google Play düğmeleri (aynı sınıf, aynı ağırlık)."""
+def magaza_dugmeleri(magaza: str, kod: str | None, metin: dict, sinif: str = "btn", ikon: bool = True) -> str:
+    """Yan yana App Store + Google Play düğmeleri (aynı sınıf, aynı ağırlık; 24 Kas 2026: anasayfadaki gibi simgeli)."""
     a, g = (APPLE_SVG, PLAY_SVG) if ikon else ("", "")
     return (f'<a class="{sinif}" href="{magaza}">{a}{metin["btn_store"]}</a>'
             f'<a class="{sinif}" href="{play_esi(magaza, kod)}">{g}{metin["btn_play"]}</a>')
@@ -307,6 +307,150 @@ def dil_altbilgi(kod: str, dosya: str, yol=None) -> str:
     return '<ul class="dil-liste">\n  ' + "\n  ".join(ogeler) + "\n</ul>"
 
 
+# ---------------------------------------------------------------------------------------------------------------------
+# ORTAK KABUK (24 Kas 2026, kullanıcı: "sitede her şeyi ana sayfa kimliğine göre getirmek lazım, bi de Guides'ı ana ekranda
+# da görememiştim"). Bütün sayfaların üst menüsü ve alt bilgisi buradan: anasayfadaki logo + menü + dil seçici + İndir düğmesi,
+# dar ekranda ☰ (JS'siz <details>). Stil: m/kabuk.css (AI CoRider'da m/corider.css'in koyu kabuğu).
+# Şablonda `{{ust_kabuk_<etkin>}}` / `{{alt_kabuk_<etkin>}}` yazılır; doldur() bunları değerlerden (dil kodu, store, dil_secici,
+# dil_altbilgi) üretir. <etkin>: ana (anasayfa: bölüm bağlantıları sayfa içi), arac, tanitim, corider, rehber, nasil, ozellikler,
+# sayfa (menüde karşılığı olmayan sayfa). Menü sırası: ürün (tur oluşturucu, rota, geçitler, AI CoRider) → karar (fiyat) →
+# öğrenme (nasıl çalışır, rehberler). Rehber dizini 6 dilde var; öteki 8 dilde Rehberler bağlantısı İngilizce dizine gider
+# (etiket o dilde, hreflang="en").
+# ---------------------------------------------------------------------------------------------------------------------
+REHBER_ETIKET_YEDEK = {"nl": "Gidsen", "pl": "Poradniki", "cs": "Průvodce", "sk": "Sprievodcovia", "hu": "Útmutatók",
+                       "ro": "Ghiduri", "hr": "Vodiči", "el": "Οδηγοί"}
+_ana_metin_onbellek: dict = {}
+
+
+def ana_metin(kod: str) -> dict:
+    """dil/<kod>.json + dil/anasayfa.<kod>.json (menü etiketleri ikisine dağılmış)."""
+    if kod not in _ana_metin_onbellek:
+        m = json.loads((DIL / f"{kod}.json").read_text(encoding="utf-8"))
+        a = DIL / f"anasayfa.{kod}.json"
+        if a.exists():
+            m = {**m, **json.loads(a.read_text(encoding="utf-8"))}
+        _ana_metin_onbellek[kod] = m
+    return _ana_metin_onbellek[kod]
+
+
+def rehber_menu_hedef(kod: str) -> tuple:
+    """(adres, etiket, ek nitelik) — o dilin rehber dizini, yoksa İngilizce dizin."""
+    hub, _ = rehber_veri()
+    if kod in hub:
+        return rehber_hub_yolu(kod), hub[kod]["ui"]["rehber"], ""
+    return rehber_hub_yolu("en"), REHBER_ETIKET_YEDEK.get(kod, hub["en"]["ui"]["rehber"]), ' hreflang="en"'
+
+
+def menu_ogeleri(kod: str, etkin: str) -> str:
+    m = ana_metin(kod)
+    ev = "" if etkin == "ana" else sayfa_yolu(kod, "index.html")
+    r_href, r_ad, r_ek = rehber_menu_hedef(kod)
+    ogeler = []
+    if kod in arac_veri():
+        ogeler.append(("arac", arac_yol(kod), arac_veri()[kod]["ui"]["ekmek_son"], ""))
+    ogeler += [("rota", f"{ev}#rota", m["m_rota"], ""), ("gecit", f"{ev}#gecit", m["m_gecit"], ""),
+               ("corider", sayfa_yolu(kod, "corider.html"), "AI CoRider", ""), ("fiyat", f"{ev}#fiyat", m["m_fiyat"], ""),
+               ("nasil", sayfa_yolu(kod, "nasil-yapilir.html"), m["nav_nasil"], ""), ("rehber", r_href, r_ad, r_ek)]
+    return "".join(f'<li><a href="{h}"{ek}{" aria-current=" + chr(34) + "page" + chr(34) if a == etkin else ""}>{t}</a></li>'
+                   for a, h, t, ek in ogeler)
+
+
+def ust_kabuk(kod: str, etkin: str, store: str, play: str, dil_sec: str) -> str:
+    m = ana_metin(kod)
+    sinif = "ust" if etkin in ("ana", "tanitim") else "ust acik"  # video bandlı sayfalarda çubuk bandın üstünde saydam başlar (m/a.js)
+    logo = "#top" if etkin == "ana" else sayfa_yolu(kod, "index.html")
+    ogeler = menu_ogeleri(kod, etkin)
+    return (f'<header class="{sinif}" id="ustbar">\n  <div class="ust-ic">\n'
+            f'    <a class="logo" href="{logo}" aria-label="Motoseyir"><img src="/img/favicon.png" alt="" width="28" height="28">MOTO<em>SEYİR</em></a>\n'
+            f'    <nav class="ust-nav" aria-label="{m["nav_etiket"]}"><ul class="menu">{ogeler}</ul></nav>\n'
+            f'    <div class="ust-sag">\n      {dil_sec}\n'
+            f'      <a class="btn btn-kucuk" href="{store}" data-play="{play}">{m["btn_indir"]}</a>\n'
+            f'      <details class="mmenu"><summary aria-label="{m["nav_etiket"]}"><span class="mmenu-ik"></span></summary>'
+            f'<nav class="mmenu-panel" aria-label="{m["nav_etiket"]}"><ul onclick="this.closest(\'details\').open=false">{ogeler}</ul></nav></details>\n'
+            f'    </div>\n  </div>\n</header>')
+
+
+def alt_kabuk(kod: str, etkin: str, store: str, play: str, dil_alt: str) -> str:
+    m = ana_metin(kod)
+    ev = "" if etkin == "ana" else sayfa_yolu(kod, "index.html")
+    logo = "#top" if etkin == "ana" else sayfa_yolu(kod, "index.html")
+    r_href, r_ad, r_ek = rehber_menu_hedef(kod)
+    insta = m.get("insta_url", "https://www.instagram.com/motoseyir.app/")
+    ogeler = (f'<li><a href="{sayfa_yolu(kod, "ozellikler.html")}">{m["footer_tum_ozellikler"]}</a></li>'
+              f'<li><a href="{sayfa_yolu(kod, "corider.html")}">AI CoRider</a></li>'
+              f'<li><a href="{r_href}"{r_ek}>{r_ad}</a></li>' + arac_footer(kod) +
+              f'<li><a href="{sayfa_yolu(kod, "nasil-yapilir.html")}">{m["nav_nasil"]}</a></li>'
+              f'<li><a href="{gizlilik_url(kod)}">{m["nav_gizlilik"]}{m.get("gizlilik_tr_notu", "")}</a></li>'
+              f'<li><a href="{impressum_url(kod)}">{m["nav_impressum"]}</a></li>'
+              f'<li><a href="{ev}#yenilikler">{m["nav_yenilikler"]}</a></li><li><a href="{ev}#iletisim">{m["nav_iletisim"]}</a></li>'
+              f'<li><a href="{insta}">Instagram</a></li><li><a href="{store}">App Store</a></li><li><a href="{play}">Google Play</a></li>')
+    return (f'<footer class="alt">\n  <div class="alt-ic">\n    <div>\n'
+            f'      <p><a class="logo" href="{logo}" aria-label="Motoseyir"><img src="/img/favicon.png" alt="" width="28" height="28">MOTO<em>SEYİR</em></a></p>\n'
+            f'      <p style="margin-top:10px">© {YIL} Motoseyir. {m["footer_haklar"]}</p>\n    </div>\n'
+            f'    <ul>{ogeler}</ul>\n'
+            f'    <div class="dil-altbilgi"><span>{m["footer_diller"]}</span>\n      {dil_alt}\n    </div>\n  </div>\n</footer>')
+
+
+KABUK = re.compile(r"\{\{(ust|alt)_kabuk_([a-z]+)\}\}")
+
+
+def kabuk_doldur(sablon: str, degerler: dict) -> str:
+    """Şablondaki {{ust_kabuk_<etkin>}} / {{alt_kabuk_<etkin>}} yer tutucularını ortak kabukla değiştir."""
+    if not KABUK.search(sablon):
+        return sablon
+    kod = degerler.get("dil_kodu") or next(d["kod"] for d in DILLER if d["lang"] == degerler["lang"])
+    store = str(degerler["store"])
+    play = degerler.get("play") or play_esi(store, kod)
+
+    def yap(mt):
+        if mt.group(1) == "ust":
+            return ust_kabuk(kod, mt.group(2), store, play, degerler["dil_secici"])
+        return alt_kabuk(kod, mt.group(2), store, play, degerler["dil_altbilgi"])
+    return KABUK.sub(yap, sablon)
+
+
+# Elle tutulan sayfaların kabuğu (24 Kas 2026): gövdeye dokunulmaz; yalnız <!--kabuk-ust-->…<!--/kabuk-ust--> ve
+# <!--kabuk-alt-->…<!--/kabuk-alt--> arası her koşuda yeniden yazılır (işaret yoksa <body> sonrasına / </body> öncesine eklenir).
+# Değer: (sayfanın dili, o sayfanın öteki dillerdeki eşleri).
+ELLE_KABUK = {
+    "gizlilik/index.html": ("tr", {"en": "/gizlilik/en/", "de": "/gizlilik/de/"}),
+    "gizlilik/en/index.html": ("en", {"tr": "/gizlilik/", "de": "/gizlilik/de/"}),
+    "gizlilik/de/index.html": ("de", {"tr": "/gizlilik/", "en": "/gizlilik/en/"}),
+    "impressum/index.html": ("de", {"en": "/impressum/en/"}),
+    "impressum/en/index.html": ("en", {"de": "/impressum/"}),
+    "veri-kaynaklari/index.html": ("tr", {}),
+}
+
+
+def elle_kabuk_yaz() -> int:
+    yazilan = 0
+    for yol, (kod, esler) in ELLE_KABUK.items():
+        p = KOK / yol
+        if not p.exists():
+            continue
+        t = p.read_text(encoding="utf-8")
+        metin = json.loads((DIL / f"{kod}.json").read_text(encoding="utf-8"))
+        es = {kod: "/" + yol[: -len("index.html")], **esler}
+
+        def dil_yolu(k, es=es):
+            return es.get(k) or sayfa_yolu(k, "index.html")
+        store = magaza_baglantisi(kod)
+        play = play_esi(store, kod)
+        ust = ust_kabuk(kod, "sayfa", store, play, dil_secici(kod, "", metin, dil_yolu))
+        alt = alt_kabuk(kod, "sayfa", store, play, dil_altbilgi(kod, "", dil_yolu))
+        if "<!--kabuk-ust-->" not in t:
+            t = t.replace("<body>", "<body>\n<!--kabuk-ust--><!--/kabuk-ust-->", 1)
+        if "<!--kabuk-alt-->" not in t:
+            t = t.replace("</body>", "<!--kabuk-alt--><!--/kabuk-alt-->\n</body>", 1)
+        t = re.sub(r"<!--kabuk-ust-->.*?<!--/kabuk-ust-->", lambda _: f"<!--kabuk-ust-->\n{ust}\n<!--/kabuk-ust-->", t, count=1, flags=re.S)
+        t = re.sub(r"<!--kabuk-alt-->.*?<!--/kabuk-alt-->", lambda _: f"<!--kabuk-alt-->\n{alt}\n<!--/kabuk-alt-->", t, count=1, flags=re.S)
+        t = varliklari_surumle(t)
+        if t != p.read_text(encoding="utf-8"):
+            p.write_text(t, encoding="utf-8")
+            yazilan += 1
+    return yazilan
+
+
 GORSEL = re.compile(r'(src=")((?:\.\./)?img/)([a-z0-9][a-z0-9._-]*\.(?:jpg|png))(")')
 
 
@@ -344,7 +488,7 @@ def doldur(sablon: str, degerler: dict, nerede: str) -> str:
         degerler = {**degerler, "play": play_esi(str(degerler["store"]), degerler.get("dil_kodu") or degerler.get("lang"))}
     if "{{apple_svg}}" in sablon or "{{play_svg}}" in sablon:
         degerler = {"apple_svg": APPLE_SVG, "play_svg": PLAY_SVG, **degerler}
-    cikti = sablon
+    cikti = kabuk_doldur(sablon, degerler)
     for anahtar, deger in degerler.items():
         cikti = cikti.replace("{{" + anahtar + "}}", str(deger))
     kalan = sorted(set(EKSIK.findall(cikti)))
@@ -1075,6 +1219,13 @@ def izle_yaz() -> int:
             "gizlilik": {"t": u(m["nav_gizlilik"]) + u(m["gizlilik_tr_notu"]), "h": gizlilik_url(k)},
             "impressum": {"t": u(m["nav_impressum"]), "h": impressum_url(k)},
             "indir": {"t": u(m["btn_indir"]), "h": IZLE_MAGAZA},
+            # ortak kabuk (24 Kas 2026): anasayfa menüsünün öğeleri
+            "logo": {"t": "", "h": sayfa_yolu(k, "index.html")},
+            "rota": {"t": u(ana_metin(k)["m_rota"]), "h": sayfa_yolu(k, "index.html") + "#rota"},
+            "gecit": {"t": u(ana_metin(k)["m_gecit"]), "h": sayfa_yolu(k, "index.html") + "#gecit"},
+            "fiyat": {"t": u(ana_metin(k)["m_fiyat"]), "h": sayfa_yolu(k, "index.html") + "#fiyat"},
+            "yenilikler": {"t": u(m["nav_yenilikler"]), "h": sayfa_yolu(k, "index.html") + "#yenilikler"},
+            "instagram": {"t": "Instagram", "h": ana_metin(k).get("insta_url", "https://www.instagram.com/motoseyir.app/")},
         }
     tr, metin_tr = v["tr"], json.loads((DIL / "tr.json").read_text(encoding="utf-8"))
     ayar = {"metin": {k: v[k] for k in IZLE_DILLER}, "chrome": chrome, "api": IZLE_API,
@@ -1089,6 +1240,7 @@ def izle_yaz() -> int:
         "alan": ALAN, "vekil": ARAC_VEKIL, "api": IZLE_API, "store": IZLE_MAGAZA.replace("&", "&amp;"),
         "dil_secici": izle_dil_secici(metin_tr, v), "dil_altbilgi": izle_dil_altbilgi(v),
         "ui_rehber": hub["tr"]["ui"]["rehber"], "yil": YIL,
+        "m_rota": ana_metin("tr")["m_rota"], "m_gecit": ana_metin("tr")["m_gecit"], "m_fiyat": ana_metin("tr")["m_fiyat"],
         "izle_ayar": json.dumps(ayar, ensure_ascii=False).replace("</", "<\\/"),
     }
     html = doldur((SABLON / "izle.html").read_text(encoding="utf-8"), degerler, "izle")
@@ -2604,6 +2756,7 @@ def main() -> None:
     gecit_yazilan = gecit_yaz()
     yazilan += gecit_yazilan
     yazilan += ozel_yaz()
+    elle_kabuk_yaz()  # gizlilik / impressum / veri kaynakları: yalnız üst menü ve alt bilgi
 
     (KOK / "sitemap.xml").write_text(sitemap(), encoding="utf-8")
     (KOK / "robots.txt").write_text(ROBOTS, encoding="utf-8")

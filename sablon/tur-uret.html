@@ -22,6 +22,7 @@
 <link rel="preload" as="image" type="image/webp" href="/m/sahne-dikey-poster.webp" media="(max-width:700px)" fetchpriority="high">
 <link rel="preload" as="image" type="image/webp" href="/m/sahne-poster.webp" media="(min-width:701px)" fetchpriority="high">
 <link rel="preload" as="font" type="font/woff2" href="/m/font/Manrope.woff2" crossorigin>
+<link rel="stylesheet" href="/m/kabuk.css">
 <link rel="stylesheet" href="/m/a.css">
 <link rel="stylesheet" href="/m/tur/tur.css">
 <script defer src="/m/h.js"></script>
@@ -34,18 +35,7 @@
 <a class="skip" href="#icerik">{{skip}}</a>
 <div class="ilerle" aria-hidden="true"></div>
 
-<header class="ust" id="ustbar">
-  <div class="ust-ic">
-    <a class="logo" href="{{anasayfa_url}}" aria-label="Motoseyir"><img src="/img/favicon.png" alt="" width="28" height="28">MOTO<em>SEYİR</em></a>
-    <nav aria-label="{{nav_etiket}}"><ul class="menu">
-      <li><a href="{{anasayfa_url}}">{{nav_anasayfa}}</a></li><li><a href="{{arac_url}}">{{u_ekmek_son}}</a></li><li><a href="{{ozellikler_url}}">{{footer_tum_ozellikler}}</a></li><li><a href="{{corider_url}}">AI CoRider</a></li><li><a href="{{hub_url}}">{{ui_rehber}}</a></li>
-    </ul></nav>
-    <div class="ust-sag">
-      {{dil_secici}}
-      <a class="btn btn-kucuk" href="{{store}}" data-play="{{play}}">{{btn_indir}}</a>
-    </div>
-  </div>
-</header>
+{{ust_kabuk_tanitim}}
 
 <main id="icerik">
 <section class="kahraman tur-kahraman" aria-labelledby="tur-h1">
@@ -107,32 +97,7 @@
 {{arac_varis}}
 </main>
 
-<footer>
-  <div class="alt-ic">
-    <div>
-      <p><a class="logo" href="{{anasayfa_url}}" aria-label="Motoseyir"><img src="/img/favicon.png" alt="" width="28" height="28">MOTO<em>SEYİR</em></a></p>
-      <p style="margin-top:10px">© {{yil}} Motoseyir. {{footer_haklar}}</p>
-    </div>
-    <ul>
-      <li><a href="{{anasayfa_url}}">{{nav_anasayfa}}</a></li>
-      <li><a href="{{ozellikler_url}}">{{footer_tum_ozellikler}}</a></li>
-      <li><a href="{{hub_url}}">{{ui_rehber}}</a></li>
-      <li><a href="{{arac_url}}">{{u_ekmek_son}}</a></li>
-      <li><a href="{{tanitim_url}}" aria-current="page">{{p_ad}}</a></li>
-      <li><a href="{{corider_url}}">AI CoRider</a></li>
-      <li><a href="{{nasil_url}}">{{nav_nasil}}</a></li>
-      <li><a href="{{gizlilik_url}}">{{nav_gizlilik}}{{gizlilik_tr_notu}}</a></li>
-      <li><a href="{{impressum_url}}">{{nav_impressum}}</a></li>
-      <li><a href="{{anasayfa_url}}#iletisim">{{nav_iletisim}}</a></li>
-      <li><a href="https://www.instagram.com/motoseyir.app/">Instagram</a></li>
-      <li><a href="{{store}}">App Store</a></li>
-      <li><a href="{{play}}">Google Play</a></li>
-    </ul>
-    <div class="dil-altbilgi"><span>{{footer_diller}}</span>
-      {{dil_altbilgi}}
-    </div>
-  </div>
-</footer>
+{{alt_kabuk_tanitim}}
 
 </body>
 </html>

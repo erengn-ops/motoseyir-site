@@ -1,16 +1,7 @@
 /* Motoseyir anasayfa. Üretici: sablon/anasayfa.html (uret.py). Elle yazılmış paylaşılan stil. Hareket sistemi en altta («HAREKET SİSTEMİ»).
    Renkler uygulamanın kendi paletidir (moto-rota/src/theme/colors.ts): açık zemin, tek vurgu petrol (#0E6E73),
    rota mavisi (#3D3DF5) yalnız bir rota çizildiğinde. Tek yazı ailesi: Manrope. */
-@font-face{font-family:"Manrope";src:url(/m/font/Manrope.woff2) format("woff2"),url(/m/font/Manrope.woff) format("woff");font-weight:200 800;font-display:swap}
-
-:root{
-  --zemin:#FCFDFD;--yuzey:#FFFFFF;--yuksek:#EFF3F2;--cizgi:#D3DBD9;
-  --yazi:#16221F;--yazi-2:#4A5A57;--yazi-3:#5B6B68;
-  --vurgu:#0E6E73;--vurgu-koyu:#0B5A5E;--vurgu-acik:#E3F0F0;--vurgu-ustu:#FFFFFF;
-  --rota:#3D3DF5;--rota-kenar:#1E1E9C;
-  --sans:"Manrope",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
-  --gutter:20px;--r:12px;
-}
+/* Yazı tipi ve renk değişkenleri: m/kabuk.css. */
 *{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-text-size-adjust:100%;scroll-padding-top:72px}
 body{background:var(--zemin);color:var(--yazi);font:400 1rem/1.65 var(--sans);overflow-x:hidden;-webkit-font-smoothing:antialiased}
@@ -21,44 +12,14 @@ a{color:inherit}
 :focus-visible{outline:2px solid var(--vurgu);outline-offset:3px}
 
 /* ---------- Üst çubuk ----------
-   Varsayılan: düz beyaz çubuk. JS varken ve sayfa video bandının üstündeyken saydam + beyaz yazı;
+   Ortak kabuk m/kabuk.css'te (logo, menü, ☰, dil seçici, düğmeler, alt bilgi, renk değişkenleri; bu dosyadan ÖNCE yüklenir).
+   Burada yalnız video bandlı sayfaların farkı: çubuk sabit; JS varken ve sayfa video bandının üstündeyken saydam + beyaz yazı,
    bant ekrandan çıkınca (JS `.acik` ekler) beyaza döner. JS yoksa hep beyaz kalır. */
-.ust{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(255,255,255,.94);-webkit-backdrop-filter:saturate(1.4) blur(14px);backdrop-filter:saturate(1.4) blur(14px);
-  border-bottom:1px solid var(--cizgi);color:var(--yazi);transition:background-color .25s,border-color .25s,color .25s}
+.ust{position:fixed;inset:0 0 auto 0}
 .js .ust:not(.acik){background:transparent;-webkit-backdrop-filter:none;backdrop-filter:none;border-bottom-color:transparent;color:#fff}
-.ust-ic{display:flex;align-items:center;gap:14px;max-width:1200px;margin:0 auto;padding:12px var(--gutter);padding-top:calc(12px + env(safe-area-inset-top))}
-.logo{display:inline-flex;align-items:center;font:800 1.05rem/1 var(--sans);letter-spacing:.06em;text-decoration:none}
-.logo img{width:28px;height:28px;border-radius:7px;margin-right:9px}
-.logo em{font-style:normal;font-weight:500}
-.ust nav{display:none;margin-left:auto}.menu{display:flex;list-style:none;gap:28px}
-.menu a{font:600 .92rem/1 var(--sans);text-decoration:none;color:var(--yazi-2);transition:color .2s}
-.menu a:hover{color:var(--yazi)}
 .js .ust:not(.acik) .menu a{color:rgba(255,255,255,.88)}.js .ust:not(.acik) .menu a:hover{color:#fff}
-.ust-sag{margin-left:auto;display:flex;align-items:center;gap:14px}
-.btn{display:inline-flex;align-items:center;gap:10px;background:var(--vurgu);color:var(--vurgu-ustu);font:700 .95rem/1 var(--sans);text-decoration:none;padding:15px 24px;border-radius:var(--r);border:0;transition:background-color .2s}
-.btn:hover{background:var(--vurgu-koyu)}
-.btn svg{width:18px;height:18px;fill:currentColor}
-.btn-kucuk{padding:10px 16px;font-size:.85rem;border-radius:10px}
-.btn-hayalet{background:var(--yuzey);color:var(--yazi);box-shadow:inset 0 0 0 1px var(--cizgi)}
-.btn-hayalet:hover{background:var(--yuksek)}
 .js .ust:not(.acik) .btn-kucuk{box-shadow:inset 0 0 0 1px rgba(255,255,255,.35)}
-@media(min-width:900px){.ust-sag{margin-left:8px}.ust-ic{padding-inline:40px}}
-/* Menüde beş öğe var (AI CoRider eklendi, 19 Eki): satıra sığmayan dillerde (el, hu, de) menü 1060 px'e kadar gizli, öğeler tek satır. */
-.menu a{white-space:nowrap}
-@media(min-width:1060px){.ust nav{display:block}}
-@media(min-width:1060px) and (max-width:1239px){.menu{gap:20px}}
-
-/* dil seçici (uret.py'nin <details> işaretlemesi) */
-.dil-sec{position:relative;font:700 .8rem/1 var(--sans);letter-spacing:.04em}
-.dil-sec summary{list-style:none;cursor:pointer;display:flex;gap:8px;align-items:center;color:inherit;padding:8px 2px}
-.dil-sec summary::-webkit-details-marker{display:none}
-.dil-sec summary::after{content:"";width:6px;height:6px;border:solid currentColor;border-width:0 1.5px 1.5px 0;transform:rotate(45deg) translateY(-2px)}
-.dil-ad{display:none}
-.dil-sec ul{position:absolute;right:0;top:100%;margin-top:6px;list-style:none;background:var(--yuzey);color:var(--yazi);border:1px solid var(--cizgi);border-radius:var(--r);padding:8px;display:grid;grid-template-columns:1fr 1fr;gap:2px;min-width:230px;box-shadow:0 8px 24px rgba(22,34,31,.12)}
-.dil-sec li a,.dil-sec li span{display:block;padding:8px 10px;border-radius:8px;text-decoration:none;font-weight:600;letter-spacing:0}
-.dil-sec li a{color:var(--yazi-2)}.dil-sec li a:hover{background:var(--yuksek);color:var(--yazi)}
-.dil-sec li span{color:var(--vurgu)}
-@media(min-width:900px){.dil-ad{display:inline}.dil-kod{display:none}}
+.js .ust:not(.acik) .mmenu>summary:hover{background:rgba(255,255,255,.12)}
 
 /* ---------- Kahraman: video bandı ----------
    Üstte menü, arka planda sessiz video akan bir BANT (tam ekran değil): masaüstünde ekranın ~%85'i
@@ -284,13 +245,6 @@ h2{font:800 clamp(1.9rem,5.6vw,3rem)/1.1 var(--sans);letter-spacing:-.025em;text
 .kart p{color:var(--yazi-2);font-size:.95rem}
 .kart a.btn{margin-top:14px}
 
-footer{background:var(--yuksek);border-top:1px solid var(--cizgi);padding:34px 0 calc(34px + env(safe-area-inset-bottom));font-size:.9rem;color:var(--yazi-2)}
-.alt-ic{max-width:1200px;margin:0 auto;padding:0 var(--gutter);display:grid;gap:22px}
-.alt-ic ul{list-style:none;display:flex;flex-wrap:wrap;gap:10px 22px}
-.alt-ic a{text-decoration:none;color:var(--yazi-2)}.alt-ic a:hover{color:var(--vurgu);text-decoration:underline;text-underline-offset:3px}
-.alt-ic .logo{color:var(--yazi)}
-.dil-liste{font-size:.84rem}
-@media(min-width:900px){.alt-ic{padding:0 40px}}
 
 /* ---------- Beliriş: yalnız sade solma ---------- */
 .js [data-r]{opacity:0;transition:opacity .7s ease}

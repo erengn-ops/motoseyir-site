@@ -1,0 +1,93 @@
+/* Motoseyir ortak kabuk (24 Kas 2026): üst menü, logo, dil seçici, düğmeler, alt bilgi, yazı tipi ve renk değişkenleri.
+   Kaynak: anasayfanın kimliği (eskiden m/a.css başındaydı). Bütün açık zeminli sayfalar bunu yükler: anasayfa, tur oluşturucu,
+   tur üret tanıtımı (m/a.css'ten ÖNCE), özellikler / nasıl yapılır / rehber / geçit / hakkında / izle (style.css'ten ÖNCE),
+   elle tutulan gizlilik / impressum / veri kaynakları. AI CoRider kendi koyu kabuğunu m/corider.css'te taşır (aynı işaretleme).
+   İşaretlemeyi uret.py üretir (ust_kabuk / alt_kabuk); menüyü elle şablona yazma.
+   Kurallar yalnız kendi sınıflarına bağlı: sayfanın kendi sıfırlamasına güvenmez, dışarı taşmaz. */
+@font-face{font-family:"Manrope";src:url(/m/font/Manrope.woff2) format("woff2"),url(/m/font/Manrope.woff) format("woff");font-weight:200 800;font-display:swap}
+
+:root{
+  --zemin:#FCFDFD;--yuzey:#FFFFFF;--yuksek:#EFF3F2;--cizgi:#D3DBD9;
+  --yazi:#16221F;--yazi-2:#4A5A57;--yazi-3:#5B6B68;
+  --vurgu:#0E6E73;--vurgu-koyu:#0B5A5E;--vurgu-acik:#E3F0F0;--vurgu-ustu:#FFFFFF;
+  --rota:#3D3DF5;--rota-kenar:#1E1E9C;
+  --sans:"Manrope",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  --gutter:20px;--r:12px;
+}
+
+/* ---------- Üst çubuk ----------
+   Düz beyaz çubuk, sayfayla birlikte yapışkan. Anasayfa ve tur üret tanıtımında m/a.css bunu sabit (fixed) yapar ve
+   video bandının üstündeyken saydamlaştırır. */
+.ust{position:sticky;top:0;inset-inline:0;z-index:50;background:rgba(255,255,255,.94);-webkit-backdrop-filter:saturate(1.4) blur(14px);backdrop-filter:saturate(1.4) blur(14px);
+  border-bottom:1px solid var(--cizgi);color:var(--yazi);font-family:var(--sans);transition:background-color .25s,border-color .25s,color .25s}
+.ust ul{list-style:none;margin:0;padding:0}
+.ust-ic{position:relative;display:flex;align-items:center;gap:14px;max-width:1200px;margin:0 auto;padding:12px var(--gutter);padding-top:calc(12px + env(safe-area-inset-top))}
+.logo{display:inline-flex;align-items:center;font:800 1.05rem/1 var(--sans);letter-spacing:.06em;text-decoration:none;color:inherit;white-space:nowrap}
+.logo img{display:block;width:28px;height:28px;border-radius:7px;margin-right:9px}
+.logo em{font-style:normal;font-weight:500}
+.ust nav.ust-nav{display:none;margin-left:auto}
+.menu{display:flex;flex-direction:row;gap:26px}
+.menu a{font:600 .92rem/1 var(--sans);text-decoration:none;color:var(--yazi-2);transition:color .2s;white-space:nowrap}
+.menu a:hover,.menu a[aria-current]{color:var(--yazi)}
+.ust-sag{margin-left:auto;display:flex;align-items:center;gap:14px}
+@media(min-width:900px){.ust-sag{margin-left:8px}.ust-ic{padding-inline:40px}}
+/* Menüde yedi öğe var (24 Kas: Rehberler eklendi). Satıra sığmadığı genişlikte menü gizli, yerine ☰ (aşağıda). */
+@media(min-width:1180px){.ust nav.ust-nav{display:block}}
+@media(min-width:1180px) and (max-width:1319px){.menu{gap:18px}.menu a{font-size:.88rem}}
+
+/* Mobil menü: JS'siz <details>. Masaüstü menüsüyle aynı öğeler, alt alta. */
+.mmenu{position:static}
+.mmenu>summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:center;width:40px;height:40px;margin-right:-8px;border-radius:10px;color:inherit}
+.mmenu>summary::-webkit-details-marker{display:none}
+.mmenu>summary:hover{background:rgba(22,34,31,.06)}
+.mmenu-ik,.mmenu-ik::before,.mmenu-ik::after{display:block;width:20px;height:2px;border-radius:2px;background:currentColor;transition:transform .2s,opacity .2s}
+.mmenu-ik{position:relative}
+.mmenu-ik::before,.mmenu-ik::after{content:"";position:absolute;left:0}
+.mmenu-ik::before{top:-6px}.mmenu-ik::after{top:6px}
+.mmenu[open] .mmenu-ik{background:transparent}
+.mmenu[open] .mmenu-ik::before{transform:translateY(6px) rotate(45deg)}
+.mmenu[open] .mmenu-ik::after{transform:translateY(-6px) rotate(-45deg)}
+.mmenu-panel{position:absolute;left:0;right:0;top:100%;background:var(--yuzey);color:var(--yazi);border-bottom:1px solid var(--cizgi);box-shadow:0 18px 30px -18px rgba(22,34,31,.25);
+  padding:8px var(--gutter) 16px;max-height:calc(100svh - 64px);overflow-y:auto}
+.mmenu-panel a{display:block;padding:13px 4px;border-bottom:1px solid var(--yuksek);font:700 1rem/1.2 var(--sans);text-decoration:none;color:var(--yazi)}
+.mmenu-panel li:last-child a{border-bottom:0}
+.mmenu-panel a:hover,.mmenu-panel a[aria-current]{color:var(--vurgu)}
+@media(min-width:900px){.mmenu-panel{padding-inline:40px}}
+@media(min-width:1180px){.mmenu{display:none}}
+
+/* ---------- Düğmeler ---------- */
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--vurgu);color:var(--vurgu-ustu);font:700 .95rem/1 var(--sans);text-decoration:none;padding:15px 24px;border-radius:var(--r);border:0;cursor:pointer;transition:background-color .2s}
+.btn:hover{background:var(--vurgu-koyu);color:var(--vurgu-ustu)}
+.btn svg{width:18px;height:18px;fill:currentColor;flex:none}
+.btn-kucuk{padding:10px 16px;font-size:.85rem;border-radius:10px}
+.btn-hayalet{background:var(--yuzey);color:var(--yazi);box-shadow:inset 0 0 0 1px var(--cizgi)}
+.btn-hayalet:hover{background:var(--yuksek);color:var(--yazi)}
+.magaza-dugmeleri{display:flex;flex-wrap:wrap;gap:12px}
+
+/* ---------- Dil seçici (uret.py'nin <details> işaretlemesi) ---------- */
+.dil-sec{position:relative;font:700 .8rem/1 var(--sans);letter-spacing:.04em}
+.dil-sec summary{list-style:none;cursor:pointer;display:flex;gap:8px;align-items:center;color:inherit;padding:8px 2px}
+.dil-sec summary::-webkit-details-marker{display:none}
+.dil-sec summary::after{content:"";width:6px;height:6px;border:solid currentColor;border-width:0 1.5px 1.5px 0;transform:rotate(45deg) translateY(-2px)}
+.dil-ad{display:none}
+.dil-sec ul{position:absolute;right:0;top:100%;z-index:5;margin-top:6px;list-style:none;padding:8px;background:var(--yuzey);color:var(--yazi);border:1px solid var(--cizgi);border-radius:var(--r);display:grid;grid-template-columns:1fr 1fr;gap:2px;min-width:230px;box-shadow:0 8px 24px rgba(22,34,31,.12)}
+.dil-sec li a,.dil-sec li span{display:block;padding:8px 10px;border-radius:8px;text-decoration:none;font-weight:600;letter-spacing:0}
+.dil-sec li a{color:var(--yazi-2)}.dil-sec li a:hover{background:var(--yuksek);color:var(--yazi)}
+.dil-sec li span{color:var(--vurgu)}
+@media(min-width:900px){.dil-ad{display:inline}.dil-kod{display:none}}
+/* Dar ekranda dil paneli çubuğun sağ kenarına dayanır (seçicinin altına değil; yoksa 375 px'te soldan taşıyordu). */
+@media(max-width:599px){.ust .dil-sec{position:static}.ust .dil-sec ul{right:var(--gutter);top:calc(100% - 4px)}}
+@media(max-width:400px){.ust-ic{gap:10px}.ust-sag{gap:8px}.ust .btn-kucuk{padding:9px 12px}}
+
+/* ---------- Alt bilgi ---------- */
+footer.alt{margin:0;background:var(--yuksek);border-top:1px solid var(--cizgi);padding:34px 0 calc(34px + env(safe-area-inset-bottom));font:400 .9rem/1.65 var(--sans);color:var(--yazi-2)}
+.alt-ic{max-width:1200px;margin:0 auto;padding:0 var(--gutter);display:grid;gap:22px}
+.alt-ic p{margin:0}
+.alt-ic ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:row;flex-wrap:wrap;gap:10px 22px}
+.alt-ic a{text-decoration:none;color:var(--yazi-2)}.alt-ic a:hover{color:var(--vurgu);text-decoration:underline;text-underline-offset:3px}
+.alt-ic .logo{color:var(--yazi)}
+.alt-ic .dil-liste{font-size:.84rem}
+.alt-ic .dil-altbilgi>span{display:block;margin-bottom:8px;font-weight:700;color:var(--yazi)}
+.alt-ic .dil-liste strong{color:var(--vurgu)}
+@media(min-width:900px){.alt-ic{padding:0 40px}}
+@media(prefers-reduced-motion:reduce){.ust,.btn,.menu a,.mmenu-ik,.mmenu-ik::before,.mmenu-ik::after{transition:none}}

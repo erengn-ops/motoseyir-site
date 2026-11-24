@@ -28,7 +28,9 @@ ul,ol{list-style:none}
 .logo{display:inline-flex;align-items:center;font:800 1.05rem/1 var(--sans);letter-spacing:.06em;text-decoration:none;color:var(--y)}
 .logo img{width:28px;height:28px;border-radius:7px;margin-right:9px}
 .logo em{font-style:normal;font-weight:500}
-.ust nav{display:none;margin-left:auto}
+.ust{font-family:var(--sans)}
+.ust-ic{position:relative}
+.ust nav.ust-nav{display:none;margin-left:auto}
 .menu{display:flex;gap:26px}
 .menu a{font:600 .9rem/1 var(--sans);text-decoration:none;color:var(--y2);transition:color .2s}
 .menu a:hover,.menu a[aria-current]{color:var(--y)}
@@ -41,8 +43,28 @@ ul,ol{list-style:none}
 .btn-hayalet:hover{background:rgba(234,246,255,.07);box-shadow:inset 0 0 0 1px rgba(234,246,255,.5)}
 @media(min-width:900px){.ust-sag{margin-left:8px}.ust-ic{padding-inline:40px}}
 .menu a{white-space:nowrap}
-@media(min-width:1060px){.ust nav{display:block}}
-@media(min-width:1060px) and (max-width:1239px){.menu{gap:18px}}
+@media(min-width:1180px){.ust nav.ust-nav{display:block}}
+@media(min-width:1180px) and (max-width:1319px){.menu{gap:18px}.menu a{font-size:.88rem}}
+/* Mobil menü (24 Kas 2026, ortak kabuk; işaretleme uret.py ust_kabuk, açık eşi m/kabuk.css) */
+.mmenu>summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:center;width:40px;height:40px;margin-right:-8px;border-radius:10px;color:var(--y)}
+.mmenu>summary::-webkit-details-marker{display:none}
+.mmenu>summary:hover{background:rgba(234,246,255,.08)}
+.mmenu-ik,.mmenu-ik::before,.mmenu-ik::after{display:block;width:20px;height:2px;border-radius:2px;background:currentColor;transition:transform .2s}
+.mmenu-ik{position:relative}
+.mmenu-ik::before,.mmenu-ik::after{content:"";position:absolute;left:0}
+.mmenu-ik::before{top:-6px}.mmenu-ik::after{top:6px}
+.mmenu[open] .mmenu-ik{background:transparent}
+.mmenu[open] .mmenu-ik::before{transform:translateY(6px) rotate(45deg)}
+.mmenu[open] .mmenu-ik::after{transform:translateY(-6px) rotate(-45deg)}
+.mmenu-panel{position:absolute;left:0;right:0;top:100%;background:var(--z1);border-bottom:1px solid var(--kenar-2);box-shadow:0 18px 40px rgba(0,0,0,.5);padding:8px var(--gutter) 16px;max-height:calc(100svh - 64px);overflow-y:auto}
+.mmenu-panel a{display:block;padding:13px 4px;border-bottom:1px solid var(--kenar-2);font:700 1rem/1.2 var(--sans);text-decoration:none;color:var(--y)}
+.mmenu-panel li:last-child a{border-bottom:0}
+.mmenu-panel a:hover,.mmenu-panel a[aria-current]{color:var(--cy)}
+@media(min-width:900px){.mmenu-panel{padding-inline:40px}}
+@media(min-width:1180px){.mmenu{display:none}}
+/* Dar ekranda dil paneli çubuğun sağ kenarına dayanır (seçicinin altına değil; yoksa 375 px'te soldan taşıyordu). */
+@media(max-width:599px){.ust .dil-sec{position:static}.ust .dil-sec ul{right:var(--gutter);top:calc(100% - 4px)}}
+@media(max-width:400px){.ust-ic{gap:10px}.ust-sag{gap:8px}.ust .btn-kucuk{padding:9px 12px}}
 
 .dil-sec{position:relative;font:700 .8rem/1 var(--sans);letter-spacing:.04em}
 .dil-sec summary{list-style:none;cursor:pointer;display:flex;gap:8px;align-items:center;color:var(--y);padding:8px 2px}

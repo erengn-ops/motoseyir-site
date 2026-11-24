@@ -47,7 +47,8 @@ Arka plan videosu yapay zekâ ile üretildi (Higgsfield Wan 3.0); gerçek çekim
 | `sablon/nasil-yapilir.html` | "nasıl yapılır" şablonu |
 | `dil/tr.json` | **kaynak metin** — diğer diller buradan çevrilir |
 | `dil/<kod>.json` | o dilin metinleri (272 anahtar, hepsi zorunlu) |
-| `style.css` | tek stil dosyası, elle tutuluyor |
+| `m/kabuk.css` | ORTAK KABUK (24 Kas 2026): üst menü, ☰ mobil menü, logo, dil seçici, düğmeler, alt bilgi, Manrope, renk değişkenleri — anasayfa kimliği. İşaretlemeyi `uret.py` `ust_kabuk` / `alt_kabuk` üretir (şablonda `{{ust_kabuk_<etkin>}}`, `{{alt_kabuk_<etkin>}}`); elle tutulan gizlilik/impressum/veri kaynaklarında `<!--kabuk-ust-->` işaretleri arası her koşuda yenilenir. Menüyü şablona elle yazma |
+| `style.css` | uzun okuma sayfalarının gövde stili (özellikler, nasıl yapılır, rehber, geçit, hakkında, izle); kabuk ve değişkenler `m/kabuk.css`'ten |
 | `img/` | ortak görseller; `img/<kod>/` varsa o dilde onlar kullanılır |
 | `gizlilik/index.html` | Türkçe tam gizlilik politikası — **elle** tutuluyor |
 | `gizlilik/en/index.html` | İngilizce gizlilik metni — **elle** tutuluyor |

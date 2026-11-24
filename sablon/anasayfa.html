@@ -39,6 +39,7 @@
 <link rel="preload" as="image" type="image/webp" href="/m/sahne-dikey-poster.webp" media="(max-width:700px)" fetchpriority="high">
 <link rel="preload" as="image" type="image/webp" href="/m/sahne-poster.webp" media="(min-width:701px)" fetchpriority="high">
 <link rel="preload" as="font" type="font/woff2" href="/m/font/Manrope.woff2" crossorigin>
+<link rel="stylesheet" href="/m/kabuk.css">
 <link rel="stylesheet" href="/m/a.css">
 <script defer src="/m/h.js"></script>
 <script defer src="/m/a.js"></script>
@@ -50,18 +51,7 @@
 <a class="skip" href="#icerik">{{skip}}</a>
 <div class="ilerle" aria-hidden="true"></div>
 
-<header class="ust" id="ustbar">
-  <div class="ust-ic">
-    <a class="logo" href="#top" aria-label="Motoseyir"><img src="/img/favicon.png" alt="" width="28" height="28">MOTO<em>SEYİR</em></a>
-    <nav aria-label="{{nav_etiket}}"><ul class="menu">
-      {{arac_menu}}<li><a href="#rota">{{m_rota}}</a></li><li><a href="#gecit">{{m_gecit}}</a></li><li><a href="{{corider_url}}">AI CoRider</a></li><li><a href="#fiyat">{{m_fiyat}}</a></li><li><a href="{{nasil_url}}">{{nav_nasil}}</a></li>
-    </ul></nav>
-    <div class="ust-sag">
-      {{dil_secici}}
-      <a class="btn btn-kucuk" href="{{store}}" data-play="{{play}}">{{btn_indir}}</a>
-    </div>
-  </div>
-</header>
+{{ust_kabuk_ana}}
 
 <main id="icerik">
 <!-- Telefon demoları (19 Eki 2026): `<img data-demo="…">` işaretli ekran görüntüsünü uret.py, o dilin klibi (m/demo-<ad>-<kod>.mp4) varsa
@@ -632,19 +622,6 @@
 </section>
 </main>
 
-<footer>
-  <div class="alt-ic">
-    <div>
-      <p><a class="logo" href="#top" aria-label="Motoseyir"><img src="/img/favicon.png" alt="" width="28" height="28">MOTO<em>SEYİR</em></a></p>
-      <p style="margin-top:10px">© {{yil}} Motoseyir. {{footer_haklar}}</p>
-    </div>
-    <ul>
-      <li><a href="{{ozellikler_url}}">{{footer_tum_ozellikler}}</a></li><li><a href="{{corider_url}}">AI CoRider</a></li>{{rehber_footer}}<li><a href="{{nasil_url}}">{{nav_nasil}}</a></li><li><a href="{{gizlilik_url}}">{{nav_gizlilik}}</a></li><li><a href="{{impressum_url}}">{{nav_impressum}}</a></li><li><a href="#yenilikler">{{nav_yenilikler}}</a></li><li><a href="#iletisim">{{nav_iletisim}}</a></li><li><a href="{{insta_url}}">Instagram</a></li><li><a href="{{store}}">App Store</a></li>
-    </ul>
-    <div class="dil-altbilgi"><span>{{footer_diller}}</span>
-      {{dil_altbilgi}}
-    </div>
-  </div>
-</footer>
+{{alt_kabuk_ana}}
 </body>
 </html>
