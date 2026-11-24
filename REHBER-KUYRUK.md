@@ -14,7 +14,7 @@ buradaki "Hedef sorgu" sütunu GERÇEK sorgularla güncellenir — önce Perform
 | 2026-10-25 | tr | `/rehber/` | motosiklet rehberi, motor rotaları | — (merkez) |
 | 2026-10-25 | tr | `/rehber/turkiye-motosiklet-rotalari/` | türkiye motosiklet rotaları, motor turu rotaları | uygulamanın `presetTours` verisi (durak, uzunluk), Vikipedi (Zigana) |
 | 2026-10-25 | tr | `/rehber/motor-turu-planlama/` | motor turu planlama, motor turu nasıl planlanır | uygulamanın kendi özellikleri (`dil/tr.json`: tur üret, en uygun sıra, grup) |
-| 2026-11-24 | tr | `/rehber/motosiklet-navigasyon-uygulamalari-karsilastirma/` | motosiklet navigasyon uygulaması, motoatlas, calimoto alternatifi | rakiplerin kendi App Store sayfası + sitesi, iTunes Lookup (puan), App Store IAP listesi (fiyat); ortak veri `veri/karsilastirma.json` |
+| 2026-11-24 | tr | `/rehber/motosiklet-navigasyon-uygulamalari-karsilastirma/` | motosiklet navigasyon uygulaması, calimoto alternatifi | rakiplerin kendi App Store sayfası + sitesi, iTunes Lookup (puan), App Store IAP listesi (fiyat); ortak veri `veri/karsilastirma.json` |
 | 2026-10-25 | tr | `/rehber/koy-yolu-motosiklet-rotasi/` | köy yolu motosiklet rotası, köy yollarıyla motor turu | uygulamanın köy yolları modu, `veri-kaynaklari` (OpenStreetMap) |
 | 2026-10-25 | tr | `/rehber/turkiye-dag-gecitleri-motosiklet/` | türkiye dağ geçitleri motosiklet, zigana kop ovit geçidi | Vikipedi (Zigana, Kop, Sertavul, Gülek, D 975, Ovit Tüneli) + uygulamanın geçit verisi |
 | 2026-10-25 | en | `/en/guides/`, `/en/guides/motorcycle-route-planner/` | motorcycle route planner, how to plan a motorcycle trip | uygulamanın özellikleri |

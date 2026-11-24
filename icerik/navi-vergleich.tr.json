@@ -4,109 +4,289 @@
  "karsilastirma": true,
  "magaza_etiket": "seo-compare-tr",
  "rakipler": [
-  {"ad": "calimoto", "url": "https://apps.apple.com/tr/app/id1209129603", "site": "https://calimoto.com/en"},
-  {"ad": "Kurviger", "url": "https://apps.apple.com/tr/app/id6473445827", "site": "https://kurviger.com/en"},
-  {"ad": "Scenic", "url": "https://apps.apple.com/tr/app/id1089668246", "site": "https://scenic.app"},
-  {"ad": "REVER", "url": "https://apps.apple.com/tr/app/id975571447", "site": "https://www.rever.co"},
-  {"ad": "MotoAtlas", "url": "https://apps.apple.com/tr/app/motoatlas-motosiklet-rota/id6798015161", "site": "https://motoatlas.app/"}
+  {
+   "ad": "calimoto",
+   "url": "https://apps.apple.com/tr/app/id1209129603",
+   "site": "https://calimoto.com/en"
+  },
+  {
+   "ad": "Kurviger",
+   "url": "https://apps.apple.com/tr/app/id6473445827",
+   "site": "https://kurviger.com/en"
+  },
+  {
+   "ad": "Scenic",
+   "url": "https://apps.apple.com/tr/app/id1089668246",
+   "site": "https://scenic.app"
+  },
+  {
+   "ad": "REVER",
+   "url": "https://apps.apple.com/tr/app/id975571447",
+   "site": "https://www.rever.co"
+  }
  ],
  "baslik": "Motosiklet navigasyon uygulamaları karşılaştırma",
- "aciklama": "MotoAtlas, calimoto, Kurviger, Scenic, REVER ve Motoseyir: 12 açık kriterle puanlama, TL fiyatlar ve Türkiye App Store puanları, 24 Kasım 2026 itibarıyla.",
- "h1": "Motosiklet navigasyon uygulamaları karşılaştırma: altı uygulama, puanlı ve fiyatlı",
+ "aciklama": "calimoto, Kurviger, Scenic, REVER ve Motoseyir: 12 açık kriterle puanlama, TL fiyatlar ve Türkiye App Store kullanıcı puanları, 24 Kasım 2026 itibarıyla.",
+ "h1": "Motosiklet navigasyon uygulamaları karşılaştırma: beş uygulama, puanlı ve fiyatlı",
  "eyebrow": "Karşılaştırma · 24 Kasım 2026",
- "lead": "Buradaki uygulamaların hepsi iPhone ve Android'de motosiklet rotası planlıyor. Altısını ağırlıkları açık on iki kriterle puanladık; yalnız geliştiricinin kendi App Store sayfasında ya da sitesinde yazanı kullandık, yanına TL fiyatları ve Türkiye App Store puanlarını koyduk.",
+ "lead": "Buradaki uygulamaların hepsi iPhone ve Android'de motosiklet rotası planlıyor. Beşini ağırlıkları açık on iki kriterle puanladık; yalnız geliştiricinin kendi App Store sayfasında ya da sitesinde yazanı kullandık, yanına TL fiyatları ve Türkiye App Store puanlarını koyduk.",
  "tarafsizlik": "Bu sayfayı Motoseyir yayınlıyor, yani tarafsız sayılmaz. Kurallar ve ağırlıklar puanlar toplanmadan önce yazıldı; her bilgi geliştiricinin kendi sayfasına bağlanıyor.",
  "hub_oku": "Puanları ve fiyatları gör",
  "yayin": "2026-11-24",
  "guncelleme": "2026-11-24",
- "ozet": "Altı motosiklet navigasyon uygulaması on iki açık kriterle puanlandı; TL fiyatlar ve App Store puanları da geliştiricilerin kendi sayfalarından.",
+ "ozet": "Beş motosiklet navigasyon uygulaması on iki açık kriterle puanlandı; TL fiyatlar ve App Store puanları da geliştiricilerin kendi sayfalarından.",
  "bolumler": [
-  {"id": "tablo", "h2": "Özellik özellik, puanlarıyla", "icerik": [
-   {"p": "Her hücrede geliştiricinin söylediği ve o kurala göre verilen 0–5 puan yazıyor. Çizgi, özelliğin geliştiricinin App Store sayfasında da sitesinde de geçmediği anlamına geliyor. Bu durumda puan 0 oluyor; özelliği olup anlatmayan bir uygulama bu yüzden olduğundan düşük görünebilir."},
-   {"karsi": "matris"},
-   {"not": "Sütunlar kriter puanımıza göre sıralı. Motoseyir sütunu yalnız kolay bulunsun diye renkli; ona da aynı kurallar uygulanıyor."}
-  ]},
-  {"id": "yontem", "h2": "Nasıl puanladık", "icerik": [
-   {"p": "On iki kriterin her biri sabit bir kurala göre 0, 1, 3 ya da 5 puan alıyor, sonra ağırlıkla çarpılıyor. Ağırlıkların toplamı 100; toplam puan, ağırlık × puan ÷ 5 değerlerinin toplamı. En büyük ağırlık virajlı yol seçiminde, çünkü motorcuların çoğu bir motosiklet uygulamasını bunun için indiriyor."},
-   {"karsi": "kurallar"},
-   {"p": "Fiyat, App Store puanı, Türkçe arayüz ve ücretsiz sürümün kapsamı sayfada duruyor ama puana katılmıyor. Fiyat ülkeye ve kampanyaya göre değişiyor, kullanıcı puanı da başka bir şeyi ölçüyor."},
-   {"p": "Üstte fark çok az: Motoseyir 84, calimoto 83. Kriterleri başka ağırlıkla tartarsan sıra değişir. Senin için virajlı rota, dünya geneli kapsam ve Android Auto öndeyse calimoto ve Kurviger Motoseyir'in önüne geçer."}
-  ]},
-  {"id": "onde-geride", "h2": "Motoseyir nerede önde, nerede geride", "icerik": [
-   {"liste": [
-    "<strong>Önde:</strong> ücretsiz sürümde sınırsız sesli navigasyon; interkomlu grup sürüşü ve AI CoRider sesli asistanı; 36 ülkede 1.638 dağ geçidinin kaydı; yön, uzunluk ve virajlılığa göre dönüşlü tur.",
-    "<strong>Geride:</strong> Android Auto desteği yok; rota yalnız Türkiye, Avrupa ve ABD'de çıkıyor; birkaç viraj seviyesi yerine tek bir köy yolları modu var; hız kamerası uyarısı yalnız Türkiye'de çalışıyor.",
-    "<strong>App Store puanı:</strong> Türkiye'de altı uygulamanın en düşüğü, oy sayısı da az (aşağıda)."
-   ]}
-  ]},
-  {"id": "app-store", "h2": "App Store kullanıcı puanları: bizim puanımız ayrı", "icerik": [
-   {"p": "Tabloda üç ülkenin App Store'undaki ortalama yıldız ve oy sayısı var; 24 Kasım 2026'da Apple'ın herkese açık sorgusundan okundu. Yirmi oyluk 4,8 ile yirmi bin oyluk 4,6 aynı şeyi söylemez, bu yüzden oy sayısı her zaman yıldızın yanında yazıyor."},
-   {"karsi": "magaza"},
-   {"p": "Türkiye App Store'da Motoseyir 21 oyla 3,8'de ve buradaki altı uygulamanın en düşük puanı onun. MotoAtlas 25 oyla 4,6'da, REVER 156 oyla 4,7'de. ABD'de Motoseyir'in tek bir oyu var, Almanya'da henüz hiç yok."}
-  ]},
-  {"id": "fiyat", "h2": "Türkiye App Store fiyatları", "icerik": [
-   {"p": "Altı uygulamanın hepsi ücretsiz indiriliyor; aşağıda her birinin Uygulama İçi Satın Alımlar listesinde gösterdiği planlar var. Hiçbirinde ömür boyu satın alma yok."},
-   {"karsi": "fiyat"}
-  ]},
-  {"id": "kime", "h2": "Hangi uygulama kime uygun", "icerik": [
-   {"kartlar": [
-    {"ikon": "bayrak", "h3": "Türkiye'de sürüyorsan", "p": "Türkçe arayüz Motoseyir, MotoAtlas ve Scenic'te var. Motoseyir Türkiye'deki 726 hız kamerası için uyarıyor ve Türkiye geçitlerini listeliyor; MotoAtlas da Türkiye yolları üzerine kurulu."},
-    {"ikon": "viraj", "h3": "En virajlı yolu istiyorsan", "p": "calimoto, Kurviger ve MotoAtlas A'dan B'ye rotada birden fazla viraj seviyesi sunuyor. Motoseyir varsayılan olarak en kısa mesafeyi hesaplıyor, küçük yollar için tek modu Köy yolları."},
-    {"ikon": "araba", "h3": "Android Auto şartsa", "p": "calimoto, Kurviger ya da Scenic'i seç; üçü de Android Auto desteği yazıyor. Motoseyir'de yalnız iPhone'da Apple CarPlay var."},
-    {"ikon": "cuzdan", "h3": "Navigasyona para vermek istemiyorsan", "p": "Motoseyir sesli navigasyonu üç bölgesinde ücretsiz ve sınırsız veriyor. MotoAtlas'ta Hızlı ve Dengeli rotalarda ücretsiz; diğerlerinde adım adım yön tarifi ücretli planda."},
-    {"ikon": "grup", "h3": "Arkadaşlarınla sürüyorsan", "p": "Motoseyir ve calimoto bütün grubu tek haritada canlı gösteriyor. Motoseyir'de buna internet üzerinden interkom ve AI CoRider sesli asistanı ekleniyor."},
-    {"ikon": "dunya", "h3": "Avrupa ve ABD dışına çıkıyorsan", "p": "calimoto, Kurviger, Scenic ve REVER dünyanın her yerinde çalıştığını yazıyor. Motoseyir rotayı yalnız Türkiye, Avrupa ve ABD'de hesaplıyor."}
-   ]}
-  ]},
-  {"id": "uygulamalar", "h2": "Geliştiriciler kendi uygulamasını nasıl anlatıyor", "icerik": [
-   {"h3": "MotoAtlas"},
-   {"p": "MotoAtlas, Caner Demir'in geliştirdiği bir Türk uygulaması; Türkiye App Store'da ve Google Play'de var, arayüzü Türkçe. Hızlı, Dengeli, Virajlı ve Çok Virajlı rota seçenekleri, mesafeye ya da süreye göre otomatik tur, 3D önizleme, her 35 km'de hava tahmini, Apple CarPlay ve GPX, FIT, TCX, KML içe aktarma sunuyor. Sürüş kaydı ile Hızlı ve Dengeli rotalarda navigasyon ücretsiz; sitesinde canlı grup özelliği olmadığı yazıyor."},
-   {"h3": "calimoto"},
-   {"p": "calimoto GmbH'nin uygulaması. Dört rota profili (Fast, No highway, Winding, Twisty), sekiz yönlü dönüşlü tur planlayıcı, GPX, KML ve ITN içe aktarma ve yatış açısı ölçen sürüş kaydı var. Fiyat sayfasına göre adım adım navigasyon, çevrimdışı harita, Apple CarPlay ve Android Auto, konum paylaşımlı grup sürüşü ve hız kamerası uyarısı Premium'da."},
-   {"h3": "Kurviger"},
-   {"p": "Kurviger'i KURVIGER GmbH yayınlıyor. Planlayıcıda rotanın ne kadar virajlı olacağını ayarlıyorsun; otoyol, ana yol, ücretli yol, feribot ve toprak yolu dışarıda bırakabiliyorsun. Dönüşlü tur ücretsiz sürümde 300 km'ye, Tourer'da 600 km'ye kadar çıkıyor; navigasyon, çevrimdışı harita ve sürüş kaydı Tourer+ içinde. Sitesinde Android Auto ve Apple CarPlay yazıyor."},
-   {"h3": "Scenic"},
-   {"p": "Scenic, Applified Life Ltd.'nin uygulaması. Premium sayfası sesli adım adım navigasyon, çevrimdışı harita, dönüşlü tur, rota içe aktarma ve GPX dışa aktarma, hız ve kırmızı ışık kamerası uyarısı sayıyor; ücretsiz sürümde rota çizgisini takip ediyorsun, Apple CarPlay ve Android Auto aynı sayfada geçiyor."},
-   {"h3": "REVER"},
-   {"p": "REVER'i Rever, LLC yayınlıyor; motosikletin yanında ATV, kar motosikleti ve 4x4'e de hitap ediyor. PRO planında Twisty Routing, adım adım yön tarifi, çevrimdışı harita, GPX dışa aktarma ve canlı konum paylaşımı var; GPX içe aktarma ve rota çizgisiyle navigasyon ücretsiz."},
-   {"h3": "Motoseyir"},
-   {"p": "Motoseyir rotayı dakikaya göre değil mesafeye göre seçiyor ve birden çok durağı en uygun sıraya diziyor. Rota hesaplama ve sesli navigasyon Türkiye, Avrupa ve ABD'de hesap açmadan ücretsiz ve sınırsız. Pro planında Köy yolları ve Sahil modu, dönüşlü tur, çevrimdışı harita, Apple CarPlay, interkomlu grup kurma ve AI CoRider bulunuyor."}
-  ]}
+  {
+   "id": "tablo",
+   "h2": "Özellik özellik, puanlarıyla",
+   "icerik": [
+    {
+     "p": "Her hücrede geliştiricinin söylediği ve o kurala göre verilen 0–5 puan yazıyor. Çizgi, özelliğin geliştiricinin App Store sayfasında da sitesinde de geçmediği anlamına geliyor. Bu durumda puan 0 oluyor; özelliği olup anlatmayan bir uygulama bu yüzden olduğundan düşük görünebilir."
+    },
+    {
+     "karsi": "matris"
+    },
+    {
+     "not": "Sütunlar kriter puanımıza göre sıralı. Motoseyir sütunu yalnız kolay bulunsun diye renkli; ona da aynı kurallar uygulanıyor."
+    }
+   ]
+  },
+  {
+   "id": "yontem",
+   "h2": "Nasıl puanladık",
+   "icerik": [
+    {
+     "p": "On iki kriterin her biri sabit bir kurala göre 0, 1, 3 ya da 5 puan alıyor, sonra ağırlıkla çarpılıyor. Ağırlıkların toplamı 100 ediyor; toplam puan da ağırlık × puan ÷ 5 değerleri toplanarak bulunuyor. En büyük ağırlık virajlı yol seçiminde, çünkü motorcuların çoğu bir motosiklet uygulamasını bunun için indiriyor."
+    },
+    {
+     "karsi": "kurallar"
+    },
+    {
+     "p": "Fiyat, App Store puanı, Türkçe arayüz ve ücretsiz sürümün kapsamı sayfada duruyor ama puana katılmıyor. Fiyat ülkeye ve kampanyaya göre değişiyor, kullanıcı puanı da başka bir şeyi ölçüyor."
+    },
+    {
+     "p": "Motoseyir 88 puanla önde, calimoto 83 puanla ikinci sırada geliyor. Kriterleri başka ağırlıkla tartarsan sıra değişir. Senin için virajlı rota ve Android Auto öndeyse calimoto ve Kurviger Motoseyir'in önüne geçer."
+    }
+   ]
+  },
+  {
+   "id": "onde-geride",
+   "h2": "Motoseyir nerede önde, nerede geride",
+   "icerik": [
+    {
+     "liste": [
+      "<strong>Önde:</strong> ücretsiz sürümde sınırsız sesli navigasyon; interkomlu grup sürüşü ve AI CoRider sesli asistanı; 36 ülkede 1.638 dağ geçidinin kaydı; yön, uzunluk ve virajlılığa göre dönüşlü tur.",
+      "<strong>Geride:</strong> Android Auto desteği yok; Türkiye, Avrupa ve ABD dışında rota ve navigasyon için Pro gerekiyor; birkaç viraj seviyesi yerine tek bir köy yolları modu var; hız kamerası uyarısı yalnız Türkiye'de çalışıyor.",
+      "<strong>App Store puanı:</strong> Türkiye'de beş uygulamanın en düşüğü, oy sayısı da az (aşağıda)."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "app-store",
+   "h2": "App Store kullanıcı puanları: bizim puanımız ayrı",
+   "icerik": [
+    {
+     "p": "Tabloda üç ülkenin App Store'undaki ortalama yıldız ve oy sayısı var; 24 Kasım 2026'da Apple'ın herkese açık sorgusundan okundu. Yirmi oyluk 4,8 ile yirmi bin oyluk 4,6 aynı şeyi söylemez, bu yüzden oy sayısı her zaman yıldızın yanında yazıyor."
+    },
+    {
+     "karsi": "magaza"
+    },
+    {
+     "p": "Türkiye App Store'da Motoseyir 21 oyla 3,8'de ve buradaki beş uygulamanın en düşük puanı onun. REVER 156 oyla 4,7, Scenic 63 oyla 4,8 puanda duruyor. ABD'de Motoseyir'in tek bir oyu var, Almanya'da henüz hiç yok."
+    }
+   ]
+  },
+  {
+   "id": "fiyat",
+   "h2": "Türkiye App Store fiyatları",
+   "icerik": [
+    {
+     "p": "Beş uygulamanın hepsi ücretsiz indiriliyor; aşağıda her birinin Uygulama İçi Satın Alımlar listesinde gösterdiği planlar var. Hiçbirinde ömür boyu satın alma yok."
+    },
+    {
+     "karsi": "fiyat"
+    }
+   ]
+  },
+  {
+   "id": "kime",
+   "h2": "Hangi uygulama kime uygun",
+   "icerik": [
+    {
+     "kartlar": [
+      {
+       "ikon": "bayrak",
+       "h3": "Türkiye'de sürüyorsan",
+       "p": "Türkçe arayüz Motoseyir ve Scenic'te var. Motoseyir Türkiye'deki 726 hız kamerası için uyarıyor, Türkiye geçitlerini de listeliyor."
+      },
+      {
+       "ikon": "viraj",
+       "h3": "En virajlı yolu istiyorsan",
+       "p": "calimoto ve Kurviger A'dan B'ye rotada birden fazla viraj seviyesi sunuyor. Motoseyir varsayılan olarak en kısa mesafeyi hesaplıyor, küçük yollar için tek modu Köy yolları."
+      },
+      {
+       "ikon": "araba",
+       "h3": "Android Auto şartsa",
+       "p": "calimoto, Kurviger ya da Scenic'i seç; üçü de Android Auto desteği yazıyor. Motoseyir'de yalnız iPhone'da Apple CarPlay var."
+      },
+      {
+       "ikon": "cuzdan",
+       "h3": "Navigasyona para vermek istemiyorsan",
+       "p": "Motoseyir sesli navigasyonu üç bölgesinde ücretsiz ve sınırsız veriyor. Diğer dördünde adım adım yön tarifi ücretli planda."
+      },
+      {
+       "ikon": "grup",
+       "h3": "Arkadaşlarınla sürüyorsan",
+       "p": "Motoseyir ve calimoto bütün grubu tek haritada canlı gösteriyor. Motoseyir'de buna internet üzerinden interkom ve AI CoRider sesli asistanı ekleniyor."
+      },
+      {
+       "ikon": "dunya",
+       "h3": "Uzaklara gidiyorsan",
+       "p": "Beş uygulama da dünyanın her yerinde rota çiziyor. Motoseyir'de rota ve navigasyon Türkiye, Avrupa ve ABD'de ücretsiz, başka ülkelerde Pro'ya dahil."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "uygulamalar",
+   "h2": "Geliştiriciler kendi uygulamasını nasıl anlatıyor",
+   "icerik": [
+    {
+     "h3": "calimoto"
+    },
+    {
+     "p": "calimoto GmbH'nin uygulaması. Dört rota profili (Fast, No highway, Winding, Twisty), sekiz yönlü dönüşlü tur planlayıcı, GPX, KML ve ITN içe aktarma ve yatış açısı ölçen sürüş kaydı var. Fiyat sayfasına göre adım adım navigasyon, çevrimdışı harita, Apple CarPlay ve Android Auto, konum paylaşımlı grup sürüşü ve hız kamerası uyarısı Premium'da."
+    },
+    {
+     "h3": "Kurviger"
+    },
+    {
+     "p": "Kurviger'i KURVIGER GmbH yayınlıyor. Planlayıcıda rotanın ne kadar virajlı olacağını ayarlıyorsun; otoyol, ana yol, ücretli yol, feribot ve toprak yolu dışarıda bırakabiliyorsun. Dönüşlü tur ücretsiz sürümde 300 km'ye, Tourer'da 600 km'ye kadar çıkıyor; navigasyon, çevrimdışı harita ve sürüş kaydı Tourer+ içinde. Sitesinde Android Auto ve Apple CarPlay yazıyor."
+    },
+    {
+     "h3": "Scenic"
+    },
+    {
+     "p": "Scenic, Applified Life Ltd.'nin uygulaması. Premium sayfası sesli adım adım navigasyon, çevrimdışı harita, dönüşlü tur, rota içe aktarma ve GPX dışa aktarma, hız ve kırmızı ışık kamerası uyarısı sayıyor; ücretsiz sürümde rota çizgisini takip ediyorsun, Apple CarPlay ve Android Auto aynı sayfada geçiyor."
+    },
+    {
+     "h3": "REVER"
+    },
+    {
+     "p": "REVER'i Rever, LLC yayınlıyor; motosikletin yanında ATV, kar motosikleti ve 4x4'e de hitap ediyor. PRO planında Twisty Routing, adım adım yön tarifi, çevrimdışı harita, GPX dışa aktarma ve canlı konum paylaşımı var; GPX içe aktarma ve rota çizgisiyle navigasyon ücretsiz."
+    },
+    {
+     "h3": "Motoseyir"
+    },
+    {
+     "p": "Motoseyir rotayı dakikaya göre değil mesafeye göre seçiyor ve birden çok durağı en uygun sıraya diziyor. Rota hesaplama ve sesli navigasyon Türkiye, Avrupa ve ABD'de hesap açmadan ücretsiz ve sınırsız. Pro planında Köy yolları ve Sahil modu, dönüşlü tur, çevrimdışı harita, Apple CarPlay, interkomlu grup kurma ve AI CoRider bulunuyor."
+    }
+   ]
+  }
  ],
  "sss": [
-  {"s": "En iyi motosiklet navigasyon uygulaması hangisi?", "c": "Kullanımına bağlı. Bizim on iki kriterimizde Motoseyir 84 puanla calimoto'nun (83) az önünde; dünya genelinde virajlı rota ve Android Auto istiyorsan calimoto ya da Kurviger daha uygun."},
-  {"s": "Uygulamaları nasıl puanladınız?", "c": "On iki kriterin her biri yayımlanan bir kurala göre 0, 1, 3 ya da 5 puan aldı ve ağırlıklarla 100 üzerinden toplandı. Yalnız geliştiricinin kendi App Store sayfasında ya da sitesinde yazan sayıldı; geçmeyen özellik 0 aldı."},
-  {"s": "MotoAtlas nedir?", "c": "Caner Demir'in geliştirdiği, virajlı rota seçenekleri, otomatik tur ve yol boyu hava tahmini sunan Türk motosiklet rota uygulaması. Türkiye App Store'da ve Google Play'de var; Pro üyeliği aylık ₺119, yıllık ₺899."},
-  {"s": "Motoseyir ücretsiz mi?", "c": "Rota hesaplama ve sesli navigasyon Türkiye, Avrupa ve ABD'de hesap açmadan ücretsiz ve sınırsız. Dönüşlü tur, çevrimdışı harita, CarPlay, grup kurma ve AI CoRider Pro'da; Türkiye App Store'da aylık ₺149,99, yıllık ₺1.099,99."},
-  {"s": "Motoseyir Android Auto destekliyor mu?", "c": "Hayır. Motoseyir Android telefonlarda çalışıyor ama araç ekranı desteği yalnız iPhone'da Apple CarPlay ile var."}
+  {
+   "s": "En iyi motosiklet navigasyon uygulaması hangisi?",
+   "c": "Kullanımına bağlı. Bizim on iki kriterimizde Motoseyir 88 puanla calimoto'nun (83) önünde; virajlı rota ve Android Auto istiyorsan calimoto ya da Kurviger daha uygun."
+  },
+  {
+   "s": "Uygulamaları nasıl puanladınız?",
+   "c": "On iki kriterin her biri yayımlanan bir kurala göre 0, 1, 3 ya da 5 puan aldı ve ağırlıklarla 100 üzerinden toplandı. Yalnız geliştiricinin kendi App Store sayfasında ya da sitesinde yazan sayıldı; geçmeyen özellik 0 aldı."
+  },
+  {
+   "s": "Motoseyir ücretsiz mi?",
+   "c": "Rota hesaplama ve sesli navigasyon Türkiye, Avrupa ve ABD'de hesap açmadan ücretsiz ve sınırsız. Dönüşlü tur, çevrimdışı harita, CarPlay, grup kurma ve AI CoRider Pro'da; Türkiye App Store'da aylık ₺149,99, yıllık ₺1.099,99."
+  },
+  {
+   "s": "Motoseyir Android Auto destekliyor mu?",
+   "c": "Hayır. Motoseyir Android telefonlarda çalışıyor ama araç ekranı desteği yalnız iPhone'da Apple CarPlay ile var."
+  }
  ],
  "kaynaklar": [
-  {"ad": "MotoAtlas, Türkiye App Store (Caner Demir)", "url": "https://apps.apple.com/tr/app/motoatlas-motosiklet-rota/id6798015161"},
-  {"ad": "MotoAtlas sitesi", "url": "https://motoatlas.app/"},
-  {"ad": "MotoAtlas uygulama ve üyelik sayfası", "url": "https://motoatlas.app/uygulama"},
-  {"ad": "calimoto, Türkiye App Store (calimoto GmbH)", "url": "https://apps.apple.com/tr/app/id1209129603"},
-  {"ad": "calimoto sitesi", "url": "https://calimoto.com/en"},
-  {"ad": "calimoto fiyat ve özellik tablosu", "url": "https://calimoto.com/en/pricing"},
-  {"ad": "Kurviger, Türkiye App Store (KURVIGER GmbH)", "url": "https://apps.apple.com/tr/app/id6473445827"},
-  {"ad": "Kurviger sitesi", "url": "https://kurviger.com/en"},
-  {"ad": "Kurviger özellikleri", "url": "https://kurviger.com/en/features"},
-  {"ad": "Kurviger Tourer ve Tourer+", "url": "https://kurviger.com/en/premium"},
-  {"ad": "Scenic, Türkiye App Store (Applified Life Ltd.)", "url": "https://apps.apple.com/tr/app/id1089668246"},
-  {"ad": "Scenic sitesi", "url": "https://scenic.app"},
-  {"ad": "Scenic Premium", "url": "https://scenic.app/premium"},
-  {"ad": "REVER, Türkiye App Store (Rever, LLC)", "url": "https://apps.apple.com/tr/app/id975571447"},
-  {"ad": "REVER sitesi", "url": "https://www.rever.co"},
-  {"ad": "REVER PRO", "url": "https://www.rever.co/pro"},
-  {"ad": "App Store puanları: Apple iTunes Lookup API (Türkiye vitrini)", "url": "https://itunes.apple.com/lookup?id=6792549131,1209129603,6473445827,1089668246,975571447,6798015161&country=tr"},
-  {"ad": "Motoseyir özellikleri", "url": "https://motoseyir-app.com/ozellikler.html"},
-  {"ad": "Motoseyir, App Store", "url": "https://apps.apple.com/tr/app/id6792549131"},
-  {"ad": "Motoseyir, Google Play", "url": "https://play.google.com/store/apps/details?id=com.batuhanengin.motorota"}
+  {
+   "ad": "calimoto, Türkiye App Store (calimoto GmbH)",
+   "url": "https://apps.apple.com/tr/app/id1209129603"
+  },
+  {
+   "ad": "calimoto sitesi",
+   "url": "https://calimoto.com/en"
+  },
+  {
+   "ad": "calimoto fiyat ve özellik tablosu",
+   "url": "https://calimoto.com/en/pricing"
+  },
+  {
+   "ad": "Kurviger, Türkiye App Store (KURVIGER GmbH)",
+   "url": "https://apps.apple.com/tr/app/id6473445827"
+  },
+  {
+   "ad": "Kurviger sitesi",
+   "url": "https://kurviger.com/en"
+  },
+  {
+   "ad": "Kurviger özellikleri",
+   "url": "https://kurviger.com/en/features"
+  },
+  {
+   "ad": "Kurviger Tourer ve Tourer+",
+   "url": "https://kurviger.com/en/premium"
+  },
+  {
+   "ad": "Scenic, Türkiye App Store (Applified Life Ltd.)",
+   "url": "https://apps.apple.com/tr/app/id1089668246"
+  },
+  {
+   "ad": "Scenic sitesi",
+   "url": "https://scenic.app"
+  },
+  {
+   "ad": "Scenic Premium",
+   "url": "https://scenic.app/premium"
+  },
+  {
+   "ad": "REVER, Türkiye App Store (Rever, LLC)",
+   "url": "https://apps.apple.com/tr/app/id975571447"
+  },
+  {
+   "ad": "REVER sitesi",
+   "url": "https://www.rever.co"
+  },
+  {
+   "ad": "REVER PRO",
+   "url": "https://www.rever.co/pro"
+  },
+  {
+   "ad": "App Store puanları: Apple iTunes Lookup API (Türkiye vitrini)",
+   "url": "https://itunes.apple.com/lookup?id=6792549131,1209129603,6473445827,1089668246,975571447&country=tr"
+  },
+  {
+   "ad": "Motoseyir özellikleri",
+   "url": "https://motoseyir-app.com/ozellikler.html"
+  },
+  {
+   "ad": "Motoseyir, App Store",
+   "url": "https://apps.apple.com/tr/app/id6792549131"
+  },
+  {
+   "ad": "Motoseyir, Google Play",
+   "url": "https://play.google.com/store/apps/details?id=com.batuhanengin.motorota"
+  }
  ],
  "urun": {
   "h2": "Sıradaki turunu Motoseyir'de çiz",
-  "p": ["Başlangıcı ve bitişi seçiyorsun, durakları arama kutusundan ya da haritaya uzun basarak ekliyorsun; Motoseyir en kısa sırayı kendisi buluyor. Sesli navigasyon Türkiye, Avrupa ve ABD'de hesap açmadan ücretsiz ve sınırsız."],
+  "p": [
+   "Başlangıcı ve bitişi seçiyorsun, durakları arama kutusundan ya da haritaya uzun basarak ekliyorsun; Motoseyir en kısa sırayı kendisi buluyor. Sesli navigasyon Türkiye, Avrupa ve ABD'de hesap açmadan ücretsiz ve sınırsız."
+  ],
   "ikincil": "Fikir lazımsa Efsane sekmesindeki hazır rotaları turlarına kopyalayıp değiştirebilirsin.",
-  "gorseller": ["nav", "grup"],
-  "gorsel_altlar": ["Motoseyir navigasyonunda sıradaki dönüş, kalan mesafe ve varış saati", "Motoseyir grup sürüşünde haritadaki sürücüler"]
+  "gorseller": [
+   "nav",
+   "grup"
+  ],
+  "gorsel_altlar": [
+   "Motoseyir navigasyonunda sıradaki dönüş, kalan mesafe ve varış saati",
+   "Motoseyir grup sürüşünde haritadaki sürücüler"
+  ]
  }
 }

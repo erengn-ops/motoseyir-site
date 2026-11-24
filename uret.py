@@ -1435,8 +1435,8 @@ def r_tablo(t: dict, ui: dict) -> str:
 
 
 # ---------------------------------------------------------------------------------------------------------------------
-# KARŞILAŞTIRMA SAYFALARI (24 Kas 2026; kullanıcı: "gerçekten detaylı bi kıyaslama ve puanlama … fiyat da koyalım … motoatlas'ı da
-# koyalım"). Ortak veri `veri/karsilastirma.json` (uygulamalar, kriterler + ağırlık + 0–5 kuralı, hücreler, fiyat, App Store puanı).
+# KARŞILAŞTIRMA SAYFALARI (24 Kas 2026; kullanıcı: "gerçekten detaylı bi kıyaslama ve puanlama … fiyat da koyalım").
+# Ortak veri `veri/karsilastirma.json` (uygulamalar, kriterler + ağırlık + 0–5 kuralı, hücreler, fiyat, App Store puanı).
 # Yazı JSON'unda `{"karsi": "<parca>"}` blokları: puan_kartlari (kahramanda), matris, kurallar, magaza, fiyat. `{"kartlar": [...]}`
 # simgeli kart ızgarası (her yazıda kullanılabilir). Toplam = Σ ağırlık × puan / 5; sıralama toplam puana göre (eşitlikte veri sırası).
 # KURAL: toplam puan ve App Store puanı JSON-LD'ye YAZILMAZ (öz-puan şeması Google kurallarına aykırı); yalnız düz HTML.
@@ -1710,9 +1710,9 @@ def r_makale_govde(kod: str, grup: str, v: dict, ui: dict, metin: dict) -> str:
 # Rehber ana sayfasında en üstte öne çıkan karşılaştırma kartı (24 Kas 2026, kullanıcı: "guides'ta en üste koyalım"). O dilde
 # karşılaştırma yazısı yoksa İngilizce yazıya bağlanır; kart metni o dilde (aşağıdaki sözlük), hedefin dili "(English)" diye belirtilir.
 HUB_KARSI_YEDEK = {
-    "fr": ("Comparatif", "Applications de navigation moto comparées", "Six applications notées sur douze critères publiés, avec leurs prix et leurs notes App Store.", "Lire le comparatif (en anglais)"),
-    "it": ("Confronto", "App di navigazione per moto a confronto", "Sei app valutate su dodici criteri pubblicati, con prezzi e voti dell'App Store.", "Leggi il confronto (in inglese)"),
-    "es": ("Comparativa", "Apps de navegación para moto comparadas", "Seis apps puntuadas en doce criterios publicados, con precios y valoraciones del App Store.", "Leer la comparativa (en inglés)"),
+    "fr": ("Comparatif", "Applications de navigation moto comparées", "Cinq applications notées sur douze critères publiés, avec leurs prix et leurs notes App Store.", "Lire le comparatif (en anglais)"),
+    "it": ("Confronto", "App di navigazione per moto a confronto", "Cinque app valutate su dodici criteri pubblicati, con prezzi e voti dell'App Store.", "Leggi il confronto (in inglese)"),
+    "es": ("Comparativa", "Apps de navegación para moto comparadas", "Cinco apps puntuadas en doce criterios publicados, con precios y valoraciones del App Store.", "Leer la comparativa (en inglés)"),
 }
 
 

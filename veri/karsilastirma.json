@@ -401,42 +401,6 @@
     "de": "",
     "tr": ""
    }
-  },
-  {
-   "id": "motoatlas",
-   "ad": "MotoAtlas",
-   "gelistirici": "Caner Demir",
-   "magaza": {
-    "tr": "https://apps.apple.com/tr/app/motoatlas-motosiklet-rota/id6798015161"
-   },
-   "site": "https://motoatlas.app/",
-   "puan": {
-    "tr": [
-     4.55999,
-     25
-    ]
-   },
-   "fiyat": {
-    "tr": [
-     [
-      "hafta",
-      "₺50,00"
-     ],
-     [
-      "ay",
-      "₺119,00"
-     ],
-     [
-      "yil",
-      "₺899,00"
-     ]
-    ]
-   },
-   "fiyat_not": {
-    "en": "Only on the Turkish App Store (checked 24 Nov 2026).",
-    "de": "Nur im türkischen App Store (Stand 24. Nov. 2026).",
-    "tr": "Sitesine göre yıllık üyelik ilk yıl ₺699, sonraki yıllar ₺899."
-   }
   }
  ],
  "kriterler": [
@@ -689,11 +653,11 @@
     "tr": "36 ülkede 1.638 geçit"
    },
    "kapsam": {
-    "p": 3,
-    "d": "k",
-    "en": "Türkiye, Europe and the USA",
-    "de": "Türkei, Europa und USA",
-    "tr": "Türkiye, Avrupa ve ABD"
+    "p": 5,
+    "d": "v",
+    "en": "Worldwide (free in Türkiye, Europe and the USA; Pro elsewhere)",
+    "de": "Weltweit (gratis in der Türkei, Europa und den USA; sonst Pro)",
+    "tr": "Dünya geneli (Türkiye, Avrupa ve ABD'de ücretsiz; başka yerde Pro)"
    }
   },
   "calimoto": {
@@ -1039,92 +1003,6 @@
     "de": "Überall auf der Welt",
     "tr": "Dünyanın her yerinde"
    }
-  },
-  "motoatlas": {
-   "yol": {
-    "p": 5,
-    "d": "v",
-    "en": "Curvy and Very curvy (Pro)",
-    "de": "Kurvig und Sehr kurvig (Pro)",
-    "tr": "Virajlı ve Çok Virajlı (Pro)"
-   },
-   "otoyol": {
-    "p": 3,
-    "d": "k",
-    "en": "Very curvy skips motorways; no separate option",
-    "de": "Sehr kurvig lässt Autobahnen aus; keine eigene Option",
-    "tr": "Çok Virajlı otoyolu atlar; ayrı seçenek yok"
-   },
-   "tur": {
-    "p": 3,
-    "d": "k",
-    "en": "Distance or time (Pro)",
-    "de": "Distanz oder Dauer (Pro)",
-    "tr": "Mesafe ya da süre (Pro)"
-   },
-   "nav": {
-    "p": 3,
-    "d": "k",
-    "en": "Free on Fast and Balanced routes",
-    "de": "Gratis auf schnellen und ausgewogenen Routen",
-    "tr": "Hızlı ve Dengeli rotalarda ücretsiz"
-   },
-   "offline": {
-    "p": 0,
-    "d": "b",
-    "en": "Not stated",
-    "de": "Keine Angabe",
-    "tr": "Belirtilmemiş"
-   },
-   "arac": {
-    "p": 3,
-    "d": "k",
-    "en": "CarPlay; Android Auto not stated",
-    "de": "CarPlay; Android Auto keine Angabe",
-    "tr": "CarPlay; Android Auto belirtilmemiş"
-   },
-   "gpx": {
-    "p": 5,
-    "d": "v",
-    "en": "GPX/FIT/TCX/KML in (web), GPX out",
-    "de": "GPX/FIT/TCX/KML rein (Web), GPX raus",
-    "tr": "GPX/FIT/TCX/KML içe (web), GPX dışa"
-   },
-   "grup": {
-    "p": 0,
-    "d": "x",
-    "en": "No live group (its site); shared 4-digit ride code",
-    "de": "Keine Live-Gruppe (laut Website); 4-stelliger Fahrtcode",
-    "tr": "Canlı grup yok (sitesine göre); 4 haneli ortak sürüş kodu"
-   },
-   "ses": {
-    "p": 0,
-    "d": "b",
-    "en": "Not stated",
-    "de": "Keine Angabe",
-    "tr": "Belirtilmemiş"
-   },
-   "kamera": {
-    "p": 0,
-    "d": "b",
-    "en": "Not stated",
-    "de": "Keine Angabe",
-    "tr": "Belirtilmemiş"
-   },
-   "gecit": {
-    "p": 0,
-    "d": "b",
-    "en": "Not stated",
-    "de": "Keine Angabe",
-    "tr": "Belirtilmemiş"
-   },
-   "kapsam": {
-    "p": 0,
-    "d": "b",
-    "en": "Not stated; its site focuses on Türkiye",
-    "de": "Keine Angabe; Website zeigt die Türkei",
-    "tr": "Belirtilmemiş; sitesi Türkiye'yi anlatıyor"
-   }
   }
  },
  "bilgi": [
@@ -1165,12 +1043,6 @@
      "en": "No (6 languages)",
      "de": "Nein (6 Sprachen)",
      "tr": "Yok (6 dil)"
-    },
-    "motoatlas": {
-     "d": "v",
-     "en": "Yes (its site)",
-     "de": "Ja (laut Website)",
-     "tr": "Var (sitesine göre)"
     }
    }
   },
@@ -1211,12 +1083,6 @@
      "en": "Route line navigation, GPX import, communities",
      "de": "Navigation entlang der Linie, GPX-Import, Communities",
      "tr": "Rota çizgisiyle navigasyon, GPX içe aktarma, topluluklar"
-    },
-    "motoatlas": {
-     "d": "k",
-     "en": "Ride recording, Fast and Balanced routes with navigation",
-     "de": "Fahrtaufzeichnung, schnelle und ausgewogene Routen mit Navigation",
-     "tr": "Sürüş kaydı, navigasyonlu Hızlı ve Dengeli rotalar"
     }
    }
   }
