@@ -1227,13 +1227,22 @@ def webp_boyut(yol: Path):
     raise SystemExit(f"HATA: webp boyutu okunamadı: {yol}")
 
 
-def rehber_jetonlari_coz(deger, kod: str, nerede: str):
+def rehber_magaza(kod: str, v: dict | None = None) -> str:
+    """Rehber yazısının App Store bağlantısı: `ct=site-<kod>-rehber`; yazı `magaza_etiket` taşıyorsa `ct=<magaza_etiket>`
+    (24 Kas 2026: karşılaştırma sayfaları `seo-compare-<dil>`). `pt` her durumda bağlantıda kalır."""
+    etiket = (v or {}).get("magaza_etiket")
+    if not etiket:
+        return magaza_baglantisi(kod, REHBER_ETIKET)
+    return magaza_baglantisi(kod, "").replace(f"ct=site-{kod}&amp;", f"ct={etiket}&amp;")
+
+
+def rehber_jetonlari_coz(deger, kod: str, nerede: str, magaza: str | None = None):
     """Metin içindeki {@...} yer tutucularını (özyinelemeli) bu dilin adresleriyle değiştirir."""
     _, makale = rehber_veri()
     if isinstance(deger, dict):
-        return {a: rehber_jetonlari_coz(b, kod, nerede) for a, b in deger.items()}
+        return {a: rehber_jetonlari_coz(b, kod, nerede, magaza) for a, b in deger.items()}
     if isinstance(deger, list):
-        return [rehber_jetonlari_coz(b, kod, nerede) for b in deger]
+        return [rehber_jetonlari_coz(b, kod, nerede, magaza) for b in deger]
     if not isinstance(deger, str):
         return deger
 
@@ -1241,7 +1250,7 @@ def rehber_jetonlari_coz(deger, kod: str, nerede: str):
         a = m.group(1)
         sabit = {"hub": rehber_hub_yolu(kod), "anasayfa": sayfa_yolu(kod, "index.html"),
                  "ozellikler": sayfa_yolu(kod, "ozellikler.html"), "nasil": sayfa_yolu(kod, "nasil-yapilir.html"),
-                 "corider": sayfa_yolu(kod, "corider.html"), "store": magaza_baglantisi(kod, REHBER_ETIKET)}
+                 "corider": sayfa_yolu(kod, "corider.html"), "store": magaza or magaza_baglantisi(kod, REHBER_ETIKET)}
         if kod in arac_veri():
             sabit["arac"] = arac_yol(kod)
         if kod in GECIT_KAPSAM:
@@ -1306,14 +1315,14 @@ def guncel_satir(kod: str, v: dict) -> str:
     return f'<p class="tur-nasil rehber-meta">{ui["guncelleme"]}: <time datetime="{v["guncelleme"]}">{r_tarih(v["guncelleme"], ui)}</time></p>'
 
 
-def r_urun(urun: dict, kod: str, metin: dict) -> str:
+def r_urun(urun: dict, kod: str, metin: dict, magaza: str | None = None) -> str:
     """Motoseyir bloğu: rolü 'kendi turunu çiz'; hazır rotalar yalnız `ikincil` cümlede (konumlandırma kuralı)."""
     govde = f'<h2>{urun["h2"]}</h2>\n' + "".join(f"<p>{p}</p>\n" for p in urun["p"])
     if urun.get("adimlar"):
         govde += r_liste(urun["adimlar"], True) + "\n"
     if urun.get("ikincil"):
         govde += f'<p class="kucuk">{urun["ikincil"]}</p>\n'
-    govde += f'<p class="magaza-dugmeleri">{magaza_dugmeleri(magaza_baglantisi(kod, REHBER_ETIKET), kod, metin, "btn btn-primary")}</p>\n'
+    govde += f'<p class="magaza-dugmeleri">{magaza_dugmeleri(magaza or magaza_baglantisi(kod, REHBER_ETIKET), kod, metin, "btn btn-primary")}</p>\n'
     gorsel = ""
     if urun.get("gorsel"):
         ad = urun["gorsel"]
@@ -1353,7 +1362,7 @@ def r_makale_govde(kod: str, grup: str, v: dict, ui: dict, metin: dict) -> str:
         parca.append(icindekiler)
     for b in bolumler:
         parca.append(f'<section id="{b["id"]}" class="rehber-bolum"><h2>{b["h2"]}</h2>\n{r_bloklar(b["icerik"], ui)}</section>')
-    parca.append(r_urun(v["urun"], kod, metin))
+    parca.append(r_urun(v["urun"], kod, metin, rehber_magaza(kod, v)))
     if v["sss"]:
         parca.append(f'<section id="sss" class="rehber-bolum"><h2>{ui["sss"]}</h2><ul class="rehber-sss-liste">'
                      + "".join(f"<li><h3>{s['s']}</h3><p>{s['c']}</p></li>" for s in v["sss"]) + "</ul></section>")
@@ -1435,6 +1444,17 @@ def rehber_json_ld(kod: str, grup: str, v: dict, ui: dict, metin: dict, baslik: 
                      "inLanguage": lang, "datePublished": v["yayin"], "dateModified": v["guncelleme"],
                      "author": {"@id": f"{ALAN}/#organization"}, "publisher": {"@id": f"{ALAN}/#organization"},
                      "mainEntityOfPage": {"@id": f"{url}#sayfa"}, "image": SOSYAL_GORSEL})
+        if v.get("karsilastirma"):
+            # Karşılaştırma sayfası (24 Kas 2026): Motoseyir'in MobileApplication düğümü + karşılaştırılan uygulamalar ItemList
+            # olarak (ad, kendi App Store sayfası, kendi sitesi). Puan/yorum YOK; olgular görünür tablodan ve kaynaklardan.
+            graf.append(uygulama_dugumu(kod, rehber_magaza(kod, v)))
+            ogeler2 = [{"@type": "ListItem", "position": 1, "item": {"@id": f"{ALAN}/#uygulama"}}]
+            for i, r in enumerate(v["rakipler"]):
+                ogeler2.append({"@type": "ListItem", "position": i + 2, "item": {
+                    "@type": "MobileApplication", "name": r["ad"], "url": r["url"], "sameAs": r["site"],
+                    "applicationCategory": "NavigationApplication", "operatingSystem": "iOS, Android"}})
+            graf.append({"@type": "ItemList", "@id": f"{url}#karsilastirma", "name": duz(v["h1"]), "itemListElement": ogeler2})
+            sayfa["about"] = {"@id": f"{url}#karsilastirma"}
         if v["sss"]:
             graf.append({"@type": "FAQPage", "@id": f"{url}#sss", "inLanguage": lang, "mainEntity": [
                 {"@type": "Question", "name": duz(s["s"]), "acceptedAnswer": {"@type": "Answer", "text": duz(s["c"])}} for s in v["sss"]]})
@@ -1452,7 +1472,7 @@ def rehber_yaz() -> int:
     for grup, kod, v0 in sayfalar:
         d = dil_bilgisi(kod)
         metin = json.loads((DIL / f"{kod}.json").read_text(encoding="utf-8"))
-        v = rehber_jetonlari_coz(v0, kod, f"icerik/{grup}.{kod}.json")
+        v = rehber_jetonlari_coz(v0, kod, f"icerik/{grup}.{kod}.json", rehber_magaza(kod, v0))
         ui = rehber_jetonlari_coz(hub[kod]["ui"], kod, f"icerik/hub.{kod}.json")
         yol = rehber_yol(kod, grup)
         url = f"{ALAN}{yol}"
@@ -1470,7 +1490,7 @@ def rehber_yaz() -> int:
             "json_ld": rehber_json_ld(kod, grup, v, ui, metin, baslik_tam, aciklama, url),
             "dil_secici": dil_secici(kod, "", metin, rehber_dil_yolu(grup)),
             "dil_altbilgi": dil_altbilgi(kod, "", rehber_dil_yolu(grup)),
-            "store": magaza_baglantisi(kod, REHBER_ETIKET), "gizlilik_url": gizlilik_url(kod),
+            "store": rehber_magaza(kod, v), "gizlilik_url": gizlilik_url(kod),
             "impressum_url": impressum_url(kod), "anasayfa_url": sayfa_yolu(kod, "index.html"),
             "corider_url": sayfa_yolu(kod, "corider.html"), "ozellikler_url": sayfa_yolu(kod, "ozellikler.html"),
             "nasil_url": sayfa_yolu(kod, "nasil-yapilir.html"), "hub_url": rehber_hub_yolu(kod),
@@ -2484,6 +2504,12 @@ def llms_txt() -> str:
     for grup, m in sorted(makale.items(), key=lambda x: x[1].get("en", {}).get("sira", 99)):
         if "en" in m:
             sat.append(f"- [{k(m['en']['h1'])}]({ALAN}{rehber_yol('en', grup)}): {k(m['en']['aciklama'])} Updated {m['en']['guncelleme']}.")
+    karsi = [(kk, grup, m[kk]) for grup, m in makale.items() for kk in m if m[kk].get("karsilastirma")]
+    if karsi:
+        # 24 Kas 2026 (GEO): karşılaştırma sayfaları — yalnız üreticilerin kendi App Store sayfası ve sitesindeki olgular.
+        sat += ["", "## App comparisons", ""]
+        for kk, grup, y in sorted(karsi, key=lambda x: (x[0] != "en", x[0])):
+            sat.append(f"- [{k(y['h1'])}]({ALAN}{rehber_yol(kk, grup)}) ({dil_bilgisi(kk)['ad']}): {k(y['aciklama'])} Updated {y['guncelleme']}.")
     sat += ["", "## Guides in other languages", ""]
     for kk in hub:
         if kk != "en":

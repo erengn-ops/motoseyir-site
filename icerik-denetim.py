@@ -130,9 +130,18 @@ def main() -> int:
         for c in ilk:
             if re.match(r"^\d", c):
                 hatalar.append(f"{ad}: sayıyla başlayan ilk cümle: {c[:50]}")
-        # rakip adı
+        # rakip adı. İSTİSNA (24 Kas 2026): `"karsilastirma": true` yazıları (calimoto alternative / Motorrad Navi App Vergleich)
+        # rakip adı taşır; onlarda her geçen rakip `rakipler` listesinde olmalı ve o rakibin App Store sayfası + sitesi `kaynaklar`da durmalı.
         tum = " ".join(t for _, t in metinler(v)).lower()
+        izinli = {r["ad"].lower() for r in v.get("rakipler", [])} if v.get("karsilastirma") else set()
+        kaynak_url = {k["url"] for k in v.get("kaynaklar", [])}
+        for r in v.get("rakipler", []) if v.get("karsilastirma") else []:
+            for alan in ("url", "site"):
+                if r[alan] not in kaynak_url:
+                    hatalar.append(f"{ad}: {r['ad']} {alan} kaynaklarda yok: {r[alan]}")
         for r in RAKIP:
+            if r in izinli:
+                continue
             if re.search(rf"(?<![\w]){re.escape(r)}(?![\w])", tum):
                 hatalar.append(f"{ad}: rakip adı geçiyor: {r}")
         # tekrarlar

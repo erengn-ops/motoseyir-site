@@ -62,6 +62,10 @@ Yer tutucular (aynı dilin adresine çözülür; karşılığı yoksa derleme du
    En uygun sıra, Keşfet, Köy yolları ve Sahil modu, grup kurma Pro; rota hesaplama ve navigasyon TR/Avrupa/ABD'de ücretsiz ve sınırsız,
    ücretsiz kademede 1 kayıtlı tur. Köy yolları motoru yalnız Türkiye + Yunanistan'da; Alp'te standart mod.
 5. **Rakip uygulama adı yok** (başlık, açıklama, h1, gövde). `icerik-denetim.py` listeyi kontrol eder.
+   İstisna (24 Kas 2026): karşılaştırma yazıları (`icerik/navi-vergleich.{en,de}.json`) `"karsilastirma": true`, `"rakipler": [{ad, url, site}]`
+   ve `"magaza_etiket": "seo-compare-<dil>"` taşır. Orada yalnız rakibin KENDİ App Store sayfasında ya da sitesinde yazan olgu, tarihli ve
+   kötülemesiz; puan/indirme sayısı yok; sayfada yazmayan özellik "not stated / keine Angabe". Denetim her rakibin `url` ve `site`
+   adresini `kaynaklar`da arar. JSON-LD'ye MobileApplication + ItemList eklenir, llms.txt'te "App comparisons" bölümüne girer.
 6. **Uydurma yorum, sahte puan, "binlerce motorcu kullanıyor" gibi doğrulanamayan söz yok.**
 7. **Türkçe:** düz, "sen" hitabı, yüklem sonda, devrik cümle ve slogan kalıbı ("X değil, Y") yok; aynı cümle kalıbı (özellikle kapanış ve
    ürün bloğu) iki yazıda tekrarlanmaz; açıklama bilgi verir. Yayından önce metni baştan sona yüksek sesle oku.
