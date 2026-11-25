@@ -37,6 +37,7 @@ Motoseyir is made for motorcyclists, not for cars: it calculates by distance ins
 - [Stelvio Pass by motorcycle: the two sides, the season and the plan](https://motoseyir-app.com/en/guides/stelvio-pass-motorcycle/): Stelvio Pass by motorcycle: 2,758 m, 48 hairpins from Prad and 41 from Bormio, no toll, usual open months, the Umbrail descent and how to plan the ride. Updated 2026-11-04.
 - [Grossglockner High Alpine Road by motorcycle: toll, hours and season](https://motoseyir-app.com/en/guides/grossglockner-motorcycle/): Grossglockner High Alpine Road by motorcycle: 2026 toll from €36.50, opening hours, usual season, 48 km and 36 bends, biker points and helmet lockers. Updated 2026-11-18.
 - [How to plan a motorcycle route without motorways](https://motoseyir-app.com/en/guides/motorcycle-route-avoid-motorways/): How to plan a motorcycle route that avoids motorways and tolls: set stops on back roads by hand, or use Motoseyir's Back roads mode and the route generator. Updated 2026-11-08.
+- [Tail of the Dragon, Beartooth Highway and Blue Ridge Parkway by motorcycle](https://motoseyir-app.com/en/guides/tail-of-the-dragon-beartooth-blue-ridge/): Three US motorcycle roads: Tail of the Dragon on US 129, the Beartooth Highway at 10,947 ft and the 469-mile Blue Ridge Parkway, with seasons and speed limits. Updated 2026-11-25.
 
 ## App comparisons
 

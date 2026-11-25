@@ -30,8 +30,9 @@ buradaki "Hedef sorgu" sütunu GERÇEK sorgularla güncellenir — önce Perform
 | 2026-11-04 | en | `/en/guides/stelvio-pass-motorcycle/` | stelvio pass motorcycle | Bormio Turismo, IDM Südtirol, Wikipedia (de: Stilfser Joch yazısı hâlâ sırada) |
 | 2026-11-11 | tr | `/rehber/alp-gecitleri-motosiklet/` | alp geçitleri motosiklet, alpler motor turu | Route des Grandes Alpes, Val d’Isère Turizm, Bormio Turismo, IDM Südtirol, Valloire, Grossglockner AG, Timmelsjoch, İsviçre Turizm, Goms, Alta Badia, Arabba Fodom, Vikipedi (11 Kas'ta yeniden açılıp doğrulandı; Großglockner sonbahar tarifesi ve 27 Eki saatleri sayfada artık yok → yazılmadı) |
 | 2026-11-18 | en+de | `/en/guides/grossglockner-motorcycle/`, `/de/ratgeber/grossglockner-motorrad/` | grossglockner motorcycle toll, großglockner motorrad maut | Grossglockner Hochalpenstraßen AG (fiyat/saat 2026, motosiklet sayfası, tarihçe), Wikipedia (Fuscher Törl, Kaiser-Franz-Josefs-Höhe rakımı) — 2027 fiyatları gelince güncelle; sayfada artık olmayan sonbahar tarifesi yazılmadı |
+| 2026-11-25 | en | `/en/guides/tail-of-the-dragon-beartooth-blue-ridge/` | tail of the dragon motorcycle, beartooth highway motorcycle, blue ridge parkway motorcycle | NPS Blue Ridge Parkway (auto touring, driving safety, motorcycle safety), Montana DOT (Beartooth), Custer Gallatin National Forest, Wikipedia (Deals Gap, Beartooth Highway, Blue Ridge Parkway) — 318 viraj yerel iddia olarak yazıldı; Beartooth 10,947 ft (Wikipedia tablosu 10,974 ft, ikisi de not edildi); Dragon için resmî (NCDOT/TDOT) sayfa bulunamadı, mevsim yazılmadı |
 
-hreflang grupları (`icerik/<grup>.<kod>.json` dosya adındaki grup): `hub` (6 dil), `tur-planlama` (tr, en, de), `alpler` (tr, en, de), `uc-gecit` (en, de), `grossglockner` (en, de); `de-motorrad-navi` tek dillidir;
+hreflang grupları (`icerik/<grup>.<kod>.json` dosya adındaki grup): `hub` (6 dil), `tur-planlama` (tr, en, de), `alpler` (tr, en, de), `uc-gecit` (en, de), `grossglockner` (en, de); `de-motorrad-navi` ve `us-legendary-roads` tek dillidir;
 `turkiye-rotalari`, `koy-yolu`, `turkiye-gecitleri`, `fr-cols`, `it-passi`, `es-rutas` tek dillidir (hreflang yok).
 
 ## Sırada (öncelik sırasıyla)
@@ -40,7 +41,6 @@ Veri kaynağı sütunundaki "app" = `~/Claude/moto-rota/src/data/` (bkz. `REHBER
 
 | # | Dil | Grup / çalışma adı | Hedef sorgu | Veri / kaynak | Not |
 |---|---|---|---|---|---|
-| 5 | en | `us-legendary-roads` — Tail of the Dragon, Beartooth, Blue Ridge | tail of the dragon motorcycle | app `abdEfsaneYollari` (NPS, eyalet DOT kaynakları) | ABD vitrininde uygulama durumunu kontrol et (`SEO.md` eski notu) |
 | 6 | tr | `karadeniz` — Karadeniz motosiklet rotası | karadeniz motosiklet rotası, ayder zigana motor | app: Ayder–Çamlıhemşin, Trabzon–Zigana–Torul, Hemşin 24,1 km örneği; Vikipedi Zigana/Kop/Ovit | Yayla yollarının yol durumu için Karayolları (KGM) kaynağı bul |
 | 7 | en+de+it | `dolomiten` — Dolomites by motorcycle | dolomites motorcycle, dolomiten motorrad | Alta Badia, IDM Südtirol, Arabba Fodom, it.wikipedia Sellaronda | it yazısıyla (`it-passi`) çakışmasın: o Stelvio+Gavia+Sellaronda |
 | 8 | fr | `fr-gps-moto` — GPS moto : comment choisir | gps moto, gps moto gratuit | özellikler sayfası (rakip adı yok; ölçüt listesi) | `SEO.md` FR: gps moto 104 gösterim |
