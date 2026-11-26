@@ -316,36 +316,16 @@
       "h2": "Hangi durumda hangisini kullanmalısın?",
       "icerik": [
         {
-          "tablo": {
-            "baslik_metni": "Durum ve sayfadaki karşılığı",
-            "baslik": [
-              "Durum",
-              "Sayfada ne yaparsın"
-            ],
-            "satirlar": [
-              [
-                "İki saatin var ama gideceğin bir yer yok",
-                "Tur oluştur'da yönü Her yön'de bırak, uzunluğu Süre ile 2 saat seç."
-              ],
-              [
-                "Yakınındaki virajlı yolları arıyorsun",
-                "Konumumu kullan'a bas ve Çok virajlı'yı seç. Her kartta kilometre başına sert viraj sayısı yazar."
-              ],
-              [
-                "Bir dağ geçidine gidip dönmek istiyorsun",
-                "Dağ geçidinden geçsin seçeneğini aç ya da <a href=\"/gecitler/\">geçit sayfasından</a> turu o geçitle başlat."
-              ],
-              [
-                "Varış noktan belli, arada mola vereceksin",
-                "Duraklar sekmesinde başlangıcı, bitişi ve molaları gir."
-              ],
-              [
-                "Birkaç günlük tur düşünüyorsun",
-                "Uzunluğu 1000 km'ye kadar ayarla; sekiz saati geçen turda kaç gün süreceği yazar. Uygulamada turu günlere bölersin."
-              ]
-            ],
-            "not": "Süreler trafiksiz tahmindir. Yola çıkmadan yol durumuna, kapanışlara ve havaya bak."
-          }
+          "liste": [
+            "<strong>İki saatin var ama gideceğin bir yer yok.</strong> Tur oluştur'da yönü Her yön'de bırak, uzunluğu Süre ile 2 saat seç.",
+            "<strong>Yakınındaki virajlı yolları arıyorsun.</strong> Konumumu kullan'a bas ve Çok virajlı'yı seç. Her kartta kilometre başına sert viraj sayısı yazar.",
+            "<strong>Bir dağ geçidine gidip dönmek istiyorsun.</strong> Dağ geçidinden geçsin seçeneğini aç ya da <a href=\"/gecitler/\">geçit sayfasından</a> turu o geçitle başlat.",
+            "<strong>Varış noktan belli, arada mola vereceksin.</strong> Duraklar sekmesinde başlangıcı, bitişi ve molaları gir.",
+            "<strong>Birkaç günlük tur düşünüyorsun.</strong> Uzunluğu 1000 km'ye kadar ayarla; sekiz saati geçen turda kaç gün süreceği yazar. Uygulamada turu günlere bölersin."
+          ]
+        },
+        {
+          "not": "Süreler trafiksiz tahmindir. Yola çıkmadan yol durumuna, kapanışlara ve havaya bak."
         }
       ]
     },

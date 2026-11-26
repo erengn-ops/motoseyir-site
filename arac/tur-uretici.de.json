@@ -316,36 +316,16 @@
       "h2": "Welcher Weg passt zu deiner Tour?",
       "icerik": [
         {
-          "tablo": {
-            "baslik_metni": "Tour und was du hier tust",
-            "baslik": [
-              "Deine Tour",
-              "So gehst du hier vor"
-            ],
-            "satirlar": [
-              [
-                "Zwei freie Stunden, kein Ziel",
-                "Unter Tour generieren die Richtung auf Jede Richtung lassen und bei Zeit 2 Stunden einstellen."
-              ],
-              [
-                "Kurvige Strecken in der Nähe",
-                "Meinen Standort nutzen antippen und Sehr kurvig wählen. Jede Karte zeigt die scharfen Kurven pro Kilometer."
-              ],
-              [
-                "Ein Tag über einen Alpenpass",
-                "Über einen Pass einschalten oder auf einer <a href=\"/de/paesse/\">Pass-Seite</a> starten, dann beginnt die Runde dort."
-              ],
-              [
-                "A nach B mit Mittagspause",
-                "Im Tab Stopps Start, Ziel und die Orte dazwischen eintragen."
-              ],
-              [
-                "Mehrtägige Motorradreise",
-                "Bis zu 1000 km einstellen; ab etwa acht Stunden zeigt die Länge, wie viele Tage es sind. In der App teilst du die Tour in Tage auf."
-              ]
-            ],
-            "not": "Zeiten sind Schätzungen ohne Verkehr. Prüfe vor der Fahrt Straßenzustand, Sperrungen und Wetter."
-          }
+          "liste": [
+            "<strong>Zwei freie Stunden, kein Ziel.</strong> Unter Tour generieren die Richtung auf Jede Richtung lassen und bei Zeit 2 Stunden einstellen.",
+            "<strong>Kurvige Strecken in der Nähe.</strong> Meinen Standort nutzen antippen und Sehr kurvig wählen. Jede Karte zeigt die scharfen Kurven pro Kilometer.",
+            "<strong>Ein Tag über einen Alpenpass.</strong> Über einen Pass einschalten oder auf einer <a href=\"/de/paesse/\">Pass-Seite</a> starten, dann beginnt die Runde dort.",
+            "<strong>A nach B mit Mittagspause.</strong> Im Tab Stopps Start, Ziel und die Orte dazwischen eintragen.",
+            "<strong>Mehrtägige Motorradreise.</strong> Bis zu 1000 km einstellen; ab etwa acht Stunden zeigt die Länge, wie viele Tage es sind. In der App teilst du die Tour in Tage auf."
+          ]
+        },
+        {
+          "not": "Zeiten sind Schätzungen ohne Verkehr. Prüfe vor der Fahrt Straßenzustand, Sperrungen und Wetter."
         }
       ]
     },

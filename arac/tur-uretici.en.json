@@ -316,36 +316,16 @@
       "h2": "Which planner fits the ride you have in mind?",
       "icerik": [
         {
-          "tablo": {
-            "baslik_metni": "Ride and what to do on this page",
-            "baslik": [
-              "Your ride",
-              "What to do here"
-            ],
-            "satirlar": [
-              [
-                "Two free hours and no destination",
-                "In Generate a tour, leave the direction on Any direction and set Time to 2 h. That is the random motorcycle route generator."
-              ],
-              [
-                "Twisty roads near you",
-                "Tap Use my location and choose Very twisty. Each card shows sharp bends per kilometre, so you can compare loops."
-              ],
-              [
-                "A day out over a mountain pass",
-                "Switch on Over a mountain pass, or start from a <a href=\"/en/passes/\">pass page</a> so the loop begins there."
-              ],
-              [
-                "A to B with a lunch stop",
-                "Use Stops: start, end and the places in between."
-              ],
-              [
-                "A multi-day motorcycle trip",
-                "Set up to 1000 km (about 620 miles); past about eight hours the length shows how many days it takes. Split it into days in the app."
-              ]
-            ],
-            "not": "Times are estimates without traffic. Check road conditions, closures and the weather before you ride."
-          }
+          "liste": [
+            "<strong>Two free hours and no destination.</strong> In Generate a tour, leave the direction on Any direction and set Time to 2 h. That is the random motorcycle route generator.",
+            "<strong>Twisty roads near you.</strong> Tap Use my location and choose Very twisty. Each card shows sharp bends per kilometre, so you can compare loops.",
+            "<strong>A day out over a mountain pass.</strong> Switch on Over a mountain pass, or start from a <a href=\"/en/passes/\">pass page</a> so the loop begins there.",
+            "<strong>A to B with a lunch stop.</strong> Use Stops: start, end and the places in between.",
+            "<strong>A multi-day motorcycle trip.</strong> Set up to 1000 km (about 620 miles); past about eight hours the length shows how many days it takes. Split it into days in the app."
+          ]
+        },
+        {
+          "not": "Times are estimates without traffic. Check road conditions, closures and the weather before you ride."
         }
       ]
     },
