@@ -1,12 +1,12 @@
 {
   "dizin": "tur-olusturucu",
-  "baslik": "Motosiklet Rota Oluşturucu: Başladığın Yere Dönen Tur",
-  "aciklama": "Ücretsiz motosiklet rota oluşturucu: başlangıcı, uzunluğu ve virajı seç, 1000 km'ye kadar üç tur gör, beğendiğini QR kodla telefonuna gönder.",
-  "h1": "Motosiklet rota ve tur oluşturucu",
-  "eyebrow": "Tur planlayıcı",
-  "lead": "Başlangıç noktanı, ne kadar süreceğini ve yolların ne kadar virajlı olacağını seç. Oluşturucu, başladığın yere dönen en fazla üç tur çizer. Beğendiğin turu QR kodla telefonuna gönderip Motoseyir'de sürebilirsin.",
+  "baslik": "Motosiklet Rota Planlama: Ücretsiz Rota Oluşturucu",
+  "aciklama": "Hafta sonu rotasını haritada saatlerce çizme: başlangıcı, mesafeyi ve virajı seç, başladığın yere dönen üç tur al ya da duraklı A-B rotası kur. Ücretsiz.",
+  "h1": "Motosiklet rota planlama",
+  "eyebrow": "Ücretsiz, hesap gerekmez",
+  "lead": "Burada rotayı nokta nokta çizmek yerine nasıl bir sürüş istediğini seçiyorsun: başlangıcı, ne kadar süreceğini ve yolların ne kadar virajlı olacağını. Oluşturucu gerçek yollarda başladığın yere dönen en fazla üç tur çiziyor. Gideceğin yer belliyse Duraklar sekmesinde başlangıcı ve bitişi yazıp araya 26'ya kadar durak koyabilirsin. Ücretsiz, hesap açmak gerekmez. Beğendiğin rotayı QR kodla telefonuna gönderip Motoseyir'de sesli navigasyonla sürersin.",
   "yayin": "2026-10-25",
-  "guncelleme": "2026-11-22",
+  "guncelleme": "2026-11-26",
   "ondalik": ",",
   "ui": {
     "ekmek": "Sayfa yolu",
@@ -295,6 +295,61 @@
   ],
   "bolumler": [
     {
+      "id": "a-b-rota",
+      "h2": "Gideceğin yer belli mi? A'dan B'ye duraklı rota kur",
+      "icerik": [
+        {
+          "p": "Haritanın üstündeki <strong>Duraklar</strong> sekmesini aç. Başlangıç ve Bitiş satırlarına yer adı yaz ya da haritaya dokun, araya molalarını ekle; bir rotada en çok 26 durak olabilir. Durakları tutamaçtan sürükleyerek ya da ok tuşlarıyla sıralarsın. Haritadaki harfli işaretleri ve rota çizgisinin kendisini çekerek de rotayı değiştirebilirsin."
+        },
+        {
+          "liste": [
+            "İki durak arasındaki her bacağın kilometresi ve süresi satırların arasında yazar.",
+            "Rota kipi <strong>Standart</strong>, <strong>Köy yolları</strong> ya da <strong>Sahil</strong> olur; uygulamadaki modların aynısıdır. Köy yolu rotası bulunamazsa sayfa standart rotayı gösterir ve bunu söyler.",
+            "Her durakta, oraya varacağın saate göre hava durumu çıkar (MET Norway verisi).",
+            "<strong>Başlangıca dön</strong> ile rota başladığın yerde biter; bir şeyi yanlışlıkla silersen <strong>Geri al</strong> var."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hangisi",
+      "h2": "Hangi durumda hangisini kullanmalısın?",
+      "icerik": [
+        {
+          "tablo": {
+            "baslik_metni": "Durum ve sayfadaki karşılığı",
+            "baslik": [
+              "Durum",
+              "Sayfada ne yaparsın"
+            ],
+            "satirlar": [
+              [
+                "İki saatin var ama gideceğin bir yer yok",
+                "Tur oluştur'da yönü Her yön'de bırak, uzunluğu Süre ile 2 saat seç."
+              ],
+              [
+                "Yakınındaki virajlı yolları arıyorsun",
+                "Konumumu kullan'a bas ve Çok virajlı'yı seç. Her kartta kilometre başına sert viraj sayısı yazar."
+              ],
+              [
+                "Bir dağ geçidine gidip dönmek istiyorsun",
+                "Dağ geçidinden geçsin seçeneğini aç ya da <a href=\"/gecitler/\">geçit sayfasından</a> turu o geçitle başlat."
+              ],
+              [
+                "Varış noktan belli, arada mola vereceksin",
+                "Duraklar sekmesinde başlangıcı, bitişi ve molaları gir."
+              ],
+              [
+                "Birkaç günlük tur düşünüyorsun",
+                "Uzunluğu 1000 km'ye kadar ayarla; sekiz saati geçen turda kaç gün süreceği yazar. Uygulamada turu günlere bölersin."
+              ]
+            ],
+            "not": "Süreler trafiksiz tahmindir. Yola çıkmadan yol durumuna, kapanışlara ve havaya bak."
+          }
+        }
+      ]
+    },
+    {
       "id": "nasil-yapilir",
       "h2": "Turlar nasıl çizilir",
       "icerik": [
@@ -366,6 +421,18 @@
           "p": "Başlangıç noktan ve her adayın durakları rota motoruna gider: Türkiye ve Yunanistan'da Motoseyir'in kendi rota sunucusuna, başka yerlerde OpenStreetMap tabanlı herkese açık bir rota servisine; bu servis her web sitesi gibi IP adresini görür. Yer ararken ve yer adlarını getirirken yazdığın metin ya da koordinatlar Photon servisine (OpenStreetMap verisi) gider. Harita parçaları Motoseyir sunucusundan gelir. Tur yalnız “Telefonuma gönder”e dokunduğunda saklanır: adı, durakları ve ayarları 30 gün boyunca durur, kimin gönderdiğine dair bir bilgi tutulmaz. Rota üstündeki yerler aranırken rota çizgisi, adsız olarak, Motoseyir sunucusuna gider. Efsane rotalar ve geçitler bu siteden yüklenir, hiçbir yere gönderilmez."
         }
       ]
+    },
+    {
+      "id": "uygulama-secimi",
+      "h2": "Motosiklet navigasyon uygulamalarından hangisi sana uyar?",
+      "icerik": [
+        {
+          "p": "Bu sayfa planlama içindir; dönemeç dönemeç yol tarifi Motoseyir uygulamasında. Motoseyir'de rota hesaplama ve navigasyon Türkiye, Avrupa ve ABD'de ücretsiz ve sınırsızdır, başka ülkelerde Pro gerekir. Hız kameraları yalnız Türkiye'de gösterilir. Uygulama Apple CarPlay'de çalışır, Android Auto desteği yoktur."
+        },
+        {
+          "p": "Uygulamaları yan yana görmek istersen, rota planlama ve navigasyon uygulamalarını 12 açık kriterle ve fiyatlarıyla puanladığımız <a href=\"/rehber/motosiklet-navigasyon-uygulamalari-karsilastirma/\">motosiklet navigasyon uygulamaları karşılaştırmasına</a> bak. Turu elle kurmanın adımları <a href=\"/rehber/motor-turu-planlama/\">motor turu planlama rehberinde</a>."
+        }
+      ]
     }
   ],
   "sss": [
@@ -376,6 +443,22 @@
     {
       "s": "Rastgele motosiklet turu nasıl bulurum?",
       "c": "Yönü “Her yön”de bırak, bir uzunluk seç ve “Tur oluştur”a dokun. Aynı ayarlarla başka turlar için “Başka bir tane”yi kullan."
+    },
+    {
+      "s": "Motosiklet rotası nasıl oluşturulur?",
+      "c": "Başlangıcı seç, yönü ve uzunluğu ayarla, virajı belirle ve Tur oluştur'a dokun; oluşturucu başladığın yere dönen üç tur çizer. Varış noktan belliyse Duraklar sekmesinde başlangıcı, bitişi ve aradaki durakları gir. İki durumda da rota gerçek yollarda hesaplanır ve telefonuna gönderilebilir."
+    },
+    {
+      "s": "Yalnız dönüş turu mu, A'dan B'ye rota da planlanır mı?",
+      "c": "İkisi de. Duraklar sekmesinde başlangıç ve bitiş ayrı yerler olabilir, araya 26'ya kadar durak koyabilirsin. Rota kipini Standart, Köy yolları ya da Sahil olarak seçersin."
+    },
+    {
+      "s": "Motoseyir navigasyonu ücretli mi?",
+      "c": "Uygulamayı indirmek ücretsiz. Rota hesaplama ve navigasyon Türkiye, Avrupa ve ABD'de ücretsiz ve sınırsızdır; başka ülkelerde Motoseyir Pro gerekir. Köy yolları kipi, uygulamadaki tur üretimi, Keşfet ve grup kurma Pro'dadır; ücretsiz kademede bir kayıtlı tur tutulur."
+    },
+    {
+      "s": "CarPlay ve Android Auto ile çalışır mı?",
+      "c": "Motoseyir Apple CarPlay'de çalışır. Android Auto desteği yoktur; Android'de navigasyon telefon ekranından yapılır."
     },
     {
       "s": "Türkiye dışında da çalışıyor mu?",
@@ -455,7 +538,7 @@
       "url": "https://photon.komoot.io/"
     }
   ],
-  "anasayfa_baglanti": "Tarayıcıda dene: tur oluşturucu",
+  "anasayfa_baglanti": "Tarayıcıda dene: motosiklet rota planlama",
   "tasarim": {
     "hero_giris": "Nereye gitmek istediğini söyle, başladığın yere dönen turu o çizsin.",
     "hero_mikro": "Ücretsiz. Hesap açmak gerekmez.",
@@ -489,7 +572,8 @@
     "ust": "Yeni: tarayıcıda",
     "h2": "Turunu telefonu açmadan çiz.",
     "p": "Haritada başlangıcı seç, kadranı tut, istediğin yöne çevir ve uzat. Motoseyir başladığın yere dönen üç tur çizer; beğendiğini QR kodla telefonuna gönderip uygulamada sürersin.",
-    "btn": "Tur oluşturucuyu aç",
+    "btn": "Rota planlayıcıyı aç",
     "alt": "Motoseyir web tur oluşturucusu: Ankara çevresinde kadran ve tur ayarları"
-  }
+  },
+  "kanca": "Hafta sonu turu için haritada saatlerce rota çiziyorsun, navigasyon da seni yine otoyola sokuyor."
 }

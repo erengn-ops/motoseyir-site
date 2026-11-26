@@ -17,11 +17,11 @@ Motoseyir is made for motorcyclists, not for cars: it calculates by distance ins
 
 ## Main pages
 
-- [Home](https://motoseyir-app.com/en/): Motoseyir is a motorcycle navigation app that plans by distance, not minutes. Back roads, tour planning, 1,600+ mountain passes, group rides and CarPlay.
+- [Home](https://motoseyir-app.com/en/): Tired of a GPS that always picks the interstate? Motoseyir plans by distance, not minutes: back roads, tour planning, 1,600+ passes, group rides, CarPlay.
 - [Features](https://motoseyir-app.com/en/ozellikler.html): Every feature of the Motoseyir motorcycle navigation app on one page: shortest route, stop order, back roads, legendary routes, tour journal, group riding.
 - [How to use Motoseyir](https://motoseyir-app.com/en/nasil-yapilir.html): How to plan a motorcycle route in Motoseyir: building a route, multi-stop tours, ride recording, the tour journal, group riding, the intercom and subscriptions.
 - [AI CoRider](https://motoseyir-app.com/en/corider.html): Motoseyir’s AI CoRider talks to you through your helmet: it adds stops, finds places on your route, checks weather and fuel range, and changes the route.
-- [Motorcycle route generator (web)](https://motoseyir-app.com/en/motorcycle-route-generator/): Free motorcycle route planner and generator: pick a start, length and how twisty, get up to three round trips of up to 1000 km, send one to your phone.
+- [Motorcycle route generator (web)](https://motoseyir-app.com/en/motorcycle-route-generator/): Done dragging weekend rides around a map? Pick a start, miles and how twisty: get three back-road loops, or plan A to B with stops. Free, no account.
 - [Tour generator in the app](https://motoseyir-app.com/en/tour-generator/): The Motoseyir app's Tour generator takes your start, direction, length and curviness and draws up to three loops to your start. See it in a screen recording.
 - [Mountain passes](https://motoseyir-app.com/en/passes/): one page per pass in the US and the Alps with elevation, location, surface and usual closing months, from the app's own pass data.
 - [Mountain passes in numbers](https://motoseyir-app.com/en/passes/in-numbers/): original aggregate data from the Motoseyir pass database (1635 passes, 36 countries): tables by region, country, elevation and winter closure, with a citation line and a CSV.
@@ -31,7 +31,7 @@ Motoseyir is made for motorcyclists, not for cars: it calculates by distance ins
 
 - [All guides](https://motoseyir-app.com/en/guides/): Motorcycle route planning and mountain pass guides: heights, seasons, tolls and road notes for the Alps and beyond, with sources. From the Motoseyir team.
 - [Looking for a calimoto alternative? Five motorcycle navigation apps, scored feature by feature](https://motoseyir-app.com/en/guides/calimoto-alternative/): calimoto, Kurviger, Scenic, REVER and Motoseyir scored on 12 published criteria, with US prices and App Store user ratings checked on 24 November 2026. Updated 2026-11-24.
-- [How to plan a motorcycle ride, step by step](https://motoseyir-app.com/en/guides/motorcycle-route-planner/): How to plan a motorcycle ride: daily distance, road type, stops, fuel and weather. Build the route yourself in Motoseyir, a motorcycle route planner and GPS. Updated 2026-10-25.
+- [How to plan a motorcycle trip, step by step](https://motoseyir-app.com/en/guides/motorcycle-route-planner/): Planning a ride that keeps ending up on the interstate? Work out daily miles, road type, stops, fuel and weather, then draw the route yourself in Motoseyir. Updated 2026-11-26.
 - [Alpine passes by motorcycle: heights, seasons and tolls](https://motoseyir-app.com/en/guides/alpine-passes-motorcycle/): Alpine passes by motorcycle: Iseran, Stelvio, Galibier, Gavia, Großglockner and more, with heights, usual open months, tolls and riding notes, all sourced. Updated 2026-10-25.
 - [Furka, Grimsel and Susten: the Swiss three-pass loop by motorcycle](https://motoseyir-app.com/en/guides/furka-grimsel-susten-loop/): The Furka, Grimsel and Susten loop by motorcycle: 120 km from Andermatt, pass heights, the order of the climbs, season and what to see on the way. Updated 2026-10-25.
 - [Stelvio Pass by motorcycle: the two sides, the season and the plan](https://motoseyir-app.com/en/guides/stelvio-pass-motorcycle/): Stelvio Pass by motorcycle: 2,758 m, 48 hairpins from Prad and 41 from Bormio, no toll, usual open months, the Umbrail descent and how to plan the ride. Updated 2026-11-04.

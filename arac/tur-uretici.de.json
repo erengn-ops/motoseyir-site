@@ -1,12 +1,12 @@
 {
   "dizin": "motorrad-rundtour-planen",
-  "baslik": "Motorrad Routenplaner: Rundtour planen, kostenlos",
-  "aciklama": "Kostenloser Motorrad Routenplaner: Startpunkt, Länge und Kurvigkeit wählen, bis zu drei Rundtouren bis 1000 km erhalten und per QR-Code aufs Handy schicken.",
-  "h1": "Motorrad Routenplaner für Rundtouren",
-  "eyebrow": "Motorradtour planen",
-  "lead": "Plane deine Motorradtour mit Startpunkt, Fahrzeit und Kurvigkeit. Der Routenplaner zeichnet bis zu drei Rundtouren, die dich zum Start zurückbringen. Die Tour, die dir gefällt, schickst du per QR-Code aufs Handy und fährst sie in Motoseyir.",
+  "baslik": "Motorrad Routenplaner kostenlos: Rundtour oder A nach B",
+  "aciklama": "Die Wochenendtour nicht mehr stundenlang zusammenklicken: Start, Länge und Kurven wählen, drei Rundtouren erhalten oder A nach B mit Stopps. Ohne Konto.",
+  "h1": "Motorrad Routenplaner, kostenlos",
+  "eyebrow": "Ohne Anmeldung, im Browser",
+  "lead": "Hier beschreibst du die Fahrt, statt sie Punkt für Punkt zu zeichnen: Du wählst Startpunkt, Fahrzeit und wie kurvig es sein soll, und der Routenplaner zeichnet auf echten Straßen bis zu drei Rundtouren, die dich zum Start zurückbringen. Steht das Ziel schon fest, öffnest du den Tab Stopps, trägst Start und Ziel ein und setzt bis zu 26 Stopps dazwischen. Kostenlos und ohne Anmeldung. Die Route schickst du per QR-Code aufs Handy und fährst sie in Motoseyir mit Sprachansagen.",
   "yayin": "2026-10-25",
-  "guncelleme": "2026-11-22",
+  "guncelleme": "2026-11-26",
   "ondalik": ",",
   "ui": {
     "ekmek": "Brotkrumen-Navigation",
@@ -295,6 +295,61 @@
   ],
   "bolumler": [
     {
+      "id": "a-nach-b",
+      "h2": "Ziel steht fest? Route von A nach B mit Stopps planen",
+      "icerik": [
+        {
+          "p": "Öffne über der Karte den Tab <strong>Stopps</strong>. Trag in die Zeilen Start und Ziel einen Ort ein oder tippe auf die Karte und füge deine Stopps hinzu; eine Route kann bis zu 26 haben. Die Reihenfolge änderst du am Griff oder mit den Pfeiltasten. Die Buchstaben-Pins und die Routenlinie selbst kannst du ziehen, um die Strecke umzulegen."
+        },
+        {
+          "liste": [
+            "Zwischen zwei Stopps stehen Kilometer und Fahrzeit des Abschnitts.",
+            "Als Routenmodus wählst du <strong>Standard</strong>, <strong>Landstraßen</strong> oder <strong>Küste</strong>, dieselben Modi wie in der App. Findet sich keine Landstraßen-Route, zeigt die Seite die Standardroute und sagt das dazu.",
+            "Jeder Stopp bekommt das Wetter für die Uhrzeit, zu der du dort ankommst (Daten von MET Norway).",
+            "<strong>Zurück zum Start</strong> macht aus der Route eine Runde; einen versehentlich gelöschten Stopp holst du mit <strong>Rückgängig</strong> zurück."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "welcher-weg",
+      "h2": "Welcher Weg passt zu deiner Tour?",
+      "icerik": [
+        {
+          "tablo": {
+            "baslik_metni": "Tour und was du hier tust",
+            "baslik": [
+              "Deine Tour",
+              "So gehst du hier vor"
+            ],
+            "satirlar": [
+              [
+                "Zwei freie Stunden, kein Ziel",
+                "Unter Tour generieren die Richtung auf Jede Richtung lassen und bei Zeit 2 Stunden einstellen."
+              ],
+              [
+                "Kurvige Strecken in der Nähe",
+                "Meinen Standort nutzen antippen und Sehr kurvig wählen. Jede Karte zeigt die scharfen Kurven pro Kilometer."
+              ],
+              [
+                "Ein Tag über einen Alpenpass",
+                "Über einen Pass einschalten oder auf einer <a href=\"/de/paesse/\">Pass-Seite</a> starten, dann beginnt die Runde dort."
+              ],
+              [
+                "A nach B mit Mittagspause",
+                "Im Tab Stopps Start, Ziel und die Orte dazwischen eintragen."
+              ],
+              [
+                "Mehrtägige Motorradreise",
+                "Bis zu 1000 km einstellen; ab etwa acht Stunden zeigt die Länge, wie viele Tage es sind. In der App teilst du die Tour in Tage auf."
+              ]
+            ],
+            "not": "Zeiten sind Schätzungen ohne Verkehr. Prüfe vor der Fahrt Straßenzustand, Sperrungen und Wetter."
+          }
+        }
+      ]
+    },
+    {
       "id": "nasil-yapilir",
       "h2": "So entstehen die Rundtouren",
       "icerik": [
@@ -366,6 +421,18 @@
           "p": "Dein Startpunkt und die Stopps jedes Kandidaten gehen an die Routing-Engine: in der Türkei und in Griechenland an den eigenen Routenserver von Motoseyir, sonst an einen öffentlichen Routing-Dienst auf Basis von OpenStreetMap, der wie jede Website deine IP-Adresse sieht. Bei der Ortssuche und bei der Abfrage von Ortsnamen gehen Text oder Koordinaten an den Dienst Photon (OpenStreetMap-Daten). Die Kartenkacheln kommen vom Motoseyir-Server. Eine Tour wird nur gespeichert, wenn du auf „Aufs Handy schicken“ tippst: Name, Stopps und Einstellungen, 30 Tage lang, ohne Angabe darüber, wer sie gesendet hat. Die Suche nach Orten entlang einer Route sendet die Routenlinie ohne Namen an den Server von Motoseyir. Legendäre Strecken und Pässe werden von dieser Seite geladen und nirgendwohin gesendet."
         }
       ]
+    },
+    {
+      "id": "app-wahl",
+      "h2": "Planen im Browser, navigieren in der App",
+      "icerik": [
+        {
+          "p": "Diese Seite plant; die Abbiegehinweise gibt die Motoseyir-App. Routenberechnung und Navigation sind dort in Europa, der Türkei und den USA kostenlos und unbegrenzt, in anderen Ländern brauchst du Pro. Motoseyir läuft mit Apple CarPlay, Android Auto wird nicht unterstützt."
+        },
+        {
+          "p": "Du vergleichst gerade Apps? Im <a href=\"/de/ratgeber/motorrad-navi-app-vergleich/\">Motorrad Navi App Vergleich</a> bewerten wir fünf Apps nach 12 offenen Kriterien, mit Euro-Preisen. Wie du eine Tour von Hand aufbaust, von der Tagesstrecke bis zum Tankstopp, steht unter <a href=\"/de/ratgeber/motorradtour-planen/\">Motorradtour planen</a>."
+        }
+      ]
     }
   ],
   "sss": [
@@ -376,6 +443,22 @@
     {
       "s": "Wie bekomme ich eine zufällige Motorradtour?",
       "c": "Lass die Richtung auf „Jede Richtung“, stelle eine Länge ein und tippe auf „Rundtour generieren“. Mit „Noch eine“ erhältst du andere Runden mit denselben Einstellungen."
+    },
+    {
+      "s": "Wie plane ich eine Motorradroute?",
+      "c": "Wähle einen Start, stelle Richtung, Länge und Kurvigkeit ein und tippe auf Rundtour generieren; der Routenplaner zeichnet drei Runden zurück zum Start. Hast du ein Ziel, trägst du im Tab Stopps Start, Ziel und die Stopps dazwischen ein. In beiden Fällen wird die Route auf echten Straßen berechnet und lässt sich aufs Handy schicken."
+    },
+    {
+      "s": "Geht auch A nach B statt nur Rundtour?",
+      "c": "Ja. Im Tab Stopps können Start und Ziel verschiedene Orte sein, mit bis zu 26 Stopps dazwischen. Als Routenmodus wählst du Standard, Landstraßen oder Küste."
+    },
+    {
+      "s": "Ist die Navigation in Motoseyir kostenlos?",
+      "c": "Die App lädst du kostenlos. Routenberechnung und Navigation sind in Europa, der Türkei und den USA kostenlos und unbegrenzt; in anderen Ländern brauchst du Motoseyir Pro. Der Modus Nebenstraßen, der Tourengenerator in der App, Entdecken und das Gründen von Gruppen gehören zu Pro, und der kostenlose Tarif speichert eine Tour."
+    },
+    {
+      "s": "Funktioniert es mit CarPlay oder Android Auto?",
+      "c": "Motoseyir läuft mit Apple CarPlay. Android Auto wird nicht unterstützt; unter Android navigierst du auf dem Handydisplay."
     },
     {
       "s": "Funktioniert das auch in Deutschland und den Alpen?",
@@ -455,7 +538,7 @@
       "url": "https://photon.komoot.io/"
     }
   ],
-  "anasayfa_baglanti": "Im Browser ausprobieren: Tourengenerator",
+  "anasayfa_baglanti": "Im Browser ausprobieren: Motorrad Routenplaner",
   "tasarim": {
     "hero_giris": "Sag, wohin es gehen soll, und der Generator zeichnet die Runde zurück zu deinem Startpunkt.",
     "hero_mikro": "Kostenlos. Ohne Konto.",
@@ -489,7 +572,8 @@
     "ust": "Neu: im Browser",
     "h2": "Plane deine Rundtour direkt im Browser.",
     "p": "Wähle auf der Karte deinen Start, greif das Zifferblatt, dreh es in die gewünschte Richtung und zieh es länger. Motoseyir zeichnet drei Rundtouren zurück zum Start; die beste schickst du per QR-Code aufs Handy und fährst sie in der App.",
-    "btn": "Tourengenerator öffnen",
+    "btn": "Motorrad Routenplaner öffnen",
     "alt": "Motoseyir Tourengenerator im Browser: Zifferblatt und Toureinstellungen rund um München"
-  }
+  },
+  "kanca": "Du klickst die Wochenendtour stundenlang auf der Karte zusammen, und am Ende schickt dich das Navi doch über die Autobahn."
 }

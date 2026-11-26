@@ -1,12 +1,12 @@
 {
   "dizin": "motorcycle-route-generator",
-  "baslik": "Motorcycle Route Planner & Generator: Free Round Trips",
-  "aciklama": "Free motorcycle route planner and generator: pick a start, length and how twisty, get up to three round trips of up to 1000 km, send one to your phone.",
-  "h1": "Motorcycle route planner",
-  "eyebrow": "Round trip generator",
-  "lead": "Plan a motorcycle ride from a start point, how long you want to ride and how twisty the roads should be. The planner draws up to three round trips that bring you back to where you started. Send the one you like to your phone with a QR code and ride it in Motoseyir.",
+  "baslik": "Free Motorcycle Route Planner: Twisty Loops or A to B",
+  "aciklama": "Done dragging weekend rides around a map? Pick a start, miles and how twisty: get three back-road loops, or plan A to B with stops. Free, no account.",
+  "h1": "Free motorcycle route planner",
+  "eyebrow": "Loops or A to B, no account",
+  "lead": "Here you describe the ride instead of drawing it point by point: pick a start, how long you want to ride and how twisty the roads should be, and the planner draws up to three loops on real roads that bring you back where you started. If you already know where you are headed, open Stops, set a start and an end and add up to 26 stops in between. It is free and needs no account. Send the route to your phone with a QR code and ride it in Motoseyir with voice guidance.",
   "yayin": "2026-10-25",
-  "guncelleme": "2026-11-22",
+  "guncelleme": "2026-11-26",
   "ondalik": ".",
   "ui": {
     "ekmek": "Breadcrumb",
@@ -295,6 +295,61 @@
   ],
   "bolumler": [
     {
+      "id": "a-to-b",
+      "h2": "Know where you're going? Plan A to B with stops",
+      "icerik": [
+        {
+          "p": "Open the <strong>Stops</strong> tab above the map. Type a place into the Start and End rows or tap the map, then add your stops; a route can have up to 26. Reorder them with the handle or the arrow keys, and drag the lettered pins, or the route line itself, to reshape the ride."
+        },
+        {
+          "liste": [
+            "Each leg between two stops shows its distance and time.",
+            "Route mode is <strong>Standard</strong>, <strong>Country roads</strong> or <strong>Coastal</strong>, the same modes as in the app. If no country-roads route turns up, the page shows the standard route and says so.",
+            "Every stop gets a weather chip for the time you will arrive there (MET Norway data).",
+            "<strong>Return to start</strong> turns the ride into a loop, and <strong>Undo</strong> brings back a stop you removed by mistake."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "which-tool",
+      "h2": "Which planner fits the ride you have in mind?",
+      "icerik": [
+        {
+          "tablo": {
+            "baslik_metni": "Ride and what to do on this page",
+            "baslik": [
+              "Your ride",
+              "What to do here"
+            ],
+            "satirlar": [
+              [
+                "Two free hours and no destination",
+                "In Generate a tour, leave the direction on Any direction and set Time to 2 h. That is the random motorcycle route generator."
+              ],
+              [
+                "Twisty roads near you",
+                "Tap Use my location and choose Very twisty. Each card shows sharp bends per kilometre, so you can compare loops."
+              ],
+              [
+                "A day out over a mountain pass",
+                "Switch on Over a mountain pass, or start from a <a href=\"/en/passes/\">pass page</a> so the loop begins there."
+              ],
+              [
+                "A to B with a lunch stop",
+                "Use Stops: start, end and the places in between."
+              ],
+              [
+                "A multi-day motorcycle trip",
+                "Set up to 1000 km (about 620 miles); past about eight hours the length shows how many days it takes. Split it into days in the app."
+              ]
+            ],
+            "not": "Times are estimates without traffic. Check road conditions, closures and the weather before you ride."
+          }
+        }
+      ]
+    },
+    {
       "id": "nasil-yapilir",
       "h2": "How the loops are made",
       "icerik": [
@@ -366,6 +421,18 @@
           "p": "Your start point and the stops of each candidate go to the route engine: in Turkey and Greece to Motoseyir's own route server, elsewhere to a public OpenStreetMap-based routing service, which sees your IP address like any website. Searching for a place and looking up place names send the text or coordinates to the Photon service (OpenStreetMap data). Map tiles come from Motoseyir's server. A tour is stored only when you tap Send to my phone: its name, stops and settings, for 30 days, without any information about who sent it. Looking for places along a route sends the route line, without names, to Motoseyir's server. Legendary routes and passes are loaded from this site and are not sent anywhere."
         }
       ]
+    },
+    {
+      "id": "app-choice",
+      "h2": "Planner on the web, navigation in the app",
+      "icerik": [
+        {
+          "p": "This page plans; turn-by-turn directions happen in the Motoseyir app. Route calculation and navigation there are free and unlimited in the US, Europe and Turkey; elsewhere they need Pro. Motoseyir works with Apple CarPlay. There is no Android Auto support."
+        },
+        {
+          "p": "Weighing up apps? Our <a href=\"/en/guides/calimoto-alternative/\">motorcycle navigation app comparison</a> scores five apps on 12 published criteria, with US prices. For the planning itself, from daily miles to fuel stops, read <a href=\"/en/guides/motorcycle-route-planner/\">how to plan a motorcycle trip</a>."
+        }
+      ]
     }
   ],
   "sss": [
@@ -376,6 +443,22 @@
     {
       "s": "How do I get a random motorcycle route?",
       "c": "Leave the direction on Any direction, set a length and tap Generate round trip. Tap Another one to get different loops with the same settings."
+    },
+    {
+      "s": "How do I plan a motorcycle route?",
+      "c": "Pick a start, set the direction, length and curve level, and tap Generate round trip; the planner draws three loops back to your start. If you have a destination, use the Stops tab to set a start, an end and the stops in between. Either way the route is calculated on real roads and can be sent to your phone."
+    },
+    {
+      "s": "Can I plan from A to B, not only a loop?",
+      "c": "Yes. In the Stops tab the start and end can be different places, with up to 26 stops in between. Choose Standard, Country roads or Coastal as the route mode."
+    },
+    {
+      "s": "Is Motoseyir navigation free?",
+      "c": "The app is a free download. Route calculation and navigation are free and unlimited in the US, Europe and Turkey; other countries need Motoseyir Pro. Back roads mode, the in-app Tour generator, Discover and creating groups are Pro, and the free plan keeps one saved tour."
+    },
+    {
+      "s": "Does it work with CarPlay or Android Auto?",
+      "c": "Motoseyir works with Apple CarPlay. Android Auto is not supported; on Android you navigate on the phone screen."
     },
     {
       "s": "Does it work outside Turkey?",
@@ -455,7 +538,7 @@
       "url": "https://photon.komoot.io/"
     }
   ],
-  "anasayfa_baglanti": "Try it in your browser: route generator",
+  "anasayfa_baglanti": "Try it in your browser: free motorcycle route planner",
   "tasarim": {
     "hero_giris": "Say where you want to head, and it draws the loop that brings you back to your start.",
     "hero_mikro": "Free. No account needed.",
@@ -489,7 +572,8 @@
     "ust": "New: in your browser",
     "h2": "Draw your tour right in the browser.",
     "p": "Pick a start on the map, grab the dial, turn it to the direction you want and stretch it. Motoseyir draws three round trips that bring you back to where you started; send the one you like to your phone with a QR code and ride it in the app.",
-    "btn": "Open the route generator",
+    "btn": "Open the route planner",
     "alt": "Motoseyir web route generator: the dial and tour settings around Innsbruck"
-  }
+  },
+  "kanca": "You spend Friday night dragging a route around the map, and the GPS still puts you on the interstate."
 }

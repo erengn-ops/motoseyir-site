@@ -1135,6 +1135,7 @@ def arac_yaz() -> int:
             "nasil_url": sayfa_yolu(kod, "nasil-yapilir.html"), "hub_url": rehber_hub_yolu(kod), "arac_url": arac_yol(kod),
             "tanitim_url": tanitim_yol(kod), "p_ad": tanitim_veri()[kod]["ad"], "ui_rehber": hub[kod]["ui"]["rehber"], "uygulama_id": UYGULAMA_ID, "yil": YIL, "vekil": ARAC_VEKIL,
             "eyebrow": v["eyebrow"], "h1": v["h1"], "lead": v["lead"], "adimlar_h2": v["adimlar_h2"], "guncel_satir": guncel_satir(kod, v),
+            "kanca_h2": f'<h2 class="tur-ozet-h2" data-r>{v["kanca"]}</h2>' if v.get("kanca") else "",
             "arac_icerik": arac_icerik_govde(kod, v),
             "arac_varis": arac_varis(kod, v),
             "dil_kodu": kod,

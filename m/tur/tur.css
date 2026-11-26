@@ -856,3 +856,5 @@ body.tur-sayfa { --border: var(--cizgi); --surface: var(--yuzey); --surface-2: v
 .gecis-kaldir { font: inherit; font-weight: 700; font-size: .85rem; min-height: 40px; padding: 0 16px; border: 0; border-radius: 9px; background: #fff; color: #9a2a14; cursor: pointer; }
 .gecis-kaldir:hover, .gecis-kaldir:focus-visible { background: #fbeae6; }
 @media (prefers-reduced-motion: reduce) { .tur-nokta.gecis .ic { transition: none; } }
+/* 26 Kas 2026: özetin başında kanca başlığı (okuyanın anı) — lead'in hemen üstünde */
+.tur-ozet .tur-ozet-h2 { max-width: 46rem; margin: 0 0 14px; font-size: clamp(1.35rem, 1.1rem + 1.2vw, 1.9rem); line-height: 1.25; letter-spacing: -.01em; }
